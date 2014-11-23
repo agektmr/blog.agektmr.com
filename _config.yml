@@ -1,0 +1,61 @@
+name:             'Tender Surrender'
+title:            'Tender Surrender'
+description:      '未来の Web を夢見るブログ'
+markdown:         kramdown
+highlighter:      true
+port:             8000
+permalink:        /:year/:month/:title.html
+owner:
+  name:           Eiji Kitamura
+  avatar:         avatar.jpg
+  bio:            "Developer Advocate at Google"
+  email:          agektmr+blog@gmail.com
+  twitter:        agektmr
+  facebook:       pages/Tender-Surrender-Eiji-Kitamura/365995940083689
+  github:         agektmr
+  linkedin:       agektmr
+  # For Google Authorship https://plus.google.com/authorship
+  # google plus id, include the '+', eg +mmistakes
+  google_plus:    +agektmr
+
+# Analytics and webmaster tools stuff goes here
+google_analytics:   'UA-5145106-3'
+google_verify:      
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    Asia/Tokyo
+future:      true
+pygments:    true
+
+# Amount of posts to show on home page
+paginate: 5
+
+reading_time:     true
+words_per_minute: 200
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+future:      true
+highlighter: pygments
+markdown:    kramdown
+gems:
+  - jekyll-sitemap
+sass:
+  sass_dir: _sass
+  style: compressed
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: true
+
+  coderay:
+    coderay_line_numbers: nil
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]

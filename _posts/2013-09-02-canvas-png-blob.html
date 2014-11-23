@@ -1,0 +1,10 @@
+---           
+layout: post
+title: Canvas に描いた画像を png などの形式の Blob に変換する方法
+date: 2013-09-02 07:37:55 UTC
+updated: 2013-09-02 07:37:55 UTC
+comments: false
+categories: 
+---
+
+<code>canvas</code> の DOM エレメント (コンテキストではない) から <a href="https://developer.mozilla.org/ja-JP/docs/Web/API/HTMLCanvasElement"><code>toBlob()</code></a> を使う、というのが一番簡潔な回答です。が、これは Firefox には実装されているのですが、<a href="https://code.google.com/p/chromium/issues/detail?id=83103">残念ながら Chrome にはまだ実装されていません</a>。そこで下記の方法を使って png や jpeg など、任意の画像形式で <code>Blob</code> を作ることができます。<br /><pre><code>/***<br /> &nbsp;canvas に絵を書くコード<br />***/<br />var type = 'image/jpeg';<br />// canvas から DataURL で画像を出力<br />var dataurl = canvas.toDataURL(type);<br />// DataURL のデータ部分を抜き出し、Base64からバイナリに変換<br />var bin = atob(dataurl.split(',')[1]);<br />// 空の Uint8Array ビューを作る<br />var buffer = new Uint8Array(bin.length);<br />// Uint8Array ビューに 1 バイトずつ値を埋める<br />for (var i = 0; i &lt; bin.length; i++) {<br /> &nbsp;buffer[i] = bin.charCodeAt(i);<br />}<br />// Uint8Array ビューのバッファーを抜き出し、それを元に Blob を作る<br />var blob = new Blob([buffer.buffer], {type: type});<br /></code></pre>これで jpeg 形式の <code>Blob</code> が完成です。<code>type</code> の部分を <code>'image/png'</code> などに変更することで、当然ながら別の形式の画像を得ることもできます。この <code>Blob</code> を使えば例えば<br /><pre><code>var url = window.URL.createObjectURL(blob);</code></pre>としてその画像を参照する URL を取得することができます。破棄する前に <code>window.URL.revokeObjectURL(url)</code> するのも忘れないで下さい。これをダウンロードするには、(破棄する前に) その URL を <code>a</code> タグに渡してあげます。<br /><pre><code>&lt;a href="[blob url]" download="image.png"&gt;Download&lt;/a&gt;</code></pre><code>[blob url]</code> の部分が先程作った <code>Blob</code> の URL、<code>image.png</code> の部分がダウンロードしたもののファイル名になります。<code>Blob</code> が必要なければ <code>canvas.toDataURL('image/png')</code> を直接 <code>href</code> 属性に渡してしまうのもアリです。
