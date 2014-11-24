@@ -7,16 +7,21 @@ tags:
 - Shadow DOM
 - Web Components
 modified_time: '2014-11-01T00:33:02.457+09:00'
-thumbnail: http://2.bp.blogspot.com/-sSnMdi7jRHk/VD9ECL455-I/AAAAAAAAudQ/cXHMUu6S58M/s72-c/posterImage-4215.png
+image:
+  feature: shadow-dom-web-components/architecture.png
 blogger_id: tag:blogger.com,1999:blog-1878759997851918856.post-7008415833909950532
 blogger_orig_url: http://blog.agektmr.com/2014/11/shadow-dom-web-components.html
 ---
 
-この記事は [webcomponents.org の記事](http://webcomponents.org/articles/introduction-to-shadow-dom/)とのクロスポストです。   
-  
-<div class="separator" style="clear: both; text-align: center;"><object class="BLOGGER-youtube-video" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" data-thumbnail-src="https://ytimg.googleusercontent.com/vi/Is4FZxKGqqk/0.jpg" height="315" width="560"><param name="movie" value="https://youtube.googleapis.com/v/Is4FZxKGqqk&source=uds" /><param name="bgcolor" value="#FFFFFF" /><param name="allowFullScreen" value="true" /><embed width="560" height="315"  src="https://youtube.googleapis.com/v/Is4FZxKGqqk&source=uds" type="application/x-shockwave-flash" allowfullscreen="true"></embed></object></div>
+*この記事は [webcomponents.org の記事](http://webcomponents.org/articles/introduction-to-shadow-dom/)とのクロスポストです。*
   
 Shadow DOM を利用すると、DOM 要素に、ウェブページの他の部分とは切り離された、ノード内だけで有効なスタイルやマークアップを含んだ DOM ツリーを追加することができます。この記事と動画では、この Shadow DOM について解説します。  
+
+<!-- excerpt -->
+
+<div class="video-wrap">
+  <iframe src="//www.youtube.com/embed/Is4FZxKGqqk"></iframe>
+</div>
 
 ## Shadow DOM とはなにか？
 

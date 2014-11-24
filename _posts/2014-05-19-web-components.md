@@ -13,7 +13,10 @@ comments: false
 categories: Web Components
 ---
 
-<div class="separator" style="text-align: center;"><object class="BLOGGER-youtube-video" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" data-thumbnail-src="https://ytimg.googleusercontent.com/vi/T5y_lmLngAk/0.jpg" height="315" width="560"><param name="movie" value="https://youtube.googleapis.com/v/T5y_lmLngAk&source=uds&cc_lang_pref=ja&cc_load_policy=1" /><param name="bgcolor" value="#FFFFFF" /><param name="allowFullScreen" value="true" /><embed width="560" height="315"  src="https://youtube.googleapis.com/v/T5y_lmLngAk&source=uds&cc_lang_pref=ja&cc_load_policy=1" type="application/x-shockwave-flash" allowfullscreen="true"></embed></object></div>
+<div class="video-wrap">
+  <iframe src="//www.youtube.com/embed/T5y_lmLngAk"></iframe>
+</div>
+<!-- excerpt -->
   
 ウェブアプリケーションのフロントエンドに関わる方なら、もう Web Components という言葉を全く聴いたことがない方は少ないのではないでしょか。  
 すでに関連記事も数多く出回っており、実際に触り始めている方も多いと思います。しかし、なぜこれが革命的技術なのか、周囲の人に簡潔に説明できる方はどれくらいいるでしょうか？この記事では、それを試みていきたいと思います。  
@@ -86,6 +89,9 @@ Web Components が主流になれば、ユーザーは UI コンポーネント�
   
 うってつけのビデオもあります。先日 Google で開催された [All About Polymer](http://www.meetup.com/sfhtml5/events/169452272/) というイベントで [Rob Dodson](https://plus.google.com/+RobDodson/posts)が Google Map を使ったアプリのライブコーディングを披露しました。ほとんどタグを追加するだけで派手なアプリが作り上げられていく様は圧巻です。ちなみに英語ですが字幕付きですので、英語の勉強も兼ねて、ぜひ見てみて下さい。  
   
+<div class="video-wrap">
+  <iframe src="//www.youtube.com/embed/75EuHl6CSTo"></iframe>
+</div>
   
 ## Web Components の構成要素
 少し技術的な解説をします。Web Components は、大きく 4 つのテクノロジーで構成されています。  

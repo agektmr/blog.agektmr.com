@@ -11,12 +11,16 @@ blogger_id: tag:blogger.com,1999:blog-1878759997851918856.post-75143161362700000
 blogger_orig_url: http://blog.agektmr.com/2014/10/template-web-components.html
 ---
 
-この記事は [webcomponents.org の記事](http://webcomponents.org/articles/introduction-to-template-element/)とのクロスポストです。   
-  
-<div class="separator" style="clear: both; text-align: center;"><object class="BLOGGER-youtube-video" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" data-thumbnail-src="https://ytimg.googleusercontent.com/vi/qC5xK6H0GlQ/0.jpg" height="315" width="560"><param name="movie" value="https://youtube.googleapis.com/v/qC5xK6H0GlQ&source=uds" /><param name="bgcolor" value="#FFFFFF" /><param name="allowFullScreen" value="true" /><embed width="560" height="315"  src="https://youtube.googleapis.com/v/qC5xK6H0GlQ&source=uds" type="application/x-shockwave-flash" allowfullscreen="true"></embed></object></div>
+*この記事は [webcomponents.org の記事](http://webcomponents.org/articles/introduction-to-template-element/)とのクロスポストです。*
   
 先日 Web Components を構成する技術のひとつである Templates に関するビデオを公開しましたので、解説したいと思います。  
 
+<!-- excerpt -->
+
+<div class="video-wrap">
+  <iframe src="//www.youtube.com/embed/qC5xK6H0GlQ"></iframe>
+</div>
+  
 ## なぜ今 Templates なのか
 我々開発者にとってテンプレートを使うメリットは、デザイナーとの分業を容易にできる、という点にあります。  
   

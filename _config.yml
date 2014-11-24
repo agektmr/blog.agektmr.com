@@ -1,10 +1,13 @@
+url:              http://blog.agektmr.com
 name:             'Tender Surrender'
 title:            'Tender Surrender'
 description:      '未来の Web を夢見るブログ'
 markdown:         kramdown
 highlighter:      true
 port:             8000
+default_header_image: abstract-8.jpg
 permalink:        /:year/:month/:title.html
+disqus_shortname: agektmr
 owner:
   name:           Eiji Kitamura
   avatar:         avatar.jpg
@@ -23,20 +26,19 @@ google_analytics:   'UA-5145106-3'
 google_verify:      
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    Asia/Tokyo
-future:      true
-pygments:    true
+timezone:       Asia/Tokyo
+future:         true
+highlighter:    pygments
 
 # Amount of posts to show on home page
 paginate: 5
 
 reading_time:     true
 words_per_minute: 200
+excerpt_separator: "<!-- excerpt -->"
 
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 future:      true
 highlighter: pygments
-markdown:    kramdown
 gems:
   - jekyll-sitemap
 sass:
@@ -59,3 +61,10 @@ kramdown:
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+
+defaults:
+  -
+    scope:
+      type: "posts"
+    values:
+      comments: true
