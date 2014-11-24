@@ -1,12 +1,12 @@
 ---
 layout: post
 title: Shadow DOM - Web Components を構成する技術
-date: '2014-11-01T05:33:00.000+09:00'
+date: '2014-11-01T09:33:00.000+09:00'
 author: Eiji Kitamura
 tags:
 - Shadow DOM
 - Web Components
-modified_time: '2014-11-01T00:33:02.457+09:00'
+modified_time: '2014-11-01T09:33:02.457+09:00'
 image:
   feature: shadow-dom-web-components/architecture.png
 blogger_id: tag:blogger.com,1999:blog-1878759997851918856.post-7008415833909950532
