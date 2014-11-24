@@ -1,7 +1,7 @@
 ---           
 layout: post
 title: Google の Developer Advocate とはどんな仕事なのか？
-date: 2013-11-01 05:39:01 UTC
+date: 2013-04-11 05:39:01 UTC
 updated: 2013-11-01 05:39:01 UTC
 tags:
 - Developer Advocate
