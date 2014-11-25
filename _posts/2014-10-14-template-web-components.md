@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Template - Web Components を構成する技術
+description: 'Web Components を構成する要素のひとつ、Templates について解説します。'
 date: '2014-10-14T17:44:00.001+09:00'
 author: Eiji Kitamura
 tags:

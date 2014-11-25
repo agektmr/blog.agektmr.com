@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Custom Elements - Web Components を構成する技術'
-description: ''
+description: 'Web Components を構成する要素のひとつ、Custom Elements について解説します。'
 date: '2014-11-25T23:30:51.000+9:00'
 tags:
 - Custom Elements

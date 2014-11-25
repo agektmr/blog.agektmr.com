@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Shadow DOM - Web Components を構成する技術
+description: 'Web Components を構成する要素のひとつ、Shadow DOM について解説します。'
 date: '2014-11-01T09:33:00.000+09:00'
 author: Eiji Kitamura
 tags:
