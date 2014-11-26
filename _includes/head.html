@@ -48,13 +48,27 @@
 <!-- 32x32 -->
 <link rel="shortcut icon" href="/favicon.png">
 <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="{{ site.url }}/images/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="{{ site.url }}/images/icon-54x54.jpg">
 <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.url }}/images/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.url }}/images/icon-72x72.jpg">
 <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site.url }}/images/apple-touch-icon-114x114-precomposed.png">
+<link rel="icon-precomposed" sizes="114x114" href="{{ site.url }}/images/icon-114x114.jpg">
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.url }}/images/apple-touch-icon-144x144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.url }}/images/icon-144x144.jpg">
+<!-- 192x192 for Chrome for Android -->
+<link rel="icon" sizes="192x192" href="{{ site.url }}/images/icon-192x192.jpg">
+
+<!-- homescreen-installed app -->
+<link rel="manifest" href="/manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!-- theme color -->
+<meta name="theme-color" content="#222">
+<meta name="apple-mobile-web-app-status-bar-style" content="#222">
+
+<!-- iphone specific web app config -->
+<link rel="apple-touch-startup-image" href="/images/cover.jpg">
 
 {% if page.image.background or site.background %}
 {% capture background %}{% if page.image.background %}{{ page.image.background }}{% else %}{{ site.background }}{% endif %}{% endcapture %}
