@@ -11,7 +11,9 @@
 
 {% if page.image.feature %}<meta property="og:image" content="{{ site.url }}/images/{{ page.image.feature }}">
 <link itemprop="image" href="{{ site.url }}/images/{{ page.image.feature }}">
-<meta name="twitter:card" content="summary_large_image">{% else %}
+<meta name="twitter:card" content="summary_large_image">
+{% else %}<meta property="og:image" content="{{ site.url }}/images/cover.jpg">
+<link itemprop="image" href="{{ site.url }}/images/cover.jpg">
 <meta name="twitter:card" content="summary">
 {% endif %}
 {% if site.owner.twitter %}<meta name="twitter:creator" content="@{{ site.owner.twitter }}">{% endif %}
