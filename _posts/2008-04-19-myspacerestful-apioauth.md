@@ -2,7 +2,6 @@
 title: MySpaceのRESTful APIでOAuth認証を試してみる
 author: Eiji
 layout: post
-permalink: /archives/42
 SBM_count:
   - '00008<>1271393657<>6<>0<>1<>1<>0'
 dsq_thread_id:
@@ -14,10 +13,6 @@ tags:
   - OAuth
   - RESTful API
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/42" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 MySpaceで公開されているMDP(MySpace Developer Platform)には、OpenSocialだけでなく独自のRESTful APIも含まれており、これを使うことでサーバーサイドにアプリケーションを作ることもできるようになっています。今回は、MDPのRESTful APIのOAuth認証にフォーカスを当ててみます。
 
 ## OpenSocial/MDPのOAuthについて
@@ -44,17 +39,17 @@ MySpaceでアプリケーションを作るためには、ユーザーアカウ�
 
 アプリケーションプロフィールが作れたら、XMLやJavaScriptのコードは不要です。今回の目的はRESTful APIの認証を試すところにありますので、画面左の<a href="http://developer.myspace.com/modules/apps/pages/myapps.aspx" target="_blank">My Apps</a>をクリックし、作成したアプリケーションプロフィールのEdit Detailsをクリックしてください。
 
-[<img class="alignnone size-medium wp-image-43" title="myspace_myapps" src="http://devlog.agektmr.com/wp-content/uploads/2008/04/myspace_myapps-300x160.jpg" alt="" width="300" height="160" />][1]
+[<img class="alignnone size-medium wp-image-43" title="myspace_myapps" src="/images/2008/04/myspace_myapps-300x160.jpg" alt="" width="300" height="160" />][1]
 
 画面下部にOAuth Consumer KeyとOAuth Consumer Secretという部分があります。RESTful APIにアクセスするには、これらが必要になりますので、メモ帳などにコピペしておいてください。OAuth Consumer Keyは任意に変更できますので、変更してもよいかもしれません(保存は忘れずに)。 
 
-<span style="color: #0000ee; text-decoration: underline;"><a href="http://devlog.agektmr.com/wp-content/uploads/2008/04/myspace_myapp_detail.jpg"></a><a href="http://devlog.agektmr.com/wp-content/uploads/2008/04/myspace_myapp_detail.jpg"><img class="alignnone size-full wp-image-44" title="myspace_myapp_detail" src="http://devlog.agektmr.com/wp-content/uploads/2008/04/myspace_myapp_detail.jpg" alt="" width="499" height="49" /></a></span>
+<span style="color: #0000ee; text-decoration: underline;"><a href="/images/2008/04/myspace_myapp_detail.jpg"></a><a href="/images/2008/04/myspace_myapp_detail.jpg"><img class="alignnone size-full wp-image-44" title="myspace_myapp_detail" src="/images/2008/04/myspace_myapp_detail.jpg" alt="" width="499" height="49" /></a></span>
 
 ## OAuth Toolで認証してみる
 
 OAuthではコンシューマキーとNonce、Timestampなどから署名(Signature)を作って認証を行います。署名の作り方は複雑なので、今回はMDPで提供されている<a href="http://developer.myspace.com/modules/apis/pages/oauthtool.aspx" target="_blank">OAuth Tool</a>を使って試してみます。
 
-[<img class="alignnone size-medium wp-image-45" title="myspace_oauthtool" src="http://devlog.agektmr.com/wp-content/uploads/2008/04/myspace_oauthtool-300x209.jpg" alt="" width="300" height="209" />][2]
+[<img class="alignnone size-medium wp-image-45" title="myspace_oauthtool" src="/images/2008/04/myspace_oauthtool-300x209.jpg" alt="" width="300" height="209" />][2]
 
 画面右にある項目を埋めていきます。
 
@@ -72,7 +67,7 @@ OAuthではコンシューマキーとNonce、Timestampなどから署名(Signat
 *   **OAuth Mode:** OAuthモード。Authorization Headerとしてください。
 *   **Query options:** OAuth Toolの使い方。Generate URI and Submitとしてください。
 
-<img class="alignnone size-full wp-image-46" title="myspace_oauthtool_detail" src="http://devlog.agektmr.com/wp-content/uploads/2008/04/myspace_oauthtool_detail.jpg" alt="" width="203" height="424" />
+<img class="alignnone size-full wp-image-46" title="myspace_oauthtool_detail" src="/images/2008/04/myspace_oauthtool_detail.jpg" alt="" width="203" height="424" />
 
 これでOK。executeをクリックします。
 
@@ -88,5 +83,5 @@ makeRequestを使った外部サーバーとのデータ交換については、
 
 ※API(OAuth Tool?)が不安定なようで、お昼はうまくいったのにこの記事を書いている時点では、なぜかNot Foundが返ってきてしまいました・・・
 
- [1]: http://devlog.agektmr.com/wp-content/uploads/2008/04/myspace_myapps.jpg
- [2]: http://devlog.agektmr.com/wp-content/uploads/2008/04/myspace_oauthtool.jpg
+ [1]: /images/2008/04/myspace_myapps.jpg
+ [2]: /images/2008/04/myspace_oauthtool.jpg

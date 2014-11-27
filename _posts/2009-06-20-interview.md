@@ -2,7 +2,6 @@
 title: インタビュー掲載
 author: Eiji
 layout: post
-permalink: /archives/541
 syntaxhighlighter_encoded:
   - 1
 SBM_count:
@@ -13,10 +12,6 @@ tags:
   - Google
   - 掲載
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/541" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 先日Googleの及川さん、石原さんと一緒にインタビューを受けました。
 
 <a href="http://www.atmarkit.co.jp/fwcr/rensai2/google_int_05/01.html" target="_blank">OpenSocialアプリ、開発者にとっての魅力（1/2）－＠IT</a>

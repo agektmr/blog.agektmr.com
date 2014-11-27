@@ -2,7 +2,6 @@
 title: gihyoにGoogle Buzzに関する記事を寄稿しました
 author: Eiji
 layout: post
-permalink: /archives/702
 SBM_count:
   - '00000<>1271370977<>0<>0<>0<>0<>0'
 dsq_thread_id:
@@ -13,10 +12,6 @@ tags:
   - Google Buzz
   - 掲載
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/702" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 先日Googleから<a href="http://buzz.google.com/" target="_blank">Google Buzz</a>というサービスが公開されました。
 
 いわゆるフィードアグリゲータで、見た目は日本で言えばGREEかgooホーム、海外で言えばFriendFeed、Cliqset、Facebook辺りが近いでしょうか。タイムライン上のエントリにコメント、お気に入りが付けられるという構成の、一見実にステレオタイプで、あまり個性のないサービスです。

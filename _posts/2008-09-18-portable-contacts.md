@@ -2,7 +2,6 @@
 title: オープンなコンタクトリスト仕様、Portable Contacts
 author: Eiji
 layout: post
-permalink: /archives/145
 SBM_count:
   - '00003<>1271388872<>3<>0<>0<>0<>0'
 dsq_thread_id:
@@ -14,10 +13,6 @@ categories:
 tags:
   - PortableContacts
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/145" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 Plaxoの<a href="http://www.josephsmarr.com/" target="_blank">Joseph Smarr</a>氏が使う言葉に&#8221;Open Building Blocks for the Social Web&#8221;というものがあります。これはウェブをよりソーシャルにし、サービス相互の連携を深めていくために必要な&#8221;要素&#8221;を表しています。
 
 この&#8221;要素&#8221;には<a href="http://openid.net/" target="_blank">OpenID</a>, <a href="http://oauth.net/" target="_blank">OAuth</a>, <a href="http://microformats.org/" target="_blank">microformats</a>, <a href="http://www.opensocial.org/" target="_blank">OpenSocial</a>と、いずれもこのブログで取り上げてきたこれからのソーシャルウェブを占う重要な規格が挙げられていますが、そんな重要なピースのひとつに、<a href="http://portablecontacts.net/" target="_blank">Portable Contacts</a>が加えられました。

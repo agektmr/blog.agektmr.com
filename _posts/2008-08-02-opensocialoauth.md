@@ -2,7 +2,6 @@
 title: OpenSocialのOAuthまとめ
 author: Eiji
 layout: post
-permalink: /archives/79
 SBM_count:
   - '00027<>1271392316<>20<>0<>6<>1<>0'
 syntaxhighlighter_encoded:
@@ -16,10 +15,6 @@ tags:
   - OAuth
   - OpenSocial
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/79" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 OpenSocialでは、コンテナが外部サーバーとの通信を行う際、または外部サーバーがコンテナと通信を行う際、OAuthを使用して認可を行います。今回はOpenSocialにおけるOAuthについて、現段階でのまとめを書いてみます。 ※追記(2008/10/20)：2008/10/4に書いた[コチラ][1]の記事も必読です。
 
 ## OAuthって何だったっけ？
@@ -44,11 +39,11 @@ OpenSocialでOAuthを利用する形態として、さらに2通りが考えら�
 
 ### ガジェットが外部サーバーとやり取りを行うOutbound OAuth
 
-[<img class="alignnone size-medium wp-image-100" title="Outbound OAuth" src="http://devlog.agektmr.com/wp-content/uploads/2008/08/e38394e382afe38381e383a3-1-300x95.jpg" alt="" width="300" height="95" />][2] ここでは仮に**Outbound OAuth**と呼びます。type=&#8221;html&#8221;で作られたガジェットが、SNSコンテナをプロキシとしてコンシューマの役割を果たし、サービスプロバイダとなる外部サーバーとmakeRequestで通信を行うケースです。
+[<img class="alignnone size-medium wp-image-100" title="Outbound OAuth" src="/images/2008/08/e38394e382afe38381e383a3-1-300x95.jpg" alt="" width="300" height="95" />][2] ここでは仮に**Outbound OAuth**と呼びます。type=&#8221;html&#8221;で作られたガジェットが、SNSコンテナをプロキシとしてコンシューマの役割を果たし、サービスプロバイダとなる外部サーバーとmakeRequestで通信を行うケースです。
 
 ### 外部サーバーがコンテナとやり取りを行うInbound OAuth
 
-[<img class="alignnone size-medium wp-image-101" title="Inbound OAuth" src="http://devlog.agektmr.com/wp-content/uploads/2008/08/e38394e382afe38381e383a3-3-300x88.jpg" alt="" width="300" height="88" />][3] ここでは仮に**Inbound OAuth**と呼びます。コンシューマとなる外部サーバーがサービスプロバイダであるSNSコンテナのRESTful APIを叩くケースです。type=&#8221;url&#8221;のガジェットが外部サーバーを通してSNSコンテナのRESTful APIを叩くケースもこれに該当します。
+[<img class="alignnone size-medium wp-image-101" title="Inbound OAuth" src="/images/2008/08/e38394e382afe38381e383a3-3-300x88.jpg" alt="" width="300" height="88" />][3] ここでは仮に**Inbound OAuth**と呼びます。コンシューマとなる外部サーバーがサービスプロバイダであるSNSコンテナのRESTful APIを叩くケースです。type=&#8221;url&#8221;のガジェットが外部サーバーを通してSNSコンテナのRESTful APIを叩くケースもこれに該当します。
 
 ## OAuthの利用に必要なもの
 
@@ -92,5 +87,5 @@ OAuthは必ずしも1つのサーバーとやり取りするとは限りませ�
 今回は大まかな話を書きましたが、次回は実際にMySpaceのData Availabilityを使ってOAuth認証を行い、データを取得するところまでを試してみたいと思います。
 
  [1]: http://devlog.agektmr.com/archives/174
- [2]: http://devlog.agektmr.com/wp-content/uploads/2008/08/e38394e382afe38381e383a3-1.jpg
- [3]: http://devlog.agektmr.com/wp-content/uploads/2008/08/e38394e382afe38381e383a3-3.jpg
+ [2]: /images/2008/08/e38394e382afe38381e383a3-1.jpg
+ [3]: /images/2008/08/e38394e382afe38381e383a3-3.jpg

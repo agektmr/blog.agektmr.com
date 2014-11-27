@@ -2,7 +2,6 @@
 title: OpenIDを使ってアカウントを統合するサービスClickpass
 author: Eiji
 layout: post
-permalink: /archives/5
 SBM_count:
   - '00002<>1271396100<>1<>0<>0<>1<>0'
 dsq_thread_id:
@@ -14,10 +13,6 @@ tags:
   - OpenID
   - 認証
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/5" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 <a href="http://jp.techcrunch.com/archives/clickpass-could-change-the-way-you-surf-the-web/" target="_blank">TechCrunch Japanese アーカイブ » OpenIDの一般利用拡大を図る「Clickpass」</a>OpenIDとは、ドメインをまたがってシングルサインオンを可能にする、ウェブ上のパスポートと言える技術です。日本でもYahooやlivedoor、はてな、mixiがOpenIDの発行に対応/将来的に対応を表明しています。そんなOpenIDですが、便利な反面問題もあります：
 
 *   OpenIDを発行するサイトは増えているが、OpenIDを受け入れるサイトはまだまだ少ない

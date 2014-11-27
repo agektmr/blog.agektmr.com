@@ -2,7 +2,6 @@
 title: FriendConnectから垣間見える未来のソーシャルウェブ
 author: Eiji
 layout: post
-permalink: /archives/77
 SBM_count:
   - '00001<>1271393436<>1<>0<>0<>0<>0'
 dsq_thread_id:
@@ -18,10 +17,6 @@ tags:
   - OpenSocial
   - PortableContacts
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/77" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 今更ですが、先日サンフランシスコで開かれたGoogle I/Oに参加してきました。
 
 その中でも特に印象に残ったのが、PlaxoのJoseph Smarr氏によるOpenSocial, OpenID, and OAuth: Oh My!というセッション。僕が見たセッションの中ではダントツの人気で、部屋に用意された椅子はもちろん、立ち見で人が溢れ返るほどの盛況ぶり。

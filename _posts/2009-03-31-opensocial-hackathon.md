@@ -2,7 +2,6 @@
 title: OpenSocial Hackathon開催します
 author: Eiji
 layout: post
-permalink: /archives/501
 disable_wpautop:
   - 1
 disable_wptexturize:
@@ -18,10 +17,6 @@ SBM_count:
 categories:
   - OpenSocial
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/501" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 <a target="_blank" href="http://developer.home.goo.ne.jp/">gooホームサンドボックス</a>立ち上げと丁度タイミングが合ったこともあり、gooと<a target="_blank" href="http://groups.google.com/group/opensocial-japan">OpenSocial Japanコミュニティ</a>、<a target="_blank" href="http://mtl.recruit.co.jp/">リクルートメディアテクノロジーラボ</a>共同開催で、<a target="_blank" href="http://groups.google.com/group/opensocial-hackathon-0424">OpenSocial Hackathon</a>を開催することになりました。
 
 Hackathon(ハッカソン)とは、Hack(ハック)とMarathon(マラソン)を組み合わせた造語で、参加者をグループに分け、その場で実際にコーディングを行いながらソフトウェアを作りあげていくものです。

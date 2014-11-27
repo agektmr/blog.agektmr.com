@@ -2,7 +2,6 @@
 title: Foursquareに見る「近未来サービスの王道」
 author: Eiji
 layout: post
-permalink: /archives/695
 SBM_count:
   - '00025<>1271394998<>25<>0<>0<>0<>0'
 dsq_thread_id:
@@ -12,15 +11,11 @@ categories:
 tags:
   - サービス
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/695" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 ## Foursquareとは
 
 最近何かと名前を見かける<a href="http://foursquare.com/" target="_blank">Foursquare</a>ですが、<a href="http://www.ideaxidea.com/archives/2010/01/foursquare.html" target="_blank">この記事</a>を発端に、急に話題になっているらしく、昨日から僕のアカウントにも20以上のフレンドリクエストが届いています。僕も使い始めたばかりなのですが、話題になるだけあって、ありそうでなかった仕掛けがいくつも見受けられます。
 
-[<img class="alignnone size-full wp-image-697" title="foursquare" src="http://devlog.agektmr.com/wp-content/uploads/2010/01/foursquare.png" alt="" width="351" height="144" />][1]
+[<img class="alignnone size-full wp-image-697" title="foursquare" src="/images/2010/01/foursquare.png" alt="" width="351" height="144" />][1]
 
 基本的な内容としては、自分が実際に訪れた場所を、携帯電話やスマートフォンのGPS機能で検知し、その場で投稿する、という今までにもありそうなサービスですが、特徴的なのは：
 
@@ -46,7 +41,7 @@ Foursquareでも、ソーシャルであることで、友達がチェックイ�
 
 新しいサービスがFacebook ConnectやTwitterに対応するのは、もう欧米では常識になりつつあるようです。いずれも、新規登録の煩雑な作業をスキップする目的でも、多くのサービスで役立てられています。FoursquareはFacebookでログインしても、結局いろいろ情報入力させられましたが・・・。うまいところは、ほとんど情報入力なしで登録することができます。
 
-[<img title="foursquare-login" src="http://devlog.agektmr.com/wp-content/uploads/2010/01/foursquare-login.png" alt="" width="351" height="101" />][2]
+[<img title="foursquare-login" src="/images/2010/01/foursquare-login.png" alt="" width="351" height="101" />][2]
 
 Foursquareで面白いのは、自分のプロフィールURLを決めなくとも、Twitterのアカウントを紐付けることで、TwitterのスクリーンネームがそのままURLになることです。(これはTwitterが海外でプロフィールページとしても認識されつつあることの証左ですが、この話はまた別の機会に・・・)
 
@@ -54,7 +49,7 @@ Foursquareで面白いのは、自分のプロフィールURLを決めなくと�
 
 今回僕が多くのフレンドリクエストをもらった理由のひとつに、Twitterのフォロワーから友達を見つける機能があったことも挙げられるでしょう。Twitterからインポートしたフォローリストから、既に登録済みのユーザーをフィルタリングして一覧表示し、クリックひとつでフレンドリクエストを出せるエクスペリエンスは、今後も様々なサービスが対応していくと思われます。もちろんFoursquareでは、Facebookの友達リストを使っても、同様のことができます。
 
-[<img class="alignnone size-medium wp-image-699" title="foursquare-friend-request" src="http://devlog.agektmr.com/wp-content/uploads/2010/01/foursquare-friend-request-300x248.png" alt="" width="300" height="248" />][3]
+[<img class="alignnone size-medium wp-image-699" title="foursquare-friend-request" src="/images/2010/01/foursquare-friend-request-300x248.png" alt="" width="300" height="248" />][3]
 
 ### アクティビティをフィードバック
 
@@ -62,7 +57,7 @@ Foursquareで面白いのは、自分のプロフィールURLを決めなくと�
 
 また、このフィードバックにより、リアルタイムなイベントの共有も可能になってきます。例えば<a href="http://www.itmedia.co.jp/news/articles/0911/24/news072.html" target="_blank">Twitter上のいっせいバルス</a>や、<a href="http://tofubeats.blog107.fc2.com/blog-entry-235.html" target="_blank">昨年のクリスマスイブのUstreamによるDJプレイ</a>など、最近ウェブ上では、Twitterを中心としたリアルタイムイベント共有が当たり前になってきています。
 
-[<img class="alignnone size-medium wp-image-698" title="foursquare-activity-feedback" src="http://devlog.agektmr.com/wp-content/uploads/2010/01/foursquare-activity-feedback-300x112.png" alt="" width="300" height="112" />][4]
+[<img class="alignnone size-medium wp-image-698" title="foursquare-activity-feedback" src="/images/2010/01/foursquare-activity-feedback-300x112.png" alt="" width="300" height="112" />][4]
 
 Foursquareでも、チェックインした時にアクティビティをフィードバックすることができますので、たまたま同じ場所にいることをTwitter経由で知り、落ち合うなんて話は珍しくなくなるでしょう。
 
@@ -70,7 +65,7 @@ Foursquareでも、チェックインした時にアクティビティをフィ�
 
 ウェブサービスとセットで、iPhoneやAndroidで専用アプリを出すサービスも増えてきています。単純にスマートフォンで動きます、というだけでなく、「その場所だからできること」を生かしたサービスなら、嫌でもその傾向は強まるでしょう。
 
-[<img class="alignnone size-full wp-image-701" title="foursquare-iphone" src="http://devlog.agektmr.com/wp-content/uploads/2010/01/foursquare-iphone.png" alt="" width="138" height="259" />][5]
+[<img class="alignnone size-full wp-image-701" title="foursquare-iphone" src="/images/2010/01/foursquare-iphone.png" alt="" width="138" height="259" />][5]
 
 Foursquareはもちろんその典型例ですので、iPhone版もAndroid版もPalm Pre版も、アプリケーションが用意されています。
 
@@ -97,8 +92,8 @@ Foursquareはもちろんその典型例ですので、iPhone版もAndroid版も
 
 また、一年近く前になりますが、最初のSocialWeb勉強会の冒頭でお話させていただいた<a href="http://www.slideshare.net/agektmr/socialweb-vol1-presentation" target="_blank">ソーシャルウェブの話</a>が、まだかなり有用だと思います。ぜひこちらも改めて御覧下さい。
 
- [1]: http://devlog.agektmr.com/wp-content/uploads/2010/01/foursquare.png
- [2]: http://devlog.agektmr.com/wp-content/uploads/2010/01/foursquare-login.png
- [3]: http://devlog.agektmr.com/wp-content/uploads/2010/01/foursquare-friend-request.png
- [4]: http://devlog.agektmr.com/wp-content/uploads/2010/01/foursquare-activity-feedback.png
- [5]: http://devlog.agektmr.com/wp-content/uploads/2010/01/foursquare-iphone.png
+ [1]: /images/2010/01/foursquare.png
+ [2]: /images/2010/01/foursquare-login.png
+ [3]: /images/2010/01/foursquare-friend-request.png
+ [4]: /images/2010/01/foursquare-activity-feedback.png
+ [5]: /images/2010/01/foursquare-iphone.png

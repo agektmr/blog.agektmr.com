@@ -2,7 +2,6 @@
 title: SocialWeb勉強会 vol.1を開催しました
 author: Eiji
 layout: post
-permalink: /archives/377
 SBM_count:
   - '00010<>1271395987<>9<>0<>0<>1<>0'
 categories:
@@ -10,10 +9,6 @@ categories:
 tags:
   - SocialWeb Japan
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/377" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 1月23日に株式会社DeNAオフィスにて、[SocialWeb勉強会 vol.1][1]を開催しました。参加者は50名で、キャンセル待ちも出るほどの盛況ぶり。ソーシャルウェブの注目度の高まりを感じる勉強会となりました。
 
 僕からのプレゼンテーションは、主催としてコミュニティの今後の方向性を示すと共に、現在の海外サービスで示されている方向性および、実際にメインプレイヤーたちがどういう形でソーシャルウェブ化に取り組んでいるかという状況を紹介しました。多くの内容は既にこのブログで紹介してきたものでしたが、いいまとめになったのではないかと思います。

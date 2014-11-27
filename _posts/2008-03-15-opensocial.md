@@ -2,7 +2,6 @@
 title: OpenSocialの疑問がひとつ解決した
 author: Eiji
 layout: post
-permalink: /archives/10
 SBM_count:
   - '00000<>1271351677<>0<>0<>0<>0<>0'
 dsq_thread_id:
@@ -16,10 +15,6 @@ tags:
   - Orkut
   - Widget
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/10" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 **前提：Google Gadgetでurlタイプを指定した場合、iframe内にはリモートサーバーの内容がそのまま表示されるため、Ajaxで友達情報等を取得しようとすると、ドメイン超えが必要となり、プロキシ経由でサーバー間通信となりRESTful APIがないと役に立たない**
 
 どうやらOrkutでは、Content Type=&#8217;url&#8217;を許可していない模様。

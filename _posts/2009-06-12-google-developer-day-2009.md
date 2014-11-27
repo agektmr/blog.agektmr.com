@@ -2,7 +2,6 @@
 title: Google Developer Day 2009
 author: Eiji
 layout: post
-permalink: /archives/520
 syntaxhighlighter_encoded:
   - 1
 SBM_count:
@@ -25,10 +24,6 @@ tags:
   - gdd09
   - Google Developer Day
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/520" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 6月9日にパシフィコ横浜にて<a href="http://code.google.com/intl/ja/events/developerday/2009/home.html" target="_blank">Google Developer Day</a>が開催されました。  
 僕は基調講演に一瞬と、OpenSocial Panel Discussionのセッションに登壇させて頂きました。
 

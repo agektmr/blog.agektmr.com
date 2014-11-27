@@ -2,7 +2,6 @@
 title: あしあと帳ガジェット更新
 author: Eiji
 layout: post
-permalink: /archives/554
 syntaxhighlighter_encoded:
   - 1
 SBM_count:
@@ -21,10 +20,6 @@ categories:
 tags:
   - Gadget
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/554" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 昨日SocialWeb Blogで紹介して頂いたあしあとガジェットですが、早速多数のフィードバックを頂いています。その中から、2点の改善を行いましたのでご紹介します。
 
 ## あしあとの表示件数を設定

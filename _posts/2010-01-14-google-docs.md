@@ -41,7 +41,7 @@ tags:
 
 実は今回のGoogle Docsストレージには、このソーシャルグラフを用いた強力なACL機能が備わっているようです。Google Docsを使っている方はよくご存知と思いますが、それはもともとGoogle Docs自体がアクセス管理機能を持っていたからに他なりません。
 
-[<img title="Google Docs ACL2" src="http://devlog.agektmr.com/wp-content/uploads/2010/01/Google-Docs-ACL2-300x204.png" alt="" width="300" height="204" />][1]
+[<img title="Google Docs ACL2" src="/images/2010/01/Google-Docs-ACL2-300x204.png" alt="" width="300" height="204" />][1]
 
 [][1] [][1]Google Docsでは、ファイルを作成すると、基本はプライベート、そこから操作で一般公開、グループへの公開、メールアドレスを指定して共有、などをすることができます。メールアドレスで指定する際はもちろん、Googleが誇るGmailのコンタクトリストというソーシャルグラフからオートコンプリートすることができます。各共有相手ごとに、閲覧・編集のアクセス権を分けることもできます。
 
@@ -55,4 +55,4 @@ tags:
 
 今後これらのサービスにChrome OSが加わり、GoogleのウェブOSはさらに強力なものになっていくでしょう。いずれFacebookやTwitterも、所詮はGoogleの手のひらの上、という状況になってしまう日が来るかもしれません。
 
- [1]: http://devlog.agektmr.com/wp-content/uploads/2010/01/Google-Docs-ACL2.png
+ [1]: /images/2010/01/Google-Docs-ACL2.png

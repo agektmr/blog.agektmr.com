@@ -2,7 +2,6 @@
 title: あしあとガジェットがSocialWeb Blogに掲載
 author: Eiji
 layout: post
-permalink: /archives/545
 syntaxhighlighter_encoded:
   - 1
 SBM_count:
@@ -14,10 +13,6 @@ tags:
   - Gadget
   - 掲載
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/545" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 ずいぶん前ですが、Google FriendConnect向けに<a href="http://devlog.agektmr.com/archives/325" target="_blank">あしあとガジェット</a>というのを作りました。
 
 知り合いとか、たまたまこのブログを見た人に細々と使って頂いていたのですが、先日FriendConnectのガジェットディレクトリーが出来たのを機に、せっかくだからと掲載してもらったのが<a href="http://www.google.com/friendconnect/home/gadgets?hl=en-US&gl=US&category=all" target="_blank">コチラ</a>。

@@ -2,7 +2,6 @@
 title: iGoogleの進化に見るGoogleのソーシャル化
 author: Eiji
 layout: post
-permalink: /archives/207
 SBM_count:
   - '00002<>1271371530<>1<>0<>1<>0<>0'
 dsq_thread_id:
@@ -13,15 +12,11 @@ categories:
 tags:
   - iGoogle
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/207" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 iGoogleはこれまで複数のガジェットを1ページに表示するスタイルでしたが、最近「canvasビュー」が追加され、1つのガジェットを画面いっぱいに表示して利用できるようになったことは記憶に新しいと思います。canvasビューを使うことで、特にGmailやGoogle Readerのガジェットでは、単体サービスのかなりの機能がガジェット上でそのまま利用できるようになり、大幅に利便性が向上しました。
 
-[<img class="alignnone size-medium wp-image-208" title="igoogle1" src="http://devlog.agektmr.com/wp-content/uploads/2008/11/igoogle1-300x150.png" alt="" width="300" height="150" />][1]
+[<img class="alignnone size-medium wp-image-208" title="igoogle1" src="/images/2008/11/igoogle1-300x150.png" alt="" width="300" height="150" />][1]
 
-[<img class="alignnone size-medium wp-image-209" title="igoogle2" src="http://devlog.agektmr.com/wp-content/uploads/2008/11/igoogle2-300x152.png" alt="" width="300" height="152" />][2]
+[<img class="alignnone size-medium wp-image-209" title="igoogle2" src="/images/2008/11/igoogle2-300x152.png" alt="" width="300" height="152" />][2]
 
 このiGoogleの変化は、既に明言されてはいますが、iGoogleのOpenSocial対応を予感させ、将来的にGoogle全体がソーシャルネットワークになっていくことを示唆しています。実は既にGoogleがそれ自体をソーシャルネットワーク化していく方向性は随所に見られます。
 
@@ -43,11 +38,11 @@ Google ReaderはRSSリーダーですが、気になった記事をボタン一�
 
 いつのまにか、ひっそりと作られた感のあるのが<a href="http://www.google.com/s2/profiles/me?hl=ja" target="_blank">Googleプロフィール</a>。**これが今後どう充実して行くかは要注目**です。
 
-[<img class="alignnone size-medium wp-image-211" title="googleprofile" src="http://devlog.agektmr.com/wp-content/uploads/2008/11/googleprofile-300x165.png" alt="" width="300" height="165" />][3]
+[<img class="alignnone size-medium wp-image-211" title="googleprofile" src="/images/2008/11/googleprofile-300x165.png" alt="" width="300" height="165" />][3]
 
 画面左上にユーザーの写真とニックネーム、住所が表示され、その下にはプロフィールの詳細情報が表示されます。今のところ住所や過去に住んだことのある場所、通った学校、勤めた会社、略歴に加え、Googleを使っても見つけられないもの、超能力(?)など一風変わった項目もあり、この画面から編集を行うことができます。
 
-[<img class="alignnone size-medium wp-image-212" title="googleprofilelink" src="http://devlog.agektmr.com/wp-content/uploads/2008/11/googleprofilelink-300x167.png" alt="" width="300" height="167" />][4]
+[<img class="alignnone size-medium wp-image-212" title="googleprofilelink" src="/images/2008/11/googleprofilelink-300x167.png" alt="" width="300" height="167" />][4]
 
 そして「リンク」。今のところ本当にただのリンクですが、利用している外部サービスを登録することができます。面白いのは、例えばFriendFeedを登録すると、自動的に他のサービスも登録候補にずらずらっと表示されるところ。なるほど、ここでGoogle Social Graph APIを活用しているようです。確かに、FriendFeedにはrel=&#8221;me&#8221;といったmicroformatが埋め込まれています。
 
@@ -79,7 +74,7 @@ OpenSocialではガジェットからアクティビティを登録する機能�
 
 Googleプロフィールをネタに記事を書き始めたのですが、なんだかんだ話が広がり、結構大きい話になってしまいました。しかしGmailを中心として着実に、潜在的にソーシャルグラフを広げているGoogleが、完全なソーシャルネットワークの形態をとった時にどれほどの影響力を持ったものになるのか、正直想像もつきません。果たしてGmailを作った時点でここまで考えていたのか？今後の動向から目が離せません。
 
- [1]: http://devlog.agektmr.com/wp-content/uploads/2008/11/igoogle1.png
- [2]: http://devlog.agektmr.com/wp-content/uploads/2008/11/igoogle2.png
- [3]: http://devlog.agektmr.com/wp-content/uploads/2008/11/googleprofile.png
- [4]: http://devlog.agektmr.com/wp-content/uploads/2008/11/googleprofilelink.png
+ [1]: /images/2008/11/igoogle1.png
+ [2]: /images/2008/11/igoogle2.png
+ [3]: /images/2008/11/googleprofile.png
+ [4]: /images/2008/11/googleprofilelink.png

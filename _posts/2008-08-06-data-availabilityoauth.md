@@ -2,7 +2,6 @@
 title: Data AvailabilityでOAuthを試す
 author: Eiji
 layout: post
-permalink: /archives/107
 SBM_count:
   - '00003<>1271395930<>1<>0<>1<>1<>0'
 dsq_thread_id:
@@ -15,10 +14,6 @@ tags:
   - OAuth
   - OpenSocial
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/107" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 [][1]前エントリでの予告通り、実際にサーバーサイドでコードを書き、MySpaceのData Availabilityを使ってOAuthを試してみます。<a href="http://developer.myspace.com/community/myspace/dataavailability.aspx" target="_blank">Data Availability</a>という名前は大げさに聞こえるかもしれませんが、実際はOpenSocial RESTful APIです。ちなみにData AvailabilityではまだJSON形式のみのサポートで、AtomPubには対応していません(しかも404が返ってくる。これに相当ハマった○|￣|＿)。
 
 今回はOAuthを使って認証・認可を取得し、Data Availability APIを叩くところまでを解説します。
@@ -29,17 +24,17 @@ tags:
 
 MySpaceではガジェットアプリも外部アプリも同じように扱われるようです。
 
-<img class="alignnone size-full wp-image-108" title="MySpaceApps" src="http://devlog.agektmr.com/wp-content/uploads/2008/08/e38394e382afe38381e383a3-11.jpg" alt="" width="500" height="98" />
+<img class="alignnone size-full wp-image-108" title="MySpaceApps" src="/images/2008/08/e38394e382afe38381e383a3-11.jpg" alt="" width="500" height="98" />
 
 Edit Detailsを開くと、アプリケーションの詳細設定を編集することができます。
 
 ここで<a href="http://devlog.agektmr.com/archives/79" target="_blank">OAuthの利用に必要なもの</a>を思い出してください。まずはコンシューマキー(consumer\_key)とコンシューマシークレット(consumer\_secret)です。
 
-<span style="text-decoration: underline;"><a href="http://devlog.agektmr.com/wp-content/uploads/2008/08/e38394e382afe38381e383a3-31.jpg"><img class="alignnone size-full wp-image-110" title="MySpaceAppConsumer" src="http://devlog.agektmr.com/wp-content/uploads/2008/08/e38394e382afe38381e383a3-31.jpg" alt="" width="500" height="126" /></a></span>
+<span style="text-decoration: underline;"><a href="/images/2008/08/e38394e382afe38381e383a3-31.jpg"><img class="alignnone size-full wp-image-110" title="MySpaceAppConsumer" src="/images/2008/08/e38394e382afe38381e383a3-31.jpg" alt="" width="500" height="126" /></a></span>
 
 MySpaceの場合、アプリケーションを登録した段階でこれら2つが発行されます。コンシューマキーについては好きなものに変更できますが、ここではアプリケーションのガジェットXMLぽいURLにしてみました。後で必要になりますので、どこかにコピペっておきましょう。
 
-[<img class="alignnone size-full wp-image-111" title="MySpaceAppDomain" src="http://devlog.agektmr.com/wp-content/uploads/2008/08/e38394e382afe38381e383a3-4.jpg" alt="" width="500" height="309" />][2]
+[<img class="alignnone size-full wp-image-111" title="MySpaceAppDomain" src="/images/2008/08/e38394e382afe38381e383a3-4.jpg" alt="" width="500" height="309" />][2]
 
 次に、同じページの下の方にExternal Site Settingsという項目があります。これがData Availabilityの肝です。
 
@@ -52,7 +47,7 @@ MySpaceの場合、アプリケーションを登録した段階でこれら2つ
 
 ## OAuthを実装する
 
-[<img class="alignnone size-full wp-image-101" title="Inbound OAuth" src="http://devlog.agektmr.com/wp-content/uploads/2008/08/e38394e382afe38381e383a3-3.jpg" alt="" width="500" height="148" />][3]
+[<img class="alignnone size-full wp-image-101" title="Inbound OAuth" src="/images/2008/08/e38394e382afe38381e383a3-3.jpg" alt="" width="500" height="148" />][3]
 
 今回試すのは上図の外部サービス、つまりコンシューマに当たる部分です。サービスプロバイダに当たるのはMySpace。ゼロから実装してもよいのですが、せっかく<a href="http://code.google.com/p/oauth/" target="_blank">便利なライブラリ</a>がありますので、これのPHP版を使って試してみます。また、署名方式はHMAC-SHA1を使います。
 
@@ -106,7 +101,7 @@ $result = curl_exec($req);</pre>
 $auth_url = 'http://api.myspace.com/authorize?oauth_token='.urlencode($tokens['oauth_token']).
     '&oauth_callback='.urlencode($callback_url);</pre>
 
-[][4][<img class="alignnone size-medium wp-image-115" title="MySpaceAppAuth" src="http://devlog.agektmr.com/wp-content/uploads/2008/08/e38394e382afe38381e383a3-5-300x288.jpg" alt="" width="300" height="288" />][5]
+[][4][<img class="alignnone size-medium wp-image-115" title="MySpaceAppAuth" src="/images/2008/08/e38394e382afe38381e383a3-5-300x288.jpg" alt="" width="300" height="288" />][5]
 
 ### アクセストークンを取得
 
@@ -147,7 +142,7 @@ $result = curl_exec($req);</pre>
 </p>
 
  [1]: http://devlog.agektmr.com/archives/79
- [2]: http://devlog.agektmr.com/wp-content/uploads/2008/08/e38394e382afe38381e383a3-4.jpg
- [3]: http://devlog.agektmr.com/wp-content/uploads/2008/08/e38394e382afe38381e383a3-3.jpg
- [4]: http://devlog.agektmr.com/wp-content/uploads/2008/08/e38394e382afe38381e383a3-2.jpg
- [5]: http://devlog.agektmr.com/wp-content/uploads/2008/08/e38394e382afe38381e383a3-5.jpg
+ [2]: /images/2008/08/e38394e382afe38381e383a3-4.jpg
+ [3]: /images/2008/08/e38394e382afe38381e383a3-3.jpg
+ [4]: /images/2008/08/e38394e382afe38381e383a3-2.jpg
+ [5]: /images/2008/08/e38394e382afe38381e383a3-5.jpg

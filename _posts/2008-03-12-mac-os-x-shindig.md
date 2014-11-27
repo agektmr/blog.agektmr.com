@@ -2,7 +2,6 @@
 title: Mac OS XにShindigをインストールする
 author: Eiji
 layout: post
-permalink: /archives/6
 SBM_count:
   - '00002<>1271396435<>2<>0<>0<>0<>0'
 dsq_thread_id:
@@ -15,7 +14,7 @@ tags:
   - OpenID
   - Shindig
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; "><g:plusone href="http://devlog.agektmr.com/archives/6" callback="wp_plus_one_handler"></g:plusone></div><p>参考資料 :<a href="http://incubator.apache.org/shindig/" target="_blank" title="Shindig - an Apache incubator project for OpenSocial and gadgets">Shindig &#8211; an Apache incubator project for OpenSocial and gadgets</a></p>
+<p>参考資料 :<a href="http://incubator.apache.org/shindig/" target="_blank" title="Shindig - an Apache incubator project for OpenSocial and gadgets">Shindig &#8211; an Apache incubator project for OpenSocial and gadgets</a></p>
 <h2>予めMavenのインストールが必要</h2>
 <p><a href="http://maven.apache.org/download.html">Maven &#8211; Download Maven 2.0.8 </a>からダウンロード。特にインストール作業は必要なく、適当なところに置いといて、パスを切る必要あり。ひとまず</p>
 <pre>&gt; ~/Development/apache-maven-2.0.8</pre>
@@ -42,5 +41,5 @@ tags:
 <pre>&gt; ln -s ~/Development/Shindig/java/gadgets/target/gadgets.war ~/Development/jetty-6.1.8/webapps/gadgets.war</pre>
 <p>アクセスしてみると、、、</p>
 <pre>http://localhost:8080/gadgets/files/samplecontainer/samplecontainer.html</pre>
-<p><a href="http://devlog.agektmr.com/wp-content/uploads/2008/03/shindig.jpg" title="Shindig"><img src="http://devlog.agektmr.com/wp-content/uploads/2008/03/shindig.jpg" alt="Shindig" /></a></p>
+<p><a href="/images/2008/03/shindig.jpg" title="Shindig"><img src="/images/2008/03/shindig.jpg" alt="Shindig" /></a></p>
 <p>動いた〜！！今日はここまで。</p>

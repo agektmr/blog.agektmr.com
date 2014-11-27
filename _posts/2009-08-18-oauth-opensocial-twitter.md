@@ -2,7 +2,6 @@
 title: (たぶん)世界初！OAuthを使ったOpenSocial向けTwitterクライアント「ガジェツイ！」を公開しました
 author: Eiji
 layout: post
-permalink: /archives/624
 syntaxhighlighter_encoded:
   - 1
 SBM_count:
@@ -16,11 +15,7 @@ tags:
   - Gadget
   - ガジェツイ！
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/624" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
-<a href="http://home.goo.ne.jp/gadget/qYpTF5ucNCt2/detail" target="_blank"><img class="size-full wp-image-643" title="GadgeTweetr_Logo" src="http://devlog.agektmr.com/wp-content/uploads/2009/08/GadgeTweetr_Logo.png" alt="GadgeTweetr_Logo" width="616" height="119" /></a>
+<a href="http://home.goo.ne.jp/gadget/qYpTF5ucNCt2/detail" target="_blank"><img class="size-full wp-image-643" title="GadgeTweetr_Logo" src="/images/2009/08/GadgeTweetr_Logo.png" alt="GadgeTweetr_Logo" width="616" height="119" /></a>
 
 <a href="http://home.goo.ne.jp/" target="_blank">gooホーム</a>の<a href="http://developer.home.goo.ne.jp/document/OAuthリクエスト" target="_blank">OAuth機能</a>公開に合わせ、<a href="http://twitter.com/" target="_blank">Twitter</a>のOAuthを使ったガジェット「<a href="http://home.goo.ne.jp/gadget/qYpTF5ucNCt2/detail" target="_blank">ガジェツイ！</a>」(英語名GadgeTweetr)をリリースしました。ガジェットながらに、そんじょそこらのTwitterクライアントよりもシンプルかつ高機能で使いやすいものに仕上がったと思いますのでご紹介します。
 
@@ -38,31 +33,31 @@ tags:
 
 <a href="http://oauth.net/core/1.0" target="_blank">OAuth</a>に対応していますので、IDとパスワードを直接gooホームに入力する必要はありません。「ログイン」ボタンクリックで、twitter.comドメインの画面が開くので、ユーザーは安心してログインすることができます。
 
-<img style="border: 0px initial initial;" title="login_using_oauth" src="http://devlog.agektmr.com/wp-content/uploads/2009/08/decd90d6f3baa9553fd625ecb11d3b8b-300x203.png" alt="login_using_oauth" width="300" height="203" />
+<img style="border: 0px initial initial;" title="login_using_oauth" src="/images/2009/08/decd90d6f3baa9553fd625ecb11d3b8b-300x203.png" alt="login_using_oauth" width="300" height="203" />
 
 ## タブ機能
 
 タブで様々な種類のステータスを並べて表示するタイプのTwitterクライアントです。Timeline、Mentions、Direct Message、Favoritesなど、一通りの表示に対応しています。
 
-<img class="alignnone" style="border: 0px initial initial;" title="tabs" src="http://devlog.agektmr.com/wp-content/uploads/2009/08/tabs.png" alt="tabs" width="288" height="143" />
+<img class="alignnone" style="border: 0px initial initial;" title="tabs" src="/images/2009/08/tabs.png" alt="tabs" width="288" height="143" />
 
 ## 返信元表示機能
 
 ステータスが返信の場合は「返信元」をクリックすることで会話を辿って行くことができます。
 
-<img class="size-medium wp-image-633 alignnone" title="replies" src="http://devlog.agektmr.com/wp-content/uploads/2009/08/replies-300x157.png" alt="replies" width="300" height="157" />
+<img class="size-medium wp-image-633 alignnone" title="replies" src="/images/2009/08/replies-300x157.png" alt="replies" width="300" height="157" />
 
 ## 検索機能
 
 フリーワード検索にも対応しています。
 
-<img class="size-medium wp-image-634 alignnone" title="search" src="http://devlog.agektmr.com/wp-content/uploads/2009/08/search-300x203.png" alt="search" width="300" height="203" />
+<img class="size-medium wp-image-634 alignnone" title="search" src="/images/2009/08/search-300x203.png" alt="search" width="300" height="203" />
 
 ## マルチアカウントに対応
 
 ガジェットはいくつでも追加でき、それぞれに違うアカウントを指定することができます。
 
-<img class="size-thumbnail wp-image-631 alignnone" title="multi-account" src="http://devlog.agektmr.com/wp-content/uploads/2009/08/multi-account-150x150.png" alt="multi-account" width="150" height="150" />
+<img class="size-thumbnail wp-image-631 alignnone" title="multi-account" src="/images/2009/08/multi-account-150x150.png" alt="multi-account" width="150" height="150" />
 
 ## その他の機能
 

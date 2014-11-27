@@ -2,7 +2,6 @@
 title: OpenSocialとかどうよ？的な勉強会(!?)に参加してきた
 author: Eiji
 layout: post
-permalink: /archives/37
 SBM_count:
   - '00016<>1271392315<>15<>0<>1<>0<>0'
 dsq_thread_id:
@@ -13,10 +12,6 @@ tags:
   - MySpace
   - OpenSocial
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/37" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 百式の中の人がやっているIDEAxIDEAというブログで募集があった「<a href="http://www.ideaxidea.com/archives/2008/04/opensocial.html" target="_blank">OpenSocialとかどうよ？的な勉強会</a>」に行ってきました。場所は汐留の<a href="http://jp.myspace.com/" target="_blank">MySpaceジャパン</a>オフィス。本国からエンジニアが来日しているとのことで、聞きたいことリストを用意しての参加です。
 
 ## MDPとOpenSocialの関係
@@ -26,7 +21,7 @@ MDPとは<a href="http://developer.myspace.com/community/" target="_blank">MySpa
 [][1]
 
 <p style="text-align: center;">
-  <img class="size-medium wp-image-38" title="opensocial_components" src="http://devlog.agektmr.com/wp-content/uploads/2008/04/opensocial_components-300x270.png" alt="" width="300" height="270" />
+  <img class="size-medium wp-image-38" title="opensocial_components" src="/images/2008/04/opensocial_components-300x270.png" alt="" width="300" height="270" />
 </p>
 
 [][1]OpenSocialではJavaScriptが先行して仕様決定されていっていますが、コンテナプロバイダはAjaxを受け付けるREST APIを作らないとRequestに対して応答を返すことが出来ません。そこでMySpaceの開発した仕様がMySpace REST APIでした。(当然、Orkutやhi5にもこれに類するものがありますが、仕様は未公開です。<a href="http://api.hi5.com/" target="_blank">hi5はあったかな？</a>)
@@ -117,5 +112,5 @@ Facebookはアプリケーション機能公開後に急激な伸びを示した
 
 で、本題のgadgets.util.escpeStringとgadgets.util.unescapeStringについては、確かに、MySpaceでは実装されていないそうです。自分で解決するしかないみたい。
 
- [1]: http://devlog.agektmr.com/wp-content/uploads/2008/04/opensocial_components.png
+ [1]: /images/2008/04/opensocial_components.png
  [2]: http://devlog.agektmr.com/archives/20

@@ -2,7 +2,6 @@
 title: FriendFeedのDashboard用ウィジェットを作ってみた
 author: Eiji
 layout: post
-permalink: /archives/33
 SBM_count:
   - '00003<>1271384113<>1<>0<>2<>0<>0'
 dsq_thread_id:
@@ -14,17 +13,13 @@ tags:
   - FriendFeed
   - Widget
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/33" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
-[][1]<img class="alignnone size-medium wp-image-34" title="FriendFeeder" src="http://devlog.agektmr.com/wp-content/uploads/2008/04/friendfeeder.jpg" alt="" width="209" height="239" />
+[][1]<img class="alignnone size-medium wp-image-34" title="FriendFeeder" src="/images/2008/04/friendfeeder.jpg" alt="" width="209" height="239" />
 
 最近話題のFriendFeedに対応したMac OS XのDashboardウィジェット、FriendFeeder(仮称)を作ったので公開します。まだいっぱい不具合あると思うんですが、とりあえず動いてるので勢いで。
 
 ## FriendFeedとは？
 
-<img class="alignleft alignnone size-medium wp-image-35" style="float: left;" title="friendfeedservices" src="http://devlog.agektmr.com/wp-content/uploads/2008/04/friendfeedservices-186x300.jpg" alt="" width="186" height="300" />
+<img class="alignleft alignnone size-medium wp-image-35" style="float: left;" title="friendfeedservices" src="/images/2008/04/friendfeedservices-186x300.jpg" alt="" width="186" height="300" />
 
 <a href="http://friendfeed.com/" target="_blank">FriendFeed</a>は<a href="http://jp.techcrunch.com/tag/friendfeed/" target="_blank">TechCrunch</a>辺りで最近話題のウェブサービス。Twitterの次はコレと言われているものです。内容は一言で言うなら、**SNSアグリゲータ**。数多あるSNSをまとめあげるSNSといったところでしょうか。
 
@@ -42,7 +37,7 @@ Twitterは今や多くの人のデスクトップ常駐アプリ/サービスに
 
 そういう意味ではSNSアグリゲータというよりはむしろ、Twitter+αと言った方が適切かもしれません。少なくとも個人的には、そういう使い方がメインになりそう。
 
-[<img class="alignnone size-full wp-image-36" title="friendfeedscreen" src="http://devlog.agektmr.com/wp-content/uploads/2008/04/friendfeedscreen.jpg" alt="" width="500" height="330" />][2]
+[<img class="alignnone size-full wp-image-36" title="friendfeedscreen" src="/images/2008/04/friendfeedscreen.jpg" alt="" width="500" height="330" />][2]
 
 ## ただのフィードアグリゲータではない
 
@@ -81,5 +76,5 @@ Twitterは今や多くの人のデスクトップ常駐アプリ/サービスに
 
 また、僕のFriendFeedアカウントは<a href="http://friendfeed.com/agektmr" target="_blank">http://friendfeed.com/agektmr</a>にありますので、Follow歓迎です。
 
- [1]: http://devlog.agektmr.com/wp-content/uploads/2008/04/friendfeeder.jpg
- [2]: http://devlog.agektmr.com/wp-content/uploads/2008/04/friendfeedscreen.jpg
+ [1]: /images/2008/04/friendfeeder.jpg
+ [2]: /images/2008/04/friendfeedscreen.jpg

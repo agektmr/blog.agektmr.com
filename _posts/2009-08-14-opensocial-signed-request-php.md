@@ -2,7 +2,6 @@
 title: OpenSocial Signed Requestライブラリ(PHP)をベータ公開
 author: Eiji
 layout: post
-permalink: /archives/597
 syntaxhighlighter_encoded:
   - 1
 SBM_count:
@@ -16,10 +15,6 @@ tags:
   - OAuth
   - Signed Request
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/597" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 OpenSocialのSigned Requestは、ガジェットからの外部通信リクエストに署名を付けることで、パラメータの内容が改ざんされていないかを検証可能にする仕組みです。一般に2-legged OAuthやSigned Request、OAuth Consumer Requestという名前はすべて同じ、これを表しています。
 
 <a href="http://developer.mixi.co.jp/appli/pc/lets_enjoy_making_mixiapp/require_servers" target="_blank">実装自体は全く難しくない</a>ものなのですが、お手軽なライブラリがあまり出回っていないようなので、作ってみました。<a href="http://code.google.com/p/opensocial-signed-request-php-library/" target="_blank">まずはベータとして公開します</a>。

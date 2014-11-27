@@ -2,7 +2,6 @@
 title: OpenSocialのパーミッションモデル
 author: Eiji
 layout: post
-permalink: /archives/512
 disable_wpautop:
   - 1
 disable_wptexturize:
@@ -23,10 +22,6 @@ categories:
 tags:
   - パーミッションモデル
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/512" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 最近「<a target="_blank" href="http://groups.google.com/group/opensocial-japan/browse_thread/thread/ffa5f8182c36252f#">OpenSocialでOwnner毎 or Owner*アプリ毎の永続化方法 オプション</a>」辺りでOpenSocialのパーミッションに関する疑問がいくつか挙っていたので、どういう場合にどのデータにアクセスできるのか、ついでに、FriendConnectにおけるパーミッションモデルについてもまとめてみます。
 
 まずは最低限の知識としてビューアー(VIEWER)/オーナー(OWNER)という考え方と、基本情報/個人情報を押さえておきましょう。

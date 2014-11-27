@@ -2,16 +2,11 @@
 title: OpenSocialパネルディスカッション
 author: Eiji
 layout: post
-permalink: /archives/422
 SBM_count:
   - '00003<>1271359002<>3<>0<>0<>0<>0'
 categories:
   - OpenSocial
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/422" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 来る2月12日、13日に目黒雅叙園にて<a target="_blank" href="http://codezine.jp/devsumi/2009">Developer Summit 2009</a>が開催されます。
 
 中でも、12日17:40から<a target="_blank" href="http://www.seshop.com/event/dev/2009/timetable/Default.asp?mode=detail&#038;eid=124&#038;sid=744&#038;tr=07%5FDevelopment+Style%28Web%29#744">OpenSocialパネルディスカッション 2009年、OpenSocial普及元年に「これから」を大予言</a>にご注目。

@@ -2,7 +2,6 @@
 title: OpenSocialガジェット開発で注意すべきキャッシュ機能
 author: Eiji
 layout: post
-permalink: /archives/396
 disable_wpautop:
   - 1
 disable_wptexturize:
@@ -18,10 +17,6 @@ dsq_thread_id:
 categories:
   - OpenSocial
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/396" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 先日の記事でShindigが持つOpenSocialアーキテクチャの強力なキャッシュ機能について触れました。Shindigには大きく4種類のキャッシュが存在しています。
 
 *   ガジェットXMLのキャッシュ

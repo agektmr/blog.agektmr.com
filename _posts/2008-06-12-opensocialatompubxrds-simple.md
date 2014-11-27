@@ -2,7 +2,6 @@
 title: OpenSocialのAtomPubはXRDS-Simpleでディスカバリ
 author: Eiji
 layout: post
-permalink: /archives/75
 SBM_count:
   - '00001<>1271392252<>1<>0<>0<>0<>0'
 dsq_thread_id:
@@ -15,10 +14,6 @@ tags:
   - Service Document
   - XRDS-Simple
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/75" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 <a href="http://code.google.com/apis/opensocial/docs/0.8/restfulspec.html " target="_blank">OpenSocial v0.8のRESTful API仕様</a>では、オートディスカバリに<a href="http://xrds-simple.net/core/1.0/" target="_blank">XRDS-Simple</a>を利用するよう規定されています。
 
 他方、OpenSocial v0.8で利用されるRESTful APIは<a href="http://tools.ietf.org/html/rfc5023" target="_blank">AtomPub</a>形式となっており、AtomPubではService Documentを利用するよう規定されています。

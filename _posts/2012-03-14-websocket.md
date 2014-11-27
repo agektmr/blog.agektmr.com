@@ -3,7 +3,6 @@ layout: post
 title: WebSocketのバイナリメッセージを試したら、ウェブの未来が垣間見えた
 date: 2012-03-14 04:16:21 UTC
 updated: 2012-03-14 04:16:21 UTC
-comments: true
 image:
   feature: websocket/AudioStreamer.png
 tags: 

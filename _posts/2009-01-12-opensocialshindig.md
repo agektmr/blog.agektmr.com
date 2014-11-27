@@ -2,7 +2,6 @@
 title: OpenSocial(Shindig)のサーバーアーキテクチャ
 author: Eiji
 layout: post
-permalink: /archives/363
 SBM_count:
   - '00020<>1271395163<>18<>0<>2<>0<>0'
 categories:
@@ -10,10 +9,6 @@ categories:
 tags:
   - Shindig
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/363" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 OpenSocialと関わるには
 
 *   コンテナになる

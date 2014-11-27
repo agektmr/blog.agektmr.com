@@ -2,7 +2,6 @@
 title: OpenSocialアプリケーションを作る(2)
 author: Eiji
 layout: post
-permalink: /archives/41
 SBM_count:
   - '00002<>1271387481<>2<>0<>0<>0<>0'
 dsq_thread_id:
@@ -15,10 +14,6 @@ tags:
   - OpenSocial
   - Orkut
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/41" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 <a rel="bookmark" href="http://devlog.agektmr.com/archives/22">OpenSocialアプリケーションを作る(1)</a>では、ガジェットの仕組みと、Orkutでアカウントを取得するところまで書きました。今回は、<a href="http://devlab.agektmr.com/OpenSocial/Orkut/FriendIntroducer.xml" target="_blank">前回紹介したアプリケーション</a>のコードを解説します。
 
 このアプリケーション(FriendIntroducer)は、自分が見た場合は友達の紹介文を書くことができ、他人が見た場合はその人に向けて書かれた紹介文を読むことができる、というmixiなどにもよくある簡単なアプリケーションです。JavaScriptやjQuery的にはもっと賢い実装方法があると思いますが、今回はOpenSocialのコードにフォーカスしますので、アホなコードは大目に見てください。
@@ -132,7 +127,7 @@ introは、このアプリケーションを使ってコンテナのデータ保
 OpenSocialでは配列をなめる、いわゆるiterationも仕様に含まれていて、eachを使うことができます。ここでは、友達のリストをループして、友達の名前やサムネイル画像、保存されていた紹介文をHTMLテンプレートに埋め込んでいきます。
 
 <p style="text-align: center;">
-  <a href="http://devlog.agektmr.com/wp-content/uploads/2008/03/orkut5.jpg"><img title="Orkut5" src="http://devlog.agektmr.com/wp-content/uploads/2008/03/orkut5.jpg" alt="" width="300" height="264" /></a>
+  <a href="/images/2008/03/orkut5.jpg"><img title="Orkut5" src="/images/2008/03/orkut5.jpg" alt="" width="300" height="264" /></a>
 </p>
 
 ここまでで、友達の紹介文を書き込むことができるcanvasページの表示することができました。次に、友達の紹介文をユーザーが書き込んだものと想定し、投稿して保存するところまでを解説します。

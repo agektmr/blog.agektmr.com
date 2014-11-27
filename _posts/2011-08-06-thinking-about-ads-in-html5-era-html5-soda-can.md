@@ -2,7 +2,6 @@
 title: 'Thought about Ads in HTML5 era: HTML5 Soda Can'
 author: Eiji
 layout: post
-permalink: /archives/730
 wp_plus_one_redirect:
   - 
 categories:
@@ -11,13 +10,9 @@ tags:
   - CSS3
   - Device Orientation API
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/730" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 Let me introduce the &#8220;HTML5 Soda Can&#8221; demo I made for <a href="http://www.google.co.jp/events/thinkmobile2011/livestream.html" target="_blank">ThinkMobile2011</a> a while ago.
 
-<a href="http://demo.agektmr.com/sodacan/" target="_blank"><img class="aligncenter" title="Soda Can 1" src="http://devlog.agektmr.com/wp-content/uploads/2011/07/233b1844c6d899c679f560e35058d333-200x300.png" alt="" width="200" height="300" /></a>
+<a href="http://demo.agektmr.com/sodacan/" target="_blank"><img class="aligncenter" title="Soda Can 1" src="/images/2011/07/233b1844c6d899c679f560e35058d333-200x300.png" alt="" width="200" height="300" /></a>
 
 The original request was to come up with some ideas of HTML5 ads for audience at the event. It isn&#8217;t that hard just to create ads using HTML5, but since the purpose was to show off to the audience, I needed to inject &#8220;wow&#8221; feeling as well as to put clear sign that it&#8217;s made of HTML5.
 
@@ -35,7 +30,7 @@ So, here&#8217;s the demo I have come up with: &#8220;Wow&#8221; enough HTML5-is
 2.  Try tilting your iPhone / iPad. You can find the can actually tilts inside your browser.
 3.  You know what soda is like? Try shake your device. Guess what???
 
-<a href="http://demo.agektmr.com/sodacan/" target="_blank"><img class="aligncenter" title="Soda Can 2" src="http://devlog.agektmr.com/wp-content/uploads/2011/07/2bf6d446a21bf24a86472b536c525421-200x300.png" alt="" width="200" height="300" /></a>
+<a href="http://demo.agektmr.com/sodacan/" target="_blank"><img class="aligncenter" title="Soda Can 2" src="/images/2011/07/2bf6d446a21bf24a86472b536c525421-200x300.png" alt="" width="200" height="300" /></a>
 
 When the background turns red enough, try touching tab of the can. (sorry if browser crashes&#8230;)
 

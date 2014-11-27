@@ -2,7 +2,6 @@
 title: 米YahooがOpenSocialに対応
 author: Eiji
 layout: post
-permalink: /archives/198
 SBM_count:
   - '00004<>1271357976<>3<>0<>1<>0<>0'
 dsq_thread_id:
@@ -14,10 +13,6 @@ tags:
   - Y!OS
   - Yahoo!
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/198" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 本日米Yahoo!から、Yahoo! Open Strategy 1.0として、ディベロッパ向けに[Yahoo! Application Platform (YAP)][1], [Yahoo! Social Platform (YSP),][2] [Yahoo! Query Language (YQL)][3]が<a href="http://developer.yahoo.net/blog/archives/2008/10/yos_10_launch.html" target="_blank">リリース</a>されました。
 
 ## Yahoo! Social Platform
@@ -33,7 +28,7 @@ SQLライクなコマンドを送信する事でYahoo! Pipesのようにデー�
 Yahoo!上で動作する埋め込み型のアプリケーション。OpenSocialのガジェットプラットフォームは現時点ではサポートされていませんが、JavaScript APIは使えるようです。大きく2つのビューがあります。
 
 <div>
-  <a href="http://devlog.agektmr.com/wp-content/uploads/2008/10/yos_appdef.jpg"><span style="text-decoration: none;"><img class="alignnone size-medium wp-image-199" title="yos_appdef" src="http://devlog.agektmr.com/wp-content/uploads/2008/10/yos_appdef-300x184.jpg" alt="" width="300" height="184" /></span></a>
+  <a href="/images/2008/10/yos_appdef.jpg"><span style="text-decoration: none;"><img class="alignnone size-medium wp-image-199" title="yos_appdef" src="/images/2008/10/yos_appdef-300x184.jpg" alt="" width="300" height="184" /></span></a>
 </div>
 
 ### <span style="font-weight: normal;"><strong>Small View</strong></span>

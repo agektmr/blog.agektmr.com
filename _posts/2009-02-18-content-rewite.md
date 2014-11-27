@@ -2,7 +2,6 @@
 title: content-rewite機能で外部ファイルのキャッシュを制御する
 author: Eiji
 layout: post
-permalink: /archives/434
 disable_wpautop:
   - 1
 disable_wptexturize:
@@ -22,10 +21,6 @@ categories:
 tags:
   - Cache
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/434" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 <a href="http://devlog.agektmr.com/ja/archives/396" target="_blank">先日のキャッシュに関する記事</a>でPHP版Shindigではcontent-rewrite機能が使えないと書いたのですが、1.0.xの段階で、既に実装されているようです。
 
 content-rewrite機能はOpenSocial0.9で提案された機能ではありますが、0.8や0.7でも実行できそうです。

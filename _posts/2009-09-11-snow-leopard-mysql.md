@@ -2,7 +2,6 @@
 title: Snow LeopardにMySQLをインストールする
 author: Eiji
 layout: post
-permalink: /archives/673
 syntaxhighlighter_encoded:
   - 1
 SBM_count:
@@ -16,10 +15,6 @@ tags:
   - Shindig
   - Snow Leopard
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/673" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 Mac OS XをSnow LeopardにしたらPHPが5.3になってて、PartuzaやShindigを使うのにentropyを入れなくても済んで、とても素敵です。
 
 しかし同環境でMySQLを使うのに、ちょっとごにょごにょしなければならなかったのでメモを残しておきます。(2009年9月現在の情報です)

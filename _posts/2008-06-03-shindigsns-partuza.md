@@ -2,7 +2,6 @@
 title: 'オープンソースのShindig対応SNS &#8211; Partuza!'
 author: Eiji
 layout: post
-permalink: /archives/71
 SBM_count:
   - '00007<>1271333836<>5<>0<>2<>0<>0'
 dsq_thread_id:
@@ -14,10 +13,6 @@ tags:
   - Partuza!
   - Shindig
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/71" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 OpenSocialのコンテナと言えば<a href="http://devlog.agektmr.com/archives/tag/shindig" target="_blank">Shindig</a>ですが、PHP版は既にOpenSocial v0.7への対応を完了しています。<a href="http://code.google.com/p/partuza/" target="_blank">Partuza!</a>はPHP版Shindigの開発者であるChris Chabot氏がオープンソースで開発したShindig対応SNSです。
 
 Shindigがコンテナなのに、じゃあPartuza!は何をするの？と思われるかもしれません。今回はインストール方法と、Shindigとの関係について解説します。
@@ -60,7 +55,7 @@ Apacheの設定(httpd.conf)でDocumentRootを~/partuza/htmlに設定し、http:/
 
 これで一通りの準備は完了。http://localhost/にアクセスしてウェルカム画面が出れば成功です。このまま登録し、Orkutライクな一般的なSNSとして利用することができます。
 
-[<img class="alignnone size-medium wp-image-72" title="partuza" src="http://devlog.agektmr.com/wp-content/uploads/2008/05/partuza-300x185.jpg" alt="" width="300" height="185" />][1]
+[<img class="alignnone size-medium wp-image-72" title="partuza" src="/images/2008/05/partuza-300x185.jpg" alt="" width="300" height="185" />][1]
 
 ## Partuza!とShindigの関係
 
@@ -74,4 +69,4 @@ OpenSocialのガジェットがiframeを介して表示されていることは�
 
 Partuza!を使うことで、どうすればShindigをSNSに組み込むことができるかの解析をすることができるだけでなく、そのままちょっとしたSNSを開発することもできてしまいます。ぜひお試しください。
 
- [1]: http://devlog.agektmr.com/wp-content/uploads/2008/05/partuza.jpg
+ [1]: /images/2008/05/partuza.jpg

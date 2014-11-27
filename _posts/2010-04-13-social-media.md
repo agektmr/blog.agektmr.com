@@ -2,7 +2,6 @@
 title: ソーシャルメディアはインターネットの大動脈になる！4つの理由
 author: Eiji
 layout: post
-permalink: /archives/703
 SBM_count:
   - '00007<>1271395884<>7<>0<>0<>0<>0'
 dsq_thread_id:
@@ -15,10 +14,6 @@ tags:
   - identi.ca
   - status.net
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/703" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 Twitterが登場して数年。始めのうちは意味も分からず、ただ話題だというだけで使っていたのですが、今ではすっかり生活の一部になっています。自分でもちょっと中毒かも？と思う一方、同じように感じながら使っている人は少なくないのではないでしょうか？その勢いは留まることなく、日本での浸透率は上昇する一方。ネット業界人ではない友達でも、使い始める人がチラホラ出てきています。
 
 大げさに聞こえるかもしれませんが、僕はこのTwitterを含めた、いわゆる「ソーシャルメディア」が、今後インターネットの大動脈になっていく、と考えています。今回はその理由について書いてみます。
@@ -40,7 +35,7 @@ Twitterが登場して数年。始めのうちは意味も分からず、ただ�
 
 ## ディベロッパーにとってのソーシャルメディア
 
-<img class="alignnone size-full wp-image-705" title="mixi" src="http://devlog.agektmr.com/wp-content/uploads/2010/04/mixi.png" alt="" width="484" height="358" />
+<img class="alignnone size-full wp-image-705" title="mixi" src="/images/2010/04/mixi.png" alt="" width="484" height="358" />
 
 昨年mixiアプリが公開されて以来、ソーシャルアプリケーションの注目度は高まる一方。今はまさにゴールドラッシュと言えるでしょう。
 
@@ -78,7 +73,7 @@ Foursquareを思い出してください。Foursquareでは、TwitterやFacebook
 
 <a href="http://www.webpronews.com/topnews/2010/04/05/social-media-may-get-much-more-convenient-for-businesses" target="_blank">Social Media May Get Much More Convenient for Businesses</a>
 
-<img class="alignnone size-full wp-image-704" title="cliqset.com-identi.ca" src="http://devlog.agektmr.com/wp-content/uploads/2010/04/d50f8d53bed8399f650724e67859655d.png" alt="" width="490" height="356" />
+<img class="alignnone size-full wp-image-704" title="cliqset.com-identi.ca" src="/images/2010/04/d50f8d53bed8399f650724e67859655d.png" alt="" width="490" height="356" />
 
 少しわかりづらいですが、この画面キャプチャは<a href="http://cliqset.com" target="_blank">Cliqset.com</a>から<a href="http://identi.ca" target="_blank">identi.ca</a>の僕のアカウントに対して、いわゆるMentionをした状態です。identi.caのアカウントは、Cliqset.comのアカウントをフォローしていないのに、タイムラインに現れていることが分かるでしょうか？(実はフォローすることもできます！)。
 

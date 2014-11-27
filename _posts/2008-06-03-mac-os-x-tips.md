@@ -2,7 +2,6 @@
 title: Mac OS XのちょっとマニアックなTips
 author: Eiji
 layout: post
-permalink: /archives/32
 SBM_count:
   - '00001<>1271392654<>1<>0<>0<>0<>0'
 dsq_thread_id:
@@ -13,10 +12,6 @@ tags:
   - Mac OS X
   - Tips
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/32" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 ## ことえり変換
 
 変換中に

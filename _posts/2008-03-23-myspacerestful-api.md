@@ -12,10 +12,6 @@ tags:
   - OpenSocial
   - RESTful API
 ---
-<div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
-  <g:plusone href="http://devlog.agektmr.com/archives/20" callback="wp_plus_one_handler"></g:plusone>
-</div>
-
 去る3月13日、MySpaceでOpenSocialアプリがβ版として一般公開されました。OpenSocial対応SNSとしては、一般公開は一番乗りです。まだOpenSocialの仕様も完全に固まっていない状況で、なぜ？どうやって？
 
 <a href="http://groups.google.com/group/opensocial-container/browse_thread/thread/96761d3ebd53e32c/646c972cddae2d35" target="_blank">OpenSocial Container standard fragmentation &#8211; Implementing OpenSocial Containers | Google グループ</a>
