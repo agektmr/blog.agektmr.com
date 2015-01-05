@@ -59,6 +59,16 @@ module.exports = function(grunt) {
       dist: [
         'assets/js/scripts.min.js'
       ]
+    },
+    vulcanize: {
+      default: {
+        options: {
+          strip: true
+        },
+        files: {
+          'vulcanized.html': 'elements.html'
+        }
+      }
     }
   });
 
@@ -69,10 +79,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-svgmin');
+  grunt.loadNpmTasks('grunt-vulcanize');
 
   // Register tasks
   grunt.registerTask('default', [
     'clean',
+    'vulcanize'
     'uglify',
     'imagemin',
     'svgmin'

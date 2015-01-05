@@ -73,8 +73,37 @@
 <!-- iphone specific web app config -->
 <link rel="apple-touch-startup-image" href="/images/cover.jpg">
 
+<script src="/bower_components/webcomponentsjs/webcomponents.min.js"></script>
+<link rel="import" href="/vulcanized.html">
+
 {% if page.image.background or site.background %}
 {% capture background %}{% if page.image.background %}{{ page.image.background }}{% else %}{{ site.background }}{% endif %}{% endcapture %}
 {% unless background contains 'http://' or background contains 'https://' %}{% capture background %}{{ site.url }}/images/{{ background }}{% endcapture %}{% endunless %}
 <style type="text/css">body {background-image:url({{ background }});}</style>
 {% endif %}
+<style shim-shadowdom-css>
+  #main #headerBg {
+{% if page.image.feature %}
+    background: url(/images/{{ page.image.feature }}) no-repeat 50% 50%;
+{% else %}
+    background: url(/images/{{ site.default_header_image }}) no-repeat 50% 50%;
+{% endif %}
+    background-size: cover;
+  }
+  #main #condensedHeaderBg {
+    background-color: #111;
+  }
+</style>
+<style>
+  core-scroll-header-panel::shadow #headerBg {
+{% if page.image.feature %}
+    background: url(/images/{{ page.image.feature }}) no-repeat 50% 50%;
+{% else %}
+    background: url(/images/{{ site.default_header_image }}) no-repeat 50% 50%;
+{% endif %}
+    background-size: cover;
+  }
+  core-scroll-header-panel::shadow #condensedHeaderBg {
+    background-color: #111;
+  }
+</style>
