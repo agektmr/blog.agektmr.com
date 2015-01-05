@@ -1,0 +1,73 @@
+<core-menu>
+  <paper-item>
+    <core-icon icon="home"></core-icon>
+    <a href="/">Home</a>
+  </paper-item>
+  <paper-item>
+    <core-icon icon="account-box"></core-icon>
+    <a href="/about/">About</a>
+  </paper-item>
+  {% for link in site.data.navigation %}
+    {% if link.url contains 'http' %}
+        {% assign domain = '' %}
+        {% else %}
+        {% assign domain = site.url %}
+    {% endif %}
+  <paper-item>
+    <core-icon icon="explore"></core-icon>
+    <a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a>
+  </paper-item>
+  {% endfor %}
+  <core-submenu label="Posts">
+    <paper-item>
+      <core-icon icon="description"></core-icon>
+      <a href="/posts/">All Posts</a>
+    </paper-item>
+    <paper-item>
+      <core-icon icon="label"></core-icon>
+      <a href="/tags/">All Tags</a>
+    </paper-item>
+  </core-submenu>
+  <core-submenu label="Contact">
+    {% if site.owner.twitter %}<paper-item>
+      <core-icon icon="social:post-twitter"></core-icon>
+      <a href="http://twitter.com/{{ site.owner.twitter }}">Twitter</a>
+    </paper-item>{% endif %}
+    {% if site.owner.facebook %}<paper-item>
+      <core-icon icon="social:post-facebook"></core-icon>
+      <a href="http://facebook.com/{{ site.owner.facebook }}">Facebook</a>
+    </paper-item>{% endif %}
+    {% if site.owner.google_plus %}<paper-item>
+      <core-icon icon="social:post-gplus"></core-icon>
+      <a href="https://google.com/{{ site.owner.google_plus }}">Google+</a>
+    </paper-item>{% endif %}
+    {% if site.owner.linkedin %}<paper-item>
+      <core-icon icon="social:post-linkedin"></core-icon>
+      <a href="http://linkedin.com/in/{{ site.owner.linkedin }}">LinkedIn</a>
+    </paper-item>{% endif %}
+    {% if site.owner.github %}<paper-item>
+      <core-icon icon="social:post-github"></core-icon>
+      <a href="http://github.com/{{ site.owner.github }}">GitHub</a>
+    </paper-item>{% endif %}
+    {% if site.owner.stackexchange %}<paper-item>
+      <core-icon icon="social:whatshot"></core-icon>
+      <a href="{{ site.owner.stackexchange }}">Stackexchange</a>
+    </paper-item>{% endif %}
+    {% if site.owner.instagram %}<paper-item>
+      <core-icon icon="social:post-instagram"></core-icon>
+      <a href="http://instagram.com/{{ site.owner.instagram }}">Instagram</a>
+    </paper-item>{% endif %}
+    {% if site.owner.flickr %}<paper-item>
+      <core-icon icon="social:flickr"></core-icon>
+      <a href="http://www.flickr.com/photos/{{ site.owner.flickr }}">Flickr</a>
+    </paper-item>{% endif %}
+    {% if site.owner.tumblr %}<paper-item>
+      <core-icon icon="social:post-tumblr"></core-icon>
+      <a href="http://{{ site.owner.tumblr }}.tumblr.com">Tumblr</a>
+    </paper-item>{% endif %}
+    {% if site.owner.email %}<paper-item>
+      <core-icon icon="communication:email"></core-icon>
+      <a href="mailto:{{ site.owner.email }}">Email</a>
+    </paper-item>{% endif %}
+  </core-submenu>
+</core-menu>

@@ -1,0 +1,55 @@
+body {
+  opacity: 1.0;
+}
+:unresolved, [unresolved] {
+  opacity: 0;
+}
+
+core-menu {
+  paper-item core-icon {
+    margin: 0 16px 0 -12px;
+  }
+  core-submenu {
+    min-height: 52px;
+    /deep/ core-item {
+      cursor: pointer;
+    }
+  }
+}
+core-scroll-header-panel core-toolbar {
+  box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.4);
+}
+core-header-panel {
+  background-color: #eee;
+}
+core-toolbar {
+  background-color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  core-icon-button {
+    background-color: #fff;
+    opacity: 0.3;
+  }
+  h1 {
+    color: #fff;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    a {
+      color: #fff;
+      &:visited {
+        color: #fff;
+      }
+    }
+  }
+}
+
+#page, #post {
+  .entry-content {
+    margin-top: 0px;
+    .entry-meta {
+      text-align: left;
+      margin: 0px;
+    }
+  }
+}
