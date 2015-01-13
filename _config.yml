@@ -1,4 +1,4 @@
-url:              http://blog.agektmr.com
+url:              https://blog.agektmr.com
 name:             'Tender Surrender'
 title:            'Tender Surrender'
 description:      '未来の Web を夢見るブログ'
@@ -23,7 +23,7 @@ owner:
 
 # Analytics and webmaster tools stuff goes here
 google_analytics:   'UA-5145106-3'
-google_verify:      
+google_verify:
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:       Asia/Tokyo
