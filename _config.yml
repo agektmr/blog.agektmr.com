@@ -5,7 +5,7 @@ description:      '未来の Web を夢見るブログ'
 markdown:         kramdown
 highlighter:      true
 port:             8000
-default_header_image: abstract-8.jpg
+default_header_image: cover.jpg
 permalink:        /:year/:month/:title.html
 disqus_shortname: agektmr
 owner:
