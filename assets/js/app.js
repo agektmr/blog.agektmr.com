@@ -7,3 +7,11 @@ document.querySelector('#drawer_toggle').addEventListener('click', function() {
     cdp.togglePanel();
   }
 });
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').then(function(sw) {
+    console.log('service worker registration successful', sw);
+  }, function(error) {
+    console.error('service worker registration failed:', error);
+  });
+}
