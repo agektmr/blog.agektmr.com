@@ -20,7 +20,7 @@ module.exports = function(grunt) {
       logger: grunt.log.writeln,
       staticFileGlobs: [
         rootDir + '/assets/fonts/**.*',
-        rootDir + '/images/**.*'
+        rootDir + '/images/**/*.*'
       ],
       stripPrefix: path.join(rootDir, path.sep)
     };
