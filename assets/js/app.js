@@ -16,6 +16,17 @@
 //   }
 // });
 
+// var fetch = function(url, callback) {
+//   var link = document.createElement('link');
+//   link.rel = 'import';
+//   link.href = url;
+//   link.onload = function(e) {
+//     callback(this.import);
+//   }
+//   document.querySelector('head').appendChild(link);
+// }
+
+
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js').then(function(sw) {
     console.log('service worker registration successful', sw);
