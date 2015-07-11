@@ -93,7 +93,7 @@ module.exports = function(grunt) {
           strip: true
         },
         files: {
-          'vulcanized.html': 'elements.html'
+          'elements/vulcanized.elements.html': 'elements/elements.html'
         }
       }
     },

@@ -9,22 +9,25 @@
 
 <body id="page" {% if page.image.feature %}class="feature"{% endif %}>
 
-<core-drawer-panel responsiveWidth="900px" selected="main">
-  <core-header-panel drawer>
-    <core-toolbar class="tall" style="background-image: url(/images/{{ site.owner.avatar }});">
+<paper-drawer-panel responsiveWidth="900px" selected="main">
+  <paper-header-panel drawer>
+    <paper-toolbar class="tall side-header" style="background-image: url(/images/{{ site.owner.avatar }});">
       <h1 class="bottom title">{{ site.title }}</h1>
-    </core-toolbar>
+    </paper-toolbar>
 {% include sidebar.html %}
-  </core-header-panel>
-  <core-scroll-header-panel main condenses keepCondensedHeader>
-    <core-toolbar class="tall">
-      <core-icon-button icon="menu" core-drawer-toggle></core-icon-button>
+  </paper-header-panel>
+  <paper-scroll-header-panel main condenses keepCondensedHeader>
+    <paper-toolbar class="tall main-header">
+      <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
       {% if page.link %}
-      <h1 class="bottom indent title"><a href="{{ page.link }}">{{ page.title }}</a></h1>
+      <!-- <h1 class="bottom indent title"><a href="{{ page.link }}">{{ page.title }}</a></h1> -->
+      <h1 class="bottom indent title">{{ page.title }}</h1>
       {% else %}
-      <h1 class="bottom indent title"><a href="{{ page.url }}" rel="bookmark" title="{{ page.title }}">{{ page.title }}</a></h1>
+      <!-- <h1 class="bottom indent title"><a href="{{ page.url }}" rel="bookmark" title="{{ page.title }}">{{ page.title }}</a></h1> -->
+      <h1 class="bottom indent title">{{ page.title }}</h1>
       {% endif %}
-    </core-toolbar>
+    </paper-toolbar>
+    <div class="content-wrapper">
 
 {% include browser-upgrade.html %}
 
@@ -48,7 +51,8 @@
 
 {% include scripts.html %}
 
-  </core-header-panel>
-</core-drawer-panel>
+    </div>
+  </paper-header-panel>
+</paper-drawer-panel>
 </body>
 </html>

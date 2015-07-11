@@ -12,6 +12,10 @@
   "engines": {
     "node": ">= 0.10.0"
   },
+  "scripts": {
+    "serve": "bundle exec jekyll serve",
+    "build": "bundle exec jekyll build"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-clean": "~0.5.0",

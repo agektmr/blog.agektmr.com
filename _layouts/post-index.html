@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head itemscope itemtype="http://schema.org/Article">
 {% include head.html %}
-<style shim-shadowdom-css>
+<style>
   #post-index #main {
     margin-top: 0;
     margin-bottom: 0;
@@ -15,19 +15,19 @@
 
 <body id="post-index" {% if page.image.feature %}class="feature"{% endif %} unresolved>
 
-<core-drawer-panel responsiveWidth="900px" selected="main">
-  <core-header-panel drawer>
-    <core-toolbar class="tall" style="background-image: url(/images/{{ site.owner.avatar }});">
-    </core-toolbar>
+<paper-drawer-panel responsiveWidth="900px" selected="main">
+  <paper-header-panel drawer mode="seamed">
+    <paper-toolbar class="tall side-header" style="background-image: url(/images/{{ site.owner.avatar }});">
+    </paper-toolbar>
 {% include sidebar.html %}
-  </core-header-panel>
-  <core-scroll-header-panel main condenses keepCondensedHeader>
-    <core-toolbar class="tall">
-      <core-icon-button icon="menu" core-drawer-toggle></core-icon-button>
+  </paper-header-panel>
+  <paper-scroll-header-panel main condenses keep-condensed-header>
+    <paper-toolbar class="tall main-header">
+      <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
       <h1 class="bottom indent title">{{ site.title }}</h1>
       <!-- <h2>{{ site.description }}</h2> -->
-    </core-toolbar>
-
+    </paper-toolbar>
+    <div class="content-wrapper">
 {% include browser-upgrade.html %}
 
     {{ content }}
@@ -39,8 +39,8 @@
 </div><!-- /.footer-wrapper -->
 
 {% include scripts.html %}
-
-  </core-header-panel>
-</core-drawer-panel>
+    </div>
+  </paper-header-panel>
+</paper-drawer-panel>
 </body>
 </html>

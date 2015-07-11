@@ -73,37 +73,88 @@
 <!-- iphone specific web app config -->
 <link rel="apple-touch-startup-image" href="/images/cover.jpg">
 
-<script src="/webcomponents.min.js"></script>
-<link rel="import" href="/vulcanized.html">
+<script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+<!-- will be replaced with elements/vulcanized.elements.html -->
+<link rel="import" href="/elements/elements.html">
+<!-- endreplace-->
 
 {% if page.image.background or site.background %}
 {% capture background %}{% if page.image.background %}{{ page.image.background }}{% else %}{{ site.background }}{% endif %}{% endcapture %}
 {% unless background contains 'http://' or background contains 'https://' %}{% capture background %}{{ site.url }}/images/{{ background }}{% endcapture %}{% endunless %}
 <style type="text/css">body {background-image:url({{ background }});}</style>
 {% endif %}
-<style shim-shadowdom-css>
-  #main #headerBg {
-{% if page.image.feature %}
-    background: url(/images/{{ page.image.feature }}) no-repeat 50% 50%;
-{% else %}
-    background: url(/images/{{ site.default_header_image }}) no-repeat 50% 50%;
-{% endif %}
-    background-size: cover;
+<style is="custom-style">
+  paper-header-panel {
+    background-color: #eee;
   }
-  #main #condensedHeaderBg {
-    background-color: #111;
+  paper-header-panel paper-item iron-icon {
+    margin-right: 12px;
   }
-</style>
-<style>
-  core-scroll-header-panel::shadow #headerBg {
-{% if page.image.feature %}
-    background: url(/images/{{ page.image.feature }}) no-repeat 50% 50%;
-{% else %}
-    background: url(/images/{{ site.default_header_image }}) no-repeat 50% 50%;
-{% endif %}
-    background-size: cover;
+  paper-item {
+    --paper-item: {
+      font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
+      font-weight: normal;
+    };
   }
-  core-scroll-header-panel::shadow #condensedHeaderBg {
-    background-color: #111;
+  paper-toolbar {
+    --paper-toolbar: {
+      background-color: transparent;
+      background-size: cover;
+    };
+    --paper-font-title: {
+      font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;;
+      font-size: xx-large;
+      font-weight: bolder !important;
+      color: #fff;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    };
+  }
+  .side-header {
+    --paper-font-title: {
+      margin-left: 0;
+    };
+  }
+  paper-scroll-header-panel {
+    --paper-scroll-header-panel-full-header: {
+  {% if page.image.feature %}
+      background: url(/images/{{ page.image.feature }}) no-repeat 50% 50%;
+  {% else %}
+      background: url(/images/{{ site.default_header_image }}) no-repeat 50% 50%;
+  {% endif %}
+      background-size: cover;
+    };
+    --paper-scroll-header-panel-condensed-header: {
+      background-color: #333;
+    };
+  }
+  .main-header {
+    --paper-toolbar: {
+      background-color: transparent;
+    };
+  }
+  #post .entry-content, #page .entry-content {
+    margin-top: 0;
+  }
+  #post .entry-meta, #page .entry-meta {
+    text-align: left;
+    margin: 0;
+  }
+  iron-icon[icon*="twitter"] {
+    color: #55acee;
+  }
+  iron-icon[icon*="facebook"] {
+    color: #3a5795;
+  }
+  iron-icon[icon*="gplus"] {
+    color: #dd4e42;
+  }
+  iron-icon[icon*="linkedin"] {
+    color: #1c86bd;
+  }
+  iron-icon[icon*="github"] {
+    color: #333;
   }
 </style>

@@ -1,73 +1,50 @@
-<core-menu>
+<div class="fit layout vertical">
   <paper-item>
-    <core-icon icon="home"></core-icon>
-    <a href="/">Home</a>
+    <a href="/"><iron-icon icon="home"></iron-icon><span>Home</span></a>
   </paper-item>
   <paper-item>
-    <core-icon icon="account-box"></core-icon>
-    <a href="/about/">About</a>
+    <a href="/posts/"><iron-icon icon="description"></iron-icon>Posts</a>
   </paper-item>
-  {% for link in site.data.navigation %}
-    {% if link.url contains 'http' %}
-        {% assign domain = '' %}
-        {% else %}
-        {% assign domain = site.url %}
+  <paper-item>
+    <a href="/tags/"><iron-icon icon="label"></iron-icon>Tags</a>
+  </paper-item>
+  <paper-item>
+    <a href="/about/"><iron-icon icon="account-box"></iron-icon>About</a>
+  </paper-item>
+  <paper-item>
+    <a href="http://demo.agektmr.com/"><iron-icon icon="explore"></iron-icon>Demos</a>
+  </paper-item>
+  <span class="flex"></span>
+  <div class="layout horizontal around-justified" style="margin-bottom: 12px">
+    {% if site.owner.twitter %}
+      <a href="http://twitter.com/{{ site.owner.twitter }}" target="_blank"><iron-icon icon="social:post-twitter"></iron-icon></a>
     {% endif %}
-  <paper-item>
-    <core-icon icon="explore"></core-icon>
-    <a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a>
-  </paper-item>
-  {% endfor %}
-  <core-submenu label="Posts">
-    <paper-item>
-      <core-icon icon="description"></core-icon>
-      <a href="/posts/">All Posts</a>
-    </paper-item>
-    <paper-item>
-      <core-icon icon="label"></core-icon>
-      <a href="/tags/">All Tags</a>
-    </paper-item>
-  </core-submenu>
-  <core-submenu label="Contact">
-    {% if site.owner.twitter %}<paper-item>
-      <core-icon icon="social:post-twitter"></core-icon>
-      <a href="http://twitter.com/{{ site.owner.twitter }}">Twitter</a>
-    </paper-item>{% endif %}
-    {% if site.owner.facebook %}<paper-item>
-      <core-icon icon="social:post-facebook"></core-icon>
-      <a href="http://facebook.com/{{ site.owner.facebook }}">Facebook</a>
-    </paper-item>{% endif %}
-    {% if site.owner.google_plus %}<paper-item>
-      <core-icon icon="social:post-gplus"></core-icon>
-      <a href="https://google.com/{{ site.owner.google_plus }}">Google+</a>
-    </paper-item>{% endif %}
-    {% if site.owner.linkedin %}<paper-item>
-      <core-icon icon="social:post-linkedin"></core-icon>
-      <a href="http://linkedin.com/in/{{ site.owner.linkedin }}">LinkedIn</a>
-    </paper-item>{% endif %}
-    {% if site.owner.github %}<paper-item>
-      <core-icon icon="social:post-github"></core-icon>
-      <a href="http://github.com/{{ site.owner.github }}">GitHub</a>
-    </paper-item>{% endif %}
-    {% if site.owner.stackexchange %}<paper-item>
-      <core-icon icon="social:whatshot"></core-icon>
-      <a href="{{ site.owner.stackexchange }}">Stackexchange</a>
-    </paper-item>{% endif %}
-    {% if site.owner.instagram %}<paper-item>
-      <core-icon icon="social:post-instagram"></core-icon>
-      <a href="http://instagram.com/{{ site.owner.instagram }}">Instagram</a>
-    </paper-item>{% endif %}
-    {% if site.owner.flickr %}<paper-item>
-      <core-icon icon="social:flickr"></core-icon>
-      <a href="http://www.flickr.com/photos/{{ site.owner.flickr }}">Flickr</a>
-    </paper-item>{% endif %}
-    {% if site.owner.tumblr %}<paper-item>
-      <core-icon icon="social:post-tumblr"></core-icon>
-      <a href="http://{{ site.owner.tumblr }}.tumblr.com">Tumblr</a>
-    </paper-item>{% endif %}
-    {% if site.owner.email %}<paper-item>
-      <core-icon icon="communication:email"></core-icon>
-      <a href="mailto:{{ site.owner.email }}">Email</a>
-    </paper-item>{% endif %}
-  </core-submenu>
-</core-menu>
+    {% if site.owner.facebook %}
+      <a href="http://facebook.com/{{ site.owner.facebook }}" target="_blank"><iron-icon icon="social:post-facebook"></iron-icon></a>
+    {% endif %}
+    {% if site.owner.google_plus %}
+      <a href="https://google.com/{{ site.owner.google_plus }}" target="_blank"><iron-icon icon="social:post-gplus"></iron-icon></a>
+    {% endif %}
+    {% if site.owner.linkedin %}
+      <a href="http://linkedin.com/in/{{ site.owner.linkedin }}" target="_blank"><iron-icon icon="social:post-linkedin"></iron-icon></a>
+    {% endif %}
+    {% if site.owner.github %}
+      <a href="http://github.com/{{ site.owner.github }}" target="_blank"><iron-icon icon="social:post-github"></iron-icon></a>
+    {% endif %}
+    {% if site.owner.stackexchange %}
+      <a href="{{ site.owner.stackexchange }}" target="_blank"><iron-icon icon="social:whatshot"></iron-icon></a>
+    {% endif %}
+    {% if site.owner.instagram %}
+      <a href="http://instagram.com/{{ site.owner.instagram }}" target="_blank"><iron-icon icon="social:post-instagram"></iron-icon></a>
+    {% endif %}
+    {% if site.owner.flickr %}
+      <a href="http://www.flickr.com/photos/{{ site.owner.flickr }}" target="_blank"><iron-icon icon="social:flickr"></iron-icon></a>
+    {% endif %}
+    {% if site.owner.tumblr %}
+      <a href="http://{{ site.owner.tumblr }}.tumblr.com" target="_blank"><iron-icon icon="social:post-tumblr"></iron-icon></a>
+    {% endif %}
+    {% if site.owner.email %}
+      <a href="mailto:{{ site.owner.email }}" target="_blank"><iron-icon icon="communication:email"></iron-icon></a>
+    {% endif %}
+  </div>
+</div>

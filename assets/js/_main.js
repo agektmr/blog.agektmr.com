@@ -47,8 +47,3 @@ $(document).ready(function() {
     mainClass: 'mfp-fade'
   });
 });
-
-document.querySelector('#drawer_toggle').addEventListener('click', function() {
-  var cdp = document.querySelector('core-drawer-panel');
-  cdp.narrow = !cdp.narrow;
-});
