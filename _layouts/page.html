@@ -9,14 +9,14 @@
 
 <body id="page" {% if page.image.feature %}class="feature"{% endif %}>
 
-<paper-drawer-panel responsiveWidth="900px" selected="main">
+<paper-drawer-panel responsive-width="900px" selected="main">
   <paper-header-panel drawer>
-    <paper-toolbar class="tall side-header" style="background-image: url(/images/{{ site.owner.avatar }});">
+    <paper-toolbar class="tall side-header">
       <h1 class="bottom title">{{ site.title }}</h1>
     </paper-toolbar>
 {% include sidebar.html %}
   </paper-header-panel>
-  <paper-scroll-header-panel main condenses keepCondensedHeader>
+  <paper-scroll-header-panel main condenses keep-condensed-header>
     <paper-toolbar class="tall main-header">
       <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
       {% if page.link %}
