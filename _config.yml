@@ -21,6 +21,11 @@ owner:
   # google plus id, include the '+', eg +mmistakes
   google_plus:    +agektmr
 
+plugins_dir:  ./_plugins
+layouts_dir:  ./_layouts
+data_dir:     ./_data
+includes_dir: ./_includes
+
 # Analytics and webmaster tools stuff goes here
 google_analytics:   'UA-5145106-3'
 google_verify:
@@ -62,6 +67,9 @@ kramdown:
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+
+languages: ["ja", "en"]
+exclude_from_localizations: ["bower_components", "elements", "images"]
 
 defaults:
   -
