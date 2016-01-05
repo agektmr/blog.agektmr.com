@@ -41,6 +41,7 @@ future:      true
 highlighter: pygments
 gems:
   - jekyll-sitemap
+  - jekyll-redirect-from
 sass:
   sass_dir: _sass
   style: compressed
