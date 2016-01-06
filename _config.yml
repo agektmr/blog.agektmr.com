@@ -28,7 +28,6 @@ google_verify:
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:       Asia/Tokyo
 future:         true
-highlighter:    pygments
 
 # Amount of posts to show on home page
 paginate: 5
@@ -38,7 +37,6 @@ words_per_minute: 200
 excerpt_separator: "<!-- excerpt -->"
 
 future:      true
-highlighter: pygments
 gems:
   - jekyll-sitemap
 sass:
@@ -51,6 +49,7 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   use_coderay: true
+  input: GFM
 
   coderay:
     coderay_line_numbers: nil
