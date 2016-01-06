@@ -1,4 +1,4 @@
----           
+---
 layout: post
 title: jsdocをbootstrapできれいに生成する
 date: 2014-02-12 00:20:28 UTC
@@ -10,31 +10,31 @@ tags:
 - docstrap
 categories: Bootstrap docstrap Grunt JSDoc
 ---
-検索してもあまり日本語の情報が出てこなかったのでメモを残しておきます。  
+検索してもあまり日本語の情報が出てこなかったのでメモを残しておきます。
 <!-- excerpt -->
 
 ## JSDoc
 
 
-[JSDoc](http://usejsdoc.org/) は言うまでもないですが、JavaScript のソースコードに残したコメントから自動的にリファレンスドキュメントを生成してくれるコマンドラインツール。例えばこんな感じでソースにコメントを書いておくと  
-  
-{% highlight javascript %}
-/**  
- * Resolve url from `srcset` syntax http://www.w3.org/html/wg/drafts/srcset/w3c-srcset/  
- * @param  {string}           src    Default URL  
- * @param  {string}           srcset `srcset` argument  
- * @param  {number|undefined} dpr    Device pixel ratio  
- * @param  {number|undefined} width  Viewport width  
- * @return {string} Parsed and resolved URL  
- * @private  
- */  
-var resolveSrcset = function(src, srcset, dpr, width) {  
-  if (srcset === null) return src;  
-  ...  
+[JSDoc](http://usejsdoc.org/) は言うまでもないですが、JavaScript のソースコードに残したコメントから自動的にリファレンスドキュメントを生成してくれるコマンドラインツール。例えばこんな感じでソースにコメントを書いておくと
+
+```javascript
+/**
+ * Resolve url from `srcset` syntax http://www.w3.org/html/wg/drafts/srcset/w3c-srcset/
+ * @param  {string}           src    Default URL
+ * @param  {string}           srcset `srcset` argument
+ * @param  {number|undefined} dpr    Device pixel ratio
+ * @param  {number|undefined} width  Viewport width
+ * @return {string} Parsed and resolved URL
+ * @private
+ */
+var resolveSrcset = function(src, srcset, dpr, width) {
+  if (srcset === null) return src;
+  ...
 };
-{% endhighlight %}
-  
-下記のような HTML を出力してくれます。  
+```
+
+下記のような HTML を出力してくれます。
 
 [![](http://3.bp.blogspot.com/-N-nAFShmP-o/UvolyYAO2dI/AAAAAAAAoPc/dSMZZwt47bE/s1600/Screen+Shot+2014-02-11+at+22.27.48.png)](http://3.bp.blogspot.com/-N-nAFShmP-o/UvolyYAO2dI/AAAAAAAAoPc/dSMZZwt47bE/s1600/Screen+Shot+2014-02-11+at+22.27.48.png)
 
@@ -66,56 +66,56 @@ var resolveSrcset = function(src, srcset, dpr, width) {
 
 まずは Gruntfile.js の記述ですが
 
-{% highlight javascript %}
-jsdoc: {  
-  dist: {  
-    src: ['src/*.js', 'README.md'], // JSDoc化したいソースコードへのパス  
-    options: {  
-      destination: 'doc', // 出力先パス  
-      configure: 'jsdoc-config.json' // docstrapの設定ファイル  
-    }  
-  }  
-}  
-...  
-grunt.loadNpmTasks('grunt-jsdoc');  
-{% endhighlight %}
-
-こんな感じにします (Grunt の作法が分からない方は、まずはその辺りを先に修得する必要があります) 。ポイントは `configure: 'jsdoc-config.json'` の部分で、別のファイルに詳細を記述する必要があります。これは grunt-jsdoc の設定自体は Gruntfile.js に記述できるのですが、[docstrap](https://github.com/terryweiss/docstrap) の設定は別ファイルにせざるを得ないためです。  
-  
-ここでは、jsdoc-config.json というファイルを指定しているので、そういう名前のファイルを作りましょう。中身はこんな感じ。  
-  
-{% highlight javascript %}
-{  
-  "plugins": [  
-    "plugins/markdown" // Markdownプラグインを入れるとコメントがMarkdownで書けます！  
-  ],  
-  "templates" : {  
-    "cleverLinks"     : false,  
-    "monospaceLinks"  : false,  
-    "default"         : {  
-      "outputSourceFiles" : true  
-    },  
-    "systemName"      : "PortableCache",  
-    "footer"          : "",  
-    "copyright"       : "Developed by Eiji Kitamura",  
-    "navType"         : "vertical",  
-    "theme"           : "united", // bootswatch.comのデザイン名を小文字で指定  
-    "linenums"        : true,  
-    "collapseSymbols" : false,  
-    "inverseNav"      : true  
-  },  
-  "markdown"  : {  
-    "parser"   : "gfm",  
-    "hardwrap" : true  
-  },  
-  "opts": {  
-    // ここがポイント  
-    "template": "node_modules/grunt-jsdoc/node_modules/ink-docstrap/template"  
-  }  
+```javascript
+jsdoc: {
+  dist: {
+    src: ['src/*.js', 'README.md'], // JSDoc化したいソースコードへのパス
+    options: {
+      destination: 'doc', // 出力先パス
+      configure: 'jsdoc-config.json' // docstrapの設定ファイル
+    }
+  }
 }
-{% endhighlight %}
-  
-ポイントは `opts.template` の部分で、これをそのまま記述する必要があります。そして、`templates.theme` に [bootswatch.com](http://bootswatch.com/) で気に入ったデザインの名前を小文字で入力。後はタスクを走らせれば OK。のはず。  
+...
+grunt.loadNpmTasks('grunt-jsdoc');
+```
+
+こんな感じにします (Grunt の作法が分からない方は、まずはその辺りを先に修得する必要があります) 。ポイントは `configure: 'jsdoc-config.json'` の部分で、別のファイルに詳細を記述する必要があります。これは grunt-jsdoc の設定自体は Gruntfile.js に記述できるのですが、[docstrap](https://github.com/terryweiss/docstrap) の設定は別ファイルにせざるを得ないためです。
+
+ここでは、jsdoc-config.json というファイルを指定しているので、そういう名前のファイルを作りましょう。中身はこんな感じ。
+
+```javascript
+{
+  "plugins": [
+    "plugins/markdown" // Markdownプラグインを入れるとコメントがMarkdownで書けます！
+  ],
+  "templates" : {
+    "cleverLinks"     : false,
+    "monospaceLinks"  : false,
+    "default"         : {
+      "outputSourceFiles" : true
+    },
+    "systemName"      : "PortableCache",
+    "footer"          : "",
+    "copyright"       : "Developed by Eiji Kitamura",
+    "navType"         : "vertical",
+    "theme"           : "united", // bootswatch.comのデザイン名を小文字で指定
+    "linenums"        : true,
+    "collapseSymbols" : false,
+    "inverseNav"      : true
+  },
+  "markdown"  : {
+    "parser"   : "gfm",
+    "hardwrap" : true
+  },
+  "opts": {
+    // ここがポイント
+    "template": "node_modules/grunt-jsdoc/node_modules/ink-docstrap/template"
+  }
+}
+```
+
+ポイントは `opts.template` の部分で、これをそのまま記述する必要があります。そして、`templates.theme` に [bootswatch.com](http://bootswatch.com/) で気に入ったデザインの名前を小文字で入力。後はタスクを走らせれば OK。のはず。
 
 ## おまけ
 実は JSDoc は README.md などの markdown で書かれたファイルをトップページに組み込むことができます。使い方は、上記の通り変換するソースの一覧に加えるだけ。  

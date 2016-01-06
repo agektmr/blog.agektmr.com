@@ -13,63 +13,64 @@ blogger_orig_url: http://blog.agektmr.com/2014/10/template-web-components.html
 ---
 
 *この記事は [webcomponents.org の記事](http://webcomponents.org/articles/introduction-to-template-element/)とのクロスポストです。*
-  
-先日 Web Components を構成する技術のひとつである Templates に関するビデオを公開しましたので、解説したいと思います。  
+
+先日 Web Components を構成する技術のひとつである Templates に関するビデオを公開しましたので、解説したいと思います。
 
 <!-- excerpt -->
 
 <div class="video-wrap">
   <iframe src="//www.youtube.com/embed/qC5xK6H0GlQ"></iframe>
 </div>
-  
+
 ## なぜ今 Templates なのか
-我々開発者にとってテンプレートを使うメリットは、デザイナーとの分業を容易にできる、という点にあります。  
-  
-ウェブサイトを構築する際に利用されるテンプレートというと、以前は PHP や Python の Django, Ruby on Rails をはじめとするサーバー側での実装が主流でした。それがここ数年、ブラウザ側で処理するテンプレート技術が登場し、人気となってきています。   
-  
-これは HTML5 などオープンウェブ技術の発展により、全体的なアーキテクチャが変わりつつあるためです。サーバーはコンピューターがデータを処理するもの、クライアント側はユーザーがデータを加工するもの、といった分担がより進んでおり、サーバー側で完結していた MVC (Model, View, Controller) がクライアント側とまたがり、より明確な役割を担うべく変遷をしている時期である、と言えるかもしれません。  
-  
-それに伴い、クライアント側でも MVC のような構成が必要だという機運が高まり、ここ最近は特に AngularJS や Backbone.js, Ember.js といったフレームワークがよく使われるようになってきました。テンプレートを活用できるフレームを利用することで、HTML や CSS といった見た目を担当するデザイナーが、命令的手法 (imparative) より比較的容易な宣言的手法 (declarative) のみに集中してプログラムを記述することでき、チームとしての生産性の向上が期待できます。  
-  
-ブラウザ側のテンプレートエンジンといえば [Mustache.js](http://mustache.github.io/), [Handlebar.js](http://handlebarsjs.com/), [AngularJS](https://angularjs.org/), [Backbone.js](http://backbonejs.org/) など、JavaScript で実現するものが人気を博していますが、こういったソリューションにはいくつか解決すべき課題もあります。   
+我々開発者にとってテンプレートを使うメリットは、デザイナーとの分業を容易にできる、という点にあります。
+
+ウェブサイトを構築する際に利用されるテンプレートというと、以前は PHP や Python の Django, Ruby on Rails をはじめとするサーバー側での実装が主流でした。それがここ数年、ブラウザ側で処理するテンプレート技術が登場し、人気となってきています。
+
+これは HTML5 などオープンウェブ技術の発展により、全体的なアーキテクチャが変わりつつあるためです。サーバーはコンピューターがデータを処理するもの、クライアント側はユーザーがデータを加工するもの、といった分担がより進んでおり、サーバー側で完結していた MVC (Model, View, Controller) がクライアント側とまたがり、より明確な役割を担うべく変遷をしている時期である、と言えるかもしれません。
+
+それに伴い、クライアント側でも MVC のような構成が必要だという機運が高まり、ここ最近は特に AngularJS や Backbone.js, Ember.js といったフレームワークがよく使われるようになってきました。テンプレートを活用できるフレームを利用することで、HTML や CSS といった見た目を担当するデザイナーが、命令的手法 (imparative) より比較的容易な宣言的手法 (declarative) のみに集中してプログラムを記述することでき、チームとしての生産性の向上が期待できます。
+
+ブラウザ側のテンプレートエンジンといえば [Mustache.js](http://mustache.github.io/), [Handlebar.js](http://handlebarsjs.com/), [AngularJS](https://angularjs.org/), [Backbone.js](http://backbonejs.org/) など、JavaScript で実現するものが人気を博していますが、こういったソリューションにはいくつか解決すべき課題もあります。
 
 ### div タグを使ったアプローチ
-`div` タグを `display:none;` として表示されないようにしたものにテンプレートを埋め込み、表示する際にコピーして利用します。このアプローチでは、まだ利用されていない画像などのリソースでもサーバーに取りに行ってしまうため、パフォーマンスが犠牲になるという欠点があります。  
+`div` タグを `display:none;` として表示されないようにしたものにテンプレートを埋め込み、表示する際にコピーして利用します。このアプローチでは、まだ利用されていない画像などのリソースでもサーバーに取りに行ってしまうため、パフォーマンスが犠牲になるという欠点があります。
 
-{% highlight html %}
+```html
 <div style="display:none;">
   <div>
     <h1>Web Components</h1>
     <img src="http://webcomponents.org/img/logo.svg">
   </div>
 </div>
-{% endhighlight %}
+```
 
 ### script タグを使ったアプローチ
-`script` タグに `type="text/javascript"` 以外の属性を付与してテンプレートを埋め込み、表示する際にコピーして利用します。このアプローチでは、`.innerHTML` を使う必要があるため、セキュリティ上のリスクが伴うという欠点があります。  
+`script` タグに `type="text/javascript"` 以外の属性を付与してテンプレートを埋め込み、表示する際にコピーして利用します。このアプローチでは、`.innerHTML` を使う必要があるため、セキュリティ上のリスクが伴うという欠点があります。
 
-{% highlight html %}
+```html
 <script type="text/template">
   <div>
     <h1>Web Components</h1>
     <img src="http://webcomponents.org/img/logo.svg">
   </div>
 </script>
-{% endhighlight %}
+```
 
 そこで登場したのが、&lt;template&gt; 要素です。   
-&lt;template&gt; は Web Components の一翼を担うウェブ標準候補技術で、「自律的に処理されない HTML」をドキュメントに埋め込むことができます。   
-  
-「自律的に処理されない HTML」とは、下記のような特徴を持ったものです。   
+&lt;template&gt; は Web Components の一翼を担うウェブ標準候補技術で、「自律的に処理されない HTML」をドキュメントに埋め込むことができます。
+
+「自律的に処理されない HTML」とは、下記のような特徴を持ったものです。
 
 * `script` タグが含まれても、実際に利用されるまでスクリプトを実行しない
 * `img` や `video` といったリソースが含まれても、実際に利用されるまでサーバーにリソースを取りに行かない
 
 ## Templates の使い方
-テンプレートを宣言するには、利用したいテンプレートの HTML を `&lt;template&gt;` タグで囲んでください。実際に利用するには、JavaScript を使う必要があります。   
-  
-HTML  
-{% highlight html %}
+テンプレートを宣言するには、利用したいテンプレートの HTML を `&lt;template&gt;` タグで囲んでください。実際に利用するには、JavaScript を使う必要があります。
+
+HTML
+
+```html
 <template id="template">
   <style>
     ...
@@ -78,10 +79,11 @@ HTML
     <img src="http://webcomponents.org/img/logo.svg">
   </div>
 </template>
-{% endhighlight %}
-  
-JavaScript  
-{% highlight html %}
+```
+
+JavaScript
+
+```html
 <script>
   var template = document.querySelector('#template');
   var clone = document.importNode(template.content, true);
@@ -89,43 +91,46 @@ JavaScript
   host.appendChild(clone);
 </script>
 <div id="host"></div>
-{% endhighlight %}
-  
-実際のコードは[こちら](http://jsbin.com/qaxiw/6/edit)でご覧頂けます。  
-  
-クエリーした `template` ノードは `document.importNode()` を使ってクローンします。2 つめの引数に`true` を指定することで再帰的にノードの中身もクローンされます。これを別のノードに `appendChild()` して、はじめて template に命が吹き込まれます。つまり   
+```
+
+実際のコードは[こちら](http://jsbin.com/qaxiw/6/edit)でご覧頂けます。
+
+クエリーした `template` ノードは `document.importNode()` を使ってクローンします。2 つめの引数に`true` を指定することで再帰的にノードの中身もクローンされます。これを別のノードに `appendChild()` して、はじめて template に命が吹き込まれます。つまり
 
 * テンプレートに `script` タグがある場合、append されてから実行される
 * テンプレートに画像などのリソースがある場合、append されてから読み込みが始まる
 * テンプレートに `style` タグがある場合、append されてから有効になる
 
 ## 注意
-ひとつ注意点があります。既存のテンプレートエンジンを使われたことのある方や、既に Polymer をすでにいじっている方であれば、どうやって   
-  
-**プレースホルダーを使って変数を埋め込む**  
-{% highlight html %}
+ひとつ注意点があります。既存のテンプレートエンジンを使われたことのある方や、既に Polymer をすでにいじっている方であれば、どうやって
+
+**プレースホルダーを使って変数を埋め込む**
+
+```html
 <template bind="{{items}}"></template>
-{% endhighlight %}
+```
 
-**繰り返しを表現する**  
-{% highlight html %}
+**繰り返しを表現する**
+
+```html
 <template repeat="{{item in items}}"></template>
-{% endhighlight %}
+```
 
-**条件分岐をする**  
-{% highlight html %}
+**条件分岐をする**
+
+```html
 <template if="{{item.active}}"></template>
-{% endhighlight %}
-  
-と思われるかもしれません。しかしこれはデータバインディングといって、テンプレートとは区別される別の機能です。そういった機能を自分で実装することなくテンプレートで利用したい場合は、[Polymer](http://www.polymer-project.org/)([TemplateBinding](https://github.com/Polymer/TemplateBinding)) や [x-tags](http://www.x-tags.org/) といったフレームワークを利用することをおすすめします。   
+```
+
+と思われるかもしれません。しかしこれはデータバインディングといって、テンプレートとは区別される別の機能です。そういった機能を自分で実装することなくテンプレートで利用したい場合は、[Polymer](http://www.polymer-project.org/)([TemplateBinding](https://github.com/Polymer/TemplateBinding)) や [x-tags](http://www.x-tags.org/) といったフレームワークを利用することをおすすめします。
 
 ## ブラウザサポート状況
-&lt;template&gt; 要素は 2014 年 10 月現在 Chrome, Opera, Safari, Firefox でサポートされています。サポート対象としたいブラウザで利用可能かどうか知りたい場合は、chromestatus.com をご覧下さい。Internet Explorer のような未対応ブラウザで &lt;template&gt; 要素を利用するには [platform.js](https://github.com/polymer/platform) という Polyfill があります。   
+&lt;template&gt; 要素は 2014 年 10 月現在 Chrome, Opera, Safari, Firefox でサポートされています。サポート対象としたいブラウザで利用可能かどうか知りたい場合は、chromestatus.com をご覧下さい。Internet Explorer のような未対応ブラウザで &lt;template&gt; 要素を利用するには [platform.js](https://github.com/polymer/platform) という Polyfill があります。
 
 ## まとめ
-いかがでしたでしょうか？Templates は主に Web Components の概念を実現することを視野に考えられた仕様ではありますが、それ以外の利用法もありそうです。ぜひ Templates を活用して、素敵な Web Components を作ってみてください。また、何かユニークな活用法があれば、教えて下さい。   
-  
-Templates についてより詳しく知りたいという方は、下記のドキュメントが参考になると思います。   
+いかがでしたでしょうか？Templates は主に Web Components の概念を実現することを視野に考えられた仕様ではありますが、それ以外の利用法もありそうです。ぜひ Templates を活用して、素敵な Web Components を作ってみてください。また、何かユニークな活用法があれば、教えて下さい。
+
+Templates についてより詳しく知りたいという方は、下記のドキュメントが参考になると思います。
 
 * [HTML で利用可能になった Template タグ - HTML5Rocks](http://goo.gl/JEIWir)
 * [WhatWG HTML Templates 仕様](http://www.whatwg.org/specs/web-apps/current-work/multipage/scripting-1.html#the-template-element)
