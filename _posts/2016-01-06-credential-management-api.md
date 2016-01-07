@@ -50,7 +50,8 @@ An argument object provides options for the credential to obtain:
 For `providers` array, you can assign arbitrary strings as long as you can determine which identity provider that means. `protocols` isn't implemented yet.
 
 ### Example:
-{% highlight js %}
+
+```js
 navigator.credentials.get({
   password: true, // Obtain password credentials or not
   federated: {    // Obtain federation credentials or not
@@ -61,7 +62,7 @@ navigator.credentials.get({
   },
   suppressUI: false // true if auto sign-in (learn "mediation")
 }).then(onCredentialGet);
-{% endhighlight %}
+```
 
 The resolving function will receive a credential object which includes:
 
@@ -82,7 +83,8 @@ Depending on the type of the credential object, it also includes
 
 
 ### Example:
-{% highlight js %}
+
+```js
 var onCredentialGet = function(cred) {
   if (cred.type == 'password') {
     // `POST` the credential object as HTTP body.
@@ -100,7 +102,7 @@ var onCredentialGet = function(cred) {
     });
   }
 };
-{% endhighlight %}
+```
 
 * Note that raw passwords are unretrievable through JavaScript.
 
@@ -124,7 +126,8 @@ Depending on the type of the credential object, they additionally includes:
 * `password`: The password for the account
 
 #### Example:
-{% highlight js %}
+
+```js
 // If password
 var cred = new PasswordCredential({
   id: id,
@@ -132,7 +135,7 @@ var cred = new PasswordCredential({
   iconURL: iconUrl
 });
 navigator.credentials.store(cred);
-{% endhighlight %}
+```
 
 ### Federated credential:
 
@@ -141,7 +144,8 @@ navigator.credentials.store(cred);
 
 
 #### Example:
-{% highlight js %}
+
+```js
 // If federation
 var cred = new FederatedCredential({
   id: id,
@@ -149,15 +153,16 @@ var cred = new FederatedCredential({
   iconURL: iconUrl
 });
 navigator.credentials.store(cred);
-{% endhighlight %}
+```
 
 ## navigator.credentials.requireUserMediation()
 This function turns on user's mediation status. Read on for more details on "mediation".
 
 ### Example:
-{% highlight js %}
+
+```js
 navigator.credentials.requireUserMediation();
-{% endhighlight %}
+```
 
 # Integrating the feature in your site
 The main benefit of using Credential Management API is auto sign-in. You can let users sign-in without any explicit action.
@@ -197,7 +202,7 @@ Things got a bit complex, but in summary, here's how it should work:
 ## automatic sign-in
 Upon user landing, try automatic sign-in.
 
-{% highlight js %}
+```js
 if (navigator.credentials) {
   // Obtain credential information
   // Account chooser appears if multiple accounts are stored
@@ -243,12 +248,12 @@ if (navigator.credentials) {
 }
 // credential management api is not available.
 renderSignInButton();
-{% endhighlight %}
+```
 
 ## Explicit sign-in
 Upon user pressing sign-in button, try explicit sign-in. Notice most of the code is identical to automatic sign-in.
 
-{% highlight js %}
+```js
 var autoSignIn = function() {
 if (navigator.credentials) {
   navigator.credentials.get({
@@ -292,10 +297,11 @@ if (navigator.credentials) {
   });
 }
 renderSignInForm();
-{% endhighlight %}
+```
 
 ## Store credentials
-{% highlight js %}
+
+```js
 // Upon successful user sign-in or sign-up...
 // On password credential
 var cred = new PasswordCredential({
@@ -315,16 +321,17 @@ var cred = new FederatedCredential({
 navigator.credentials.store(cred).then(function() {
   // storing credential is done.
 });
-{% endhighlight %}
+```
 
 ## Use Mediation
-{% highlight js %}
+
+```js
 // ** After Sign out **
 // Following code prevents automatic sign-in regardless of session.
 // Next time the user comes back, navigator.credentials.get() with
 // suppressUI: true will be silently ignored.
 navigator.credentials.requireUserMediation();
-{% endhighlight %}
+```
 
 # Feedback requested
 Chrome team is working hard to make this API useful yet secure and convenient. If you have any feedback, concerns or opinions, please do let us know.
