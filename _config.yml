@@ -2,7 +2,7 @@ url:              https://blog.agektmr.com
 name:             'Tender Surrender'
 title:            'Tender Surrender'
 description:      '未来の Web を夢見るブログ'
-markdown:         kramdown
+markdown:         redcarpet
 highlighter:      pygments
 port:             8000
 default_header_image: cover.jpg
@@ -57,6 +57,9 @@ kramdown:
     coderay_tab_width: 4
     coderay_bold_every: 10
     coderay_css: class
+
+redcarpet:
+  extensions: ["fenced_code_blocks"]
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
