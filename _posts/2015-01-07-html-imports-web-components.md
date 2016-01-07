@@ -27,17 +27,19 @@ image:
 HTML にまとまったリソースをロードするには、`link` タグの `rel` 属性に `import`、`href` 属性にロードしたいリソースの URL を指定して、追加します。例えば index.html という HTML から component.html という HTML を読み込みたい場合、このように記述します：
 
 index.html
-{% highlight html %}
+
+```html
 <link rel="import" href="component.html" >
-{% endhighlight %}
+```
 
 インポートされる HTML には、通常の HTML と同様、JavaScript や CSS、Web Font など、どんなリソースでも記述することができます：
 
 component.html
-{% highlight html %}
+
+```html
 <link rel="stylesheet" href="css/style.css">
 <script src="js/script.js"></script>
-{% endhighlight %}
+```
 
 `doctype` や `html`、`head`、`body` は不要です。インポートされたドキュメントに記述された HTML は、ロードと同時に読み込まれ、そこからリンクされたサブリソースに JavaScript があれば、即座に実行されます。
 
@@ -47,17 +49,19 @@ component.html
 HTML Imports は読み込みの際、script タグにおける defer と同様に振る舞います。例えば下記のコードでは、index.html は component.html を読み込む際、component.html 内の script を含むすべてを実行してから次の script を実行します。  
 
 index.html
-{% highlight html %}
+
+```html
 <link rel="import" href="component.html"> // 1.
 <title>Import Example</title>
 <script src="script3.js"></script>        // 4.
-{% endhighlight %}
+```
 
 component.html
-{% highlight html %}
+
+```html
 <script src="js/script1.js"></script>     // 2.
 <script src="js/script2.js"></script>     // 3.
-{% endhighlight %}
+```
 
 
 1. index.html 最初の行の component.html を読み込み、component.html の処理を待つ
@@ -83,33 +87,36 @@ JavaScript を使ってドキュメントからドキュメントに HTML を移
 index.html から component.html の `document` を取得するには、`link` タグの `import` プロパティを参照します。
 
 index.html
-{% highlight js %}
+
+```js
 var link = document.querySelector('link[rel="import"]');
 link.addEventListener('load', function(e) {
   var importedDoc = link.import; // component.html の document
 });
-{% endhighlight %}
+```
 
   component.html の JavaScript で component.html の `document` を取得したい場合は、`document.currentScript.ownerDocument` を参照します。
 
 component.html
-{% highlight js %}
+
+```js
 var mainDoc = document.currentScript.ownerDocument;
 // mainDoc は component.html の document を指す
-{% endhighlight %}
+```
 
 webcomponents.js (platform.js から名称変更) を利用している場合は、`document.currentScript` の代わりに `document._currentScript` を利用して下さい。
 
 component.html
-{% highlight js %}
+
+```js
 var mainDoc = document._currentScript.ownerDocument;
-{% endhighlight %}
+```
 
 JS の最初の方に下記のようなコードを入れておくと、`document._currentScript` から透過的に扱うことができます。
 
-{% highlight js %}
+```js
 document._currentScript = document._currentScript || document.currentScript;
-{% endhighlight %}
+```
 
 ## HTML Imports を使った場合のパフォーマンス
 これまで述べたように、HTML imports の利点はコンポーネントを整理できることですが、これは逆に、ロードするリソースの数を増やすことにも繋がります。ここでおのずと、幾つか懸念が生まれてくるはずです。
@@ -120,45 +127,52 @@ document._currentScript = document._currentScript || document.currentScript;
 実は、インポートされた HTML から直接 `script` タグで jQuery のリソースをロードしてしまうと、2 度のネットワークリクエストに加え、スクリプト自体も 2 度実行されることになってしまいます。
 
 index.html
-{% highlight html %}
+
+```html
 <link rel="import" href="component1.html">
 <link rel="import" href="component2.html">
-{% endhighlight %}
+```
 
 component1.html
-{% highlight html %}
+
+```html
 <script src="js/jquery.js"></script>
-{% endhighlight %}
+```
 
 component2.html
-{% highlight html %}
+
+```html
 <script src="js/jquery.js></script>
-{% endhighlight %}
+```
 
 URL を管理して複数読み込まれないようにすることは不可能ではありませんが、そんなコードを書くのは面倒ですよね。HTML Imports を使えば、そこを自動的に解決してくれます。
 
 HTML Imports は `script` タグと異なり、複数の同じリソースの読み込みは自動的に省略され、実行も一度に制限されます。例えば上記の jQuery を読み込む例では、直接 jQuery のリソースを呼び出すのではなく、`script` タグを記述した HTML でラップすることにより、読み込みと実行を一度だけに抑制することができます。
 
 index.html
-{% highlight html %}
+
+```html
 <link rel="import" href="component1.html">
 <link rel="import" href="component2.html">
-{% endhighlight %}
+```
 
 component1.html
-{% highlight html %}
+
+```html
 <link rel="import" href="jquery.html">
-{% endhighlight %}
+```
 
 component2.html
-{% highlight html %}
+
+```html
 <link rel="import" href="jquery.html">
-{% endhighlight %}
+```
 
 jquery.html
-{% highlight html %}
+
+```html
 <script src="js/jquery.js"></script>
-{% endhighlight %}
+```
 
 こうすれば、js/jquery.js の読み込みと実行は一度だけとなります。
 
@@ -173,9 +187,9 @@ vulcanize はネットワークリクエストを減らすため、複数の HTM
 
 上記のサンプルコードで index.html から始まる依存関係を解決する場合：
 
-{% highlight js %}
+```js
 $ vulcanize -o vulcanized.html index.html
-{% endhighlight %}
+```
 
 上記をコマンドライン上で実行することで、依存関係を解決し、リソースを集約した vulcanized.html という HTML を生成してくれます。
 
@@ -189,7 +203,8 @@ Template  では宣言的に要素の中身を定義することができるよ
 これらと HTML Imports を組み合わせることにより、タグひとつ追加するだけで、カスタムコンポーネントをあなたのウェブページで使えるようにすることも可能です。
 
 x-component.html
-{% highlight html %}
+
+```html
 <template id="template">
   <style>
     ...
@@ -215,10 +230,11 @@ var XComponent = document.registerElement('x-component', {
   })
 });
 </script>
-{% endhighlight %}
+```
 
 index.html
-{% highlight html %}
+
+```html
   ...
   <link rel="import" href="x-component.html">
 </head>
@@ -227,7 +243,7 @@ index.html
   <h1>This is Custom Element</h1>
 </x-component>
 ...
-{% endhighlight %}
+```
 
 インポートされる HTML (x-component.html) の document が、インポート元である index.html のそれを指してくれているおかげで、特にひねったことをしなくてもうまく動作してくれるはずです。  
 
