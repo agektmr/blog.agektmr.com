@@ -45,15 +45,16 @@
           {% endif %}
         </div><!-- /.entry-meta -->
         {{ content }}
+        <footer class="entry-meta">
+          <hr></hr>
+          <span class="entry-tags">{% for tag in page.tags %}<a href="/tags/#{{ tag }}" title="Pages tagged {{ tag }}" class="tag">{{ tag }}</a>{% unless forloop.last %}{% endunless %}{% endfor %}</span>
+          <span><a href="{{ page.url }}" rel="bookmark" title="{{ page.title }}">{{ page.title }}</a> was published on <span class="entry-date date published updated"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></span></span>
+          {% if page.modified %}(revised: <span class="entry-date date modified"><time datetime="{{ page.modified }}">{{ page.modified | date: "%m/%d/%Y" }}</time></span>){% endif %}
+          <span class="author vcard"><span class="fn"><a href="/about/" title="About {{ site.owner.name }}">{{ site.owner.name }}</a></span></span>
+        </footer>
       </div>
     </article>
 
-    <footer class="entry-meta">
-      <span class="entry-tags">{% for tag in page.tags %}<a href="/tags/#{{ tag }}" title="Pages tagged {{ tag }}" class="tag">{{ tag }}</a>{% unless forloop.last %}{% endunless %}{% endfor %}</span>
-      <span><a href="{{ page.url }}" rel="bookmark" title="{{ page.title }}">{{ page.title }}</a> was published on <span class="entry-date date published updated"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></span></span>
-      {% if page.modified %}(revised: <span class="entry-date date modified"><time datetime="{{ page.modified }}">{{ page.modified | date: "%m/%d/%Y" }}</time></span>){% endif %}
-      <span class="author vcard"><span class="fn"><a href="/about/" title="About {{ site.owner.name }}">{{ site.owner.name }}</a></span></span>
-    </footer>
   {% if page.comments != false %}<section id="disqus_thread"></section><!-- /#disqus_thread -->{% endif %}
   {% if site.related_posts.size %}{% include read-more.html %}{% endif %}
 

@@ -3,7 +3,6 @@ name:             'Tender Surrender'
 title:            'Tender Surrender'
 description:      '未来の Web を夢見るブログ'
 markdown:         kramdown
-highlighter:      pygments
 port:             8000
 default_header_image: cover.jpg
 permalink:        /:year/:month/:title.html
@@ -39,6 +38,7 @@ excerpt_separator: "<!-- excerpt -->"
 future:      true
 gems:
   - jekyll-sitemap
+  - jekyll-paginate
 sass:
   sass_dir: _sass
   style: compressed
@@ -48,8 +48,9 @@ kramdown:
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  use_coderay: true
+  enable_coderay: true
   input: GFM
+  syntax_highlighter: rouge
 
   coderay:
     coderay_line_numbers: nil
