@@ -39,6 +39,7 @@ future:      true
 gems:
   - jekyll-sitemap
   - jekyll-paginate
+  - jekyll-redirect-from
 sass:
   sass_dir: _sass
   style: compressed
@@ -64,6 +65,9 @@ redcarpet:
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+
+languages: ["ja", "en"]
+exclude_from_localizations: ["bower_components", "elements", "images"]
 
 defaults:
   -
