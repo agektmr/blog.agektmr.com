@@ -3,7 +3,7 @@ name:             'Tender Surrender'
 title:            'Tender Surrender'
 description:      '未来の Web を夢見るブログ'
 markdown:         kramdown
-port:             8000
+port:             8080
 default_header_image: cover.jpg
 permalink:        /:year/:month/:title.html
 disqus_shortname: agektmr

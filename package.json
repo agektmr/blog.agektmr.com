@@ -6,7 +6,7 @@
     "url": "git://github.com/agektmr/blog.agektmr.com.git"
   },
   "scripts": {
-    "serve": "gulp build; bundle exec jekyll serve",
+    "start": "gulp build; bundle exec jekyll serve",
     "build": "gulp build; bundle exec jekyll build"
   },
   "devDependencies": {
