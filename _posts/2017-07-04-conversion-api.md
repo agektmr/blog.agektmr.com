@@ -26,8 +26,6 @@ Payment Request API は、ウェブでの支払いを標準化しようという
 * [Payment Handler API](https://www.w3.org/TR/payment-handler/)
 * [Payment Method Identifiers](https://www.w3.org/TR/payment-method-id/)
 * [Basic Card Payment](https://www.w3.org/TR/payment-method-basic-card/)
-* [Web Payments HTTP Messages](https://www.w3.org/TR/webpayments-http-messages/)
-* [Web Payments HTTP API](https://www.w3.org/TR/webpayments-http-api/)
 
 Payment Request API には [Android 版 Chrome](https://play.google.com/store/apps/details?id=com.android.chrome) がバージョン 53 から対応していますが、他にも [Microsoft Edge](https://www.microsoft.com/windows/microsoft-edge) や [Samsung Internet Browser](https://play.google.com/store/apps/details?id=com.sec.android.app.sbrowser) といったブラウザも対応済みです。Desktop 版 Chrome でもバージョン 61 から対応予定です。
 
