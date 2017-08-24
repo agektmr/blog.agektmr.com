@@ -91,6 +91,8 @@ Payment Request API は例えば無料の配送や、少額を払ってのエク
 Payment Request API の詳しい実装方法については、[日本語のドキュメントがあります](https://developers.google.com/web/fundamentals/discovery-and-monetization/payment-request/?hl=ja)ので、そちらをご覧下さい。
 
 ## Safari は Payment Request API に対応しないの？
+**更新 (2017/08/24): [Safari Technology Preview 38 で Payment Request API のフラグが実装](https://webkit.org/blog/7877/release-notes-for-safari-technology-preview-38/)され、[status](https://webkit.org/status/) も "In Development" に変更されました。やった！！**
+
 iOS ユーザーの多い日本だと最もよく聞かれるであろう質問がこれです。Safari では独自の [Apple Pay JS](https://developer.apple.com/documentation/applepayjs) という機能があります。ひとことで言えばウェブ上で Apple Pay を使ってお金を払うことができるというものです。詳しい違いについては別の機会に譲るとして、API の構造は似ています。そこで Apple Pay JS を Payment Request API の一部かのように扱えるライブラリ [appr-wrapper](https://github.com/GoogleChrome/appr-wrapper) を公開しました。[このサイト](https://web-payment-apis.appspot.com/)から実際に試すことができますので、Safari と Chrome の両方から試してみて下さい (支払いを完了しても、実際にお金を取られることはありません)。
 
 ## まとめ
