@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 'Web Payments が避けて通れなくなる理由'
-description: 'Payment Request API を使ったウェブでの新しいお金の払い方について紹介しています。'
+title: 'Web Payments はなぜ避けて通れないものになるのか - ウェブでの新しいお金の払い方'
+description: 'かなり高い確率で、今後ウェブ上でのほとんどの支払いが Web Payments を経由したものに変わっていくと予想しています。その理由を説明します。'
 date: "2017-08-24"
 tags:
 - Payments
