@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'PWA が来ないって言っているエンジニアは今すぐ辞めろ'
+title: '結局 PWA は来るの？来ないの？'
 description: '「PWAが来るって言っているエンジニアは今すぐ辞めろ」に対するアンサーソングです'
 date: "2018-03-23"
 tags:
@@ -18,11 +18,9 @@ tags:
 <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">Instagram PWA is sooooooo impressive. I probably won&#39;t be able to distinguish it with its native app.<br>InstagramのPWAが、デキが良すぎて感動してる。ネイティブアプリと見分けられる自信ない。 <a href="https://t.co/DS8TfceBZ6">pic.twitter.com/DS8TfceBZ6</a></p>&mdash; Eiji Kitamura / えーじ (@agektmr) <a href="https://twitter.com/agektmr/status/956865567528374273?ref_src=twsrc%5Etfw">2018年1月26日</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-どうやら僕を指しているようですね。
+確かに、この言い方は若干煽り気味のところがあったかもしれません。しかし、Instagram の PWA について、スクロールの快適さ、投稿時にフィルターがかけられる点など、「ネイティブと見分けられる自信がない」のは、初めて使った時の僕の率直な感想ですし、今でも快適に使っています。
 
-確かに、この言い方は若干煽り気味のところがあったかもしれないので、煽り返したくなる気持ちもわからなくはありません。しかし、Instagram の PWA について、スクロールの快適さ、投稿時にフィルターがかけられる点など、「ネイティブと見分けられる自信がない」のは、初めて使った時の僕の率直な感想ですし、今でも快適に使っています。
-
-ただ、勘違いしないでもらいたいのは、だからネイティブアプリは不要なんてことはないということです。むしろせっかくなので、この機会にもう少し PWA について説明しましょう。
+ただ、このツイートをした時点ですべての機能を試したわけではなかったし、後から気付いた違いもありました。勘違いしないでもらいたいのは、もちろん、だからネイティブアプリは不要だなんて言うつもりはないということです。むしろせっかくなので、この機会にもう少し PWA について説明しましょう。
 
 <!-- excerpt -->
 
