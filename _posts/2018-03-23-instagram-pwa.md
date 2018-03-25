@@ -27,9 +27,9 @@ tags:
 ## PWA とは何か
 この記事を読むくらいであればすでにご存知の方は多いと思いますが、PWA は Progressive Web Apps の略で、日本語ではプログレッシブウェブアプリと表記します。PWA については、3 年前から話しているので、基本的な理解からスタートしたい方は、ぜひこちらをお読みください。ちょっと長いですが、概要を把握する分には最初の方だけで十分だと思います。
 
-[プログレッシブウェブアプリ詳解 - 過去・現在・未来](https://html5experts.jp/agektmr/20527/)
+**[プログレッシブウェブアプリ詳解 - 過去・現在・未来](https://html5experts.jp/agektmr/20527/)**
 
-ここにも書かれているように、PWA はウェブの最新技術を分かりやすくフレーミングした言葉に過ぎません。JavaScript や CSS もひっくるめて「HTML5」と呼んでいたムーブメントに近いものです。件の匿名投稿の冒頭に「PWAとかいうhtml5のリブランドが」という部分がありましたが、これは実は技術者視点では正しい理解です。
+ここにも書かれているように、PWA はウェブの最新技術を分かりやすくフレーミングした言葉に過ぎません。JavaScript や CSS もひっくるめて「HTML5」と呼んでいたムーブメントに近いものです。件の匿名投稿の冒頭に「PWAとかいうhtml5のリブランドが」という部分がありましたが、これは実は技術者視点ではそんなに間違ったい理解ではありません。
 
 どうも PWA というと、既存のウェブサイトを捨てて SPA (シングルページアプリケーション) として、ネイティブアプリとそっくりなものを新しく作り直さなければならないと考えてしまう人が多いようです。個人的にそういうのはチャレンジングで大好きだし (SPA の PWA の場合、[AppShell](https://developers.google.com/web/fundamentals/architecture/app-shell?hl=ja) というアプローチをおすすめしています)、[Instagram の PWA](https://instagram.com/) でもそういった SPA のアプローチが取られています。
 
@@ -40,6 +40,8 @@ tags:
 他にも、PWA として括られている技術の一部を使って既存のウェブサイトを改良した例はたくさんあります。なんなら従来のサイトのまま、よく使う画像や CSS などのリソースを Service Worker と Cache API を使ってキャッシュするだけでも、未対応ブラウザの邪魔をすることなく、全体的な高速化を図ることはできます。
 
 実はこのブログも、その方法で高速化を図っています。[モバイル版の Facebook](https://m.facebook.com/) は、ホーム画面に追加するプロンプトは出さずにパーソナライズしたプッシュ通知を送ってくれることを知っている人も少なくないでしょう。
+
+(ちなみに [PWA の必要最低条件と、さらにユーザー体験を高める機能を示したページ](https://developers.google.com/web/progressive-web-apps/checklist)があります。個人的には「レスポンシブであること」の部分など、あまりこれに固執しない方がよいと思っている部分もあります。)
 
 ## なぜ Instagram は PWA を作ったのか？
 一度話を Instagram に戻します。まずは、Instagram というすでに大成功しているネイティブアプリのサービスが、なぜわざわざウェブアプリとして新たにその体験を作り直したのか考えるところからスタートしましょう。
@@ -68,7 +70,7 @@ Instagram の PWA はインドや東南アジアといった新興国をター�
 ## なぜ Instagram の PWA はネイティブと UX が違うのか
 件の匿名記事の中で取り上げられていたネイティブアプリとの違いのポイントとして、画像 (カルーセル) のスワイプができない点と、Stories で自動的に動画が再生されてない点が挙げられていました。
 
-はてなブックマークでもいくつか指摘がありましたが、カルーセルについては PWA でなくても、従来のウェブ技術を使えば比較的簡単に実現できます。例えば、モバイルウェブのカルーセルの中で、僕がよくできているなと思ったのは [Mastodon](https://mstdn.jp/) です。調べてみたところ、[react-swipable-views](https://github.com/oliviertassinari/react-swipeable-views) というコンポーネントが使われているようです(ちなみに、Mastodon も今はプッシュ通知などにも対応した SPA による PWA です)。Web Components でも [paper-carousel](https://www.webcomponents.org/element/Redbility/paper-carousel) が Instagram でそのまま使えそうな感じでした。リンク先にデモもありますので、スマホで実際に体験してみてください。
+[はてなブックマーク](http://b.hatena.ne.jp/entry/s/anond.hatelabo.jp/20180321171652)でもいくつか指摘がありましたが、カルーセルについては PWA とは関係なく、従来のウェブ技術を使えば比較的簡単に実現できます。例えば、モバイルウェブのカルーセルの中で、僕がよくできているなと思ったのは [Mastodon](https://mstdn.jp/) です。調べてみたところ、[react-swipable-views](https://github.com/oliviertassinari/react-swipeable-views) というコンポーネントが使われているようです(ちなみに、Mastodon も今はプッシュ通知などにも対応した SPA による PWA です)。Web Components でも [paper-carousel](https://www.webcomponents.org/element/Redbility/paper-carousel) が Instagram でそのまま使えそうな感じでした。リンク先にデモもありますので、スマホで実際に体験してみてください。
 
 ではなぜ、Instagram はこれを実装しなかったのでしょうか？
 
