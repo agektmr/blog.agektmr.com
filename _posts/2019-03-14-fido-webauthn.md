@@ -176,7 +176,9 @@ Resident Key を使わずにログインする場合、ユーザーはログイ�
 
 Attestation とは証明書のようなもので、認証器のモデルごとに (基本的に端末個別ではない) 異なる証明書が予め埋め込まれています。MDS (Metadata Service) と呼ばれるルート認証局のようなものを使えば、この Attestation が正規に製造されたものかをサーバー側で検証することができるという仕組みです。もちろん、認証器には FIDO Alliance がお墨付きを与える[認定制度](https://fidoalliance.org/certification/)もありますので、認定された認証器を使うのがお薦めです ([Android も先日認定を受けました](https://fidoalliance.org/android-now-fido2-certified-accelerating-global-migration-beyond-passwords/))。Attestation については、[この記事 (英語)](https://fidoalliance.org/fido-technotes-the-truth-about-attestation/) が非常によくまとまっているので一読をお薦めします。
 
-ただし、Attestation は銀行やエンタープライズ、行政など、高いセキュリティが要求されるサービスにおける認証での使用が想定されています。**一般消費者向けサービスでの Attestation の使用は、ユーザー体験的にも、プライバシー的にも注意が必要です。**例えば、Google Chrome では敢えて Attestation を求められると、認証する前にパーミッションダイアログが表示され、ユーザーが OK しないと取得できない作りになっています。(なお、エンタープライズ環境においては柔軟になっています。詳しくは [Chromium ウェブサイトの Security Keys のページ](https://www.chromium.org/security-keys)をご覧下さい。)
+ただし、Attestation は銀行やエンタープライズ、行政など、高いセキュリティが要求されるサービスにおける認証での使用が想定されています。一般消費者向けサービスでの Attestation の使用は、ユーザー体験的にも注意が必要です。例えば、Google Chrome では敢えて Attestation を求められると、認証する前にパーミッションダイアログが表示され、ユーザーが OK しないと取得できない作りになっています。(なお、エンタープライズ環境においては柔軟になっています。詳しくは [Chromium ウェブサイトの Security Keys のページ](https://www.chromium.org/security-keys)をご覧下さい。)
+
+**更新: 2019/03/18** 当初 Attestation について、「プライバシー的におすすめできない」という旨を記載しておりましたが、筆者の誤解の可能性が否定出来ないため一旦取り下げました。正確な情報を把握次第更新いたします。
 
 また、Attestation を使ってモデルを限定して認証するようなサービスが出てくると、ユーザーが複数の認証器を持ち歩かなければならない状況を作ってしまいます。一人のユーザーはひとつの認証器を持つだけで済む世界が理想的です。使う場合は MDS をうまく活用して、特定機種のみ受け付けるようなことのないようにしましょう。
 
