@@ -97,7 +97,7 @@ FIDO2 を理解する上で見落としがちなものに、認証器の特性�
 <figcaption>一般的なセキュリティキーのイメージ</figcaption>
 </figure>
 
-例えば [YubiKey 5 NFC](https://www.yubico.com/product/yubikey-5-nfc/#yubikey-5-nfc) は、Transport に USB と NFC、デバイスから取り外しできるので Attachment は cross-platform、UV は「なし」と分類できます。
+例えば [YubiKey 5 Nano](https://www.yubico.com/product/yubikey-5-nano/#yubikey-5-nano) は、Transport に USB、(付けっぱなしを想定してはいますが) デバイスから取り外しできるので Attachment は cross-platform、UV は「なし」と分類できます。
 
 [Feitian BioPass FIDO](https://www.ftsafe.com/Products/FIDO2) は Transport に USB、デバイスから取り外しできるので Attachment は cross-platform、指紋認証が使えるので UV は「あり」と分類できます。
 
@@ -167,7 +167,7 @@ Resident Key を使わずにログインする場合、ユーザーはログイ�
 <figcaption>Resident Key のモックアップ</figcaption>
 </figure>
 
-この機能は Chrome では未実装ですが、Windows 10 上の Edge ではすでに実現されており、試すことができます。ただ、Windows はデスクトップで platform な認証器（同じデバイスでしか使えない）となってしまうため、メリットは感じにくいかもしれません。しかし、これが Android や iPhone のようなモバイルデバイスで実現された caBLE で cross-platform な認証器の場合、自分のアイデンティティを常に持ち歩ける世界観が実現できることになります。
+この機能は Chrome では未実装ですが、Windows 10 上の Edge (Chromium ではないバージョン) ではすでに実現されており、Resident Key をサポートした cross-platform な認証器を使えば、この恩恵を受けることができます。Windows は基本的にデスクトップ OS のため、Windows Hello を platform な認証器として使っている人にとってはメリットは感じにくいかもしれませんが、将来的に Android や iPhone のようなモバイルデバイスで実現された caBLE で cross-platform な認証器が可能になれば、自分のアイデンティティを常に持ち歩ける世界観が実現できることになります。
 
 スマートフォンが自分のアイデンティティを表すものとなり、ログインの壁を感じることなくインターネットの世界を渡り歩いていくことができる日が来るかもしれません。
 
