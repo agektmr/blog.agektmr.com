@@ -176,11 +176,10 @@ Resident Key を使わずにログインする場合、ユーザーはログイ�
 
 Attestation とは証明書のようなもので、認証器のモデルごとに (基本的に端末個別ではない) 異なる証明書が予め埋め込まれています。MDS (Metadata Service) と呼ばれるルート認証局のようなものを使えば、この Attestation が正規に製造されたものかをサーバー側で検証することができるという仕組みです。もちろん、認証器には FIDO Alliance がお墨付きを与える[認定制度](https://fidoalliance.org/certification/)もありますので、認定された認証器を使うのがお薦めです ([Android も先日認定を受けました](https://fidoalliance.org/android-now-fido2-certified-accelerating-global-migration-beyond-passwords/))。Attestation については、[この記事 (英語)](https://fidoalliance.org/fido-technotes-the-truth-about-attestation/) が非常によくまとまっているので一読をお薦めします。
 
-ただし、Attestation は銀行やエンタープライズ、行政など、高いセキュリティが要求されるサービスにおける認証での使用が想定されています。一般消費者向けサービスでの Attestation の使用は、ユーザー体験的にも注意が必要です。例えば、Google Chrome では敢えて Attestation を求められると、認証する前にパーミッションダイアログが表示され、ユーザーが OK しないと取得できない作りになっています。(なお、エンタープライズ環境においては柔軟になっています。詳しくは [Chromium ウェブサイトの Security Keys のページ](https://www.chromium.org/security-keys)をご覧下さい。)
+なお、コンプライアンス上必要 (銀行やエンタープライズ、行政など) とされるような場合を除き、通常 Attestation を要求する必要はありません。(なお、Google のエンタープライズ環境において利用される際は [Chromium ウェブサイトの Security Keys のページ](https://www.chromium.org/security-keys)もぜひご覧下さい。) また、一人のユーザーはひとつの認証器を持つだけで済む世界が理想的です。使う場合は MDS をうまく活用して、特定機種のみ受け付けるようなことのないよう配慮してください。
 
-**更新: 2019/03/18** 当初 Attestation について、「プライバシー的におすすめできない」という旨を記載しておりましたが、筆者の誤解の可能性が否定出来ないため一旦取り下げました。正確な情報を把握次第更新いたします。
-
-また、Attestation を使ってモデルを限定して認証するようなサービスが出てくると、ユーザーが複数の認証器を持ち歩かなければならない状況を作ってしまいます。一人のユーザーはひとつの認証器を持つだけで済む世界が理想的です。使う場合は MDS をうまく活用して、特定機種のみ受け付けるようなことのないようにしましょう。
+**更新: 2019/03/18** 当初 Attestation について、「プライバシー的におすすめできない」という旨を記載しておりましたが、筆者の誤解の可能性が否定出来ないため一旦取り下げました。正確な情報を把握次第更新いたします。  
+**更新: 2019/03/22** プライバシーに関する懸念はないに等しいと言って差し支えないとの確認が取れましたので、上記文言を修正しました。
 
 ## まとめ
 ブラウザから WebAuthn の開発を使った FIDO2 の指紋認証の実装を体験してみたいという方は、FIDO のエヴァンジェリストである [Yuriy Ackermann](https://twitter.com/herrjemand) の作った[コードラボ](https://slides.com/fidoalliance/jan-2018-fido-seminar-webauthn-tutorial)から始めることをお薦めします。[彼の Medium](https://medium.com/@herrjemand/) では、ブラウザ側だけでなくサーバーでの署名の検証の仕方や各種 Attestation の検証の仕方もカバーしていますので、精読をおすすめします。また、日本語のものを含めたドキュメントやライブラリ、デモなど、リソースを一箇所に集めた資料も非常に参考になります。
