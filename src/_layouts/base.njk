@@ -5,12 +5,12 @@
 </head>
 
 <body id="page" {% if image.feature %}class="feature"{% endif %}>
-  <mwc-drawer hasHeader>
+  <mwc-drawer id="drawer" hasHeader type="dismissible">
     <div slot="title">{{ site.title }}</div>
     <div class="sidebar">{% include 'sidebar.njk' %}</div>
     <div slot="appContent">
       <mwc-top-app-bar id="app-bar" prominent>
-        <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
+        <mwc-icon-button id="sidebar-button" icon="menu" slot="navigationIcon"></mwc-icon-button>
         <div slot="title">{{ title if title else site.title }}</div>
       </mwc-top-app-bar>
 
