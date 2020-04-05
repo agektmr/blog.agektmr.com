@@ -1,19 +1,38 @@
-@import "_variables";
-@import "_mixins";
-@import "_reset";
-@import "_site";
-@import "_typography";
-@import "_pygments";
-@import "_coderay";
-@import "_gist";
-@import "_grid";
-@import "_elements";
-@import "_page";
-@import "_animations";
-@import "_dl-menu";
-@import "_variables";
-@import "@material/drawer/mdc-drawer";
-@import "@material/list/mdc-list";
-@import "@material/top-app-bar/mdc-top-app-bar";
-@import "@material/icon-button/mdc-icon-button";
-@import "@material/layout-grid/mdc-layout-grid"
+@import './mixins';
+@import './_variables';
+@import './_reset';
+@import './elements';
+@import './_typography';
+@import './_page';
+@import './_site';
+
+.sidebar {
+  height: 100%;
+  mwc-list {
+    display: flex;
+    flex-direction: column;
+    mwc-list-item {
+      flex: 0 1 auto;
+    }
+    .contacts {
+      flex: 1 1 auto;
+      display: flex;
+      justify-content: space-around;
+      mwc-icon-button {
+        --mdc-icon-size: 20px;
+        .twitter {
+          color: #55acee
+        }
+        .facebook {
+          color: #3a5795
+        }
+        .linkedin {
+          color: #1c86bd
+        }
+        .github {
+          color: #333333
+        }
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@
 <body id="page" {% if image.feature %}class="feature"{% endif %}>
   <mwc-drawer hasHeader>
     <div slot="title">{{ site.title }}</div>
-    {% include 'sidebar.njk' %}
+    <div class="sidebar">{% include 'sidebar.njk' %}</div>
     <div slot="appContent">
       <mwc-top-app-bar id="app-bar" prominent>
         <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
@@ -15,7 +15,6 @@
       </mwc-top-app-bar>
 
       <div id="main-content">
-        <div class="mdc-top-app-bar--prominent-fixed-adjust"></div>
   {{ content | safe }}
       </div>
 
