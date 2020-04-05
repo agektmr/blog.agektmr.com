@@ -1,25 +1,25 @@
-<nav class="mdc-list">
-  <a href="/" class="mdc-list-item">
-    <i class="material-icons mdc-list-item__graphic">home</i>
-    <span class="mdc-list-item__text">Home</span>
-  </a>
-  <a href="/posts/" class="mdc-list-item">
-    <i class="material-icons mdc-list-item__graphic">description</i>
-    <span class="mdc-list-item__text">Posts</span>
-  </a>
-  <a href="/tags/" class="mdc-list-item">
-    <i class="material-icons mdc-list-item__graphic">label</i>
-    <span class="mdc-list-item__text">Tags</span>
-  </a>
-  <a href="/about/" class="mdc-list-item">
-    <i class="material-icons mdc-list-item__graphic">account_box</i>
-    <span class="mdc-list-item__text">About</span>
-  </a>
-  <a href="https://demo.agektmr.com/" class="mdc-list-item">
-    <i  class="material-icons mdc-list-item__graphic">explore</i>
-    <span class="mdc-list-item__text">Demos</span>
-  </a>
-</nav>
+<mwc-list>
+  <mwc-list-item graphic="avatar">
+    <a href="/">Home</a>
+    <mwc-icon slot="graphic">home</mwc-icon>
+  </mwc-list-item>
+  <mwc-list-item graphic="avatar">
+    <a href="/posts/">Posts</a>
+    <mwc-icon slot="graphic">description</mwc-icon>
+  </mwc-list-item>
+  <mwc-list-item graphic="avatar">
+    <a href="/tags/">Tags</a>
+    <mwc-icon slot="graphic">label</mwc-icon>
+  </mwc-list-item>
+  <mwc-list-item graphic="avatar">
+    <a href="/about/">About</a>
+    <mwc-icon slot="graphic">account_box</mwc-icon>
+  </mwc-list-item>
+  <mwc-list-item graphic="avatar">
+    <a href="https://demo.agektmr.com/">Demos</a>
+    <mwc-icon slot="graphic">explore</mwc-icon>
+  </mwc-list-item>
+</mwc-list>
 <nav class="layout horizontal around-justified" style="margin-bottom: 12px">
 {%- if site.owner.twitter %}
   <a href="https://twitter.com/{{ site.owner.twitter }}" target="_blank">

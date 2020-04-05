@@ -1,9 +1,9 @@
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const WorkboxPlugin = require('workbox-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const WorkboxPlugin = require('workbox-webpack-plugin');
 
 const src = path.join(__dirname, 'src');
-const dst = path.join(__dirname, 'dist');
+const dst = path.join(__dirname, '_site');
 
 module.exports = (env, argv) => {
   const PRODUCTION = argv.mode === 'production';
@@ -11,7 +11,7 @@ module.exports = (env, argv) => {
     mode: PRODUCTION ? 'production' : 'development',
     entry: {
       'scripts/bundle': path.join(src, 'scripts', 'main.ts'),
-      'scripts/style-bundle': path.join(src, 'styles', 'style.scss'),
+      'scripts/style-bundle': path.join(src, 'styles', 'index.scss'),
     },
     output: {
       path: dst,
@@ -49,19 +49,19 @@ module.exports = (env, argv) => {
       extensions: [ '.ts', '.js' ]
     },
     plugins: [
-      new CopyWebpackPlugin([{
-        from: path.join(src, 'index.html'),
-        to: path.join(dst, 'index.html')
-      }, {
-        from: path.join(src, 'manifest.json'),
-        to: path.join(dst, 'manifest.json')
-      }, {
-        from: path.join(src, 'images'),
-        to: path.join(dst, 'images')
-      }]),
-      new WorkboxPlugin.InjectManifest({
-        swSrc: path.join(src, 'sw.js')
-      })
+      // new CopyWebpackPlugin([{
+      //   from: path.join(src, 'index.html'),
+      //   to: path.join(dst, 'index.html')
+      // }, {
+      //   from: path.join(src, 'manifest.json'),
+      //   to: path.join(dst, 'manifest.json')
+      // }, {
+      //   from: path.join(src, 'images'),
+      //   to: path.join(dst, 'images')
+      // }]),
+      // new WorkboxPlugin.InjectManifest({
+      //   swSrc: path.join(src, 'sw.js')
+      // })
     ]
   }];
 }

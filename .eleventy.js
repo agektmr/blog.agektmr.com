@@ -43,8 +43,8 @@ module.exports = function(eleventyConfig) {
   // });
 
   eleventyConfig.addPassthroughCopy("src/images");
-  eleventyConfig.addPassthroughCopy("src/styles");
-  eleventyConfig.addPassthroughCopy("src/scripts");
+  // eleventyConfig.addPassthroughCopy("src/styles");
+  // eleventyConfig.addPassthroughCopy("src/scripts");
 
   /* Markdown Plugins */
   let markdownIt = require("markdown-it");

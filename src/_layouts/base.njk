@@ -5,48 +5,27 @@
 </head>
 
 <body id="page" {% if image.feature %}class="feature"{% endif %}>
-  <aside class="mdc-drawer mdc-drawer--modal">
-    <div class="mdc-drawer__header">
-      <h1>{{ site.title }}</h1>
-    </div>
-    <div class="mdc-drawer__content">
-  {% include 'sidebar.njk' %}
-    </div>
-  </aside>
-  <div class="mdc-drawer-scrim"></div>
-  <div class="mdc-drawer-app-content">
-    <header id="app-bar" class="mdc-top-app-bar mdc-top-app-bar--prominent">
-      <div class="mdc-top-app-bar__row">
-        <section class="
-            mdc-top-app-bar__section
-            mdc-top-app-bar__section--align-start">
-          <button class="
-              mdc-icon-button material-icons
-              mdc-top-app-bar__navigation-icon
-              mdc-ripple-upgraded--unbounded
-              mdc-ripple-upgraded">menu</button>
-          <span class="mdc-top-app-bar__title">
-            {{ title if title else site.title }}
-          </span>
-        </section>
-        <section class="
-            mdc-top-app-bar__section
-            mdc-top-app-bar__section--align-end">
-        </section>
+  <mwc-drawer hasHeader>
+    <div slot="title">{{ site.title }}</div>
+    {% include 'sidebar.njk' %}
+    <div slot="appContent">
+      <mwc-top-app-bar id="app-bar" prominent>
+        <mwc-icon-button icon="menu" slot="navigationIcon"></mwc-icon-button>
+        <div slot="title">{{ title if title else site.title }}</div>
+      </mwc-top-app-bar>
+
+      <div id="main-content">
+        <div class="mdc-top-app-bar--prominent-fixed-adjust"></div>
+  {{ content | safe }}
       </div>
-    </header>
 
-    <div id="main-content">
-      <div class="mdc-top-app-bar--prominent-fixed-adjust"></div>
-{{ content | safe }}
+      <div class="footer-wrapper">
+        <footer role="contentinfo">
+          {% include 'footer.njk' %}
+        </footer>
+      </div><!-- /.footer-wrapper -->
+  {%- include 'scripts.njk' %}
     </div>
-
-    <div class="footer-wrapper">
-      <footer role="contentinfo">
-        {% include 'footer.njk' %}
-      </footer>
-    </div><!-- /.footer-wrapper -->
-{%- include 'scripts.njk' %}
-  </div>
+  </mwc-drawer>
 </body>
 </html>

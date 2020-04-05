@@ -3,9 +3,9 @@
   "version": "5.0.0",
   "description": "A starter repository for a blog web site using the Eleventy static site generator.",
   "scripts": {
-    "build": "npx rollup -c & npx @11ty/eleventy",
-    "watch": "npx rollup -c & npx @11ty/eleventy --watch",
-    "start": "npx rollup -c & npx @11ty/eleventy --serve",
+    "build": "webpack && eleventy",
+    "watch": "webpack && eleventy --watch",
+    "start": "eleventy --serve",
     "debug": "DEBUG=* npx eleventy"
   },
   "repository": {
@@ -27,6 +27,9 @@
     "@11ty/eleventy-plugin-rss": "^1.0.6",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.1",
     "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.4.2",
+    "extract-loader": "^5.0.1",
+    "file-loader": "^6.0.0",
     "luxon": "^1.12.0",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.0.2",
@@ -36,6 +39,9 @@
     "rollup-plugin-commonjs": "^10.0.2",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-postcss": "^2.0.3",
+    "sass": "^1.26.3",
+    "sass-loader": "^8.0.2",
+    "ts-loader": "^6.2.2",
     "typescript": "^3.8.3",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
@@ -43,7 +49,9 @@
   },
   "dependencies": {
     "@material/mwc-drawer": "^0.14.1",
+    "@material/mwc-icon": "^0.14.1",
     "@material/mwc-icon-button": "^0.14.1",
+    "@material/mwc-list": "^0.14.1",
     "@material/mwc-top-app-bar": "^0.14.1",
     "material-components-web": "^3.1.1"
   }
