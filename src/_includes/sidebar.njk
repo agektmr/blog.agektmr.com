@@ -1,0 +1,49 @@
+<nav class="mdc-list">
+  <a href="/" class="mdc-list-item">
+    <i class="material-icons mdc-list-item__graphic">home</i>
+    <span class="mdc-list-item__text">Home</span>
+  </a>
+  <a href="/posts/" class="mdc-list-item">
+    <i class="material-icons mdc-list-item__graphic">description</i>
+    <span class="mdc-list-item__text">Posts</span>
+  </a>
+  <a href="/tags/" class="mdc-list-item">
+    <i class="material-icons mdc-list-item__graphic">label</i>
+    <span class="mdc-list-item__text">Tags</span>
+  </a>
+  <a href="/about/" class="mdc-list-item">
+    <i class="material-icons mdc-list-item__graphic">account_box</i>
+    <span class="mdc-list-item__text">About</span>
+  </a>
+  <a href="https://demo.agektmr.com/" class="mdc-list-item">
+    <i  class="material-icons mdc-list-item__graphic">explore</i>
+    <span class="mdc-list-item__text">Demos</span>
+  </a>
+</nav>
+<nav class="layout horizontal around-justified" style="margin-bottom: 12px">
+{%- if site.owner.twitter %}
+  <a href="https://twitter.com/{{ site.owner.twitter }}" target="_blank">
+    <mwc-icon-button icon="social:post-twitter"></mwc-icon-button>
+  </a>
+{%- endif %}
+{%- if site.owner.facebook %}
+  <a href="https://facebook.com/{{ site.owner.facebook }}" target="_blank">
+    <mwc-icon-button icon="social:post-facebook"></mwc-icon-button>
+  </a>
+{%- endif %}
+{%- if site.owner.linkedin %}
+  <a href="https://linkedin.com/in/{{ site.owner.linkedin }}" target="_blank">
+    <mwc-icon-button icon="social:post-linkedin"></mwc-icon-button>
+  </a>
+{%- endif %}
+{%- if site.owner.github %}
+  <a href="https://github.com/{{ site.owner.github }}" target="_blank">
+    <mwc-icon-button icon="social:post-github"></mwc-icon-button>
+  </a>
+{%- endif %}
+{%- if site.owner.email %}
+  <a href="mailto:{{ site.owner.email }}" target="_blank">
+    <mwc-icon-button icon="communication:email"></mwc-icon-button>
+  </a>
+{%- endif %}
+</nav>

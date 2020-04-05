@@ -1,0 +1,156 @@
+<meta charset="utf-8">
+<title>{% if title %}{{ title }}: {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ description if description else site.description }}">
+{% if tags %}<meta name="keywords" content="{{ tags | joinWithComma }}">{% endif %}
+{% if site.yandex_verify %}<meta name="yandex-verification" content="{{ site.yandex_verify }}" />{% endif %}
+
+<!-- Open Graph -->
+<meta property="og:locale" content="ja_JP">
+<meta property="og:type" content="article">
+<meta property="og:title" itemprop="name" content="{{ title if title else site.title }}">
+<meta property="og:description" itemprop="description" content="{{ description if description else site.description }}">
+
+{% if image.feature %}<meta property="og:image" content="{{ site.url }}/images/{{ image.feature }}">
+<link itemprop="image" href="{{ site.url }}/images/{{ image.feature }}">
+<meta name="twitter:card" content="summary_large_image">
+{% else %}<meta property="og:image" content="{{ site.url }}/images/cover.jpg">
+<link itemprop="image" href="{{ site.url }}/images/cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+{% endif %}
+{% if site.owner.twitter %}<meta name="twitter:creator" content="@{{ site.owner.twitter }}">{% endif %}
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:site_name" content="{{ site.title }}">
+
+{% if site.google_verify %}<meta name="google-site-verification" content="{{ site.google_verify }}">{% endif %}
+{% if site.bing_verify %}<meta name="msvalidate.01" content="{{ site.bing_verify }}">{% endif %}
+
+{# {% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' | strip_slash }}{% endif %}{% endcapture %} #}
+<link rel="canonical" href="{{ canonical }}">
+<link href="{{ site.url }}/feed.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
+{% if site.owner.twitter %}<link rel="author" href="https://twitter.com/{{ site.owner.twitter }}?rel=author">{% endif %}
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/styles/bundle.css">
+<!-- Webfonts -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="{{ site.url }}/images/icon-54x54.jpg">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.url }}/images/icon-72x72.jpg">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="icon-precomposed" sizes="114x114" href="{{ site.url }}/images/icon-114x114.jpg">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.url }}/images/icon-144x144.jpg">
+<!-- 192x192 for Chrome for Android -->
+<link rel="icon" sizes="192x192" href="{{ site.url }}/images/icon-192x192.jpg">
+
+<!-- homescreen-installed app -->
+<link rel="manifest" href="/manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!-- theme color -->
+<meta name="theme-color" content="#222">
+<meta name="apple-mobile-web-app-status-bar-style" content="#222">
+
+<!-- iphone specific web app config -->
+<link rel="apple-touch-startup-image" href="/images/cover.jpg">
+
+<script type="module" src="/scripts/bundle.js"></script>
+
+{% if page.image.background or site.background %}
+{# {% capture background %}{% if page.image.background %}{{ page.image.background }}{% else %}{{ site.background }}{% endif %}{% endcapture %} #}
+{# {% unless background contains 'http://' or background contains 'https://' %}{% capture background %}{{ site.url }}/images/{{ background }}{% endcapture %}{% endunless %} #}
+<style type="text/css">body {background-image:url({{ background }});}</style>
+{% endif %}
+{# <style is="custom-style">
+  paper-header-panel {
+    background-color: #eee;
+  }
+  paper-header-panel paper-item iron-icon {
+    margin-right: 12px;
+  }
+  paper-item {
+    --paper-item: {
+      font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
+      font-weight: normal;
+    };
+  }
+  paper-toolbar {
+    --paper-toolbar: {
+      background-color: transparent;
+      background-size: cover;
+    };
+    --paper-toolbar-title: {
+      font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;;
+      font-size: xx-large;
+      font-weight: bolder !important;
+      color: #fff;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    };
+  }
+  .side-header {
+    background: url(/images/{{ site.owner.avatar }}) no-repeat 50% 50%;
+    background-size: cover;
+  }
+  paper-scroll-header-panel {
+    --paper-scroll-header-panel-full-header: {
+  {% if image.feature %}
+      background: url(/images/{{ image.feature }}) no-repeat 50% 50%;
+  {% else %}
+      background: url(/images/{{ site.default_header_image }}) no-repeat 50% 50%;
+  {% endif %}
+      background-size: cover;
+    };
+    --paper-scroll-header-panel-condensed-header: {
+      background-color: #333;
+    };
+  }
+  .main-header {
+    --paper-toolbar: {
+      background-color: transparent;
+    };
+  }
+  #post .entry-content, #page .entry-content {
+    margin-top: 0;
+  }
+  #post .entry-meta, #page .entry-meta {
+    text-align: left;
+    margin: 0;
+  }
+  #post .entry-meta hr {
+    margin-top: 3.5em;
+  }
+  iron-icon[icon*="twitter"] {
+    color: #55acee;
+  }
+  iron-icon[icon*="facebook"] {
+    color: #3a5795;
+  }
+  iron-icon[icon*="gplus"] {
+    color: #dd4e42;
+  }
+  iron-icon[icon*="linkedin"] {
+    color: #1c86bd;
+  }
+  iron-icon[icon*="github"] {
+    color: #333;
+  }
+</style> #}
