@@ -1,6 +1,6 @@
 const path = require('path');
 // const CopyWebpackPlugin = require('copy-webpack-plugin');
-// const WorkboxPlugin = require('workbox-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 const src = path.join(__dirname, 'src');
 const dst = path.join(__dirname, '_site');
@@ -60,9 +60,9 @@ module.exports = (env, argv) => {
       //   from: path.join(src, 'images'),
       //   to: path.join(dst, 'images')
       // }]),
-      // new WorkboxPlugin.InjectManifest({
-      //   swSrc: path.join(src, 'sw.js')
-      // })
+      new WorkboxPlugin.InjectManifest({
+        swSrc: path.join(src, 'sw.js')
+      })
     ]
   }];
 }

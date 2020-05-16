@@ -5,17 +5,18 @@
 </head>
 
 <body id="page" {% if image.feature %}class="feature"{% endif %}>
-  <mwc-drawer id="drawer" hasHeader type="dismissible">
+  <mwc-drawer id="drawer" hasHeader type="modal">
     <div slot="title">{{ site.title }}</div>
+    <div slot="subtitle">{{ site.description }}</div>
     <div class="sidebar">{% include 'sidebar.njk' %}</div>
     <div slot="appContent">
-      <mwc-top-app-bar id="app-bar" prominent>
+      <mwc-top-app-bar-fixed id="app-bar" class="top-bar">
         <mwc-icon-button id="sidebar-button" icon="menu" slot="navigationIcon"></mwc-icon-button>
-        <div slot="title">{{ title if title else site.title }}</div>
-      </mwc-top-app-bar>
+        <h1 slot="title">{{ title if title else site.title }}</h1>
+      </mwc-top-app-bar-fixed>
 
       <div id="main-content">
-  {{ content | safe }}
+        {{ content | safe }}
       </div>
 
       <div class="footer-wrapper">
@@ -23,7 +24,7 @@
           {% include 'footer.njk' %}
         </footer>
       </div><!-- /.footer-wrapper -->
-  {%- include 'scripts.njk' %}
+      {%- include 'scripts.njk' %}
     </div>
   </mwc-drawer>
 </body>

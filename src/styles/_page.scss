@@ -11,6 +11,11 @@ body {
 .hentry {
   @include clearfix;
 }
+.hero-image {
+  background-color: #222222;
+  height: 100px;
+  width: 100%;
+}
 .entry-content {
   @include font-size(16);
   // Dotted line underlines for links

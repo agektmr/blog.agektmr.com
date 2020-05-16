@@ -6,32 +6,38 @@
 @import './_page';
 @import './_site';
 
+.top-bar {
+  --mdc-theme-primary: #555555;
+  --mdc-theme-on-primary: white;
+}
+
 .sidebar {
   height: 100%;
+  display: flex;
+  flex-direction: column;
   mwc-list {
-    display: flex;
-    flex-direction: column;
+    flex: 1 1 auto;
     mwc-list-item {
       flex: 0 1 auto;
     }
-    .contacts {
-      flex: 1 1 auto;
-      display: flex;
-      justify-content: space-around;
-      mwc-icon-button {
-        --mdc-icon-size: 20px;
-        .twitter {
-          color: #55acee
-        }
-        .facebook {
-          color: #3a5795
-        }
-        .linkedin {
-          color: #1c86bd
-        }
-        .github {
-          color: #333333
-        }
+  }
+  .contacts {
+    flex: 0 1 auto;
+    display: flex;
+    justify-content: space-around;
+    mwc-icon-button {
+      --mdc-icon-size: 20px;
+      .twitter {
+        color: #55acee
+      }
+      .facebook {
+        color: #3a5795
+      }
+      .linkedin {
+        color: #1c86bd
+      }
+      .github {
+        color: #333333
       }
     }
   }
