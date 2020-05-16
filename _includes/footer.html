@@ -1,8 +1,12 @@
-<span>&copy; {{ site.time | date: '%Y' }} {{ site.owner.name }}. Powered by <a href="http://jekyllrb.com">Jekyll</a> and <a href="http://polymer-project.org">Polymer</a>.</span>
-<script src="/assets/js/app.js" async defer></script>
-<div id="fb-root"></div>
-<script id="facebook-jssdk" src="//connect.facebook.net/ja_JP/sdk.js#xfbml=1&appId=120952244587815&version=v2.0"></script>
-<script type="text/javascript" src="//b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-<script id="twitter-wjs" src="//platform.twitter.com/widgets.js" async defer></script>
-<script src="//apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
-<script id="pocket-btn-js" src="//widgets.getpocket.com/v1/j/btn.js?v=1"></script>
+<footer class="site-footer">
+    <p class="text">
+        {{ site.footer_text | default: "Powered by <a href='https://jekyllrb.com/'>Jekyll</a> with <a href='https://github.com/sylhare/Type-on-Strap'>Type on Strap</a>" }}</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                {% include icons.html %}
+                </ul>
+            </div>
+</footer>
+
+

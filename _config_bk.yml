@@ -1,0 +1,79 @@
+url:              https://blog.agektmr.com
+name:             'Tender Surrender'
+title:            'Tender Surrender'
+description:      '未来の Web を夢見るブログ'
+markdown:         kramdown
+port:             8080
+default_header_image: cover.jpg
+permalink:        /:year/:month/:title.html
+disqus_shortname: agektmr
+owner:
+  name:           Eiji Kitamura
+  avatar:         avatar.jpg
+  bio:            "Developer Advocate at Google"
+  email:          agektmr+blog@gmail.com
+  twitter:        agektmr
+  facebook:       pages/Tender-Surrender-Eiji-Kitamura/365995940083689
+  github:         agektmr
+  linkedin:       agektmr
+  # For Google Authorship https://plus.google.com/authorship
+  # google plus id, include the '+', eg +mmistakes
+  google_plus:    +agektmr
+
+# Analytics and webmaster tools stuff goes here
+google_analytics:   'UA-5145106-3'
+google_verify:
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:       Asia/Tokyo
+future:         true
+
+# Amount of posts to show on home page
+paginate: 5
+
+reading_time:     true
+words_per_minute: 200
+excerpt_separator: "<!-- excerpt -->"
+
+future:      true
+gems:
+  - jekyll-sitemap
+  - jekyll-paginate
+sass:
+  sass_dir: _sass
+  style: compressed
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: true
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+  coderay:
+    coderay_line_numbers: nil
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+redcarpet:
+  extensions: ["fenced_code_blocks"]
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+
+defaults:
+  - scope:
+      type: "posts"
+    values:
+      comments: true
