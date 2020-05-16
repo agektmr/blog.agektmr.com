@@ -1,32 +1,18 @@
 ---
 layout: default
 ---
-{% include share_thumbnail.html page=page %}
+<div class="wrapper">
+<div class="page">
 
-<article {% if page.feature-img %}class="feature-image"{% endif %}>
-  <header id="main" style="background-image: url('{{ page.feature-img | relative_url }}')">
-    <h1 id="{{ page.title | default: "" | cgi_escape }}" class="title">
-        {{ page.title }}
-    </h1>
-    
-    {% if page.subtitle %}
-    <h2 class="subtitle">{{ page.subtitle }}</h2>
-    {% endif %}
-      
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
   </header>
-  <section class="post-content">
-  {% if page.bootstrap %}
-  <div class="bootstrap-iso">
-  {% endif %}
-	{{ content }}
-  {% if page.bootstrap %}
-  </div>
-  {% endif %}
-  </section>
-    
-    
-  <!-- Tag list for portfolio -->
-  {% capture tag_list %}{{ page.tags | join: "|"}}{% endcapture %}
-  {% include tags_list.html tags=tag_list %}
-    
-</article>
+
+  {% include page_divider.html %}
+
+  <article class="post-content">
+    {{ content }}
+  </article>
+
+</div>
+</div>
