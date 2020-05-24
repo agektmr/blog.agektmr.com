@@ -1,58 +1,18 @@
-<!doctype html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
-<head itemscope itemtype="http://schema.org/Article">
-{% include head.html %}
-</head>
+---
+layout: default
+---
+<div class="wrapper">
+<div class="page">
 
-<body id="page" {% if page.image.feature %}class="feature"{% endif %}>
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
 
-<paper-drawer-panel responsive-width="900px" selected="main">
-  <paper-header-panel drawer>
-    <paper-toolbar class="tall side-header">
-      <h1 class="bottom title">{{ site.title }}</h1>
-    </paper-toolbar>
-{% include sidebar.html %}
-  </paper-header-panel>
-  <paper-scroll-header-panel main condenses keep-condensed-header>
-    <paper-toolbar class="tall main-header">
-      <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
-      {% if page.link %}
-      <!-- <h1 class="bottom indent title"><a href="{{ page.link }}">{{ page.title }}</a></h1> -->
-      <h1 class="bottom indent title">{{ page.title }}</h1>
-      {% else %}
-      <!-- <h1 class="bottom indent title"><a href="{{ page.url }}" rel="bookmark" title="{{ page.title }}">{{ page.title }}</a></h1> -->
-      <h1 class="bottom indent title">{{ page.title }}</h1>
-      {% endif %}
-    </paper-toolbar>
-    <div class="content-wrapper">
+  {% include page_divider.html %}
 
-{% include browser-upgrade.html %}
+  <article class="post-content">
+    {{ content }}
+  </article>
 
-    <article class="hentry">
-      <div class="entry-content">
-        {{ content }}
-        <footer class="entry-meta">
-        {% if page.modified %}{{ page.title }} was last modified on <span class="entry-date date modified"><time datetime="{{ page.modified }}">{{ page.modified }}</time></span>
-          <span class="author vcard fn">{{ site.owner.name }}</span>{% endif %}
-        </footer>
-      </div>
-    </article>
-
-    {% if page.comments != false %}<section id="disqus_thread"></section><!-- /#disqus_thread -->{% endif %}
-
-    <div class="footer-wrapper">
-      <footer role="contentinfo">
-        {% include footer.html %}
-      </footer>
-    </div><!-- /.footer-wrapper -->
-
-{% include scripts.html %}
-
-    </div>
-  </paper-header-panel>
-</paper-drawer-panel>
-</body>
-</html>
+</div>
+</div>
