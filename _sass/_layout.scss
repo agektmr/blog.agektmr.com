@@ -152,11 +152,16 @@ pre code.hljs {
     img {
       max-height: 2.5em;
       margin-top: 0.75em;
-      padding-right: 1em;
+			padding-right: 1em;
+			clip-path: circle(16px at 16px 16px);
     }
     span {
-    	font-size: 1.25em;
+			font-size: 1.25em;
+			vertical-align: text-bottom;
     }
+		&:hover {
+			text-decoration: none;
+		}
   }
   nav {
     float: none;
@@ -277,6 +282,9 @@ pre code.hljs {
 	*	Posts
 	*/
 	.post {
+		a {
+			text-decoration: underline;
+		}
 		ul {
 			margin-bottom: 1em;
 		}

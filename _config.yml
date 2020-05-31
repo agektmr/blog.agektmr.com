@@ -22,10 +22,12 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
 cover: "/images/cover.jpg"
 logo: "/favicon.png"
+permalink: /:year/:month/:title.html
+port: 8080
 
 # Build settings
 markdown: kramdown
-inter_post_navigation: false
+inter_post_navigation: true
 highlightjs_theme: "monokai-sublime"
 
 # Pagination Settings
@@ -50,7 +52,7 @@ jekyll-archives:
 # disqus_shortname: bencentra
 
 # Google analytics
-# ga_tracking_id: "UA-XXXX-1"
+ga_tracking_id: 'UA-5145106-3'
 
 # Category descriptions (for archive pages)
 descriptions:
