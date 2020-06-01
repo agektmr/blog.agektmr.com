@@ -4,7 +4,7 @@ title: 'Google に入社して 10 年が経った'
 description: 'Google '
 date: "2020-06-01"
 image:
-  feature: /images/2020/10th-anniversary.jpg
+  feature: 2020/10th-anniversary.jpg
 categories:
 - Google
 tags:
