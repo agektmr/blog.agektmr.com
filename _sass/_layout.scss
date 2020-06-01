@@ -273,6 +273,11 @@ pre code.hljs {
 			}
 		}
 	}
+	.video-wrap {
+		display: flex;
+		justify-content: center;
+		margin: 10px;
+	}
 	img {
 		display: block;
 		margin: auto;
