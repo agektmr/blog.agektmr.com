@@ -1,159 +1,78 @@
-<meta charset="utf-8">
-<title>{% if page.title %}{{ page.title }}: {% endif %}{{ site.title }}</title>
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-{% if page.tags %}<meta name="keywords" content="{{ page.tags | join: ', ' }}">{% endif %}
-<meta name="yandex-verification" content="5bd6ab61a431d844" />
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Open Graph -->
-<meta property="og:locale" content="ja_JP">
-<meta property="og:type" content="article">
-<meta property="og:title" itemprop="name" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-<meta property="og:description" itemprop="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-
-{% if page.image.feature %}<meta property="og:image" content="{{ site.url }}/images/{{ page.image.feature }}">
-<link itemprop="image" href="{{ site.url }}/images/{{ page.image.feature }}">
-<meta name="twitter:card" content="summary_large_image">
-{% else %}<meta property="og:image" content="{{ site.url }}/images/cover.jpg">
-<link itemprop="image" href="{{ site.url }}/images/cover.jpg">
-<meta name="twitter:card" content="summary_large_image">
-{% endif %}
-{% if site.owner.twitter %}<meta name="twitter:creator" content="@{{ site.owner.twitter }}">{% endif %}
-<meta property="og:url" content="{{ site.url }}{{ page.url }}">
-<meta property="og:site_name" content="{{ site.title }}">
-
-{% if site.google_verify %}<meta name="google-site-verification" content="{{ site.google_verify }}">{% endif %}
-{% if site.bing_verify %}<meta name="msvalidate.01" content="{{ site.bing_verify }}">{% endif %}
-
-{% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' | strip_slash }}{% endif %}{% endcapture %}
-<link rel="canonical" href="{{ canonical }}">
-<link href="{{ site.url }}/feed.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
-{% if site.owner.google_plus %}<link rel="author" href="https://google.com/{{ site.owner.google_plus }}?rel=author">{% endif %}
-
-<!-- http://t.co/dKP3o1e -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- For all browsers -->
-<link rel="stylesheet" href="/assets/css/main.css">
-<!-- Webfonts -->
-<link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
-
-<meta http-equiv="cleartype" content="on">
-
-<!-- Load Modernizr -->
-<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
-
-<!-- Icons -->
-<!-- 16x16 -->
-<link rel="shortcut icon" href="/favicon.ico">
-<!-- 32x32 -->
-<link rel="shortcut icon" href="/favicon.png">
-<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="{{ site.url }}/images/icon-54x54.jpg">
-<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.url }}/images/icon-72x72.jpg">
-<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="icon-precomposed" sizes="114x114" href="{{ site.url }}/images/icon-114x114.jpg">
-<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.url }}/images/icon-144x144.jpg">
-<!-- 192x192 for Chrome for Android -->
-<link rel="icon" sizes="192x192" href="{{ site.url }}/images/icon-192x192.jpg">
-
-<!-- homescreen-installed app -->
-<link rel="manifest" href="/manifest.json">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-
-<!-- theme color -->
-<meta name="theme-color" content="#222">
-<meta name="apple-mobile-web-app-status-bar-style" content="#222">
-
-<!-- iphone specific web app config -->
-<link rel="apple-touch-startup-image" href="/images/cover.jpg">
-
-<script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-<link rel="import" href="/elements/vulcanized.elements.html">
-
-{% if page.image.background or site.background %}
-{% capture background %}{% if page.image.background %}{{ page.image.background }}{% else %}{{ site.background }}{% endif %}{% endcapture %}
-{% unless background contains 'http://' or background contains 'https://' %}{% capture background %}{{ site.url }}/images/{{ background }}{% endcapture %}{% endunless %}
-<style type="text/css">body {background-image:url({{ background }});}</style>
-{% endif %}
-<style is="custom-style">
-  paper-header-panel {
-    background-color: #eee;
-  }
-  paper-header-panel paper-item iron-icon {
-    margin-right: 12px;
-  }
-  paper-item {
-    --paper-item: {
-      font-family: 'Noto Sans', Helvetica, Arial, sans-serif;
-      font-weight: normal;
-    };
-  }
-  paper-toolbar {
-    --paper-toolbar: {
-      background-color: transparent;
-      background-size: cover;
-    };
-    --paper-toolbar-title: {
-      font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;;
-      font-size: xx-large;
-      font-weight: bolder !important;
-      color: #fff;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-    };
-  }
-  .side-header {
-    background: url(/images/{{ site.owner.avatar }}) no-repeat 50% 50%;
-    background-size: cover;
-  }
-  paper-scroll-header-panel {
-    --paper-scroll-header-panel-full-header: {
-  {% if page.image.feature %}
-      background: url(/images/{{ page.image.feature }}) no-repeat 50% 50%;
-  {% else %}
-      background: url(/images/{{ site.default_header_image }}) no-repeat 50% 50%;
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  {% if site.name %}
+  <meta name="author" content="{{ site.name }}">
+  <meta name="copyright" content="&copy; {{ site.name }} {{ site.time | date: '%Y' }}">
   {% endif %}
-      background-size: cover;
-    };
-    --paper-scroll-header-panel-condensed-header: {
-      background-color: #333;
-    };
-  }
-  .main-header {
-    --paper-toolbar: {
-      background-color: transparent;
-    };
-  }
-  #post .entry-content, #page .entry-content {
-    margin-top: 0;
-  }
-  #post .entry-meta, #page .entry-meta {
-    text-align: left;
-    margin: 0;
-  }
-  #post .entry-meta hr {
-    margin-top: 3.5em;
-  }
-  iron-icon[icon*="twitter"] {
-    color: #55acee;
-  }
-  iron-icon[icon*="facebook"] {
-    color: #3a5795;
-  }
-  iron-icon[icon*="gplus"] {
-    color: #dd4e42;
-  }
-  iron-icon[icon*="linkedin"] {
-    color: #1c86bd;
-  }
-  iron-icon[icon*="github"] {
-    color: #333;
-  }
-</style>
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/{{ site.highlightjs_theme }}.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="{{ "/assets/icons/favicon.ico" | prepend: site.baseurl }}" type="image/x-icon">
+  <link rel="icon" href="{{ "/assets/icons/favicon.ico" | prepend: site.baseurl }}" type="image/x-icon">
+  <!-- <link rel="apple-touch-icon" sizes="57x57" href="{{ "/assets/icons/apple-icon-57x57.png" | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{{ "/assets/icons/apple-icon-60x60.png" | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{ "/assets/icons/apple-icon-72x72.png" | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ "/assets/icons/apple-icon-76x76.png" | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{ "/assets/icons/apple-icon-114x114.png" | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{{ "/assets/icons/apple-icon-120x120.png" | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{{ "/assets/icons/apple-icon-144x144.png" | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ "/assets/icons/apple-icon-152x152.png" | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/icons/apple-icon-180x180.png" | prepend: site.baseurl }}">
+  <link rel="icon" type="image/png" sizes="192x192"  href="{{ "/assets/icons/android-icon-192x192.png" | prepend: site.baseurl }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/icons/favicon-32x32.png" | prepend: site.baseurl }}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{ "/assets/icons/favicon-96x96.png" | prepend: site.baseurl }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/icons/favicon-16x16.png" | prepend: site.baseurl }}"> -->
+  <link rel="manifest" href="{{ "/manifest.json" | prepend: site.baseurl }}">
+  <!-- <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="{{ "/assets/icons/ms-icon-144x144.png" | prepend: site.baseurl }}"> -->
+  <meta name="theme-color" content="#ffffff">
+
+  {% if site.protocols.fb_image %}
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+  <meta property="og:url" content="{% if page.url %}{{ site.url }}{{ page.url }}{% else %}{{ site.url }}{% endif %}">
+  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="{% if page.cover %}{{ page.cover | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.protocols.fb_image | prepend: site.baseurl | prepend: site.url }}{% endif %}" />
+  <meta property="og:image:type" content="{{ site.protocols.fb_image_type }}" />
+  <meta property="og:image:width" content="{{ site.protocols.fb_image_width }}" />
+  <meta property="og:image:height" content="{{ site.protocols.fb_image_height }}" />
+  {% endif %}
+
+  {% if site.protocols.twitter_image %}
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:image" content="{% if page.cover %}{{ page.cover | prepend: site.baseurl | prepend: site.url }}{% else %}{{ site.protocols.twitter_image | prepend: site.baseurl | prepend: site.url }}{% endif %}">
+  <meta name="twitter:url" content="{% if page.url %}{{ site.url }}{{ page.url }}{% else %}{{ site.url }}{% endif %}">
+  {% endif %}
+
+  {% if protocols.os_repo and protocols.os_rcs_type and protocols.os_src %}
+  <!-- Open Source Protocol -->
+  <link rel="profile" href="http://osprotocol.com" />
+  <meta property="os:repo" content="{{ protocols.os_repo }}" />
+  <meta property="os:rcs_type" content="{{ protocols.os_rcs_type }}" />
+  <meta property="os:src" content="{{ protocols.os_src }}" />
+  {% endif %}
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
