@@ -11,7 +11,7 @@ exclude:
 # Site settings
 title: Tender Surrender
 subtitle: "ウェブの未来を夢見るブログ"
-email: agektmr@gmail.com
+email: agektmr+blog@gmail.com
 name: Eiji Kitamura / えーじ
 description: >
   ウェブの未来を夢見るブログ
@@ -24,6 +24,10 @@ cover: "/images/cover.jpg"
 logo: "/favicon.png"
 permalink: /:year/:month/:title.html
 port: 8080
+
+owner:
+    name: Eiji Kitamura / えーじ
+    email: agektmr+blog@gmail.com
 
 # Build settings
 markdown: kramdown
@@ -102,7 +106,7 @@ social:
   - name: LinkedIn
     icon: linkedin
     username: agektmr
-    url: https://www.linkedin.com/agektmr
+    url: https://www.linkedin.com/in/agektmr
     desc: Connect with me on LinkedIn
     share: true
 
@@ -110,13 +114,9 @@ social:
 # These are for automatically generating sharing metadata for FB and Twitter
 # OS Protocol is for sharing the source of your site, if you're interested. For more, see osprotocol.com
 protocols:
-    fb_image: "/assets/logo.png"
-    fb_image_width: 612
-    fb_image_height: 605
-    fb_image_type: "image/png"
+    fb_image: "/images/avatar.jpg"
+    fb_image_width: 512
+    fb_image_height: 512
+    fb_image_type: "image/jpg"
 
-    twitter_image: "/assets/logo.png"
-
-    os_repo: "https://github.com/bencentra/centrarium.com"
-    os_rcs_type: "git"
-    os_src: "git@github.com:bencentra/centrarium.com.git"
+    twitter_image: "/images/avatar.jpg"
