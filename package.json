@@ -1,0 +1,29 @@
+{
+  "name": "blog.agektmr.com",
+  "version": "1.0.0",
+  "description": "A simple yet classy theme for your Jekyll website or blog. Customizable to fit your style or brand.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "luxon": "^2.0.1"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agektmr/blog.agektmr.com.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/agektmr/blog.agektmr.com/issues"
+  },
+  "homepage": "https://github.com/agektmr/blog.agektmr.com#readme"
+}
