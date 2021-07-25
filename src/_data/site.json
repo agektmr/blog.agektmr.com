@@ -1,0 +1,33 @@
+{
+  "title": "Tender Surrender",
+  "name": "Tender Surrender",
+  "url": "https://blog.agektmr.com",
+  "baseurl": "",
+  "imagepath": "/images",
+  "cover": "/images/cover.jpg",
+  "description": "未来の Web を夢見るブログ",
+  "default_header_image": "cover.jpg",
+  "permalink": "/:year/:month/:title.html",
+  "disqus_shortname": "agektmr",
+  "feed": {
+    "subtitle": "未来の Web を夢見るブログ",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "url": "https://blog.agektmr.com/feed/feed.xml",
+    "id": "https://blog.agektmr.com/"
+  },
+  "owner": {
+    "name": "Eiji Kitamura",
+    "email": "agektmr+blog@gmail.com",
+    "twitter": "agektmr",
+    "facebook": "pages/Tender-Surrender-Eiji-Kitamura/365995940083689",
+    "linkedin": "agektmr",
+    "github": "agektmr",
+    "bio": "Developer Advocate at Google",
+    "avatar": "avatar.jpg"
+  },
+  "yandex_verify": "5bd6ab61a431d844",
+  "google_verify": "",
+  "bing_verify": "",
+  "google_analytics":   "UA-5145106-3"
+}

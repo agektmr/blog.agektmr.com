@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Canvas に描いた画像を png などの形式の Blob に変換する方法
-date: 2013-09-02 07:37:55 UTC
-updated: 2013-09-02 07:37:55 UTC
+date: 2013-09-02
+updated: 2013-09-02
 categories:
 ---
 `canvas` の DOM エレメント (コンテキストではない) から [`toBlob()`](https://developer.mozilla.org/ja-JP/docs/Web/API/HTMLCanvasElement) を使う、というのが一番簡潔な回答です。が、これは Firefox には実装されているのですが、[残念ながら Chrome にはまだ実装されていません](https://code.google.com/p/chromium/issues/detail?id=83103)。そこで下記の方法を使って png や jpeg など、任意の画像形式で `Blob` を作ることができます。

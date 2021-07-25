@@ -12,6 +12,9 @@ tags:
   - OpenSocial
   - RESTful API
 ---
-<a href="http://groups.google.com/group/opensocial-and-gadgets-spec/browse_thread/thread/f5a0cf3707709ffa" target="_blank">A modest proposal for an OpenSocial RESTful API &#8211; OpenSocial and Gadgets Specification Discussion | Google グループ</a>
 
-<a href="http://groups.google.com/group/opensocial-and-gadgets-spec/browse_thread/thread/f5a0cf3707709ffa" target="_blank"></a>OpenSocial RESTful APIの最初のProposalだそうです。
+[A modest proposal for an OpenSocial RESTful API &#8211; OpenSocial and Gadgets
+Specification Discussion | Google グルー
+プ](http://groups.google.com/group/opensocial-and-gadgets-spec/browse_thread/thread/f5a0cf3707709ffa)
+
+OpenSocial RESTful APIの最初のProposalだそうです。

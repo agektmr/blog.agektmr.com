@@ -1,8 +1,8 @@
 ---           
 layout: post
 title: HTML を Markdown としてペーストできる MarkdownPastr
-date: 2014-02-21 15:12:39 UTC
-updated: 2014-02-21 15:12:39 UTC
+date: 2014-02-21
+updated: 2014-02-21
 tags:
 - Chrome Extension
 - Markdown

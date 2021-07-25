@@ -2,12 +2,12 @@
 layout: post
 title: Template - Web Components を構成する技術
 description: 'Web Components を構成する要素のひとつ、Templates について解説します。'
-date: '2014-10-14T17:44:00.001+09:00'
+date: 2014-10-14
 author: Eiji Kitamura
 tags:
 - Template
 - Web Components
-modified_time: '2014-10-16T12:53:21.147+09:00'
+updated: 2014-10-16
 blogger_id: tag:blogger.com,1999:blog-1878759997851918856.post-7514316136270000024
 blogger_orig_url: http://blog.agektmr.com/2014/10/template-web-components.html
 ---
@@ -113,7 +113,7 @@ JavaScript
 **繰り返しを表現する**
 
 ```html
-<template repeat="{{item in items}}"></template>
+<template repeat="\{\{item in items}}"></template>
 ```
 
 **条件分岐をする**

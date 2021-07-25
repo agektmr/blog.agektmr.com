@@ -1,8 +1,8 @@
 ---
 layout: post
 title: jsdocをbootstrapできれいに生成する
-date: 2014-02-12 00:20:28 UTC
-updated: 2014-02-12 00:20:28 UTC
+date: 2014-02-12
+updated: 2014-02-12
 tags:
 - JsDoc
 - Bootstrap

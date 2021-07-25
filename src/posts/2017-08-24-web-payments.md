@@ -2,7 +2,7 @@
 layout: post
 title: 'Web Payments はなぜ避けて通れないものになるのか - ウェブでの新しいお金の払い方'
 description: 'かなり高い確率で、今後ウェブ上でのほとんどの支払いが Web Payments を経由したものに変わっていくと予想しています。その理由を説明します。'
-date: "2017-08-24"
+date: 2017-08-24
 tags:
 - Payments
 - Web Payments

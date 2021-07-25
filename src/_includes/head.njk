@@ -1,0 +1,80 @@
+<head>
+  <meta charset="utf-8">
+  <title>{{ title or site.title }}</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate(160) }}{% else %}{{ site.description }}{% endif %}">
+  {% if site.name %}
+  <meta name="author" content="{{ site.name }}">
+  <meta name="copyright" content="&copy; {{ site.name }} {{ site.time | htmlDateString('%Y') }}">
+  {% endif %}
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/{{ site.highlightjs_theme }}.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="{{ site.url }}/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="{{ site.url }}/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="{{ site.url }}/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="{{ site.url }}/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{ site.url }}/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ site.url }}/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{ site.url }}/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="{{ site.url }}/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="{{ site.url }}/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ site.url }}/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="{{ site.url }}/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{ site.url }}/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="{{ site.url }}/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="{{ site.url }}/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  {% if site.protocols.fb_image %}
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate(160) }}{% else %}{{ site.description }}{% endif %}" />
+  <meta property="og:url" content="{% if page.url %}{{ site.url }}{{ page.url }}{% else %}{{ site.url }}{% endif %}">
+  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="{% if page.image.feature %}{{ site.url }}{{ site.imagepath }}{{ page.image.feature }}{% else %}{{ site.url }}{{ site.cover }}{% endif %}" />
+  {% endif %}
+  {% if site.protocols.twitter_image %}
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@agektmr">
+  <meta name="twitter:creator" content="@agektmr">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate(160) }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:image" content="{% if page.image.feature %}{{ site.url }}{{ site.imagepath }}{{ page.image.feature }}{% else %}{{ site.url }}{{ site.cover }}{% endif %}">
+  <meta name="twitter:url" content="{% if page.url %}{{ site.url }}{{ page.url }}{% else %}{{ site.url }}{% endif %}">
+  {% endif %}
+  {% if protocols.os_repo and protocols.os_rcs_type and protocols.os_src %}
+  <!-- Open Source Protocol -->
+  <link rel="profile" href="http://osprotocol.com" />
+  <meta property="os:repo" content="{{ protocols.os_repo }}" />
+  <meta property="os:rcs_type" content="{{ protocols.os_rcs_type }}" />
+  <meta property="os:src" content="{{ protocols.os_src }}" />
+  {% endif %}
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="{{ site.url}}/css/main.css">
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace('index.html','') }}">
+	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}{{ site.baseurl }}/feed.xml" />
+
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+
+  <link rel="stylesheet" href="{{ '/styles/bundle.css' | url }}">
+  <link rel="stylesheet" href="{{ '/styles/prism-base16-monokai.dark.css' | url }}">
+  <link rel="alternate" href="{{ site.feed.path | url }}" type="application/atom+xml" title="{{ site.title }}">
+</head>

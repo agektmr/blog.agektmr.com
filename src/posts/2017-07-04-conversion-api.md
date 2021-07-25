@@ -2,7 +2,7 @@
 layout: post
 title: 'ウェブでの新しいお金の払い方 - Web Payments と Payment Request API について'
 description: 'Payment Request API を使ったウェブでの新しいお金の払い方について紹介しています。'
-date: "2017-07-04"
+date: 2017-07-04
 tags:
 - Payments
 - Web Payments

@@ -1,23 +1,22 @@
 ---
-layout: default
+layout: layouts/base
+templateClass: tmpl-post
 ---
 <div class="post">
 
-<div class="post-header-container has-cover" {% if page.image.feature %}style="background-image: url({{ page.image.feature | prepend: site.imagepath | prepend: site.baseurl }});"{% else %}style="background-image: url({{ site.cover | prepend: site.baseurl }});"{% endif %}>
+<div class="post-header-container has-cover" {% if page.image.feature %}style="background-image: url({{ site.baseurl }}{{ site.imagepath }}{{ page.image.feature }});"{% else %}style="background-image: url({{ site.baseurl }}{{ site.cover }});"{% endif %}>
   <div class="scrim has-cover">
     <header class="post-header">
       <h1 class="title">{{ page.title }}</h1>
-      <p class="info">by <strong>{% unless page.author %}{{ site.name }}{% endunless %}</strong></p>
+      <p class="info">by <strong>{% if not page.author %}{{ site.name }}{% endif %}</strong></p>
     </header>
   </div>
 </div>
 
 <div class="wrapper">
 
-{% unless page.image.feature %} {% include page_divider.html %} {% endunless %}
-
 <section class="post-meta">
-  <div class="post-date">{{ page.date | date: "%B %-d, %Y" }}</div>
+  <div class="post-date">{{ page.date | htmlDateString("%B %-d, %Y") }}</div>
   <div class="post-categories">
   {% if page.categories.size > 0 %}in {% for cat in page.categories %}
     {% if site.jekyll-archives %}
@@ -30,7 +29,7 @@ layout: default
 </section>
 
 <article class="post-content">
-  {{ content }}
+  {{ content | safe }}
 </article>
 
 {% if site.jekyll-archives %}
@@ -42,51 +41,51 @@ layout: default
 {% endif %}
 
 <section class="rss">
-  <p class="rss-subscribe text"><strong>Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></strong></p>
+  <p class="rss-subscribe text"><strong>Subscribe <a href="{{ site.baseurl }}/feed.xml">via RSS</a></strong></p>
 </section>
 
 <section class="share">
   <span>Share: </span>
   {% for social in site.social %}
-    {% capture full_url %}{{ site.url }}{{ site.baseurl }}{{ page.url }}{% endcapture %}
+    {% set full_url %}{{ site.url }}{{ site.baseurl }}{{ page.url }}{% endset %}
     {% if social.name == "Twitter" and social.share == true %}
       <a href="//twitter.com/share?text={{ page.title | cgi_escape }}&url={{ full_url | cgi_escape}}&via={{social.username}}"
         onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">
-        <i class="fa fa-{{ social.icon | remove_first: '-square' }}-square fa-lg"></i>
+        <i class="fa fa-{{ social.icon }}-square fa-lg"></i>
       </a>
     {% endif %}
     {% if social.name == "Facebook" and social.share == true %}
       <a href="//www.facebook.com/sharer.php?t={{ page.title | cgi_escape }}&u={{ full_url | cgi_escape}}"
         onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">
-        <i class="fa fa-{{ social.icon | remove_first: '-square' }}-square fa-lg"></i>
+        <i class="fa fa-{{ social.icon }}-square fa-lg"></i>
       </a>
     {% endif %}
     {% if social.name == "Google+" and social.share == true %}
       <a href="//plus.google.com/share?title={{ page.title | cgi_escape }}&url={{ full_url | cgi_escape}}"
         onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">
-        <i class="fa fa-{{ social.icon | remove_first: '-square' }}-square fa-lg"></i>
+        <i class="fa fa-{{ social.icon }}-square fa-lg"></i>
       </a>
     {% endif %}
     {% if social.name == "LinkedIn" and social.share == true %}
       <a href="//www.linkedin.com/shareArticle?mini=true&url={{ full_url | cgi_escape}}"
         onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">
-        <i class="fa fa-{{ social.icon | remove_first: '-square' }}-square fa-lg"></i>
+        <i class="fa fa-{{ social.icon }}-square fa-lg"></i>
       </a>
     {% endif %}
     {% if social.name == "Pinterest" and social.share == true %}
-      <a href="//www.pinterest.com/pin/create/button/?description={{ page.title | cgi_escape }}&url={{ full_url | cgi_escape}}&media={{ site.url }}{% if page.image.feature %}{{ page.image.feature | prepend: site.imagepath | prepend: site.baseurl  }}{% elsif site.cover %}{{ site.cover | prepend: site.baseurl }}{% else %}{{ site.logo | prepend: site.baseurl }}{% endif %}"
+      <a href="//www.pinterest.com/pin/create/button/?description={{ page.title | cgi_escape }}&url={{ full_url | cgi_escape}}&media={{ site.url }}{% if page.image.feature %}{{ site.baseurl }}{{ site.imagepath }}{{ page.image.feature }}{% elseif site.cover %}{{ site.baseurl }}{{ site.cover }}{% else %}{{ site.baseurl }}{{ site.logo }}{% endif %}"
         onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">
-        <i class="fa fa-{{ social.icon | remove_first: '-square' }}-square fa-lg"></i>
+        <i class="fa fa-{{ social.icon }}-square fa-lg"></i>
       </a>
     {% endif %}
     {% if social.name == "Reddit" and social.share == true %}
       <a href="//www.reddit.com/submit" onclick="window.location = '//www.reddit.com/submit?url=' + encodeURIComponent('{{ full_url }}') + '&title={{page.title}}'; return false">
-        <i class="fa fa-{{ social.icon | remove_first: '-square' }}-square fa-lg"></i>
+        <i class="fa fa-{{ social.icon }}-square fa-lg"></i>
       </a>
     {% endif %}
     {% if social.name == "Hacker News" and social.share == true %}
       <a href="//news.ycombinator.com/submitlink" onclick="window.location = '//news.ycombinator.com/submitlink?u=' + encodeURIComponent('{{ full_url }}') + '&t={{page.title}}'; return false">
-        <i class="fa fa-{{ social.icon | remove_first: '-square' }} fa-lg"></i>
+        <i class="fa fa-{{ social.icon }} fa-lg"></i>
       </a>
     {% endif %}
   {% endfor %}
@@ -95,7 +94,7 @@ layout: default
 	<section class="post-navigation">
 		<span class="prev-post">
 			{% if page.previous.url %}
-				<a href="{{page.previous.url | prepend: site.baseurl}}">
+				<a href="{{ site.baseurl }}{{page.previous.url }}">
 					<span class="fa-stack fa-lg">
 						<i class="fa fa-square fa-stack-2x"></i>
 						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
@@ -106,7 +105,7 @@ layout: default
 		</span>
 		<span class="next-post">
 			{% if page.next.url %}
-				<a href="{{page.next.url | prepend: site.baseurl}}">
+				<a href="{{ site.baseurl }}{{ page.next.url }}">
 					<span class="page-number">{{page.next.title}}</span>
 					<span class="fa-stack fa-lg">
 						<i class="fa fa-square fa-stack-2x"></i>
@@ -119,7 +118,7 @@ layout: default
 {% endif %}
 
 {% if site.disqus_shortname %}
-{% unless page.disqus_disabled %}
+{% if not page.disqus_disabled %}
 <section class="disqus">
   <div id="disqus_thread"></div>
   <script type="text/javascript">
@@ -135,7 +134,7 @@ layout: default
   <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </section>
-{% endunless %}
+{% endif %}
 {% endif %}
 
 </div>

@@ -2,7 +2,7 @@
 layout: post
 title: 'HTML Imports - Web Components を構成する技術'
 description: 'Web Components を構成する要素のひとつ、HTML Imports について解説します。'
-date: "2015-01-07"
+date: 2015-01-07
 tags:
 - HTML Imports
 - Web Components

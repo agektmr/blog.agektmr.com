@@ -2,7 +2,7 @@
 layout: post
 title: 'モバイルウェブのコンバージョンを改善する - フォーム編'
 description: ''
-date: "2016-12-26"
+date: 2016-12-26
 tags:
 - Payments
 - Form

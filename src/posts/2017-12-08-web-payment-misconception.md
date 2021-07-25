@@ -2,7 +2,7 @@
 layout: post
 title: 'Payment Request API のよくある誤解を解く'
 description: 'Web Payments / Payment Request API について、みんなが誤解しているところをはっきりさせます'
-date: "2017-12-08"
+date: 2017-12-08
 tags:
 - Payments
 - Web Payments

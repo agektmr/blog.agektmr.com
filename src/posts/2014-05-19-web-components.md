@@ -1,8 +1,8 @@
 ---
 layout: post
 title: なぜ Web Components はウェブ開発に革命を起こすのか
-date: 2014-05-19 23:37:55 UTC
-updated: 2014-07-12 14:35:55 UTC
+date: 2014-05-19
+updated: 2014-07-12
 tags:
 - Template
 - Shadow DOM

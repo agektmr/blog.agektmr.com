@@ -2,7 +2,7 @@
 layout: post
 title: 'パスワードの不要な世界はいかにして実現されるのか - FIDO2 と WebAuthn の基本を知る'
 description: ''
-date: "2019-03-14"
+date: 2019-03-14
 tags:
 - WebAuthn
 - FIDO
