@@ -1,87 +1,129 @@
 ---
 title: MySpaceのRESTful APIでOAuth認証を試してみる
-author: Eiji
 layout: post
-SBM_count:
-  - '00008<>1271393657<>6<>0<>1<>1<>0'
-dsq_thread_id:
-  - 2395885
-categories:
-  - OAuth
+date: 2008-04-19
 tags:
   - MySpace
   - OAuth
   - RESTful API
 ---
-MySpaceで公開されているMDP(MySpace Developer Platform)には、OpenSocialだけでなく独自のRESTful APIも含まれており、これを使うことでサーバーサイドにアプリケーションを作ることもできるようになっています。今回は、MDPのRESTful APIのOAuth認証にフォーカスを当ててみます。
+
+MySpace で公開されている MDP(MySpace Developer Platform) には、OpenSocial だけで
+なく独自の RESTful API も含まれており、これを使うことでサーバーサイドにアプリ
+ケーションを作ることもできるようになっています。今回は、MDP の RESTful API の
+OAuth 認証にフォーカスを当ててみます。
 
 ## OpenSocial/MDPのOAuthについて
 
-OAuthとは、ユーザーとユーザーが利用したいサービス(以後サービスプロバイダ)を仲介するOpenSocial等のコンテナ(以後コンシューマ)が、サービスプロバイダの認証情報を知ることなくAPIを操ることを可能にする、認可のためのプロトコルです。
+OAuth とは、ユーザーとユーザーが利用したいサービス(以後サービスプロバイダ)を仲介
+する OpenSocial 等のコンテナ(以後コンシューマ)が、サービスプロバイダの認証情報を
+知ることなく API を操ることを可能にする、認可のためのプロトコルです。
 
-例えばユーザーがコンシューマ上でサービスプロバイダのアプリを利用しようとすると、サービスプロバイダのドメイン上にある認証画面にリダイレクトされ、ユーザーが許可をし、そこではじめて、コンシューマがサービスプロバイダのAPIを利用可能になる、という使い方が想定されています。
+例えばユーザーがコンシューマ上でサービスプロバイダのアプリを利用しようとすると、
+サービスプロバイダのドメイン上にある認証画面にリダイレクトされ、ユーザーが許可を
+し、そこではじめて、コンシューマがサービスプロバイダの API を利用可能になる、と
+いう使い方が想定されています。
 
-しかし、現在のところOpenSocialで規定されているOAuthはフルスペックではありません。ユーザーがサービスプロバイダの認証画面にリダイレクトされたり、コンシューマとサービスプロバイダがトークンを交換したりといった仕様は想定されていないのです。
+しかし、現在のところ OpenSocial で規定されている OAuth はフルスペックではありま
+せん。ユーザーがサービスプロバイダの認証画面にリダイレクトされたり、コンシューマ
+とサービスプロバイダがトークンを交換したりといった仕様は想定されていないのです。
 
-これはOpenSocialガジェットがJavaScriptで動作しているためトークンを管理できない、等の理由があるようですが、MySpace独自のRESTful APIでも条件は同じようで、コンシューマキーとコンシューマシークレットがあれば、トークンなしでOAuth認証を行うことができます。
+これは OpenSocial ガジェットが JavaScript で動作しているためトークンを管理できな
+い、等の理由があるようですが、MySpace 独自の RESTful API でも条件は同じようで、
+コンシューマキーとコンシューマシークレットがあれば、トークンなしで OAuth 認証を
+行うことができます。
 
-※OAuthの詳しい仕様に関しては<a href="http://www.atmarkit.co.jp/fsecurity/special/106oauth/oauth01.html" target="_blank">この辺り</a>を参考にしてください。
+※ OAuth の詳しい仕様に関しては[この辺
+り](http://www.atmarkit.co.jp/fsecurity/special/106oauth/oauth01.html)を参考にし
+てください。
 
 ## アプリケーションプロフィールを作る
 
-まずはMySpaceでアプリケーションを作る準備をします。
+まずは MySpace でアプリケーションを作る準備をします。
 
-MySpaceでアプリケーションを作るためには、ユーザーアカウントとアプリケーションのプロフィールアカウントが必要です。下記のサイトにスクリーンショット付きで解説がありますので、参考にしてください。
+MySpace でアプリケーションを作るためには、ユーザーアカウントとアプリケーションの
+プロフィールアカウントが必要です。下記のサイトにスクリーンショット付きで解説があ
+りますので、参考にしてください。
 
-<a href="http://d.hatena.ne.jp/yorihito_tanaka/20080408" target="_blank">MySpaceアプリケーションを作ろう &#8211; ラーニング人生。</a>
+[MySpaceアプリケーションを作ろう – ラーニング人
+生。](http://d.hatena.ne.jp/yorihito_tanaka/20080408)
 
 ## OAuth認証の準備
 
-アプリケーションプロフィールが作れたら、XMLやJavaScriptのコードは不要です。今回の目的はRESTful APIの認証を試すところにありますので、画面左の<a href="http://developer.myspace.com/modules/apps/pages/myapps.aspx" target="_blank">My Apps</a>をクリックし、作成したアプリケーションプロフィールのEdit Detailsをクリックしてください。
+アプリケーションプロフィールが作れたら、XML や JavaScript のコードは不要です。今
+回の目的は RESTful API の認証を試すところにありますので、画面左の[My
+Apps](http://developer.myspace.com/modules/apps/pages/myapps.aspx)をクリックし、
+作成したアプリケーションプロフィールの Edit Details をクリックしてください。
 
-[<img class="alignnone size-medium wp-image-43" title="myspace_myapps" src="/images/2008/04/myspace_myapps-300x160.jpg" alt="" width="300" height="160" />][1]
+![myspace_myapps](/images/2008/04/myspace_myapps-300x160.jpg)
 
-画面下部にOAuth Consumer KeyとOAuth Consumer Secretという部分があります。RESTful APIにアクセスするには、これらが必要になりますので、メモ帳などにコピペしておいてください。OAuth Consumer Keyは任意に変更できますので、変更してもよいかもしれません(保存は忘れずに)。 
+画面下部に OAuth Consumer Key と OAuth Consumer Secret という部分があります。
+RESTful API にアクセスするには、これらが必要になりますので、メモ帳などにコピペし
+ておいてください。OAuth Consumer Key は任意に変更できますので、変更してもよいか
+もしれません(保存は忘れずに)。 
 
-<span style="color: #0000ee; text-decoration: underline;"><a href="/images/2008/04/myspace_myapp_detail.jpg"></a><a href="/images/2008/04/myspace_myapp_detail.jpg"><img class="alignnone size-full wp-image-44" title="myspace_myapp_detail" src="/images/2008/04/myspace_myapp_detail.jpg" alt="" width="499" height="49" /></a></span>
+![myspace_myapp_detail](/images/2008/04/myspace_myapp_detail.jpg)
 
 ## OAuth Toolで認証してみる
 
-OAuthではコンシューマキーとNonce、Timestampなどから署名(Signature)を作って認証を行います。署名の作り方は複雑なので、今回はMDPで提供されている<a href="http://developer.myspace.com/modules/apis/pages/oauthtool.aspx" target="_blank">OAuth Tool</a>を使って試してみます。
+OAuth ではコンシューマキーと Nonce、Timestamp などから署名 (Signature) を作って
+認証を行います。署名の作り方は複雑なので、今回は MDP で提供されている [OAuth
+Tool](http://developer.myspace.com/modules/apis/pages/oauthtool.aspx) を使って試
+してみます。
 
-[<img class="alignnone size-medium wp-image-45" title="myspace_oauthtool" src="/images/2008/04/myspace_oauthtool-300x209.jpg" alt="" width="300" height="209" />][2]
+![myspace_oauthtool](/images/2008/04/myspace_oauthtool-300x209.jpg)
 
 画面右にある項目を埋めていきます。
 
-*   **Server:** サーバーURL。RFC3986で言うschemeとauthorityに当たります。ここではhttp://api.myspace.comとします。
-*   **ResourceURL:** サーバーURL以降のパス。RFC3986で言うpathに当たります。queryとfragmentは含みません。ここは/users/{user\_id}/friendsとして、user\_idにはあなたのユーザーIDを入力してください。他の利用可能なエンドポイントは<a href="http://developer.myspace.com/community/RestfulAPIs/resources.aspx" target="_blank">ここ</a>に記載されています。
-*   **Request Method:** HTTPメソッド。GETとします。
-*   **Consumer Key:** OAuthのコンシューマキー。先程メモったConsumer Keyを入力してください。
-*   **Consumer Secret:** OAuthのコンシューマシークレット。先程メモったConsumer Keyを入力してください。
-*   **OAuth Token:** トークン。正式なOAuthではサービスプロバイダに許可を受けてアクセストークンと交換し、初めて認可されます。今回は空の状態にしてください。
-*   **OAuth Token Secret:** トークンシークレット。正式なOAuthでトークンの交換に必要になります。今回は空の状態にしてください。
-*   **<span style="font-weight: normal;"><strong>OAuth TimeStamp:</strong> TimeStamp。UNIXタイムで現在時刻を入力します。今回は空の状態にしてください。</span>**
-*   **<span style="font-weight: normal;"><strong>OAuth Nonce:</strong> Nonce。何でもよいですが、毎回必ず違う値を送る必要があります。今回は空の状態にしてください。</span>**
-*   **Signature Method:** 署名方式。HMAC-SHA1を選択。
-*   **Version:** OAuthのバージョン。1.0とします。
-*   **OAuth Mode:** OAuthモード。Authorization Headerとしてください。
-*   **Query options:** OAuth Toolの使い方。Generate URI and Submitとしてください。
+* **Server:** サーバーURL。RFC3986 で言う scheme と authority に当たります。ここ
+  ではhttp://api.myspace.comとします。
+* **ResourceURL:** サーバーURL 以降のパス。RFC3986 で言う path に当たります。
+  query と fragment は含みません。ここは/users/{user_id}/friends として、user_id
+  にはあなたのユーザーID を入力してください。他の利用可能なエンドポイントは[こ
+  こ](http://developer.myspace.com/community/RestfulAPIs/resources.aspx)に記載さ
+  れています。
+* **Request Method:** HTTP メソッド。GET とします。
+* **Consumer Key:** OAuth のコンシューマキー。先程メモった Consumer Key を入力し
+  てください。
+* **Consumer Secret:** OAuth のコンシューマシークレット。先程メモった Consumer
+  Key を入力してください。
+* **OAuth Token:** トークン。正式な OAuth ではサービスプロバイダに許可を受けてア
+  クセストークンと交換し、初めて認可されます。今回は空の状態にしてください。
+* **OAuth Token Secret:** トークンシークレット。正式な OAuth でトークンの交換に
+  必要になります。今回は空の状態にしてください。
+* **OAuth TimeStamp:** TimeStamp。UNIX タイムで現在時刻を入力します。今回は空の
+  状態にしてください。
+* **OAuth Nonce:** Nonce。何でもよいですが、毎回必ず違う値を送る必要があります。
+  今回は空の状態にしてください。
+* **Signature Method:** 署名方式。HMAC-SHA1 を選択。
+* **Version:** OAuth のバージョン。1.0 とします。
+* **OAuth Mode:** OAuth モード。Authorization Header としてください。
+* **Query options:** OAuth Tool の使い方。Generate URI and Submit としてくださ
+  い。
 
-<img class="alignnone size-full wp-image-46" title="myspace_oauthtool_detail" src="/images/2008/04/myspace_oauthtool_detail.jpg" alt="" width="203" height="424" />
+![myspace_oauthtool_detail](/images/2008/04/myspace_oauthtool_detail.jp)
 
-これでOK。executeをクリックします。
+これで OK。execute をクリックします。
 
-Response Bodyにどんな表示が返ってきたでしょうか。自分の友達リストが返ってきていれば成功です。Resource URLの最後に&#8221;.json&#8221;を付け加えると、結果をJSON形式にすることもできます。
+Response Body にどんな表示が返ってきたでしょうか。自分の友達リストが返ってきてい
+れば成功です。Resource URL の最後に `.json` を付け加えると、結果を JSON 形式にす
+ることもできます。
 
 ## まとめ
 
-実はこのやり方のOAuthは、外部サーバーからコンテナであるMySpaceに対してリクエストを投げる場合だけでなく、OpenSocialのmakeRequestで、コンテナのプロキシを介して外部サーバーに送られるリクエストでも同じやり方が利用されます。その際は当然、自分で用意するサーバーの受け口がOAuthをサポートしている必要があります。
+実はこのやり方の OAuth は、外部サーバーからコンテナである MySpace に対してリクエ
+ストを投げる場合だけでなく、OpenSocial の `makeRequest` で、コンテナのプロキシを
+介して外部サーバーに送られるリクエストでも同じやり方が利用されます。その際は当
+然、自分で用意するサーバーの受け口が OAuth をサポートしている必要があります。
 
-気になるのは、やはりトークンの交換や、サービスプロバイダ側に認証を行わせる部分が省かれていること。OpenSocialとOAuthは非常に相性が良いと思っていたのですが、認証が出来ないとなると、サービスプロバイダが持つUserIDとコンテナのUserIDを紐付けたりといったことができないことになります。僕が仕様を勘違いしているだけなのか、今後OAuthにもちゃんと対応して行くのか。
+気になるのは、やはりトークンの交換や、サービスプロバイダ側に認証を行わせる部分が
+省かれていること。OpenSocial と OAuth は非常に相性が良いと思っていたのですが、認
+証が出来ないとなると、サービスプロバイダが持つ UserID とコンテナの UserID を紐付
+けたりといったことができないことになります。僕が仕様を勘違いしているだけなのか、
+今後 OAuth にもちゃんと対応して行くのか。
 
-makeRequestを使った外部サーバーとのデータ交換については、また別の機会に解説します。
+`makeRequest` を使った外部サーバーとのデータ交換については、また別の機会に解説しま
+す。
 
-※API(OAuth Tool?)が不安定なようで、お昼はうまくいったのにこの記事を書いている時点では、なぜかNot Foundが返ってきてしまいました・・・
-
- [1]: /images/2008/04/myspace_myapps.jpg
- [2]: /images/2008/04/myspace_oauthtool.jpg
+※ API (OAuth Tool?) が不安定なようで、お昼はうまくいったのにこの記事を書いている
+時点では、なぜか Not Found が返ってきてしまいました・・・

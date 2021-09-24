@@ -5,7 +5,6 @@
   "scripts": {
     "build": "eleventy && npm run style",
     "watch": "eleventy --watch",
-    "serve": "eleventy --serve",
     "style": "node-sass src/styles/main.scss _site/styles/bundle.css",
     "start": "eleventy --serve",
     "debug": "DEBUG=* eleventy"
@@ -14,26 +13,24 @@
     "type": "git",
     "url": "git://github.com/11ty/eleventy-base-blog.git"
   },
-  "author": {
-    "name": "Zach Leatherman",
-    "email": "zachleatherman@gmail.com",
-    "url": "https://zachleat.com/"
-  },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/11ty/eleventy-base-blog/issues"
   },
   "homepage": "https://github.com/11ty/eleventy-base-blog#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
-    "@11ty/eleventy-navigation": "^0.1.6",
+    "@11ty/eleventy-navigation": "^0.3.2",
     "@11ty/eleventy-plugin-rss": "^1.1.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
-    "luxon": "^1.26.0",
-    "markdown-it": "^12.0.4",
-    "markdown-it-anchor": "^7.1.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.2",
+    "eleventy-plugin-excerpt": "^1.1.2",
+    "luxon": "^2.0.2",
+    "markdown-it": "^12.2.0",
+    "markdown-it-anchor": "^8.3.1",
     "node-sass": "^6.0.1",
-    "rollup": "^2.54.0",
-    "rollup-plugin-scss": "^3.0.0"
+    "rollup": "^2.56.3",
+    "rollup-plugin-scss": "^3.0.0",
+    "textlint": "^12.0.2",
+    "textlint-rule-preset-ja-spacing": "^2.2.0"
   }
 }

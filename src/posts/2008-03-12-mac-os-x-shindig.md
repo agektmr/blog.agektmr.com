@@ -1,18 +1,13 @@
 ---
 title: Mac OS XにShindigをインストールする
-author: Eiji
 layout: post
-SBM_count:
-  - '00002<>1271396435<>2<>0<>0<>0<>0'
-dsq_thread_id:
-  - 2491778
-categories:
-  - OpenSocial
+date: 2008-03-12
 tags:
   - Java
   - Mac OS X
   - OpenID
   - Shindig
+  - OpenSocial
 ---
 
 参考資料 : [Shindig - an Apache incubator project for OpenSocial and

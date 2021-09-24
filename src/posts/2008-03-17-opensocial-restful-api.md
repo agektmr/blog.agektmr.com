@@ -1,13 +1,7 @@
 ---
 title: OpenSocialのRESTful API
-author: Eiji
 layout: post
-SBM_count:
-  - '00000<>1271308185<>0<>0<>0<>0<>0'
-dsq_thread_id:
-  - 5063801
-categories:
-  - OpenSocial
+date: 2008-03-17
 tags:
   - OpenSocial
   - RESTful API

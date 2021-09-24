@@ -3,6 +3,7 @@ const fs = require("fs");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
+const pluginExcerpt = require('eleventy-plugin-excerpt');
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 
@@ -11,6 +12,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
+  eleventyConfig.addPlugin(pluginExcerpt, {
+    excerptSeparator: '<!-- excerpt -->'
+  });
 
   // https://www.11ty.dev/docs/data-deep-merge/
   eleventyConfig.setDataDeepMerge(true);
@@ -46,7 +50,7 @@ module.exports = function(eleventyConfig) {
   }
 
   eleventyConfig.addFilter("buildPermalink", (inputPath) => {
-    return inputPath.replace(/\/.*?\/.*?\/([0-9]{4})-([0-9]{2})-[0-9]{2}-(.*)\.md$/g, "/$1/$2/$3.html");
+    return inputPath.replace(/.*?\/([0-9]{4})-([0-9]{2})-[0-9]{2}-(.*)\.md$/g, "/$1/$2/$3.html");
   });
 
   eleventyConfig.addFilter("filterTagList", filterTagList)
@@ -68,11 +72,11 @@ module.exports = function(eleventyConfig) {
   // Customize Markdown library and settings:
   let markdownLibrary = markdownIt({
     html: true,
-    breaks: true,
+    breaks: false,
     linkify: true
   }).use(markdownItAnchor, {
     permalink: true,
-    permalinkClass: "direct-link",
+    permalinkClass: "anchor-link",
     permalinkSymbol: "#"
   });
   eleventyConfig.setLibrary("md", markdownLibrary);

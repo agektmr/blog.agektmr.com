@@ -1,87 +1,99 @@
 ---
 title: 'オフラインでも使えるマインドマップサービス &#8211; MindMeister'
-author: Eiji
 layout: post
-SBM_count:
-  - '00001<>1271386191<>1<>0<>0<>0<>0'
-dsq_thread_id:
-  - 2417647
-categories:
-  - Service
+date: 2008-04-29
 tags:
   - MindMeister
   - Widget
   - マインドマップ
 ---
+
 今日は久々にいけてるサービスを見つけたのでご紹介。
 
 ## MindMeister
 
-<a href="http://www.mindmeister.com/" target="_blank"><img class="alignnone size-medium wp-image-58" title="mindmeister_logo" src="/images/2008/04/mindmeister_logo.gif" alt="" width="238" height="44" /></a>
+[![mindmeister_logo](/images/2008/04/mindmeister_logo.gif)](http://www.mindmeister.com/)
 
-<a href="http://ja.wikipedia.org/wiki/マインドマップ" target="_blank">マインドマップ</a>とは、言葉を枝上に分岐して記述することで、アイディアの整理するのに役立つ記法/ツールです。僕なんかは、TODOとかアイディアはポンポン出てくるんだけど、体系的にまとめることが苦手なため、これまで無料のマインドマップツール、<a href="http://www.freemind-club.com/" target="_blank">FreeMind</a>を利用してきました。
+[マインドマップ](http://ja.wikipedia.org/wiki/マインドマップ)とは、言葉を枝上に
+分岐して記述することで、アイディアの整理するのに役立つ記法/ツールです。僕なんか
+は、TODO とかアイディアはポンポン出てくるんだけど、体系的にまとめることが苦手な
+ため、これまで無料のマインドマップツール、
+[FreeMind](http://www.freemind-club.com/)を利用してきました。
 
 利用法としては
 
-*   議事録や講演会のメモ
-*   やることメモ
-*   仕様書作成中の頭の整理
-*   プレゼン資料作成中の頭の整理
+* 議事録や講演会のメモ
+* やることメモ
+* 仕様書作成中の頭の整理
+* プレゼン資料作成中の頭の整理
 
-という感じで、いずれもとにかく書きなぐり書きなぐり、後でグループごとにまとめる、という感じ。
+という感じで、いずれもとにかく書きなぐり書きなぐり、後でグループごとにまとめる、
+という感じ。
 
-なんですが、問題は、FreeMindのスピード。Mac OS Xバージョンだと、Core2DuoのMacBookですら起動に数分かかるという状況(バージョン0.8.1以降？)で、最近は立ち上げるのが億劫だったところに、<a href="http://www.mindmeister.com/" target="_blank">MindMeister</a>のバージョンが2になったというリリース。
+なんですが、問題は、FreeMind のスピード。Mac OS X バージョンだと、Core2Duo の
+MacBook ですら起動に数分かかるという状況(バージョン 0.8.1 以降？)で、最近は立ち
+上げるのが億劫だったところに、[MindMeister](http://www.mindmeister.com/)のバー
+ジョンが 2 になったというリリース。
 
 というわけで、早速試してみました。
 
 ## 編集機能
 
-[<img class="alignnone size-medium wp-image-60" title="mindmeister" src="/images/2008/04/mindmeister-300x180.jpg" alt="" width="300" height="180" />][1]
+![mindmeister](/images/2008/04/mindmeister-300x180.jpg)
 
-見ての通り、(MindManagerは使ったことないですが)FreeMindよりも多機能です。ノードごとにアイコンを付けられるだけでなく、色や文字の大きさ、メモも加えることができます。もちろん日本語も問題ありません。メモ機能は個人的にFreeMindにぜひ欲しかったものです。
+見ての通り、(MindManager は使ったことないですが)FreeMind よりも多機能です。ノー
+ドごとにアイコンを付けられるだけでなく、色や文字の大きさ、メモも加えることができ
+ます。もちろん日本語も問題ありません。メモ機能は個人的に FreeMind にぜひ欲しかっ
+たものです。
 
-さらに、まだ試していませんが、TODO管理的な機能もあるようです。
+さらに、まだ試していませんが、TODO 管理的な機能もあるようです。
 
 ## OpenID対応
 
-最近人気が出てきたOpenIDにも対応しています。OpenIDはYahooなど、他サービスのID認証でサービスが利用可能になる共通プロトコルです。(※OpenIDを使うと認証できないため、後で紹介するウィジェットが使えません)
+最近人気が出てきた OpenID にも対応しています。OpenID は Yahoo など、他サービスの
+ID 認証でサービスが利用可能になる共通プロトコルです。(※OpenID を使うと認証できな
+いため、後で紹介するウィジェットが使えません)
 
-[<img class="alignnone size-full wp-image-59" title="mindmeister_openid" src="/images/2008/04/mindmeister_openid.jpg" alt="" width="391" height="174" />][2]
+![mindmeister_openid](/images/2008/04/mindmeister_openid.jpg)
 
 ## FreeMindやMindManagerからのインポート
 
-マインドマップツールとしてはメジャーなFreeMindとMindManagerのマインドマップをインポートすることができます。これはありがたい。
+マインドマップツールとしてはメジャーな FreeMind と MindManager のマインドマップ
+をインポートすることができます。これはありがたい。
 
 ## ウィジェットやブラウザから一発投稿
 
-[<img class="alignnone size-medium wp-image-61" title="mindmeister_widget" src="/images/2008/04/mindmeister_widget-300x82.jpg" alt="" width="300" height="82" />][3]
+![mindmeister_widget](/images/2008/04/mindmeister_widget-300x82.jpg)
 
 箇条書きにするのがもったいないくらいですが、下記ウィジェット/ガジェットに対応
 
-*   WIndows Vistaのサイドバーガジェット
-*   iGoogleガジェット
-*   Yahoo! Widget Engineウィジェット
-*   Mac OS X Dashboardウィジェット
+* WIndows Vista のサイドバーガジェット
+* iGoogle ガジェット
+* Yahoo! Widget Engine ウィジェット
+* Mac OS X Dashboard ウィジェット
 
-ウィジェット/ガジェットから一発投稿で、デフォルト指定されたマインドマップに追記されていきます。TODO管理で役立ちそう。これはありがたい。
+ウィジェット/ガジェットから一発投稿で、デフォルト指定されたマインドマップに追記
+されていきます。TODO 管理で役立ちそう。これはありがたい。
 
-他にも、IE/Firefoxの機能拡張、iPhone用追加ページなどが用意されています。
+他にも、IE/Firefox の機能拡張、iPhone 用追加ページなどが用意されています。
 
 ## オフラインでの利用が可能
 
-[<img class="alignnone size-medium wp-image-62" title="mindmeister_offline" src="/images/2008/04/mindmeister_offline-300x186.jpg" alt="" width="300" height="186" />][4]
+![mindmeister_offline](/images/2008/04/mindmeister_offline-300x186.jpg)
 
 なんといってもこれでしょうか。オフライン機能。
 
-FirefoxまたはInternet ExplorerでGoogle Gearsが必要ですが、オフラインでMindMeisterを利用することができます。これで、いつでもどこでもアイディアを書き留めていくことができますね。
+Firefox または Internet Explorer で Google Gears が必要ですが、オフラインで
+MindMeister を利用することができます。これで、いつでもどこでもアイディアを書き留
+めていくことができますね。
 
 ## まとめ
 
-ここでは書ききれませんでしたが、実はマインドマップを共有して編集する機能や、APIまで提供されています。(今となっては古臭さすら感じる言葉ですが)Web2.0を絵に描いたようなサービスではないでしょうか。
+ここでは書ききれませんでしたが、実はマインドマップを共有して編集する機能や、API
+まで提供されています。(今となっては古臭さすら感じる言葉ですが)Web2.0 を絵に描い
+たようなサービスではないでしょうか。
 
-ただ、オフライン機能等はまだ成熟しきった技術とは言えないため、今後の動向が気になるところ。Google Gears / Prism / HTML5の棲み分けはどうなっていくのか？また、ウィジェット/ガジェットの重要性は日に日に高まってきています。JavaScriptの技術は今のうちに磨いておかなければ&#8230;!
-
- [1]: /images/2008/04/mindmeister.jpg
- [2]: /images/2008/04/mindmeister_openid.jpg
- [3]: /images/2008/04/mindmeister_widget.jpg
- [4]: /images/2008/04/mindmeister_offline.jpg
+ただ、オフライン機能等はまだ成熟しきった技術とは言えないため、今後の動向が気にな
+るところ。Google Gears / Prism / HTML5 の棲み分けはどうなっていくのか？また、
+ウィジェット/ガジェットの重要性は日に日に高まってきています。JavaScript の技術は
+今のうちに磨いておかなければ&#8230;!

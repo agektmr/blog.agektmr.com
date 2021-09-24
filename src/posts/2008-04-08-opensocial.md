@@ -1,116 +1,176 @@
 ---
-title: OpenSocialとかどうよ？的な勉強会(!?)に参加してきた
-author: Eiji
+title: OpenSocial とかどうよ？的な勉強会(!?)に参加してきた
 layout: post
-SBM_count:
-  - '00016<>1271392315<>15<>0<>1<>0<>0'
-dsq_thread_id:
-  - 2362153
-categories:
-  - OpenSocial
+date: 2008-04-08
 tags:
   - MySpace
   - OpenSocial
 ---
-百式の中の人がやっているIDEAxIDEAというブログで募集があった「<a href="http://www.ideaxidea.com/archives/2008/04/opensocial.html" target="_blank">OpenSocialとかどうよ？的な勉強会</a>」に行ってきました。場所は汐留の<a href="http://jp.myspace.com/" target="_blank">MySpaceジャパン</a>オフィス。本国からエンジニアが来日しているとのことで、聞きたいことリストを用意しての参加です。
 
-## MDPとOpenSocialの関係
+百式の中の人がやっている IDEAxIDEA というブログで募集があった
+「[OpenSocial](http://www.ideaxidea.com/archives/2008/04/opensocial.html) とかど
+うよ？的な勉強会」に行ってきました。場所は汐留の [MySpace ジャパ
+ン](http://jp.myspace.com/)オフィス。本国からエンジニアが来日しているとのこと
+で、聞きたいことリストを用意しての参加です。
 
-MDPとは<a href="http://developer.myspace.com/community/" target="_blank">MySpace Development Platform</a>の略。MDPはOpenSocialより広い範囲のAPIです。言い換えると、OpenSocialはMDP上に作られている、とのこと。
+## MDP と OpenSocial の関係
 
-[][1]
+MDP とは [MySpace](http://developer.myspace.com/community/) Development Platform
+の略。MDP は OpenSocial より広い範囲の API です。言い換えると、OpenSocial は MDP
+上に作られている、とのこと。
 
-<p style="text-align: center;">
-  <img class="size-medium wp-image-38" title="opensocial_components" src="/images/2008/04/opensocial_components-300x270.png" alt="" width="300" height="270" />
-</p>
+![opensocial_components](/images/2008/04/opensocial_components-300x270.png)
 
-[][1]OpenSocialではJavaScriptが先行して仕様決定されていっていますが、コンテナプロバイダはAjaxを受け付けるREST APIを作らないとRequestに対して応答を返すことが出来ません。そこでMySpaceの開発した仕様がMySpace REST APIでした。(当然、Orkutやhi5にもこれに類するものがありますが、仕様は未公開です。<a href="http://api.hi5.com/" target="_blank">hi5はあったかな？</a>)
+OpenSocial では JavaScript が先行して仕様決定されていっていますが、コンテナプロ
+バイダは Ajax を受け付ける REST API を作らないと Request に対して応答を返すこと
+が出来ません。そこで MySpace の開発した仕様が MySpace REST API でした。(当然、
+Orkut や hi5 にもこれに類するものがありますが、仕様は未公開です。[hi5 はあったか
+な？](http://api.hi5.com/))
 
-MySpaceにはOpenSocialとは別にMyOpenSpaceという拡張があり、opensocialreference.jsとMyOpenSpace.jsとして区別されています。位置付けとしてはMyOpenSpaceがまずあり、それをラッピングする形でOpenSocialが存在する、と言った方が正確でしょう。OpenSocialは様々なSNSの持つAPIの最大公約数を取る形でデザインされているため、独自のAPIをラッピングすれば十分な訳です。確かにこれなら、他社SNSからアプリを持ってきたとしても、OpenSocialに対応したJavaScriptでさえあれば、互換性が保てますね。
+MySpace には OpenSocial とは別に MyOpenSpace という拡張があり、
+opensocialreference.jsと MyOpenSpace.js として区別されています。位置付けとしては
+MyOpenSpace がまずあり、それをラッピングする形で OpenSocial が存在する、と言った
+方が正確でしょう。OpenSocial は様々な SNS の持つ API の最大公約数を取る形でデザ
+インされているため、独自の API をラッピングすれば十分な訳です。確かにこれなら、
+他社 SNS からアプリを持ってきたとしても、OpenSocial に対応した JavaScript でさえ
+あれば、互換性が保てますね。
 
-また、RESTful APIについてはOpenSocial版が登場したときにどうするつもりか？という質問をしてみたのですが、「APIを増やすだけだよ」という回答。なるほど。そりゃそうだ。現行バージョンでアプリを開発した人向けに、古いバージョン用のAPIも残していくようです。
+また、RESTful API については OpenSocial 版が登場したときにどうするつもりか？とい
+う質問をしてみたのですが、「API を増やすだけだよ」という回答。なるほど。そりゃそ
+うだ。現行バージョンでアプリを開発した人向けに、古いバージョン用の API も残して
+いくようです。
 
-これで、以前から気になっていた[MySpaceはまだ仕様が固まっていないはずのOpenSocial RESTful APIをどうやって実装したのか？][2]という疑問が解決しました。
+これで、以前から気になっていた[MySpaceはまだ仕様が固まっていないはずのOpenSocial
+RESTful APIをどうやって実装したのか？](http://devlog.agektmr.com/archives/20)と
+いう疑問が解決しました。
 
-## OpenSocialの拡張に当たる部分とは？
+## OpenSocial の拡張に当たる部分とは？
 
-*   フォトアルバム
-*   ヒーロー
-*   好みの映画
+* フォトアルバム
+* ヒーロー
+* 好みの映画
 
-等々が既に存在する独自拡張で、最も利用されているのがフォトアルバム。確かにフォトアルバムはSNSによってあったりなかったりしつつも、使われそうな機能ですね。
+等々が既に存在する独自拡張で、最も利用されているのがフォトアルバム。確かにフォト
+アルバムは SNS によってあったりなかったりしつつも、使われそうな機能ですね。
 
-また、個別送信可能なメッセージ機能は？と聞いたところ、今まさに開発中だそうです。(今見たら、<a href="http://groups.google.com/group/opensocial-and-gadgets-spec/browse_thread/thread/ee24d711e51a4084" target="_blank">OpenSocialにもうあるような、、、</a>)他にも、音楽やコメディなど、様々な分野のAPIを作っていきたいとのことでした。
+また、個別送信可能なメッセージ機能は？と聞いたところ、今まさに開発中だそうです。
+(今見たら、[OpenSocial にもうあるよう
+な、、、](http://groups.google.com/group/opensocial-and-gadgets-spec/browse_thread/thread/ee24d711e51a4084))
+他にも、音楽やコメディなど、様々な分野の API を作っていきたいとのことでした。
 
 ## アプリケーションの登録について
 
-アプリ開発者はSandboxのアカウントを取得すればすぐに開発を始めることが出来ますが、実際にアプリを公開するためには審査を通る必要があります。審査はコードのレビューやリーガルチェック(著作権侵害等)を経て、だいたい24時間〜48時間で公開されますが、権利関係が微妙な場合はもっとかかることもあるとのこと。
+アプリ開発者は Sandbox のアカウントを取得すればすぐに開発を始めることが出来ます
+が、実際にアプリを公開するためには審査を通る必要があります。審査はコードのレ
+ビューやリーガルチェック (著作権侵害等) を経て、だいたい 24 時間〜48 時間で公開
+されますが、権利関係が微妙な場合はもっとかかることもあるとのこと。
 
-聞きそびれてしまいましたが、アプリをXMLでリモートサーバーに置いた場合でも、一度アプリが審査を通過してしまうと、GoogleGadgetのようにそれ以降のサーバー上のXMLの変更は反映されないと思われます。
+聞きそびれてしまいましたが、アプリを XML でリモートサーバーに置いた場合でも、一
+度アプリが審査を通過してしまうと、GoogleGadget のようにそれ以降のサーバー上の
+XML の変更は反映されないと思われます。
 
 ### メモ
 
-*   Install Callback URL、Uninstall Callback URLはそれぞれ、ユーザーがアプリをインストール、アンインストールした直後にリダイレクトされるページのURLを指定できる。デフォルトはアプリのキャンバスページ。
-*   OAuthの認可用にキーとシークレットが発行される。
+* Install Callback URL、Uninstall Callback URL はそれぞれ、ユーザーがアプリをイ
+  ンストール、アンインストールした直後にリダイレクトされるページの URL を指定で
+  きる。デフォルトはアプリのキャンバスページ。
+* OAuth の認可用にキーとシークレットが発行される。
 
 ## マネタイズ
 
-当然メインは広告収入になると思われますが、Facebookのようにある種のレコメンド広告で収益を得る方法もありえます。他にも、アプリ開発者に対して課金することで表示位置を優遇したり、といったことも考えられます。
+当然メインは広告収入になると思われますが、Facebook のようにある種のレコメンド広
+告で収益を得る方法もありえます。他にも、アプリ開発者に対して課金することで表示位
+置を優遇したり、といったことも考えられます。
 
-今のところアプリ開発者は、自社サービスの会員獲得を目的としてアプリを提供するケースが多いようですが、<a href="http://developer.myspace.com/community/myspace/anatomyOfAnApp.aspx#app_canvas" target="_blank">キャンバスビュー</a>で全画面を使うことができますので、ここに好きなように広告を入れて収益を上げてよいとのこと。将来的にはアプリを使って物販や課金する方法の提供も検討しているとのことで、夢が広がります。
+今のところアプリ開発者は、自社サービスの会員獲得を目的としてアプリを提供するケー
+スが多いようですが、[キャンバス
+ビュー](http://developer.myspace.com/community/myspace/anatomyOfAnApp.aspx#app_canvas)
+で全画面を使うことができますので、ここに好きなように広告を入れて収益を上げてよい
+とのこと。将来的にはアプリを使って物販や課金する方法の提供も検討しているとのこと
+で、夢が広がります。
 
 ## アプリケーションの互換性
 
-以前から疑問だったOpenSocialアプリケーションのSNS間の互換性について。実は自分の中では答えが出てたのですが一応聞いてみました。
+以前から疑問だった OpenSocial アプリケーションの SNS 間の互換性について。実は自分の
+中では答えが出てたのですが一応聞いてみました。
 
-まず、MySpace独自拡張の部分を利用しなければ、当然他のSNSに持って行っても使うことが出来ます。まあ、そりゃそうですよね。でも、viewやcssはサイトごとに切り替える必要があるはず。例えばOrkutではcanvas、profileという2つのviewしかありませんが、MySpaceにはhome,canvas,profile.left,profile.rightの4つが、hi5にはhomepage,canvas,profileという3つがあります。この時点で、うーん、ですね。
+まず、MySpace 独自拡張の部分を利用しなければ、当然他の SNS に持って行っても使う
+ことが出来ます。まあ、そりゃそうですよね。でも、view や css はサイトごとに切り替
+える必要があるはず。例えば Orkut では canvas、profile という 2 つの view しかあ
+りませんが、MySpace には home,canvas,profile.left,profile.right の 4 つが、hi5に
+はhomepage,canvas,profile という 3 つがあります。この時点で、うーん、ですね。
 
-ただ、やり方として、コンテナのメソッドにアプリが動いているコンテナの名前を取得するAPIがあるので、それによって動作を切り替える方法もあるよ、と教えてもらいました。なるほど。
+ただ、やり方として、コンテナのメソッドにアプリが動いているコンテナの名前を取得す
+る API があるので、それによって動作を切り替える方法もあるよ、と教えてもらいまし
+た。なるほど。
 
 ## リモートサーバーにアプリを実装できるか？
 
-RESTful APIを使えば当然外部サイトでもアプリを使えるのですが、ここでは<a href="http://code.google.com/intl/ja/apis/gadgets/docs/fundamentals.html#Content_Type" target="_blank">GoogleGadgetのContent type=&#8217;html&#8217;をtype=&#8217;url&#8217;</a>にできるか？という話です。
+RESTful API を使えば当然外部サイトでもアプリを使えるのですが、ここでは
+[GoogleGadget の Content type='html'を
+type='url'](http://code.google.com/intl/ja/apis/gadgets/docs/fundamentals.html#Content_Type)
+にできるか？という話です。
 
 答えは、イエス。
 
-当然、同じドメイン配下にプロキシを作って、OAuthでMySpaceのAPIを叩く仕組みを作らなければならない訳ですが、<a href="http://developer.myspace.com/community/myspace/faq.aspx#jslib" target="_blank">サーバー用ライブラリも用意(準備中？)されているそうです</a>。
+当然、同じドメイン配下にプロキシを作って、OAuth で MySpace の API を叩く仕組みを
+作らなければならない訳ですが、[サーバー用ライブラリも用意(準備中？)されているそ
+うです](http://developer.myspace.com/community/myspace/faq.aspx#jslib)。
 
 ## アプリケーションディレクトリ公開後の伸び
 
-Facebookはアプリケーション機能公開後に急激な伸びを示した訳ですが、MySpaceについてはどうか？聞いてみたところ、今のところ目立って急激な伸びは見られないとのこと。サイト上にもあまり誘導を貼っていないことから、まだその段階に達していないとの判断と伺えます。今後APIがもっとしっかりしたものになってから、色々やるんでしょうね。メッセージ機能等による口コミにも期待しているそうです。
+Facebook はアプリケーション機能公開後に急激な伸びを示した訳ですが、MySpace につい
+てはどうか？聞いてみたところ、今のところ目立って急激な伸びは見られないとのこと。
+サイト上にもあまり誘導を貼っていないことから、まだその段階に達していないとの判断
+と伺えます。今後 API がもっとしっかりしたものになってから、色々やるんでしょうね。
+メッセージ機能等による口コミにも期待しているそうです。
 
 ## escapeStringとunescapeStringについて
 
-パーシステントAPIを使う際、文字列情報しか保存できないため、JSON形式でやりとりされます。その際文字列をエスケープしてから投げたり、受け取った際はアンエスケープする必要があるのですが、Orkutやhi5で使えたgadgets.util.escapeString()とgadgets.util.unescapeString()がMySpaceで使えなかったため質問してみました。
+パーシステント API を使う際、文字列情報しか保存できないため、JSON 形式でやりとり
+されます。その際文字列をエスケープしてから投げたり、受け取った際はアンエスケープ
+する必要があるのですが、Orkut や hi5 で使えた `gadgets.util.escapeString()` と
+`gadgets.util.unescapeString()` が MySpace で使えなかったため質問してみました。
 
-答えはescapeStringとunescapeStringはもう使われていないはずで、今はencodeURIComponentが推奨のはずだよ、とのこと。今OpenSocialの仕様を見てみたところ、まだgadgets.util.scapeString()もgadgets.util.unescapeString()も有効のようですが、、、。
+答えは `escapeString` と `unescapeString` はもう使われていないはずで、今は
+`encodeURIComponent` が推奨のはずだよ、とのこと。今 OpenSocial の仕様を見てみた
+ところ、まだ `gadgets.util.scapeString()` も `gadgets.util.unescapeString()` も
+有効のようですが、、、。
 
 ## MySpace用のサンプルアプリ
 
-以前作った友達紹介アプリのMySpaceバージョンを公開します。
+以前作った友達紹介アプリの MySpace バージョンを公開します。
 
-<pre>http://devlab.agektmr.com/OpenSocial/MySpace/FriendIntroducer.xml</pre>
+```
+http://devlab.agektmr.com/OpenSocial/MySpace/FriendIntroducer.xml
+```
 
-別の人がこのアプリを自分のSandboxアカウントに入れることができたか分かりませんが、参考になれば。MySpaceに2つアカウント作って試すところまではまだやっていないため、物好きな方は<a href="http://profile.myspace.com/index.cfm?fuseaction=user.viewprofile&friendid=79982011" target="_blank">MySpaceの僕のアカウント</a>に友達申請してください。
+別の人がこのアプリを自分の Sandbox アカウントに入れることができたか分かりません
+が、参考になれば。MySpace に 2 つアカウント作って試すところまではまだやっていな
+いため、物好きな方は [MySpace の僕のアカウン
+ト](http://profile.myspace.com/index.cfm?fuseaction=user.viewprofile&friendid=79982011)
+に友達申請してください。
 
 ## 感想
 
-*   MySpaceのエンジニアの方はAptanaを使う人が多いみたい。Javaアプリはもっさりしてて嫌いなので基本的に使わないのですが、もう一回チャレンジしてみようかな・・・。
-*   何が驚いたって、参加者10人中パソコン出した人が4人。その全員が**MacBook Airユーザーだった**こと！  
-    みんなリッチだなあ。 
-*   Ozzieと写真撮ってもらった！
+* MySpace のエンジニアの方は Aptana を使う人が多いみたい。Java アプリはもっさりして
+  て嫌いなので基本的に使わないのですが、もう一回チャレンジしてみようかな・・・。
+* 何が驚いたって、参加者 10 人中パソコン出した人が 4 人。その全員が**MacBook Airユー
+  ザーだった**こと！  
+  みんなリッチだなあ。 
+* Ozzie と写真撮ってもらった！
 
-<div>
-  参加者の皆様、お疲れ様でした。
-</div>
+参加者の皆様、お疲れ様でした。
 
-## ※追記(4/12)
+## ※追記 (4/12)
 
-「escapeStringとunescapeStringがもう使われていない」というのは間違いではないか？の件について、当日教えてくれたTerrenceにメールで確認しました。
+「`escapeString `と u`nescapeString `がもう使われていない」というのは間違いでは
+ないか？の件について、当日教えてくれた Terrence にメールで確認しました。
 
-どうやら「escape」と言ったのを、一般的なJavaScriptのescapeと勘違いしたらしく、彼が言っていた「escapeはもう使われていない」というのは、そちらを指していたとのこと。確かに、今はescapeよりもencodeURIComponentを使うように推奨されてますね。
+どうやら「`escape」`と言ったのを、一般的な JavaScript の `escape` と勘違いしたら
+しく、彼が言っていた「`escape` はもう使われていない」というのは、そちらを指して
+いたとのこと。確かに、今は `escape` よりも `encodeURIComponent` を使うように推奨
+されてますね。
 
-で、本題のgadgets.util.escpeStringとgadgets.util.unescapeStringについては、確かに、MySpaceでは実装されていないそうです。自分で解決するしかないみたい。
-
- [1]: /images/2008/04/opensocial_components.png
- [2]: http://devlog.agektmr.com/archives/20
+で、本題の `gadgets.util.escpeString` と `gadgets.util.unescapeString` について
+は、確かに、MySpace では実装されていないそうです。自分で解決するしかないみたい。

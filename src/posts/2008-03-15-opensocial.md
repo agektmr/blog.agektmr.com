@@ -1,14 +1,7 @@
 ---
 title: OpenSocialの疑問がひとつ解決した
-author: Eiji
 layout: post
-SBM_count:
-  - '00000<>1271351677<>0<>0<>0<>0<>0'
-dsq_thread_id:
-  - 2818469
-categories:
-  - OpenSocial
-  - Widget
+date: 2008-03-15
 tags:
   - Gadget
   - OpenSocial
