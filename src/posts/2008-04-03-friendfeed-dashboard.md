@@ -14,7 +14,7 @@ tags:
 FriendFeeder (仮称) を作ったので公開します。まだいっぱい不具合あると思うんです
 が、とりあえず動いてるので勢いで。
 
-## FriendFeedとは？
+## FriendFeed とは？
 
 ![friendfeedservices](/images/2008/04/friendfeedservices-186x300.jpg)
 
@@ -28,13 +28,13 @@ SNS と言っても、Facebook のような SNS そのものではなく、一�
 まとめることに特化しています。エントリにコメントを付けたり、スター的な機能もあり
 ます。
 
-## なぜFriendFeedがアツいのか？
+## なぜ FriendFeed がアツいのか？
 
-ずばり、このサービスが明らかにTwitterの存在を意識し、その延長線上にあるためで
+ずばり、このサービスが明らかに Twitter の存在を意識し、その延長線上にあるためで
 す。
 
-Twitterは今や多くの人のデスクトップ常駐アプリ/サービスになりました (僕は
-TwitterBoardというDashboardウィジェットを愛用してます) 。面白いのは、Twitter と
+Twitter は今や多くの人のデスクトップ常駐アプリ/サービスになりました (僕は
+TwitterBoard という Dashboard ウィジェットを愛用してます) 。面白いのは、Twitter と
 いう味気ないインターフェースのサービスが、多くのディベロッパーによって開発された
 アプリ群によりバラエティを増しているという現象です。FriendFeed の味気ないイン
 ターフェースと充実した API は Twitter をヒントに、それ以上のものを目指していると
@@ -65,7 +65,7 @@ Twitter 上での Reply を並べ替えて、会話の流れを分かりやす�
 これは Twitter の比ではない大仕事に思えます。ユーザーが増えれば増えるほど、どん
 どんしんどくなっていく。どんなアーキテクチャなんでしょうか？
 
-## FriendFeedの今後
+## FriendFeed の今後
 
 [Adobe AIR を使ったデスクトップアプリケーションがリリー
 ス](http://jp.techcrunch.com/archives/adobe-air-desktop-app-for-friendfeed-coming/)
@@ -77,7 +77,7 @@ Twitter 上での Reply を並べ替えて、会話の流れを分かりやす�
 シャルグラフの集約は既定路線ですが、どのパスを通って行くのが最も集客できるのか、
 興味深いところです。
 
-## FriendFeederのダウンロードと使い方
+## FriendFeeder のダウンロードと使い方
 
 ようやく本題です(笑)
 

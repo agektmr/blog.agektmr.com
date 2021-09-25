@@ -1,5 +1,5 @@
 ---
-title: OpenSocialアプリケーションを作る(2)
+title: OpenSocial アプリケーションを作る (2)
 layout: post
 date: 2008-04-17
 tags:
@@ -9,20 +9,20 @@ tags:
   - Orkut
 ---
 
-[OpenSocialアプリケーションを作る(1)](http://devlog.agektmr.com/archives/22)で
+[OpenSocial アプリケーションを作る (1)](http://devlog.agektmr.com/archives/22)で
 は、ガジェットの仕組みと、Orkut でアカウントを取得するところまで書きました。今回
 は、[前回紹介したアプリケーショ
 ン](http://devlab.agektmr.com/OpenSocial/Orkut/FriendIntroducer.xml)のコードを解
-説します。 このアプリケーション(FriendIntroducer)は、自分が見た場合は友達の紹介
-文を書くことができ、他人が見た場合はその人に向けて書かれた紹介文を読むことができ
-る、という mixi などにもよくある簡単なアプリケーションです。JavaScript や jQuery
-的にはもっと賢い実装方法があると思いますが、今回は OpenSocial のコードにフォーカ
-スしますので、アホなコードは大目に見てください。
+説します。 このアプリケーション (FriendIntroducer) は、自分が見た場合は友達の紹
+介文を書くことができ、他人が見た場合はその人に向けて書かれた紹介文を読むことがで
+きる、という mixi などにもよくある簡単なアプリケーションです。JavaScript や
+jQuery 的にはもっと賢い実装方法があると思いますが、今回は OpenSocial のコードに
+フォーカスしますので、アホなコードは大目に見てください。
 
-## ガジェットXML
+## ガジェット XML
 
 ```xml
-< ?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <module>
 <moduleprefs title="Friend Introducer" title_url="" description="Introduce your friend!" height="100">
   <require feature="opensocial-0.7" />
@@ -68,7 +68,7 @@ Content は html タイプ、profile ビューと指定しました。`type` に
 場面 (コンテキスト) によってビューを切り替えますが、Content 内で `view` を取り出
 して JavaScript で処理を分ける方法もあります。
 
-## Contentの内容
+## Content の内容
 
 Content の内容は、基本的に通常のウェブページと同じように扱うことができ、HTML で
 書くことができますが、
@@ -85,7 +85,7 @@ Content の内容は、基本的に通常のウェブページと同じように
 このアプリケーションでは、表示テンプレートとして空の `div` タグを 3 つ用意していま
 す。
 
-## JavaScriptのコード
+## JavaScript のコード
 
 JavaScript のソースコードは<a href="http://devlab.agektmr.com/OpenSocial/js/FriendIntroducer.js" target="_blank">ここ</a>にありますが、抜粋して紹介します。
 
@@ -125,7 +125,8 @@ if (intro[viewer_id]) {
 }
 ```
 
-intro は、このアプリケーションを使ってコンテナのデータ保存領域に予め保存しておいた内容、つまり「以前保存した友達の紹介文」です。
+intro は、このアプリケーションを使ってコンテナのデータ保存領域に予め保存しておい
+た内容、つまり「以前保存した友達の紹介文」です。
 
 ```js
 $('#title').html('<p>Friends of '+viewer.getDisplayName()+':</p>');
@@ -169,7 +170,7 @@ OpenSocial では配列をなめる、いわゆる iteration も仕様に含ま�
 OpenSocial はコンテナにデータ保存領域を持っており、アプリケーションがデータを保
 存することができます。これはパーシステントデータ (Persistant data) や、アプリ
 ケーションデータ (AppData) と呼ばれています。アプリケーションデータはバージョン
-0.7 では**エスケープした文字列のみ**サポートしています(次のバージョンでは JSON
+0.7 では**エスケープした文字列のみ**サポートしています (次のバージョンでは JSON
 そのものの保存も可能になるようです)。
 
 ```js
@@ -188,7 +189,7 @@ intro = gadgets.util.escapeString(intro);
 ```
 
 この処理は、ユーザーが友達の紹介文を書き終わって「投稿ボタン」を押すことでトリ
-ガーされるものです。DOM を辿って各友達のユーザーID と紹介文の内容を取得する、普
+ガーされるものです。DOM を辿って各友達のユーザー ID と紹介文の内容を取得する、普
 通の JavaScript です。取得した内容は JSON の文字列になるよう連結し、エスケープす
 ることで、アプリケーションデータとして保存が可能になります。
 
@@ -206,5 +207,5 @@ req.send(function() {
 
 解説というよりはソースコード並べただけみたいな記事になってしまいましたが、
 OpenSocial アプリケーションのほとんどが JavaScript でできてしまうということは、
-分かったかと思います。次回は外部サーバーとの連携を行う makeRequest に触れたいと
-思います。
+分かったかと思います。次回は外部サーバーとの連携を行う `makeRequest` に触れたい
+と思います。

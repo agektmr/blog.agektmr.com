@@ -1,5 +1,5 @@
 ---
-title: Mac OS XのちょっとマニアックなTips
+title: Mac OS Xのちょっとマニアックな Tips
 layout: post
 date: 2008-06-03
 tags:

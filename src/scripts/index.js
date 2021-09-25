@@ -1,1 +1,1 @@
-alert();
+import 'prismjs';

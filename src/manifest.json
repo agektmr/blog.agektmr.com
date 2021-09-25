@@ -1,0 +1,50 @@
+{
+  "name": "Tender Surrender",
+  "icons": [
+    {
+      "src": "/images/icon-72x72.jpg",
+      "sizes": "36x36",
+      "type": "image/jpeg",
+      "density": 2.0
+    },
+    {
+      "src": "/images/icon-57x57.jpg",
+      "sizes": "57x57",
+      "type": "image/jpeg",
+      "density": 1.0
+    },
+    {
+      "src": "/images/icon-72x72.jpg",
+      "sizes": "72x72",
+      "type": "image/jpeg",
+      "density": 1.0
+    },
+    {
+      "src": "/images/icon-192x192.jpg",
+      "sizes": "96x96",
+      "type": "image/jpeg",
+      "density": 2.0
+    },
+    {
+      "src": "/images/icon-114x114.jpg",
+      "sizes": "114x114",
+      "type": "image/jpeg",
+      "density": 1.0
+    },
+    {
+      "src": "/images/icon-144x144.jpg",
+      "sizes": "144x144",
+      "type": "image/jpeg",
+      "density": 1.0
+    },
+    {
+      "src": "/images/icon-192x192.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "density": 1.0
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}

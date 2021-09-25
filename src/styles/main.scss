@@ -3,8 +3,8 @@
 // Import partials from `sass_dir` (defaults to `_sass`)
 // Includes Bourbon, Neat, and Bitters (thanks, thoughtbot!)
 @import
-  "../_sass/bourbon/_bourbon.scss",
-  "../_sass/base/_base.scss",
-  "../_sass/neat/_neat.scss",
-  "../_sass/_layout.scss"
+  "./bourbon/_bourbon.scss",
+  "./base/_base.scss",
+  "./neat/_neat.scss",
+  "./_layout.scss"
 ;

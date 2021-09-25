@@ -1,79 +1,108 @@
 ---
-title: Windows Live Home登場
-author: Eiji
+title: Windows Live Home 登場
 layout: post
-SBM_count:
-  - '00001<>1271346980<>1<>0<>0<>0<>0'
-dsq_thread_id:
-  - 8322741
-categories:
+date: 2008-12-04
+tags:
   - SocialWeb
   - Windows Live
 ---
-海外のメインプレイヤーが次々にソーシャル化していってます。今回はついにMicrosoft。
 
-Windows Liveといえば、元々Messengerのソーシャルグラフを取り込んだブログサービスの<a href="http://spaces.live.com/" target="_blank">Spaces</a>がSNSとして存在していましたが、今回<a href="http://home.live.com/" target="_blank">Home</a>が中心となり、さらにSNSライクになりました。
+海外のメインプレイヤーが次々にソーシャル化していってます。今回はついに
+Microsoft。
+
+Windows Live といえば、元々 Messenger のソーシャルグラフを取り込んだブログサービ
+スの [Spaces](http://spaces.live.com/)が SNS として存在していましたが、今回
+[Home](http://home.live.com/)が中心となり、さらに SNS ライクになりました。
 
 ## Windows Live Profile
 
-[<img class="alignnone size-medium wp-image-244" title="livenew1" src="/images/2008/12/livenew1-300x195.jpg" alt="" width="300" height="195" />][1]
+![livenew1](/images/2008/12/livenew1.jpg)
 
-画面右上に友達リスト、中央には他のSNSでいうアクティビティストリームが表示されています。アクティビティストリームはFacebook同様完全に時系列で、サービスごとにまとめられたりはしていません。Live Messengerのムードメッセージが混じっているのがTwitter的で面白いところでしょうか。また、指定された外部サービスのフィードも混ざって表示されています。
+画面右上に友達リスト、中央には他の SNS でいうアクティビティストリームが表示され
+ています。アクティビティストリームは Facebook 同様完全に時系列で、サービスごとに
+まとめられたりはしていません。Live Messenger のムードメッセージが混じっているの
+が Twitter 的で面白いところでしょうか。また、指定された外部サービスのフィードも
+混ざって表示されています。
 
-URLはサブサブドメイン(?)にユーザーの裏IDらしき文字列で表現されていますのでシンプル。この裏IDは後で変更できるとスマートでいいですね。
+URL はサブサブドメイン(?)にユーザーの裏 ID らしき文字列で表現されていますのでシ
+ンプル。この裏 ID は後で変更できるとスマートでいいですね。
 
 ## Windows Live Home
 
-[<img class="alignnone size-medium wp-image-245" title="livenew3" src="/images/2008/12/livenew3-278x300.jpg" alt="" width="278" height="300" />][2]
+![livenew3](/images/2008/12/livenew3.jpg)
 
-一番上には<a href="http://mail.live.com/" target="_blank">Live Mail</a>(旧Hotmail)の最新メール。その下に、Live Messengerで繋がっている人の更新情報がアクティビティストリームとして表示されています。Spacesとの整理はよく分かりません。
+一番上には [Live Mail](http://mail.live.com/) (旧 Hotmail) の最新メール。その下
+に、Live Messenger で繋がっている人の更新情報がアクティビティストリームとして表
+示されています。Spaces との整理はよく分かりません。
 
 画面右には広告枠とニュース、占い。うーん地味だ。
 
 ## Windows Live Photo
 
-[<img class="alignnone size-medium wp-image-246" title="livenew2" src="/images/2008/12/livenew2-300x268.jpg" alt="" width="300" height="268" />][3]
+![livenew2](/images/2008/12/livenew2.jpg)
 
-<a href="http://skydrive.live.com/" target="_blank">SkyDrive</a>(MSが提供する25GB(!)の無料ストレージ)と連携したフォトストレージサービス。ここにもアクティビティストリームがありますが、おそらくLive Photoに特化したフィードを表示してくれるのだと思います。友達の最新フォトを確認できるだけでなく、自分の写真をアップロードしたりもできるようです。
+[SkyDrive](http://skydrive.live.com/) (MS が提供する 25GB(!) の無料ストレージ)
+と連携したフォトストレージサービス。ここにもアクティビティストリームがあります
+が、おそらく Live Photo に特化したフィードを表示してくれるのだと思います。友達の
+最新フォトを確認できるだけでなく、自分の写真をアップロードしたりもできるようで
+す。
 
 ## 外部サービスの取り込み
 
-[<img class="alignnone size-medium wp-image-247" title="livenew4" src="/images/2008/12/livenew4-300x207.jpg" alt="" width="300" height="207" />][4]
+![livenew4](/images/2008/12/livenew4-300x207.jpg)
 
-<a href="http://twitter.com/" target="_blank">Twitter</a>や<a href="http://flickr.com/" target="_blank">Flickr</a>などの外部サイトを取り込んで、アクティビティストリームに混ぜることができます。一番最初に思いつく類似サービスは<a href="http://friendfeed.com/" target="_blank">FriendFeed</a>ですが、自身もソーシャルであるという意味では、ある種<a href="http://www.facebook.com/" target="_blank">Facebook</a>や<a href="http://www.plaxo.com/" target="_blank">Plaxo</a>の方が近いかもしれません。
+[Twitter](http://twitter.com/) や [Flickr](http://flickr.com/) などの外部サイト
+を取り込んで、アクティビティストリームに混ぜることができます。一番最初に思いつく
+類似サービスは [FriendFeed](http://friendfeed.com/) ですが、自身もソーシャルであ
+るという意味では、ある種 [Facebook](http://www.facebook.com/) や
+[Plaxo](http://www.plaxo.com/) の方が近いかもしれません。
 
 ## その他新サービス
 
-他にも<a href="http://group.live.com/" target="_blank">Windows Live Group</a>というグループコラボレーションサービスがあるようです。
+他にも[Windows Live Group](http://group.live.com/)というグループコラボレーション
+サービスがあるようです。
 
-[<img class="alignnone size-medium wp-image-248" title="livenew5" src="/images/2008/12/livenew5-300x202.jpg" alt="" width="300" height="202" />][5]
+![livenew5](/images/2008/12/livenew5-300x202.jpg)
 
-Live Messengerでのグループチャットや写真の共有に使えるようです。
+Live Messenger でのグループチャットや写真の共有に使えるようです。
 
 ## 技術的側面
 
-MicrosoftはWindows Live IDのOpenID化を宣言していますが、その他のOpen Stackについては、まだ特に言及していません。<a href="http://www.opensocial.org/" target="_blank">OpenSocial</a>や<a href="http://oauth.net/" target="_blank">OAuth</a>、<a href="http://portablecontacts.net/" target="_blank">PorableContacts</a>についてです。調べてみると、<a href="http://msdn.microsoft.com/en-us/library/cc287637.aspx" target="_blank">Delegated Authentication</a>という独自プロトコルを使って、OAuth的なことを実現しているようです。
+Microsoft は Windows Live ID の OpenID 化を宣言していますが、その他の Open Stack
+については、まだ特に言及していません。[OpenSocial](http://www.opensocial.org/)
+や [OAuth](http://oauth.net/)、[PorableContacts](http://portablecontacts.net/) に
+ついてです。調べてみると、[Delegated
+Authentication](http://msdn.microsoft.com/en-us/library/cc287637.aspx) という独
+自プロトコルを使って、OAuth 的なことを実現しているようです。
 
-果たしてこのまま独自路線を走るのか？Yahoo!やMySpaceのように独自路線+オープンスタンダードの路線でいくのか？疑問が残るところです。
+果たしてこのまま独自路線を走るのか？Yahoo!や MySpace のように独自路線+オープンス
+タンダードの路線でいくのか？疑問が残るところです。
 
-## Windows Liveソーシャル化の持つ意味
+## Windows Live ソーシャル化の持つ意味
 
-結局Microsoftまでもが、ウェブサービスだけでなくソーシャル化にまで手を出してきました。これはソーシャルグラフをプラットフォームに据えたサービスが今後のウェブでは当たり前になっていくことを示唆しています。ただ、ソーシャルであれば万能という訳でもないし、すぐに何かできるという訳でもありません。それを活用できるサービスがあってこそ、初めて便利さが享受されるもの。では、Microsoftの戦略は？
+結局 Microsoft までもが、ウェブサービスだけでなくソーシャル化にまで手を出してき
+ました。これはソーシャルグラフをプラットフォームに据えたサービスが今後のウェブで
+は当たり前になっていくことを示唆しています。ただ、ソーシャルであれば万能という訳
+でもないし、すぐに何かできるという訳でもありません。それを活用できるサービスが
+あってこそ、初めて便利さが享受されるもの。では、Microsoft の戦略は？
 
-実はすでにWindows Liveメールはサーバー上のものと同期可能なクライアントソフトが登場しており、SkyDriveもデスクトップとウェブでシームレスに利用できるクライアントが出るとか出ないとか。メッセンジャーは言わずもがな。ソーシャルグラフはとっくの昔にメッセンジャーとHotmailで共通化しています。他にもWriterというブログ編集ソフトが既にリリースされています。
+実はすでに Windows Live メールはサーバー上のものと同期可能なクライアントソフトが
+登場しており、SkyDrive もデスクトップとウェブでシームレスに利用できるクライアン
+トが出るとか出ないとか。メッセンジャーは言わずもがな。ソーシャルグラフはとっくの
+昔にメッセンジャーと Hotmail で共通化しています。他にも Writer というブログ編集
+ソフトが既にリリースされています。
 
-これらは明らかに、クラウドとしてのウェブサービスと、デスクトップソフトの組み合わせ利用を意識していると言え、そのいずれもが、SNS的機能によってより実力を発揮することができるものです。
+これらは明らかに、クラウドとしてのウェブサービスと、デスクトップソフトの組み合わ
+せ利用を意識していると言え、そのいずれもが、SNS 的機能によってより実力を発揮する
+ことができるものです。
 
-今までウェブサービスとしては地味にやってきた感のあるMicrosoftですが、そう考えると、Windows7が出るタイミングで大バケする可能性も、否定はできません。
+今までウェブサービスとしては地味にやってきた感のある Microsoft ですが、そう考え
+ると、Windows7 が出るタイミングで大バケする可能性も、否定はできません。
 
 ## 気になったこと
 
-<a href="http://gallery.live.com/" target="_blank">Windows Live Gadget</a>の使いどころをHomeに用意していないところが気になります。Gadgetの仕様はよく知りませんが、もしOpenSocialに変わる独自JavaScript APIを用意するのだとしたら、、、!?
+[Windows Live Gadget](http://gallery.live.com/) の使いどころを Home に用意してい
+ないところが気になります。Gadget の仕様はよく知りませんが、もし OpenSocial に変
+わる独自 JavaScript API を用意するのだとしたら、、、!?
 
 この辺の戦略は気になるところです。
-
- [1]: /images/2008/12/livenew1.jpg
- [2]: /images/2008/12/livenew3.jpg
- [3]: /images/2008/12/livenew2.jpg
- [4]: /images/2008/12/livenew4.jpg
- [5]: /images/2008/12/livenew5.jpg

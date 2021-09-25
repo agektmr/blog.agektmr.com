@@ -1,5 +1,5 @@
 ---
-title: 'オフラインでも使えるマインドマップサービス &#8211; MindMeister'
+title: 'オフラインでも使えるマインドマップサービス - MindMeister'
 layout: post
 date: 2008-04-29
 tags:
@@ -18,7 +18,7 @@ tags:
 分岐して記述することで、アイディアの整理するのに役立つ記法/ツールです。僕なんか
 は、TODO とかアイディアはポンポン出てくるんだけど、体系的にまとめることが苦手な
 ため、これまで無料のマインドマップツール、
-[FreeMind](http://www.freemind-club.com/)を利用してきました。
+[FreeMind](http://www.freemind-club.com/) を利用してきました。
 
 利用法としては
 
@@ -48,7 +48,7 @@ MacBook ですら起動に数分かかるという状況(バージョン 0.8.1 �
 
 さらに、まだ試していませんが、TODO 管理的な機能もあるようです。
 
-## OpenID対応
+## OpenID 対応
 
 最近人気が出てきた OpenID にも対応しています。OpenID は Yahoo など、他サービスの
 ID 認証でサービスが利用可能になる共通プロトコルです。(※OpenID を使うと認証できな
@@ -56,7 +56,7 @@ ID 認証でサービスが利用可能になる共通プロトコルです。(�
 
 ![mindmeister_openid](/images/2008/04/mindmeister_openid.jpg)
 
-## FreeMindやMindManagerからのインポート
+## FreeMind や MindManager からのインポート
 
 マインドマップツールとしてはメジャーな FreeMind と MindManager のマインドマップ
 をインポートすることができます。これはありがたい。

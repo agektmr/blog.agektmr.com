@@ -1,5 +1,5 @@
 ---
-title: ついにiGoogleがOpenSocial対応へ
+title: ついに iGoogle が OpenSocial 対応へ
 layout: post
 date: 2008-04-22
 tags:
@@ -8,10 +8,10 @@ tags:
   - OpenSocial
 ---
 
-今日から、[OpenSocial機能提供に向け、iGoogleでsandboxの利用が可能になりまし
+今日から、[OpenSocial 機能提供に向け、iGoogle で sandbox の利用が可能になりまし
 た](http://jp.techcrunch.com/archives/20080421hints-of-igoogle-turning-into-its-own-social-network/)。
 これは明白に、**Google 自身がソーシャルネットワークを基盤とした仕組みになってい
-く** ことを意味しています。以前[Maka-Makaと呼ばれるプロジェク
+く** ことを意味しています。以前[Maka-Maka と呼ばれるプロジェク
 ト](http://jp.techcrunch.com/archives/googles-response-to-facebook-maka-maka/)が
 存在し、Google 独自の SNS サービスが始まるという話題がありましたが、それが
 OpenSocial というオープンな形を取り、予想していたとはいえ、iGoogle という形で現

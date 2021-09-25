@@ -3,9 +3,8 @@
   "version": "5.0.2",
   "description": "A starter repository for a blog web site using the Eleventy static site generator.",
   "scripts": {
-    "build": "eleventy && npm run style",
+    "build": "eleventy && rollup -c rollup.config.js",
     "watch": "eleventy --watch",
-    "style": "node-sass src/styles/main.scss _site/styles/bundle.css",
     "start": "eleventy --serve",
     "debug": "DEBUG=* eleventy"
   },
@@ -28,7 +27,9 @@
     "markdown-it": "^12.2.0",
     "markdown-it-anchor": "^8.3.1",
     "node-sass": "^6.0.1",
+    "prismjs": "^1.25.0",
     "rollup": "^2.56.3",
+    "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-scss": "^3.0.0",
     "textlint": "^12.0.2",
     "textlint-rule-preset-ja-spacing": "^2.2.0"

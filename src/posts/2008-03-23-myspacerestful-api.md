@@ -1,5 +1,5 @@
 ---
-title: MySpaceのRESTful APIは独自仕様
+title: MySpace の RESTful API は独自仕様
 layout: post
 date: 2008-03-23
 tags:
@@ -7,8 +7,8 @@ tags:
   - RESTful API
 ---
 
-去る3月13日、MySpaceでOpenSocialアプリがβ版として一般公開されました。OpenSocial
-対応SNSとしては、一般公開は一番乗りです。まだOpenSocialの仕様も完全に固まってい
+去る 3 月 13 日、MySpace で OpenSocial アプリがβ版として一般公開されました。OpenSocial
+対応 SNS としては、一般公開は一番乗りです。まだ OpenSocial の仕様も完全に固まってい
 ない状況で、なぜ？どうやって？
 
 [OpenSocial Container standard fragmentation &#8211; Implementing OpenSocial
@@ -17,7 +17,7 @@ Containers | Google グルー
 
 内容を要約すると
 
-> MySpaceのOpenSocial APIは、JavaScript の拡張も RESTful API も独自仕様のようで
+> MySpace の OpenSocial API は、JavaScript の拡張も RESTful API も独自仕様のようで
 > す。このままでは、標準仕様よりも、世界最大の SNS が作った仕様に合わせざるを得
 > なくなるのではないでしょうか？
 
@@ -33,7 +33,7 @@ Containers | Google グルー
 とのこと。
 
 OpenSocial の仕様を固める主体は、どうやら Google だけではなく、hi5 や MySpace,
-Ning等、Facebook 以外の米国の主要 SNS の開発者が集まり、提案を出し合って決めてい
+Ning 等、Facebook 以外の米国の主要 SNS の開発者が集まり、提案を出し合って決めてい
 る模様。
 
 > バージョン 0.7 で (少なくとも JavaScript API は) ある程度落ち着いたという認識

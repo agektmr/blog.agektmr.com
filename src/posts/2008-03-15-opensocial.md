@@ -1,5 +1,5 @@
 ---
-title: OpenSocialの疑問がひとつ解決した
+title: OpenSocial の疑問がひとつ解決した
 layout: post
 date: 2008-03-15
 tags:
@@ -14,7 +14,7 @@ tags:
 超えが必要となり、プロキシ経由でサーバー間通信となり RESTful API がないと役に立
 たない**
 
-どうやらOrkutでは、`Content Type="url"` を許可していない模様。
+どうやら Orkut では、`Content Type="url"` を許可していない模様。
 
 [MYSQL database connection using PHP for my gadget ? &#8211; Orkut Developer
 Forum | Google グルー

@@ -1,5 +1,5 @@
 ---
-title: Mac OS XにShindigをインストールする
+title: Mac OS X に Shindig をインストールする
 layout: post
 date: 2008-03-12
 tags:
@@ -13,53 +13,53 @@ tags:
 参考資料 : [Shindig - an Apache incubator project for OpenSocial and
 gadgets](http://incubator.apache.org/shindig/)
 
-## 予めMavenのインストールが必要
+## 予め Maven のインストールが必要
 
 [Maven - Download Maven 2.0.8](http://maven.apache.org/download.html) からダウン
 ロード。特にインストール作業は必要なく、適当なところに置いといて、パスを切る必要
 あり。ひとまず
 
-```
+```shell
 > ~/Development/apache-maven-2.0.8
 ```
 
 に置いておこう。環境変数も設定しておく。
 
-```
-> export JAVA_HOME='/System/Library/Frameworks/JavaVM.framework/Versions/A'&gt; export PATH=$PATH:/Users/ekita/Development/apache-maven-2.0.8/bin
+```shell
+> export JAVA_HOME='/System/Library/Frameworks/JavaVM.framework/Versions/A' > export PATH=$PATH:/Users/ekita/Development/apache-maven-2.0.8/bin
 ```
 
-・・・とか思ったら、Maven入ってるじゃん！なにこれOS X!!
+・・・とか思ったら、Maven 入ってるじゃん！なにこれ OS X!!
 
-## Shindigを設置
+## Shindig を設置
 
-```
+```shell
 > mkdir Shindig
 ```
 
-レポジトリからShindigのソースをチェックアウトする
+レポジトリから Shindig のソースをチェックアウトする
 
-```
+```shell
 > svn co http://svn.apache.org/repos/asf/incubator/shindig/trunk .
 ```
 
 ビルドする
 
-```
+```shell
 > cd ~/Development/Shindig/java/gadgets&gt; mvn package
 ```
 
 勝手に色々ダウンロードしてよしなにしてくれるみたい。
 
-## Shindigを起動してみる
+## Shindig を起動してみる
 
-```
+```shell
 > mvn jetty:run-war
 ```
 
 で動くらしいのだが、、、
 
-```
+```shell
 [INFO] Scanning for projects...
 [INFO] Searching repository for plugin with prefix: 'jetty'.
 [INFO] org.apache.maven.plugins: checking for updates from central
@@ -81,28 +81,30 @@ gadgets](http://incubator.apache.org/shindig/)
 うまく動かない、、、 どうやら
 [Jetty](http://jetty.mortbay.org/maven-plugin/index.html) というのが必要らしい。
 
-## Jettyを動かす
+## Jetty を動かす
 
 Java サーバーはさっぱりなのでよくわからないけど、とりあえず jetty-6.1.8 をダウン
 ロードし、 `~/Development` 配下に移動。
 
-```
+```shell
 > cd ~/Development/jetty-6.1.8
 > java -jar start.jar
 ```
 
-とかやってみる。どうやらこれでjettyというウェブサーバーが動いてることになってる
-らしい(多分Apacheも動いてる必要アリ)そこで、先ほどビルドしたShindigのwarファイル
+とかやってみる。どうやらこれで jetty というウェブサーバーが動いてることになってる
+らしい(多分 Apache も動いてる必要アリ)そこで、先ほどビルドした Shindig の war ファイル
 をシンボリックリンクして
 
-```
+```shell
 > ln -s ~/Development/Shindig/java/gadgets/target/gadgets.war ~/Development/jetty-6.1.8/webapps/gadgets.war
 ```
 
 アクセスしてみると、、、
 
-`http://localhost:8080/gadgets/files/samplecontainer/samplecontainer.html`
+```shell
+http://localhost:8080/gadgets/files/samplecontainer/samplecontainer.html
+```
 
-[![Shindig](/images/2008/03/shindig.jpg)](/images/2008/03/shindig.jpg)
+![Shindig](/images/2008/03/shindig.jpg)
 
 動いた〜！！今日はここまで。

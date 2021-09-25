@@ -28,7 +28,7 @@ Orkut や hi5 にもこれに類するものがありますが、仕様は未公
 な？](http://api.hi5.com/))
 
 MySpace には OpenSocial とは別に MyOpenSpace という拡張があり、
-opensocialreference.jsと MyOpenSpace.js として区別されています。位置付けとしては
+opensocialreference.js と MyOpenSpace.js として区別されています。位置付けとしては
 MyOpenSpace がまずあり、それをラッピングする形で OpenSocial が存在する、と言った
 方が正確でしょう。OpenSocial は様々な SNS の持つ API の最大公約数を取る形でデザ
 インされているため、独自の API をラッピングすれば十分な訳です。確かにこれなら、
@@ -40,8 +40,8 @@ MyOpenSpace がまずあり、それをラッピングする形で OpenSocial �
 うだ。現行バージョンでアプリを開発した人向けに、古いバージョン用の API も残して
 いくようです。
 
-これで、以前から気になっていた[MySpaceはまだ仕様が固まっていないはずのOpenSocial
-RESTful APIをどうやって実装したのか？](http://devlog.agektmr.com/archives/20)と
+これで、以前から気になっていた[MySpace はまだ仕様が固まっていないはずの OpenSocial
+RESTful API をどうやって実装したのか？](http://devlog.agektmr.com/archives/20)と
 いう疑問が解決しました。
 
 ## OpenSocial の拡張に当たる部分とは？
@@ -97,8 +97,8 @@ XML の変更は反映されないと思われます。
 まず、MySpace 独自拡張の部分を利用しなければ、当然他の SNS に持って行っても使う
 ことが出来ます。まあ、そりゃそうですよね。でも、view や css はサイトごとに切り替
 える必要があるはず。例えば Orkut では canvas、profile という 2 つの view しかあ
-りませんが、MySpace には home,canvas,profile.left,profile.right の 4 つが、hi5に
-はhomepage,canvas,profile という 3 つがあります。この時点で、うーん、ですね。
+りませんが、MySpace には home,canvas,profile.left,profile.right の 4 つが、hi5 に
+は homepage,canvas,profile という 3 つがあります。この時点で、うーん、ですね。
 
 ただ、やり方として、コンテナのメソッドにアプリが動いているコンテナの名前を取得す
 る API があるので、それによって動作を切り替える方法もあるよ、と教えてもらいまし
@@ -125,7 +125,7 @@ Facebook はアプリケーション機能公開後に急激な伸びを示し�
 と伺えます。今後 API がもっとしっかりしたものになってから、色々やるんでしょうね。
 メッセージ機能等による口コミにも期待しているそうです。
 
-## escapeStringとunescapeStringについて
+## escapeString と unescapeString について
 
 パーシステント API を使う際、文字列情報しか保存できないため、JSON 形式でやりとり
 されます。その際文字列をエスケープしてから投げたり、受け取った際はアンエスケープ
@@ -137,7 +137,7 @@ Facebook はアプリケーション機能公開後に急激な伸びを示し�
 ところ、まだ `gadgets.util.scapeString()` も `gadgets.util.unescapeString()` も
 有効のようですが、、、。
 
-## MySpace用のサンプルアプリ
+## MySpace 用のサンプルアプリ
 
 以前作った友達紹介アプリの MySpace バージョンを公開します。
 
@@ -155,7 +155,7 @@ http://devlab.agektmr.com/OpenSocial/MySpace/FriendIntroducer.xml
 
 * MySpace のエンジニアの方は Aptana を使う人が多いみたい。Java アプリはもっさりして
   て嫌いなので基本的に使わないのですが、もう一回チャレンジしてみようかな・・・。
-* 何が驚いたって、参加者 10 人中パソコン出した人が 4 人。その全員が**MacBook Airユー
+* 何が驚いたって、参加者 10 人中パソコン出した人が 4 人。その全員が**MacBook Air ユー
   ザーだった**こと！  
   みんなリッチだなあ。 
 * Ozzie と写真撮ってもらった！

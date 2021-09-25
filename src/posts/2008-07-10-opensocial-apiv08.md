@@ -1,18 +1,14 @@
 ---
-title: OpenSocial API仕様(v0.8)を翻訳しました
-author: Eiji
+title: OpenSocial API 仕様 (v0.8) を翻訳しました
 layout: post
-SBM_count:
-  - '00000<>1271336846<>0<>0<>0<>0<>0'
-dsq_thread_id:
-  - 2332367
-categories:
-  - OpenSocial
+date: 2008-07-10
 tags:
   - OpenSocial
 ---
-[OpenSocial API仕様(v0.8)][1]
 
-一ヶ月くらい前から出来てたのですが、一応ブログ記事にも書いておきます。何か間違い等ありましたらお知らせください。
+[OpenSocial API 仕様
+(v0.8)][http://devlog.agektmr.com/wiki/index.php?cmd=read&page=OpenSocial%2FOpenSocial%20API
+仕様%20%28v0.8%29]
 
- [1]: http://devlog.agektmr.com/wiki/index.php?cmd=read&page=OpenSocial%2FOpenSocial%20API仕様%20%28v0.8%29
+一ヶ月くらい前から出来てたのですが、一応ブログ記事にも書いておきます。何か間違い
+等ありましたらお知らせください。

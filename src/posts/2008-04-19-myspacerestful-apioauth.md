@@ -1,5 +1,5 @@
 ---
-title: MySpaceのRESTful APIでOAuth認証を試してみる
+title: MySpace の RESTful API で OAuth 認証を試してみる
 layout: post
 date: 2008-04-19
 tags:
@@ -8,12 +8,12 @@ tags:
   - RESTful API
 ---
 
-MySpace で公開されている MDP(MySpace Developer Platform) には、OpenSocial だけで
-なく独自の RESTful API も含まれており、これを使うことでサーバーサイドにアプリ
+MySpace で公開されている MDP (MySpace Developer Platform) には、OpenSocial だけ
+でなく独自の RESTful API も含まれており、これを使うことでサーバーサイドにアプリ
 ケーションを作ることもできるようになっています。今回は、MDP の RESTful API の
 OAuth 認証にフォーカスを当ててみます。
 
-## OpenSocial/MDPのOAuthについて
+## OpenSocial/MDP の OAuth について
 
 OAuth とは、ユーザーとユーザーが利用したいサービス(以後サービスプロバイダ)を仲介
 する OpenSocial 等のコンテナ(以後コンシューマ)が、サービスプロバイダの認証情報を
@@ -45,10 +45,10 @@ MySpace でアプリケーションを作るためには、ユーザーアカウ
 プロフィールアカウントが必要です。下記のサイトにスクリーンショット付きで解説があ
 りますので、参考にしてください。
 
-[MySpaceアプリケーションを作ろう – ラーニング人
+[MySpace アプリケーションを作ろう – ラーニング人
 生。](http://d.hatena.ne.jp/yorihito_tanaka/20080408)
 
-## OAuth認証の準備
+## OAuth 認証の準備
 
 アプリケーションプロフィールが作れたら、XML や JavaScript のコードは不要です。今
 回の目的は RESTful API の認証を試すところにありますので、画面左の[My
@@ -64,7 +64,7 @@ RESTful API にアクセスするには、これらが必要になりますの�
 
 ![myspace_myapp_detail](/images/2008/04/myspace_myapp_detail.jpg)
 
-## OAuth Toolで認証してみる
+## OAuth Tool で認証してみる
 
 OAuth ではコンシューマキーと Nonce、Timestamp などから署名 (Signature) を作って
 認証を行います。署名の作り方は複雑なので、今回は MDP で提供されている [OAuth
@@ -75,11 +75,12 @@ Tool](http://developer.myspace.com/modules/apis/pages/oauthtool.aspx) を使っ�
 
 画面右にある項目を埋めていきます。
 
-* **Server:** サーバーURL。RFC3986 で言う scheme と authority に当たります。ここ
-  ではhttp://api.myspace.comとします。
+* **Server:** サーバーURL。RFC3986 で言う `scheme` と `authority` に当たります。
+  ここでは `http://api.myspace.com` とします。
 * **ResourceURL:** サーバーURL 以降のパス。RFC3986 で言う path に当たります。
-  query と fragment は含みません。ここは/users/{user_id}/friends として、user_id
-  にはあなたのユーザーID を入力してください。他の利用可能なエンドポイントは[こ
+  query と fragment は含みません。ここは `/users/{user_id}/friends` として、
+  `user_id`にはあなたのユーザー ID を入力してください。他の利用可能なエンドポイ
+  ントは[こ
   こ](http://developer.myspace.com/community/RestfulAPIs/resources.aspx)に記載さ
   れています。
 * **Request Method:** HTTP メソッド。GET とします。

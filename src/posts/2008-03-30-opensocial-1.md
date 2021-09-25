@@ -1,5 +1,5 @@
 ---
-title: OpenSocialアプリケーションを作る(1)
+title: OpenSocial アプリケーションを作る (1)
 layout: post
 date: 2008-03-30
 tags:
@@ -9,7 +9,7 @@ tags:
   - Orkut
 ---
 
-OrkutとMySpaceで自作アプリを動かしてみたので、そのレポートです。
+Orkut と MySpace で自作アプリを動かしてみたので、そのレポートです。
 
 まだ仕様が固まっていないのでグレーな部分も多いのですが、OpenSocial は
 GoogleGadget と相性が良いらしく、Orkut も MySpace も、hi5 も GoogleGadget 前提と
@@ -60,7 +60,7 @@ Sandbox アカウントを取得することで、利用可能となります。
 ラ](http://code.google.com/support/opensocialsignup/)から申請を行ってください。
 申請が受理されるまでには数日を要するようです。
 
-## OrkutにOpenSocialアプリを追加する
+## Orkut に OpenSocial アプリを追加する
 
 無事アカウントの取得ができたら、実際にアプリケーションを試すことができるようにな
 ります。ちなみに、どこかのサーバーに GoogleGadget の XML ファイルを置いておく必
@@ -69,7 +69,7 @@ Sandbox アカウントを取得することで、利用可能となります。
 
 [![Orkut1](/images/2008/03/orkut1.jpg)](/images/2008/03/orkut1.jpg)
 
-Sandboxにログインするとこんな感じ。一見通常のログイン画面と変わりませが、一点だけ：
+Sandbox にログインするとこんな感じ。一見通常のログイン画面と変わりませが、一点だけ：
 
 [![Orkut2](/images/2008/03/orkut2.jpg)](/images/2008/03/orkut2.jpg)
 
@@ -80,7 +80,7 @@ Sandboxにログインするとこんな感じ。一見通常のログイン画�
 URL で XML ファイルを指定してアプリケーションを追加できます。(ちなみにアプリケー
 ションディレクトリはいつもほとんどアプリがありません)
 
-ここでは、僕の作ったアプリケーションで試してみましょう。URLに下記を入力します：
+ここでは、僕の作ったアプリケーションで試してみましょう。URL に下記を入力します：
 
 ```
 http://devlab.agektmr.com/OpenSocial/FriendIntroducer.xml
@@ -96,6 +96,6 @@ http://devlab.agektmr.com/OpenSocial/FriendIntroducer.xml
 
 こんな感じの画面が表示されたら成功。Orkut 上に友達がいない方は、[僕のアカウン
 ト](http://sandbox.orkut.com:80/Profile.aspx?uid=2129608995524995619)に友達申請
-してくれてもOKです。
+してくれても OK です。
 
 ひとまず、第 1 回はここまで。

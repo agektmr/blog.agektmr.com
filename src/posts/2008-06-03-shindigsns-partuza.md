@@ -1,72 +1,97 @@
 ---
-title: 'オープンソースのShindig対応SNS &#8211; Partuza!'
-author: Eiji
+title: 'オープンソースの Shindig 対応 SNS - Partuza!'
 layout: post
-SBM_count:
-  - '00007<>1271333836<>5<>0<>2<>0<>0'
-dsq_thread_id:
-  - 2426906
-categories:
-  - OpenSocial
+date: 2008-06-03
 tags:
   - OpenSocial
   - Partuza!
   - Shindig
 ---
-OpenSocialのコンテナと言えば<a href="http://devlog.agektmr.com/archives/tag/shindig" target="_blank">Shindig</a>ですが、PHP版は既にOpenSocial v0.7への対応を完了しています。<a href="http://code.google.com/p/partuza/" target="_blank">Partuza!</a>はPHP版Shindigの開発者であるChris Chabot氏がオープンソースで開発したShindig対応SNSです。
 
-Shindigがコンテナなのに、じゃあPartuza!は何をするの？と思われるかもしれません。今回はインストール方法と、Shindigとの関係について解説します。
+OpenSocial のコンテナと言えば
+[Shindig](http://devlog.agektmr.com/archives/tag/shindig) ですが、PHP 版は既に
+OpenSocial v0.7 への対応を完了しています。
+[Partuza!](http://code.google.com/p/partuza/) は PHP 版 Shindig の開発者である
+Chris Chabot 氏がオープンソースで開発した Shindig 対応 SNS です。
+
+Shindig がコンテナなのに、じゃあ Partuza!は何をするの？と思われるかもしれませ
+ん。今回はインストール方法と、Shindig との関係について解説します。
 
 ## Partuza!をインストールする
 
-<a href="http://devlog.agektmr.com/archives/11" target="_blank">Shindigのインストール方法は以前解説しました</a>ので、ここでは割愛します。仮に、Shindigが~/shindig配下にインストールされ、http://localhost:8080/gadgets/&#8230;でアクセスできるものとします。
+[Shindig のインストール方法は以前解説しまし
+た](http://devlog.agektmr.com/archives/11)ので、ここでは割愛します。仮に、
+Shindig が `~/shindig` 配下にインストールされ、`http://localhost:8080/gadgets/…`
+でアクセスできるものとします。
 
-まず、環境としてApache、PHP5(要mcrypt)、MySQL5が必須となります。
+まず、環境として Apache、PHP5(要 mcrypt)、MySQL5 が必須となります。
 
 ### レポジトリからチェックアウト
 
-Google CodeのレポジトリからSVNでチェックアウトします。
+Google Code のレポジトリから SVN でチェックアウトします。
 
-<pre>&gt; svn checkout <strong><em><span style="font-style: normal;"><span style="font-weight: normal;">http</span></span></em></strong>://partuza.googlecode.com/svn/trunk/ ~/partuza</pre>
+```shell
+> svn checkout http://partuza.googlecode.com/svn/trunk/ ~/partuza
+```
 
 ### データベースを用意
 
-適当なデータベース名、ユーザー名、パスワードで空のDBを作ってください。ひとまずここではそれぞれ、partuza、root、パスワードなしとします。この状態で、~/partuza/partuza.sqlをダンプします。
+適当なデータベース名、ユーザー名、パスワードで空の DB を作ってください。ひとまず
+ここではそれぞれ、partuza、root、パスワードなしとします。この状態で、
+`~/partuza/partuza.sql` をダンプします。
 
-<pre>&gt; mysql -u root partuza &lt; partuza.sql</pre>
+```shell
+> mysql -u root partuza > partuza.sql
+```
 
-### DocumentRootを設定
+### DocumentRoot を設定
 
-Apacheの設定(httpd.conf)でDocumentRootを~/partuza/htmlに設定し、http://localhost/でアクセスできるようにします。もちろん、Shindigとは別ドメインを用意する必要がありますので、バーチャルホストを使う等してください。
+Apache の設定 (`httpd.conf`) で `DocumentRoot` を `~/partuza/html` に設定し、
+`http://localhost/` でアクセスできるようにします。もちろん、Shindig とは別ドメイ
+ンを用意する必要がありますので、バーチャルホストを使う等してください。
 
 ### 設定ファイルを修正
 
-~/partuza/html/config.phpを編集します。ここでは先程作成したデータベース関連の情報とガジェットサーバーのルートURL(gadget_server)を設定します。ガジェットサーバーのURLが、ここではShindigのURLとなりますので、http://localhost:8080/になります。
+`~/partuza/html/config.php` を編集します。ここでは先程作成したデータベース関連の
+情報とガジェットサーバーのルート URL (`gadget_server`) を設定します。ガジェット
+サーバーの URL が、ここでは Shindig の URL となりますので、
+`http://localhost:8080/` になります。
 
 ### データベースハンドラをコピー
 
-~/partuza/Shindig/PartuzaDbFetcher.phpと~/partuza/Shindig/PartuzaHandler.phpを~/shindig/php/src/socialにコピーします。
+`~/partuza/Shindig/PartuzaDbFetcher.php` と
+`~/partuza/Shindig/PartuzaHandler.php` を `~/shindig/php/src/social` にコピーし
+ます。
 
-<pre>&gt; cp ~/partuza/Shindig/Partuza* ~/shindig/php/src/social</pre>
+```shell
+> cp ~/partuza/Shindig/Partuza* ~/shindig/php/src/social
+```
 
-### Shindigのデータベース設定を修正
+### Shindig のデータベース設定を修正
 
-~/shindig/php/src/social/PartuzaDbFetcher.phpにもデータベース関連の情報があるので修正します。加えてShindigがデータベースハンドラを利用するよう、~/shindig/php/config.phpも修正します。ここでは、&#8221;handlers => PartuzaHandler&#8221;としてください。
+`~/shindig/php/src/social/PartuzaDbFetcher.php` にもデータベース関連の情報がある
+ので修正します。加えて Shindig がデータベースハンドラを利用するよう、
+`~/shindig/php/config.php` も修正します。ここでは、"handlers => PartuzaHandler"
+としてください。
 
-これで一通りの準備は完了。http://localhost/にアクセスしてウェルカム画面が出れば成功です。このまま登録し、Orkutライクな一般的なSNSとして利用することができます。
+これで一通りの準備は完了。`http://localhost/` にアクセスしてウェルカム画面が出れ
+ば成功です。このまま登録し、Orkut ライクな一般的な SNS として利用することができ
+ます。
 
-[<img class="alignnone size-medium wp-image-72" title="partuza" src="/images/2008/05/partuza-300x185.jpg" alt="" width="300" height="185" />][1]
+## Partuza!と Shindig の関係
 
-## Partuza!とShindigの関係
+OpenSocial のガジェットが iframe を介して表示されていることは以前も解説しました
+が、簡単に言ってしまえば、iframe の手前が Partuza、後ろが Shindig になります。
+Shindig では以前から下記の URL にアクセスすることで簡易的な HTML から OpenSocial
+ぽい表示を行うことはできていましたが、Partuza を使うことで完全な SNS となりま
+す。
 
-OpenSocialのガジェットがiframeを介して表示されていることは以前も解説しましたが、簡単に言ってしまえば、iframeの手前がPartuza、後ろがShindigになります。Shindigでは以前から下記のURLにアクセスすることで簡易的なHTMLからOpenSocialぽい表示を行うことはできていましたが、Partuzaを使うことで完全なSNSとなります。
+http://localhost:8080/gadgets/files/samplecontainer/samplecontainer.html
 
-<address>
-  http://localhost:8080/gadgets/files/samplecontainer/samplecontainer.html
-</address>
+とはいえ、PartuzaHandler を指定したところからも想像できるように、データベースは
+共有されます。なお、[Chris Chabot 氏のサイト](http://partuza.us.chabotc.com/)で実
+際に動いているものを確認することができます。
 
-とはいえ、PartuzaHandlerを指定したところからも想像できるように、データベースは共有されます。なお、<a href="http://partuza.us.chabotc.com/" target="_blank">Chris Chabot氏のサイト</a>で実際に動いているものを確認することができます。
-
-Partuza!を使うことで、どうすればShindigをSNSに組み込むことができるかの解析をすることができるだけでなく、そのままちょっとしたSNSを開発することもできてしまいます。ぜひお試しください。
-
- [1]: /images/2008/05/partuza.jpg
+Partuza!を使うことで、どうすれば Shindig を SNS に組み込むことができるかの解析を
+することができるだけでなく、そのままちょっとした SNS を開発することもできてしま
+います。ぜひお試しください。

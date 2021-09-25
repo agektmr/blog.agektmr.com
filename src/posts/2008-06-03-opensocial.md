@@ -1,27 +1,22 @@
 ---
-title: OpenSocialコンテナの対応状況を調べるガジェット
-author: Eiji
+title: OpenSocial コンテナの対応状況を調べるガジェット
 layout: post
-SBM_count:
-  - '00002<>1271317417<>2<>0<>0<>0<>0'
-dsq_thread_id:
-  - 2362437
-categories:
-  - OpenSocial
+date: 2008-06-03
 tags:
   - Gadget
   - OpenSocial
 ---
-OpenSocialコンテナにも<a href="http://www.orkut.com/Home.aspx" target="_blank">Orkut</a>, <a href="http://hi5.com/" target="_blank">hi5</a>, <a href="http://www.myspace.com/" target="_blank">MySpace</a>だけでなく、<a href="http://www.google.com/ig?hl=en" target="_blank">iGoogle</a>, <a href="http://www.hyves.nl/" target="_blank">hyves</a>, <a href="http://en.netlog.com/" target="_blank">Netlog</a>などが登場してきました。
 
-それぞれのSNSには特徴がありますが、仕様をいちいち調べたり、開発に当たって動作確認を行うのは面倒です。現在OpenSocial v0.8は登場したばかりということもあり、ほとんどがv0.7対応のものですが、v0.7への対応状況を確認できるガジェットというのがあります。
+OpenSocial コンテナにも [Orkut](http://www.orkut.com/Home.aspx),
+[hi5](http://hi5.com/), [MySpace](http://www.myspace.com/) だけでなく、
+[iGoogle](http://www.google.com/ig?hl=en), [hyves](http://www.hyves.nl/),
+[Netlog](http://en.netlog.com/) などが登場してきました。
 
-<address>
-  http://opensocial-resources.googlecode.com/svn/tests/trunk/compliancetests.xml
-</address>
+それぞれの SNS には特徴がありますが、仕様をいちいち調べたり、開発に当たって動作確認を行うのは面倒です。現在 OpenSocial v0.8 は登場したばかりということもあり、ほとんどが v0.7 対応のものですが、v0.7 への対応状況を確認できるガジェットというのがあります。
 
-[<img class="alignnone size-medium wp-image-74" title="compliancetest" src="/images/2008/06/compliancetest-257x299.jpg" alt="" width="257" height="299" />][1]
+http://opensocial-resources.googlecode.com/svn/tests/trunk/compliancetests.xml
+
+
+![compliancetest](/images/2008/06/compliancetest-257x299.jpg)
 
 これで開発も少しは楽になるのではないでしょうか。
-
- [1]: /images/2008/06/compliancetest.jpg

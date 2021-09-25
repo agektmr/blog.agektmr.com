@@ -6,6 +6,7 @@ templateClass: tmpl-post
 eleventyNavigation:
   key: About Me
   order: 3
+eleventyExcludeFromCollections: true
 tags:
   - pages
 ---
