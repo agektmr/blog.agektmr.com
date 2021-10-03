@@ -55,7 +55,7 @@ RESTful API をどうやって実装したのか？](http://devlog.agektmr.com/a
 
 また、個別送信可能なメッセージ機能は？と聞いたところ、今まさに開発中だそうです。
 (今見たら、[OpenSocial にもうあるよう
-な、、、](http://groups.google.com/group/opensocial-and-gadgets-spec/browse_thread/thread/ee24d711e51a4084))
+な、、、](https://groups.google.com/group/opensocial-and-gadgets-spec/browse_thread/thread/ee24d711e51a4084))
 他にも、音楽やコメディなど、様々な分野の API を作っていきたいとのことでした。
 
 ## アプリケーションの登録について

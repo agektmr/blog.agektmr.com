@@ -24,7 +24,7 @@ Shadow DOM を利用すると、DOM 要素に、ウェブページの他の部�
 
 ## Shadow DOM とはなにか？
 
-[![](http://2.bp.blogspot.com/-sSnMdi7jRHk/VD9ECL455-I/AAAAAAAAudQ/cXHMUu6S58M/s1600/posterImage-4215.png)](http://2.bp.blogspot.com/-sSnMdi7jRHk/VD9ECL455-I/AAAAAAAAudQ/cXHMUu6S58M/s1600/posterImage-4215.png)
+[![](https://2.bp.blogspot.com/-sSnMdi7jRHk/VD9ECL455-I/AAAAAAAAudQ/cXHMUu6S58M/s1600/posterImage-4215.png)](https://2.bp.blogspot.com/-sSnMdi7jRHk/VD9ECL455-I/AAAAAAAAudQ/cXHMUu6S58M/s1600/posterImage-4215.png)
 
 こちらは HTML5 の video タグで表示された動画です。ご覧頂けるとお分かりのように、
 コードは video タグのみという単純さでありながら、動画そのものだけでなく、制御用
@@ -37,12 +37,12 @@ Shadow DOM を利用すると、DOM 要素に、ウェブページの他の部�
 実は Chrome で DevTools を開いて、`'Show user agent shadow DOM'` オプションを on
 にすると、この制御用 UI がどのようにできているか確認することができます。
 
-[![](http://4.bp.blogspot.com/-W-04-3shNPE/VD9EX1GZ6KI/AAAAAAAAudo/mtraUQ_D89w/s1600/Screen%2BShot%2B2014-06-03%2Bat%2B4.05.54.png)](http://4.bp.blogspot.com/-W-04-3shNPE/VD9EX1GZ6KI/AAAAAAAAudo/mtraUQ_D89w/s1600/Screen%2BShot%2B2014-06-03%2Bat%2B4.05.54.png)
+[![](https://4.bp.blogspot.com/-W-04-3shNPE/VD9EX1GZ6KI/AAAAAAAAudo/mtraUQ_D89w/s1600/Screen%2BShot%2B2014-06-03%2Bat%2B4.05.54.png)](https://4.bp.blogspot.com/-W-04-3shNPE/VD9EX1GZ6KI/AAAAAAAAudo/mtraUQ_D89w/s1600/Screen%2BShot%2B2014-06-03%2Bat%2B4.05.54.png)
 
 この制御用 UI が、実際は HTML でできていることがお分かりでしょうか？これが Shadow
 DOM の一例です。
 
-[![](http://3.bp.blogspot.com/-oZMSpyMBoz4/VD9EDhH4vNI/AAAAAAAAudc/QZTAncpkIdM/s1600/Screen%2BShot%2B2014-10-16%2Bat%2B11.26.37.png)](http://3.bp.blogspot.com/-oZMSpyMBoz4/VD9EDhH4vNI/AAAAAAAAudc/QZTAncpkIdM/s1600/Screen%2BShot%2B2014-10-16%2Bat%2B11.26.37.png)
+[![](https://3.bp.blogspot.com/-oZMSpyMBoz4/VD9EDhH4vNI/AAAAAAAAudc/QZTAncpkIdM/s1600/Screen%2BShot%2B2014-10-16%2Bat%2B11.26.37.png)](https://3.bp.blogspot.com/-oZMSpyMBoz4/VD9EDhH4vNI/AAAAAAAAudc/QZTAncpkIdM/s1600/Screen%2BShot%2B2014-10-16%2Bat%2B11.26.37.png)
 
 Shadow DOM が素晴らしいのは、実はこの機能がウェブ開発者にも使える、ということで
 す。
@@ -52,7 +52,7 @@ Shadow DOM が素晴らしいのは、実はこの機能がウェブ開発者に
 Shadow Root を持った要素は Shadow Host と呼ばれます。Shadow Root は通常の DOM 要
 素と同様に扱えるため、任意のノードを追加することもできます。
 
-[![](http://2.bp.blogspot.com/-Ja7g-lE5tLI/VD9EDMWH_dI/AAAAAAAAudY/IpVUB8uEE60/s1600/Screen%2BShot%2B2014-10-16%2Bat%2B11.28.07.png)](http://2.bp.blogspot.com/-Ja7g-lE5tLI/VD9EDMWH_dI/AAAAAAAAudY/IpVUB8uEE60/s1600/Screen%2BShot%2B2014-10-16%2Bat%2B11.28.07.png)
+[![](https://2.bp.blogspot.com/-Ja7g-lE5tLI/VD9EDMWH_dI/AAAAAAAAudY/IpVUB8uEE60/s1600/Screen%2BShot%2B2014-10-16%2Bat%2B11.28.07.png)](https://2.bp.blogspot.com/-Ja7g-lE5tLI/VD9EDMWH_dI/AAAAAAAAudY/IpVUB8uEE60/s1600/Screen%2BShot%2B2014-10-16%2Bat%2B11.28.07.png)
 
 Shadow DOM では、すべてのマークアップと CSS が要素内にスコープされます。言い換え
 ると、Shadow Root 内で定義された CSS は親ドキュメントに影響を与えず、親ドキュメ
@@ -85,7 +85,7 @@ Shadow DOM 内に Shadow Host の子要素を表示したい場合があると�
 Shadow DOM によってスタイルを与えられているネームタグのような要素を考えてみま
 しょう。外部からの入力で文字だけ変更できると便利ですよね。
 
-[![](http://2.bp.blogspot.com/-8NLBoVflV6A/VD9FVei9BVI/AAAAAAAAudw/6FEbhEJuOSs/s1600/posterImage-4222.png)](http://2.bp.blogspot.com/-8NLBoVflV6A/VD9FVei9BVI/AAAAAAAAudw/6FEbhEJuOSs/s1600/posterImage-4222.png)
+[![](https://2.bp.blogspot.com/-8NLBoVflV6A/VD9FVei9BVI/AAAAAAAAudw/6FEbhEJuOSs/s1600/posterImage-4222.png)](https://2.bp.blogspot.com/-8NLBoVflV6A/VD9FVei9BVI/AAAAAAAAudw/6FEbhEJuOSs/s1600/posterImage-4222.png)
 
 ```html
 <div id="nameTag">Bob</div>

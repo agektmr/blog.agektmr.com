@@ -54,7 +54,7 @@ npm, bower 等との組み合わせは、だいぶ浸透してきたのではな
 ス、ダイアログといった、素の HTML が苦手とするユーザーインターフェースを実装する
 敷居を大きく下げてくれたのも、jQuery UI でした。
 
-[![](http://3.bp.blogspot.com/-GoHPt1aa4Ko/U3oPR4DsaOI/AAAAAAAAsPA/xxC4YVCyb0s/s1600/jquery-ui-delta.png)](http://3.bp.blogspot.com/-GoHPt1aa4Ko/U3oPR4DsaOI/AAAAAAAAsPA/xxC4YVCyb0s/s1600/jquery-ui-delta.png)
+[![](https://3.bp.blogspot.com/-GoHPt1aa4Ko/U3oPR4DsaOI/AAAAAAAAsPA/xxC4YVCyb0s/s1600/jquery-ui-delta.png)](https://3.bp.blogspot.com/-GoHPt1aa4Ko/U3oPR4DsaOI/AAAAAAAAsPA/xxC4YVCyb0s/s1600/jquery-ui-delta.png)
 
 もちろん、その対抗馬となる UI ライブラリもたくさん登場しています。Kendo UI,
 ExtJS, Dojo, Bootstrap など、数え上げればキリがありません。しかしひとつ言えるの
@@ -81,7 +81,7 @@ API よりも、まずは思想と作法を学ぶところからスタートし�
 理屈で説明されるより、実際に動くものを見たほうが話は早いでしょう。簡単な例をご紹
 介します。
 
-[![](http://3.bp.blogspot.com/-S7lGeyTaSj0/U3oPRGV-xJI/AAAAAAAAsO0/ZcSH2kFqkcI/s1600/Screen+Shot+2014-05-19+at+13.32.44.png)](http://agektmr.github.io/webaudio-controls/sample1.html)
+[![](https://3.bp.blogspot.com/-S7lGeyTaSj0/U3oPRGV-xJI/AAAAAAAAsO0/ZcSH2kFqkcI/s1600/Screen+Shot+2014-05-19+at+13.32.44.png)](https://agektmr.github.io/webaudio-controls/sample1.html)
 
 画像をクリックすると[実際に動作するデ
 モ](http://agektmr.github.io/webaudio-controls/sample1.html)を見ることができま
@@ -128,7 +128,7 @@ Button](https://github.com/zenorocha/twitter-button) なんていかがでし�
 Twitter ボタンを表示することができます。Twitter ボタンを実装したことがある方であ
 れば、これがいかに楽な作業かわかると思います。
 
-[![](http://4.bp.blogspot.com/-poErBXaS0QM/U3oPREvTnYI/AAAAAAAAsOw/g635hFv-EFE/s1600/687474703a2f2f7a6e6f2e696f2f517475532f747769747465722d656c656d656e742e706e67.png)](http://4.bp.blogspot.com/-poErBXaS0QM/U3oPREvTnYI/AAAAAAAAsOw/g635hFv-EFE/s1600/687474703a2f2f7a6e6f2e696f2f517475532f747769747465722d656c656d656e742e706e67.png)
+[![](https://4.bp.blogspot.com/-poErBXaS0QM/U3oPREvTnYI/AAAAAAAAsOw/g635hFv-EFE/s1600/687474703a2f2f7a6e6f2e696f2f517475532f747769747465722d656c656d656e742e706e67.png)](https://4.bp.blogspot.com/-poErBXaS0QM/U3oPREvTnYI/AAAAAAAAsOw/g635hFv-EFE/s1600/687474703a2f2f7a6e6f2e696f2f517475532f747769747465722d656c656d656e742e706e67.png)
 
 また、[customelements.io](http://customelements.io/) というサイトでは、これも含
 めて、公開されている Web Components でできた UI コンポーネントを探すことができま
@@ -180,11 +180,11 @@ knob.value = 100;
 
 実は Custom Elements は GitHub で既に使われてたりします。
 
-[![](http://4.bp.blogspot.com/--2iDG5Utfx8/U3oPRLoIwrI/AAAAAAAAsOs/1RaBIcB4egA/s1600/Screen+Shot+2014-05-19+at+18.28.12.png)](http://4.bp.blogspot.com/--2iDG5Utfx8/U3oPRLoIwrI/AAAAAAAAsOs/1RaBIcB4egA/s1600/Screen+Shot+2014-05-19+at+18.28.12.png)
+[![](https://4.bp.blogspot.com/--2iDG5Utfx8/U3oPRLoIwrI/AAAAAAAAsOs/1RaBIcB4egA/s1600/Screen+Shot+2014-05-19+at+18.28.12.png)](https://4.bp.blogspot.com/--2iDG5Utfx8/U3oPRLoIwrI/AAAAAAAAsOs/1RaBIcB4egA/s1600/Screen+Shot+2014-05-19+at+18.28.12.png)
 
 DevTools で見てみると
 
-[![](http://1.bp.blogspot.com/-xJAxVXmp534/U3oPR13ZjrI/AAAAAAAAsO8/-b_sUpEVTF4/s1600/Screen+Shot+2014-05-19+at+18.39.14.png)](http://1.bp.blogspot.com/-xJAxVXmp534/U3oPR13ZjrI/AAAAAAAAsO8/-b_sUpEVTF4/s1600/Screen+Shot+2014-05-19+at+18.39.14.png)
+[![](https://1.bp.blogspot.com/-xJAxVXmp534/U3oPR13ZjrI/AAAAAAAAsO8/-b_sUpEVTF4/s1600/Screen+Shot+2014-05-19+at+18.39.14.png)](https://1.bp.blogspot.com/-xJAxVXmp534/U3oPR13ZjrI/AAAAAAAAsO8/-b_sUpEVTF4/s1600/Screen+Shot+2014-05-19+at+18.39.14.png)
 
 * `time` タグを拡張 (`is="relative-time"`) して、タグ中に表示される時間を相対的
   にしている

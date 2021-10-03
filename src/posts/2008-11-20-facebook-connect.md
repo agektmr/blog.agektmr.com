@@ -111,7 +111,7 @@ are Citysearch members”とあるように、両方に登録している Facebo
 いので [John McCrea 氏のサンプ
 ル](http://www.flickr.com/photos/56624456@N00/3044329360/)にリンクしておきます。
 
-![Citysearch_Facebook](http://farm4.static.flickr.com/3278/3044329360_6171dc1f04.jpg?v=0)
+![Citysearch_Facebook](https://farm4.static.flickr.com/3278/3044329360_6171dc1f04.jpg?v=0)
 
 アクティビティのアグリゲータになることは、トラフィックを集める上で非常に重要な戦
 略です。Facebook にさえ来れば、友達が関わる様々なサービス上の活動を一目で確認す

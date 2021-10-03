@@ -11,7 +11,7 @@ tags:
   - pages
 ---
 
-![Eiji Kitamura](/images/avatar.jpg)
+<img src="/images/avatar.jpg" class="profile-image" alt="Eiji Kitamura / えーじ">
 
 ## Eiji Kitamura / えーじ
 

@@ -93,7 +93,7 @@ DevRel の仕事は、「Google のプロダクトをプラットフォームと
 にお願いしています。  
   
 
-[![](http://2.bp.blogspot.com/-D6D-bZI3Zjg/UWZuFOyxTnI/AAAAAAAAb4A/vM_F0wBWZww/s640/gdl.png)](http://2.bp.blogspot.com/-D6D-bZI3Zjg/UWZuFOyxTnI/AAAAAAAAb4A/vM_F0wBWZww/s1600/gdl.png)
+[![](https://2.bp.blogspot.com/-D6D-bZI3Zjg/UWZuFOyxTnI/AAAAAAAAb4A/vM_F0wBWZww/s640/gdl.png)](https://2.bp.blogspot.com/-D6D-bZI3Zjg/UWZuFOyxTnI/AAAAAAAAb4A/vM_F0wBWZww/s1600/gdl.png)
   
   
 せっかく作ったコンテンツをどう広げていくか考えるのも、Advocate の仕事です。過去に[こんなブログ記事](http://googledevjp.blogspot.jp/2012/10/blog-post.html)を書いたこともありました。これは見てくれる方々にとっても、コンテンツを作っている我々にとっても嬉しい、良案だったのではないでしょうか。  
@@ -122,7 +122,7 @@ Expert](https://sites.google.com/site/devreljp/Home/api-expert) と呼ばれて
 Yamazaki](https://plus.google.com/+FumiYamazaki/posts) のおかげです！)。ちなみに
 僕も入社前は OpenSocial の API Expert でした。   
 
-[![](http://2.bp.blogspot.com/-6qdoDuaSYLI/UWZuOkNCFAI/AAAAAAAAb4Q/mBpOOclobKY/s640/gde.JPG)](http://2.bp.blogspot.com/-6qdoDuaSYLI/UWZuOkNCFAI/AAAAAAAAb4Q/mBpOOclobKY/s1600/gde.JPG)
+[![](https://2.bp.blogspot.com/-6qdoDuaSYLI/UWZuOkNCFAI/AAAAAAAAb4Q/mBpOOclobKY/s640/gde.JPG)](https://2.bp.blogspot.com/-6qdoDuaSYLI/UWZuOkNCFAI/AAAAAAAAb4Q/mBpOOclobKY/s1600/gde.JPG)
 
 ### コミュニティとのお付き合い
 
@@ -142,7 +142,7 @@ Conference](http://events.html5j.org/conference/2011/08/) を開催しました
 Tech Talk Night は既に 5 回を数えています。6 月には [Test The Web
 Forward](http://testthewebforward.org/) というイベントの開催も予定しています。  
 
-[![](http://4.bp.blogspot.com/-oef_h9CDOpI/UWZuOtWOXaI/AAAAAAAAb4U/2cCIn1BOhOI/s640/ch5.jpg)](http://4.bp.blogspot.com/-oef_h9CDOpI/UWZuOtWOXaI/AAAAAAAAb4U/2cCIn1BOhOI/s1600/ch5.jpg)
+[![](https://4.bp.blogspot.com/-oef_h9CDOpI/UWZuOtWOXaI/AAAAAAAAb4U/2cCIn1BOhOI/s640/ch5.jpg)](https://4.bp.blogspot.com/-oef_h9CDOpI/UWZuOtWOXaI/AAAAAAAAb4U/2cCIn1BOhOI/s1600/ch5.jpg)
 
 ## パートナー、インプット、Hacking、etc
 
@@ -188,7 +188,7 @@ Experiments](http://www.chromeexperiments.com/) の中には日本発のもの�
 Maze](http://chrome.com/maze/) もそう。ああいったプロジェクトにテクニカルなサ
 ポートを行うのも、Developer Advocate が担当します。  
 
-[![](http://3.bp.blogspot.com/-PDasNKa2NXs/UWZuPPDQ2MI/AAAAAAAAb4k/aJ9dVd1aVfU/s640/wwm.png)](http://3.bp.blogspot.com/-PDasNKa2NXs/UWZuPPDQ2MI/AAAAAAAAb4k/aJ9dVd1aVfU/s1600/wwm.png)
+[![](https://3.bp.blogspot.com/-PDasNKa2NXs/UWZuPPDQ2MI/AAAAAAAAb4k/aJ9dVd1aVfU/s640/wwm.png)](https://3.bp.blogspot.com/-PDasNKa2NXs/UWZuPPDQ2MI/AAAAAAAAb4k/aJ9dVd1aVfU/s1600/wwm.png)
   
 ### エンジニアとのやりとり
 
@@ -243,7 +243,7 @@ DevRel で日本担当は僕だけですので、チームメンバーとのコ�
 ん。言語そのものというよりも、自分の性格だったり、カルチャー的な部分の方が大きい
 かもしれませんが、話が長くなりそうなので、この辺はまた別の機会に。  
 
-[![](http://1.bp.blogspot.com/-uhgjkFFsrHQ/UWZuOQa7FkI/AAAAAAAAb4g/FwbNen7Xeio/s640/gddsyd.JPG)](http://1.bp.blogspot.com/-uhgjkFFsrHQ/UWZuOQa7FkI/AAAAAAAAb4g/FwbNen7Xeio/s1600/gddsyd.JPG)
+[![](https://1.bp.blogspot.com/-uhgjkFFsrHQ/UWZuOQa7FkI/AAAAAAAAb4g/FwbNen7Xeio/s640/gddsyd.JPG)](https://1.bp.blogspot.com/-uhgjkFFsrHQ/UWZuOQa7FkI/AAAAAAAAb4g/FwbNen7Xeio/s1600/gddsyd.JPG)
 
 ## 環境
 

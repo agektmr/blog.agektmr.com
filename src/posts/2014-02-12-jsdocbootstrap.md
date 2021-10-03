@@ -38,7 +38,7 @@ var resolveSrcset = function(src, srcset, dpr, width) {
 
 下記のような HTML を出力してくれます。
 
-[![](http://3.bp.blogspot.com/-N-nAFShmP-o/UvolyYAO2dI/AAAAAAAAoPc/dSMZZwt47bE/s1600/Screen+Shot+2014-02-11+at+22.27.48.png)](http://3.bp.blogspot.com/-N-nAFShmP-o/UvolyYAO2dI/AAAAAAAAoPc/dSMZZwt47bE/s1600/Screen+Shot+2014-02-11+at+22.27.48.png)
+[![](https://3.bp.blogspot.com/-N-nAFShmP-o/UvolyYAO2dI/AAAAAAAAoPc/dSMZZwt47bE/s1600/Screen+Shot+2014-02-11+at+22.27.48.png)](https://3.bp.blogspot.com/-N-nAFShmP-o/UvolyYAO2dI/AAAAAAAAoPc/dSMZZwt47bE/s1600/Screen+Shot+2014-02-11+at+22.27.48.png)
 
 便利ですね。
 
@@ -70,7 +70,7 @@ var resolveSrcset = function(src, srcset, dpr, width) {
 り、そのまま出力してしまうと、かなりプレーンで寂しい感じになってしまうわけです
 が、ひと工夫加えると、下記のように素敵なデザインにすることができます。
 
-[![](http://1.bp.blogspot.com/-xSDs4D76Shw/UvolyPsFTiI/AAAAAAAAoPg/13AYlS9ImQg/s1600/Screen+Shot+2014-02-11+at+22.27.01.png)](http://1.bp.blogspot.com/-xSDs4D76Shw/UvolyPsFTiI/AAAAAAAAoPg/13AYlS9ImQg/s1600/Screen+Shot+2014-02-11+at+22.27.01.png)
+[![](https://1.bp.blogspot.com/-xSDs4D76Shw/UvolyPsFTiI/AAAAAAAAoPg/13AYlS9ImQg/s1600/Screen+Shot+2014-02-11+at+22.27.01.png)](https://1.bp.blogspot.com/-xSDs4D76Shw/UvolyPsFTiI/AAAAAAAAoPg/13AYlS9ImQg/s1600/Screen+Shot+2014-02-11+at+22.27.01.png)
 
 ## docstrap
 

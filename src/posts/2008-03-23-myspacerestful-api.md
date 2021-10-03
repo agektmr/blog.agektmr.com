@@ -13,7 +13,7 @@ tags:
 
 [OpenSocial Container standard fragmentation &#8211; Implementing OpenSocial
 Containers | Google グルー
-プ](http://groups.google.com/group/opensocial-container/browse_thread/thread/96761d3ebd53e32c/646c972cddae2d35)
+プ](https://groups.google.com/group/opensocial-container/browse_thread/thread/96761d3ebd53e32c/646c972cddae2d35)
 
 内容を要約すると
 

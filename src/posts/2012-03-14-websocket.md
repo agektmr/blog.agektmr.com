@@ -27,7 +27,7 @@ WebSocketが持つ機能の中で僕が最も注目しているのが、バイ�
 ## Audio Stream Experiment
 ここで最近僕が作った、[WebSocketのバイナリメッセージング機能を使ったデモ](http://agektmr.node-ninja.com:3000/)をご紹介しましょう。このデモでは、ユーザーが手元に持っているオーディオファイルをリアルタイムにストリーミング配信することができます。ここからはアプリの作りの話をしますので、WebSocketでウェブがどう変わっていくのかだけに興味のある方は、「WebSocketのバイナリメッセージが意味するもの」まで読み飛ばしてしまっても構いません。
 
-[![](http://1.bp.blogspot.com/-YvvFxUQbyaA/T1XMwMfG_XI/AAAAAAAAEkQ/7sGuHBvw8ME/s960/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2012-03-05+16.56.01.png)](http://1.bp.blogspot.com/-YvvFxUQbyaA/T1XMwMfG_XI/AAAAAAAAEkQ/7sGuHBvw8ME/s960/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2012-03-05+16.56.01.png)
+[![](https://1.bp.blogspot.com/-YvvFxUQbyaA/T1XMwMfG_XI/AAAAAAAAEkQ/7sGuHBvw8ME/s960/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2012-03-05+16.56.01.png)](https://1.bp.blogspot.com/-YvvFxUQbyaA/T1XMwMfG_XI/AAAAAAAAEkQ/7sGuHBvw8ME/s960/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2012-03-05+16.56.01.png)
 
 このアプリで使われている技術に興味のある方は、何はともあれ、試してみて下さい(要Chrome)。ソースコードも[githubで公開](https://github.com/agektmr/AudioStreamer)しています。
 
@@ -42,7 +42,7 @@ node.jsのサーバーは、ファーストサーバー社の提供している[
 
 今回のデモでは、このnode.jsで構築されたサーバーから受け取ったオーディオデータをブロードキャストすることで、すべての接続しているユーザーに同じオーディオストリーミング環境を提供しています。
 
-[![](http://3.bp.blogspot.com/-fgG-s5KuFng/T1XEL98ut8I/AAAAAAAAEkA/1QHKqQnYnvE/s960/AudioStreamer.png)](http://3.bp.blogspot.com/-fgG-s5KuFng/T1XEL98ut8I/AAAAAAAAEkA/1QHKqQnYnvE/s960/AudioStreamer.png)
+[![](https://3.bp.blogspot.com/-fgG-s5KuFng/T1XEL98ut8I/AAAAAAAAEkA/1QHKqQnYnvE/s960/AudioStreamer.png)](https://3.bp.blogspot.com/-fgG-s5KuFng/T1XEL98ut8I/AAAAAAAAEkA/1QHKqQnYnvE/s960/AudioStreamer.png)
 
 各クライアントはPlayerとListenerと呼ばれる、合計2つのオーディオ再生機構を持ちます。デスクトップからドラッグドロップされたオーディオファイルは、Playerを使って再生されると同時に、node.jsのサーバーにWebSocketを使って転送されます。サーバーは受け取ったオーディオデータをすべてのクライアントに即時にブロードキャストします。各クライアントは、サーバーから受け取ったオーディオデータをListenerに流しこみ、音声を再生します。
 

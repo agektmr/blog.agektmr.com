@@ -58,7 +58,7 @@ PTM をインストールしたらまず下記を行なってそのパワーを�
 4. プロジェクト名を入力して保存する
 5. 以上
 
-[![](http://1.bp.blogspot.com/-c5CKGOu0ths/UYb5acqhsNI/AAAAAAAAc50/qjms4Dxvvk4/s1600/new_project.png)](http://1.bp.blogspot.com/-c5CKGOu0ths/UYb5acqhsNI/AAAAAAAAc50/qjms4Dxvvk4/s1600/new_project.png)
+[![](https://1.bp.blogspot.com/-c5CKGOu0ths/UYb5acqhsNI/AAAAAAAAc50/qjms4Dxvvk4/s1600/new_project.png)](https://1.bp.blogspot.com/-c5CKGOu0ths/UYb5acqhsNI/AAAAAAAAc50/qjms4Dxvvk4/s1600/new_project.png)
 
 これでこのウィンドウにプロジェクト名が付きました。以後このウィンドウで開くあらゆ
 るタブは、いつでも状態を復元することができます。以下を試してみて下さい。
@@ -68,7 +68,7 @@ PTM をインストールしたらまず下記を行なってそのパワーを�
    じて下さい)
 3. PTM のアイコンをクリックして今閉じたウィンドウのプロジェクトを開く
 
-[![](http://2.bp.blogspot.com/-L28XHuni2nI/UYb5adUjw-I/AAAAAAAAc54/zSzLCynjWNg/s1600/saved_project.png)](http://2.bp.blogspot.com/-L28XHuni2nI/UYb5adUjw-I/AAAAAAAAc54/zSzLCynjWNg/s1600/saved_project.png)
+[![](https://2.bp.blogspot.com/-L28XHuni2nI/UYb5adUjw-I/AAAAAAAAc54/zSzLCynjWNg/s1600/saved_project.png)](https://2.bp.blogspot.com/-L28XHuni2nI/UYb5adUjw-I/AAAAAAAAc54/zSzLCynjWNg/s1600/saved_project.png)
 
 元のタブの状態が復元されましたか？これが Project Tab Manager のパワーです！
 
@@ -88,7 +88,7 @@ PTM をインストールしたらまず下記を行なってそのパワーを�
 * これにより、Chrome for iOS や Chrome for Android からでも必要なブックマークに
   アクセスできるのが特徴です。
 
-[![](http://3.bp.blogspot.com/-xXhVgjvffy0/UYb5a6gWcqI/AAAAAAAAc6A/f6O25Hp_n8Y/s1600/starring.png)](http://3.bp.blogspot.com/-xXhVgjvffy0/UYb5a6gWcqI/AAAAAAAAc6A/f6O25Hp_n8Y/s1600/starring.png)
+[![](https://3.bp.blogspot.com/-xXhVgjvffy0/UYb5a6gWcqI/AAAAAAAAc6A/f6O25Hp_n8Y/s1600/starring.png)](https://3.bp.blogspot.com/-xXhVgjvffy0/UYb5a6gWcqI/AAAAAAAAc6A/f6O25Hp_n8Y/s1600/starring.png)
 
 ### プロジェクトを編集する
 
@@ -108,7 +108,7 @@ PTM をインストールしたらまず下記を行なってそのパワーを�
   ようにはなりましたが、場合によっては外れてしまうこともあるでしょう。そんな時は
   プロジェクト名横のピンアイコンをクリックして関連付けて下さい。
 
-[![](http://2.bp.blogspot.com/-mAiBEHbrpGg/UYb5aJFvYXI/AAAAAAAAc6E/3c4I8VAB1Ss/s1600/associating.png)](http://2.bp.blogspot.com/-mAiBEHbrpGg/UYb5aJFvYXI/AAAAAAAAc6E/3c4I8VAB1Ss/s1600/associating.png)
+[![](https://2.bp.blogspot.com/-mAiBEHbrpGg/UYb5aJFvYXI/AAAAAAAAc6E/3c4I8VAB1Ss/s1600/associating.png)](https://2.bp.blogspot.com/-mAiBEHbrpGg/UYb5aJFvYXI/AAAAAAAAc6E/3c4I8VAB1Ss/s1600/associating.png)
 
 ### Lazy Load とは
 
@@ -133,7 +133,7 @@ PTM をインストールしたらまず下記を行なってそのパワーを�
 * この記録は 2 ヶ月保存されます。「今月どのプロジェクトに一番時間使ったのか
   な？」「あー俺 Twitter ばっか見てるわ！」なんてことに便利かも。
 
-[![](http://1.bp.blogspot.com/-uJrzqSNGikA/UYb5bCzrvvI/AAAAAAAAc58/cVd57aPuLgM/s658/summary.png)](http://1.bp.blogspot.com/-uJrzqSNGikA/UYb5bCzrvvI/AAAAAAAAc58/cVd57aPuLgM/s1600/summary.png)
+[![](https://1.bp.blogspot.com/-uJrzqSNGikA/UYb5bCzrvvI/AAAAAAAAc58/cVd57aPuLgM/s658/summary.png)](https://1.bp.blogspot.com/-uJrzqSNGikA/UYb5bCzrvvI/AAAAAAAAc58/cVd57aPuLgM/s1600/summary.png)
 
 ### キーボードナビゲーション
 

@@ -18,7 +18,7 @@ you can hook up your synthesizer and send or receive MIDI signals with it.
 
 <!-- excerpt -->
 
-[![](http://4.bp.blogspot.com/-8g7hYALwOoY/VBlDLB3sAHI/AAAAAAAAt5I/bNyfMu6UDak/s1600/IMG_20140913_113024.jpg)](http://4.bp.blogspot.com/-8g7hYALwOoY/VBlDLB3sAHI/AAAAAAAAt5I/bNyfMu6UDak/s1600/IMG_20140913_113024.jpg)
+[![](https://4.bp.blogspot.com/-8g7hYALwOoY/VBlDLB3sAHI/AAAAAAAAt5I/bNyfMu6UDak/s1600/IMG_20140913_113024.jpg)](https://4.bp.blogspot.com/-8g7hYALwOoY/VBlDLB3sAHI/AAAAAAAAt5I/bNyfMu6UDak/s1600/IMG_20140913_113024.jpg)
 
 Those APIs are quite low level. So there's tons of things you need to do to make
 "music" on top of browsers, but that also means an interesting time of building
@@ -120,7 +120,7 @@ The instrument makers lent us many equipments as usual, but attendees also
 brought their own fun gadgets to the venue. Check out photos from the event
 (click on the picture below).  
 
-[![](http://4.bp.blogspot.com/-bM8bMaRi49M/VBlAYoU4grI/AAAAAAAAt4s/N0J-psHopX0/s1600/Screen%2BShot%2B2014-09-17%2Bat%2B17.03.15.png)](https://plus.google.com/events/gallery/cqvnr68c6r4b43dikum0kaljme4)
+[![](https://4.bp.blogspot.com/-bM8bMaRi49M/VBlAYoU4grI/AAAAAAAAt4s/N0J-psHopX0/s1600/Screen%2BShot%2B2014-09-17%2Bat%2B17.03.15.png)](https://plus.google.com/events/gallery/cqvnr68c6r4b43dikum0kaljme4)
 
 ## Demos
 
@@ -134,7 +134,7 @@ bored, check it out. (click on pictures to start the video from relevant time)
 
 ### Mr. Murai
 
-[![](http://2.bp.blogspot.com/-LTLovd4pJZk/VBk7p6nAkfI/AAAAAAAAt2k/AvegmkSuuP0/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.58.11.png)](http://www.youtube.com/watch?v=z_TGofN7wv8#t=5)
+[![](https://2.bp.blogspot.com/-LTLovd4pJZk/VBk7p6nAkfI/AAAAAAAAt2k/AvegmkSuuP0/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.58.11.png)](https://www.youtube.com/watch?v=z_TGofN7wv8#t=5)
 
 Mr. Murai is called a father of Japanese internet. He showed up as a special
 guest and it was an honor that he's interested in this technology. People got
@@ -149,20 +149,20 @@ sound. I don't know how it works in detail, but here's [the technical
 document](http://qiita.com/tadfmac/items/f2172cdacbdd5600256e) he wrote (in
 Japanese).  
 
-[![](http://3.bp.blogspot.com/-LNhujEptdg4/VBk7xiEDhKI/AAAAAAAAt2s/PC-kzjtCHR4/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.48.53.png)](http://www.youtube.com/watch?v=z_TGofN7wv8#t=420)
+[![](https://3.bp.blogspot.com/-LNhujEptdg4/VBk7xiEDhKI/AAAAAAAAt2s/PC-kzjtCHR4/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.48.53.png)](https://www.youtube.com/watch?v=z_TGofN7wv8#t=420)
 
 ### Masayuki Yokobori
 
 He stole his son's toys and created an app using them. The train make sounds
 using MIDI.
 
-[![](http://3.bp.blogspot.com/-9NoGJKF0l-4/VBk7xtw9RmI/AAAAAAAAt20/EGc7lONVWmk/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.49.53.png)](http://www.youtube.com/watch?v=z_TGofN7wv8#t=672)
+[![](https://3.bp.blogspot.com/-9NoGJKF0l-4/VBk7xtw9RmI/AAAAAAAAt20/EGc7lONVWmk/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.49.53.png)](https://www.youtube.com/watch?v=z_TGofN7wv8#t=672)
   
 ### Daichi Hirono
 
 ScoreSketch is a simple sequencer by the winner of 2nd hackathon.  
 
-[![](http://2.bp.blogspot.com/-ogx25A4rL98/VBk7xlrR_RI/AAAAAAAAt2w/IfePipKuXME/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.50.25.png)](http://www.youtube.com/watch?v=z_TGofN7wv8#t=1037)
+[![](https://2.bp.blogspot.com/-ogx25A4rL98/VBk7xlrR_RI/AAAAAAAAt2w/IfePipKuXME/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.50.25.png)](https://www.youtube.com/watch?v=z_TGofN7wv8#t=1037)
 
 ### kirinsan.org
 
@@ -170,7 +170,7 @@ Dictates
 sound [Otamatone](https://www.youtube.com/watch?v=B8WjnyvpaMg) generates,
 convert it to MIDI signals, and play synthesizer.  
 
-[![](http://2.bp.blogspot.com/-lqGIZDtaxOY/VBk7yQ7DvII/AAAAAAAAt24/qbWMI8JToBA/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.51.14.png)](http://www.youtube.com/watch?v=z_TGofN7wv8#t=1654)
+[![](https://2.bp.blogspot.com/-lqGIZDtaxOY/VBk7yQ7DvII/AAAAAAAAt24/qbWMI8JToBA/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.51.14.png)](https://www.youtube.com/watch?v=z_TGofN7wv8#t=1654)
 
 ### Takashi Takagi(@okame_okame)
 
@@ -178,7 +178,7 @@ Electric Mokugyo ([Source code](https://github.com/okame/MOKUGYO2))
 Mokugyo is a wooden drum that buddhists use to pray. He used it as an
 instrument.  
 
-[![](http://2.bp.blogspot.com/-KCxTMKZDn3Q/VBk7y3Pz4ZI/AAAAAAAAt28/4eqH3CZonzo/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.52.08.png)](http://www.youtube.com/watch?v=z_TGofN7wv8#t=2095)
+[![](https://2.bp.blogspot.com/-KCxTMKZDn3Q/VBk7y3Pz4ZI/AAAAAAAAt28/4eqH3CZonzo/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.52.08.png)](https://www.youtube.com/watch?v=z_TGofN7wv8#t=2095)
 
 ### @watilde
 
@@ -187,7 +187,7 @@ code](http://github.com/watilde/abeck))
 By writing a music sequence using [ABC notation](http://abcnotation.com/), it
 plays music and draws a sheet.  
 
-[![](http://2.bp.blogspot.com/-IynrkpwvCKM/VBk7zOEumGI/AAAAAAAAt3A/-WIoFx66GkQ/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.53.13.png)](http://www.youtube.com/watch?v=z_TGofN7wv8#t=2727)
+[![](https://2.bp.blogspot.com/-IynrkpwvCKM/VBk7zOEumGI/AAAAAAAAt3A/-WIoFx66GkQ/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.53.13.png)](https://www.youtube.com/watch?v=z_TGofN7wv8#t=2727)
 
 ### @mohayonao, @nanonum
 
@@ -197,14 +197,14 @@ Some people may know [@mohayonao](http://twitter.com/mohayonao) for creating
 incredible web audio demos. He and @nanonum created a cool music / visualization
 demo.  
 
-[![](http://2.bp.blogspot.com/-b800JQGz7qQ/VBk7zhsXE9I/AAAAAAAAt3Y/rXNB3As33cY/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.53.43.png)](http://www.youtube.com/watch?v=z_TGofN7wv8#t=3958)
+[![](https://2.bp.blogspot.com/-b800JQGz7qQ/VBk7zhsXE9I/AAAAAAAAt3Y/rXNB3As33cY/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.53.43.png)](https://www.youtube.com/watch?v=z_TGofN7wv8#t=3958)
 
 ### CookPitch
 
 This is one of unique demos using Web Audio. It demonstrated a recipe site user
 can navigate pages by hamming, without using hand. Good for cooks.  
 
-[![](http://1.bp.blogspot.com/-oTBC9lnkkuE/VBk7z1L-R5I/AAAAAAAAt3Q/eFEWVemjccw/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.55.23.png)](http://www.youtube.com/watch?v=z_TGofN7wv8#t=6054)
+[![](https://1.bp.blogspot.com/-oTBC9lnkkuE/VBk7z1L-R5I/AAAAAAAAt3Q/eFEWVemjccw/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.55.23.png)](https://www.youtube.com/watch?v=z_TGofN7wv8#t=6054)
 
 ### Himakan
 
@@ -215,7 +215,7 @@ code](https://github.com/himakan/facetracking-effector/))
 The winner of this hackathon. I've seen similar ideas before, but this one is
 way cooler.  
 
-[![](http://3.bp.blogspot.com/-X0rcTvPXlPo/VBk7znQLwdI/AAAAAAAAt3U/I0pJ7LZ0yLE/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.54.53.png)](http://www.youtube.com/watch?v=z_TGofN7wv8#t=4404)
+[![](https://3.bp.blogspot.com/-X0rcTvPXlPo/VBk7znQLwdI/AAAAAAAAt3U/I0pJ7LZ0yLE/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.54.53.png)](https://www.youtube.com/watch?v=z_TGofN7wv8#t=4404)
 
 ### @aike1000
 
@@ -223,7 +223,7 @@ Future effectors
 Realistic effectors on a browser. @aike1000 played one of his composition with
 his guitar using these.  
 
-[![](http://2.bp.blogspot.com/-hENzeiN9T68/VBk70h-nbBI/AAAAAAAAt3g/HDgbM_I2yk4/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.56.04.png)](http://www.youtube.com/watch?v=z_TGofN7wv8#t=6994)
+[![](https://2.bp.blogspot.com/-hENzeiN9T68/VBk70h-nbBI/AAAAAAAAt3g/HDgbM_I2yk4/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.56.04.png)](https://www.youtube.com/watch?v=z_TGofN7wv8#t=6994)
 
 ### @sascacci
 
@@ -232,17 +232,17 @@ A collaboration of V-Drum and Dontata-kun. Dontata-kun is a little drum player
 controlled via MIDI. He demonstrated Dontata-kun playing drums synching him
 playing drums! using JSPA's song.  
 
-[![](http://2.bp.blogspot.com/-a5G6Tx7JZZk/VBk702v7-5I/AAAAAAAAt38/cJyd6zY_OTU/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.56.56.png)](http://www.youtube.com/watch?v=z_TGofN7wv8#t=7328)
+[![](https://2.bp.blogspot.com/-a5G6Tx7JZZk/VBk702v7-5I/AAAAAAAAt38/cJyd6zY_OTU/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.56.56.png)](https://www.youtube.com/watch?v=z_TGofN7wv8#t=7328)
 
 ### @g200kg
 
 @g200kg showed a revised version of Livebeats.  
 
-[![](http://2.bp.blogspot.com/-3TewUNce3T8/VBk71kAV0uI/AAAAAAAAt3w/R2no9-0-Evk/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.57.43.png)](http://www.youtube.com/watch?v=z_TGofN7wv8#t=7598)
+[![](https://2.bp.blogspot.com/-3TewUNce3T8/VBk71kAV0uI/AAAAAAAAt3w/R2no9-0-Evk/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.57.43.png)](https://www.youtube.com/watch?v=z_TGofN7wv8#t=7598)
 
 ## Closing
 
-[![](http://3.bp.blogspot.com/-O0Ifg41NfZs/VBQirtSg8pI/AAAAAAAAjPM/miMpRiRxDEE/w1714-h1286-no/P9136069.JPG)](http://3.bp.blogspot.com/-O0Ifg41NfZs/VBQirtSg8pI/AAAAAAAAjPM/miMpRiRxDEE/w1714-h1286-no/P9136069.JPG)
+[![](https://3.bp.blogspot.com/-O0Ifg41NfZs/VBQirtSg8pI/AAAAAAAAjPM/miMpRiRxDEE/w1714-h1286-no/P9136069.JPG)](https://3.bp.blogspot.com/-O0Ifg41NfZs/VBQirtSg8pI/AAAAAAAAjPM/miMpRiRxDEE/w1714-h1286-no/P9136069.JPG)
 
 This one was again, successful and fun hackathon. Attendees seem to be getting
 used to using their own favorite platform to build an audio app. Hopefully we
@@ -250,7 +250,7 @@ can invite musicians and create music as well as apps, in the future.
 
 See you next time!  
 
-[![](http://1.bp.blogspot.com/-cCy5DA1m05I/VBQirsT1V-I/AAAAAAAAjSI/ST5uZNXQuCM/w1922-h1442-no/P9136029.JPG)](http://1.bp.blogspot.com/-cCy5DA1m05I/VBQirsT1V-I/AAAAAAAAjSI/ST5uZNXQuCM/w1922-h1442-no/P9136029.JPG)
+[![](https://1.bp.blogspot.com/-cCy5DA1m05I/VBQirsT1V-I/AAAAAAAAjSI/ST5uZNXQuCM/w1922-h1442-no/P9136029.JPG)](https://1.bp.blogspot.com/-cCy5DA1m05I/VBQirsT1V-I/AAAAAAAAjSI/ST5uZNXQuCM/w1922-h1442-no/P9136029.JPG)
 
 P.S. Main organizer [Ryoya Kawai.](https://twitter.com/ryoyakawai) Otsukare
 sama!

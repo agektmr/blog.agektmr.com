@@ -18,7 +18,7 @@ tags:
 
 [MYSQL database connection using PHP for my gadget ? &#8211; Orkut Developer
 Forum | Google グルー
-プ](http://groups.google.com/group/opensocial-orkut/browse_thread/thread/f6de89397dc56576/70f57151180b87cb?lnk=gst&q=content+type+url#70f57151180b87cb)
+プ](https://groups.google.com/group/opensocial-orkut/browse_thread/thread/f6de89397dc56576/70f57151180b87cb?lnk=gst&q=content+type+url#70f57151180b87cb)
 
 `Content Type="url"` を指定すると 404 が返るらしい。 404 が返ること自体はバグと
 のことですが、`Content Type="url"` が動くようになったところで、ドメインを超えて
