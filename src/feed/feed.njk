@@ -3,60 +3,37 @@
 permalink: "{{ site.feed.path }}"
 eleventyExcludeFromCollections: true
 ---
-{# <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">{{ site.title }}</title>
-<link rel="self" type="application/atom+xml" href="{{ site.url }}/feed.xml" />
+<subtitle>{{ site.feed.subtitle }}</subtitle>
+{% set absoluteUrl %}{{ site.feed.path | url | absoluteUrl(site.url) }}{% endset %}
+<link rel="self" type="application/atom+xml" href="{{ absoluteUrl }}"/>
 <link rel="alternate" type="text/html" href="{{ site.url }}" />
-<updated>{{ site.time | date_to_xmlschema }}</updated>
-<id>{{ site.url }}/</id>
+<updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
+<id>{{ site.feed.id }}</id>
 <author>
   <name>{{ site.owner.name }}</name>
   <uri>{{ site.url }}/</uri>
   <email>{{ site.owner.email }}</email>
 </author>
-{% for post in site.posts limit:20 %}
-
+{%- for post in collections.posts | reverse %}
+{% if loop.index < 10 %}
+{% set absolutePostUrl %}{{ post.url | url | absoluteUrl(site.url) }}{% endset %}
 <entry>
-  <title type="html"><![CDATA[{{ post.title | cdata_escape }}]]></title>
- <link rel="alternate" type="text/html" href="{% if post.link %}{{ post.link }}{% else %}{{ site.url }}{{ post.url }}{% endif %}" />
+  <title type="html"><![CDATA[{{ post.data.title }}]]></title>
+  <link rel="alternate" type="text/html" href="{{ absolutePostUrl }}" />
   <id>{{ site.url }}{{ post.id }}</id>
-  {% if post.modified %}<updated>{{ post.modified | to_xmlschema }}T00:00:00-00:00</updated>
-  <published>{{ post.date | date_to_xmlschema }}</published>
-  {% else %}<published>{{ post.date | date_to_xmlschema }}</published>
-  <updated>{{ post.date | date_to_xmlschema }}</updated>{% endif %}
+  <published>{{ post.date | rssDate }}</published>
+  {% if post.updated %}<updated>{{ post.updated | rssDate }}T00:00:00-00:00</updated>
+  {% else %}<updated>{{ post.date | rssDate }}</updated>{% endif %}
   <author>
     <name>{{ site.owner.name }}</name>
-    <uri>{{ site.url }}</uri>
     <email>{{ site.owner.email }}</email>
   </author>
-  <content type="html">{{ post.content | xml_escape }}
-  &lt;p&gt;&lt;a href=&quot;{{ site.url }}{{ post.url }}&quot;&gt;{{ post.title }}&lt;/a&gt; was originally published by {{ site.owner.name }} at &lt;a href=&quot;{{ site.url }}&quot;&gt;{{ site.title }}&lt;/a&gt; on {{ post.date | date: "%B %d, %Y" }}.&lt;/p&gt;</content>
+	<id>{{ absolutePostUrl }}</id>
+  <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
 </entry>
+{% endif %}
 {% endfor %}
-</feed> #}
-
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-	<title>{{ site.title }}</title>
-	<subtitle>{{ site.feed.subtitle }}</subtitle>
-	{% set absoluteUrl %}{{ site.feed.path | url | absoluteUrl(site.url) }}{% endset %}
-	<link href="{{ absoluteUrl }}" rel="self"/>
-	<link href="{{ site.url }}"/>
-	<updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
-	<id>{{ site.feed.id }}</id>
-	<author>
-		<name>{{ site.author.name }}</name>
-		<email>{{ site.author.email }}</email>
-	</author>
-	{%- for post in collections.posts | reverse %}
-	{% set absolutePostUrl %}{{ post.url | url | absoluteUrl(site.url) }}{% endset %}
-	<entry>
-		<title>{{ post.data.title }}</title>
-		<link href="{{ absolutePostUrl }}"/>
-		<updated>{{ post.date | rssDate }}</updated>
-		<id>{{ absolutePostUrl }}</id>
-		<content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
-	</entry>
-	{%- endfor %}
 </feed>

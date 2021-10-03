@@ -19,9 +19,7 @@ image:
 
 <!-- excerpt -->
 
-<div class="video-wrap">
-  <iframe src="//www.youtube.com/embed/JhpOw8mq1jo"></iframe>
-</div>
+{% YouTube 'JhpOw8mq1jo' %}
 
 ## HTML Imports の使い方
 HTML にまとまったリソースをロードするには、`link` タグの `rel` 属性に `import`、`href` 属性にロードしたいリソースの URL を指定して、追加します。例えば index.html という HTML から component.html という HTML を読み込みたい場合、このように記述します：
@@ -63,12 +61,10 @@ component.html
 <script src="js/script2.js"></script>     // 3.
 ```
 
-
 1. index.html 最初の行の component.html を読み込み、component.html の処理を待つ
-1. component.html 最初の行の script1.js を実行する
-1. component.html の script1.js を実行完了後、二行目の script2.js を実行する
-1. component.html の script2.js を実行完了後、index.html 三行目の script3.js を実行する
-
+2. component.html 最初の行の script1.js を実行する
+3. component.html の script1.js を実行完了後、二行目の script2.js を実行する
+4. component.html の script2.js を実行完了後、index.html 三行目の script3.js を実行する
 
 なお、`link[rel="import"]` は、`async` 属性を追加することができます。`async` を追加すると、[`script` タグの場合と同様](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script)、処理の完了を待たずにドキュメントの読み込みを続行します。実行順に依存した処理でなければ、`async` を追加することで、ページ全体のロード時間を高速化できる可能性があります。
 

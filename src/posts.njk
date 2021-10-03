@@ -9,7 +9,7 @@ eleventyNavigation:
 ---
 
 {% for tag, posts in collections | dictsort %}
-  {% if tag != 'all' and tag != 'posts' and tag != 'tagList' %}
+  {% if tag != 'all' and tag != 'posts' %}
   <h2 id="{{tag}}">{{ tag }}</h2>
   <ul class="posts-list">
   {% for post in posts %}

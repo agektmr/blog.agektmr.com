@@ -1,5 +1,5 @@
 ---
-layout: layouts/home
+layout: layouts/base
 eleventyNavigation:
   key: Home
   order: 1
@@ -30,6 +30,7 @@ permalink: "/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1
     </h2>
     <section class="post-excerpt" itemprop="description">
       <p>{% excerpt post %}</p>
+      <a href="{{ post.url }}" class="readmore">Read more...</a>
     </section>
     <section class="post-meta">
       <div class="post-date">{{ post.date | htmlDateString("%B %-d, %Y") }}</div>

@@ -16,9 +16,7 @@ Custom Elements は、それを可能にします。
 
 <!-- excerpt -->
 
-<div class="video-wrap">
-  <iframe src="//www.youtube.com/embed/iVJA-lGkEFw"></iframe>
-</div>
+{% YouTube 'iVJA-lGkEFw' %}
 
 ## Custom Elements とはなにか？
 Custom Elements は開発者が独自に HTML タグを定義し、サイト上で利用できるようにすることで、繰り返し利用されるコンポーネントを単純化し、再利用する手間を大幅に削減します。

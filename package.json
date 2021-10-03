@@ -22,6 +22,8 @@
     "@11ty/eleventy-navigation": "^0.3.2",
     "@11ty/eleventy-plugin-rss": "^1.1.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.2",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.5",
     "eleventy-plugin-excerpt": "^1.1.2",
     "luxon": "^2.0.2",
     "markdown-it": "^12.2.0",
@@ -30,8 +32,13 @@
     "prismjs": "^1.25.0",
     "rollup": "^2.56.3",
     "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.4.0",
     "rollup-plugin-scss": "^3.0.0",
     "textlint": "^12.0.2",
     "textlint-rule-preset-ja-spacing": "^2.2.0"
+  },
+  "dependencies": {
+    "@material/mwc-icon": "^0.25.1"
   }
 }

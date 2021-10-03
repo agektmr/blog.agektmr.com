@@ -22,10 +22,6 @@ module.exports = function(eleventyConfig) {
   // Alias `layout: post` to `layout: layouts/post.njk`
   eleventyConfig.addLayoutAlias("post", "layouts/post");
 
-  eleventyConfig.addFilter("readableDate", dateObj => {
-    return DateTime.fromJSDate(dateObj).toFormat("dd LLL yyyy");
-  });
-
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_FULL);
@@ -45,29 +41,35 @@ module.exports = function(eleventyConfig) {
     return Math.min.apply(null, numbers);
   });
 
-  function filterTagList(tags) {
-    return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
-  }
+  // function filterTagList(tags) {
+  //   return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
+  // }
+
+  // eleventyConfig.addFilter("filterTagList", filterTagList)
 
   eleventyConfig.addFilter("buildPermalink", (inputPath) => {
-    return inputPath.replace(/.*?\/([0-9]{4})-([0-9]{2})-[0-9]{2}-(.*)\.md$/g, "/$1/$2/$3.html");
+    return inputPath.replace(/.*?\/([0-9]{4})-([0-9]{2})-[0-9]{2}-(.*)\.(md|html)$/g, "/$1/$2/$3.html");
   });
 
-  eleventyConfig.addFilter("filterTagList", filterTagList)
+  // // Create an array of all tags
+  // eleventyConfig.addCollection("tagList", function(collection) {
+  //   let tagSet = new Set();
+  //   collection.getAll().forEach(item => {
+  //     (item.data.tags || []).forEach(tag => tagSet.add(tag));
+  //   });
 
-  // Create an array of all tags
-  eleventyConfig.addCollection("tagList", function(collection) {
-    let tagSet = new Set();
-    collection.getAll().forEach(item => {
-      (item.data.tags || []).forEach(tag => tagSet.add(tag));
-    });
-
-    return filterTagList([...tagSet]);
-  });
+  //   return filterTagList([...tagSet]);
+  // });
 
   // Copy the `img` and `css` folders to the output
   eleventyConfig.addPassthroughCopy("src/images");
   // eleventyConfig.addPassthroughCopy("src/css");
+
+  eleventyConfig.addShortcode('YouTube', (ytVideoId) => {
+    return `<div class="video-wrap">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/${ytVideoId}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>`;
+  });
 
   // Customize Markdown library and settings:
   let markdownLibrary = markdownIt({
@@ -75,6 +77,7 @@ module.exports = function(eleventyConfig) {
     breaks: false,
     linkify: true
   }).use(markdownItAnchor, {
+    level: 2,
     permalink: true,
     permalinkClass: "anchor-link",
     permalinkSymbol: "#"

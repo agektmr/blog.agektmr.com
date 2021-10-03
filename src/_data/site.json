@@ -32,19 +32,25 @@
     "desc": "Follow me on Twitter",
     "share": true
   }, {
+    "name": "Facebook",
+    "icon": "facebook",
+    "url": "https://www.facebook.com/Tender-Surrender-Eiji-Kitamura-365995940083689",
+    "desc": "Follow me on Facebook",
+    "share": true
+  }, {
     "name": "GitHub",
     "icon": "github",
     "username": "agektmr",
     "url": "https://github.com/agektmr",
     "desc": "Fork me on GitHub",
-    "share": "false"
+    "share": false
   }, {
     "name": "LinkedIn",
     "icon": "linkedin",
     "username": "agektmr",
     "url": "https://www.linkedin.com/in/agektmr",
     "desc": "Connect with me on LinkedIn",
-    "share": "true"
+    "share": true
   }],
   "pages": [{
     "title": "About",

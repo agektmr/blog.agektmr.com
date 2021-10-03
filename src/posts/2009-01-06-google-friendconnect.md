@@ -1,64 +1,80 @@
 ---
-title: Google FriendConnect対応ガジェットが完成
-author: Eiji
+title: Google FriendConnect 対応ガジェットが完成
 layout: post
-SBM_count:
-  - '00002<>1271376948<>2<>0<>0<>0<>0'
-categories:
+date: 2009-01-06
+tags:
   - FriendConnect
 ---
-FriendConnectのメンバーが友達を紹介し合う文章が書けるFriend Introducerというガジェットを公開しました。このブログの画面左側に表示していますので、メンバーになってくれている方はぜひ、遊んでみてください。(なっていない方はメンバーになって遊んでください！)
+FriendConnect のメンバーが友達を紹介し合う文章が書ける Friend Introducer という
+ガジェットを公開しました。このブログの画面左側に表示していますので、メンバーに
+なってくれている方はぜひ、遊んでみてください。(なっていない方はメンバーになって
+遊んでください！)
 
-## FriendIntroducerとは
+## FriendIntroducer とは
 
-主に3つのビューが存在します。1つはブログ上で表示されるprofileビュー。
+主に 3 つのビューが存在します。1 つはブログ上で表示される profile ビュー。
 
-<img class="alignnone size-medium wp-image-315" title="FriendConnect4" src="/images/2009/01/e38394e382afe38381e383a3-2-155x300.png" alt="FriendConnect4" width="155" height="300" />
+![FriendConnect4](/images/2009/01/e38394e382afe38381e383a3-2-155x300.png)
 
-FriendConnectメンバーの紹介文を最大5件表示します。ページングが可能で、それぞれのメンバーに書かれた紹介文がランダムで表示されます。
+FriendConnect メンバーの紹介文を最大 5 件表示します。ページングが可能で、それぞ
+れのメンバーに書かれた紹介文がランダムで表示されます。
 
-メンバーのサムネイル画像をクリックするとdetailビュー<span style="text-decoration: line-through;">(OpenSocial的なビューではないですけどね)</span>に切り替わります。(※誤解を招きそうなので修正。detailビューは僕が勝手にそう呼んでいるだけで、OpenSocial的にはprofileビューです。)
+メンバーのサムネイル画像をクリックすると detail ビュー~~(OpenSocial 的なビューで
+はないですけどね)~~に切り替わります。(※ 誤解を招きそうなので修正。detail ビューは
+僕が勝手にそう呼んでいるだけで、OpenSocial 的には profile ビューです。)
 
-<img class="alignnone size-medium wp-image-316" title="FriendConnect5" src="/images/2009/01/e38394e382afe38381e383a3-3-166x300.png" alt="FriendConnect5" width="166" height="300" />
+![FriendConnect5](/images/2009/01/e38394e382afe38381e383a3-3-166x300.png)
 
-一人に対して複数の人が紹介文を書いている場合がありますので、detailビューでは、その人に関する紹介文をすべて閲覧することができます。
+一人に対して複数の人が紹介文を書いている場合がありますので、detail ビューでは、
+その人に関する紹介文をすべて閲覧することができます。
 
-ガジェット上部のボタンをクリックするとcanvasビューに切り替わります。
+ガジェット上部のボタンをクリックすると canvas ビューに切り替わります。
 
-<img class="alignnone size-medium wp-image-317" title="FriendConnect6" src="/images/2009/01/e38394e382afe38381e383a3-4-300x188.png" alt="FriendConnect6" width="300" height="188" />
+![FriendConnect6](/images/2009/01/e38394e382afe38381e383a3-4-300x188.png)
 
-canvasビューでは、ログインユーザーの友達の紹介文を書くことができます。友達がいない方は、同じFriendConnect上の誰かを友達に加えてください。
+canvas ビューでは、ログインユーザーの友達の紹介文を書くことができます。友達がい
+ない方は、同じ FriendConnect 上の誰かを友達に加えてください。
 
-## FriendIntroducerをブログに貼付けるには
+## FriendIntroducer をブログに貼付けるには
 
-まずは<a href="http://www.google.com/friendconnect/" target="_blank">こちら</a>でFriendConnectに登録してください。サイト登録済みの状態で・・・
+まずは[こちら](http://www.google.com/friendconnect/)で FriendConnect に登録して
+ください。サイト登録済みの状態で・・・
 
-<img class="alignnone size-full wp-image-311" title="FriendConnect1" src="/images/2009/01/e38394e382afe38381e383a3-12.png" alt="FriendConnect1" width="184" height="216" />
+![FriendConnect1](/images/2009/01/e38394e382afe38381e383a3-12.png)
 
-Social gadgetsをクリックします。
+Social gadgets をクリックします。
 
-<img class="alignnone size-medium wp-image-312" title="FriendConnect2" src="/images/2009/01/e38394e382afe38381e383a3-13-300x86.png" alt="FriendConnect2" width="300" height="86" />
+![FriendConnect2](/images/2009/01/e38394e382afe38381e383a3-13-300x86.png)
 
-一番下にあるCustom gadgetリンクをクリックします。
+一番下にある Custom gadget リンクをクリックします。
 
-<img class="alignnone size-medium wp-image-313" title="FriendConnect3" src="/images/2009/01/e38394e382afe38381e383a3-14-213x300.png" alt="FriendConnect3" width="213" height="300" />
+![FriendConnect3](/images/2009/01/e38394e382afe38381e383a3-14-213x300.png)
 
-Gadget URLを<a href="http://devlab.agektmr.com/OpenSocial/FriendConnect/FriendIntroducer.xml" target="_blank">http://devlab.agektmr.com/OpenSocial/FriendConnect/FriendIntroducer.xml</a>としてください。
+Gadget URL を
+[http://devlab.agektmr.com/OpenSocial/FriendConnect/FriendIntroducer.xml](http://devlab.agektmr.com/OpenSocial/FriendConnect/FriendIntroducer.xml)
+としてください。
 
-ガジェットの横幅を調整し、Generate CodeをクリックするとHTMLコードが出力されますので、これをブログ等に貼付けます。
+ガジェットの横幅を調整し、Generate Code をクリックすると HTML コードが出力されま
+すので、これをブログ等に貼付けます。
 
 ## 所感
 
-以前のエントリにも書きましたが、FriendConnectガジェット作成のミソは：
+以前のエントリにも書きましたが、FriendConnect ガジェット作成のミソは：
 
-*   OWNERはブログという仮想人格
-*   requestNavigateToでcanvasビューとprofileビューを行き来できる
-*   canvasビューのバックグラウンドは、サイト作成時に取り込んだcanvas.htmlをいじることで変更可能
+* OWNER はブログという仮想人格
+* requestNavigateTo で canvas ビューと profile ビューを行き来できる
+* canvas ビューのバックグラウンドは、サイト作成時に取り込んだ canvas.html をいじ
+  ることで変更可能
 
 といったところでしょうか。
 
-今のところOpenSocialにコミュニティ的な考えはないのですが、FriendConnectはちょっとひねったコミュニティ的な応用、と思うと分かりやすいかもしれません。
+今のところ OpenSocial にコミュニティ的な考えはないのですが、FriendConnect は
+ちょっとひねったコミュニティ的な応用、と思うと分かりやすいかもしれません。
 
-また、FriendConnectの面白いところは、複数のSNSからインポートした友達リストをマージして利用できることです。例えば僕はorkut、Google、Plaxo、Twitterをインポートしていますが、同じブログに登録している人がこれらのSNS上で友達であれば、FriendConnect上でも友達になります。
+また、FriendConnect の面白いところは、複数の SNS からインポートした友達リストを
+マージして利用できることです。例えば僕は orkut、Google、Plaxo、Twitter をイン
+ポートしていますが、同じブログに登録している人がこれらの SNS 上で友達であれば、
+FriendConnect 上でも友達になります。
 
-いつかGoogleがiGoogleをSNS化する際、これらの友達リストがそのまま利用できるようになるかもしれませんね。
+いつか Google が iGoogle を SNS 化する際、これらの友達リストがそのまま利用できる
+ようになるかもしれませんね。

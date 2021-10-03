@@ -82,7 +82,13 @@ pre code.hljs {
 }
 
 .anchor-link {
-	opacity: 0.3;
+  color: transparent;
+  display: none;
+  margin-left: 4px;
+
+	@include bp(sm) {
+		display: inline;
+	}
 }
 
 .site-header-container, .post-header-container {
