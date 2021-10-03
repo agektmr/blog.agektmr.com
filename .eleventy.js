@@ -63,7 +63,8 @@ module.exports = function(eleventyConfig) {
 
   // Copy the `img` and `css` folders to the output
   eleventyConfig.addPassthroughCopy("src/images");
-  // eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy("src/manifest.json");
 
   eleventyConfig.addShortcode('YouTube', (ytVideoId) => {
     return `<div class="video-wrap">

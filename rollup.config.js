@@ -3,7 +3,6 @@ import commonjs from '@rollup/plugin-commonjs';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import builtins from 'rollup-plugin-node-builtins';
 import globals from 'rollup-plugin-node-globals';
-import copy from 'rollup-plugin-copy';
 import scss from 'rollup-plugin-scss';
 
 const src = path.join('src');
@@ -34,18 +33,6 @@ export default [{
         path.join(src, 'styles', '*.scss'),
       ],
       output: path.join(dst, 'styles', 'style.css'),
-    }),
-    copy({
-      targets: [{
-        src: path.join(src, 'styles', 'prism-base16-monokai.dark.css'),
-        dest: path.join(dst, 'styles'),
-      }, {
-        src: path.join(src, 'favicon.*'),
-        dest: path.join(dst),
-      }, {
-        src: path.join(src, 'manifest.json'),
-        dest: path.join(dst),
-      }]
     })
   ]
 }]

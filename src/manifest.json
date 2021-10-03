@@ -1,5 +1,7 @@
 {
   "name": "Tender Surrender",
+  "short_name": "Tender Surrender",
+  "description": "ウェブの未来を夢見るブログ",
   "icons": [
     {
       "src": "/images/icon-72x72.jpg",
