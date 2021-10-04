@@ -1,9 +1,7 @@
 @charset "utf-8";
 
-// Import partials from `sass_dir` (defaults to `_sass`)
-// Includes Bourbon, Neat, and Bitters (thanks, thoughtbot!)
 @import
-  "./prism-base16-monokai.dark.css",
+  "./prism-base16-monokai.dark",
   "./bourbon/_bourbon.scss",
   "./base/_base.scss",
   "./base/_breakpoints.scss",
