@@ -13,3 +13,20 @@
   display: block;
   text-align: end;
 }
+
+.aside {
+  border-radius: 10px;
+  background-color: #254072;
+  margin: 20px 0;
+  color: white;
+  padding: 20px;
+  a {
+    color: white;
+  }
+  p {
+    margin-bottom: 0;
+  }
+  code {
+    background-color: #355082;
+  }
+}
