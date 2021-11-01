@@ -72,6 +72,12 @@ module.exports = function(eleventyConfig) {
   </div>`;
   });
 
+  eleventyConfig.addPairedShortcode('Aside', (content) => {
+    return `<div class="aside">
+    ${content}
+  </div>`;
+  });
+
   // Customize Markdown library and settings:
   let markdownLibrary = markdownIt({
     html: true,

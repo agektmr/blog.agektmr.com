@@ -9,7 +9,23 @@
   "./_layout.scss"
 ;
 
+h2,h3,h4,h5,h6 {
+  margin-top: 3rem;
+}
+
 .readmore {
   display: block;
   text-align: end;
+}
+
+.aside {
+  margin: 20px 0;
+  color: darkblue;
+  font-size: 0.9em;
+  a {
+    color: darkblue;
+  }
+  p {
+    margin-bottom: 0;
+  }
 }
