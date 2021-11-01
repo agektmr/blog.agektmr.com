@@ -112,7 +112,7 @@ Chrome の Task Manager を開くと、Process ID のグループ分けからど
 追加すべき HTTP レスポンスヘッダーは次の 4 組です。
 
 * `Cross-Origin-Resource-Policy`
-* `X-Frame-Options: DENY` または CSP `frame-ancestors`
+* `X-Frame-Options` または CSP `frame-ancestors`
 * `Cross-Origin-Opener-Policy: same-origin-allow-popups`
 * `Content-Type` および `X-Content-Type-Options: nosniff`
 
@@ -164,7 +164,7 @@ cross-origin なサイトを iframe にロードするのを防ぐには、`X-Fr
 X-Frame-Options: DENY
 ```
 
-`DENY` が指定された HTML ドキュメントは親ページの origin に関わらず iframe にロードされません。
+`DENY` が指定された HTML ドキュメントは親ページの origin に関わらず iframe にロードされません。これを `SAMEORIGIN` にすれば、親ページが same-origin の場合のみ iframe にロードすることもできます。
 
 ```http
 Content-Security-Policy: frame-ancestors 'self' https://www.example.com;
