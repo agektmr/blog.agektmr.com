@@ -3,7 +3,7 @@ layout: post
 title: 'Google に入社して 10 年が経った'
 date: 2020-06-01
 image:
-  feature: 2020/10th-anniversary.jpg
+  feature: /2020/10th-anniversary.jpg
 tags:
 - Google
 - Developer Advocate

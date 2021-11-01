@@ -7,7 +7,7 @@ tags:
 - HTML Imports
 - Web Components
 image:
-  feature: custom-elements-web-components/image.png
+  feature: /custom-elements-web-components/image.png
 ---
 *この記事は [webcomponents.org の記事](http://webcomponents.org/articles/introduction-to-html-imports/)とのクロスポストです。*
 

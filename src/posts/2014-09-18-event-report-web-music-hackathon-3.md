@@ -7,7 +7,7 @@ tags:
 - Web MIDI API
 - Web Audio API
 image:
-  feature: event-report-web-music-hackathon-3/guitar.jpg
+  feature: /event-report-web-music-hackathon-3/guitar.jpg
 ---
 
 Did you know web browsers can now make music? Or at least sound. By using Web
