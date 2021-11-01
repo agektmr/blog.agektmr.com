@@ -241,7 +241,11 @@ Chrome チームではこれを実現できるよう準備を進めています�
 
 この記事では Spectre に関連したいくつかの HTTP ヘッダーについて触れましたが、他にもいくつか重要なものがあります。英語ですが、こちらのページにまとめています。ぜひ参考にしてください。
 
-* [Security headers quick reference](https://web.dev/security-headers/)
+* [Security headers quick reference](https://web.dev/security-headers/): 
+
+また、[Mike West](https://twitter.com/mikewest) による Post-Spectre Web Development は、この記事に書いたような話を、より実用的な視点からユースケース別にまとめたものです。こちらもぜひ読んでみてください。
+
+* [Post-Spectre Web Development](https://www.w3.org/TR/post-spectre-webdev/)
 
 {% endAside %}
 
