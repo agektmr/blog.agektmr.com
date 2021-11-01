@@ -1,14 +1,16 @@
 ---
 layout: post
-title: 'Spectre と今ウェブサイトに設定すべきヘッダーまとめ'
-description: 'Spectre の登場で、ウェブサイトに必要とされるセキュリティ要件は増えました。'
-date: 2021-10-31
+title: 'Spectre とウェブサイトが設定すべきレスポンスヘッダーについて'
+description: 'Spectre の登場で、ウェブサイトに必要とされるセキュリティ要件は増えました。Spectre によってどんな攻撃がありえるのか。具体的にどんな対策が必要なのかを解説します。'
+date: 2021-11-01
 tags:
 - Security
 - Spectre
 ---
 
 長い記事なので先に結論を書きます。
+
+Spectre の登場で、ウェブサイトに必要とされるセキュリティ要件は増えました。具体的に必要な対策は下記の通りです。
 
 * HTML ドキュメントには `Cross-Origin-Opener-Policy` ヘッダーを追加して popup ウィンドウとして開かれた場合の cross-origin なページとのコミュニケーションの可否を制御する。
 * HTML ドキュメントには `X-Frame-Options` ヘッダーもしくは `Content-Security-Policy` (CSP) ヘッダーの `frame-ancestors` ディレクティブを追加して、cross-origin なページへの iframe による埋め込みを制御する。
@@ -23,9 +25,11 @@ tags:
 
 ブラウザは、各タブそれぞれがひとつの URL を持ち、現在見ているページをユーザーに教えてくれます。タブに表示されている URL は通常 HTML ドキュメントを指し、そのドキュメントが画像や動画、スタイルシート、スクリプト、フォントなど、様々なリソースを読み込むことでウェブページ全体を表現します。この時、各リソースのドメインは必ずしも現在見ているページのドメインとは一致しません。
 
-この時、URL バーに表示されているドメインを「ファーストパーティー」、ロードされたリソースのファーストパーティー以外のドメインを「サードパーティー」と呼びます。(つまり「サードパーティー Cookie」とは、サードパーティーのリソースに紐付けられている Cookie のことを言います。が、その話はまた別のところで。)
+この時、URL バーに表示されているドメインを「ファーストパーティー」、ロードされたリソースのファーストパーティー以外のドメインを「サードパーティー」と呼びます。(つまり「サードパーティー Cookie」とは、サードパーティーのリソースに紐付けられている Cookie のことを言います。)
 
 また、2 つのドメインの関係について、eTLD (effective Top Level Domain = 例えば `example.com`) だけが同じものを same-site、スキーマ・ホスト名・ポート番号すべてが一致するもの (例えば `https://www.example.com:8080`) を same-origin、それ以外を cross-site や cross-origin と呼びます。
+
+この記事ではこの後 same-site/cross-site, same-origin/cross-origin を意図的に使い分けて記述していきますので、これらの違いについて曖昧な理解の方は、まずはここからスタートしてください。
 
 {% Aside %}
 
@@ -37,13 +41,15 @@ tags:
 
 * スクリプトを読み込むだけでアナリティクスを導入し、サイトを訪れたユーザーの行動を分析、もしくはトラッキングする。
 * iframe を使って外部サイトの情報をウィジェットとして埋め込み、広告やソーシャルメディアのボタン、パーソナライズ可能な地図や動画を埋め込む。
-* popup ウィンドウを使って、外部サイトでのログインや支払いといった連携を実現する。
+* popup ウィンドウを介した外部サイトとのコミュニケーションを通じて、ログインや支払いといった連携を実現する。
 
 cross-origin な連携は、ウェブをウェブたらしめる特徴と言えます。
 
+![](/images/2021/spectre1.png)
+
 ### Same-Origin Policy 
 
-オンラインの世界で怖いことは、本来しかるべきところに預けたはずの情報が、ユーザーの意図しないところに渡ったり、利用されたりしてしまうことでしょう。ましてやその情報がクレジットカード番号や銀行口座の情報だったりしたら一大事です。ウェブブラウザ上で「しかるべきところ」はドメインという形で表され、HTTPS を通すことでその信頼性を担保しています。攻撃者が情報を盗むポイントとしてはブラウザ、ネットワーク、サーバーの 3 つに大きく分かれますが、ブラウザ上での攻撃とは、いかにしてこのドメインの壁を越えるか、であるとも言えます。様々なドメインからリソースを集め、JavaScript という形でプログラムを動かせるという点でブラウザは、非常に特殊な環境でもあります。その壁を守っているものとは一体何でしょうか？
+ところでオンラインの世界で怖いことは、本来しかるべきところに預けたはずの情報が、ユーザーの意図しないところに渡ったり、利用されたりしてしまうことでしょう。ましてやその情報がクレジットカード番号や銀行口座の情報だったりしたら一大事です。ウェブブラウザ上で「しかるべきところ」はドメインという形で表され、HTTPS を通すことでその信頼性を担保しています。攻撃者が情報を盗むポイントとしてはブラウザ、ネットワーク、サーバーの 3 つに大きく分かれますが、ブラウザ上での攻撃とは、いかにしてこのドメインの壁を越えるか、であるとも言えます。様々なドメインからリソースを集め、JavaScript という形でプログラムを動かせるという点でブラウザは、非常に特殊な環境でもあります。その壁を守っているものとは一体何でしょうか？
 
 ブラウザ上で異なるドメイン同士の連携を可能にしながらもサイトごとの安全性をある程度保ってくれるのが **Same-Origin Policy** です。これは origin を境界としてお互いに不可侵な関係を保ちつつも、ある程度の連携は可能にする、という実に微妙なバランスの元に成り立っています。
 
@@ -81,6 +87,12 @@ Spectre には、高精細タイマーを活用することで効率的に情報
 
 Chrome は元々大まかにタブ単位でプロセスを作っていましたが、Site Isolation はその名の通り、プロセスを site 単位とすることでリソースを cross-site で切り離し、Spectre の脅威から守ります。具体的には [Cross-Origin Read Blocking (CORB)](https://www.chromium.org/Home/chromium-security/corb-for-developers)、[Out-of-process iframe (OOPIF)](https://www.chromium.org/developers/design-documents/oop-iframes) といったテクニックが利用されています。詳しくは [Site Isolation のページ](https://www.chromium.org/developers/design-documents/site-isolation)をご覧ください。
 
+{% Aside %}
+
+本来「プロセスを分ける」ではなく、「Browsing Context Group を分ける」という方が正しいのですが、ここでは便宜上「プロセス」という言葉を使っています。
+
+{% endAside %}
+
 プロセスを細かく分けるということはそれだけオーバーヘッドがかかるため、メモリ消費量は 10% 程度増えるなど、リソースの乏しいモバイルには向いていません。そのため、Site Isolation は基本的にデスクトップ環境と、モバイルの一部サイトのみで有効化されました。一時期デスクトップ版 Chrome だけ `SharedArrayBuffer` が使えたのはそのためです。
 
 ただ問題は、Site Isolation が Chrome 独自のアーキテクチャだということです。現在 Firefox でも [Fission と呼ばれる Site Isolation アーキテクチャを導入するプロジェクト](https://blog.mozilla.org/security/2021/05/18/introducing-site-isolation-in-firefox/)が進められていますが、標準技術をベースに構築されるウェブが、特定のアーキテクチャを前提として安全であるというのは健全ではありません。
@@ -89,7 +101,7 @@ Chrome は元々大まかにタブ単位でプロセスを作っていました�
 
 ## Spectre による攻撃を未然に防ぐ
 
-Spectre による攻撃を防ぐには、あなたの origin にあるリソースが、悪意ある origin と同じプロセスに取り込まれる前に止める必要があります。そんな時に必要となるのが、JavaScript や HTML の `meta` タグではなく、HTTP レスポンスヘッダーです。ブラウザのネットワークプロセスがレスポンスヘッダーを見ることで、悪意ある origin のレンダラープロセスに渡す前にブロックしたり、別のレンダラープロセスに渡したりすることができます。
+Spectre による攻撃を防ぐには、あなたの origin にあるリソースが、悪意ある origin と同じプロセスに取り込まれる前に止める必要があります。そんな時に必要となるのが、HTTP レスポンスヘッダーです。ブラウザのネットワークプロセスがレスポンスヘッダーを見ることで、JavaScript や HTML の `meta` タグとは異なり、悪意ある origin のレンダラープロセスに渡す前にブロックしたり、別のレンダラープロセスに渡したりすることができます。
 
 Chrome の Task Manager を開くと、Process ID のグループ分けからどういう単位でプロセスが分けられているかがわかります。
 
@@ -124,17 +136,17 @@ Cross-Origin-Resource-Policy: cross-site
 
 これらのヘッダーはこちらの[デモ](https://first-party-test.glitch.me/corp)から試してみることができます。DevTools を開いて `Cross-Origin-Resource-Policy` ヘッダーがどういう影響を与えるか確認してみてください。
 
+[CORP](https://caniuse.com/mdn-http_headers_cross-origin-resource-policy) は Chrome, Firefox, Safari ですでにサポートされています。
+
 {% Aside %}
 
-ここで勘違いして欲しくないのは、CORP がリソースの読み込み自体をブロックするわけではないという点です。サーバーにおける ACL (Access Control List) とは異なりますので、CORP に対応していないブラウザや、別のサーバー、HTTP クライアントからのリクエストがブロックできる訳ではないのでご注意ください。
+勘違いして欲しくないのは、CORP がリソースの読み込み自体をブロックするわけではないという点です。サーバーにおける ACL (Access Control List) とは異なりますので、CORP に対応していないブラウザや、別のサーバー、HTTP クライアントからのリクエストがブロックできる訳ではないのでご注意ください。
 
-また、Cross-Origin Resource Sharing (CORS) は CORP に似ていますが、条件をより細かく判断できる点、ネットワークを通る前に送信しないことを判断できる点などが異なります。
+また、Cross-Origin Resource Sharing (CORS) は CORP に似ていますが、条件をより細かく判断できる点、ネットワークを通る前に送信しないことができる ([Preflight Request](https://developer.mozilla.org/docs/Glossary/Preflight_request)) 点などが異なります。
 
-また通常、公開されているリソースは盗まれても困ることはありません。困るのは、認証済みの時のみサーブされる情報であり、多くの場合サードパーティー Cookie を含むリソース、ということになります。それならば、[適切な `SameSite` 属性を設定しておけば](https://web.dev/i18n/ja/samesite-cookies-explained/)、たとえ Spectre の罠にハマっても認証済みのリソースがロードされることはありません。幸いなことに Chrome や Edge の Cookie は `SameSite` 属性のデフォルトは `Lax` になっています。
+また通常、公開されているリソースは盗まれても困ることはありません。困るのは、認証済みの時のみサーブされる情報であり、多くの場合サードパーティー Cookie を含むリソース、ということになります。それならば、[適切な `SameSite` 属性を設定しておけば](https://web.dev/i18n/ja/samesite-cookies-explained/)、たとえ Spectre の罠にハマっても認証済みのリソースがロードされることはありません。幸いなことに Chrome や Edge の Cookie は `SameSite` 属性のデフォルトは `Lax` になっています。むやみに `SameSite` を `None` に設定してしまったサービスの担当者の方は今一度設定の見直しをおすすめします。
 
 {% endAside %}
-
-[CORP](https://caniuse.com/mdn-http_headers_cross-origin-resource-policy) は Chrome, Firefox, Safari ですでにサポートされています。
 
 ### `X-Frame-Options` または CSP `frame-ancestors` でドキュメントの iframe 埋め込みを制御する
 
@@ -188,9 +200,17 @@ COOP はこのように、cross-origin なウィンドウからの Spectre を�
 
 [COOP](https://caniuse.com/mdn-http_headers_cross-origin-opener-policy) はすでに Chrome、Firefox でサポートされ、[Safari でも近々サポートされる予定 (2021 年 10 月現在) のようです](https://webkit.org/blog/11962/release-notes-for-safari-technology-preview-131/)。
 
+{% Aside %}
+
+`Cross-Origin-Opener-Policy: same-origin` と似たものに `a[rel="noopener"]` があります。これは `<a target="_blank">` タグで開かれた新しいウィンドウが、デフォルトでは同じプロセスで開かれるため発生する Spectre のリスクを回避する意味も持ちます。幸いなことに、現在では [Chrome](https://www.chromestatus.com/feature/6140064063029248) でも、[Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1503681) でも [Safari](https://bugs.webkit.org/show_bug.cgi?id=190481) でも `rel="noopener"` がデフォルトに変更されたため、気にしなくても良くなりました。逆に `Cross-Origin-Opener-Policy: unsafe-none` と同じ状態にするには `rel="opener"` を指定します。
+
+参考: [リンクのへの rel=noopener 付与による Tabnabbing 対策 | blog.jxck.io](https://blog.jxck.io/entries/2016-06-12/noopener.html)
+
+{% endAside %}
+
 ### `X-Content-Type-Options: nosniff` で悪意のある cross-origin な読み込みからリソースを守る
 
-ブラウザによっては、`Content-Type` が設定されていても、リソースの内容から自動的に MIME-Type を変更してページにロードしてしまうことがあり、脆弱性として知られていました。Spectre についても、これを応用して、同じページのプロセスに読み込む手段として使うことができてしまいます。`X-Content-Options: nosniff` を指定すれば、ブラウザのこの動作を防止することができます。適切な `Content-Type` ヘッダーの指定と、`X-Content-Options: nosniff` は欠かさないようにしてください。
+ブラウザによっては、`Content-Type` が設定されていても、リソースの内容から自動的に MIME-Type を変更してページにロードしてしまうことがあり、脆弱性として知られていました。これを応用して同じページのプロセスにリソースを読み込む手段として使うことができるため、Spectre を使った攻撃に応用できてしまいます。`X-Content-Options: nosniff` を指定すれば、ブラウザのこの動作を防止することができます。適切な `Content-Type` ヘッダーの指定と、`X-Content-Options: nosniff` は欠かさないようにしてください。
 
 ```http
 X-Content-Type-Options: nosniff
@@ -198,14 +218,16 @@ X-Content-Type-Options: nosniff
 
 ## 未来の話
 
-今回の記事ではなかなかひとことでは説明しづらい複雑な話をできるだけ分かりやすくまとめたつもりですが、これをすべてのウェブ開発者のみなさんが理解し、漏れなく Spectre に対応したウェブを作っていかなければならない、というのはとても健全とは言えません。そんなことは本来ブラウザがやってくれるべきです。
+今回の記事ではなかなかひとことでは説明しづらい複雑な話をできるだけ分かりやすくまとめたつもりですが、すべてのウェブ開発者のみなさんが漏れなく推奨されたヘッダーを実装するというのは難しい注文のように思えます。本来、そんなことはブラウザがやってくれるべきです。しかしそのためには、今のデフォルト動作を全く逆にする必要があります。つまり:
 
-しかしそれをやるには、今のデフォルト動作を全く逆にする必要があります。つまり:
+* cross-origin な HTML ドキュメントはデフォルトで埋め込めないようにする = `X-Frame-Options: DENY`をデフォルトにする。
+* cross-origin な popup ウィンドウとはデフォルトでコミュニケーションできないようにする = `Cross-Origin-Opener-Policy: same-origin-allow-popups` をデフォルトにする。
 
-* cross-origin な HTML ドキュメントはデフォルトで埋め込めないようにする = `X-Frame-Options: DENY`をデフォルトに。
-* cross-origin な popup ウィンドウとはデフォルトでコミュニケーションできないようにする = `Cross-Origin-Opener-Policy: same-origin-allow-popups` をデフォルトに。
+Chrome チームではこれを実現できるよう準備を進めていますが、これまでとデフォルトを真逆にするというのは破壊的な変更となります。これがウェブをより安全な場所にしていくために避けて通れない道であることは、この記事を読んだ皆さんはもうおわかりかと思いますが、少しでも多くの開発者のみなさんがこのことを理解し、すこしずつ準備を進めていただければと思います。
 
-Chrome チームではこれを実現できるよう準備を進めていますが、これまでとデフォルトを真逆にするというのは破壊的な変更となります。しかし、これがウェブをより安全な場所にしていくために避けて通れない道であることは、この記事を読んだ皆さんはもうおわかりかと思います。少しでも多くの開発者のみなさんがこのことを理解し、すこしずつ準備を進めていただければと思います。
+また、この記事で解説した内容は 2021 年の Google I/O でセッションビデオとして公開しています。日本語字幕も付いていますので、ぜひご覧ください。
+
+{% YouTube 'J6BZ9IQELNA' %}
 
 {% Aside %}
 
@@ -214,7 +236,3 @@ Chrome チームではこれを実現できるよう準備を進めています�
 * [Security headers quick reference](https://web.dev/security-headers/)
 
 {% endAside %}
-
-また、この記事で解説した内容は 2021 年の Google I/O でセッションビデオとして公開しています。日本語字幕も付いていますので、ぜひご覧ください。
-
-{% YouTube 'J6BZ9IQELNA' %}

@@ -9,24 +9,23 @@
   "./_layout.scss"
 ;
 
+h2,h3,h4,h5,h6 {
+  margin-top: 3rem;
+}
+
 .readmore {
   display: block;
   text-align: end;
 }
 
 .aside {
-  border-radius: 10px;
-  background-color: #254072;
   margin: 20px 0;
-  color: white;
-  padding: 20px;
+  color: darkblue;
+  font-size: 0.9em;
   a {
-    color: white;
+    color: darkblue;
   }
   p {
     margin-bottom: 0;
-  }
-  code {
-    background-color: #355082;
   }
 }
