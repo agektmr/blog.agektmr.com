@@ -8,7 +8,7 @@ tags:
 - Developer Relations
 - Google
 image:
-  feature: 2013-04-11-google-developer-advocate/gde.jpg
+  feature: /2013-04-11-google-developer-advocate/gde.jpg
 ---
 
 僕の仕事は Google の Chrome Developer Advocate です。  

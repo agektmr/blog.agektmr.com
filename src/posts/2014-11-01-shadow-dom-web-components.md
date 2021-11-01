@@ -7,7 +7,7 @@ tags:
 - Shadow DOM
 - Web Components
 image:
-  feature: shadow-dom-web-components/architecture.png
+  feature: /shadow-dom-web-components/architecture.png
 ---
 
 *この記事は [webcomponents.org の記
