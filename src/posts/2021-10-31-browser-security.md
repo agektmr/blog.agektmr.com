@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 'Spectre とウェブサイトが設定すべきレスポンスヘッダーについて'
-description: 'Spectre の登場で、ウェブサイトに必要とされるセキュリティ要件は増えました。Spectre によってどんな攻撃がありえるのか。具体的にどんな対策が必要なのかを解説します。'
+title: 'Spectre の脅威とウェブサイトが設定すべきヘッダーについて'
+description: 'Spectre の登場でウェブサイトに必要とされるセキュリティ要件は増えました。Spectre によってどんな攻撃がありえるのか、具体的にどんな対策が必要なのか、まとめました。'
 date: 2021-11-01
 image:
   feature: 2021/spectre1.png
