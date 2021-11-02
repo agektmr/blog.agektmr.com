@@ -174,7 +174,7 @@ Content-Security-Policy: frame-ancestors 'self' https://www.example.com;
 
 iframe にロードされる前提がないドキュメントはすべて `X-Frame-Options: DENY` を付けるのがおすすめです。
 
-[`X-Frame-Options`](https://caniuse.com/mdn-http_headers_csp_content-security-policy_frame-ancestors)、[CSP `frame-ancestors`](https://caniuse.com/mdn-http_headers_csp_content-security-policy_frame-ancestors) ともに、Chrome, Firefox, Safari ですでにサポートされています。
+[`X-Frame-Options`](https://caniuse.com/x-frame-options)、[CSP `frame-ancestors`](https://caniuse.com/mdn-http_headers_csp_content-security-policy_frame-ancestors) ともに、Chrome, Firefox, Safari ですでにサポートされています。
 
 ### `Cross-Origin-Opener-Policy` (COOP) でウィンドウ間のコミュニケーションを制御する
 
