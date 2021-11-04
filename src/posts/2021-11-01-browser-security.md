@@ -3,6 +3,7 @@ layout: post
 title: 'Spectre の脅威とウェブサイトが設定すべきヘッダーについて'
 description: 'Spectre の登場でウェブサイトに必要とされるセキュリティ要件は増えました。Spectre によってどんな攻撃がありえるのか、具体的にどんな対策が必要なのか、まとめました。'
 date: 2021-11-01
+updated: 2021-11-04
 image:
   feature: /2021/spectre1.png
 tags:
@@ -81,6 +82,8 @@ Popup ウィンドウとして開かれたウィンドウとの間でも同様�
 
 悪意のある JavaScript をロードしてしまえば、攻撃者は Same-Origin Policy の壁を無視して、同じプロセスで動いている任意の DOM 要素を読み出すことができてしまいます。当時のほとんどのブラウザのアーキテクチャのままでは、攻撃者の作ったページ経由でリソースが読み込まれるだけで、情報が盗まれてしまう可能性がありました。そこに認証情報や、それを必要とする情報が含まれていれば、それすらも危険に晒すことになります。
 
+![](/images/2021/spectre2.png)
+
 ### 各ブラウザの採った対策
 
 Spectre には、高精細タイマーを活用することで効率的に情報を盗み出すことができるという特徴があるため、各ブラウザベンダーは、高精細なタイマーに関連する機能を停止することを決定しました。そこで利用できなくなった機能の代表が `SharedArrayBuffer` です。他にも、`performance.now()` の精度を下げるなどの対策も取られました。ただ、これはあくまで効率を下げるための策でしかなく、Google の研究では、Spectre の脅威を完全に取り除くには、[ブラウザのアーキテクチャを根本的に変更する必要がありました](https://v8.dev/blog/spectre)。
@@ -118,7 +121,7 @@ Chrome の Task Manager を開くと、Process ID のグループ分けからど
 
 ### `Cross-Origin-Resource-Policy` (CORP) でリソースの埋め込みを制御する
 
-画像や動画、音声、スクリプト、API 経由の JSON など、リソースのロードを `same-origin`、`same-site` に許可する、もしくは `cross-site` でどこからでも許可することができます。例えば、`https://images.example.com` にホストされている画像にそれぞれのヘッダーを追加した場合の挙動は以下の通りです:
+画像や動画、音声、スクリプト、API 経由の JSON など、リソースのロードを `same-origin`、`same-site` に許可する、もしくは `cross-origin` でどこからでも許可することができます。例えば、`https://images.example.com` にホストされている画像にそれぞれのヘッダーを追加した場合の挙動は以下の通りです:
 
 ```http
 Cross-Origin-Resource-Policy: same-origin
@@ -133,10 +136,16 @@ Cross-Origin-Resource-Policy: same-site
 この画像は same-site である `example.com` を含むドメイン、例えば `https://www.example.com` からでも読み込むことができますが、その他の eTLD+1、例えば `https://site.example` からは読み込むことはできません。
 
 ```http
-Cross-Origin-Resource-Policy: cross-site
+Cross-Origin-Resource-Policy: cross-origin
 ```
 
-デフォルトである `cross-site` が指定された画像は `https://images.example.com` や `example.com` に限らず、どの origin からでも読み込むことができます。
+{% Aside %}
+
+**2021/11/04 追記:** 当初 `cross-site` と記述していましたが、`cross-origin` の誤りでした。
+
+{% endAside %}
+
+デフォルトである `cross-origin` が指定された画像は `https://images.example.com` や `example.com` に限らず、どの origin からでも読み込むことができます。
 
 これらのヘッダーはこちらの[デモ](https://first-party-test.glitch.me/corp)から試してみることができます。DevTools を開いて `Cross-Origin-Resource-Policy` ヘッダーがどういう影響を与えるか確認してみてください。
 
