@@ -25,7 +25,7 @@ Cross-Origin-Opener-Policy: same-origin
 
 <!-- excerpt -->
 
-## Spectre の脅威とブラウザの採った対策、そして Site Isolation
+## Spectre の脅威とブラウザの対策、そして Site Isolation
 
 [前回の記事](/2021/11/browser-security.html)では、Spectre の脅威として、同じプロセスの扱うメモリ空間を推察することで cross-origin に読み込まれたリソースが危険に晒されることを説明しました。各ブラウザはその対策として `SharedArrayBuffer` を無効にしたり、高精細タイマーの精度を下げるなどしてリスクを緩和したこと、一部のブラウザは Site Isolation というアーキテクチャを導入することで抜本的な対策を実現したこと、標準化された機能を使うことで cross-origin なページによる攻撃からリソースを分離して、安全性を確保できることを書きました。具体的には、CORP, `X-Content-Type-Options`, `X-Frame-Options`, CSP `frame-ancestors`, COOP といった各種 HTTP ヘッダーを用いることで、レンダラプロセスに渡る前にリソースを守ります。
 
@@ -230,7 +230,7 @@ Chrome のみ、96 から利用が可能です。
 
 * [Gain security and powerful features with cross-origin isolation](https://developer.chrome.com/devsummit/events/week-2/workshops/gain-security-powerful-features-cross-origin-isolation/)
 
-何か相談ごとがある方はぜひご参加ください (基本的に英語のセッションですが、他の参加者の様子次第では日本語で質疑できるかも・・・)。
+何か相談ごとがある方はぜひご参加ください (基本的に英語のセッションです)。
 
 ### 参考記事
 
