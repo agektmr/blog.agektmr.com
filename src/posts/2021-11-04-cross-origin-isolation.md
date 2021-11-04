@@ -231,3 +231,12 @@ Chrome のみ、96 から利用が可能です。
 * [Gain security and powerful features with cross-origin isolation](https://developer.chrome.com/devsummit/events/week-2/workshops/gain-security-powerful-features-cross-origin-isolation/)
 
 何か相談ごとがある方はぜひご参加ください (基本的に英語のセッションですが、他の参加者の様子次第では日本語で質疑できるかも・・・)。
+
+### 参考記事
+
+* [Making your website "cross-origin isolated" using COOP and COEP](https://web.dev/coop-coep/)
+* [Why you need "cross-origin isolated" for powerful features](https://web.dev/why-coop-coep/)
+* [クロスオリジンアイソレーションを有効にするためのガイド](https://web.dev/i18n/ja/cross-origin-isolation-guide/)
+* [SharedArrayBuffer updates in Android Chrome 88 and Desktop Chrome 92](https://developer.chrome.com/blog/enabling-shared-array-buffer/)
+* [SharedArrayBuffer オブジェクトに関するメッセージについての説明](https://developers.google.com/search/blog/2021/03/sharedarraybuffer-notes?hl=ja)
+* [Chrome 92以降のSharedArrayBuffer警告に対するZOZOTOWNが実施した調査と解決策](https://techblog.zozo.com/entry/zozotown-shared-array-buffer)
