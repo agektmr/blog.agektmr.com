@@ -29,7 +29,7 @@ Cross-Origin-Opener-Policy: same-origin
 
 [前回の記事](/2021/11/browser-security.html)では、Spectre の脅威として、同じプロセスの扱うメモリ空間を推察することで cross-origin に読み込まれたリソースが危険に晒されることを説明しました。各ブラウザはその対策として `SharedArrayBuffer` を無効にしたり、高精細タイマーの精度を下げるなどしてリスクを緩和したこと、一部のブラウザは Site Isolation というアーキテクチャを導入することで抜本的な対策を実現したこと、標準化された機能を使うことで cross-origin なページによる攻撃からリソースを分離して、安全性を確保できることを書きました。具体的には、CORP, `X-Content-Type-Options`, `X-Frame-Options`, CSP `frame-ancestors`, COOP といった各種 HTTP ヘッダーを用いることで、レンダラプロセスに渡る前にリソースを守ります。
 
-Site Isolation を採用したブラウザは再び `SharedArrayBuffer` や高精細タイマーが再度利用できるようになりましたが、例えすべてのブラウザが Site Isolation に対応したとして、アーキテクチャに依存してそれらの機能が使えたり使えなかったりするのは、ウェブにとって健全なことと言えるでしょうか？
+Site Isolation を採用したブラウザは再び `SharedArrayBuffer` や高精細タイマーが利用できるようになりましたが、例えすべてのブラウザが Site Isolation に対応したとして、アーキテクチャに依存してそれらの機能が使えたり使えなかったりするのは、ウェブにとって健全なことと言えるでしょうか？
 
 そこで登場するのが **cross-origin isolation** です。これは、いくつかの HTTP ヘッダーを組み合わせることで、ブラウザが他の origin から完全に切り離された安全な環境である (cross-origin isolated) と判断した状態のことで、`SharedArrayBuffer` や高精細タイマーなどを有効にします。
 
@@ -57,11 +57,7 @@ Chrome ではしばらくの間 Site Isolation を導入することで `SharedA
 Cross-Origin-Opener-Policy: same-origin
 ```
 
-{% Aside %}
-
-ただ、これは相互に `postMessage()` を使ったコミュニケーションができなくなる点に注意しなければなりません。
-
-{% endAside %}
+ただし、これは相互に `postMessage()` を使ったコミュニケーションができなくなる点に注意しなければなりません。
 
 これが cross-origin isolation を有効にするための条件 1 です。
 
@@ -103,7 +99,11 @@ Cross-origin isolation は[こちらのデモ](https://first-party-test.glitch.m
 
 ### リソースに CORS もしくは `Cross-Origin-Resource-Policy` ヘッダーを付与する
 
-(ここで言う「リソース」はドキュメントや画像、動画、フォント、スクリプト、スタイルなど、HTML ドキュメントから読み込み可能なものすべてを指します。)
+{% Aside %}
+
+ここで言う「リソース」はドキュメントや画像、動画、フォント、スクリプト、スタイルなど、HTML ドキュメントから読み込み可能なものすべてを指します。
+
+{% endAside %}
 
 [前回の記事でご紹介したように](/2021/11/browser-security.html#cross-origin-resource-policy-(corp)-%E3%81%A7%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%AE%E5%9F%8B%E3%82%81%E8%BE%BC%E3%81%BF%E3%82%92%E5%88%B6%E5%BE%A1%E3%81%99%E3%82%8B)、CORP はリソースが、`same-origin` なら same-origin からのみ、`same-site` なら same-site からのみ、`cross-origin` ならどんな origin からであっても、リソースがロードが可能であることを示します。
 
@@ -157,7 +157,9 @@ iframe についても、こちらの[デモ](https://first-party-test.glitch.me
 
 ## Cross-origin isolation の課題とその対応策
 
-上記したことを実行すれば `SharedArrayBuffer` などが利用できるようになることは分かりました。ただ、まだ課題は残ります。
+上記したことを完全に実行すれば、ブラウザ上で `SharedArrayBuffer` などが利用できるようになります。
+
+ただ、まだ課題は残ります。
 
 * **課題 1. `COOP: same-origin` は OAuth や支払いなどの popup ウィンドウを使う連携を壊す。** 
 `COOP: same-origin` の性質上、cross-origin なウィンドウを開いて通信を行う OAuth や支払い系によくある連携はできなくなってしまいます。
@@ -225,6 +227,10 @@ Chrome のみ、96 から利用が可能です。
 この記事ではブラウザで cross-origin isolation を有効にして `SharedArrayBuffer` や高精細タイマーを使う方法を解説してきましたが、考えることが多くてとても複雑です。
 
 今すぐにでも Firefox や Safari でも動作させたいということであれば、cross-origin なリソースの連携をある程度諦めて cross-origin isolation を有効にするという選択肢もありそうですが、とりあえず従来通り Chrome で動けばいいやということであれば、[デプリケーショントライアル](https://developer.chrome.com/origintrials/#/view_trial/303992974847508481) に登録してしばらく様子を見る、というのが今は得策と言えます。
+
+この記事で解説した内容は 2020 年の Chrome Dev Summit でセッションビデオとして公開しています。
+
+{% YouTube 'XLNJYhjA-0c' %}
 
 最後に、11 月 17 日に [Chrome Dev Summit](https://goo.gle/cds2021) の一部として、この Spectre から Site Isolation、cross-origin isolation までの流れについて解説する 1 時間程度のワークショップを行います。
 
