@@ -3,6 +3,7 @@ layout: post
 title: 'SharedArrayBuffer と過渡期な cross-origin isolation の話'
 description: 'Spectre 前提のウェブで、標準技術を使って `SharedArrayBuffer` や高精細タイマーをブラウザで有効にする cross-origin isolation と、その課題および現時点での対応策について解説します。'
 date: 2021-11-04
+updated: 2021-12-26
 image:
   feature: /2021/require-corp.png
 tags:
@@ -12,9 +13,15 @@ tags:
 - Spectre
 ---
 
+{% Aside %}
+
+**2021/12/26:** [Safari も 15.2 から COOP/COEP を使って `SharedArrayBuffer` が利用できるようになった](https://developer.apple.com/documentation/safari-release-notes/safari-15_2-release-notes)ので、該当箇所の表記を変更しました。
+
+{% endAside %}
+
 長い記事なので先に結論を書きます。
 
-Chrome および Firefox で `SharedArrayBuffer` や高精細タイマーが使えるようになりました。Safari もまもなくです。そのためには cross-origin isolation という状態を有効にするのですが、親となる HTML ドキュメントに下記 2 つのヘッダーを送ります。
+Chrome、Firefox および Safari で `SharedArrayBuffer` や高精細タイマーが使えるようになりました。そのためには cross-origin isolation という状態を有効にするのですが、親となる HTML ドキュメントに下記 2 つのヘッダーを送ります。
 
 ```http
 Cross-Origin-Embedder-Policy: require-corp
@@ -151,7 +158,7 @@ iframe についても、こちらの[デモ](https://first-party-test.glitch.me
 
 {% Aside %}
 
-ここまでの内容はすでに Chrome, Edge, Firefox が対応し、[Safari もまもなく対応する](https://webkit.org/blog/11975/release-notes-for-safari-technology-preview-133/)ようです。
+ここまでの内容はすでに Chrome, Edge, Firefox, Safari の、すべてのメジャーブラウザが対応しています。。
 
 {% endAside %}
 
