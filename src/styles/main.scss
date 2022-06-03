@@ -20,12 +20,23 @@ h2,h3,h4,h5,h6 {
 
 .aside {
   margin: 20px 0;
-  color: darkblue;
+  padding: 20px;
+  color: white;
   font-size: 0.9em;
+  border-radius: 15px;
+  background: rgb(127, 95, 255);
   a {
-    color: darkblue;
+    color: white;
+  }
+  code {
+    background-color: transparent;
   }
   p {
     margin-bottom: 0;
   }
+}
+
+figcaption {
+  font-size: 0.9em;
+  text-align: center;
 }
