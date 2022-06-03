@@ -3,6 +3,7 @@ layout: post
 title: 'パスワードの不要な世界はいかにして実現されるのか - FIDO2 と WebAuthn の基本を知る'
 description: ''
 date: 2019-03-14
+updated: 2022-06-06
 tags:
 - WebAuthn
 - FIDO
@@ -127,7 +128,7 @@ User Verification は、認証器の持つ本人確認の機能のことを指�
 
 上記の認証器のいずれかを持っている方は、実際にデモを試すことができます。
 
-[https://webauthndemo.appspot.com](https://webauthndemo.appspot.com/)
+[https://try-webauthn.appspot.com](https://try-webauthn.appspot.com/)
 
 <figure>
 <img src="/images/2019/fido-6.png" >
