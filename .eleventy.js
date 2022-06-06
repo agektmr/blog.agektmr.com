@@ -52,7 +52,8 @@ module.exports = function(eleventyConfig) {
   // eleventyConfig.addFilter("filterTagList", filterTagList)
 
   eleventyConfig.addFilter("buildPermalink", (inputPath) => {
-    return inputPath.replace(/.*?\/([0-9]{4})-([0-9]{2})-[0-9]{2}-(.*)\.(md|html)$/g, "/$1/$2/$3.html");
+    // return inputPath.replace(/.*?\/([0-9]{4})-([0-9]{2})-[0-9]{2}-(.*)\.(md|html)$/g, "/$1/$2/$3.html");
+    return inputPath.replace(/([0-9]{4})\/([0-9]{2})\/(.*)\.(md|html)$/g, "/$1/$2/$3.html");
   });
 
   // // Create an array of all tags
