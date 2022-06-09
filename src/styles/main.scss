@@ -36,7 +36,13 @@ h2,h3,h4,h5,h6 {
   }
 }
 
-figcaption {
-  font-size: 0.9em;
+figure {
   text-align: center;
+  video {
+    border: #ccc 1px solid;
+  }
+  figcaption {
+    font-size: 0.9em;
+    text-align: center;
+  }
 }

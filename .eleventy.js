@@ -77,10 +77,17 @@ module.exports = function(eleventyConfig) {
   </div>`;
   });
 
-  eleventyConfig.addShortcode('Figure', (imgSrc, imgAlt, imgCaption) => {
+  eleventyConfig.addShortcode('ImageFigure', (src, alt, caption) => {
     return `<figure>
-      <img src="${imgSrc}" alt="${imgAlt || ''}">
-      <figcaption>${imgCaption || ''}</figcaption>
+      <img src="${src}" alt="${alt || ''}">
+      <figcaption>${caption || ''}</figcaption>
+    </figure>`;
+  });
+
+  eleventyConfig.addShortcode('VideoFigure', (src, caption) => {
+    return `<figure>
+      <video src="${src}" width="300" autoplay muted></video>
+      <figcaption>${caption || ''}</figcaption>
     </figure>`;
   });
 

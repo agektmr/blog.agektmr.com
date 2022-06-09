@@ -36,7 +36,7 @@ tags:
 
 仮にサイトごとに異なる複雑なパスワードを使っていたとしても、誤ってドメインの異なるサイトにそれを入力してしまうと、アカウントは乗っ取られたも同然です。これをフィッシングと呼び、SMS や広告などから積極的にフィッシングサイトに誘導する攻撃方法は拡大を続けています。最近は手口がさらに巧妙になっているため、自分は大丈夫と思っても気を付ける必要があります。
 
-{% Figure '/images/2022/phishing-is-surging.png', '', 'source: <a href="https://blog.google/intl/en-in/products/platforms/better-password-protections-in-chrome/">https://blog.google/intl/en-in/products/platforms/better-password-protections-in-chrome</a>' %}
+{% ImageFigure '/images/2022/phishing-is-surging.png', '', 'source: <a href="https://blog.google/intl/en-in/products/platforms/better-password-protections-in-chrome/">https://blog.google/intl/en-in/products/platforms/better-password-protections-in-chrome</a>' %}
 
 パスワードマネージャーはそんな時に強力な補助機能を提供してくれます。**正しいドメインでのみ**パスワードを自動入力してくれる機能や同期機能だけでなく、強いパスワードを自動生成したり、脆弱なパスワードを警告、さらには強力なパスワードに自動更新したりもしてくれます。殆どのブラウザがパスワードマネージャー機能を提供していますし、単独のパスワードマネージャーアプリも存在します。ブラウザ拡張や OS の補助機能を使うことで、ブラウザのパスワードマネージャーと同等に使えるものも少なくありません。
 
@@ -52,7 +52,7 @@ WebAuthn は[すべてのメジャーブラウザがサポートする](https://
 
 FIDO2 では他にも、セキュリティキーなどの「認証器」と呼ばれるハードウェアデバイスの要件に加え、CTAP2 というクライアントと認証器の通信プロトコルについても規定しています。ブラウザが認証器と通信するための JavaScript API が [WebAuthn](https://webauthn.guide) であり、現在も [W3C で活発に仕様が議論](https://github.com/w3c/webauthn)されています。
 
-{% Figure '/images/2022/security-keys.png', '', 'セキュリティキー' %}
+{% ImageFigure '/images/2022/security-keys.png', '', 'セキュリティキー' %}
 
 ### セキュリティキーの使い方
 
@@ -60,7 +60,7 @@ WebAuthn で認証を行うにはサイトごとに事前に登録が必要で�
 
 認証時も同様にして、セレモニーが要求されます。セレモニーが成功すると保管されていた秘密鍵を使って署名が発行されるため、サーバーでの検証が成功すれば認証完了、ということになります。ポイントはこの際、オリジンがチェックされるという点です。秘密鍵は予めオリジンと紐付けられているため、仮にユーザーが悪意のあるウェブサイトに誘導されたとしても、認証器が署名を発行しないためフィッシングは失敗に終わります。実際、Google のレポート上ではフィッシング耐性 100% だった、という報告があります。
 
-{% Figure '/images/2022/phishing-resistant.png', '', 'source: <a href="https://security.googleblog.com/2019/05/new-research-how-effective-is-basic.html">https://security.googleblog.com/2019/05/new-research-how-effective-is-basic.html</a>' %}
+{% ImageFigure '/images/2022/phishing-resistant.png', '', 'source: <a href="https://security.googleblog.com/2019/05/new-research-how-effective-is-basic.html">https://security.googleblog.com/2019/05/new-research-how-effective-is-basic.html</a>' %}
 
 もちろん、セキュリティキーが証明できるのは、その認証器がログインしようとしているユーザーの手元にあるらしい (所有認証)、ということだけなので、これをパスワードなどの知識認証と合わせることでより強力なログイン機能とすることができます。これが二段階・二要素認証です。
 
@@ -104,7 +104,7 @@ Google も含め、各社まだ実物が出てきていないためはっきり�
 
 FIDO / WebAuthn には、登録時にログインユーザーの情報を追加する Discoverable Credentials という機能があります。これを使うと、ログイン時にユーザーが自分のユーザー名を入力しなくても、クライアントがアカウントを選択するダイアログを出し、その後ローカル認証を行ってくれるため、ユーザー名を忘れることなく利用できるというメリットがあります。Discoverable Credentials はこれまで Chrome のデスクトップと macOS、iOS、iPadOS の Safari、Windows で提供されてきましたが、passkey 対応に必須となるため、(ようやく) Android でも利用できるようになる予定です。
 
-{% Figure '/images/2022/discoverable-credentials.png', '', '' %}
+{% ImageFigure '/images/2022/discoverable-credentials.png' %}
 
 ### caBLE
 
@@ -228,20 +228,63 @@ WebOTP API でも TOTP 対応できるようプッシュしてみます。
 
 ## ID 連携
 
-自分のサービスでパスワードを作らせない方法としては ID 連携が挙げられます。これは OpenID Connect や OAuth、SAML といった標準プロトコルを使ってサードパーティー (Identity Provider = IdP) に認証を委ねることで、(連携自体に脆弱性が含まれなければ) リスクを外部化することができます。
+自分のサービス (Relying Party = RP) でパスワードを作らず、サードパーティーのサービス (Identity Provider = IdP ) にログイン機能を移譲する方法として ID 連携が挙げられます。ID 連携は通常、OpenID Connect や OAuth、SAML といった標準化された仕組み・プロトコルを使って行われます。Google や Facebook、Microsoft、GitHub など、比較的セキュリティにリソースを割けるビッグプレイヤーが IdP となり、様々なサービスがすでに RP としてそういったサービスと ID 連携を行っています。
 
-この場合、自サービスでパスワードを作らせる必要がなくなるとはいえ、実際にはほとんどのサービスがパスワードと併用しているケースが多いというのが現実です。
-IdP が強力な認証機能を実現している、少なくともたくさんのセキュリティエンジニアを抱えているというのはポイントになると思います。
+RP にとって ID 連携をするメリットは下記のようなものが挙げられます。
 
-ただ、歴史の長い ID 連携とはいえ、完璧とは言えない部分も存在しています。
+* パスワードを新しく作らなくて済む
+* 認証機能の実装を移譲できる
+* プロフィール情報を手入力しなくても IdP などから持ってくることができる
+* IdP によってはメールの存在確認もしてくれる
 
-* IdP はサードパーティー Cookie を使ってユーザーをトラッキングすることができる
-* RP は連携してユーザープロファイルを作ることができてしまう
-* サードパーティー Cookie がなくなることで ID 連携自体ができなくなってしまう部分がある
+ただ、比較的枯れた ID 連携の技術とはいえ、下記のような課題もあります。
+
+* IdP はサードパーティー Cookie を使う場合があり、仕組み上ユーザートラッキングが可能
+* RP 同士が連携してユーザープロファイルを作ることができる
+* [Privacy Sandbox](https://privacysandbox.com/) など、サードパーティー Cookie が使えなくなることで ID 連携が壊れるリスクがある
 
 ### Federated Credential Management API
 
 そこで登場するのが Federated Credential Management API 略して FedCM です。
+
+ID 連携はサイトを跨る以上、サードパーティー Cookie 廃止に伴う影響を避けることができません。FedCM は ID 連携で想定されている下記のような機能が壊れることなく機能できるよう事前に手当することを、現時点で最優先としています。
+
+* [OpenID Connect Front-Channel Logout](https://openid.net/specs/openid-connect-frontchannel-1_0.html)
+* [OpenID Connect Session Management](https://openid.net/specs/openid-connect-session-1_0.html)
+* [iframe を使ったトークンリニューアル](https://github.com/fedidcg/use-case-library/issues/10)
+* [iframe を使ったログインウィジェット](https://github.com/fedidcg/use-case-library/issues/12)
+
+これらの問題を解決するため、Chrome では、サードパーティー Cookie を使わずに ID 連携する機能を[オリジントライアル](https://developer.chrome.com/ja/docs/web-platform/origin-trials/)しています。
+
+{% VideoFigure '/images/2022/fedcm-demo.mp4', '' %}
+
+現時点の FedCM では、IdP での認証やトークンのやり取りは含まれず、IdP がログイン済みだった場合にダイアログを表示し、ユーザーの明示的なアクション (ボタンをクリック) によって IdP からトークンを取得して RP に渡す、という部分のみをブラウザが行います。
+
+{% ImageFigure '/images/2022/fedcm-flow.png', '' %}
+
+ここでのポイントは、連携部分をブラウザが取り持つため、ユーザーが RP を訪れても:
+
+* ユーザーが IdP にログイン済みかどうか、どの ID でログインしているかは RP には分からない。
+* FedCM のダイアログにはユーザーの情報が表示されるが、情報を取得する際、どの RP がリクエストを送っているのかは IdP には分からない。
+
+そのため、ユーザーが FedCM に表示されているボタンを押した時点で初めて、RP と IdP が相互連携を行うという点です。サードパーティー Cookie がなくなっても ID 連携を継続できることを目指して開発されていますが、プライバシーを盗む穴も徹底的に潰そうとしていることが分かるかと思います。
+
+ID 連携という性質上、そのものがプライバシーに優しくない性質も持っています。例えばメールアドレスや電話番号を ID として連携するケースです。IdP への認証にそういった情報を使う場合、自ずと RP にもその情報が渡るため、RP はそれをキーとして個人情報を集めることが可能になってしまいます。
+
+FedCM では将来的に、そういった ID もランダムに生成することで、個人のトラッキングを難しくすることも検討しています。
+
+最後に重要な点ですが:
+
+* FedCM は IdP が利用することを想定してデザインされている API なので、RP は無視して良い。
+* IdP も、JavaScript SDK などを提供している (RP がリダイレクトベースの連携を実装している)、もしくはサードパーティー Cookie がなくなることでの影響がない限り、FedCM を実装する必要はない。
+* 外部に ID 連携を提供していない (同じ組織内でのみ利用されている) 限り、IdP と RP 間で [First-Party Sets](https://developer.chrome.com/ja/docs/privacy-sandbox/first-party-sets/) を利用するだけで済む (Same Party としてサードパーティー Cookie が利用できる) 可能性がある。
+
+現時点では、かなり限られた人たちのみ利用する API であると言えます。
+
+FedCM は現在 (2022 年 6 月) オリジントライアルを行っており、フィードバックを求めていますので、興味のある方はぜひご参加下さい。
+
+* [Federated Credential Management API - Chrome Developers](https://developer.chrome.com/ja/docs/privacy-sandbox/fedcm/)
+* [Participate in a Federated Credential Management API origin trial for IdPs - Chrome Developers](https://developer.chrome.com/ja/blog/fedcm-origin-trial/)
 
 ## まとめ
 
