@@ -10,8 +10,7 @@ tags:
   - Widget
 ---
 
-先日の Google ディベロッパー交流会で Shindig の php 版が公開されていることを知
-り、試してみました。
+先日の Google ディベロッパー交流会で Shindig の php 版が公開されていることを知り、試してみました。
 
 ## Shindig をチェックアウトする
 

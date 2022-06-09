@@ -10,14 +10,11 @@ tags:
   - OpenSocial
 ---
 
-参考資料 : [Shindig - an Apache incubator project for OpenSocial and
-gadgets](http://incubator.apache.org/shindig/)
+参考資料 : [Shindig - an Apache incubator project for OpenSocial and gadgets](http://incubator.apache.org/shindig/)
 
 ## 予め Maven のインストールが必要
 
-[Maven - Download Maven 2.0.8](http://maven.apache.org/download.html) からダウン
-ロード。特にインストール作業は必要なく、適当なところに置いといて、パスを切る必要
-あり。ひとまず
+[Maven - Download Maven 2.0.8](http://maven.apache.org/download.html) からダウンロード。特にインストール作業は必要なく、適当なところに置いといて、パスを切る必要あり。ひとまず
 
 ```shell
 > ~/Development/apache-maven-2.0.8
@@ -78,22 +75,18 @@ gadgets](http://incubator.apache.org/shindig/)
 [INFO] ------------------------------------------------------------------------
 ```
 
-うまく動かない、、、 どうやら
-[Jetty](http://jetty.mortbay.org/maven-plugin/index.html) というのが必要らしい。
+うまく動かない、、、 どうやら [Jetty](http://jetty.mortbay.org/maven-plugin/index.html) というのが必要らしい。
 
 ## Jetty を動かす
 
-Java サーバーはさっぱりなのでよくわからないけど、とりあえず jetty-6.1.8 をダウン
-ロードし、 `~/Development` 配下に移動。
+Java サーバーはさっぱりなのでよくわからないけど、とりあえず jetty-6.1.8 をダウンロードし、 `~/Development` 配下に移動。
 
 ```shell
 > cd ~/Development/jetty-6.1.8
 > java -jar start.jar
 ```
 
-とかやってみる。どうやらこれで jetty というウェブサーバーが動いてることになってる
-らしい(多分 Apache も動いてる必要アリ)そこで、先ほどビルドした Shindig の war ファイル
-をシンボリックリンクして
+とかやってみる。どうやらこれで jetty というウェブサーバーが動いてることになってるらしい(多分 Apache も動いてる必要アリ)そこで、先ほどビルドした Shindig の war ファイルをシンボリックリンクして
 
 ```shell
 > ln -s ~/Development/Shindig/java/gadgets/target/gadgets.war ~/Development/jetty-6.1.8/webapps/gadgets.war
