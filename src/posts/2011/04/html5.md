@@ -2,10 +2,7 @@
 title: HTML5でメトロノームを作ってみた
 author: Eiji
 layout: post
-topsy_short_url:
-  - http://bit.ly/hIBrKV
-dsq_thread_id:
-  - 
+date: 2011-04-09
 categories:
   - HTML5
 tags:

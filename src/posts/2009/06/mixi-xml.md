@@ -2,10 +2,7 @@
 title: mixiアプリのガジェットXMLを覗き見るブックマークレット
 author: Eiji
 layout: post
-syntaxhighlighter_encoded:
-  - 1
-SBM_count:
-  - '00011<>1271388274<>9<>0<>1<>1<>0'
+date: 2009-06-17
 categories:
   - OpenSocial
 tags:

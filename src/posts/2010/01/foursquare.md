@@ -2,10 +2,7 @@
 title: Foursquareに見る「近未来サービスの王道」
 author: Eiji
 layout: post
-SBM_count:
-  - '00025<>1271394998<>25<>0<>0<>0<>0'
-dsq_thread_id:
-  - 
+date: 2010-01-20
 categories:
   - SocialWeb
 tags:

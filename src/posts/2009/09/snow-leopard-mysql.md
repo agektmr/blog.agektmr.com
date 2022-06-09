@@ -2,10 +2,7 @@
 title: Snow LeopardにMySQLをインストールする
 author: Eiji
 layout: post
-syntaxhighlighter_encoded:
-  - 1
-SBM_count:
-  - '00008<>1271372327<>8<>0<>0<>0<>0'
+date: 2009-09-11
 categories:
   - Mac
 tags:

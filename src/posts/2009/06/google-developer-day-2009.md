@@ -2,20 +2,7 @@
 title: Google Developer Day 2009
 author: Eiji
 layout: post
-syntaxhighlighter_encoded:
-  - 1
-SBM_count:
-  - '00000<>1271341806<>0<>0<>0<>0<>0'
-disable_wpautop:
-  - 1
-disable_wptexturize:
-  - 1
-disable_convert_chars:
-  - 1
-disable_convert_smilies:
-  - 1
-dsq_thread_id:
-  - 21321027
+date: 2009-06-12
 categories:
   - Google
   - SocialWeb

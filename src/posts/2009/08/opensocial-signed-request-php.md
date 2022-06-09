@@ -2,13 +2,7 @@
 title: OpenSocial Signed Requestライブラリ(PHP)をベータ公開
 author: Eiji
 layout: post
-syntaxhighlighter_encoded:
-  - 1
-SBM_count:
-  - '00021<>1271395879<>17<>0<>3<>1<>0'
-dsq_thread_id:
-  - 
-  - 
+date: 2009-08-14
 categories:
   - OpenSocial
 tags:

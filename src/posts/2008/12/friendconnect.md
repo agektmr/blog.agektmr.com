@@ -2,10 +2,7 @@
 title: FriendConnect実験中
 author: Eiji
 layout: post
-SBM_count:
-  - '00003<>1271199177<>1<>0<>2<>0<>0'
-dsq_thread_id:
-  - 8150124
+date: 2008-12-10
 categories:
   - FriendConnect
   - Google
