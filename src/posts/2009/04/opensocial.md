@@ -2,20 +2,7 @@
 title: OpenSocialのパーミッションモデル
 author: Eiji
 layout: post
-disable_wpautop:
-  - 1
-disable_wptexturize:
-  - 1
-disable_convert_chars:
-  - 1
-disable_convert_smilies:
-  - 1
-syntaxhighlighter_encoded:
-  - 1
-SBM_count:
-  - '00022<>1271379502<>19<>0<>2<>1<>0'
-dsq_thread_id:
-  - 16897937
+date: 2009-04-29
 categories:
   - FriendConnect
   - OpenSocial

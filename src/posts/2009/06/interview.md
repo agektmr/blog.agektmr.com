@@ -2,10 +2,7 @@
 title: インタビュー掲載
 author: Eiji
 layout: post
-syntaxhighlighter_encoded:
-  - 1
-SBM_count:
-  - '00000<>1271393705<>0<>0<>0<>0<>0'
+date: 2009-06-20
 categories:
   - OpenSocial
 tags:

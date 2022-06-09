@@ -2,18 +2,7 @@
 title: OpenSocialガジェット開発で注意すべきキャッシュ機能
 author: Eiji
 layout: post
-disable_wpautop:
-  - 1
-disable_wptexturize:
-  - 1
-disable_convert_chars:
-  - 1
-disable_convert_smilies:
-  - 1
-SBM_count:
-  - '00010<>1271357926<>8<>0<>2<>0<>0'
-dsq_thread_id:
-  - 10989212
+date: 2009-02-03
 categories:
   - OpenSocial
 ---

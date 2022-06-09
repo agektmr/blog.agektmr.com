@@ -2,10 +2,7 @@
 title: WP_Multilingual復活
 author: Eiji
 layout: post
-syntaxhighlighter_encoded:
-  - 1
-SBM_count:
-  - '00000<>1271383869<>0<>0<>0<>0<>0'
+date: 2009-08-11
 categories:
   - Wordpress
 tags:

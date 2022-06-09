@@ -2,10 +2,7 @@
 title: 'Google Chrome Extension &#8220;Social Graph Analyzer&#8221;を公開'
 author: Eiji
 layout: post
-SBM_count:
-  - '00006<>1271371143<>6<>0<>0<>0<>0'
-dsq_thread_id:
-  - 58381898
+date: 2010-01-14
 categories:
   - Product
 tags:

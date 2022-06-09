@@ -2,10 +2,7 @@
 title: 「OpenSocialのアーキテクチャ」スライドを公開します
 author: Eiji
 layout: post
-SBM_count:
-  - '00005<>1271386429<>5<>0<>0<>0<>0'
-dsq_thread_id:
-  - 45560779
+date: 2009-11-14
 categories:
   - OpenSocial
   - イベント

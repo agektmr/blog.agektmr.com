@@ -2,10 +2,7 @@
 title: おばかアプリ選手権に出場してきました
 author: Eiji
 layout: post
-syntaxhighlighter_encoded:
-  - 1
-SBM_count:
-  - '00000<>1271390983<>0<>0<>0<>0<>0'
+date: 2009-07-19
 categories:
   - イベント
 tags:

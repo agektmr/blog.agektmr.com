@@ -2,12 +2,7 @@
 title: Footprint gadget for your FriendConnect
 author: Eiji
 layout: post
-SBM_count:
-  - '00007<>1271396587<>6<>0<>1<>0<>0'
-syntaxhighlighter_encoded:
-  - 1
-dsq_thread_id:
-  - 9526828
+date: 2009-01-08
 categories:
   - FriendConnect
   - Google

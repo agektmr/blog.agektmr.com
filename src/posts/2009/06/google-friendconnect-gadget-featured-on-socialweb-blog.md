@@ -2,10 +2,7 @@
 title: あしあとガジェットがSocialWeb Blogに掲載
 author: Eiji
 layout: post
-syntaxhighlighter_encoded:
-  - 1
-SBM_count:
-  - '00000<>1271389480<>0<>0<>0<>0<>0'
+date: 2009-06-26
 categories:
   - FriendConnect
   - Google

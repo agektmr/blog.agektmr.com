@@ -2,12 +2,7 @@
 title: OpenSocial Hackathon in 会津
 author: Eiji
 layout: post
-syntaxhighlighter_encoded:
-  - 1
-SBM_count:
-  - '00003<>1271364115<>3<>0<>0<>0<>0'
-dsq_thread_id:
-  - 34280523
+date: 2009-09-15
 categories:
   - OpenSocial
   - イベント

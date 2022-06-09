@@ -2,18 +2,7 @@
 title: あしあと帳ガジェット更新
 author: Eiji
 layout: post
-syntaxhighlighter_encoded:
-  - 1
-SBM_count:
-  - '00000<>1271388438<>0<>0<>0<>0<>0'
-disable_wpautop:
-  - 1
-disable_wptexturize:
-  - 1
-disable_convert_chars:
-  - 1
-disable_convert_smilies:
-  - 1
+date: 2009-06-27
 categories:
   - FriendConnect
   - Google

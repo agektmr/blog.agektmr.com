@@ -2,10 +2,7 @@
 title: SocialWeb Japanを立ち上げました
 author: Eiji
 layout: post
-SBM_count:
-  - '00007<>1271351509<>7<>0<>0<>0<>0'
-dsq_thread_id:
-  - 8323768
+date: 2008-12-11
 categories:
   - 勉強会
 tags:
