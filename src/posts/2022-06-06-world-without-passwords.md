@@ -4,7 +4,7 @@ title: 'パスワードのない世界に向けて'
 description: ''
 date: 2022-06-06
 image:
-  feature: /2021/require-corp.png
+  feature: /2022/key.jpg
 tags:
 - WebAuthn
 - FIDO
@@ -13,13 +13,6 @@ tags:
 - Passkeys
 - Identity
 ---
-
-ゴール:
-- Google I/O のビデオをプロモートする
-- パスキーについて知ってもらう
-- FedCM について知ってもらう
-- WebOTP API について知ってもらう
-- 今後認証システムがどうあるべきか知ってもらう
 
 先日 Google I/O で ["A path to a world without passwords"](https://io.google/2022/program/e3bb37a4-2723-4d72-a5b3-1a23abb94ac0/) というセッションを担当しました。
 
@@ -125,31 +118,113 @@ Passkey の登場で FIDO / WebAuthn はアカウントリカバリーを必要�
 
 caBLE はすでにデスクトップ版 Chrome で利用可能ですが、passkey 同様、クロスプラットフォームを跨いだ取り決めのため、いずれ Apple や Microsoft のプラットフォームでも利用可能になるはずです。
 
-このように、passkey の登場によって、FIDO /WebAuthn はセキュリティとユーザビリティのバランスが取れ、パスワードの必要ないログインを実現することができる、ということがおわかり頂けたでしょうか？
-
 ## 二段階認証
 
-各プラットフォーム揃って Passkey が使えるようになるのは来年頃になると思われますが、実際に完全移行できるようになるのはもっと先のお話、数年から長ければ 5 年以上かかるかもしれません。ではその間パスワードによる認証しか提供していないサービスはというと、大きな穴を開けたままということになってしまいます。何かしらのセキュリティ対策をすべきです。
+passkey の登場によって、FIDO /WebAuthn はセキュリティとユーザビリティのバランスが取れ、パスワードの必要ないログインを実現することができる、ということがおわかり頂けたでしょうか？
 
-やはり二段階認証ということになります。今できる二段階認証としては
-* メール
-* SMS
-* アプリ
-を使ったワンタイムパスワードを発行する方法が考えられます。
+とはいえ、各プラットフォームすべてが passkey を使えるようになるにはまだしばらくかかると思われます。また、対応デバイスやブラウザのことも考えると、実際にパスワードをなくして安心できるようになるのはもっと先のお話、数年から長ければ 5 年以上かかると考えるのが無難だと思います。
+
+では passkey に移行できるまでの間、パスワードによる認証しか提供していないサービス、特に機微な情報やお金を扱うサービスがそのままでいいかというと、そういうわけにはいきません。可能な限り認証を強くする対策、つまり二段階認証を導入すべきです。
+
+二段階認証とは、ユーザー名とパスワードに加え、追加のコードを要求することで、認証の度合いを強めます。追加のコードは一般に OTP (One Time Password) と呼ばれ、メールや SMS、アプリなどから提供されるのが主流です。
+
+### メールを使った二段階認証
+
+予め登録されているメールアドレスに OTP のテキスト、もしくは OTP を渡すリンクが送られます。OTP をコピーして入力する場合、フィッシング詐欺に引っかかってしまう可能性があるので、ユーザーは注意が必要です。その点、リンクをクリックして入力させるタイプであれば、ユーザーが誤ってフィッシングサイトに OTP を入力する可能性は低くなるため、若干安全と言えます。
+
+欠点としては、ユーザーがメールクライアントに切り替えなければならないため、手間と時間がかかります。今の所これを解決するブラウザ API は存在していません。
+
+また、ユーザーの使っているメールサービスが脆弱でアカウントを乗っ取られてしまえば、メールで OTP を送るサービスも道連れになる、むしろそれが狙われる可能性も否定できません。
 
 ### SMS OTP を使った二段階認証
 
-### Time-based OTP を使った二段階認証
+予め登録されている電話番号に SMS で OTP のテキストが送られます。ユーザーは SMS アプリを開き、OTP をコピーしてフォームに入力する必要があります。
 
-これは Google I/O のビデオの中で言わなかったのですが、条件が整えば SMS OTP よりも Time-based OTP の方が筋がいいと考えています。
+{% Aside %}
 
-Time-based OTP というのは,,,
+SMS OTP と言うと必ず、NIST 800-63 で推奨されてないからダメだ、電話番号は使い回されるからダメだ、ソーシャルエンジニアリングで乗っ取られるからダメだ、という方がいらっしゃいます。それは全く正しいのですが、脆弱なパスワードを使ったユーザーのアカウントが乗っ取られる可能性と天秤にかけて考えるべきであると考えます。
 
-実は Apple さんが Safari 15 からサポート
+{% endAside %}
 
-SMS やメールよりも筋がいい。
+SMS OTP にはフィッシング (SMS に関して言えば[スミッシング](https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%9F%E3%83%83%E3%82%B7%E3%83%B3%E3%82%B0)という言葉もあるようです) に対しても耐性がありません。とはいえ、補助的にユーザー体験を向上し、セキュリティも幾分改善する API があります。WebOTP API と `autocomplete="one-time-code"` です。前者は Chromium 系のブラウザで、後者は Safari で利用できます。SMS を規定のフォーマットに合わせて送ることで、ユーザーが**指定したドメインを見ている時のみ**ダイアログを表示して、SMS アプリを起動することなく、ブラウザ上でワンタップだけで OTP を入力できるようになります。これはユーザー体験が向上するだけでなく、ユーザーをフィッシングに引っかかりにくくするという意味で、必ず実装してもらいたい機能です。
 
-マルウェア?
+HTML では OTP を入力する `input` タグに `autocomplete="one-time-code"` を追加します。
+
+```html
+<form action="/verify-otp" method="POST">
+  <input type="text"
+         inputmode="numeric"
+         autocomplete="one-time-code"
+         pattern="\d{6}"
+         required>
+</form>
+```
+
+WebOTP API を追加するには、下記のコードをコピペします。
+
+```js
+// Feature detection
+if ('OTPCredential' in window) {
+  window.addEventListener('DOMContentLoaded', e => {
+    const input = document.querySelector('input[autocomplete="one-time-code"]');
+    if (!input) return;
+    // フォームが submit されたら WebOTP API をキャンセル
+    const ac = new AbortController();
+    const form = input.closest('form');
+    if (form) {
+      form.addEventListener('submit', e => {
+        // WebOTP API をアボート
+        ac.abort();
+      });
+    }
+    // WebOTP API を実行
+    navigator.credentials.get({
+      otp: { transport:['sms'] },
+      signal: ac.signal
+    }).then(otp => {
+      input.value = otp.code;
+      // OTP を入力後、自動的にフォームを submit
+      if (form) form.submit();
+    }).catch(err => {
+      console.log(err);
+    });
+  });
+}
+```
+
+送る SMS には、一番最後の行に `@` で始まるドメインと、`#` で始まる OTP を書きます。
+
+```text
+あなたの OTP は 123456 です。
+
+@blog.agektmr.com #123456
+```
+
+ちなみに上記は iOS、Android だけでなく、デスクトップでも OTP の入力を補助してくれます。詳しくは [SMS OTP form best practices](https://web.dev/sms-otp-form/) をご覧ください。
+
+完璧とは言いませんが、これで救われるユーザーはいるかもしれません。
+
+### アプリを使った二段階認証
+
+ここで言う「アプリ」とは Google Authenticator ([Android](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=ja), [iOS](https://apps.apple.com/jp/app/google-authenticator/id388497605)) のような Time-based OTP (TOTP) を提供するものです。(WebAuthn の「認証器」も Authenticator ですが) ここではこういったアプリをオーセンティケーターと呼びます。
+
+予め QR コードで登録しておくと、オーセンティケーターが 30 秒程度で切り替わる OTP を表示してくれます。ユーザーは OTP を求められたらオーセンティケーターを開き、OTP をコピーしてフォームに入力します。
+
+TOTP 自体は RFC のある枯れた標準仕様のため、Google Authenticator の他にも Microsoft Authenticator や、シークレットを同期してくれる 1Password、Authy のようなオーセンティケーターもあり、ユーザーは自由に選ぶことができます。
+
+TOTP の場合でも、ご多分に漏れずフィッシングのリスクが付きまといます。ユーザーが誤ってフィッシングサイトに OTP を入力してしまえば、アカウントは乗っ取られてしまいます。
+
+ライバルに塩を送るようですが、Safari はバージョン 15 以降、この問題への解決策を提供しています。iCloud Keychain に、パスワードだけでなく TOTP も保存できるようにしているため、SMS OTP に使ったのと同じ `autocomplete="one-time-code"` を使うことで、ユーザーは OTP をワンタップで入力することができます。
+
+僕は、これはメールや SMS OTP よりも筋がいいと思っています。なぜなら:
+
+* ユーザーはブラウザを離れることなく OTP を入力できる。
+* オリジンに紐付けられているため、フィッシングサイトではサジェストされず安全。
+* ブラウザネイティブなので、リテラシの低いユーザーでも使いやすい。
+
+OTP がサジェストされないからといってわざわざ Keychain を開いて入力するようなユーザーであれば、おそらく自分がやっていることの意味が分かっているので、フィッシングには引っかかりにくいだろう、という想定です。
+
+WebOTP API でも TOTP 対応できるようプッシュしてみます。
 
 ## ID 連携
 
@@ -177,3 +252,5 @@ IdP が強力な認証機能を実現している、少なくともたくさん�
 * Passkeys が使えるようになれば、パスワードをなくすことができるかもしれない。
 * とはいえ移行の間、パスワードは残さざるを得ない。二段階認証でセキュリティを高めるべき。
 * ID 連携もすぐに実現できるパスワードレス。今後 Federated Credential Management API がプライバシーも改善してくれるかもしれない。
+
+Cover photo by [olieman.eth](https://unsplash.com/@moneyphotos) on [Unsplash](https://unsplash.com/s/photos/keys)
