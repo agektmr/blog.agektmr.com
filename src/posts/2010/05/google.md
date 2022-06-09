@@ -2,10 +2,7 @@
 title: Googleに転職します
 author: Eiji
 layout: post
-topsy_short_url:
-  - http://bit.ly/9VVYKN
-dsq_thread_id:
-  - 
+date: 2010-05-31
 categories:
   - HTML5
   - プライベート

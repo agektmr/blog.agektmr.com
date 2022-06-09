@@ -2,10 +2,7 @@
 title: Social Web関連仕様をまとめてみました
 author: Eiji
 layout: post
-topsy_short_url:
-  - http://bit.ly/c7fGvO
-dsq_thread_id:
-  - 
+date: 2010-07-05
 categories:
   - SocialWeb
 ---

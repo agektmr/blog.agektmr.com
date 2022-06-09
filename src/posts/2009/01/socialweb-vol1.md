@@ -2,8 +2,7 @@
 title: SocialWeb勉強会 vol.1を開催しました
 author: Eiji
 layout: post
-SBM_count:
-  - '00010<>1271395987<>9<>0<>0<>1<>0'
+date: 2009-01-25
 categories:
   - SocialWeb
 tags:

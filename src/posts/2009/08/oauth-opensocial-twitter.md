@@ -2,12 +2,7 @@
 title: (たぶん)世界初！OAuthを使ったOpenSocial向けTwitterクライアント「ガジェツイ！」を公開しました
 author: Eiji
 layout: post
-syntaxhighlighter_encoded:
-  - 1
-SBM_count:
-  - '00015<>1271392000<>12<>0<>2<>1<>0'
-dsq_thread_id:
-  - 
+date: 2009-08-18
 categories:
   - OAuth
   - OpenSocial

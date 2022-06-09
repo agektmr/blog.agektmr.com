@@ -2,20 +2,7 @@
 title: content-rewite機能で外部ファイルのキャッシュを制御する
 author: Eiji
 layout: post
-disable_wpautop:
-  - 1
-disable_wptexturize:
-  - 1
-disable_convert_chars:
-  - 1
-disable_convert_smilies:
-  - 1
-syntaxhighlighter_encoded:
-  - 1
-SBM_count:
-  - '00002<>1271396474<>2<>0<>0<>0<>0'
-dsq_thread_id:
-  - 12066451
+date: 2009-02-18
 categories:
   - OpenSocial
 tags:

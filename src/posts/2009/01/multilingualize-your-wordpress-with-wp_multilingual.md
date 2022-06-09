@@ -2,10 +2,7 @@
 title: Multilingualize your WordPress blog with WP_Multilingual!
 author: Eiji
 layout: post
-SBM_count:
-  - '00001<>1271372333<>1<>0<>0<>0<>0'
-dsq_thread_id:
-  - 9726062
+date: 2009-01-11
 categories:
   - Wordpress
 tags:

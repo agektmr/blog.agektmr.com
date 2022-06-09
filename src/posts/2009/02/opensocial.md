@@ -2,8 +2,7 @@
 title: OpenSocialパネルディスカッション
 author: Eiji
 layout: post
-SBM_count:
-  - '00003<>1271359002<>3<>0<>0<>0<>0'
+date: 2009-02-06
 categories:
   - OpenSocial
 ---

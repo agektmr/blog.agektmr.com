@@ -2,18 +2,7 @@
 title: OpenSocial Hackathon開催します
 author: Eiji
 layout: post
-disable_wpautop:
-  - 1
-disable_wptexturize:
-  - 1
-disable_convert_chars:
-  - 1
-disable_convert_smilies:
-  - 1
-syntaxhighlighter_encoded:
-  - 1
-SBM_count:
-  - '00000<>1271355585<>0<>0<>0<>0<>0'
+date: 2009-03-31
 categories:
   - OpenSocial
 ---

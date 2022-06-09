@@ -2,12 +2,7 @@
 title: Shindigのコミッターになりました
 author: Eiji
 layout: post
-syntaxhighlighter_encoded:
-  - 1
-SBM_count:
-  - '00010<>1271391073<>7<>0<>2<>1<>0'
-dsq_thread_id:
-  - 
+date: 2009-08-29
 categories:
   - OpenSocial
   - SocialWeb

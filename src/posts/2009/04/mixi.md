@@ -2,20 +2,7 @@
 title: mixiアプリが公開 / はてぶチェッカーをリリース
 author: Eiji
 layout: post
-syntaxhighlighter_encoded:
-  - 1
-disable_wpautop:
-  - 1
-disable_wptexturize:
-  - 1
-disable_convert_chars:
-  - 1
-disable_convert_smilies:
-  - 1
-SBM_count:
-  - '00004<>1271383453<>3<>0<>0<>1<>0'
-dsq_thread_id:
-  - 15432817
+date: 2009-04-10
 categories:
   - OpenSocial
 tags:

@@ -2,10 +2,7 @@
 title: gihyoにGoogle Buzzに関する記事を寄稿しました
 author: Eiji
 layout: post
-SBM_count:
-  - '00000<>1271370977<>0<>0<>0<>0<>0'
-dsq_thread_id:
-  - 66525889
+date: 2010-02-13
 categories:
   - SocialWeb
 tags:

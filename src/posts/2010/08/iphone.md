@@ -2,10 +2,7 @@
 title: iPhoneでモバイルウェブアプリ
 author: Eiji
 layout: post
-topsy_short_url:
-  - http://bit.ly/9fGQTn
-dsq_thread_id:
-  - 
+date: 2010-08-11
 categories:
   - HTML5
   - WebApp
