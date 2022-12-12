@@ -18,20 +18,24 @@ Mac OS XをSnow LeopardにしたらPHPが5.3になってて、PartuzaやShindig�
 
 ## MySQLをダウンロード
 
-MySQLのバイナリを<a href="http://dev.mysql.com/downloads/" target="_blank">こちら</a>からダウンロードします。このページの下の方にあるMac OS X(package format)の中から、(Snow Leopardは10.6ですが)Mac OS 10.5(x86_64)を選びます。
+MySQLのバイナリを[こちら](http://dev.mysql.com/downloads/)からダウンロードします。このページの下の方にあるMac OS X(package format)の中から、(Snow Leopardは10.6ですが)Mac OS 10.5(x86_64)を選びます。
 
 ## MySQLをインストール
 
 インストールはGUIでできます。環境設定項目とスタートアップアイテムもインストールしちゃいます。パスも切っておきましょう。
 
-~/.bash_profileを作るか、既にあれば下記を追記します。
+`~/.bash_profile`を作るか、既にあれば下記を追記します。
 
-<pre>PATH=$PATH:/usr/local/mysql/bin
-export PATH</pre>
+```shell
+PATH=$PATH:/usr/local/mysql/bin
+export PATH
+```
 
 さらに
 
-<pre>&gt; source ~/.bash_profile</pre>
+```shell
+> source ~/.bash_profile
+```
 
 とかやれば、即時反映できます。
 
@@ -39,21 +43,29 @@ export PATH</pre>
 
 ここからがポイント。
 
-<pre>&gt;  cd /usr/local/mysql
-&gt;  sudo ./script/mysql_install_db</pre>
+```shell
+>  cd /usr/local/mysql
+>  sudo ./script/mysql_install_db
+```
 
 そんで
 
-<pre>&gt;  sudo cp /etc/php.ini.default /etc/php/ini
-&gt;  sudo vim /etc/php.ini</pre>
+```shell
+> sudo cp /etc/php.ini.default /etc/php/ini
+>  sudo vim /etc/php.ini
+```
 
 とかやって、
 
-<pre>mysqli.default_socket = /var/mysql/mysql.sock</pre>
+```shell
+mysqli.default_socket = /var/mysql/mysql.sock
+```
 
 の部分を
 
-<pre>mysqli.default_socket = /tmp/mysql.sock</pre>
+```shell
+mysqli.default_socket = /tmp/mysql.sock
+```
 
 に書き換えます。
 

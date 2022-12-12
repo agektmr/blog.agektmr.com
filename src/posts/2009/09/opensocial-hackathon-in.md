@@ -11,4 +11,5 @@ tags:
   - Hackathon
   - 会津ITサマーフォーラム
 ---
-9月18日に会津大学で行われる<a href="http://www.ubic-u-aizu.pref.fukushima.jp/it-summer/2009overview" target="_blank">会津ITサマーフォーラム</a>で講演することになりました。僕のセッションでは「OpenSocialのアーキテクチャ」というマニアックなネタをお話をさせて頂く予定です。 また、せっかくの会津なので<a href="http://mashupaward.jp/" target="_blank">Mashup Awards5</a>のキャラバンも兼ねて、翌19日にOpenSocial Hackathonも開催することになりました。 OpenSocial入門を執筆されたmixiの<a href="http://www.eisbahn.jp/yoichiro/" target="_blank">田中洋一郎さん</a>やMTLの<a href="http://www.kawa.net/xp/index-j.html" target="_blank">川崎有亮さん</a>も参加されます。地元の方は滅多にない機会だと思いますので、ぜひご参加ください。 詳細と参加フォームはこちら: <a href="https://spreadsheets.google.com/a/agektmr.com/viewform?formkey=dGtZbVFaSzNhbTdZb1RPd3h3azhHSmc6MA.." target="_blank">OpenSocial Hackathon in 会津</a>
+
+9月18日に会津大学で行われる[会津ITサマーフォーラム](http://www.ubic-u-aizu.pref.fukushima.jp/it-summer/2009overview)で講演することになりました。僕のセッションでは「OpenSocialのアーキテクチャ」というマニアックなネタをお話をさせて頂く予定です。 また、せっかくの会津なので[Mashup Awards5](http://mashupaward.jp/)のキャラバンも兼ねて、翌19日にOpenSocial Hackathonも開催することになりました。 OpenSocial入門を執筆されたmixiの[田中洋一郎さん](http://www.eisbahn.jp/yoichiro/)やMTLの[川崎有亮さん](http://www.kawa.net/xp/index-j.html)も参加されます。地元の方は滅多にない機会だと思いますので、ぜひご参加ください。 詳細と参加フォームはこちら: [OpenSocial Hackathon in 会津](https://spreadsheets.google.com/a/agektmr.com/viewform?formkey=dGtZbVFaSzNhbTdZb1RPd3h3azhHSmc6MA..)
