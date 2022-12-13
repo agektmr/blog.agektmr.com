@@ -62,7 +62,7 @@ Chrome では端末を覚えておいてくれるので、二度目以降は QR 
 
 パスワードであればユーザーの入力した文字列をサーバーに送ることでリモート認証を行うところですが、パスキーのログインではローカル認証をトリガーに署名を生成し、それをサーバーに送ることで行われます。サーバーはそのパスキーを作った時に保存していた公開鍵を使って署名を検証し、認証します。
 
-ローカル認証とサーバーでの署名検証で、合計二回認証していることにお気付きでしょうか？つまり、パスキーは単体で生体認証 (もしくは知識認証) と所有認証の二要素認証を行っているのです。パスワードと違い、ユーザーが誤って漏らしてしまったり、再利用したりもできませんし、何よりもフィッシングに強いという点がパスキーの強みです。
+ローカル認証とサーバーでの署名検証で、合計二回認証していることにお気付きでしょうか？つまり、パスキーは単体で生体認証 (もしくは知識認証) と所有認証の二要素認証を行っているのです。パスキーはパスワードと違い、単体でも強度があり、漏れにくく、再利用もできない認証なのでです。
 
 ### パスキーはデバイス間で同期が可能 {#synchronization}
 
@@ -139,6 +139,22 @@ Chrome では、Discoverable Credentials を有効にしてパスキーを作れ
 
 FIDO はパスキーの登場でいよいよ実用段階に入ってきました。上記のような問題に加え、[Firefox が未サポート](https://bugzilla.mozilla.org/show_bug.cgi?id=1530370)なことや、同期環境にまだ改善の余地があることなど、まだ課題も残ってはいますが、時間が解決していくものと思われます。すでに [PayPal](https://newsroom.paypal-corp.com/2022-10-24-PayPal-Introduces-More-Secure-Payments-with-Passkeys) や [Yahoo! JAPAN](https://support.yahoo-net.jp/SccLogin/s/article/H000004626) など、実践に投入しているサービスもあります。
 
+いくつか資料を挙げておきます:
+
+* Google 公式ドキュメント: [Passwordless login with passkeys](https://goo.gle/passkeys)
+* Apple 公式ドキュメント: [Authenticating a User Through a Web Service](https://developer.apple.com/documentation/authenticationservices/authenticating_a_user_through_a_web_service)
+* [Create a passkey for passwordless logins](https://web.dev/passkey-registration/)
+* [Sign in with a passkey through form autofill](https://web.dev/passkey-form-autofill/)
+
 2023 年はますますパスキーの実装が加速していくことを期待しています。
+
+## DevFest & Android Dev Summit Japan 2022 が開催されます
+
+最後に宣伝です。今週金曜日 12 月 17 日に Google オフィスにて、[DevFest & Android Dev Summit Japan 2022](https://developersonair.withgoogle.com/events/adsjapan_2022) が開催されます。ウェブに加えて Flutter、Firebase、Android についてもたくさんのセッションが行われます。
+
+ウェブだけでも Google Developers Expert の[よしこさん](https://twitter.com/yoshiko_pg)、[矢倉さん](https://twitter.com/myakura)、Chrome チームの PM [Kenji Baheux](https://twitter.com/KenjiBaheux)、Chrome Developer Relations チームリードの [Paul Kinlan](https://twitter.com/Paul_Kinlan) (video) の他、チームメイトの 
+[Milica Mihajlija](https://twitter.com/bibydigital)、[Adriana Jara](https://twitter.com/tropicadri)、[Jhey Tompkins](https://twitter.com/jh3yy) という豪華なラインナップでのセッションが予定されています。僕もこの記事のテーマであるパスキーについてお話する予定です。
+
+それぞれのセッションに関する込み入った質問があるという方はぜひ、会場で直接お話しましょう。ハイブリッドなので[こちらから申し込めばライブ配信もご覧いただけます](https://gdg-tokyo.connpass.com/event/266648/)。みなさんの参加をお待ちしています！
 
 Photo by <a href="https://unsplash.com/@fess0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Filip Szalbot</a> on <a href="https://unsplash.com/s/photos/keys?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
