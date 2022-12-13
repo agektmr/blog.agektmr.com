@@ -104,7 +104,6 @@ module.exports = function(eleventyConfig) {
     breaks: false,
     linkify: true
   }).use(markdownItAnchor, {
-    level: [2, 3],
     permalink: markdownItAnchor.permalink.linkInsideHeader({
       symbol: '#'
     }),
