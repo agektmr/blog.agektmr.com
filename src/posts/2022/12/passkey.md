@@ -84,7 +84,7 @@ Android は将来的にサードパーティのパスワードマネージャー
 
 ### アカウントセレクターが使える {#account-selector}
 
-厳密には Safari や デスクトップ Chrome では以前から使えていた機能ではありますが、Android が対応したことで、アカウントセレクターの機能がパスキーの使い方の代表的なものとして数えられるようになりました。これは WebAuthn では Discoverable Credentials (旧 [Resident Key](/2019/03/fido-webauthn.html#resident-key)) と呼ばれるもので、パスキーにメタデータとしてユーザー情報を保存することにより、アカウントセレクターの UI を利用可能にします。ユーザーは自分でユーザー名をタイプすることなく、タップとローカル認証だけでログインが可能になります。パスワードどころかユーザー名も忘れてしまうユーザーにとっては、これでユーザビリティは大きく向上します。
+厳密には Safari や デスクトップ Chrome では以前から使えていた機能ではありますが、Android が対応したことで、アカウントセレクターの機能がパスキーの使い方の代表的なものとして数えられるようになりました。これは WebAuthn では Discoverable Credentials (旧 [Resident Key](/2019/03/fido-webauthn.html#resident-key)) と呼ばれるもので、パスキーにメタデータとしてユーザー情報を保存することにより、アカウントセレクターの UI を利用可能にします。ユーザーは自分でユーザー名をタイプすることなく、アカウントを選択するタップとローカル認証だけでログインが可能になります。パスワードどころかユーザー名も忘れてしまうユーザーにとっては、これでユーザビリティは大きく向上します。
 
 ### スマホでログインできる {#sign-in-with-a-phone}
 
@@ -152,7 +152,7 @@ FIDO はパスキーの登場でいよいよ実用段階に入ってきました
 
 ## DevFest & Android Dev Summit Japan 2022 が開催されます
 
-最後に宣伝です。今週金曜日 12 月 17 日に Google オフィスにて、[DevFest & Android Dev Summit Japan 2022](https://developersonair.withgoogle.com/events/adsjapan_2022) が開催されます。ウェブに加えて Flutter、Firebase、Android についてもたくさんのセッションが行われます。
+最後に宣伝です。今週金曜日 12 月 16 日に Google オフィスにて、[DevFest & Android Dev Summit Japan 2022](https://developersonair.withgoogle.com/events/adsjapan_2022) が開催されます。ウェブに加えて Flutter、Firebase、Android についてもたくさんのセッションが行われます。
 
 ウェブだけでも Google Developers Expert の[よしこさん](https://twitter.com/yoshiko_pg)、[矢倉さん](https://twitter.com/myakura)、Chrome チームの PM [Kenji Baheux](https://twitter.com/KenjiBaheux)、Chrome Developer Relations チームリードの [Paul Kinlan](https://twitter.com/Paul_Kinlan) (video) の他、チームメイトの 
 [Milica Mihajlija](https://twitter.com/bibydigital)、[Adriana Jara](https://twitter.com/tropicadri)、[Jhey Tompkins](https://twitter.com/jh3yy) という豪華なラインナップでのセッションが予定されています。僕もこの記事のテーマであるパスキーについてお話する予定です。
