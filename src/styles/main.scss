@@ -11,6 +11,7 @@
 
 h2,h3,h4,h5,h6 {
   margin-top: 3rem;
+  outline: none;
 }
 
 .readmore {
@@ -44,5 +45,16 @@ figure {
   figcaption {
     font-size: 0.9em;
     text-align: center;
+  }
+}
+
+.header-anchor {
+  color: rgb(200, 200, 200);
+  visibility: hidden;
+  text-decoration: none !important;
+}
+h2:hover, h3:hover, h4:hover {
+  .header-anchor {
+    visibility: visible;
   }
 }

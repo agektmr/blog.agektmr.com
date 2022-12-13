@@ -5,6 +5,7 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginExcerpt = require('eleventy-plugin-excerpt');
 const markdownIt = require("markdown-it");
+const markdownItAttrs = require("markdown-it-attrs");
 const markdownItAnchor = require("markdown-it-anchor");
 
 module.exports = function(eleventyConfig) {
@@ -103,10 +104,14 @@ module.exports = function(eleventyConfig) {
     breaks: false,
     linkify: true
   }).use(markdownItAnchor, {
-    level: 2,
-    permalink: true,
-    permalinkClass: "anchor-link",
-    permalinkSymbol: "#"
+    level: [2, 3],
+    permalink: markdownItAnchor.permalink.linkInsideHeader({
+      symbol: '#'
+    }),
+  }).use(markdownItAttrs, {
+    leftDelimiter: '{',
+    rightDelimiter: '}',
+    allowedAttributes: []  // empty array = all attributes are allowed
   });
   eleventyConfig.setLibrary("md", markdownLibrary);
 
