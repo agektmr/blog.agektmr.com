@@ -7,6 +7,8 @@ eleventyNavigation:
   key: About Me
   order: 3
 eleventyExcludeFromCollections: true
+date: 2021-06-24
+updated: 2022-12-13
 tags:
   - pages
 ---
