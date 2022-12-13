@@ -139,7 +139,7 @@ Chrome では、Discoverable Credentials を有効にしてパスキーを作れ
 
 ## まとめ
 
-FIDO はパスキーの登場でいよいよ実用段階に入ってきました。上記のような問題に加え、[Firefox が未サポート](https://bugzilla.mozilla.org/show_bug.cgi?id=1530370)なことや、同期環境にまだ改善の余地があることなど、まだ課題も残ってはいますが、時間が解決していくものと思われます。すでに [PayPal](https://newsroom.paypal-corp.com/2022-10-24-PayPal-Introduces-More-Secure-Payments-with-Passkeys) や [Yahoo! JAPAN](https://support.yahoo-net.jp/SccLogin/s/article/H000004626) など、実践に投入しているサービスもあります。
+FIDO はパスキーの登場でいよいよ実用段階に入ってきました。上記のような問題に加え、[Firefox が未サポート](https://bugzilla.mozilla.org/show_bug.cgi?id=1530370)なことや、同期環境にまだ改善の余地があることなど、まだ課題も残ってはいますが、時間が解決していくものと思われます。すでに [PayPal](https://newsroom.paypal-corp.com/2022-10-24-PayPal-Introduces-More-Secure-Payments-with-Passkeys) や [Yahoo! JAPAN](https://support.yahoo-net.jp/SccLogin/s/article/H000004626) など、実戦に投入しているサービスもあります。
 
 いくつか資料を挙げておきます:
 

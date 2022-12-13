@@ -50,6 +50,13 @@
     "url": "https://www.linkedin.com/in/agektmr",
     "desc": "Connect with me on LinkedIn",
     "share": true
+  }, {
+    "name": "Mastodon",
+    "icon": "mastodon",
+    "username": "@agektmr@mstdn.jp",
+    "url": "https://mstdn.jp/@agektmr",
+    "desc": "Connect with me on Mastdon",
+    "share": true
   }],
   "pages": [{
     "title": "About",
