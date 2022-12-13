@@ -1,8 +1,10 @@
 ---
 layout: post
-title: 'パスワードの不要な世界はいかにして実現されるのか - パスキーとその課題'
+title: 'パスキーとは何か、そしてその課題'
 description: 'パスキーの基本的な特徴と、2022 年時点で考えられる課題について解説します。'
 date: 2022-12-13
+image:
+  feature: /2022/keys.jpg
 tags:
 - Passkey
 - WebAuthn
