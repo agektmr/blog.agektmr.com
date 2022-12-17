@@ -31,12 +31,6 @@
     "desc": "Follow me on Twitter",
     "share": true
   }, {
-    "name": "Facebook",
-    "icon": "facebook",
-    "url": "https://www.facebook.com/Tender-Surrender-Eiji-Kitamura-365995940083689",
-    "desc": "Follow me on Facebook",
-    "share": true
-  }, {
     "name": "GitHub",
     "icon": "github",
     "username": "agektmr",
@@ -53,7 +47,7 @@
   }, {
     "name": "Mastodon",
     "icon": "mastodon",
-    "username": "@agektmr@mstdn.jp",
+    "username": "agektmr@mstdn.jp",
     "url": "https://mstdn.jp/@agektmr",
     "desc": "Connect with me on Mastdon",
     "share": true
