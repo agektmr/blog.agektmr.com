@@ -8,7 +8,7 @@ eleventyNavigation:
   order: 3
 eleventyExcludeFromCollections: true
 date: 2021-06-24
-updated: 2022-12-13
+updated: 2023-05-16
 tags:
   - pages
 ---
@@ -17,11 +17,15 @@ tags:
 
 ## Eiji Kitamura / えーじ
 
-Google デベロッパー アドボケートとして Chrome ブラウザの開発チームに所属。認証や支払い、セキュリティ、プライバシーなどを中心に、ウェブの標準技術についての啓蒙活動を行っている。
+Google デベロッパー アドボケートとして Chrome ブラウザの開発チームに所属。認証や支払い、セキュリティ、プライバシーなどを中心に、ウェブの標準技術についての啓発活動を行っている。
 
 Eiji is a developer advocate at Google Chrome team working on trust and safety
 on the web, specialized in identity, payment, security and privacy to make them
 open, seamless and frictionless.
+
+### Google I/O 2023: Passkeys: a simpler and safer sign-in
+
+{% YouTube 'SF8ueIn2Nlc' %}
 
 ### Google I/O 2022: A path to a world without passwords
 
