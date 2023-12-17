@@ -28,20 +28,20 @@
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "eleventy-plugin-excerpt": "^1.1.2",
-    "luxon": "^2.5.0",
-    "markdown-it": "^13.0.1",
-    "markdown-it-anchor": "^8.6.6",
+    "luxon": "^2.5.2",
+    "markdown-it": "^13.0.2",
+    "markdown-it-anchor": "^8.6.7",
     "markdown-it-attrs": "^4.1.6",
     "prismjs": "^1.29.0",
     "rollup": "^2.79.1",
-    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-node-globals": "^1.4.0",
     "rollup-plugin-scss": "^3.0.0",
-    "sass": "^1.57.1",
-    "sass-loader": "^13.2.0",
-    "textlint": "^12.3.1",
-    "textlint-rule-preset-ja-spacing": "^2.2.0"
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "textlint": "^12.6.1",
+    "textlint-rule-preset-ja-spacing": "^2.3.0"
   },
   "dependencies": {
     "@material/mwc-icon": "^0.27.0"
