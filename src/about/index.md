@@ -47,7 +47,3 @@ open, seamless and frictionless.
 
 {% YouTube 'DBBFK7bvEQo' %}
 
-### Authored documents
-
-* https://web.dev/authors/agektmr/
-* https://developer.chrome.com/authors/agektmr/
