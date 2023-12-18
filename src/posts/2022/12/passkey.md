@@ -3,6 +3,7 @@ layout: post
 title: 'パスキーとは何か、そしてその課題'
 description: 'パスキーの基本的な特徴と、2022 年時点で考えられる課題について解説します。'
 date: 2022-12-13
+updated: 2023-12-18
 image:
   feature: /2022/keys.jpg
 tags:
@@ -20,7 +21,7 @@ tags:
 
 ## パスキーとは何か
 
-12 月 9 日に Google が [Android 版 Chrome でパスキーがサポートされたとのアナウンスが出ました](https://blog.chromium.org/2022/12/introducing-passkeys-in-chrome.html)。Apple もすでに[最新版の macOS Ventura、iOS / iPadOS 16 で Safari がパスキーに対応](https://developer.apple.com/videos/play/wwdc2022/10092/)しています。
+2022 年 12 月 9 日に Google が [Android 版 Chrome でパスキーがサポートされたとのアナウンスが出ました](https://blog.chromium.org/2022/12/introducing-passkeys-in-chrome.html)。Apple もすでに[最新版の macOS Ventura、iOS / iPadOS 16 で Safari がパスキーに対応](https://developer.apple.com/videos/play/wwdc2022/10092/)しています。
 
 パスキーは Apple、Google、Microsoft が協調して使う [FIDO クレデンシャル](/2019/03/fido-webauthn.html)の名前です。エンドユーザーのみなさんがパスワードの代わりとして認識し、直感的にログインできるよう「パスキー」というブランドとアイコンが決まりました。ウェブ開発者的には [FIDO Alliance](https://fidoalliance.org/) と W3C の定める [WebAuthn (Web Authentication)](https://w3c.github.io/webauthn) の延長線上にあると考えて差し支えありません。この記事で言う「パスキー」は「FIDO クレデンシャル」と置き換えられます。[FIDO と WebAuthn に関しては以前書いた記事](/2019/03/fido-webauthn.html)がありますので、まだの方はぜひお読み頂ければと思います。
 
@@ -46,7 +47,7 @@ tags:
 
 Chrome では端末を覚えておいてくれるので、二度目以降は QR コードをスキャンしなくとも、端末名をタップして指定することができます。もちろん、その後デスクトップで新しくパスキーを作れば、スマホがなくてもログインできるようになります。
 
-[こちらのデモ](https://passkey-form-demo.glitch.me)で実際に試して頂くことができます。
+[こちらのデモ](https://passkeys-demo.appspot.com)で実際に試して頂くことができます。
 
 ## パスキーの何がパスワードよりも優れているのか
 
