@@ -31,17 +31,17 @@
     "luxon": "^2.5.2",
     "markdown-it": "^13.0.2",
     "markdown-it-anchor": "^8.6.7",
-    "markdown-it-attrs": "^4.1.6",
+    "markdown-it-attrs": "^4.3.1",
     "prismjs": "^1.29.0",
-    "rollup": "^2.79.1",
+    "rollup": "^2.79.2",
     "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-node-globals": "^1.4.0",
     "rollup-plugin-scss": "^3.0.0",
-    "sass": "^1.69.5",
-    "sass-loader": "^13.3.2",
+    "sass": "^1.83.0",
+    "sass-loader": "^13.3.3",
     "textlint": "^12.6.1",
-    "textlint-rule-preset-ja-spacing": "^2.3.0"
+    "textlint-rule-preset-ja-spacing": "^2.4.3"
   },
   "dependencies": {
     "@material/mwc-icon": "^0.27.0"
