@@ -19,7 +19,10 @@ tags:
 
 <!-- excerpt -->
 
-![パスキーのすべて](/images/2025/everything-about-passkeys.jpg)
+<figure style="max-width: 400px; margin: 0 auto 30px;">
+  <img src="/images/2025/everything-about-passkeys.jpg" alt="パスキーのすべて" width="400">
+  <figcaption>パスキーのすべて</figcaption>
+</figure>
 
 本書は米国 OpenID Foundation 理事、OpenID ファウンデーション・ジャパン KYC WG リーダの小岩井さんと、OpenID ファウンデーション・ジャパン 理事・エバンジェリストの[くら](https://x.com/kura_lab)と一緒に書きました。二人共気の置けない愉快な仲間たちです。
 
