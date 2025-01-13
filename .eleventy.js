@@ -78,9 +78,9 @@ module.exports = function(eleventyConfig) {
   </div>`;
   });
 
-  eleventyConfig.addShortcode('ImageFigure', (src, alt, caption) => {
-    return `<figure>
-      <img src="${src}" alt="${alt || ''}">
+  eleventyConfig.addShortcode('ImageFigure', (src, caption, style) => {
+    return `<figure style="${style || ''}">
+      <img src="${src}" alt="${caption || ''}" width="100%">
       <figcaption>${caption || ''}</figcaption>
     </figure>`;
   });
