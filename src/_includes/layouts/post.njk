@@ -35,16 +35,32 @@ templateClass: tmpl-post
       <a href="//x.com/share?text={{ title | urlencode }} - {{ site.name | urlencode }}&url={{ full_url | urlencode}}&via={{social.username}}"
         onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=550');return false;">
         <i class="fab fa-{{ social.icon }} fa-lg"></i>
+    {% set full_url %}{{ site.baseurl }}{{ page.url }}{% endset %}
+    {% if social.name == "Bluesky" and social.share == true %}
+      <a href="//bsky.app/intent/compose?text={{ title | urlencode}}+{{full_url | urlencode}}"
+        onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=550');return false;">
+        <i class="fab fa-{{ social.icon }} fa-lg"></i>
+      </a>
+    {% endif %}
+    {% set full_url %}{{ site.baseurl }}{{ page.url }}{% endset %}
+    {% if social.name == "X" and social.share == true %}
+      <a href="//x.com/share?text={{ title | urlencode }} - {{ site.name | urlencode }}&url={{ full_url | urlencode}}&via={{social.username}}"
+        onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=550');return false;">
+        <i class="fab fa-{{ social.icon }} fa-lg"></i>
       </a>
     {% endif %}
     {% if social.name == "Facebook" and social.share == true %}
       <a href="//www.facebook.com/sharer.php?t={{ title | urlencode }} - {{ site.name | urlencode }}&u={{ full_url | urlencode}}"
         onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=550');return false;">
         <i class="fab fa-{{ social.icon }} fa-lg"></i>
+        onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=550');return false;">
+        <i class="fab fa-{{ social.icon }} fa-lg"></i>
       </a>
     {% endif %}
     {% if social.name == "LinkedIn" and social.share == true %}
       <a href="//www.linkedin.com/shareArticle?mini=true&url={{ full_url | urlencode}}"
+        onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=550');return false;">
+        <i class="fab fa-{{ social.icon }} fa-lg"></i>
         onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=550');return false;">
         <i class="fab fa-{{ social.icon }} fa-lg"></i>
       </a>
