@@ -49,6 +49,22 @@
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml" />
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.feed.path | url }}">
 
+  <!-- Hreflang tags for i18n -->
+  {% set currentLang = lang or 'ja' %}
+  {% if page.url %}
+    {% if currentLang == 'ja' %}
+      {# Japanese page: link to self and English version #}
+      <link rel="alternate" hreflang="ja" href="{{ site.url }}{{ page.url | replace('index.html','') }}" />
+      <link rel="alternate" hreflang="en" href="{{ site.url }}/en{{ page.url | replace('index.html','') }}" />
+      <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url | replace('index.html','') }}" />
+    {% else %}
+      {# English page: link to self and Japanese version #}
+      <link rel="alternate" hreflang="en" href="{{ site.url }}{{ page.url | replace('index.html','') }}" />
+      <link rel="alternate" hreflang="ja" href="{{ site.url }}{{ page.url | replace('/en','') | replace('index.html','') }}" />
+      <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url | replace('/en','') | replace('index.html','') }}" />
+    {% endif %}
+  {% endif %}
+
 {% if site.google_analytics %}
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
