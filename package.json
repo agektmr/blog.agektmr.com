@@ -7,7 +7,9 @@
     "build": "eleventy && rollup -c rollup.config.js",
     "watch": "eleventy --watch",
     "start": "eleventy --serve",
-    "debug": "DEBUG=* eleventy"
+    "debug": "DEBUG=* eleventy",
+    "translate": "node scripts/translate.js",
+    "translate:build": "npm run translate && npm run build"
   },
   "repository": {
     "type": "git",
