@@ -74,8 +74,10 @@ module.exports = function(eleventyConfig) {
   // eleventyConfig.addFilter("filterTagList", filterTagList)
 
   eleventyConfig.addFilter("buildPermalink", (inputPath) => {
-    // return inputPath.replace(/.*?\/([0-9]{4})-([0-9]{2})-[0-9]{2}-(.*)\.(md|html)$/g, "/$1/$2/$3.html");
-    return inputPath.replace(/.*?\/([0-9]{4})\/([0-9]{2})\/(.*)\.(md|html)$/g, "/$1/$2/$3.html");
+    // Remove language prefix (ja/ or en/) to keep clean URLs
+    // For Japanese: /posts/ja/2024/01/post.md -> 2024/01/post.html
+    // For English: /posts/en/2024/01/post.md -> 2024/01/post.html (handled by posts.json)
+    return inputPath.replace(/.*?\/(?:ja|en)?\/?\/?([0-9]{4})\/([0-9]{2})\/(.*)\.(md|html)$/g, "$1/$2/$3.html");
   });
 
   // Language-specific collections

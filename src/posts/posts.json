@@ -1,4 +1,0 @@
-{
-  "tags": "posts",
-  "permalink": "{{ page.inputPath | buildPermalink }}"
-}
