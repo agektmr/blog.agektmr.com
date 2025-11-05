@@ -3,3 +3,10 @@ _site
 node_modules
 .sass-cache
 *.log
+# Google Cloud credentials
+*-key.json
+*.json.key
+gcloud-key*.json
+
+# Translation API credentials
+.translation-credentials
