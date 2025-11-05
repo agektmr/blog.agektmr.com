@@ -237,7 +237,9 @@ URL:    /en/2025/01/everything-about-passkeys.html ✅
 
 ---
 
-## Phase 3: Translation Automation (Planned)
+## Phase 3: Translation Automation ✅ (Completed)
+
+**Date:** 2025-11-05
 
 ### Objectives
 - Create translation script using Google Cloud Translation API
@@ -245,29 +247,80 @@ URL:    /en/2025/01/everything-about-passkeys.html ✅
 - Implement caching to avoid retranslation
 - Preserve code blocks, URLs, and technical terms
 
-### Planned Features
+### Changes Made
 
-#### Translation Script (scripts/translate.js)
+#### 1. Translation Script Created
+
+**scripts/translate.js:**
 ```javascript
-// Features to implement:
-- Parse markdown and frontmatter
-- Preserve code blocks (```)
-- Preserve HTML tags
-- Preserve URLs and image paths
-- Translate title, description, content
-- Cache translations (check updated dates)
-- Skip manually edited translations
-- Rate limiting for API calls
-- Progress reporting
+// Features implemented:
+- Google Cloud Translation API v2 integration
+- Markdown and frontmatter parsing
+- Content preservation system:
+  - Code blocks (``` ```)
+  - Inline code (` `)
+  - URLs and links
+  - HTML tags
+  - Eleventy shortcodes ({% %})
+  - Image references
+- Smart caching:
+  - Checks if translation exists
+  - Compares source updated vs translated dates
+  - Respects translatedManually flag
+- Paragraph-by-paragraph translation
+- Rate limiting (100ms delay between requests)
+- Progress reporting and summary
+- Automatic directory creation
+- Error handling
 ```
 
-#### Frontmatter Enhancement
+**How it works:**
+1. Scans all `.md` files in `src/posts/ja/`
+2. Parses frontmatter and extracts metadata
+3. Preserves technical content with placeholder system
+4. Translates title, description, and content via API
+5. Restores preserved content to translated text
+6. Adds translation metadata to frontmatter
+7. Writes to corresponding path in `src/posts/en/`
+
+#### 2. npm Scripts Added
+
+**package.json:**
+```json
+{
+  "scripts": {
+    "translate": "node scripts/translate.js",
+    "translate:build": "npm run translate && npm run build"
+  }
+}
+```
+
+**Usage:**
+```bash
+npm run translate        # Run translation only
+npm run translate:build  # Translate + build site
+```
+
+#### 3. Frontmatter Enhancement
+
+**Japanese Post (source):**
+```yaml
+---
+layout: post
+lang: ja
+title: "元のタイトル"
+description: "元の説明"
+date: 2024-01-15
+---
+```
+
+**English Post (translated):**
 ```yaml
 ---
 layout: post
 lang: en
-title: "Translated Title"
-description: "Translated description"
+title: 'Translated Title'
+description: 'Translated description'
 date: 2024-01-15
 translationOf: /2024/01/article.html
 translated: 2024-01-20
@@ -275,16 +328,112 @@ translatedManually: false
 ---
 ```
 
-#### Cache Strategy
-- Store translation timestamp in frontmatter
-- Compare with source `updated` date
-- Only retranslate if source is newer
-- Skip files marked with `translatedManually: true`
+#### 4. Caching Strategy Implemented
+
+The script skips translation if:
+1. Translation file exists AND
+2. `translated` date >= source `updated` date AND
+3. `translatedManually` is not `true`
+
+To force retranslation:
+- Delete the translated file
+- Update the `updated` date in source file
+- Delete the `translated` field in target file
+
+#### 5. Documentation Created
+
+**docs/translation-setup.md:**
+- Complete setup guide for Google Cloud Translation API
+- Step-by-step instructions:
+  - Project creation
+  - API enablement
+  - Service account setup
+  - Key download and configuration
+  - Environment variable setup
+- Usage instructions and examples
+- Cost management strategies
+- Troubleshooting common issues
+- Security best practices
+
+**docs/logs/implementation-log.md:**
+- Comprehensive implementation log
+- All phases documented
+- Technical decisions explained
+- Lessons learned
+- Next steps outlined
+
+#### 6. Security Updates
+
+**.gitignore additions:**
+```
+# Google Cloud credentials
+*-key.json
+*.json.key
+gcloud-key*.json
+
+# Translation API credentials
+.translation-credentials
+```
+
+### Translation Features
+
+**What Gets Translated:**
+- Post title
+- Post description
+- Markdown content (paragraphs, headings, lists)
+
+**What Gets Preserved:**
+- Code blocks (` ``` `)
+- Inline code (`` ` ``)
+- URLs
+- Image paths and alt text
+- HTML tags
+- Eleventy shortcodes
+- YAML frontmatter structure
 
 ### Cost Estimate
-- **Initial translation:** 119 posts × 3,000 chars avg = 357,000 chars
-- **Cost:** ~$7.14 (one-time at $20/million chars)
-- **Ongoing:** ~$0.24/month for new posts
+- **Pricing:** $20 per 1 million characters
+- **Initial translation (119 posts):** ~$7.14
+- **Ongoing (4 posts/month):** ~$0.24/month
+
+### Setup Requirements
+
+Before running translation:
+1. Create Google Cloud project
+2. Enable Translation API
+3. Create service account with Cloud Translation API User role
+4. Download service account key
+5. Set environment variable:
+   ```bash
+   export GOOGLE_APPLICATION_CREDENTIALS="path/to/key.json"
+   ```
+
+### Testing
+
+Script is ready to use. To translate all posts:
+```bash
+npm run translate
+```
+
+To translate and build:
+```bash
+npm run translate:build
+```
+
+### Git Commit
+- Branch: `i18n`
+- Commit: `d186579`
+- Files changed: 5
+  - scripts/translate.js (new)
+  - docs/translation-setup.md (new)
+  - docs/logs/implementation-log.md (new)
+  - package.json (modified)
+  - .gitignore (modified)
+
+### Status
+✅ Script complete and ready for use
+⏸️ Awaiting Google Cloud credentials for actual translation
+📋 Next: Phase 4 (Template Updates)
 
 ---
 
@@ -397,16 +546,18 @@ Jobs:
 ## Current Status
 
 ### Completed ✅
-- [x] Phase 1: Infrastructure Setup
-- [x] Phase 2: Content Migration
+- [x] Phase 1: Infrastructure Setup (2025-11-05)
+- [x] Phase 2: Content Migration (2025-11-05)
+- [x] Phase 3: Translation Automation (2025-11-05) - Script ready, awaiting credentials
 
-### In Progress 🚧
-- [ ] Phase 3: Translation Automation
+### Next Up 🎯
+- [ ] Phase 4: Template Updates - Language switcher, hreflang tags, RSS feeds
+- [ ] Phase 5: Cloud Run Deployment - Dockerfile, language detection
+- [ ] Phase 6: Testing & Launch - QA, deployment
 
-### Pending 📋
-- [ ] Phase 4: Template Updates
-- [ ] Phase 5: Cloud Run Deployment
-- [ ] Phase 6: Testing & Launch
+### Awaiting ⏸️
+- Google Cloud Translation API credentials setup
+- Actual translation run (once credentials configured)
 
 ---
 
