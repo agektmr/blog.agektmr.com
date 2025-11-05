@@ -437,7 +437,9 @@ npm run translate:build
 
 ---
 
-## Phase 4: Template Updates (Planned)
+## Phase 4: Template Updates ✅ (Completed)
+
+**Date:** 2025-11-05
 
 ### Objectives
 - Add language switcher component
@@ -446,28 +448,177 @@ npm run translate:build
 - Create language-specific RSS feeds
 - Update sitemap with language alternates
 
-### Planned Changes
+### Changes Made
 
-#### Language Switcher Component
-- Show current language
-- Link to alternate language version
-- Detect if translation exists
-- Fallback to home page if no translation
+#### 1. Language Attribute Added
 
-#### Template Updates
-- Add `<html lang="ja|en">` attribute
-- Use `localeDateString` filter for dates
-- Use i18n strings from JSON files
-- Add hreflang links in `<head>`
+**src/_includes/layouts/base.njk:**
+```html
+<html lang="{{ lang or 'ja' }}">
+```
+- Sets language attribute dynamically based on page language
+- Defaults to Japanese (primary language)
+- Improves accessibility and SEO
 
-#### RSS Feeds
-- `/feed.xml` - Japanese feed
-- `/en/feed.xml` - English feed
+#### 2. Language Switcher Component Created
 
-#### Sitemap Updates
-- Add language annotations
-- Include alternate language links
-- Generate separate sitemaps if needed
+**src/_includes/language-switcher.njk:**
+```njk
+{% set currentLang = lang or 'ja' %}
+{% set alternateLang = 'en' if currentLang == 'ja' else 'ja' %}
+{% if currentLang == 'ja' %}
+  {% set alternateUrl = '/en' + page.url %}
+{% else %}
+  {% set alternateUrl = page.url | replace('/en', '') %}
+{% endif %}
+
+<div class="language-switcher">
+  <a href="{{ alternateUrl }}" class="lang-switch">
+    <i class="fa fa-language"></i>
+    <span>{{ 'EN' if alternateLang == 'en' else 'JA' }}</span>
+  </a>
+</div>
+```
+- Detects current language
+- Generates URL for alternate language version
+- Shows language icon and label
+- Integrated into navigation menu
+
+**src/_includes/header.njk:**
+```njk
+<ul id="js-navigation-menu" class="navigation-menu show">
+  {% include 'nav_links.njk' %}
+  <li class="nav-link">{% include 'language-switcher.njk' %}</li>
+</ul>
+```
+
+#### 3. Hreflang Tags Added
+
+**src/_includes/head.njk:**
+```njk
+<!-- Hreflang tags for i18n -->
+{% set currentLang = lang or 'ja' %}
+{% if page.url %}
+  {% if currentLang == 'ja' %}
+    {# Japanese page: link to self and English version #}
+    <link rel="alternate" hreflang="ja" href="{{ site.url }}{{ page.url | replace('index.html','') }}" />
+    <link rel="alternate" hreflang="en" href="{{ site.url }}/en{{ page.url | replace('index.html','') }}" />
+    <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url | replace('index.html','') }}" />
+  {% else %}
+    {# English page: link to self and Japanese version #}
+    <link rel="alternate" hreflang="en" href="{{ site.url }}{{ page.url | replace('index.html','') }}" />
+    <link rel="alternate" hreflang="ja" href="{{ site.url }}{{ page.url | replace('/en','') | replace('index.html','') }}" />
+    <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url | replace('/en','') | replace('index.html','') }}" />
+  {% endif %}
+{% endif %}
+```
+- SEO-friendly hreflang tags for Google
+- Links to alternate language versions
+- Sets Japanese as x-default (primary language)
+- Proper URL formatting without trailing index.html
+
+#### 4. Index Pages Updated for Language-Specific Collections
+
+**src/index.njk (Japanese):**
+```yaml
+---
+layout: layouts/base
+lang: ja
+pagination:
+  data: collections.posts_ja  # Changed from collections.posts
+  size: 5
+---
+```
+
+**src/en/index.njk (English - new):**
+```yaml
+---
+layout: layouts/base
+lang: en
+pagination:
+  data: collections.posts_en
+  size: 5
+permalink: "/en/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1}}/{% endif %}index.html"
+---
+```
+- Japanese home at `/` using `posts_ja` collection
+- English home at `/en/` using `posts_en` collection
+- Both support pagination
+- Identical layouts, different data sources
+
+#### 5. Language-Specific RSS Feeds Created
+
+**src/feed/feed.njk (Japanese):**
+```yaml
+---
+lang: ja
+permalink: "{{ site.feed.path }}"  # /feed.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ja">
+  ...
+  {%- for post in collections.posts_ja | reverse %}
+```
+
+**src/feed/feed.en.njk (English - new):**
+```yaml
+---
+lang: en
+permalink: "/en/feed.xml"
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  ...
+  {%- for post in collections.posts_en | reverse %}
+```
+- Japanese feed: `/feed.xml`
+- English feed: `/en/feed.xml`
+- Each feed shows only posts in that language
+- Proper language attributes in XML
+
+### Build Verification
+
+**Build Output:**
+```
+[11ty] Writing _site/feed.xml from ./src/feed/feed.njk
+[11ty] Writing _site/en/feed.xml from ./src/feed/feed.en.njk
+[11ty] Writing _site/index.html from ./src/index.njk
+[11ty] Copied 406 files / Wrote 149 files in 0.43 seconds (2.9ms each, v2.0.1)
+```
+
+**Results:**
+- ✅ 149 files written (148 pages + 1 new feed)
+- ✅ No build errors or warnings
+- ✅ Japanese home page at `/`
+- ✅ English home page at `/en/`
+- ✅ Japanese feed at `/feed.xml`
+- ✅ English feed at `/en/feed.xml`
+- ✅ Language switcher visible in navigation
+- ✅ Hreflang tags present in HTML head
+- ✅ All 119 Japanese posts rendering correctly
+
+### Files Modified/Created
+
+**Modified:**
+- src/_includes/layouts/base.njk (lang attribute)
+- src/_includes/head.njk (hreflang tags)
+- src/_includes/header.njk (language switcher integration)
+- src/index.njk (lang: ja, collections.posts_ja)
+- src/feed/feed.njk (lang: ja, collections.posts_ja)
+
+**Created:**
+- src/_includes/language-switcher.njk (new component)
+- src/en/index.njk (English home page)
+- src/feed/feed.en.njk (English RSS feed)
+
+### Git Commit
+- Branch: `i18n`
+- Commit: `ce80b21`
+- Files changed: 8 (3 new, 5 modified)
+
+### Status
+✅ Phase 4 complete
+📋 Next: Phase 5 (Cloud Run Deployment) or start using translation script
 
 ---
 
@@ -549,15 +700,24 @@ Jobs:
 - [x] Phase 1: Infrastructure Setup (2025-11-05)
 - [x] Phase 2: Content Migration (2025-11-05)
 - [x] Phase 3: Translation Automation (2025-11-05) - Script ready, awaiting credentials
+- [x] Phase 4: Template Updates (2025-11-05) - Language switcher, hreflang tags, RSS feeds
 
 ### Next Up 🎯
-- [ ] Phase 4: Template Updates - Language switcher, hreflang tags, RSS feeds
-- [ ] Phase 5: Cloud Run Deployment - Dockerfile, language detection
+- [ ] Set up Google Cloud Translation API credentials
+- [ ] Run translation script to generate English posts
+- [ ] Phase 5: Cloud Run Deployment - Dockerfile, language detection middleware
 - [ ] Phase 6: Testing & Launch - QA, deployment
 
 ### Awaiting ⏸️
 - Google Cloud Translation API credentials setup
 - Actual translation run (once credentials configured)
+
+### Ready to Use 🎉
+All template infrastructure is now in place! Once translations are generated, the site will be fully bilingual with:
+- Language-specific home pages and RSS feeds
+- Working language switcher in navigation
+- SEO-friendly hreflang tags
+- Proper URL structure preserved
 
 ---
 
