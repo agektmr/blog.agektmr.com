@@ -1,15 +1,15 @@
 ---
 layout: layouts/base
-lang: ja
+lang: en
 eleventyNavigation:
   key: Home
   order: 1
 pagination:
-  data: collections.posts_ja
+  data: collections.posts_en
   size: 5
   reverse: true
   alias: posts
-permalink: "/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1}}/{% endif %}index.html"
+permalink: "/en/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1}}/{% endif %}index.html"
 ---
 <div class="home">
 
@@ -44,41 +44,41 @@ permalink: "/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1
 <nav class="pagination" role="navigation">
 	<p>
     {% if pagination.page.previous %}
-			{% if pagination.pageNumber == 2 %}
-			<a class="newer-posts" href="{{ pagination.href.first }}">
+		{% if pagination.pageNumber == 2 %}
+		<a class="newer-posts" href="/en/index.html">
         <span class="fa-stack fa-lg">
           <i class="fa fa-square fa-stack-2x"></i>
           <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
         </span>
       </a>
-			{% else %}
-			<a class="newer-posts" href="{{ pagination.href.previous }}">
-				<span class="fa-stack fa-lg">
-					<i class="fa fa-square fa-stack-2x"></i>
-					<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
-				</span>
-			</a>
-			{% endif %}
 		{% else %}
-		<span class="fa-stack fa-lg">
+		<a class="newer-posts" href="{{ pagination.href.previous }}">
+			<span class="fa-stack fa-lg">
+				<i class="fa fa-square fa-stack-2x"></i>
+				<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+			</span>
+		</a>
+		{% endif %}
+	{% else %}
+	<span class="fa-stack fa-lg">
       <i class="fa fa-square fa-stack-2x"></i>
       <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
     </span>
-		{% endif %}
-		<span class="page-number">Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}</span>
-		{% if pagination.page.next %}
-		<a class="newer-posts" href="{{ pagination.href.next }}">
+	{% endif %}
+	<span class="page-number">Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}</span>
+	{% if pagination.page.next %}
+	<a class="newer-posts" href="{{ pagination.href.next }}">
       <span class="fa-stack fa-lg">
         <i class="fa fa-square fa-stack-2x"></i>
         <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
       </span>
     </a>
-		{% else %}
-		<span class="fa-stack fa-lg">
+	{% else %}
+	<span class="fa-stack fa-lg">
       <i class="fa fa-square fa-stack-2x"></i>
       <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
     </span>
-		{% endif %}
+	{% endif %}
 	</p>
 </nav>
 
