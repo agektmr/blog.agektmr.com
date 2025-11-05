@@ -1,0 +1,75 @@
+{
+  "title": "Tender Surrender",
+  "name": "Tender Surrender",
+  "url": "https://blog.agektmr.com",
+  "baseurl": "https://blog.agektmr.com",
+  "imagepath": "/images",
+  "cover": "/images/cover.jpg",
+  "subtitle": "A blog dreaming of the future of the web",
+  "description": "A blog dreaming of the future of the web",
+  "default_header_image": "cover.jpg",
+  "disqus_shortname": "agektmr",
+  "feed": {
+    "subtitle": "A blog dreaming of the future of the web",
+    "filename": "feed.xml",
+    "path": "/en/feed.xml",
+    "url": "https://blog.agektmr.com/en/feed.xml",
+    "id": "https://blog.agektmr.com/en/"
+  },
+  "logo": "/images/favicon.png",
+  "owner": {
+    "name": "Eiji Kitamura",
+    "email": "agektmr+blog@gmail.com",
+    "bio": "Developer Advocate at Google",
+    "avatar": "avatar.jpg"
+  },
+  "social": [{
+    "name": "Bluesky",
+    "icon": "bluesky",
+    "username": "agektmr.com",
+    "url": "https://bsky.app/profile/@agektmr.com",
+    "desc": "Connect with me on Bluesky",
+    "share": true
+  }, {
+    "name": "GitHub",
+    "icon": "github",
+    "username": "agektmr",
+    "url": "https://github.com/agektmr",
+    "desc": "Fork me on GitHub",
+    "share": false
+  }, {
+    "name": "LinkedIn",
+    "icon": "linkedin",
+    "username": "agektmr",
+    "url": "https://www.linkedin.com/in/agektmr",
+    "desc": "Connect with me on LinkedIn",
+    "share": true
+  }, {
+    "name": "Mastodon",
+    "icon": "mastodon",
+    "username": "agektmr@infosec.exchange",
+    "url": "https://infosec.exchange/@agektmr",
+    "desc": "Connect with me on Mastodon",
+    "share": true
+  }, {
+    "name": "X",
+    "icon": "x-twitter",
+    "username": "agektmr",
+    "url": "https://x.com/agektmr",
+    "desc": "Follow me on X",
+    "share": true
+  }],
+  "pages": [{
+    "title": "About",
+    "url": "/en/about/",
+    "main_nav": true
+  }, {
+    "title": "Posts",
+    "url": "/en/posts/",
+    "main_nav": true
+  }],
+  "yandex_verify": "5bd6ab61a431d844",
+  "google_verify": "",
+  "bing_verify": "",
+  "google_analytics": "G-11HC6DR2RN"
+}

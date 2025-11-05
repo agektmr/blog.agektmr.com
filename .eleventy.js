@@ -4,6 +4,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginExcerpt = require('eleventy-plugin-excerpt');
+const pluginI18n = require('eleventy-plugin-i18n');
 const markdownIt = require("markdown-it");
 const markdownItAttrs = require("markdown-it-attrs");
 const markdownItAnchor = require("markdown-it-anchor");
@@ -17,6 +18,17 @@ module.exports = function(eleventyConfig) {
     excerptSeparator: '<!-- excerpt -->'
   });
 
+  // Add i18n plugin
+  eleventyConfig.addPlugin(pluginI18n, {
+    translations: {
+      ja: require('./src/_includes/i18n/ja.json'),
+      en: require('./src/_includes/i18n/en.json')
+    },
+    fallbackLocales: {
+      en: 'ja'
+    }
+  });
+
   // https://www.11ty.dev/docs/data-deep-merge/
   eleventyConfig.setDataDeepMerge(true);
 
@@ -27,6 +39,15 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {
     if (dateObj) {
       return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_FULL);
+    } else {
+      return '';
+    }
+  });
+
+  // Locale-aware date string filter for i18n
+  eleventyConfig.addFilter('localeDateString', (dateObj, locale = 'ja') => {
+    if (dateObj) {
+      return DateTime.fromJSDate(dateObj).setLocale(locale).toLocaleString(DateTime.DATE_FULL);
     } else {
       return '';
     }
@@ -55,6 +76,19 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("buildPermalink", (inputPath) => {
     // return inputPath.replace(/.*?\/([0-9]{4})-([0-9]{2})-[0-9]{2}-(.*)\.(md|html)$/g, "/$1/$2/$3.html");
     return inputPath.replace(/.*?\/([0-9]{4})\/([0-9]{2})\/(.*)\.(md|html)$/g, "/$1/$2/$3.html");
+  });
+
+  // Language-specific collections
+  eleventyConfig.addCollection("posts_ja", function(collection) {
+    return collection.getFilteredByGlob("src/posts/ja/**/*.md").sort((a, b) => {
+      return b.date - a.date;
+    });
+  });
+
+  eleventyConfig.addCollection("posts_en", function(collection) {
+    return collection.getFilteredByGlob("src/posts/en/**/*.md").sort((a, b) => {
+      return b.date - a.date;
+    });
   });
 
   // // Create an array of all tags

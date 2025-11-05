@@ -1,0 +1,23 @@
+{
+  "lang": "ja",
+  "locale": "ja-JP",
+  "home": "ホーム",
+  "about": "About",
+  "posts": "Posts",
+  "readMore": "続きを読む",
+  "newer": "新しい記事",
+  "older": "古い記事",
+  "page": "ページ",
+  "of": "/",
+  "allPosts": "全ての記事",
+  "publishedOn": "公開日",
+  "updatedOn": "更新日",
+  "share": "共有",
+  "copyright": "All rights reserved.",
+  "poweredBy": "Powered by",
+  "viewOnGithub": "GitHubで見る",
+  "subscribe": "購読",
+  "rssFeed": "RSSフィード",
+  "language": "言語",
+  "switchLanguage": "Switch to English"
+}
