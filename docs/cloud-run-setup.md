@@ -261,6 +261,10 @@ Cloud Run pricing (as of 2024):
 
 ## Personal Memo
 
+### 2025/11/29
+
+#### Docker deployment issue
+
 I was following the instructions at [[./next-steps.md^#### 6. Deploy to Cloud Run]] Option 2: Manual deployment, however, I got the following error:
 
 ```sh
@@ -276,5 +280,9 @@ docker buildx build --platform=linux/amd64 -t gcr.io/tender-surrender/blog-agekt
 ```sh
 gcloud run deploy blog-agektmr-com --image gcr.io/tender-surrender/blog-agektmr-com:latest --region us-central1 --project tender-surrender
 ```
+
+#### GitHub Action issue
+
+I got an issue with GitHub Action deployment. Instead of relying on `GCP_SA_KEY`, Gemini suggested to use "Workload Identity Federation" and use `GCP_WORKLOAD_IDENTITY_PROVIDER` and `GCP_SERVICE_ACCOUNT`.
 
 
