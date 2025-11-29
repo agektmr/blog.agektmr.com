@@ -7,7 +7,7 @@ eleventyNavigation:
 pagination:
   data: collections.posts_ja
   size: 5
-  reverse: true
+  reverse: false
   alias: posts
 permalink: "/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1}}/{% endif %}index.html"
 ---
