@@ -6,8 +6,15 @@
 {% set currentPath = page.url %}
 {% set basePath = currentPath | replace('/en/', '/') | replace('/ja/', '/') %}
 
-{# Build alternate URL #}
-{% set alternateUrl = '/' + alternateLang + basePath %}
+{# Build alternate URL - default to homepage if on a language-specific page without translation #}
+{% set isHomepage = basePath == '/' or basePath == '/index.html' %}
+{% if isHomepage %}
+  {# For homepage, switch to other language's homepage #}
+  {% set alternateUrl = '/' + alternateLang + '/' %}
+{% else %}
+  {# For other pages, try to link to equivalent page (fallback handled by server redirect) #}
+  {% set alternateUrl = '/' + alternateLang + basePath %}
+{% endif %}
 
 <div class="language-switcher">
   <a href="{{ alternateUrl }}" class="lang-switch" title="{% if alternateLang == 'ja' %}日本語に切り替える{% else %}Switch to English{% endif %}">
