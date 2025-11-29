@@ -245,3 +245,30 @@ a[href].direct-link:focus:visited,
 :hover > a[href].direct-link:visited {
   color: #aaa;
 }
+
+/* Language Switcher */
+.language-switcher {
+  display: inline;
+}
+
+.lang-badge {
+  display: inline-block;
+  padding: 0.3em 0.6em;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--darkgray);
+  background-color: transparent;
+  border: 1.5px solid var(--gray);
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.lang-badge:hover {
+  background-color: var(--lightgray);
+  border-color: var(--darkgray);
+}
+
+.lang-badge:active {
+  background-color: var(--gray);
+}
