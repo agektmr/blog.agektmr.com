@@ -257,3 +257,24 @@ Cloud Run pricing (as of 2024):
 - [Cloud Run Documentation](https://cloud.google.com/run/docs)
 - [Container Registry Documentation](https://cloud.google.com/container-registry/docs)
 - [GitHub Actions for GCP](https://github.com/google-github-actions)
+
+
+## Personal Memo
+
+I was following the instructions at [[./next-steps.md^#### 6. Deploy to Cloud Run]] Option 2: Manual deployment, however, I got the following error:
+
+```sh
+ERROR: (gcloud.run.deploy) Revision 'blog-agektmr-com-00003-5d4' is not ready and cannot serve traffic. Cloud Run does not support image 'gcr.io/tender-surrender/blog-agektmr-com:latest': Container manifest type 'application/vnd.oci.image.index.v1+json' must support amd64/linux.
+```
+
+Gemini gave me the following commands that worked successfully:
+
+```sh
+docker buildx build --platform=linux/amd64 -t gcr.io/tender-surrender/blog-agektmr-com:latest --push .
+```
+
+```sh
+gcloud run deploy blog-agektmr-com --image gcr.io/tender-surrender/blog-agektmr-com:latest --region us-central1 --project tender-surrender
+```
+
+
