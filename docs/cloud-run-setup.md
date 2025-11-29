@@ -42,7 +42,7 @@ The blog is deployed as a containerized Express server that:
 
    gcloud projects add-iam-policy-binding YOUR_PROJECT_ID \
      --member="serviceAccount:github-actions@YOUR_PROJECT_ID.iam.gserviceaccount.com" \
-     --role="roles/storage.admin"
+     --role="roles/artifactregistry.writer"
 
    gcloud projects add-iam-policy-binding YOUR_PROJECT_ID \
      --member="serviceAccount:github-actions@YOUR_PROJECT_ID.iam.gserviceaccount.com" \
@@ -280,9 +280,5 @@ docker buildx build --platform=linux/amd64 -t gcr.io/tender-surrender/blog-agekt
 ```sh
 gcloud run deploy blog-agektmr-com --image gcr.io/tender-surrender/blog-agektmr-com:latest --region us-central1 --project tender-surrender
 ```
-
-#### GitHub Action issue
-
-I got an issue with GitHub Action deployment. Instead of relying on `GCP_SA_KEY`, Gemini suggested to use "Workload Identity Federation" and use `GCP_WORKLOAD_IDENTITY_PROVIDER` and `GCP_SERVICE_ACCOUNT`.
 
 
