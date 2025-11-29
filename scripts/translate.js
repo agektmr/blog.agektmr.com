@@ -240,19 +240,23 @@ async function translatePost(sourcePath, targetPath) {
 
   // Translate title
   console.log('  📝 Translating title...');
-  const translatedTitle = await translateText(
-    sourceMeta.title.replace(/^['"]|['"]$/g, ''),
-    SOURCE_LANG,
-    TARGET_LANG
-  );
+  const translatedTitle = sourceMeta.title
+    ? await translateText(
+        sourceMeta.title.replace(/^['"]|['"]$/g, ''),
+        SOURCE_LANG,
+        TARGET_LANG
+      )
+    : '';
 
   // Translate description
   console.log('  📝 Translating description...');
-  const translatedDescription = await translateText(
-    sourceMeta.description.replace(/^['"]|['"]$/g, ''),
-    SOURCE_LANG,
-    TARGET_LANG
-  );
+  const translatedDescription = sourceMeta.description
+    ? await translateText(
+        sourceMeta.description.replace(/^['"]|['"]$/g, ''),
+        SOURCE_LANG,
+        TARGET_LANG
+      )
+    : '';
 
   // Translate content
   console.log('  📝 Translating content...');
