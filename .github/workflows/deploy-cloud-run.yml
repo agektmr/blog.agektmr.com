@@ -6,10 +6,10 @@ on:
       - i18n
 
 env:
-  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  PROJECT_ID: tender-surrender
   SERVICE_NAME: blog-agektmr-com
   REGION: us-central1
-  IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT_ID }}/blog-agektmr-com
+  IMAGE_NAME: gcr.io/tender-surrender/blog-agektmr-com
 
 jobs:
   build-and-deploy:
@@ -32,7 +32,8 @@ jobs:
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v2
         with:
-          credentials_json: ${{ secrets.GCP_SA_KEY }}
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }} # e.g. projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }} # e.g. my-service-account@my-project.iam.gserviceaccount.com
 
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
