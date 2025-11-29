@@ -130,6 +130,20 @@ function restoreContent(text, preserved) {
 }
 
 /**
+ * Escape YAML string value if needed
+ */
+function escapeYamlString(str) {
+  if (!str) return str;
+
+  // If string contains special characters, wrap in quotes and escape quotes
+  if (str.match(/[:#\{\}\[\]|>*&!%@`'"]/)) {
+    return `"${str.replace(/"/g, '\\"')}"`;
+  }
+
+  return str;
+}
+
+/**
  * Translate text using Google Cloud Translation API
  */
 async function translateText(text, sourceLang, targetLang) {
@@ -271,8 +285,8 @@ async function translatePost(sourcePath, targetPath) {
   const newFrontmatter = {
     layout: sourceMeta.layout,
     lang: 'en',
-    title: `'${translatedTitle}'`,
-    description: `'${translatedDescription}'`,
+    title: escapeYamlString(translatedTitle),
+    description: escapeYamlString(translatedDescription),
     date: sourceMeta.date,
     ...(sourceMeta.updated && { updated: sourceMeta.updated }),
     ...(sourceMeta.image && { image: sourceMeta.image }),
