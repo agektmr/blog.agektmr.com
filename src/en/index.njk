@@ -34,7 +34,7 @@ permalink: "/en/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber 
       <a href="{{ post.url }}" class="readmore">Read more...</a>
     </section>
     <section class="post-meta">
-      <div class="post-date">Posted: {{ post.date | htmlDateString("%B %-d, %Y") }}</div>
+      <div class="post-date">Posted: {{ post.date | localeDateString('en') }}</div>
     </section>
   </li>
   {% if loop.last == false %}<hr>{% endif %}

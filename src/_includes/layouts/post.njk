@@ -16,7 +16,7 @@ templateClass: tmpl-post
 <div class="wrapper">
 
 <section class="post-meta">
-  <div class="post-date">Posted: {{ page.date | htmlDateString("%B %-d, %Y") }}{% if updated %} / Last updated: {{ updated | htmlDateString("%B %-d, %Y") }}{% endif %}</div>
+  <div class="post-date">Posted: {{ page.date | localeDateString(lang or 'en') }}{% if updated %} / Last updated: {{ updated | localeDateString(lang or 'en') }}{% endif %}</div>
 </section>
 
 <article class="post-content">
