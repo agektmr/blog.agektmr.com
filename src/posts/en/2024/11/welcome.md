@@ -1,4 +1,6 @@
 ---
+layout: post
+lang: en
 title: "Welcome to the English Version"
 description: "This blog is now available in English. More content coming soon!"
 date: 2024-11-29
