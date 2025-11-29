@@ -1,21 +1,13 @@
 {# Language Switcher Component #}
-{% set currentLang = lang or 'ja' %}
-{% set alternateLang = 'en' if currentLang == 'ja' else 'ja' %}
-{% set alternateUrl = '' %}
+{% set currentLang = lang or 'en' %}
+{% set alternateLang = 'ja' if currentLang == 'en' else 'en' %}
 
-{# Determine alternate URL based on current page #}
-{% if page.url %}
-  {% if currentLang == 'ja' %}
-    {# Japanese to English: add /en prefix #}
-    {% set alternateUrl = '/en' + page.url %}
-  {% else %}
-    {# English to Japanese: remove /en prefix #}
-    {% set alternateUrl = page.url | replace('/en', '') %}
-  {% endif %}
-{% else %}
-  {# Home page #}
-  {% set alternateUrl = '/en/' if currentLang == 'ja' else '/' %}
-{% endif %}
+{# Get current path without language prefix #}
+{% set currentPath = page.url %}
+{% set basePath = currentPath | replace('/en/', '/') | replace('/ja/', '/') %}
+
+{# Build alternate URL #}
+{% set alternateUrl = '/' + alternateLang + basePath %}
 
 <div class="language-switcher">
   <a href="{{ alternateUrl }}" class="lang-switch" title="{% if alternateLang == 'ja' %}日本語に切り替える{% else %}Switch to English{% endif %}">

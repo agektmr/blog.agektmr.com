@@ -1,4 +1,5 @@
 {
   "tags": "posts",
-  "lang": "ja"
+  "lang": "ja",
+  "permalink": "/ja/{{ page.inputPath | buildPermalink }}"
 }

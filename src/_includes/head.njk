@@ -50,18 +50,19 @@
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.feed.path | url }}">
 
   <!-- Hreflang tags for i18n -->
-  {% set currentLang = lang or 'ja' %}
+  {% set currentLang = lang or 'en' %}
   {% if page.url %}
+    {% set basePath = page.url | replace('/en/', '/') | replace('/ja/', '/') | replace('index.html','') %}
     {% if currentLang == 'ja' %}
       {# Japanese page: link to self and English version #}
       <link rel="alternate" hreflang="ja" href="{{ site.url }}{{ page.url | replace('index.html','') }}" />
-      <link rel="alternate" hreflang="en" href="{{ site.url }}/en{{ page.url | replace('index.html','') }}" />
-      <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url | replace('index.html','') }}" />
+      <link rel="alternate" hreflang="en" href="{{ site.url }}/en{{ basePath }}" />
+      <link rel="alternate" hreflang="x-default" href="{{ site.url }}/en{{ basePath }}" />
     {% else %}
       {# English page: link to self and Japanese version #}
       <link rel="alternate" hreflang="en" href="{{ site.url }}{{ page.url | replace('index.html','') }}" />
-      <link rel="alternate" hreflang="ja" href="{{ site.url }}{{ page.url | replace('/en','') | replace('index.html','') }}" />
-      <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url | replace('/en','') | replace('index.html','') }}" />
+      <link rel="alternate" hreflang="ja" href="{{ site.url }}/ja{{ basePath }}" />
+      <link rel="alternate" hreflang="x-default" href="{{ site.url }}/en{{ basePath }}" />
     {% endif %}
   {% endif %}
 

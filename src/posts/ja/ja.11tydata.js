@@ -8,7 +8,7 @@ module.exports = {
       const match = data.page.inputPath.match(/\/(\d{4})\/(\d{2})\/([^/]+)\.md$/);
       if (match) {
         const [, year, month, slug] = match;
-        return `/${year}/${month}/${slug}.html`;
+        return `/ja/${year}/${month}/${slug}.html`;
       }
       return false;
     }

@@ -21,7 +21,7 @@ app.use(express.json());
  * @returns {string} - 'ja' or 'en'
  */
 function parseAcceptLanguage(acceptLanguageHeader) {
-  if (!acceptLanguageHeader) return 'ja';
+  if (!acceptLanguageHeader) return 'en';
 
   const languages = acceptLanguageHeader
     .split(',')
@@ -33,18 +33,18 @@ function parseAcceptLanguage(acceptLanguageHeader) {
     })
     .sort((a, b) => b.quality - a.quality);
 
-  // Check if English is preferred over Japanese
+  // Check if Japanese is preferred over English
   for (const lang of languages) {
-    if (lang.code.startsWith('en')) return 'en';
     if (lang.code.startsWith('ja')) return 'ja';
+    if (lang.code.startsWith('en')) return 'en';
   }
 
-  return 'ja'; // Default to Japanese
+  return 'en'; // Default to English
 }
 
 /**
  * Detect user's preferred language
- * Priority: 1. Query param, 2. Cookie, 3. Accept-Language header, 4. Default (ja)
+ * Priority: 1. Query param, 2. Cookie, 3. Accept-Language header, 4. Default (en)
  * @param {Request} req - Express request object
  * @returns {string} - 'ja' or 'en'
  */
@@ -68,56 +68,82 @@ function detectLanguage(req) {
     return headerLang;
   }
 
-  // 4. Default to Japanese
-  return 'ja';
+  // 4. Default to English
+  return 'en';
 }
 
 /**
- * Language detection middleware
- * Redirects users to appropriate language version on first visit
+ * Language detection and redirect middleware
  */
 app.use((req, res, next) => {
+  const path = req.path;
+
   // Skip for static assets
-  if (req.path.match(/\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$/)) {
+  if (path.match(/\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$/)) {
     return next();
   }
 
-  // Skip if already on a language-specific path or if cookie exists
-  const onEnglishPath = req.path.startsWith('/en/') || req.path === '/en';
-  const hasLanguageCookie = req.cookies.language_preference;
+  const onEnglishPath = path.startsWith('/en/') || path === '/en';
+  const onJapanesePath = path.startsWith('/ja/') || path === '/ja';
 
-  // If no cookie, detect language and set cookie
-  if (!hasLanguageCookie && !req.query.lang) {
+  // 1. Redirect root homepage to language-specific version
+  if (path === '/' || path === '/index.html') {
     const preferredLang = detectLanguage(req);
-
-    // Set cookie for future visits (1 year)
     res.cookie('language_preference', preferredLang, {
       maxAge: 365 * 24 * 60 * 60 * 1000,
       httpOnly: true,
       sameSite: 'lax'
     });
+    return res.redirect(302, `/${preferredLang}/`);
+  }
 
-    // Redirect to English version if preferred
-    if (preferredLang === 'en' && !onEnglishPath && req.path === '/') {
-      return res.redirect(302, '/en/');
+  // 2. Redirect root feed to language-specific feed
+  if (path === '/feed.xml') {
+    const preferredLang = detectLanguage(req);
+    return res.redirect(302, `/${preferredLang}/feed.xml`);
+  }
+
+  // 3. Redirect old Japanese posts (root level) to /ja/ prefix
+  // Pattern: /YYYY/MM/slug.html
+  const oldJapanesePostPattern = /^\/(\d{4})\/(\d{2})\/(.+\.html)$/;
+  if (oldJapanesePostPattern.test(path)) {
+    return res.redirect(301, `/ja${path}`);
+  }
+
+  // 4. Redirect old paginated index pages to /ja/
+  // Pattern: /page/N/index.html
+  const oldPaginationPattern = /^\/page\/(\d+)\/index\.html$/;
+  if (oldPaginationPattern.test(path)) {
+    return res.redirect(301, `/ja${path}`);
+  }
+
+  // 5. Handle explicit language switching via query param
+  if (req.query.lang) {
+    const newLang = req.query.lang;
+    if (newLang === 'ja' || newLang === 'en') {
+      res.cookie('language_preference', newLang, {
+        maxAge: 365 * 24 * 60 * 60 * 1000,
+        httpOnly: true,
+        sameSite: 'lax'
+      });
+      return res.redirect(302, `/${newLang}/`);
     }
   }
 
-  // Handle explicit language switching via query param
-  if (req.query.lang) {
-    const newLang = req.query.lang;
-    res.cookie('language_preference', newLang, {
-      maxAge: 365 * 24 * 60 * 60 * 1000,
-      httpOnly: true,
-      sameSite: 'lax'
-    });
-
-    // Redirect to appropriate version without query param
-    const cleanPath = req.path;
-    if (newLang === 'en' && !onEnglishPath) {
-      return res.redirect(302, '/en' + cleanPath);
-    } else if (newLang === 'ja' && onEnglishPath) {
-      return res.redirect(302, cleanPath.replace(/^\/en/, '') || '/');
+  // 6. Set language cookie if on a language path but no cookie exists
+  if (!req.cookies.language_preference) {
+    if (onEnglishPath) {
+      res.cookie('language_preference', 'en', {
+        maxAge: 365 * 24 * 60 * 60 * 1000,
+        httpOnly: true,
+        sameSite: 'lax'
+      });
+    } else if (onJapanesePath) {
+      res.cookie('language_preference', 'ja', {
+        maxAge: 365 * 24 * 60 * 60 * 1000,
+        httpOnly: true,
+        sameSite: 'lax'
+      });
     }
   }
 

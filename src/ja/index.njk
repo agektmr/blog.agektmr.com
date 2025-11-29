@@ -1,15 +1,15 @@
 ---
 layout: layouts/base
-lang: en
+lang: ja
 eleventyNavigation:
   key: Home
   order: 1
 pagination:
-  data: collections.posts_en
+  data: collections.posts_ja
   size: 5
   reverse: false
   alias: posts
-permalink: "/en/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1}}/{% endif %}index.html"
+permalink: "/ja/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1}}/{% endif %}index.html"
 ---
 <div class="home">
 
@@ -45,7 +45,7 @@ permalink: "/en/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber 
 	<p>
     {% if pagination.page.previous %}
 		{% if pagination.pageNumber == 2 %}
-		<a class="newer-posts" href="/en/index.html">
+		<a class="newer-posts" href="{{ pagination.href.first }}">
         <span class="fa-stack fa-lg">
           <i class="fa fa-square fa-stack-2x"></i>
           <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
