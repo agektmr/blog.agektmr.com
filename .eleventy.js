@@ -25,7 +25,7 @@ module.exports = function(eleventyConfig) {
       en: require('./src/_includes/i18n/en.json')
     },
     fallbackLocales: {
-      en: 'ja'
+      ja: 'en'
     }
   });
 
@@ -45,7 +45,7 @@ module.exports = function(eleventyConfig) {
   });
 
   // Locale-aware date string filter for i18n
-  eleventyConfig.addFilter('localeDateString', (dateObj, locale = 'ja') => {
+  eleventyConfig.addFilter('localeDateString', (dateObj, locale = 'en') => {
     if (dateObj) {
       return DateTime.fromJSDate(dateObj).setLocale(locale).toLocaleString(DateTime.DATE_FULL);
     } else {

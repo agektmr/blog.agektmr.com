@@ -12,9 +12,9 @@
   "feed": {
     "subtitle": "ウェブの未来を夢見るブログ",
     "filename": "feed.xml",
-    "path": "/feed.xml",
-    "url": "https://blog.agektmr.com/feed.xml",
-    "id": "https://blog.agektmr.com/"
+    "path": "/ja/feed.xml",
+    "url": "https://blog.agektmr.com/ja/feed.xml",
+    "id": "https://blog.agektmr.com/ja/"
   },
   "logo": "/images/favicon.png",
   "owner": {
@@ -61,11 +61,11 @@
   }],
   "pages": [{
     "title": "About",
-    "url": "/about/",
+    "url": "/ja/about/",
     "main_nav": true
   }, {
     "title": "Posts",
-    "url": "/posts/",
+    "url": "/ja/posts/",
     "main_nav": true
   }],
   "yandex_verify": "5bd6ab61a431d844",
