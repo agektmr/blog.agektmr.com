@@ -6,16 +6,22 @@
 {% set currentPath = page.url %}
 {% set basePath = currentPath | replace('/en/', '/') | replace('/ja/', '/') %}
 
-{# Build alternate URL - default to homepage if on a language-specific page without translation #}
+{# Build alternate URL #}
+{% set is404Page = basePath == '/404.html' or basePath == '/404/' %}
 {% set isHomepage = basePath == '/' or basePath == '/index.html' %}
-{% if isHomepage %}
+
+{% if is404Page %}
+  {# For 404 page, preserve the current browser URL path but switch language #}
+  {# This requires JavaScript to access window.location.pathname #}
+  {% set alternateUrl = '#' %}
+{% elif isHomepage %}
   {# For homepage, switch to other language's homepage #}
   {% set alternateUrl = '/' + alternateLang + '/' %}
 {% else %}
-  {# For other pages, try to link to equivalent page (fallback handled by server redirect) #}
+  {# For other pages, try to link to equivalent page #}
   {% set alternateUrl = '/' + alternateLang + basePath %}
 {% endif %}
 
 <div class="language-switcher">
-  <a href="{{ alternateUrl }}" class="lang-badge" title="{% if alternateLang == 'ja' %}日本語に切り替える{% else %}Switch to English{% endif %}">{{ alternateLang }}</a>
+  <a href="{{ alternateUrl }}" class="lang-badge" {% if is404Page %}onclick="event.preventDefault(); const path = window.location.pathname.replace(/^\/(en|ja)\//, '/'); window.location.href = '/{{ alternateLang }}' + path;"{% endif %} title="{% if alternateLang == 'ja' %}日本語に切り替える{% else %}Switch to English{% endif %}">{{ alternateLang }}</a>
 </div>
