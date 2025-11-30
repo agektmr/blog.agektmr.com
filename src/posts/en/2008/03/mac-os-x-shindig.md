@@ -1,20 +1,19 @@
 ---
 layout: post
 lang: en
-title: 'Installing Shindig on Mac OS X'
-description: ''
+title: Installing Shindig on Mac OS X
+description:
 date: 2008-03-12
 tags:
-- Java
+  - Java
   - Mac OS X
   - OpenID
   - Shindig
   - OpenSocial
 translationOf: /2008/03/mac-os-x-shindig.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
 References: [Shindig - an Apache incubator project for OpenSocial and gadgets](http://incubator.apache.org/shindig/)
 
 ## Maven must be installed first

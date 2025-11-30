@@ -1,20 +1,19 @@
 ---
 layout: post
 lang: en
-title: 'What is Caja?'
-description: ''
+title: What is Caja?
+description:
 date: 2008-04-23
 tags:
-- Caja
+  - Caja
   - JavaScript
   - OpenSocial
   - Shindig
 translationOf: /2008/04/caja.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-While researching OpenSocial, I came across the term Caja. I only knew that it was something that enabled secure JavaScript, so I decided to look into the details.
+While researching OpenSocial, I came across the word Caja. I knew it was a way to implement secure JavaScript, but I decided to look into it in more detail.
 
 ## Cross-site scripting and blog widgets
 
@@ -34,7 +33,7 @@ The domain that displays the blog is one that does not store critical cookies su
 
 ### Only allow JavaScript that has been verified to be safe
 
-This approach involves the service provider creating a list of safe blog widgets, and blog administrators choosing from that list. This narrows the selection of blog widgets, which is not popular with users, but it is better than not being able to post any at all. Goo Blog and Hatena Diary have adopted this approach.
+This approach involves the service provider creating a list of safe blog widgets, and blog administrators choosing from that list. This narrows the choice of blog widgets, which is not popular with users, but it is better than not being able to post any at all. Goo Blog and Hatena Diary have adopted this approach.
 
 ### Display in iframe
 
@@ -60,4 +59,4 @@ Caja appears to be designed for use on OpenSocial containers. The explanation in
 
 Actually, this is an area I haven't fully investigated yet, but it appears to be composed of server-side rewrites in Java and a JavaScript library. I think I need to look into this a bit more.
 
-If anyone has any other information, please let us know.
+If anyone has any other information, please let me know.

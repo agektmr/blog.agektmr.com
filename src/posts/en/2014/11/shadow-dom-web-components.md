@@ -1,19 +1,19 @@
 ---
 layout: post
 lang: en
-title: 'Shadow DOM - The technology that makes up Web Components'
-description: 'We will explain Shadow DOM, one of the elements that make up Web Components.'
+title: Shadow DOM - The technology that makes up Web Components
+description: We will explain Shadow DOM, one of the elements that make up Web Components.
 date: 2014-11-01
 image:
-feature: /shadow-dom-web-components/architecture.png
+  feature: /shadow-dom-web-components/architecture.png
 tags:
-- Shadow DOM
-- Web Components
+  - Shadow DOM
+  - Web Components
 translationOf: /2014/11/shadow-dom-web-components.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-*This article is a cross-post from [webcomponents.org article](http://webcomponents.org/articles/introduction-to-shadow-dom/). *
+This article is a cross-post of the [webcomponents.org article](http://webcomponents.org/articles/introduction-to-shadow-dom/).
 
 Shadow DOM allows you to add a DOM tree to a DOM element, containing styles and markup that are local to that node, separate from the rest of the webpage. This article and video explain Shadow DOM.
 
@@ -50,7 +50,7 @@ An element with a shadow root is called a shadow host. A shadow root can be trea
 
 In Shadow DOM, all markup and CSS is scoped to the element. In other words, CSS defined within a shadow root cannot affect the parent document, and CSS from the parent document cannot accidentally affect the shadow root.
 
-How to create Shadow DOM
+## How to create Shadow DOM
 
 To create a Shadow DOM, call `.createShadowRoot()` on any DOM element to create a Shadow Root. You can then build the Shadow DOM by adding elements to this Shadow Root object.
 

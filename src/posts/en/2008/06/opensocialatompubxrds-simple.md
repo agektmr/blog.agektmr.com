@@ -1,20 +1,19 @@
 ---
 layout: post
 lang: en
-title: OpenSocial's AtomPub is discovered with XRDS-Simple
-description: ''
+title: "OpenSocial's AtomPub is discovered with XRDS-Simple"
+description:
 date: 2008-06-12
 tags:
-- AtomPub
+  - AtomPub
   - OpenSocial
   - Service Document
   - XRDS-Simple
 translationOf: /2008/06/opensocialatompubxrds-simple.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-The [OpenSocial v0.8 RESTful API specification](http://code.google.com/apis/opensocial/docs/0.8/restfulspec.html) specifies the use of [XRDS-Simple](http://xrds-simple.net/core/1.0/) for autodiscovery.
+The [OpenSocial v0.8 RESTful API Specification](http://code.google.com/apis/opensocial/docs/0.8/restfulspec.html) specifies the use of [XRDS-Simple](http://xrds-simple.net/core/1.0/) for autodiscovery.
 
 On the other hand, the RESTful API used in OpenSocial v0.8 is in the [AtomPub](http://tools.ietf.org/html/rfc5023) format, and AtomPub specifies the use of a Service Document.
 
@@ -33,4 +32,4 @@ Regarding this point, [Takemaru], who implemented the AtomPub Perl library, also
 
 However, it's certainly unsightly in terms of not conforming to the specification, and I'm wondering if this issue can be resolved somehow. I asked the AtomPub spec creators on the Google Groups I mentioned earlier whether they planned to propose changes to the specification, but I haven't received a response since.
 
-At the moment, someone named Rod Yates has suggested that we could apply [this specification](http://tools.ietf.org/html/draft-snell-atompub-feature-12), so we plan to consult with AtomPub experts and make some kind of effort to make this happen.
+At present, Rod Yates has suggested that we could apply [this specification](http://tools.ietf.org/html/draft-snell-atompub-feature-12), so we will consult with AtomPub experts and make some kind of effort to address this.

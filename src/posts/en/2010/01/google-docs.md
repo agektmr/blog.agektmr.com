@@ -1,18 +1,17 @@
 ---
 layout: post
 lang: en
-title: 'The significance of Google Docs as a storage service'
-description: ''
+title: The significance of Google Docs as a storage service
+description:
 date: 2010-01-14
 tags:
-- GDrive
+  - GDrive
   - Google Docs
   - SocialWeb
 translationOf: /2010/01/google-docs.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
 <div class="wp_plus_one_button" style="margin: 0 8px 8px 0; float:left; ">
   <g:plusone href="http://devlog.agektmr.com/archives/692" callback="wp_plus_one_handler"></g:plusone>
 </div>
@@ -52,4 +51,4 @@ I think this is truly the world of web OS.
 
 We often hear people say that Google doesn't have a social networking site, but that's only true as an application platform. Taking the example of Google Docs storage, it seems that Google is steadily building a web OS platform that surpasses it.
 
-With Chrome OS being added to these services in the future, Google's web OS will become even more powerful. One day, Facebook and Twitter may end up being in the palm of Google's hand.
+With Chrome OS joining these services, Google's web OS will become even more powerful, and one day Facebook and Twitter may end up being in the palm of Google's hand.

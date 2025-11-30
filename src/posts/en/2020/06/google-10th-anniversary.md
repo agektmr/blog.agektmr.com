@@ -1,20 +1,19 @@
 ---
 layout: post
 lang: en
-title: 'It's been 10 years since I joined Google.'
-description: ''
+title: "It's been 10 years since I joined Google."
+description:
 date: 2020-06-01
 image:
-feature: /2020/10th-anniversary.jpg
+  feature: /2020/10th-anniversary.jpg
 tags:
-- Google
-- Developer Advocate
+  - Google
+  - Developer Advocate
 translationOf: /2020/06/google-10th-anniversary.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-Today marks exactly 10 years since I joined Google as a Developer Advocate, a technical education specialist. I rarely blog about non-technical topics, but this is a good milestone, so I wanted to take this opportunity to record it.
+Today marks exactly 10 years since I joined Google as a Developer Advocate, a position focused on educating people about technology. I rarely blog about non-technical topics, but this is a good milestone, so I wanted to take this opportunity to record it.
 
 <!-- excerpt -->
 
@@ -77,4 +76,4 @@ With the spread of smartphones, browsers have spread to all levels of society, a
 
 The web belongs to no one. Even if Google, Apple, and Mozilla disappear, it will continue to enrich people's lives as a form of human wisdom for many years to come. However, the web is meaningless if only standard specifications exist. It only begins to fulfill its role as social infrastructure when someone creates content and services on it. Who creates it? Anyone can. The web is a platform where content can be freely created and provided without anyone's permission.
 
-I see my job as helping web developers make good use of standard technologies to create content and services that make the world a better place. I would like to continue working with the goal of creating such an ecosystem.
+I see my job as helping web developers make good use of standard technologies to create content and services that make the world a better place, and I would like to continue working with the aim of creating such an ecosystem.

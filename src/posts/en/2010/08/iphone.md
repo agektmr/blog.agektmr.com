@@ -1,14 +1,17 @@
 ---
 layout: post
 lang: en
-title: 'Mobile web apps on iPhone'
-description: ''
+title: Mobile web apps on iPhone
+description:
 date: 2010-08-11
+categories:
+  - HTML5
+  - WebApp
 tags:
-- iPhone
+  - iPhone
   - OpenAppMkt
 translationOf: /2010/08/iphone.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 It's been a while. I'm Eiji, and I spend every day working on web apps. Today, I'd like to share with you some interesting ideas I've come across for mobile web apps.

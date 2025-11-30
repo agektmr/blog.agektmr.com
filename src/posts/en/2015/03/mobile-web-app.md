@@ -1,20 +1,19 @@
 ---
 layout: post
 lang: en
-title: 'Web push notifications: what's so great about them?'
-description: 'We talk about the excitement surrounding the push notification feature available in Chrome Beta 42.'
+title: "Web push notifications: what's so great about them?"
+description: We talk about the excitement surrounding the push notification feature available in Chrome Beta 42.
 date: 2015-03-13
 tags:
-- Service Worker
-- Push Notification
+  - Service Worker
+  - Push Notification
 translationOf: /2015/03/mobile-web-app.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
+On March 13th, the Chrome Beta blog post was released. For me, the highlight was that push notifications became available on Chrome for Android.
 
-On March 13th, the [Chrome Beta blog post](http://googledevjp.blogspot.jp/2015/03/chrome-42-es6-class.html) was released. For me, the highlight was that push notifications became available on Chrome for Android.
-
-If you're thinking, "Sure, push notifications are convenient," then you're in for a surprise. You should be overwhelmed. You should be jumping for joy. 
+If you're thinking, "Sure, push notifications might be convenient," then you're in for a surprise. You should be overwhelmed. You should be jumping for joy.
 Here's why.
 
 <!-- excerpt -->
@@ -39,14 +38,14 @@ However, this only works on the assumption that users regularly visit that "spac
 
 Performance isn't the only reason service providers choose native apps over the web.
 
-<blockquote class="twitter-tweet" lang="ja"><p>A year ago, I asked what features made you turn to native. #1 response: push notifications. Today, they're available: <a href="http://t.co/wDOKa5qVbf">http://t.co/wDOKa5qVbf__HTML_TAG_4____HTML_TAG_5__&mdash; Paul Irish (@paul_irish) <a href="https://twitter.com/paul_irish/status/576089864514326528">2015, March 12</a></blockquote>
+<blockquote class="twitter-tweet" lang="ja"><p>A year ago, I asked what features made you turn to native. #1 response: push notifications. Today, they&#39;re available: <a href="http://t.co/wDOKa5qVbf">http://t.co/wDOKa5qVbf__HTML_TAG_4____HTML_TAG_5__&mdash; Paul Irish (@paul_irish) <a href="https://twitter.com/paul_irish/status/576089864514326528">2015, March 12</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 > In a survey conducted a year ago, the number one reason (web developers) moved to native was notifications.
 
 These are the results of a survey conducted by Paul Irish, but I also occasionally hear from people around me that they chose a native platform over the web because they wanted to notify users.
 
-E-commerce apps send notifications about new products and campaigns, games about the addition of new stages, social media apps about replies from friends, and email apps about new emails, among other things. With smartphones, since they're usually always on and always with you, the chances of users seeing them are much higher than with other methods. 
+E-commerce apps send notifications about new products and campaigns, games about the addition of new stages, social media apps about replies from friends, and email apps about new emails, among other things. With smartphones, since they're usually always on and always with you, the chances of users seeing them are much higher than with other methods.
 However, this is only if users install the app. It's usually difficult to get people to install an app in the first place.
 
 ## The impact of web push notifications
@@ -103,7 +102,7 @@ Something like that.
 
 As you can see in the FAQs for this article, Chrome's implementation still has many limitations, such as the inability to include information in GCM data. Naturally, this feature will be more effective once it is implemented in other browsers as well.
 
-For these reasons, web push notifications may still be a technology of the future. But now is the time to start testing them. 
+For these reasons, web push notifications may still be a technology of the future. But now is the time to start testing them.
 As attractive technology tends to be used in clever ways, I think it's important to anticipate the possibility that this feature will be overused and to start developing a strategy now for how to gain user trust.
 
 Just like email marketing and social media marketing, terms like push notification marketing may soon become popular.
@@ -113,4 +112,4 @@ No, seriously.
 ## postscript
 
 - [Safari Push Notifications](https://developer.apple.com/notifications/safari-push-notifications/) I didn't know about that. Sorry, sorry.
-- I saw a comment about spam, but I don't think it's much of a problem since subscription management is up to the user.
+- I saw a comment about spam, but I don't think it's much of a problem because subscription management is up to the user.

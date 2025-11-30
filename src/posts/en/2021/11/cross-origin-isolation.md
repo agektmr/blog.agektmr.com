@@ -1,22 +1,21 @@
 ---
 layout: post
 lang: en
-title: 'SharedArrayBuffer and the transitional story of cross-origin isolation'
-description: 'This article explains cross-origin isolation, which uses standard technologies to enable `SharedArrayBuffer` and high-resolution timers in browsers on the Spectre-prevented web, as well as the challenges and current solutions.'
+title: SharedArrayBuffer and the transitional story of cross-origin isolation
+description: "This article explains cross-origin isolation, which uses standard technologies to enable `SharedArrayBuffer` and high-resolution timers in browsers on the Spectre-prevented web, as well as the challenges and current solutions."
 date: 2021-11-04
 updated: 2021-12-26
 image:
-feature: /2021/require-corp.png
+  feature: /2021/require-corp.png
 tags:
-- Security
-- Cross-origin isolation
-- SharedArrayBuffer
-- Spectre
+  - Security
+  - Cross-origin isolation
+  - SharedArrayBuffer
+  - Spectre
 translationOf: /2021/11/cross-origin-isolation.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
 {% Aside %}
 
 **2021/12/26:** [Safari also now supports `SharedArrayBuffer` using COOP/COEP from version 15.2](https://developer.apple.com/documentation/safari-release-notes/safari-15_2-release-notes), so we have changed the notation in the relevant section.
@@ -50,9 +49,9 @@ This article explains how to enable cross-origin isolation, the challenges it po
 
 Enabling cross-origin isolation allows you to:
 
-* [`SharedArrayBuffer` can now be used (Wasm Threads can now be used)](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/Planned_changes)
-* [`performance.measureUserAgentSpecificMemory()` can now be used](https://web.dev/monitor-total-page-memory-usage/)
-* [`performance.now()` and `performance.timeOrigin` have improved accuracy](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/)
+* [`SharedArrayBuffer` now works (Wasm Threads can be used)](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/Planned_changes)
+* [`performance.measureUserAgentSpecificMemory()` now works](https://web.dev/monitor-total-page-memory-usage/)
+* [`performance.now()` and `performance.timeOrigin` now work more accurately](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/)
 
 For a while, Chrome introduced Site Isolation to enable the use of `SharedArrayBuffer` and high-resolution timers, but [starting with Chrome 92, this requirement was removed (changing the conditions to be the same as other browsers) and the condition was changed to require cross-origin isolated mode](https://developer.chrome.com/blog/enabling-shared-array-buffer/) (we're sorry for the inconvenience this caused](https://developers.google.com/search/blog/2021/03/sharedarraybuffer-notes?hl=ja)).
 
@@ -172,9 +171,9 @@ If you follow the above steps completely, you will have `SharedArrayBuffer` etc 
 
 However, there are still challenges remaining.
 
-* **Issue 1. `COOP: same-origin` breaks integrations that use popup windows, such as OAuth and payments. ** 
-Due to the nature of `COOP: same-origin`, integrations common with OAuth and payments, which open cross-origin windows for communication, become impossible. 
-* **Issue 2. Even if you try to specify CORS or `CORP: cross-origin`, you can't do so because they are resources from other companies. ** 
+* **Issue 1. `COOP: same-origin` breaks integrations that use popup windows, such as OAuth and payments. **
+Due to the nature of `COOP: same-origin`, integrations that often involve opening cross-origin windows for communication, such as OAuth and payments, become impossible.
+* **Issue 2. Even if you try to specify CORS or `CORP: cross-origin`, you can't do so because they are resources from other companies. **
 This is also a typical problem with cross-origin isolation.
 
 For example, while many resources delivered by Google already support `CORP: cross-origin`, some services do not support cross-origin isolation due to the challenges mentioned above. For example, Google Ads delivers ads using iframes, but in some cases the content of the iframes is delivered by the advertiser. Since it is not realistic to require all of them to implement CORS or CORP, they have [indicated their intention not to support it](https://developers.google.com/publisher-tag/guides/cross-origin-embedder-policy).
@@ -255,5 +254,5 @@ If you have any questions, please feel free to join us (sessions will mainly be 
 * [Why you need "cross-origin isolated" for powerful features](https://web.dev/why-coop-coep/)
 * [Guide to enabling cross-origin isolation](https://web.dev/i18n/ja/cross-origin-isolation-guide/)
 * [SharedArrayBuffer updates in Android Chrome 88 and Desktop Chrome 92](https://developer.chrome.com/blog/enabling-shared-array-buffer/)
-* [Explanation of messages regarding SharedArrayBuffer objects](https://developers.google.com/search/blog/2021/03/sharedarraybuffer-notes?hl=ja)
-* [ZOZOTOWN's research and solution for SharedArrayBuffer warnings in Chrome 92 and later](https://techblog.zozo.com/entry/zozotown-shared-array-buffer)
+* [Explanation of the message regarding SharedArrayBuffer objects](https://developers.google.com/search/blog/2021/03/sharedarraybuffer-notes?hl=ja)
+* [ZOZOTOWN's research and solution for the SharedArrayBuffer warning in Chrome 92 and later](https://techblog.zozo.com/entry/zozotown-shared-array-buffer)

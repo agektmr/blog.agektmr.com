@@ -1,25 +1,24 @@
 ---
 layout: post
 lang: en
-title: 'What is a passkey and its challenges?'
-description: 'We will explain the basic features of passkeys and the issues that may arise as of 2022.'
+title: What is a passkey and its challenges?
+description: We will explain the basic features of passkeys and the issues that may arise as of 2022.
 date: 2022-12-13
 updated: 2024-12-26
 image:
-feature: /2022/keys.jpg
+  feature: /2022/keys.jpg
 tags:
-- Passkey
-- WebAuthn
-- FIDO
-- FIDO2
-- 認証
-- Authentication
+  - Passkey
+  - WebAuthn
+  - FIDO
+  - FIDO2
+  - 認証
+  - Authentication
 translationOf: /2022/12/passkey.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-Passkeys are a new authentication method that's resistant to phishing and easy to use even for non-tech-savvy users, and are said to eventually replace passwords. In this article, we'll summarize the basics of passkeys and what they mean for the future of the web.
+Passkeys are a new authentication method that is resistant to phishing and easy to use even for non-tech-savvy users, and are said to eventually replace passwords. In this article, we'll summarize the basics of passkeys and what they mean for the future of the web.
 
 <!-- excerpt -->
 

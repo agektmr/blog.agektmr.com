@@ -5,11 +5,11 @@ title: 'Web Payments はなぜ避けて通れないものになるのか - ウ�
 description: 'かなり高い確率で、今後ウェブ上でのほとんどの支払いが Web Payments を経由したものに変わっていくと予想しています。その理由を説明します。'
 date: 2017-08-24
 tags:
-- Payments
-- Web Payments
-- Payment Request API
-- Tokenization
-- Payment Apps
+  - Payments
+  - Web Payments
+  - Payment Request API
+  - Tokenization
+  - Payment Apps
 ---
 
 [前回の記事](https://blog.agektmr.com/2017/07/conversion-api.html)で解説したように、Payment Request API によってウェブでの支払いにおけるユーザーエクスペリエンスは大きく変わる可能性があります。しかし、これが本当にメインストリームになるのか、将来的に自分のサイトを対応させる必要性は出てくるのか？そんな疑問を持つ方は少なくないと思います。

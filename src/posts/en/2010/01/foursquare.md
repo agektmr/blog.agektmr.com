@@ -1,13 +1,15 @@
 ---
 layout: post
 lang: en
-title: 'Foursquare: The royal road to services of the near future'
-description: ''
+title: "Foursquare: The royal road to services of the near future"
+description:
 date: 2010-01-20
+categories:
+  - SocialWeb
 tags:
-- サービス
+  - サービス
 translationOf: /2010/01/foursquare.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 What is Foursquare?
@@ -34,7 +36,7 @@ By the way, Foursquare is starting to become popular as a matter of course, but 
 
 Don't say, "What? That's obvious!" Yes, it is. In the future, most services will be based on social media. I don't think I need to explain to anyone reading this blog that, unless it's a very special case, it's advantageous to develop a popular service on social media online in order to spread it by word of mouth.
 
-Foursquare is also social, making it easy to find places your friends have checked in, as well as tips for those places.
+Foursquare is also social, making it easy to find places your friends have checked in as well as tips for those places.
 
 ### Facebook Connect / Twitter Compatible
 
@@ -54,7 +56,7 @@ One of the reasons I received so many friend requests this time was likely due t
 
 The best reason to connect with social services is the activity stream, which allows you to post feedback on your timeline (Twitter) or updates (Facebook), catching the attention of your connected users.
 
-This feedback also makes it possible to share events in real time. For example, <a href="http://www.itmedia.co.jp/news/articles/0911/24/news072.html" target="_blank">the simultaneous barrages on Twitter</a> and <a href="http://tofubeats.blog107.fc2.com/blog-entry-235.html" target="_blank">last year's Christmas Eve DJ performance on Ustream</a> have become commonplace on the web recently, with real-time event sharing centered around Twitter.
+This feedback also makes it possible to share events in real time. For example, <a href="http://www.itmedia.co.jp/news/articles/0911/24/news072.html" target="_blank">the simultaneous barrage on Twitter</a> and <a href="http://tofubeats.blog107.fc2.com/blog-entry-235.html" target="_blank">last year's Christmas Eve DJ performance on Ustream</a> have become commonplace on the web recently, with real-time event sharing centered around Twitter.
 
 [<img class="alignnone size-medium wp-image-698" title="foursquare-activity-feedback" src="/images/2010/01/foursquare-activity-feedback-300x112.png" alt="" width="300" height="112" />][4]
 
@@ -70,16 +72,16 @@ Foursquare is, of course, a prime example, with applications available for iPhon
 
 ## In Japan?
 
-So what if we tried to do something similar in Japan? Let's examine each point.
+So what if we tried to do something similar in Japan? Let's examine each item.
 
-* **Social:** 
+* **Social:**
 This is pretty obvious, right?
-* **Compatible with Facebook Connect / Twitter:** 
-An increasing number of services are supporting Twitter, but due to the small number of Facebook users in Japan, it doesn't seem to be actively supporting it. This reminds me of mixi Connect and GREE Connect, but neither are yet publicly available, so we look forward to seeing them in the future.
-* **Feedback to activity streams:** 
-This is also discussed in conjunction with Connect technology, but the development of the receiving activity stream is also important. The concept of timelines (or streams) has yet to take root in domestic services; at best, GREE's "One Line" feature was released only recently. As for mixi, the activity stream in the mixi app is not being fully utilized, so as with Connect technology, we look forward to future developments.
-* **Compatible with iPhone / Android** 
-Smartphone compatibility seems likely to be possible soon, even in the current domestic situation.
+* **Compatible with Facebook Connect / Twitter:**
+An increasing number of services are supporting Twitter, but due to the small number of Facebook users in Japan, it doesn't seem to be actively supporting it. This brings to mind the existence of mixi Connect and GREE Connect, but neither are yet publicly available, so we look forward to seeing them in the future.
+* **Feedback to activity streams:**
+This is also discussed in conjunction with Connect technology, but the development of the receiving activity stream is also important. The concept of timelines (or streams) has yet to take root in domestic services, with GREE's one-line feature only recently being released. As for mixi, the activity stream in its app is not being fully utilized, so as with Connect technology, we look forward to future developments.
+* **Compatible with iPhone / Android**
+Smartphone compatibility seems likely to be possible soon, even given the current domestic situation.
 
 When you analyze it like this, you can see that while domestic services are sitting idly by, it wouldn't be surprising if a new social service that takes advantage of Twitter's virality were to appear. In fact, it's a good opportunity to do so!
 

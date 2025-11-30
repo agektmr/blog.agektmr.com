@@ -1,21 +1,20 @@
 ---
 layout: post
 lang: en
-title: 'Try the PHP version of Shindig'
-description: ''
+title: Try the PHP version of Shindig
+description:
 date: 2008-03-17
 tags:
-- Gadget
+  - Gadget
   - OpenSocial
   - php
   - Shindig
   - Widget
 translationOf: /2008/03/shindig-php.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-I learned at the recent Google Developer Networking Event that a PHP version of Shindig had been released, so I gave it a try.
+I recently learned at a Google Developer Networking Event that a PHP version of Shindig had been released, so I decided to give it a try.
 
 ## Check out Shindig
 
@@ -50,7 +49,7 @@ It seems that the default settings in Mac OS X (Leopard)'s httpd.conf are interf
 Note that this is not /etc/httpd/httpd.conf (Tiger's was this).
 
 ```
-<Directory "/Library/WebServer/Documents"> 
+<Directory "/Library/WebServer/Documents">
 ```
 
 Within
@@ -69,4 +68,4 @@ Change it to this. This should work...
 
 [![ToDoGadget](/images/2008/03/todogadget.jpg)](/images/2008/03/todogadget.jpg)
 
-Done! Now you can tweak it in various ways...
+Done! Now you can tinker around with it...

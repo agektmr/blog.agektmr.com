@@ -1,14 +1,16 @@
 ---
 layout: post
 lang: en
-title: 'I contributed an article about Google Buzz to gihyo'
-description: ''
+title: I contributed an article about Google Buzz to gihyo
+description:
 date: 2010-02-13
+categories:
+  - SocialWeb
 tags:
-- Google Buzz
+  - Google Buzz
   - 掲載
 translationOf: /2010/02/gihyo-google-buzz.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 Recently, Google released a service called <a href="http://buzz.google.com/" target="_blank">Google Buzz</a>.

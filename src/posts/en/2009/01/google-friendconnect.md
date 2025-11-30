@@ -1,13 +1,13 @@
 ---
 layout: post
 lang: en
-title: 'Google FriendConnect compatible gadget completed'
-description: ''
+title: Google FriendConnect compatible gadget completed
+description:
 date: 2009-01-06
 tags:
-- FriendConnect
+  - FriendConnect
 translationOf: /2009/01/google-friendconnect.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 We've released a gadget called Friend Introducer, which allows FriendConnect members to write introductions to their friends. It's displayed on the left side of this blog, so if you're a member, please give it a try. (If you're not, please become a member and give it a try!)
@@ -64,4 +64,4 @@ At the moment, OpenSocial does not have a community-oriented concept, but it may
 
 Another interesting feature of FriendConnect is that you can merge and use friend lists imported from multiple social networks. For example, I import friends from Orkut, Google, Plaxo, and Twitter, and if someone who subscribes to the same blog as me is a friend on these social networks, they will also become friends on FriendConnect.
 
-Perhaps one day, when Google turns iGoogle into a social networking site, these friend lists will be available for use as is.
+Maybe one day, when Google turns iGoogle into a social networking site, these friend lists will be available for use.

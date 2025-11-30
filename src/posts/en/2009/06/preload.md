@@ -1,11 +1,13 @@
 ---
 layout: post
 lang: en
-title: 'Preload to improve gadget rendering speed'
-description: ''
+title: Preload to improve gadget rendering speed
+description:
 date: 2009-06-17
+categories:
+  - OpenSocial
 translationOf: /2009/06/preload.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 This time, I will explain Preload, an OpenSocial feature about which there is not much information available online.
@@ -67,10 +69,9 @@ This is a rather fatal flaw. If you cannot control the cache expiration time, th
 Normally, when you make a request, you can choose the ContentType from DOM, FEED, JSON, and TEXT. FEED, in particular, wraps RSS/RDF/Atom and returns it in JSON, making it a convenient format for those familiar with it.
 
 However, this behavior is achieved by explicitly specifying FEED as the ContentType and performing special processing when the gadget server retrieves external content.
-This is not possible with Preload, which does not allow you to specify the ContentType.
-If you want to preload RSS or similar content, you have no choice but to select and parse the DOM.
+This is not possible with Preload, which does not allow you to specify the ContentType. If you want to preload RSS or similar content, you have no choice but to select and parse the DOM.
 
-### Can reflect the contents of UserPrefs
+### The contents of UserPrefs can be reflected
 
 You can include the contents of UserPrefs in the /Module/ModulePrefs/Preload@href content using the `__UP_****__` format. Unfortunately, this technique doesn't work with mixi apps.
 
@@ -92,4 +93,4 @@ In fact, you can specify any number of Preloads. If the conditions listed above 
 
 ## summary
 
-This time, we introduced the Preload feature, which is a rather unassuming feature that doesn't get much attention, but can be extremely useful if used properly. Use it well and aim to become a top-notch OpenSocializer.
+This time, we introduced the Preload feature, which is a rather unassuming feature that doesn't get much attention, but can be very useful if used properly. Let's use it effectively and aim to become a top-notch OpenSocializer.

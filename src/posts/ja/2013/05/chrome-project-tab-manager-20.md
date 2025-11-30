@@ -4,7 +4,10 @@ lang: ja
 title: Chrome でもう大量のタブに悩まされない Project Tab Manager 2.0 リリース
 date: 2013-05-18
 updated: 2013-07-18
-categories: AngularJS Chrome Extension Project Tab Manager
+categories:
+  - AngularJS
+  - Chrome Extension
+  - Project Tab Manager
 ---
 
 昨年夏に公開した Project Tab Manager という Chrome Extension のバージョン 2.0 を

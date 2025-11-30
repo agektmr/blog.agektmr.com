@@ -1,24 +1,23 @@
 ---
 layout: post
 lang: en
-title: 'Experimenting with WebSocket binary messages offers a glimpse into the future of the web'
-description: ''
+title: Experimenting with WebSocket binary messages offers a glimpse into the future of the web
+description:
 date: 2012-03-14
 updated: 2012-03-14
 image:
-feature: /websocket/AudioStreamer.png
+  feature: /websocket/AudioStreamer.png
 tags:
-- ArrayBuffer
-- Blob
-- HTML5
-- Web Audio API
-- WebSocket
+  - ArrayBuffer
+  - Blob
+  - HTML5
+  - Web Audio API
+  - WebSocket
 translationOf: /2012/03/websocket.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-This is a long article, so I'll just give you the conclusion first. WebSocket's binary messaging feature will overturn the way the Internet has always been. Some of you may be thinking, "I already knew that." I thought I understood it in theory, but after actually creating an app, I was able to experience it in concrete terms, so I'll try to explain what it means, even though it's a bit long.
+This is a long article, so I'll just give you the conclusion first. WebSocket's binary messaging feature will overturn the way the Internet has always been. Some of you may be thinking, "I already knew that." I thought I understood it theoretically, but after actually creating an app, I was able to experience it in concrete terms, so I'll try to explain what it means, even though it's a bit long.
 
 <!-- excerpt -->
 
@@ -121,7 +120,7 @@ When creating this demo, what I actually wanted to include in the binary message
 * Audio buffer length
 * Actual audio buffer x number of channels
 
-This much information needs to be sent to the other client. 
+This much information needs to be sent to the other client.
 Due to the constraints of WebSocket's simple API, there are only three ways I can think of to achieve this:
 
 * Send a text message and a binary message as a pair
@@ -242,4 +241,4 @@ Then there's data compression. There's no doubt that converting data to binary f
 Additionally, as we've verified in this article, sending binary data requires additional information to be added to it. So what's the point of sending text data separately? It's only a matter of time before libraries emerge that emphasize speed by sending everything in binary from the start. I even think there's a chance that in the future, all data transmitted over the Internet using WebSockets will be binary.
 
 ## Summary
-To put it a little dramatically, this could be a paradigm shift for the web. It's not impossible that the protocol used on the web will be replaced from HTTP to some kind of protocol that runs on WebSocket.
+To put it a little dramatically, this could be a paradigm shift for the Web. It's not impossible that the protocol used on the Web will be replaced from HTTP to some kind of protocol that runs on WebSocket.

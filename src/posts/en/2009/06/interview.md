@@ -1,14 +1,14 @@
 ---
 layout: post
 lang: en
-title: 'Interview published'
-description: ''
+title: Interview published
+description:
 date: 2009-06-20
 tags:
-- Google
+  - Google
   - 掲載
 translationOf: /2009/06/interview.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 The other day I was interviewed together with Oikawa and Ishihara from Google.

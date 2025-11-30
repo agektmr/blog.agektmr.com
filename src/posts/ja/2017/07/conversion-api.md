@@ -5,9 +5,9 @@ title: 'ウェブでの新しいお金の払い方 - Web Payments と Payment Re
 description: 'Payment Request API を使ったウェブでの新しいお金の払い方について紹介しています。'
 date: 2017-07-04
 tags:
-- Payments
-- Web Payments
-- Payment Request API
+  - Payments
+  - Web Payments
+  - Payment Request API
 ---
 
 [前回の記事](/2016/12/conversion-forms.html)では、フォームを最適化することでウェブの決済フローを改善するアイディアについて書きましたが、今回は新しい標準 API を使ったアプローチについて書きます。

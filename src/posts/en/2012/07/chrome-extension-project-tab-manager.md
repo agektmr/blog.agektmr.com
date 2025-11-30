@@ -1,25 +1,18 @@
 ---
-layout: undefined
-lang: en
-title: ''
-description: ''
-date: undefined
-translationOf: /2012/07/chrome-extension-project-tab-manager.html
-translated: 2025-11-29
-translatedManually: false
----
---- 
 layout: post
-lang: ja
-title: Released the Chrome Extension "Project Tab Manager" for managing tabs by project.
+lang: en
+title: "We have released the Chrome Extension \"Project Tab Manager\" that allows you to manage tabs for each project."
+description:
 date: 2012-07-28
 updated: 2012-07-28
 tags:
-- AngularJS
-- Chrome Extension
-- Project Tab Manager
+  - AngularJS
+  - Chrome Extension
+  - Project Tab Manager
+translationOf: /2012/07/chrome-extension-project-tab-manager.html
+translated: 2025-11-30
+translatedManually: false
 ---
-
 I've been wanting to create a Chrome Extension for quite some time, and now I've finally managed to release it on the Chrome Web Store, so I'd like to introduce it to you.
 
 ## why?

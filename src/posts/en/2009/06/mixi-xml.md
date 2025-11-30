@@ -1,13 +1,13 @@
 ---
 layout: post
 lang: en
-title: 'Bookmarklet to view mixi app gadget XML'
-description: ''
+title: Bookmarklet to view mixi app gadget XML
+description:
 date: 2009-06-17
 tags:
-- mixiアプリ
+  - mixiアプリ
 translationOf: /2009/06/mixi-xml.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 When you think of OpenSocial, you think of mixi apps, or rather, when you think of mixi apps, you think of OpenSocial? I can really sense this kind of atmosphere, but how are you all doing?

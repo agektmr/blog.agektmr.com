@@ -1,16 +1,16 @@
 ---
 layout: post
 lang: en
-title: 'Try OAuth with Data Availability'
-description: ''
+title: Try OAuth with Data Availability
+description:
 date: 2008-08-06
 tags:
-- Data Availability
+  - Data Availability
   - MySpace
   - OAuth
   - OpenSocial
 translationOf: /2008/08/data-availabilityoauth.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 As promised in the previous entry, I'll actually write some server-side code and test OAuth using MySpace's Data Availability. [Data

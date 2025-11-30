@@ -1,11 +1,13 @@
 ---
 layout: post
 lang: en
-title: 'Cache functions to be aware of when developing OpenSocial gadgets'
-description: ''
+title: Cache functions to be aware of when developing OpenSocial gadgets
+description:
 date: 2009-02-03
+categories:
+  - OpenSocial
 translationOf: /2009/02/opensocial-cache.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 In a recent article, we mentioned the powerful cache functionality of Shindig's OpenSocial architecture. Shindig has four main types of caches.
@@ -66,5 +68,3 @@ try{
 </pre>
 
 If you get the URL in this way, you can make a reference that intentionally activates the cache in a container-independent way. (It doesn't work with MySpace, so it seems better to use try/catch.)
-
- 

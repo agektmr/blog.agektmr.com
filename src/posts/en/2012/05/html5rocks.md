@@ -1,23 +1,16 @@
 ---
-layout: undefined
-lang: en
-title: ''
-description: ''
-date: undefined
-translationOf: /2012/05/html5rocks.html
-translated: 2025-11-29
-translatedManually: false
----
---- 
 layout: post
-lang: ja
-title: HTML5Rocks now supports Japanese (Updated December 2013)
+lang: en
+title: HTML5Rocks now supports Japanese (Updated 12/2013)
+description:
 date: 2012-05-02
 updated: 2013-12-19
 tags:
-- HTML5Rocks
+  - HTML5Rocks
+translationOf: /2012/05/html5rocks.html
+translated: 2025-11-30
+translatedManually: false
 ---
-
 *This article has been updated from an article originally published on May 2, 2012.
 
 Have you heard of the site [HTML5Rocks](http://www.html5rocks.com/)? HTML5Rocks is one of the world's leading sources of HTML5-related information, featuring tutorials, samples, slides, videos, and more. The site was primarily developed by Google's Chrome Developer Relations team, and while it was originally only available in English, in May 2012 it underwent i18n (internationalization) and became available in nine languages, and has also begun adding [Japanese content](http://www.html5rocks.com/ja/).

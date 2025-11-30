@@ -1,14 +1,14 @@
 ---
 layout: post
 lang: en
-title: 'Chrome session tracking extension: Project Tab Manager 3.0 released'
-description: ''
+title: "Chrome session tracking extension: Project Tab Manager 3.0 released"
+description:
 date: 2014-09-22
 updated: 2014-09-24
 tags:
-- Project Tab Manager
+  - Project Tab Manager
 translationOf: /2014/09/chrome-project-tab-manager-30.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 [The Chrome extension that became a local hot topic for a while as a girlfriend extension](http://blog.agektmr.com/2013/05/chrome-project-tab-manager-20.html) Project
@@ -22,7 +22,7 @@ Project Tab Manager is a Chrome extension that monitors the state of your window
 * Because of this, Chrome alone uses up a lot of memory.
 * I find myself checking Twitter and Facebook (and Google+, of course!) while I'm working, which is distracting.
 
-This app is recommended for people like you. 
+This app is recommended for people like you.
 By slightly shifting the concept from previous versions, we've pursued ease of understanding.
 We've placed more emphasis on tracking sessions than on managing projects.
 
@@ -52,10 +52,10 @@ The ☆ is actually a bookmark, and it's registered for each project in "Other B
 
 The PTM popup window has keyboard shortcuts assigned to it, which work as follows:
 
-* **Tab, Shift+Tab** Move Project
-* **Return** Open Project Window
-* **Right** Expand Project
-* **Left** Collapse Project
+* **Tab, Shift+Tab**: Move projects
+* **Return**: Open the Project window
+* **Right**: Expand projects
+* **Left**: Collapse projects
 
 You can easily open the popup by specifying a shortcut key in the "Keyboard
 Shortcuts" section at the bottom of the Chrome Extension management page (chrome://extensions).
@@ -64,4 +64,4 @@ Shortcuts" section at the bottom of the Chrome Extension management page (chrome
 
 The source code is available on GitHub. If you have any questions, please send a pull request or contact me at @agektmr.
 
-I hope you get a girlfriend soon.
+I hope I get a girlfriend soon.

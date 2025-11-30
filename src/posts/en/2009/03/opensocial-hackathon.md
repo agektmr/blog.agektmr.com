@@ -1,11 +1,13 @@
 ---
 layout: post
 lang: en
-title: 'OpenSocial Hackathon to be held'
-description: ''
+title: OpenSocial Hackathon to be held
+description:
 date: 2009-03-31
+categories:
+  - OpenSocial
 translationOf: /2009/03/opensocial-hackathon.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 The timing coincided with the launch of <a target="_blank" href="http://developer.home.goo.ne.jp/">goo Home Sandbox</a>, and we have decided to jointly host the <a target="_blank" href="http://groups.google.com/group/opensocial-hackathon-0424">OpenSocial Hackathon</a> with goo, <a target="_blank" href="http://groups.google.com/group/opensocial-japan">OpenSocial Japan Community</a>, and <a target="_blank" href="http://mtl.recruit.co.jp/">Recruit Media Technology Lab</a>.
@@ -29,9 +31,9 @@ Requirements:
 <http://code.google.com/intl/ja/apis/opensocial/articles/tutorial/tutorial-0.8.html>
 * People who can bring their own laptop
 
-*Participants are also invited to attend a pre-meeting on April 14th. 
-**Date and Time:** Tuesday, April 14th, 2009, 6:30 PM - 8:30 PM (Doors open at 6:00 PM) 
-**Location:** Recruit Media Technology Lab 
+*Participants are also invited to attend a pre-meeting on April 14th.
+**Date and Time:** Tuesday, April 14th, 2009, 6:30 PM - 8:30 PM (Doors open at 6:00 PM)
+**Location:** Recruit Media Technology Lab
 **Content:** Hackathon team division procedures, exchange of ideas, etc.
 
 * * *
@@ -48,5 +50,3 @@ If you would like to participate, please register at the following two sites:
 On the day, <a target="_blank" href="http://www.amazon.co.jp/gp/product/4774137480?ie=UTF8&#038;tag=tendersurrender-22&#038;linkCode=as2&#038;camp=247&#038;creative=7399&#038;creativeASIN=4774137480">Yoichiro</a>, who wrote <a target="_blank" href="http://www.eisbahn.jp/yoichiro/">Introduction to OpenSocial__HTML_TAG_17__, </a>, <a target="_blank" href="http://kawa.net/">Yusuke Kawasaki__HTML_TAG_19__, people from Google, and of course myself will be participating as tutors.
 
 If you are interested in OpenSocial, please join us!
-
- 

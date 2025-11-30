@@ -5,8 +5,8 @@ title: Shadow DOM - Web Components を構成する技術
 description: 'Web Components を構成する要素のひとつ、Shadow DOM について解説します。'
 date: 2014-11-01
 tags:
-- Shadow DOM
-- Web Components
+  - Shadow DOM
+  - Web Components
 image:
   feature: /shadow-dom-web-components/architecture.png
 ---

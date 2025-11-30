@@ -1,20 +1,19 @@
 ---
 layout: post
 lang: en
-title: 'Creating an OpenSocial Application (2)'
-description: ''
+title: Creating an OpenSocial Application (2)
+description:
 date: 2008-04-17
 tags:
-- Widget
+  - Widget
   - Gadget
   - OpenSocial
   - Orkut
 translationOf: /2008/04/opensocial2.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-In [Creating an OpenSocial Application (1)](http://devlog.agektmr.com/archives/22), I explained how gadgets work and even covered how to get an account on Orkut. This time, I'll explain the code for [the application introduced last time](http://devlab.agektmr.com/OpenSocial/Orkut/FriendIntroducer.xml). This application (FriendIntroducer) is a simple application that's often found on sites like mixi; it allows you to write an introduction for your friends when you view it, and allows others to read the introduction written for them when they view it. There are probably smarter ways to implement this using JavaScript or jQuery, but this time I'll focus on the OpenSocial code, so please overlook any silly code.
+In [Creating an OpenSocial Application (1)](http://devlog.agektmr.com/archives/22), I explained how gadgets work and even covered how to get an account on Orkut. This time, I'll explain the code for [the application introduced last time](http://devlab.agektmr.com/OpenSocial/Orkut/FriendIntroducer.xml). This application (FriendIntroducer) is a simple application that you often see on sites like mixi; it allows you to write an introduction for your friend if you view it, and allows others to read the introduction written for that person if they view it. There are probably smarter ways to implement this using JavaScript or jQuery, but this time I'll focus on the OpenSocial code, so please overlook the silly code.
 
 ## Gadget XML
 
@@ -176,4 +175,4 @@ Finally, add the JSON-formatted string to the data request object and send it.
 
 ## summary
 
-This article ended up being more of a list of source code than an explanation, but I hope it gives you an idea that most OpenSocial applications can be created using JavaScript. Next time, I'd like to touch on `makeRequest`, which connects to external servers.
+This article ended up being more of a list of source code than an explanation, but I hope it gives you an idea that most OpenSocial applications can be created with JavaScript. Next time, I'd like to touch on `makeRequest`, which connects to external servers.

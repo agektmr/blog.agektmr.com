@@ -7,11 +7,11 @@ updated: 2012-03-14
 image:
   feature: /websocket/AudioStreamer.png
 tags:
-- ArrayBuffer
-- Blob
-- HTML5
-- Web Audio API
-- WebSocket
+  - ArrayBuffer
+  - Blob
+  - HTML5
+  - Web Audio API
+  - WebSocket
 ---
 
 長い記事なので、先に結論だけ書いておきます。WebSocketのバイナリメッセージ機能は、これまでのインターネットのあり方をひっくり返します。「そんなの知ってるよ」という方もいるとは思います。僕も理屈では分かってたつもりだけど、実際にアプリを作ってみて、具体的にそれを感じることができたので、ちょっと長いですがどういうことなのか説明してみます。
@@ -75,7 +75,7 @@ ws.onopen = function() {
 ws.send(message);
 ```
 
-とします。  
+とします。
 メッセージを受信する場合は、messageというイベントで受け取ります。
 
 ```javascript

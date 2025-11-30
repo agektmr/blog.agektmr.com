@@ -1,11 +1,13 @@
 ---
 layout: post
 lang: en
-title: 'A summary of Social Web-related specifications'
-description: ''
+title: A summary of Social Web-related specifications
+description:
 date: 2010-07-05
+categories:
+  - SocialWeb
 translationOf: /2010/07/social-web.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 The following page summarizes the specifications related to the Social Web.

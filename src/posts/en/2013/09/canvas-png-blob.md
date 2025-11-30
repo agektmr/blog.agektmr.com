@@ -1,15 +1,15 @@
 ---
 layout: post
 lang: en
-title: 'How to convert an image drawn on a canvas to a Blob in a format such as png'
-description: ''
+title: How to convert an image drawn on a canvas to a Blob in a format such as png
+description:
 date: 2013-09-02
 updated: 2013-09-02
 tags:
-- HTML5
+  - HTML5
   - Canvas
 translationOf: /2013/09/canvas-png-blob.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 The simplest answer is to use [`toBlob()`](https://developer.mozilla.org/ja-JP/docs/Web/API/HTMLCanvasElement)

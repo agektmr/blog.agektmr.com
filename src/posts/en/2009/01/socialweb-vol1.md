@@ -1,13 +1,13 @@
 ---
 layout: post
 lang: en
-title: 'SocialWeb Study Group Vol.1 was held'
-description: ''
+title: SocialWeb Study Group Vol.1 was held
+description:
 date: 2009-01-25
 tags:
-- SocialWeb Japan
+  - SocialWeb Japan
 translationOf: /2009/01/socialweb-vol1.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 On January 23rd, we held the Social Web Study Group Vol. 1 at the DeNA office. 50 people attended, and it was such a success that there was a waiting list. The study group really showed how much attention the Social Web is receiving.

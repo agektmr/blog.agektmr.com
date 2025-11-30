@@ -1,21 +1,19 @@
 ---
 layout: post
 lang: en
-title: 'Portable Contacts, an open contact list specification'
-description: ''
+title: Portable Contacts, an open contact list specification
+description:
 date: 2008-09-18
 tags:
-- PortableContacts
+  - PortableContacts
   - DataPortability
   - OpenSocial
   - SocialWeb
 translationOf: /2008/09/portable-contacts.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-Plaxo's [Joseph Smarr](http://www.josephsmarr.com/) uses the term "Open
-Building Blocks for the Social Web," which describes the "elements" needed to make the web more social and deepen the connections between services.
+Joseph Smarr of Plaxo uses the term "Open Building Blocks for the Social Web," which describes the building blocks needed to make the web more social and deepen the connections between services.
 
 These "elements" include [OpenID](http://openid.net/), [OAuth](http://oauth.net/),
 [microformats](http://microformats.org/),
@@ -65,9 +63,9 @@ Yes, OpenSocial's People API and Portable Contacts basically have the same role.
 
 In fact, thanks to Joseph Smarr's efforts, Portable Contacts was integrated into the OpenSocial v0.8.1 specification. In other words, the OpenSocial People API specification and the Portable Contacts specification are the same.
 
-The OpenSocial v0.8.1 specification will likely be released soon, and we can confirm that its content is in line with Portable
+The OpenSocial v0.8.1 specification will be released soon, and we can confirm that its content is in line with Portable
 Contacts.
 
 ## summary
 
-The movement to build a social web ecosystem is accelerating even further with pieces like Portable Contacts coming together. We'll be keeping a close eye on the developments of the social web's main players.
+The movement to build a social web ecosystem is accelerating with the coming together of pieces like Portable Contacts. We'll be keeping a close eye on the developments of the social web's main players.

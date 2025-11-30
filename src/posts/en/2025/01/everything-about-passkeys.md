@@ -1,25 +1,24 @@
 ---
 layout: post
 lang: en
-title: 'I wrote a book called "All About Passkeys."'
-description: 'I have written a book called "All About Passkeys." I would like to briefly introduce the contents of this book, which will be released on January 28, 2025.'
+title: "I wrote a book called \"All About Passkeys.\""
+description: "I have written a book called \"All About Passkeys.\" I would like to briefly introduce the contents of this book, which will be released on January 28, 2025."
 date: 2025-01-13
 image:
-feature: /2025/everything-about-passkeys.jpg
+  feature: /2025/everything-about-passkeys.jpg
 tags:
-- Passkey
-- WebAuthn
-- FIDO
-- FIDO2
-- 認証
-- Authentication
-- Publication
+  - Passkey
+  - WebAuthn
+  - FIDO
+  - FIDO2
+  - 認証
+  - Authentication
+  - Publication
 translationOf: /2025/01/everything-about-passkeys.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-I wrote a book called ["All About Passkeys"](https://gihyo.jp/book/2025/978-4-297-14653-5). I'd like to give you a brief introduction to the contents of this book, which will be released on January 28th.
+I have written a book called "All About Passkeys" (https://gihyo.jp/book/2025/978-4-297-14653-5). I would like to give you a brief introduction to the contents of this book, which will be released on January 28th.
 
 <!-- excerpt -->
 
@@ -60,4 +59,3 @@ Although the technology industry has a short shelf life, this book covers the la
 While passwords are easy to use, they have many pitfalls and require far too many precautions for anyone to use them safely, resulting in a constant stream of account hijacking. Passkeys, when implemented correctly, are easy for anyone to use and are an authentication feature that ensures security not possible with previous technology. While there is still room for growth, the time is ripe. Now is the time to start considering implementing passkeys.
 
 I usually share information about passkeys through events and social media as part of my job, and occasionally through this blog and magazines as a hobby. The reason I decided to try the book format this time was because I once again realized the comfort of having a medium that allows me to have comprehensive information at my fingertips. If you are learning about passkeys, I would encourage you to have this book at hand.
-

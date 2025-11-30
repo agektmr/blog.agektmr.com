@@ -1,19 +1,18 @@
 ---
 layout: post
 lang: en
-title: 'A new way to pay on the web - About Web Payments and the Payment Request API'
-description: 'Introducing a new way to pay on the web using the Payment Request API.'
+title: A new way to pay on the web - About Web Payments and the Payment Request API
+description: Introducing a new way to pay on the web using the Payment Request API.
 date: 2017-07-04
 tags:
-- Payments
-- Web Payments
-- Payment Request API
+  - Payments
+  - Web Payments
+  - Payment Request API
 translationOf: /2017/07/conversion-api.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-In my previous article, I discussed ideas for improving web payment flows by optimizing forms, but this time I'll talk about an approach using new standard APIs.
+In my previous post, I discussed ideas for improving web checkout flows by optimizing forms. Today, I'll explore an approach using a new standard API.
 
 <!-- excerpt -->
 
@@ -38,7 +37,7 @@ What is the Payment Request API?
 
 The Payment Request API essentially acts as a form replacement. It's important to note that it doesn't process payments itself. This means that all you can do with this API is retrieve payment information; any further payment processing is up to you.
 
-The information that can be collected using this API is as follows:
+The information that can be collected using this API is:
 
 * Shipping Address
 * Shipping Options
@@ -109,4 +108,4 @@ This is the most frequently asked question in Japan, where there are many iOS us
 
 In this article, I've written about replacing traditional forms for obtaining payment information with the Payment Request API. However, some people may feel that UX improvements alone are not enough of a reason to adopt it. With so many incidents still being reported, some may be concerned about the risks of handling raw credit card information.
 
-Web Payments continues to develop specifications with a view to resolving these issues. I would like to touch on this topic in future articles.
+Web Payments is continuing to develop specifications with a view to resolving these issues, and I would like to touch on this topic in future articles.

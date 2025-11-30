@@ -229,8 +229,6 @@ To test on a single post before running full translation:
 node scripts/translate.js --file src/posts/ja/2025/01/everything-about-passkeys.md
 ```
 
-(Note: You'll need to modify the script to support the `--file` flag if you want this feature)
-
 ## Next Steps
 
 After translation:

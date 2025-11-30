@@ -1,25 +1,18 @@
 ---
-layout: undefined
-lang: en
-title: ''
-description: ''
-date: undefined
-translationOf: /2013/08/html5-gif.html
-translated: 2025-11-29
-translatedManually: false
----
---- 
 layout: post
-lang: ja
-title: Super Easy! How to Create GIF Animations with HTML5
+lang: en
+title: "Super easy! How to create GIF animations with HTML5"
+description:
 date: 2013-08-02
 updated: 2013-08-02
 tags:
-- GIF
-- HTML5
-- JavaScript
+  - GIF
+  - HTML5
+  - JavaScript
+translationOf: /2013/08/html5-gif.html
+translated: 2025-11-30
+translatedManually: false
 ---
-
 Those who know it will probably already know this method, but I actually tried it, so I'll make a note of it.
 
 *The demo image was borrowed from [here](https://github.com/masakihirokawa/objc-frame-by-frame-animation). There is no license information written in it, but I will replace it if there is any problem.
@@ -45,7 +38,7 @@ A more detailed explanation is below.
    encoder.setSize(120, 120);
    ```
 5. Start drawing one frame at a time
-```js  
+```js
     encoder.start();
     ```
 1. Draw an image on the canvas
@@ -67,11 +60,11 @@ A more detailed explanation is below.
     ```
 8. Create a URL from `Blob` and display it (don't forget to revoke it).
 ```js
-    var url = URL.createObjectURL(blob);  
-    var image = new Image();  
-    image.src = url;  
-    image.onload = function() {  
-    URL.revokeObjectURL(url);  
+    var url = URL.createObjectURL(blob);
+    var image = new Image();
+    image.src = url;
+    image.onload = function() {
+    URL.revokeObjectURL(url);
     };
     ```
 

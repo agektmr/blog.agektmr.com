@@ -1,21 +1,20 @@
 ---
 layout: post
 lang: en
-title: 'Why Web Components will revolutionize web development'
-description: ''
+title: Why Web Components will revolutionize web development
+description:
 date: 2014-05-19
 updated: 2014-07-12
 tags:
-- Template
-- Shadow DOM
-- Custom Elements
-- HTML Imports
-- Web Components
+  - Template
+  - Shadow DOM
+  - Custom Elements
+  - HTML Imports
+  - Web Components
 translationOf: /2014/05/web-components.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
 {% YouTube 'T5y_lmLngAk' %}
 
 <!-- excerpt -->
@@ -118,8 +117,7 @@ Let's briefly explain each technology.
 ### Custom Elements
 
 This allows the browser to recognize your custom tag.
-This tag can have properties, methods, and events, making it similar to native DOM
-elements.
+This tag can have properties, methods, and events, making it similar to a native DOM element.
 In the example above, `<webaudio-knob></webaudio-knob>`:
 
 ```javascript
@@ -164,7 +162,7 @@ It provides functions that seem possible but are not. Please note that it does n
 
 ### HTML Imports
 
-You can load multiple resources with a single tag. 
+You can load multiple resources with a single tag.
 Whether it's jQuery UI or Bootstrap, you had to include JavaScript, CSS, etc. separately. By using the import tag, you can include UI components and their required resources with a single tag.
 
 Shadow DOM

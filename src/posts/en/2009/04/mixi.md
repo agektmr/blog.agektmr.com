@@ -1,14 +1,14 @@
 ---
 layout: post
 lang: en
-title: 'Mixi app released / Hatebu checker released'
-description: ''
+title: Mixi app released / Hatebu checker released
+description:
 date: 2009-04-10
 tags:
-- mixi
+  - mixi
   - mixiアプリ
 translationOf: /2009/04/mixi.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 Finally, mixi's implementation of OpenSocial and mixi apps have been released to general developers.

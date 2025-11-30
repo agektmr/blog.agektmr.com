@@ -1,20 +1,19 @@
 ---
 layout: post
 lang: en
-title: 'OpenSocial OAuth Summary'
-description: ''
+title: OpenSocial OAuth Summary
+description:
 date: 2008-08-02
 tags:
-- OAuth
+  - OAuth
   - OpenSocial
 translationOf: /2008/08/opensocialoauth.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
 OpenSocial uses OAuth for authorization when a container communicates with an external server, or when an external server communicates with a container. This article summarizes the current state of OAuth in OpenSocial.
 
-* Update (2008/10/20): Please also read the article I wrote on 2008/10/4 [here](http://devlog.agektmr.com/archives/174).
+* Update (2008/10/20): Please also read the article [here](http://devlog.agektmr.com/archives/174) written on 2008/10/4.
 
 ## What is OAuth again?
 
@@ -55,10 +54,10 @@ Here, we'll call this **Inbound OAuth**. This refers to the case where an extern
 
 There are several prerequisites for using OAuth. While you will need to look up the detailed specifications separately, the prerequisites you need to meet are listed below.
 
-* The consumer must know the following information issued by the service provider in advance: 
+* The consumer must know the following information issued by the service provider in advance:
 * Consumer key (consumer_key)
 * Consumer secret (consumer_secret)
-* The consumer must know the following three URLs used for OAuth communication with the service provider: 
+* The consumer must know the following three URLs used for OAuth communication with the service provider:
 * Service provider's request token URL
 * Service provider's access token URL
 * Service provider's authentication URL
@@ -96,4 +95,4 @@ The consumer key and consumer secret are issued when you register your applicati
 
 ## summary
 
-This time I've written a rough outline, but next time I'd like to actually try using MySpace's Data Availability to perform OAuth authentication and retrieve data.
+This time I have written a rough outline, but next time I would like to actually try using MySpace Data Availability to perform OAuth authentication and retrieve data.

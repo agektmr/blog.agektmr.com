@@ -1,18 +1,17 @@
 ---
 layout: post
 lang: en
-title: 'I created a widget for FriendFeed Dashboard'
-description: ''
+title: I created a widget for FriendFeed Dashboard
+description:
 date: 2008-04-03
 tags:
-- Dashboard
+  - Dashboard
   - FriendFeed
   - Widget
 translationOf: /2008/04/friendfeed-dashboard.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
 ![FriendFeedr](/images/2008/04/friendfeeder.jpg)
 
 I've created a Dashboard widget for Mac OS X called FriendFeeder (working name), which is compatible with the popular FriendFeed app, and I'm releasing it to the public. I think there are still a lot of bugs, but it works for now, so I'm going with the flow.
@@ -64,7 +63,7 @@ There is no scroll bar! Please use the mouse wheel.
 
 ### How to use
 
-First, create an account with FriendFeed. 
+First, create an account with FriendFeed.
 Enter your ID and Remote Key (not your password) on the back of the widget (settings screen). You can get your Remote Key at [`http://friendfeed.com/remotekey`](http://friendfeed.com/remotekey).
 
 ### Feedback

@@ -1,21 +1,20 @@
 ---
 layout: post
 lang: en
-title: 'Generate jsdoc cleanly with bootstrap'
-description: ''
+title: Generate jsdoc cleanly with bootstrap
+description:
 date: 2014-02-12
 updated: 2014-02-12
 tags:
-- JsDoc
-- Bootstrap
-- Grunt
-- docstrap
+  - JsDoc
+  - Bootstrap
+  - Grunt
+  - docstrap
 translationOf: /2014/02/jsdocbootstrap.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-I searched but didn't find much information in Japanese, so I'm leaving a note here.
+Even after searching, I couldn't find much information in Japanese, so I'm leaving a note here.
 
 <!-- excerpt -->
 

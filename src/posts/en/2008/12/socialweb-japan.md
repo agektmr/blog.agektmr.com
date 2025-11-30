@@ -1,18 +1,18 @@
 ---
 layout: post
 lang: en
-title: 'SocialWeb Japan launched'
-description: ''
+title: SocialWeb Japan launched
+description:
 date: 2008-12-11
 tags:
-- SocialWeb Japan
+  - SocialWeb Japan
 translationOf: /2008/12/socialweb-japan.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 This reminded me that there was no community for study sessions on the social web, so I started <a href="http://groups.google.com/group/socialweb-japan" target="_blank">SocialWeb Japan</a> on Google Groups.
 
-SocialWeb Japan is a community for sharing information and holding study sessions on social web technologies, focusing on OpenStack and Facebook. 
+SocialWeb Japan is a community for sharing information and holding study sessions on social web technologies, focusing on OpenStack and Facebook.
 
 If these keywords resonate with you, please join us.
 

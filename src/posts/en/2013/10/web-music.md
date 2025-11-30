@@ -1,25 +1,18 @@
 ---
-layout: undefined
-lang: en
-title: ''
-description: ''
-date: undefined
-translationOf: /2013/10/web-music.html
-translated: 2025-11-29
-translatedManually: false
----
----
 layout: post
-lang: ja
-title: How far can the web integrate with musical instruments? ~ Web Music Hackathon held
+lang: en
+title: To what extent can the web be integrated with musical instruments? ~ Web Music Hackathon held
+description:
 date: 2013-10-23
 updated: 2013-10-23
 tags:
-- Hackathon
-- Web Audio API
-- Web MIDI API
+  - Hackathon
+  - Web Audio API
+  - Web MIDI API
+translationOf: /2013/10/web-music.html
+translated: 2025-11-30
+translatedManually: false
 ---
-
 <script src="https://apis.google.com/js/plusone.js" type="text/javascript"></script>
 
 On October 19, 2013, we held a Web Music Hackathon at the Google Japan office. This was the first such event, organized by a developer community called Web Music Developers JP, led by Yamaha's [@ryoyakawai](https://twitter.com/ryoyakawai), also known as [Kawai-san](https://plus.google.com/107183997283505818880) (confusing).

@@ -1,11 +1,13 @@
 ---
 layout: post
 lang: en
-title: 'goo Home Sandbox released'
-description: ''
+title: goo Home Sandbox released
+description:
 date: 2009-03-29
+categories:
+  - OpenSocial
 translationOf: /2009/03/goo.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 On March 26th, <a target="_blank" href="http://home.goo.ne.jp/">goo Home</a> began offering a <a target="_blank" href="http://sandbox.home.goo.ne.jp/">sandbox environment</a> for OpenSocial compatibility.

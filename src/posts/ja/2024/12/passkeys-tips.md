@@ -7,12 +7,12 @@ date: 2024-12-26
 image:
   feature: /2024/passkeys-tips.jpg
 tags:
-- Passkey
-- WebAuthn
-- FIDO
-- FIDO2
-- 認証
-- Authentication
+  - Passkey
+  - WebAuthn
+  - FIDO
+  - FIDO2
+  - 認証
+  - Authentication
 ---
 
 最近、パスキーが使いづらい、という声を目にします。作ったはずのパスキーが見つからないために、使いたいサービスにログインできず困った、という人の投稿も何度か観測しました。

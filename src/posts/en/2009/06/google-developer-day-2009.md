@@ -1,17 +1,17 @@
 ---
 layout: post
 lang: en
-title: 'Google Developer Day 2009'
-description: ''
+title: Google Developer Day 2009
+description:
 date: 2009-06-12
 tags:
-- gdd09
+  - gdd09
   - Google Developer Day
 translationOf: /2009/06/google-developer-day-2009.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-<a href="http://code.google.com/intl/ja/events/developerday/2009/home.html" target="_blank">Google Developer Day</a> was held at Pacifico Yokohama on June 9th. 
+<a href="http://code.google.com/intl/ja/events/developerday/2009/home.html" target="_blank">Google Developer Day</a> was held at Pacifico Yokohama on June 9th.
 I was briefly present at the keynote speech and also took part in the OpenSocial Panel Discussion session.
 
 ## Keynote Demo

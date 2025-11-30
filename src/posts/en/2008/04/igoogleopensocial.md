@@ -1,18 +1,17 @@
 ---
 layout: post
 lang: en
-title: 'iGoogle finally supports OpenSocial'
-description: ''
+title: iGoogle finally supports OpenSocial
+description:
 date: 2008-04-22
 tags:
-- Gadget
+  - Gadget
   - iGoogle
   - OpenSocial
 translationOf: /2008/04/igoogleopensocial.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
 Starting today, [iGoogle's sandbox is now available for use in preparation for the launch of OpenSocial features](http://jp.techcrunch.com/archives/20080421hints-of-igoogle-turning-into-its-own-social-network/). This clearly means that **Google itself is becoming a social network-based system**. Previously, there was talk of a [project called Maka-Maka](http://jp.techcrunch.com/archives/googles-response-to-facebook-maka-maka/) that would see Google launch its own social networking service, but while it was expected that this would take the open form of OpenSocial, seeing it become a reality in the form of iGoogle is nothing short of impressive.
 
 So I tried it right away.
@@ -47,4 +46,4 @@ Even though it's just a platform, Google is truly a formidable entity. It's so d
 
 And Google has Android, too. Yes, your phone's address book will be able to connect to this friends list. This will allow you to receive updates from your friends' blogs via email or view them directly on your phone, without any hassle.
 
-The only thing missing is a profile view. This is partially achieved with Google Maps and Google Groups, but it will be interesting to see how this comes to fruition.
+The only thing missing is a profile view. Google Maps and Google Groups have partially implemented this, but it will be interesting to see how it all plays out.

@@ -1,13 +1,13 @@
 ---
 layout: post
 lang: en
-title: 'OpenSocial (Shindig) server architecture'
-description: ''
+title: OpenSocial (Shindig) server architecture
+description:
 date: 2009-01-12
 tags:
-- Shindig
+  - Shindig
 translationOf: /2009/01/opensocialshindig.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 How to get involved with OpenSocial

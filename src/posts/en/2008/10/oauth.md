@@ -1,25 +1,23 @@
 ---
 layout: post
 lang: en
-title: 'Digging deeper into OAuth signature methods'
-description: ''
+title: Digging deeper into OAuth signature methods
+description:
 date: 2008-10-04
 tags:
-- HMAC-SHA1
+  - HMAC-SHA1
   - iGoogle
   - MySpace
   - Orkut
   - RSA-SHA1
   - OAuth
 translationOf: /2008/10/oauth.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-This blog has covered OAuth in relation to OpenSocial several times.
-However, because I used MySpace as a reference, I have only focused on HMAC-SHA1 as a signature method.
-However, when delving into Shindig, I cannot avoid RSA-SHA1, and I have realized that it is difficult to progress without a solid understanding of it.
-So I would like to take this opportunity to summarize it. (While this article assumes some OpenSocial, the discussion of signatures is not limited to OpenSocial.)
+I've covered OAuth in relation to OpenSocial several times on this blog.
+However, because I was using MySpace as a reference, I only focused on HMAC-SHA1 as a signature method. However, when delving into Shindig, I couldn't avoid RSA-SHA1, and I realized that it would be difficult to move forward without a solid understanding of it.
+So I'd like to take this opportunity to summarize it. (While I'm assuming OpenSocial to some extent, the discussion of signatures is not limited to OpenSocial.)
 
 ## What is a signature?
 
@@ -81,7 +79,7 @@ Until OAuth becomes widespread and various consumers emerge, this half-baked sta
 
 ## Who is the consumer?
 
-At this point, those with a keen sense of intuition may have noticed that with the RSA-SHA1 method, the signature is provided by the OpenSocial container site itself, not a gadget like MySpace. This means that the consumer key (`oauth_consumer_key`) will naturally be something that represents the container site, such as "orkut.com" for Orkut or "hi5.com" for hi5.
+Those with a keen eye may have noticed that with the RSA-SHA1 method, the signature is provided by the OpenSocial container site itself, not a gadget like MySpace. This means that the consumer key (`oauth_consumer_key`) will naturally be something that represents the container site, such as "orkut.com" for Orkut or "hi5.com" for hi5.
 
 In addition, with this method, a parameter called `xoauth_app_url` is added to indicate which gadget is making the request. This is proposed by the [OAuth Gadget
 Extension](http://dirk.balfanz.googlepages.com/oauth_gadget_extension.html).

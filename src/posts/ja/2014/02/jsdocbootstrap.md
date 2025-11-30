@@ -5,10 +5,10 @@ title: jsdocをbootstrapできれいに生成する
 date: 2014-02-12
 updated: 2014-02-12
 tags:
-- JsDoc
-- Bootstrap
-- Grunt
-- docstrap
+  - JsDoc
+  - Bootstrap
+  - Grunt
+  - docstrap
 ---
 
 検索してもあまり日本語の情報が出てこなかったのでメモを残しておきます。
@@ -119,5 +119,5 @@ grunt.loadNpmTasks('grunt-jsdoc');
 
 ## おまけ
 
-実は JSDoc は README.md などの markdown で書かれたファイルをトップページに組み込むことができます。使い方は、上記の通り変換するソースの一覧に加えるだけ。  
+実は JSDoc は README.md などの markdown で書かれたファイルをトップページに組み込むことができます。使い方は、上記の通り変換するソースの一覧に加えるだけ。
 また、これも JSDoc 自体が持つ機能ですが、プラグインで markdown を入れておくとコメントにも markdown 記法が使えて大変便利です。

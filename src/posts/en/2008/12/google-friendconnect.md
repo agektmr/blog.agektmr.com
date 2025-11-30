@@ -1,17 +1,16 @@
 ---
 layout: post
 lang: en
-title: 'Google FriendConnect public release'
-description: ''
+title: Google FriendConnect public release
+description:
 date: 2008-12-04
 tags:
-- FriendConnect
+  - FriendConnect
   - Google
 translationOf: /2008/12/google-friendconnect.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-Invitations appear to have begun to be distributed to those who had previously applied for the preview.
+It appears that invitations have begun to be distributed to those who had applied for the preview in advance.
 
 I've already posted it on the left side of this blog. Please join!

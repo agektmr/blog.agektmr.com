@@ -1,21 +1,21 @@
 ---
 layout: post
 lang: en
-title: 'Web Music Hackathon #3 Report: Enjoying Sound in Your Browser'
-description: ''
+title: "Web Music Hackathon #3 Report: Enjoying Sound in Your Browser"
+description:
 date: 2014-09-17
 updated: 2014-09-17
 image:
-feature: /event-report-web-music-hackathon-3/guitar.jpg
+  feature: /event-report-web-music-hackathon-3/guitar.jpg
 tags:
-- Hackathon
-- Web MIDI API
-- Web Audio API
+  - Hackathon
+  - Web MIDI API
+  - Web Audio API
 translationOf: /2014/09/web-music-3.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-This hackathon, which aims to create fun sound using browser-based APIs like the Web Audio API and Web MIDI API, is now in its third year. This year's event was packed with great content and amazing ideas, but in this post I'd like to briefly summarize the content.
+This hackathon, which aims to let participants enjoy sound using browser-based APIs like the Web Audio API and Web MIDI API, is now in its third year. This year's event was packed with great content and amazing ideas, but in this post I'd like to briefly summarize the content.
 
 <!-- excerpt -->
 
@@ -69,7 +69,7 @@ Hacking
 
 In addition to the over 40 attendees, we also had many attendees from musical instrument manufacturers such as W3C, Yamaha, Roland, Korg, and Crimson Technology, as well as representatives from the Japan Synthesizer Programmers Association (JSPA)(http://www.jspa.gr.jp/) and the Musical Electronics Industry Association (AMEI)(http://www.amei.or.jp/). The event attracted more attention from the musical instrument industry than from the web industry.
 
-This time too, various instrument manufacturers lent out instruments, but it was impressive to see so many people bringing their own instruments. Check out the photos to see the excitement during the hacking session.
+This time, we had various instrument manufacturers lend us their instruments, but what was striking was that so many people brought their own instruments. Check out the photos to see the excitement during the hacking session.
 
 [![](https://4.bp.blogspot.com/-bM8bMaRi49M/VBlAYoU4grI/AAAAAAAAt4s/N0J-psHopX0/s1600/Screen%2BShot%2B2014-09-17%2Bat%2B17.03.15.png)](https://plus.google.com/events/gallery/cqvnr68c6r4b43dikum0kaljme4)
 
@@ -119,7 +119,7 @@ A new work by Takagi, who always showcases his Mokugyo art.
 
 ### @watilde
 
-[abeck.js](http://watilde.github.io/abeck/) ([Source Code](http://github.com/watilde/abeck)) 
+[abeck.js](http://watilde.github.io/abeck/) ([Source Code](http://github.com/watilde/abeck))
 This work allows you to play music and generate sheet music by registering a sequence using [ABC Notation](http://abcnotation.com/).
 
 [![](https://2.bp.blogspot.com/-IynrkpwvCKM/VBk7zOEumGI/AAAAAAAAt3A/-WIoFx66GkQ/s1600/Screen%2BShot%2B2014-09-16%2Bat%2B17.53.13.png)](https://www.youtube.com/watch?v=z_TGofN7wv8#t=2727)
@@ -176,4 +176,4 @@ Stay tuned for next time!
 
 [![](https://1.bp.blogspot.com/-cCy5DA1m05I/VBQirsT1V-I/AAAAAAAAjSI/ST5uZNXQuCM/w1922-h1442-no/P9136029.JPG)](https://1.bp.blogspot.com/-cCy5DA1m05I/VBQirsT1V-I/AAAAAAAAjSI/ST5uZNXQuCM/w1922-h1442-no/P9136029.JPG)
 
-P.S. Thanks to the organizer, [Kawai-san](https://twitter.com/ryoyakawai) for your hard work!
+P.S. Thanks to the organizer [Kawai-san](https://twitter.com/ryoyakawai) for your hard work!

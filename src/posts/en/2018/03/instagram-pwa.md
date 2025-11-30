@@ -1,18 +1,17 @@
 ---
 layout: post
 lang: en
-title: 'So, are PWAs coming or not?'
-description: 'This is an answer song to "Engineers who say PWA is coming, quit now"'
+title: So, are PWAs coming or not?
+description: "This is an answer song to \"Engineers who say PWA is coming, quit now\""
 date: 2018-03-23
 tags:
-- PWA
-- Progressive Web Apps
+  - PWA
+  - Progressive Web Apps
 translationOf: /2018/03/instagram-pwa.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-I found this article on Twitter yesterday.
+I came across this article on Twitter yesterday:
 
 [Any engineers who say PWA is coming, quit now](https://anond.hatelabo.jp/20180321171652)
 
@@ -51,7 +50,7 @@ In fact, this blog is also trying to speed up in this way. Many people know that
 
 ## Why did Instagram create a PWA?
 
-Let's go back to Instagram for a moment. Let's start by asking why Instagram, an already hugely successful native app service, went to the trouble of recreating the experience as a web app.
+Let's go back to Instagram for a moment. Let's start by asking why Instagram, an already hugely successful native app service, decided to go to the trouble of recreating the experience as a web app.
 
 - If PWAs are successful, will they abandon native apps?
 - Even if PWAs can create something equivalent to native apps, what are the benefits?
@@ -98,7 +97,7 @@ As you may have noticed, this is a deliberate design change to prevent resources
 
 Incidentally, it may be possible to achieve a UX like the native app version of Stories, where playback starts immediately after opening and you can switch between videos by swiping or tapping, on the web if you try hard enough, but I'm sure there would be various challenges. Unfortunately, this is outside my area of expertise, so I would appreciate it if someone could explain how to achieve this on the web, or why it's not possible.
 
-Should you choose a PWA now?
+Should you choose PWA now?
 
 Well, after reading this far, I hope that those who are wondering whether they should support PWAs and those who claim that PWAs will make native apps obsolete will no longer be worried.
 

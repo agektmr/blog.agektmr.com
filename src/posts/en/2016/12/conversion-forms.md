@@ -1,24 +1,23 @@
 ---
 layout: post
 lang: en
-title: 'Improving Mobile Web Conversions - Forms'
-description: ''
+title: Improving Mobile Web Conversions - Forms
+description:
 date: 2016-12-26
 tags:
-- Payments
-- Form
+  - Payments
+  - Form
 translationOf: /2016/12/conversion-forms.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
+The internet has been around for over 20 years, and we've seen a shift from desktop to mobile. Mobile not only caters to smaller screens, but also demands a faster experience, and e-commerce businesses are no exception.
 
-More than 20 years have passed since the advent of the Internet, and the era has shifted from desktop to mobile. Mobile not only accommodates smaller screens, but also demands a faster experience. E-commerce businesses are no exception.
-
-Data shows that 66% of mobile payments are made on the web rather than through native apps. This is likely because installing an app from a search result to purchase a product is too much of a hassle, so many people choose to pay directly on the web.
+Data shows that 66% of mobile payments are made on the web rather than through native apps. This is likely because it is too much of a hassle to install an app from a search result and then purchase a product, so many people choose to pay directly on the web.
 
 However, there is also data that shows that mobile websites have a 66% lower conversion rate than desktop websites, which means that there is still room for improvement in mobile web conversion rates.
 
-So today, I'd like to share two ways you can improve your mobile web conversions by improving your forms.
+So today, I'd like to introduce two ways to improve your forms to increase your mobile web conversions.
 
 <!-- excerpt -->
 
@@ -238,4 +237,4 @@ You can try it out here (we've provided a separate link because credit card info
 </form>
 ```
 
-In the next article, we'll cover the Payment Request API and introduce the latest browser features that can further improve conversions.
+In the next article, we will introduce the latest browser features for the Payment Request API that can further improve conversions.

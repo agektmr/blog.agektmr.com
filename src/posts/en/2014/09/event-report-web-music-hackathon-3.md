@@ -1,20 +1,19 @@
 ---
 layout: post
 lang: en
-title: 'Event Report: Web Music Hackathon #3'
-description: ''
+title: "Event Report: Web Music Hackathon #3"
+description:
 date: 2014-09-18
 image:
-feature: /event-report-web-music-hackathon-3/guitar.jpg
+  feature: /event-report-web-music-hackathon-3/guitar.jpg
 tags:
-- Hackathon
-- Web MIDI API
-- Web Audio API
+  - Hackathon
+  - Web MIDI API
+  - Web Audio API
 translationOf: /2014/09/event-report-web-music-hackathon-3.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
 Did you know web browsers can now make music? Or at least sound. By using Web
 Audio API, you can synthesize, add effects, modulate, split, merge - whatever
 you can imagine to process audio: they are available on many browsers.
@@ -58,7 +57,7 @@ I will link back to the WAH report when available.
 We started the day with an update from Google engineer and Web MIDI API
 implementor [@toyoshima](http://twitter.com/toyoshim) about what's new in Web
 MIDI API. Here's the slides:
-  
+
 <div style="text-align: center;">
   <iframe allowfullscreen="" frameborder="0" height="356" marginheight="0" marginwidth="0" scrolling="no" src="//www.slideshare.net/slideshow/embed_code/39034752" style="border-width: 1px; border: 1px solid #CCC; margin-bottom: 5px; max-width: 100%;" width="427"> </iframe>
   <div>
@@ -87,7 +86,7 @@ framework](http://d.hatena.ne.jp/aike/20140913).
 @g200kg showed off demo of his new project: LiveBeats
 
 <div style="text-align: center;"><div class="g-post" data-href="https://plus.google.com/107085977904914121234/posts/VWuysJxCfh7"></div></div>
-  
+
 Mr. Tada from YAMAHA Corp introduced a new product called "Web Music DAW
 Connector". This is a VST plugin that connects a DAW system with a browser via
 WebSocket. He showed us a demonstration: his Cubase connects with Chrome running

@@ -1,20 +1,19 @@
 ---
 layout: post
 lang: en
-title: 'Deciphering the Shindig'
-description: ''
+title: Deciphering the Shindig
+description:
 date: 2008-05-04
 tags:
-- OpenSocial
+  - OpenSocial
   - Shindig
 translationOf: /2008/05/shindig.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
 We previously introduced how to install Shindig ([Java
-version](http://devlog.agektmr.com/archives/6), [PHP
-version](http://devlog.agektmr.com/archives/11)). The PHP version has finally reached a usable level, so we decided to decipher the source code. Note that while the Java version is more advanced, this article focuses on the PHP version.
+version](http://devlog.agektmr.com/archives/6) and [PHP
+version](http://devlog.agektmr.com/archives/11)). The PHP version has finally reached a usable level, so we decided to decipher the source code. Note that while the Java version is more advanced, this article focuses on the PHP version only.
 
 What is Shindig?
 
