@@ -4,29 +4,32 @@ FROM node:22-alpine AS builder
 
 WORKDIR /app
 
+# Enable pnpm
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
 # Copy package files
-COPY package*.json ./
+COPY package.json pnpm-lock.yaml ./
 
 # Install all dependencies (including devDependencies for build)
-RUN npm ci
+RUN pnpm install --frozen-lockfile
 
 # Copy source files
 COPY . .
 
 # Build the site (includes Eleventy and Rollup)
-RUN npm run build
+RUN pnpm run build
 
 # Stage 2: Production server
 FROM node:22-alpine
 
 WORKDIR /app
 
-# Install production dependencies only
-COPY package*.json ./
-RUN npm ci --only=production
+# Enable pnpm
+RUN corepack enable && corepack prepare pnpm@latest --activate
 
-# Add express and cookie-parser for server
-RUN npm install express cookie-parser
+# Install production dependencies only
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --prod --frozen-lockfile
 
 # Copy built site from builder
 COPY --from=builder /app/_site ./_site
