@@ -274,11 +274,11 @@ ERROR: (gcloud.run.deploy) Revision 'blog-agektmr-com-00003-5d4' is not ready an
 Gemini gave me the following commands that worked successfully:
 
 ```sh
-docker buildx build --platform=linux/amd64 -t gcr.io/tender-surrender/blog-agektmr-com:latest --push .
+$ docker buildx build --platform=linux/amd64 -t gcr.io/tender-surrender/blog-agektmr-com:latest --push .
 ```
 
 ```sh
-gcloud run deploy blog-agektmr-com --image gcr.io/tender-surrender/blog-agektmr-com:latest --region us-central1 --project tender-surrender
+$ gcloud run deploy blog-agektmr-com --image gcr.io/tender-surrender/blog-agektmr-com:latest --region us-central1 --project tender-surrender
 ```
 
 
