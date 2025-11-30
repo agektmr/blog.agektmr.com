@@ -5,10 +5,10 @@ title: 'Payment Request API のよくある誤解を解く'
 description: 'Web Payments / Payment Request API について、みんなが誤解しているところをはっきりさせます'
 date: 2017-12-08
 tags:
-- Payments
-- Web Payments
-- Payment Request API
-- PCI DSS
+  - Payments
+  - Web Payments
+  - Payment Request API
+  - PCI DSS
 ---
 
 このポストは [Chromium Browser Advent Calendar 2017](https://qiita.com/advent-calendar/2017/chromium) の 12/8 分です。[先日 Medium に投稿した英語版](https://medium.com/dev-channel/addressing-common-misconceptions-about-the-payment-request-api-4d0db51dae75)を翻訳し、日本向けに若干加筆したものになります。

@@ -1,23 +1,14 @@
 ---
-layout: layouts/post
+layout: layouts/page
+lang: en
 title: About Me
-author: Eiji Kitamura
-templateClass: tmpl-post
-eleventyNavigation:
-  key: About Me
-  order: 3
+permalink: /en/about/
 eleventyExcludeFromCollections: true
-date: 2021-06-24
-updated: 2023-05-16
-tags:
-  - pages
 ---
 
 <img src="/images/avatar.jpg" class="profile-image" alt="Eiji Kitamura / えーじ">
 
 ## Eiji Kitamura / えーじ
-
-Google デベロッパー アドボケートとして Chrome ブラウザの開発チームに所属。認証や支払い、セキュリティ、プライバシーなどを中心に、ウェブの標準技術についての啓発活動を行っている。
 
 Eiji is a developer advocate at Google Chrome team working on trust and safety
 on the web, specialized in identity, payment, security and privacy to make them
@@ -46,4 +37,3 @@ open, seamless and frictionless.
 ### Google I/O 2017: Secure and Seamless Sign-In: Keeping Users Engaged
 
 {% YouTube 'DBBFK7bvEQo' %}
-

@@ -1,14 +1,14 @@
 ---
 layout: post
 lang: en
-title: We have released "Gadget Tweet!", the (probably) world's first Twitter client for OpenSocial that uses OAuth.
-description: ''
+title: "We have released \"Gadget Tweet!\", the (probably) world's first Twitter client for OpenSocial that uses OAuth."
+description:
 date: 2009-08-18
 tags:
-- Gadget
+  - Gadget
   - ガジェツイ！
 translationOf: /2009/08/oauth-opensocial-twitter.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 <a href="http://home.goo.ne.jp/gadget/qYpTF5ucNCt2/detail" target="_blank"><img class="size-full wp-image-643" title="GadgeTweetr_Logo" src="/images/2009/08/GadgeTweetr_Logo.png" alt="GadgeTweetr_Logo" width="616" height="119" /></a>

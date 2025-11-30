@@ -1,13 +1,13 @@
 ---
 layout: post
 lang: en
-title: 'I became a Shindig committer'
-description: ''
+title: I became a Shindig committer
+description:
 date: 2009-08-29
 tags:
-- Shindig
+  - Shindig
 translationOf: /2009/08/shindig.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 "The web should be social." This is something I've been advocating since I joined my current company around 2005. There's a lot we can achieve by turning the social graph into a platform. Our first goal was to make the entire portal site social, and that's how we created <a href="http://home.goo.ne.jp/" target="_blank">goo Home</a>.

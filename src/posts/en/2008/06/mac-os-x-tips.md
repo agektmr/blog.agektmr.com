@@ -1,18 +1,17 @@
 ---
 layout: post
 lang: en
-title: 'Mac OS X Geek Tips'
-description: ''
+title: Mac OS X Geek Tips
+description:
 date: 2008-06-03
 tags:
-- Mac OS X
+  - Mac OS X
   - Tips
 translationOf: /2008/06/mac-os-x-tips.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-## Kotoeri conversion
+## Kotoeri transformation
 
 During conversion
 
@@ -61,7 +60,7 @@ PDFQuickLook
 
 Dashboard
 
-Press `Option` and hover your mouse over it to display an X to delete the widget (so you don't have to click `+` in the bottom left corner of the screen every time).
+Press `Option` and hover your mouse over it to see the x symbol for deleting the widget (so you don't have to click `+` in the bottom left corner of the screen every time).
 
 ## others
 

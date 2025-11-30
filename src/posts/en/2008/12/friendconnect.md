@@ -1,13 +1,13 @@
 ---
 layout: post
 lang: en
-title: 'FriendConnect experimental'
-description: ''
+title: FriendConnect experimental
+description:
 date: 2008-12-10
 tags:
-- FriendConnect
+  - FriendConnect
 translationOf: /2008/12/friendconnect.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 I have added a slightly modified OpenSocial gadget called Friend Introducer that I created previously to the bottom of the left sidebar of this blog (as of December 9, 2008) for FriendConnect.

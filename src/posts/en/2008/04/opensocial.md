@@ -1,18 +1,17 @@
 ---
 layout: post
 lang: en
-title: 'I participated in a study group (!?) about OpenSocial'
-description: ''
+title: "I participated in a study group (!?) about OpenSocial"
+description:
 date: 2008-04-08
 tags:
-- MySpace
+  - MySpace
   - OpenSocial
 translationOf: /2008/04/opensocial.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-I went to a study group called "What about [OpenSocial](http://www.ideaxidea.com/archives/2008/04/opensocial.html)?" which was advertised on a blog called IDEAxIDEA, run by someone from Hyaku Shiki. The event was held at the [MySpace Japan](http://jp.myspace.com/) office in Shiodome. Apparently, engineers from the company were visiting Japan, so I attended with a list of questions I wanted to ask.
+I went to a study group called "What about [OpenSocial](http://www.ideaxidea.com/archives/2008/04/opensocial.html)?", which was advertised on a blog called IDEAxIDEA, run by someone from Hyakushiki. The event was held at the [MySpace Japan](http://jp.myspace.com/) office in Shiodome. Apparently, an engineer from the company was visiting Japan, so I came prepared with a list of questions I wanted to ask.
 
 ## Relationship between MDP and OpenSocial
 
@@ -42,7 +41,7 @@ I also asked about a feature that allows individual messages to be sent, and was
 
 App developers can start development immediately after obtaining a Sandbox account, but before they can actually publish their app, they must go through a review process that involves a code review and legal check (for copyright infringement, etc.). The app is usually released within 24 to 48 hours, but it may take longer if there are any questionable rights issues.
 
-I forgot to mention that even if you put your app on a remote server in XML, once the app passes the review, any subsequent changes to the XML on the server will not be reflected, as is the case with Google Gadget.
+I forgot to mention that even if you put your app on a remote server in XML, once the app passes the review, it seems that any subsequent changes to the XML on the server will not be reflected, as is the case with Google Gadget.
 
 ### Notes
 
@@ -77,7 +76,7 @@ Facebook saw a sudden surge in growth after the release of its application featu
 
 ## About escapeString and unescapeString
 
-When using the persistent API, only string information can be saved, so data is exchanged in JSON format. The string needs to be escaped before sending and unescaped when receiving it. While `gadgets.util.escapeString()` and `gadgets.util.unescapeString()` worked in Orkut and hi5, they didn't work in MySpace, so I asked this question.
+When using the persistent API, only string information can be saved, so data is exchanged in JSON format. The string needs to be escaped before sending and unescaped when receiving it. While `gadgets.util.escapeString()` and `gadgets.util.unescapeString()` work with Orkut and hi5, they don't work with MySpace, so I asked this question.
 
 The answer is that `escapeString` and `unescapeString` are no longer in use, and `encodeURIComponent` is now recommended. I just looked at the OpenSocial spec, and it seems that `gadgets.util.scapeString()` and `gadgets.util.unescapeString()` are still valid, though...
 
@@ -94,7 +93,7 @@ I don't know if anyone else has been able to get this app into their Sandbox acc
 ## thoughts
 
 * It seems that many MySpace engineers use Aptana. I don't like Java apps because they're slow, so I don't generally use them, but maybe I'll give it another try...
-* What surprised me was that out of the 10 participants, only 4 brought out their laptops. And all of them were **MacBook Air users**! 
+* What surprised me was that out of the 10 participants, only 4 brought out their laptops. And all of them were **MacBook Air users**!
 Everyone's so rich.  
 * I got my photo taken with Ozzie!
 
@@ -106,4 +105,4 @@ I emailed Terrence, who had told me about this on the day, to confirm that "`esc
 
 Apparently, he mistook "`escape」`" for the common JavaScript `escape`, and when he said "`escape` is no longer in use," he was referring to that. Indeed, it is now recommended to use `encodeURIComponent` rather than `escape`.
 
-So, as for the main topic, `gadgets.util.escpeString` and `gadgets.util.unescapeString`, it seems that they are indeed not implemented on MySpace. Looks like I'll have to figure it out myself.
+As for the main issue of `gadgets.util.escpeString` and `gadgets.util.unescapeString`, it seems that they are not implemented in MySpace. I guess I'll have to solve it myself.

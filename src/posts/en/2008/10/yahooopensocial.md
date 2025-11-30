@@ -1,19 +1,19 @@
 ---
 layout: post
 lang: en
-title: 'Yahoo! USA now supports OpenSocial'
-description: ''
+title: "Yahoo! USA now supports OpenSocial"
+description:
 date: 2008-10-29
 tags:
-- SocialWeb
+  - SocialWeb
   - OpenSocial
   - Y!OS
   - Yahoo!
 translationOf: /2008/10/yahooopensocial.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-Today, Yahoo! US released the Yahoo! Open Strategy 1.0 to developers, including the Yahoo! Application Platform (YAP), Yahoo! Social Platform (YSP), and Yahoo! Query Language (YQL).
+Today, Yahoo! released the Yahoo! Application Platform (YAP), Yahoo! Social Platform (YSP), and Yahoo! Query Language (YQL) to developers as part of Yahoo! Open Strategy 1.0.
 
 ##Yahoo! Social Platform
 
@@ -21,7 +21,7 @@ It provides a REST-based API for social media such as profiles, address books, a
 
 ##Yahoo! Query Language
 
-A web-based API that allows you to retrieve data by sending SQL-like commands, similar to Yahoo! Pipes. It's similar to Facebook's FQL.
+A web-based API that allows you to retrieve data like Yahoo! Pipes by sending SQL-like commands. It's similar to Facebook's FQL.
 
 ## Yahoo! Application Platform
 
@@ -53,4 +53,4 @@ For example, you can't use JavaScript APIs that use makeRequest to retrieve data
 
 However, the fact that the world's largest portal site is supporting OpenSocial is significant, and future developments will be worth keeping an eye on. From an overall perspective, OpenSocial support is merely a component, but it will have important implications for the future of the web. The presentation at the recent [Yahoo! Open Hack Day](http://www.kidsallright.com/blog/2008/09/18/yahoo-open-strategy-overview/) is definitely worth a watch.
 
-I believe it won't be long before people in Japan recognize the importance of the web, which is rapidly becoming a platform, and the social functions that it holds within it.
+I believe that the day is not far off when people in Japan will recognize the importance of the web, which is increasingly becoming a platform, and the social functions that it holds within it.

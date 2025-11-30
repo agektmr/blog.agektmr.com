@@ -8,10 +8,10 @@ updated: 2021-12-26
 image:
   feature: /2021/require-corp.png
 tags:
-- Security
-- Cross-origin isolation
-- SharedArrayBuffer
-- Spectre
+  - Security
+  - Cross-origin isolation
+  - SharedArrayBuffer
+  - Spectre
 ---
 
 {% Aside %}
@@ -141,7 +141,7 @@ iframe に読み込まれる HTML ドキュメントも cross-origin であれ�
 
 実は、再帰的に要件を満たさなければ、すべてブロックされます。iframe を埋め込むためには、それ自体にも `COEP: require-corp` が必要になります。
 
-まとめると、cross-origin isolated なページに cross-origin な HTML ドキュメントを iframe で埋め込む場合は、その iframe にロードされる HTML ドキュメントも: 
+まとめると、cross-origin isolated なページに cross-origin な HTML ドキュメントを iframe で埋め込む場合は、その iframe にロードされる HTML ドキュメントも:
 
 * `COEP: require-corp` であること
 * `CORP: cross-origin` であること (same-site / cross-origin なら `CORP: same-site` でも可)
@@ -169,9 +169,9 @@ iframe についても、こちらの[デモ](https://first-party-test.glitch.me
 
 ただ、まだ課題は残ります。
 
-* **課題 1. `COOP: same-origin` は OAuth や支払いなどの popup ウィンドウを使う連携を壊す。** 
+* **課題 1. `COOP: same-origin` は OAuth や支払いなどの popup ウィンドウを使う連携を壊す。**
 `COOP: same-origin` の性質上、cross-origin なウィンドウを開いて通信を行う OAuth や支払い系によくある連携はできなくなってしまいます。
-* **課題 2. CORS や `CORP: cross-origin` を指定しようにも、他社のリソースなので指定できない。**  
+* **課題 2. CORS や `CORP: cross-origin` を指定しようにも、他社のリソースなので指定できない。**
 これも cross-origin isolation の典型的な問題です。
 
 例えば Google から配信されているリソースの多くはすでに `CORP: cross-origin` に対応済みですが、上記のような課題から、cross-origin isolation に対応していないサービスも存在しています。例えば Google Ads は iframe を使って広告を配信していますが、iframe の中身を広告主が配信しているケースもあり、そのすべてに CORS や CORP の導入を求めるのは現実的ではないため、[対応しない意向を示しています](https://developers.google.com/publisher-tag/guides/cross-origin-embedder-policy)。

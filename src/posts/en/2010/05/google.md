@@ -1,11 +1,14 @@
 ---
 layout: post
 lang: en
-title: I'm joining Google
-description: ''
+title: "I'm joining to Google"
+description:
 date: 2010-05-31
+categories:
+  - HTML5
+  - プライベート
 translationOf: /2010/05/google.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 It has already been four years and eight months since I started working at my current company.

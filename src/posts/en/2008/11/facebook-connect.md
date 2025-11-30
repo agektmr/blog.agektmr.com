@@ -1,21 +1,20 @@
 ---
 layout: post
 lang: en
-title: 'Facebook Connect: The Future of the Social Web'
-description: ''
+title: "Facebook Connect: The Future of the Social Web"
+description:
 date: 2008-11-20
 tags:
-- DataPortability
+  - DataPortability
   - Facebook
   - Service
   - SocialWeb
   - Facebook Connect
 translationOf: /2008/11/facebook-connect.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-It's been six months since the Data Availability, Facebook Connect, and FriendConnect technologies that enable Data Portability were announced, and services that actually use these technologies are finally starting to appear.
+It's been six months since the Data Availability, Facebook Connect, and FriendConnect technologies that enable DataPortability were announced, and services that actually use them are finally starting to appear.
 
 Until now, gadgets and embedded applications on Facebook and OpenSocial have only plugged into the core social network, with external services providing functionality. Data Availability and Facebook Connect, on the other hand, export the social network to external services using RESTful APIs. Today, I'd like to use Facebook Connect, implemented in a service called Citysearch, as an example to show the concrete shape of the social web of the future.
 
@@ -78,7 +77,7 @@ In fact, Facebook Connect has a mechanism for feeding activity back to Facebook,
 
 ![citysearch7](/images/2008/11/citysearch7.png)
 
-I'd like to post a screenshot of the actual screen, but I don't have the courage to write a review on Citysearch, so I'll just link to [John McCrea's example](http://www.flickr.com/photos/56624456@N00/3044329360/).
+I would like to post the actual screenshots, but I don't have the courage to write a review on Citysearch, so I'll just link to [John McCrea's example](http://www.flickr.com/photos/56624456@N00/3044329360/).
 
 ![Citysearch_Facebook](https://farm4.static.flickr.com/3278/3044329360_6171dc1f04.jpg?v=0)
 

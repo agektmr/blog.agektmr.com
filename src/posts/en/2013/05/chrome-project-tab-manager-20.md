@@ -1,15 +1,18 @@
 ---
 layout: post
 lang: en
-title: 'Project Tab Manager 2.0 Released: No More Tab Overload in Chrome'
-description: ''
+title: "Project Tab Manager 2.0 Released: No More Tab Overload in Chrome"
+description:
 date: 2013-05-18
 updated: 2013-07-18
+categories:
+  - AngularJS
+  - Chrome Extension
+  - Project Tab Manager
 translationOf: /2013/05/chrome-project-tab-manager-20.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
 We've released version 2.0 of the Chrome Extension called Project Tab Manager, which was released last summer.
 The changes in 2.0 are as follows:
 
@@ -120,4 +123,4 @@ One of PTM's features is Lazy Load. This allows you to open a large number of ta
 
 ## lastly
 
-If you find a bug or have a feature request, please submit it [here](https://chrome.google.com/webstore/detail/project-tab-manager/iapdnheekciiecjijobcglkcgeckpoia/details). Developers would be grateful if you could contribute directly [through github](https://github.com/agektmr/ProjectTabManager).
+If you find a bug or have a feature request, please submit it [here](https://chrome.google.com/webstore/detail/project-tab-manager/iapdnheekciiecjijobcglkcgeckpoia/details). Developers are welcome to contribute directly [through github](https://github.com/agektmr/ProjectTabManager).

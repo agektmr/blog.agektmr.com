@@ -1,11 +1,11 @@
 ---
 layout: post
 lang: en
-title: 'FriendConnect gives a glimpse into the future of the social web'
-description: ''
+title: FriendConnect gives a glimpse into the future of the social web
+description:
 date: 2008-06-20
 tags:
-- OAuth
+  - OAuth
   - OpenID
   - OpenSocial
   - PortableContacts
@@ -13,10 +13,9 @@ tags:
   - FriendConnect
   - SocialWeb
 translationOf: /2008/06/friendconnect.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
 It's a little late, but I recently attended Google I/O in San Francisco.
 
 The session that left the biggest impression on me was "OpenSocial, OpenID, and OAuth: Oh My!" by Joseph Smarr of Plaxo. It was by far the most popular of the sessions I saw, and the room was packed with people, with standing room only available.
@@ -50,7 +49,7 @@ To get a better understanding of FriendConnect, here's a blog post by Joseph Sma
 [Plaxo and FriendConnect are now Best
 Friends](http://blog.plaxo.com/archives/2008/06/plaxo_and_frien_1.html)
 
-Plaxo is now fully integrated with FriendConnect, Google's widget-based tool that makes any site social. Now, you can securely connect any FriendConnect-enabled site to your Plaxo account, see your friends on that site, and invite them to join. Best of all, your activity on that site will now stream into Pulse, allowing your Plaxo friends to stay in touch with you across the web and learn about new sites you discover. This is a truly useful and exciting integration—it brings us closer to a seamless social web ecosystem, where users can carry their identity and relationships with them everywhere on the web, discover contacts on new sites, share their activity with existing friends, and create a virtuous cycle of social discovery and sharing. This is the way the social web should be going—you shouldn't have to start from scratch every time you try a new social site (as most services do today). Every new experience you have should be engaging for others. 
+Plaxo is now fully integrated with FriendConnect, Google's widget-based tool that makes any site social. Now, you can securely connect any FriendConnect-enabled site to your Plaxo account, see your friends on that site, and invite them to join. Best of all, your activity on that site will now stream into Pulse, allowing your Plaxo friends to stay in touch with you across the web and learn about new sites you discover. This is a truly useful and exciting integration—it brings us closer to a seamless social web ecosystem, where users can carry their identity and relationships with them everywhere on the web, discover contacts on new sites, share their activity with existing friends, and create a virtuous cycle of social discovery and sharing. This is the way the social web should be going—you shouldn't have to start from scratch every time you try a new social site (as most services do today). Every new experience you have should be engaging for others.
 
 > This can only happen if services give users control over their data and provide secure access using open standards. And that's exactly what Plaxo wants to do with FriendConnect. When you connect your Plaxo account, we use [OAuth](http://oauth.net/), so you don't need to pass your Plaxo password and can disconnect later. When you use FriendConnect to share your activities with Pulse, you use the [OpenSocial 0.8 RESTful Activities
 > API](http://devlog.agektmr.com/wiki/index.php?cmd=read&page=OpenSocial%2FRESTful%20API%20Specification). The only integration that isn't an open standard is the Address Book API, which we've begun working on. We strongly believe in fulfilling our roles as an identity provider, social graph provider, and content aggregator. This means we empower users to carry and share their data and relationships anywhere on the web—a win for users, for Plaxo, and for the web as a whole. But we're just getting started—look forward to further enhancements, such as more granular control over who you share your activities with from FriendConnect-enabled sites, including family, friends, and business associates.
@@ -69,5 +68,4 @@ I'll continue to follow developments in this area.
 
 I found an article that touched on a similar topic, so I'll add it here and track it down. (I gave up because it didn't work out. ○|￣|＿)
 
-[Google's View of Social Networking – Three Trends: Special Report –
-CNET Japan](http://japan.cnet.com/special/story/0,2000056049,20375542,00.htm)
+[Google's View of Social Networking – Three Trends: Special Report – CNET Japan](http://japan.cnet.com/special/story/0,2000056049,20375542,00.htm)

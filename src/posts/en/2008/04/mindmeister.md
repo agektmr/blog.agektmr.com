@@ -1,19 +1,18 @@
 ---
 layout: post
 lang: en
-title: 'Mind map service that can be used offline - MindMeister'
-description: ''
+title: Mind map service that can be used offline - MindMeister
+description:
 date: 2008-04-29
 tags:
-- MindMeister
+  - MindMeister
   - Widget
   - マインドマップ
 translationOf: /2008/04/mindmeister.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-Today I found a great service for the first time in a while, so I'd like to introduce it to you.
+Today I'd like to introduce a cool service I found for the first time in a while.
 
 MindMeister
 
@@ -71,7 +70,7 @@ Other features available include extensions for IE/Firefox and additional pages 
 
 ![mindmeister_offline](/images/2008/04/mindmeister_offline-300x186.jpg)
 
-Above all else, it's the offline functionality.
+Above all, it's the offline functionality.
 
 You'll need Google Gears on Firefox or Internet Explorer, but you can use MindMeister offline, so you can jot down ideas anytime, anywhere.
 
@@ -79,4 +78,4 @@ You'll need Google Gears on Firefox or Internet Explorer, but you can use MindMe
 
 Although I couldn't cover everything here, it also offers the ability to share and edit mind maps, and even an API. (Although that may seem a bit outdated now,) this is a service that perfectly embodies Web 2.0.
 
-However, offline functionality and other features are still not fully mature, so future developments are of interest. How will Google Gears, Prism, and HTML5 coexist? Furthermore, the importance of widgets and gadgets is increasing day by day. It's time to hone your JavaScript skills!
+However, offline functionality and other features are still not fully developed, so future developments are of interest. How will Google Gears, Prism, and HTML5 coexist? Furthermore, the importance of widgets and gadgets is increasing day by day. Now is the time to hone your JavaScript skills!

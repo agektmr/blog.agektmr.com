@@ -1,21 +1,20 @@
 ---
 layout: post
 lang: en
-title: 'The Spectre threat and the headers websites should set'
-description: 'The emergence of Spectre has increased the security requirements for websites. We have summarized the types of attacks that Spectre can cause and the specific countermeasures that are required.'
+title: The Spectre threat and the headers websites should set
+description: The emergence of Spectre has increased the security requirements for websites. We have summarized the types of attacks that Spectre can cause and the specific countermeasures that are required.
 date: 2021-11-01
 updated: 2021-11-04
 image:
-feature: /2021/spectre1.png
+  feature: /2021/spectre1.png
 tags:
-- Security
-- Spectre
+  - Security
+  - Spectre
 translationOf: /2021/11/browser-security.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-This is a long article, so I will write the conclusion first.
+This is a long article, so I'll start with the conclusion.
 
 The emergence of Spectre has increased the security requirements for websites. Specific measures required are as follows:
 
@@ -68,7 +67,7 @@ In this way, the browser's Same-Origin Policy prevents cross-origin scripts from
 
 ### Cross-Origin Resource Sharing (CORS)
 
-By the way, when you research [Cross-Origin Resource Sharing](https://web.dev/cross-origin-resource-sharing/) (CORS), most articles describe it as "a mechanism for requesting resources hosted on cross-origin sites via `fetch()`." While that's true, not all of them are. In fact, CORS also plays a role in access control on the browser.
+By the way, when you research [Cross-Origin Resource Sharing](https://web.dev/cross-origin-resource-sharing/) (CORS), most articles describe it as "a mechanism for requesting resources hosted on cross-origin sites using `fetch()`." While that's true, not all of them are. In fact, CORS also plays a role in access control on the browser.
 
 For example, when loading a cross-origin image into your page, you can simply use the `<img>` tag and not worry about CORS. There's no problem if the image is displayed on the page at the specified size and the user can view it. However, in this case, the browser uses the Same-Origin Policy to protect the image's contents (binary) from being viewed by cross-origin scripts. This is called an **Opaque Response**.
 
@@ -96,7 +95,7 @@ Spectre's ability to efficiently steal information by leveraging high-resolution
 
 That's where Site Isolation comes in. [Site Isolation](https://developers.google.com/web/updates/2018/07/site-isolation) was a project the Chrome team had been working on since before Spectre became known, to mitigate the risk of exploiting memory bugs to bypass the Same-Origin Policy. The discovery of Spectre accelerated the completion of this architecture, and it was released experimentally in May 2018.
 
-Chrome originally created processes roughly on a tab-by-tab basis, but Site Isolation, as its name suggests, separates processes on a site-by-site basis, isolating cross-site resources and protecting against the threat of Spectre. Specifically, it uses techniques such as [Cross-Origin Read Blocking (CORB)](https://www.chromium.org/Home/chromium-security/corb-for-developers) and [Out-of-process iframe (OOPIF)](https://www.chromium.org/developers/design-documents/oop-iframes). For more information, see the [Site Isolation page](https://www.chromium.org/developers/design-documents/site-isolation).
+Chrome originally created processes roughly on a tab-by-tab basis, but Site Isolation, as the name suggests, separates processes on a site-by-site basis to isolate cross-site resources and protect against Spectre threats. Specifically, it uses techniques such as [Cross-Origin Read Blocking (CORB)](https://www.chromium.org/Home/chromium-security/corb-for-developers) and [Out-of-process iframe (OOPIF)](https://www.chromium.org/developers/design-documents/oop-iframes). For more information, see the [Site Isolation page](https://www.chromium.org/developers/design-documents/site-isolation).
 
 {% Aside %}
 

@@ -1,22 +1,21 @@
 ---
 layout: post
 lang: en
-title: 'How a password-free world is possible - Learn the basics of FIDO2 and WebAuthn'
-description: ''
+title: How a password-free world is possible - Learn the basics of FIDO2 and WebAuthn
+description:
 date: 2019-03-14
 updated: 2022-06-06
 tags:
-- WebAuthn
-- FIDO
-- FIDO2
-- 認証
-- Authentication
+  - WebAuthn
+  - FIDO
+  - FIDO2
+  - 認証
+  - Authentication
 translationOf: /2019/03/fido-webauthn.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-There's no end to incidents caused by passwords, such as fraudulent money transfers and account hijacking. Ideally, we'd like to live in a world where even people with low IT literacy, such as the elderly, can easily and securely manage their online accounts. However, the history of the Internet has proven that the first priority is to realize a world without passwords. FIDO (Fast IDentity Online) is a technology that has recently been attracting attention as a way to achieve password-free logins. WebAuthn (Web Authentication) makes FIDO available from a browser. Based on reports, some may believe that these technologies are designed to achieve fingerprint authentication, but in reality, that's not quite the case.
+Password-related incidents, such as fraudulent money transfers and account hijacking, are a constant occurrence. While the ideal world would be one in which even people with low IT literacy, such as the elderly, could easily and securely manage their online accounts, the history of the Internet has proven that the first priority is to realize a world without passwords. Recently, FIDO (Fast IDentity Online) has been gaining attention as a technology that will enable password-free logins. WebAuthn (Web Authentication) makes FIDO accessible from a browser. Based on reports, some may believe that these technologies are designed to achieve fingerprint authentication, but in reality, that's not quite the case.
 
 Numerous articles have already been published about WebAuthn, so I will leave the technical details of how to use it to those articles. In this article, I will explain the big picture and the big vision of how this technology will change identity in the future.
 
@@ -54,7 +53,7 @@ Recently, a popular authentication method is combining a password with an OTP (O
 
 However, OTPs have a weakness in that if they are intercepted, they can be used by a third party. For example, if you enter your password and OTP on a phishing site (a fraudulent site that looks exactly like the real thing but has a different URL) believing it to be genuine, your account will be stolen without you even realizing it.
 
-Recently, multi-factor authentication using security keys has become popular, especially among enterprises. This method achieves two-factor authentication by combining a user's security key with their password as possession authentication.
+Recently, multi-factor authentication using security keys has become increasingly popular, especially among enterprises. This method achieves two-factor authentication by combining a user's security key with their password to authenticate their ownership.
 
 ### Public Key Cryptography and Security Keys
 
@@ -89,7 +88,7 @@ For example, U2F has enabled biometric authentication on Docomo mobile phones. W
 
 To further promote adoption and convenience, FIDO subsequently developed a new, expanded version: FIDO2. FIDO2 unified UAF and U2F, standardizing the CTAP2 protocol for communicating with authenticators and a W3C-based JavaScript API called WebAuthn (Web Authentication) for handling authenticators from a browser. It has already been implemented in Google Chrome, Mozilla Firefox, and Microsoft Edge, and Apple Safari appears to be well underway.
 
-Not only has FIDO2 refined its specifications, but its standard implementation in browsers and platforms has made it easier for even general developers to use, and it is expected to become more widely used in the future.
+Not only has the FIDO2 specification been refined, but it has also been implemented as a standard in browsers and platforms, making it easier for general developers to use, and it is expected to become more widely used in the future.
 
 ### FIDO2 and Authenticators
 
@@ -118,7 +117,7 @@ Many security keys and authenticators currently on the market can be used with F
 
 User Verification refers to the identity verification function of an authenticator. Identity verification here includes biometric authentication such as fingerprint, face, and iris recognition, as well as non-biometric fallback methods such as a PIN. With a PIN, identity verification is performed by entering a pre-set short string of numbers or alphanumeric characters via a UI such as a browser. With UV-enabled authenticators, a signature will not be issued unless identity verification is successful. This is why people say FIDO2 will eliminate the need for passwords.
 
-In other words, security keys with fingerprint authentication capabilities, such as the aforementioned BioPass FIDO, Android devices with biometric authentication capabilities, Windows devices that support Windows Hello, and in the future iOS/macOS that support TouchID or FaceID, can combine public key cryptography-based ownership authentication (User Presence = UP) with biometric authentication (User Verification = UV) to **achieve two-factor authentication on their own**, creating an environment where you can log in completely without a password.
+In other words, security keys with fingerprint authentication capabilities, such as the BioPass FIDO mentioned above, Android devices with biometric authentication capabilities, Windows devices that support Windows Hello, and in the future iOS/macOS that support TouchID or FaceID, can combine public key cryptography-based ownership authentication (User Presence = UP) with biometric authentication (User Verification = UV) to **achieve two-factor authentication on their own**, creating an environment where you can log in completely without a password.
 
 <figure>
 <img src="/images/2019/fido-5.png" >
@@ -193,7 +192,7 @@ Attestation is like a certificate, and a different certificate is pre-embedded f
 
 Unless required for compliance reasons (such as for banks, enterprises, or government agencies), there is usually no need to request attestation. (Note: If you are using it in a Google enterprise environment, please also see the [Security Keys page on the Chromium website](https://www.chromium.org/security-keys).) Ideally, each user would only need to have one authenticator. If you do use it, make sure to take advantage of MDS to avoid accepting only certain models.
 
-**Updated: 2019/03/18** We initially wrote that Attestation was "not recommended from a privacy perspective," but we have temporarily withdrawn this statement as we cannot rule out the possibility that this was a misunderstanding on our part. We will update this statement as soon as we have accurate information. 
+**Updated: 2019/03/18** We initially wrote that Attestation was "not recommended from a privacy perspective," but we have temporarily withdrawn this statement as we cannot rule out the possibility that this was a misunderstanding on our part. We will update this statement as soon as we have accurate information.
 **Updated: 2019/03/22** We have confirmed that there are virtually no privacy concerns, so we have revised the above statement.
 
 ## summary

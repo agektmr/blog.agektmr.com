@@ -1,25 +1,18 @@
 ---
-layout: undefined
-lang: en
-title: ''
-description: ''
-date: undefined
-translationOf: /2012/03/html514.html
-translated: 2025-11-29
-translatedManually: false
----
---- 
 layout: post
-lang: ja
+lang: en
 title: 14 Useful Tools for HTML5 Developers
+description:
 date: 2012-03-14
 tags:
-- CSS3
-- HTML5
-- JavaScript
-- Tools
+  - CSS3
+  - HTML5
+  - JavaScript
+  - Tools
+translationOf: /2012/03/html514.html
+translated: 2025-11-30
+translatedManually: false
 ---
-
 The other day, I found an online tool [Addy Osmani introduced on Google+](https://plus.google.com/115133653231679625609/posts/7pozWtg1LcD) that looked useful, so I'd like to introduce it to you.
 
 ## [DocHub.io](http://dochub.io/)
@@ -110,4 +103,4 @@ The change history management and saving features of Chrome DevTools are useful,
 
 ![](https://lh4.googleusercontent.com/l9BsWtGJ6NBQzTQbkHwhoYCCw1P26jr5fJDqTXKXFa18HgIDvc3_mrMMwC08xV3gLr6uMAdsRH1XA-DswwmViVb1cfUlaC-5aE27nQO0miZc4LrV5Sw)
 
-[jQuery Mobile](http://jquerymobile.com/) A web app that lets you visually build websites.
+[jQuery Mobile](http://jquerymobile.com/) A web application that allows you to visually build websites.

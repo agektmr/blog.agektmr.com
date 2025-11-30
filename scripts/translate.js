@@ -284,31 +284,49 @@ async function translatePost(sourcePath, targetPath) {
     .replace(/\.md$/, '.html')
     .replace(/\/ja\//, '/');
 
-  const newFrontmatter = {
-    layout: sourceMeta.layout,
-    lang: 'en',
-    title: escapeYamlString(translatedTitle),
-    description: escapeYamlString(translatedDescription),
-    date: sourceMeta.date,
-    ...(sourceMeta.updated && { updated: sourceMeta.updated }),
-    ...(sourceMeta.image && { image: sourceMeta.image }),
-    ...(sourceMeta.tags && { tags: sourceMeta.tags }),
-    translationOf: sourceUrl,
-    translated: new Date().toISOString().split('T')[0],
-    translatedManually: false
-  };
+  // Start with all source frontmatter properties
+  const newFrontmatter = { ...sourceMeta };
+
+  // Override/add translation-specific properties
+  newFrontmatter.lang = 'en';
+  newFrontmatter.title = escapeYamlString(translatedTitle);
+  newFrontmatter.description = escapeYamlString(translatedDescription);
+  newFrontmatter.translationOf = sourceUrl;
+  newFrontmatter.translated = new Date().toISOString().split('T')[0];
+  newFrontmatter.translatedManually = false;
 
   // Build new file content
   const frontmatterLines = [];
   for (const [key, value] of Object.entries(newFrontmatter)) {
     if (key === 'tags' && typeof value === 'string') {
-      // Preserve tags as-is
+      // Tags list items should be indented with 2 spaces
       frontmatterLines.push(`${key}:`);
-      value.split('\n').forEach(tag => frontmatterLines.push(tag));
+      value.split('\n').forEach(tag => {
+        const trimmed = tag.trim();
+        if (trimmed) {
+          // Ensure proper indentation (2 spaces) for list items
+          if (tag.startsWith('  ') || tag.startsWith('\t')) {
+            frontmatterLines.push(tag);
+          } else if (trimmed.startsWith('-')) {
+            frontmatterLines.push(`  ${trimmed}`);
+          } else {
+            frontmatterLines.push(tag);
+          }
+        }
+      });
     } else if (key === 'image' && typeof value === 'string') {
-      // Preserve image structure
+      // Image structure uses nested key-value pairs (needs indentation)
       frontmatterLines.push(`${key}:`);
-      value.split('\n').forEach(img => frontmatterLines.push(img));
+      value.split('\n').forEach(img => {
+        if (img.trim()) {
+          // Ensure proper indentation (2 spaces) if not already present
+          if (img.startsWith('  ') || img.startsWith('\t')) {
+            frontmatterLines.push(img);
+          } else {
+            frontmatterLines.push(`  ${img}`);
+          }
+        }
+      });
     } else {
       frontmatterLines.push(`${key}: ${value}`);
     }

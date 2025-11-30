@@ -1,13 +1,13 @@
 ---
 layout: post
 lang: en
-title: 'Multilingualize your WordPress blog with WP_Multilingual!'
-description: ''
+title: "Multilingualize your WordPress blog with WP_Multilingual!"
+description:
 date: 2009-01-11
 tags:
-- Plugin
+  - Plugin
 translationOf: /2009/01/multilingualize-your-wordpress-with-wp_multilingual.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 Been wanting to make this blog multilingual for a while, I just found a good plugin to do it.

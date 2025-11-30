@@ -1,14 +1,14 @@
 ---
 layout: post
 lang: en
-title: 'WP_Multilingual revival'
-description: ''
+title: WP_Multilingual revival
+description:
 date: 2009-08-11
 tags:
-- Plugin
+  - Plugin
   - WP_Multilingual
 translationOf: /2009/08/wp_multilingual.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 <a href="http://wordpress.org/extend/plugins/wp-multilingual/" target="_blank">WP_Multilingual</a> is a plugin that enables <a href="http://devlog.agektmr.com/archives/349" target="_blank">multilingual functionality, and it had stopped working since upgrading to WordPress 2.8. However, thanks to the generosity of its <a href="http://mediastudio.unu.edu/en/" target="_blank">developer</a>, we were able to get the <a href="http://redmine.made.com.ua/issues/show/131" target="_blank">alpha version</a> back to life.

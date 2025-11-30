@@ -1,13 +1,17 @@
 ---
 layout: post
 lang: en
-title: '"OpenSocial Architecture" slides now available'
-description: ''
+title: "\"OpenSocial Architecture\" slides now available"
+description:
 date: 2009-11-14
+categories:
+  - OpenSocial
+  - イベント
+  - 勉強会
 tags:
-- Shindig
+  - Shindig
 translationOf: /2009/11/opensocial.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 On November 11th, the Tokyo GTUG (Google Technology User Group) #4 event was held at the Recruit Media Technology Lab Cafe. The theme was OpenSocial, and I gave a talk on the topic of "OpenSocial Architecture." I'd like to share the slides with you.

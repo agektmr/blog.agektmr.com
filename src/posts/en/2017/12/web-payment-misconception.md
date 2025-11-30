@@ -1,20 +1,19 @@
 ---
 layout: post
 lang: en
-title: 'Clearing up common misconceptions about the Payment Request API'
-description: 'Clearing up common misconceptions about Web Payments / Payment Request API'
+title: Clearing up common misconceptions about the Payment Request API
+description: Clearing up common misconceptions about Web Payments / Payment Request API
 date: 2017-12-08
 tags:
-- Payments
-- Web Payments
-- Payment Request API
-- PCI DSS
+  - Payments
+  - Web Payments
+  - Payment Request API
+  - PCI DSS
 translationOf: /2017/12/web-payment-misconception.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-This post is 12/8 of the [Chromium Browser Advent Calendar 2017](https://qiita.com/advent-calendar/2017/chromium). It is a translation of the [English version posted on Medium recently](https://medium.com/dev-channel/addressing-common-misconceptions-about-the-payment-request-api-4d0db51dae75), with some additions for Japan.
+This post is part 12/8 of the [Chromium Browser Advent Calendar 2017](https://qiita.com/advent-calendar/2017/chromium). It is a translation of the [English version posted on Medium recently](https://medium.com/dev-channel/addressing-common-misconceptions-about-the-payment-request-api-4d0db51dae75), with some additions for the Japanese version.
 
 -----
 
@@ -84,4 +83,4 @@ If your site complies with PCI SAQ A, be careful. PCI SAQ A does not allow you t
 
 In Japan, due to a lack of security measures in payment systems, the Ministry of Economy, Trade and Industry (METI) is currently promoting the "2017 Action Plan for Strengthening Security Measures for Credit Card Transactions." According to this plan, by March 2018, all online businesses that handle credit cards will either not hold credit cards or will be PCI DSS compliant. While the definition of not holding credit cards is similar to PCI SAQ A, it is not as strict. However, when implementing with the Payment Request API, it is important to understand what it means.
 
-In any case, we recommend that you consult with your payment processor regarding PCI issues.
+In any case, we recommend that you discuss PCI issues with your payment processor.

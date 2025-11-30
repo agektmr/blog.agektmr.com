@@ -1,18 +1,20 @@
 ---
 layout: post
 lang: en
-title: 'Google Chrome Extension &#8220;Social Graph Analyzer&#8221; released'
-description: ''
+title: "Google Chrome Extension &#8220;Social Graph Analyzer&#8221; released"
+description:
 date: 2010-01-14
+categories:
+  - Product
 tags:
-- Extension
+  - Extension
   - Google Chrome
   - Social Graph
 translationOf: /2010/01/google-chrome-extension-social-graph-analyzer.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-I recently started using Google Chrome because extensions are now available on the Dev channel for Mac. It offers the extensibility that Safari lacks, and the lightness and speed that surpasses Firefox, making it a promising browser. It's incredibly easy to use, and is quickly becoming my main browser. That's what you'd expect from Google.
+I recently started using Google Chrome because extensions are now available on the Dev channel for Mac. It offers the extensibility that Safari lacks, and the lightness and speed that surpasses Firefox, making it a promising browser. It's incredibly easy to use, and is already becoming my main browser. That's what you'd expect from Google.
 
 Well, developing an extension for Google Chrome seemed easy, so I decided to give it a try. The extension is called <a href="https://chrome.google.com/extensions/detail/homfjkcmjicjclikljgmjfmfmcbkihco" target="_blank">Social Graph Analyzer</a>.
 

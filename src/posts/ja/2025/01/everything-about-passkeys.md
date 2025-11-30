@@ -7,13 +7,13 @@ date: 2025-01-13
 image:
   feature: /2025/everything-about-passkeys.jpg
 tags:
-- Passkey
-- WebAuthn
-- FIDO
-- FIDO2
-- 認証
-- Authentication
-- Publication
+  - Passkey
+  - WebAuthn
+  - FIDO
+  - FIDO2
+  - 認証
+  - Authentication
+  - Publication
 ---
 
 [「パスキーのすべて」](https://gihyo.jp/book/2025/978-4-297-14653-5)という本を書きました。1 月 28 日に発売する本書の内容について軽く紹介します。

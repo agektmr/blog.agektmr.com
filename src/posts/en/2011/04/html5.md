@@ -1,15 +1,17 @@
 ---
 layout: post
 lang: en
-title: 'I made a metronome using HTML5'
-description: ''
+title: I made a metronome using HTML5
+description:
 date: 2011-04-09
+categories:
+  - HTML5
 tags:
-- CSS3
+  - CSS3
   - Web Audio API
   - WebFonts
 translationOf: /2011/04/html5.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 I created a metronome using HTML5, so I'd like to introduce it to you.

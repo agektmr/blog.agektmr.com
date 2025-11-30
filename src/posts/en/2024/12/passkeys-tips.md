@@ -1,24 +1,23 @@
 ---
 layout: post
 lang: en
-title: 'Tips for using your passkey'
-description: 'We will review the basics of passkeys and explain some common misconceptions about passkeys.'
+title: Tips for using your passkey
+description: We will review the basics of passkeys and explain some common misconceptions about passkeys.
 date: 2024-12-26
 image:
-feature: /2024/passkeys-tips.jpg
+  feature: /2024/passkeys-tips.jpg
 tags:
-- Passkey
-- WebAuthn
-- FIDO
-- FIDO2
-- 認証
-- Authentication
+  - Passkey
+  - WebAuthn
+  - FIDO
+  - FIDO2
+  - 認証
+  - Authentication
 translationOf: /2024/12/passkeys-tips.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-Recently, I've seen a lot of people complaining that passkeys are difficult to use. I've also seen several posts from people who are having trouble logging in to the services they want to use because they can't find the passkey they thought they had created.
+Recently, I've seen a lot of people complaining about passkeys being difficult to use. I've also seen several posts from people who have trouble logging in to services they want to use because they can't find the passkeys they thought they had created.
 
 So in this blog post, I would like to consider why this happens, how to avoid such situations, what measures users can take, and what service providers can do to reduce the number of users who feel this way.
 
@@ -110,7 +109,7 @@ As we have seen, there are still pitfalls in Passkey as an ecosystem. Here are s
 - Be aware of which passkey provider you have saved your passkeys to
 - Create passkeys for multiple passkey providers
 
-### Tip 1: Display the QR code and try logging in with the passkey on another device (cross-device authentication)
+Tip 1: Display the QR code and try logging in with the passkey on another device (cross-device authentication)
 
 If you can't find your passkey, you may be able to log in using a passkey saved on another device. If the passkey dialog doesn't show "More options," tap it to display a QR code, then scan it with the device that has your passkey to see if you can log in.
 

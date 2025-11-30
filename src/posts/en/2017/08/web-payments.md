@@ -1,17 +1,17 @@
 ---
 layout: post
 lang: en
-title: 'Why Web Payments Are Inevitable - A New Way to Pay on the Web'
-description: 'We believe there is a very high probability that the vast majority of payments on the web will be made via Web Payments in the future. Here's why.'
+title: Why Web Payments Are Inevitable - A New Way to Pay on the Web
+description: "We believe there is a very high probability that the vast majority of payments on the web will be made via Web Payments in the future. Here's why."
 date: 2017-08-24
 tags:
-- Payments
-- Web Payments
-- Payment Request API
-- Tokenization
-- Payment Apps
+  - Payments
+  - Web Payments
+  - Payment Request API
+  - Tokenization
+  - Payment Apps
 translationOf: /2017/08/web-payments.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 As explained in our previous article, the Payment Request API has the potential to dramatically change the user experience for web payments. However, many people are wondering whether it will truly become mainstream, and whether they will need to adapt their sites in the future.
@@ -90,4 +90,4 @@ Also today, there was news that [Safari has begun implementing the Payment Reque
 
 It will be interesting to see whether Apple, which has strict restrictions on the App Store, will allow payment apps, but considering the progress being made in implementing Service Workers, it's possible that only [web-based payment apps](https://www.w3.org/TR/payment-handler/) will be available. Either way, it's certainly interesting.
 
-The day when an open payment ecosystem is born and widely used on the platform of the open web seems not as far away as we thought.
+The day when an open payments ecosystem is born and widely adopted on the platform of the open web seems to be less far-fetched than we thought.

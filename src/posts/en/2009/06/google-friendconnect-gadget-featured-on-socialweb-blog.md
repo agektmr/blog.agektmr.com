@@ -1,14 +1,14 @@
 ---
 layout: post
 lang: en
-title: 'Footprint Gadget featured on SocialWeb Blog'
-description: ''
+title: Footprint Gadget featured on SocialWeb Blog
+description:
 date: 2009-06-26
 tags:
-- Gadget
+  - Gadget
   - 掲載
 translationOf: /2009/06/google-friendconnect-gadget-featured-on-socialweb-blog.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 A long time ago, I created a Footprint Gadget called <a href="http://devlog.agektmr.com/archives/325" target="_blank"> Footprint Gadget</a> for Google FriendConnect.

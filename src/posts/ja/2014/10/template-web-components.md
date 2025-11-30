@@ -4,11 +4,11 @@ lang: ja
 title: Template - Web Components を構成する技術
 description: 'Web Components を構成する要素のひとつ、Templates について解説します。'
 date: 2014-10-14
+updated: 2014-10-16
 author: Eiji Kitamura
 tags:
-- Template
-- Web Components
-updated: 2014-10-16
+  - Template
+  - Web Components
 blogger_id: tag:blogger.com,1999:blog-1878759997851918856.post-7514316136270000024
 blogger_orig_url: http://blog.agektmr.com/2014/10/template-web-components.html
 ---
@@ -80,7 +80,7 @@ blogger_orig_url: http://blog.agektmr.com/2014/10/template-web-components.html
 </script>
 ```
 
-そこで登場したのが、`<template>` 要素です。   
+そこで登場したのが、`<template>` 要素です。 
 `<template>` は Web Components の一翼を担うウェブ標準候補技術で、「自律的に
 処理されない HTML」をドキュメントに埋め込むことができます。
 

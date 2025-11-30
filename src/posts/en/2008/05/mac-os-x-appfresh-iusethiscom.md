@@ -1,20 +1,19 @@
 ---
 layout: post
 lang: en
-title: 'A powerful combo for managing Mac OS X apps: AppFresh / iusethis.com'
-description: ''
+title: "A powerful combo for managing Mac OS X apps: AppFresh / iusethis.com"
+description:
 date: 2008-05-22
 tags:
-- Mac
+  - Mac
   - AppCast
   - AppFresh
   - iusethis.com
 translationOf: /2008/05/mac-os-x-appfresh-iusethiscom.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-Many modern Mac OS X apps automatically check for updates and update, but for those who want to always use the latest version, managing apps that don't update can be a hassle. While there are options for checking updates, such as [VersionTracker](http://www.versiontracker.com/) and the desktop application [LogicielMac Update](http://www.logicielmac.com/),
-these options seem trivial compared to the combo we'll introduce today.
+Many modern Mac OS X apps automatically check for updates and update, but for those who want to always use the latest version, managing apps that don't can be a hassle. While there are options for checking updates, such as [VersionTracker](http://www.versiontracker.com/) and the desktop application [LogicielMac Update](http://www.logicielmac.com/), both seem trivial compared to the combo we'll introduce today.
 
 ## iusethis.com
 
@@ -43,4 +42,4 @@ AppFresh
 
 AppFresh/usethis.com is the ultimate combo, providing comprehensive updates on a wide range of applications by using the collective intelligence of users gathered through the joy of social media to solve the tedious tasks of app developers and site administrators.
 
-*By the way, it seems that automatic app update checks are often performed using a protocol called [AppCast](http://connectedflow.com/appcasting/), which places the app's resource URL in an RSS2.0 enclosure.
+*By the way, to check for automatic app updates, a protocol called [AppCast](http://connectedflow.com/appcasting/) is often used, which places the app's resource URL in an RSS2.0 enclosure.

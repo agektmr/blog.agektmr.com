@@ -1,17 +1,19 @@
 ---
 layout: post
 lang: en
-title: 'Installing MySQL on Snow Leopard'
-description: ''
+title: Installing MySQL on Snow Leopard
+description:
 date: 2009-09-11
+categories:
+  - Mac
 tags:
-- Mac OS X
+  - Mac OS X
   - MySQL
   - Partuza!
   - Shindig
   - Snow Leopard
 translationOf: /2009/09/snow-leopard-mysql.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 When I updated my Mac OS X to Snow Leopard, PHP was updated to 5.3, so I no longer needed to install entropy to use Partuza or Shindig, which was great.
@@ -75,4 +77,4 @@ Now, just restart MySQL and you're good to go. If you start MySQL from the envir
 
 ### postscript
 
-By the way, this setting was only used to confirm the operation of Partuza, so if you want to do other things, you may need to tweak it a bit more.
+By the way, this setting was only used to check the operation of Partuza, so if you want to do other things, you may need to tweak it a bit more.

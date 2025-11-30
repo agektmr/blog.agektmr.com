@@ -1,13 +1,13 @@
 ---
 layout: post
 lang: en
-title: 'Footprints gadget update'
-description: ''
+title: Footprints gadget update
+description:
 date: 2009-06-27
 tags:
-- Gadget
+  - Gadget
 translationOf: /2009/06/footprints-gadget-updated.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 The Footprint Gadget was introduced on the SocialWeb Blog yesterday, and we have already received a lot of feedback. We have made two improvements based on that feedback, which we would like to introduce to you.

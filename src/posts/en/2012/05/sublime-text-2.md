@@ -1,18 +1,17 @@
 ---
 layout: post
 lang: en
-title: 'Recommendation for Sublime Text 2'
-description: ''
+title: Recommendation for Sublime Text 2
+description:
 date: 2012-05-07
 updated: 2012-05-07
 tags:
-- Sublime Text 2
+  - Sublime Text 2
 translationOf: /2012/05/sublime-text-2.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-Which editor do you use when coding? I've always been a big fan of vim in Terminal, but some people prefer Emacs, and Mac apps like Coda and TextMate are popular. I've heard that WebStorm and Komodo Edit are also popular these days. Once you find an editor that you're comfortable with, it's hard to feel like switching. Recently, I've started to seriously use an editor called [Sublime Text 2](http://www.sublimetext.com/), which has recently become popular among front-end engineers overseas. Today, I'd like to introduce Sublime Text 2 (hereafter referred to as ST2).
+What editor do you use when coding? I've always been a big fan of vim in Terminal, but some people prefer Emacs, and Mac apps like Coda and TextMate are popular. I've heard that WebStorm and Komodo Edit are also popular these days. Once you find an editor you're comfortable with, it's hard to feel like switching. Recently, I've started using an editor called [Sublime Text 2](http://www.sublimetext.com/), which has recently become popular among front-end engineers overseas. Today, I'd like to introduce Sublime Text 2 (hereafter referred to as ST2).
 
 The appeal of Sublime Text 2
 

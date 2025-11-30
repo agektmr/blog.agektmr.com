@@ -5,8 +5,8 @@ title: 'HTML Imports - Web Components を構成する技術'
 description: 'Web Components を構成する要素のひとつ、HTML Imports について解説します。'
 date: 2015-01-07
 tags:
-- HTML Imports
-- Web Components
+  - HTML Imports
+  - Web Components
 image:
   feature: /custom-elements-web-components/image.png
 ---
@@ -43,9 +43,9 @@ component.html
 `doctype` や `html`、`head`、`body` は不要です。インポートされたドキュメントに記述された HTML は、ロードと同時に読み込まれ、そこからリンクされたサブリソースに JavaScript があれば、即座に実行されます。
 
 ## リソースの実行順序
-それでは、親となる HTML と、子となるインポートされた HTML の両方に JavaScript が記述されていた場合、どちらが先に実行されるでしょうか？実行順によっては期待通りの動作にならないこともありえるので、ここを理解しておくことは、とても重要です。  
+それでは、親となる HTML と、子となるインポートされた HTML の両方に JavaScript が記述されていた場合、どちらが先に実行されるでしょうか？実行順によっては期待通りの動作にならないこともありえるので、ここを理解しておくことは、とても重要です。
 
-HTML Imports は読み込みの際、script タグにおける defer と同様に振る舞います。例えば下記のコードでは、index.html は component.html を読み込む際、component.html 内の script を含むすべてを実行してから次の script を実行します。  
+HTML Imports は読み込みの際、script タグにおける defer と同様に振る舞います。例えば下記のコードでは、index.html は component.html を読み込む際、component.html 内の script を含むすべてを実行してから次の script を実行します。
 
 index.html
 
@@ -175,7 +175,7 @@ jquery.html
 
 ![](/images/html-imports-web-components/dependency.png)
 
-ただ、またひとつ懸念を増やしてしまいました。HTML でラップすることで、ネットワークリクエストがひとつ増えてしまったのです。なんとかならないでしょうか？  
+ただ、またひとつ懸念を増やしてしまいました。HTML でラップすることで、ネットワークリクエストがひとつ増えてしまったのです。なんとかならないでしょうか？
 
 この問題を解決する方法として、Vulcanize というツールがあります。
 
@@ -242,7 +242,7 @@ index.html
 ...
 ```
 
-インポートされる HTML (x-component.html) の document が、インポート元である index.html のそれを指してくれているおかげで、特にひねったことをしなくてもうまく動作してくれるはずです。  
+インポートされる HTML (x-component.html) の document が、インポート元である index.html のそれを指してくれているおかげで、特にひねったことをしなくてもうまく動作してくれるはずです。
 
 ## ブラウザサポート状況
 HTML Imports は 2014 年 12 月現在 Chrome, Opera, フラグ付きなら Firefox でもサポートされています (Update: [Mozilla は ES6 Modules との兼ね合いから、HTML Imports の ship を見合わせる方針を発表しました](https://hacks.mozilla.org/2014/12/mozilla-and-web-components/))。最新のサポート状況は [chromestatus.com](https://www.chromestatus.com/features/4642138092470272) または [caniuse.com](http://caniuse.com/#feat=custom-elements) でチェックしてみて下さい。Polyfill として [webcomponents.js](http://webcomponents.org/polyfills/) ([platform.js](https://github.com/Polymer/platform) から名称変更) も利用できます。

@@ -1,18 +1,17 @@
 ---
 layout: post
 lang: en
-title: 'Windows Live Home is released'
-description: ''
+title: Windows Live Home is released
+description:
 date: 2008-12-04
 tags:
-- SocialWeb
+  - SocialWeb
   - Windows Live
 translationOf: /2008/12/windows-live-home.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-Major overseas players are increasingly going social. This time, it's finally Microsoft.
+Major overseas players are increasingly going social. This time it's finally Microsoft.
 
 Speaking of Windows Live, it originally existed as a social networking service called [Spaces](http://spaces.live.com/), a blogging service that incorporated Messenger's social graph. Now, however, [Home](http://home.live.com/) has become the centerpiece, making it even more social networking-like.
 
@@ -74,4 +73,4 @@ Microsoft has been quietly developing web services up until now, but with that i
 
 I'm concerned that there's no use for [Windows Live Gadget](http://gallery.live.com/) in Home. I'm not familiar with the gadget specifications, but what if they were to create their own JavaScript API to replace OpenSocial...?
 
-I'm curious about the strategy behind this.
+The strategy here is a concern.

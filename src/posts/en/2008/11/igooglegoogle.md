@@ -1,18 +1,18 @@
 ---
 layout: post
 lang: en
-title: 'The evolution of iGoogle and the socialization of Google'
-description: ''
+title: The evolution of iGoogle and the socialization of Google
+description:
 date: 2008-11-18
 tags:
-- Google
+  - Google
   - SocialWeb
   - iGoogle
 translationOf: /2008/11/igooglegoogle.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-While iGoogle previously displayed multiple gadgets on a single page, it recently added a "canvas view" that allows you to display a single gadget full-screen. This canvas view, especially for Gmail and Google Reader gadgets, allows many of the features of individual services to be used directly on the gadget, greatly improving convenience.
+Until now, iGoogle has displayed multiple gadgets on a single page, but recently added a "canvas view" that allows you to display a single gadget full-screen. This canvas view, especially for Gmail and Google Reader gadgets, allows many of the features of individual services to be used directly on the gadget, greatly improving convenience.
 
 ![igoogle1](/images/2008/11/igoogle1.png)
 
@@ -52,7 +52,7 @@ And then there's "Links." For now, it's just a link, but you can register extern
 
 [A messaging feature has recently been added to Google Profiles](http://japan.cnet.com/news/media/story/0,2000056023,20383508,00.htm). While I can only confirm its existence in the English version, it appears you can send messages from your profile page. This is likely also in line with OpenSocial compatibility.
 
-How Google will change in the future
+How will Google change in the future?
 
 As Google becomes more social, we've made some predictions about what changes we might see in the future.
 
@@ -75,4 +75,4 @@ also has a similar feature.
 
 ## summary
 
-I started writing this article about Google Profiles, but somehow the topic has expanded and become quite a big one. However, I honestly can't imagine how much influence Google, which is steadily expanding its social graph with Gmail at its core, will have if it were to take on the form of a full-fledged social network. I wonder if they had this much in mind when they created Gmail? It will be interesting to see how things develop.
+I started writing this article about Google Profiles, but somehow the topic has expanded and become quite large. However, I honestly can't imagine how influential Google, which is steadily expanding its social graph with Gmail at its core, will be if it were to take on the form of a full-fledged social network. I wonder if they had this in mind when they created Gmail? It will be interesting to see how things develop.

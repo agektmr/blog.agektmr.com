@@ -1,18 +1,17 @@
 ---
 layout: post
 lang: en
-title: 'Bookmarklet to peek into the source code of Orkut apps'
-description: ''
+title: Bookmarklet to peek into the source code of Orkut apps
+description:
 date: 2008-10-20
 tags:
-- Gadget
+  - Gadget
   - Orkut
   - Service
 translationOf: /2008/10/orkut.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
 Here's a little tip I posted on the OpenSocial-Japan mailing list.
 
 OpenSocial apps (gadgets) are displayed within an iframe, and the query portion of the URL included in the src attribute of the iframe tag actually contains the URL of the XML source code.  Using this bookmarklet, you can open the source code with a single click.

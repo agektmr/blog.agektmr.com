@@ -8,8 +8,8 @@ updated: 2021-11-04
 image:
   feature: /2021/spectre1.png
 tags:
-- Security
-- Spectre
+  - Security
+  - Spectre
 ---
 
 長い記事なので先に結論を書きます。
@@ -51,7 +51,7 @@ cross-origin な連携は、ウェブをウェブたらしめる特徴と言え�
 
 ![](/images/2021/spectre1.png)
 
-### Same-Origin Policy 
+### Same-Origin Policy
 
 ところでオンラインの世界で怖いことは、本来しかるべきところに預けたはずの情報が、ユーザーの意図しないところに渡ったり、利用されたりしてしまうことでしょう。ましてやその情報がクレジットカード番号や銀行口座の情報だったりしたら一大事です。ウェブブラウザ上で「しかるべきところ」はドメインという形で表され、HTTPS を通すことでその信頼性を担保しています。
 
@@ -251,7 +251,7 @@ Chrome チームではこれを実現できるよう準備を進めています�
 
 この記事では Spectre に関連したいくつかの HTTP ヘッダーについて触れましたが、他にもいくつか重要なものがあります。英語ですが、こちらのページにまとめています。ぜひ参考にしてください。
 
-* [Security headers quick reference](https://web.dev/security-headers/): 
+* [Security headers quick reference](https://web.dev/security-headers/):
 
 また、[Mike West](https://twitter.com/mikewest) による Post-Spectre Web Development は、この記事に書いたような話を、より実用的な視点からユースケース別にまとめたものです。こちらもぜひ読んでみてください。
 

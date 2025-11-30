@@ -1,19 +1,18 @@
 ---
 layout: post
 lang: en
-title: 'Template - The technology that makes up Web Components'
-description: 'We will explain Templates, one of the elements that make up Web Components.'
+title: Template - The technology that makes up Web Components
+description: We will explain Templates, one of the elements that make up Web Components.
 date: 2014-10-14
 updated: 2014-10-16
 tags:
-- Template
-- Web Components
+  - Template
+  - Web Components
 translationOf: /2014/10/template-web-components.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-*This article is a cross-post of [webcomponents.org article](http://webcomponents.org/articles/introduction-to-template-element/). *
+*This article is a cross-post of [webcomponents.org article](http://webcomponents.org/articles/introduction-to-template-element/).*
 
 I recently published a video about Templates, one of the technologies that make up Web Components, so I would like to explain it here.
 
@@ -59,7 +58,7 @@ Embed the template by adding an attribute other than `script` to the tag, then c
 </script>
 ```
 
-That's where the `<template>` element comes in.   
+That's where the `<template>` element comes in.  
 `<template>` is a proposed web standard that forms part of Web Components, allowing you to embed "non-autonomously processed HTML" into a document.
 
 "HTML that is not processed autonomously" has the following characteristics:

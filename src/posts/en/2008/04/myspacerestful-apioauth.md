@@ -1,19 +1,18 @@
 ---
 layout: post
 lang: en
-title: Try OAuth authentication with MySpace's RESTful API
-description: ''
+title: "Try OAuth authentication with MySpace's RESTful API"
+description:
 date: 2008-04-19
 tags:
-- MySpace
+  - MySpace
   - OAuth
   - RESTful API
 translationOf: /2008/04/myspacerestful-apioauth.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-The MDP (MySpace Developer Platform) released by MySpace includes not only OpenSocial but also its own RESTful API, which can be used to create server-side applications. This time, we will focus on OAuth authentication for MDP's RESTful API.
+The MySpace Developer Platform (MDP) published by MySpace includes not only OpenSocial but also its own RESTful API, which can be used to create server-side applications. This article focuses on OAuth authentication for the MDP RESTful API.
 
 ## About OAuth for OpenSocial/MDP
 
@@ -33,7 +32,7 @@ First, prepare to create an application on MySpace.
 
 To create an application on MySpace, you need a user account and an application profile account. Please refer to the following site for instructions with screenshots.
 
-[Let's Make a MySpace Application – Learning Life.](http://d.hatena.ne.jp/yorihito_tanaka/20080408)
+[Build a MySpace Application – Learning Life.](http://d.hatena.ne.jp/yorihito_tanaka/20080408)
 
 ## Preparing for OAuth authentication
 
@@ -83,4 +82,4 @@ What bothers me is that the parts that require token exchange and authentication
 
 We will explain data exchange with external servers using `makeRequest` on another occasion.
 
-*The API (OAuth Tool?) seems unstable. It worked fine at lunchtime, but as of the time of writing this article, it's returning "Not Found" for some reason...
+*The API (OAuth Tool?) seems to be unstable, and although it worked fine at lunchtime, at the time of writing this article, for some reason it was returning "Not Found"...

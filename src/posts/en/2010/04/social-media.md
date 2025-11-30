@@ -1,17 +1,17 @@
 ---
 layout: post
 lang: en
-title: Social media will become the internet's main artery! 4 reasons
-description: ''
+title: "Social media will become the internet's main artery! 4 reasons"
+description:
 date: 2010-04-13
 tags:
-- SocialWeb
+  - SocialWeb
   - Cliqset.com
   - Google Buzz
   - identi.ca
   - status.net
 translationOf: /2010/04/social-media.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 It's been a few years since Twitter first came out. At first, I didn't understand what it was, and I just used it because it was trending, but now it's become a part of my life. I think I might be a little addicted, but I'm sure there are many others who feel the same way. Its momentum shows no signs of slowing down, and its penetration rate in Japan is only increasing. Even some of my friends who aren't in the internet industry are starting to use it.
@@ -90,4 +90,4 @@ This means that social media will continue to grow without relying on the popula
 
 Social media is gaining support from social media operators, developers, and marketers, and is becoming more and more convenient without being biased towards any particular service. The trend is definitely moving towards social media. How do people open a browser on their computer screen and find the information they want? Isn't it clear that the path to this is shifting from portal sites and search to something centered around social media?
 
-If you were the director of a web service, how would you attract customers? If you were the marketer of a new product, how would you advertise it? Of course, you still need to think about search, but from now on, you should never underestimate marketing using social media. In fact, by making active use of it, it is now possible to attract customers at a level never before imagined.
+If you were the director of a web service, how would you attract customers? If you were the marketer of a new product, how would you advertise it? Of course, you still need to think about search, but from now on, you should never underestimate social media marketing. In fact, by actively utilizing it, it is now possible to attract customers at a level never before imagined.

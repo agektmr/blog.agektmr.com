@@ -8,12 +8,12 @@ updated: 2024-12-26
 image:
   feature: /2022/keys.jpg
 tags:
-- Passkey
-- WebAuthn
-- FIDO
-- FIDO2
-- 認証
-- Authentication
+  - Passkey
+  - WebAuthn
+  - FIDO
+  - FIDO2
+  - 認証
+  - Authentication
 ---
 
 パスキーはフィッシングに強く、テクノロジーに詳しくないユーザーでも使いやすい新しい認証方式で、いずれパスワードを置き換えると言われています。この記事では、パスキーの基本と、これからのウェブにとってパスキーがどういう意味を持つのかについてまとめてみます。
@@ -164,7 +164,7 @@ FIDO はパスキーの登場でいよいよ実用段階に入ってきました
 
 最後に宣伝です。今週金曜日 12 月 16 日に Google オフィスにて、[DevFest & Android Dev Summit Japan 2022](https://developersonair.withgoogle.com/events/adsjapan_2022) が開催されます。ウェブに加えて Flutter、Firebase、Android についてもたくさんのセッションが行われます。
 
-ウェブだけでも Google Developers Expert の[よしこさん](https://twitter.com/yoshiko_pg)、[矢倉さん](https://twitter.com/myakura)、Chrome チームの PM [Kenji Baheux](https://twitter.com/KenjiBaheux)、Chrome Developer Relations チームリードの [Paul Kinlan](https://twitter.com/Paul_Kinlan) (video) の他、チームメイトの 
+ウェブだけでも Google Developers Expert の[よしこさん](https://twitter.com/yoshiko_pg)、[矢倉さん](https://twitter.com/myakura)、Chrome チームの PM [Kenji Baheux](https://twitter.com/KenjiBaheux)、Chrome Developer Relations チームリードの [Paul Kinlan](https://twitter.com/Paul_Kinlan) (video) の他、チームメイトの
 [Milica Mihajlija](https://twitter.com/bibydigital)、[Adriana Jara](https://twitter.com/tropicadri)、[Jhey Tompkins](https://twitter.com/jh3yy) という豪華なラインナップでのセッションが予定されています。僕もこの記事のテーマであるパスキーについてお話する予定です。
 
 それぞれのセッションに関する込み入った質問があるという方はぜひ、会場で直接お話しましょう。ハイブリッドなので[こちらから申し込めばライブ配信もご覧いただけます](https://gdg-tokyo.connpass.com/event/266648/)。みなさんの参加をお待ちしています！

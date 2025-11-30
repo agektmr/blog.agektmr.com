@@ -1,15 +1,15 @@
 ---
 layout: post
 lang: en
-title: 'Footprint gadget for your FriendConnect'
-description: ''
+title: Footprint gadget for your FriendConnect
+description:
 date: 2009-01-08
 tags:
-- FriendConnect
+  - FriendConnect
   - JavaScript
   - OpenSocial
 translationOf: /2009/01/friendconnect.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 I developed [FriendIntroducer][1] as an experiment and was trying to understand how FriendConnect is different from ordinaly OpenSocial implementation. So this time, I&#8217;ve tried to develop a gadget which you can find FriendConnect interesting, Footprints. You know the idea if you&#8217;ve tried MyBlogLog before.

@@ -8,12 +8,12 @@ updated: 2024-12-26
 image:
   feature: /2023/passkeys.jpg
 tags:
-- Passkey
-- WebAuthn
-- FIDO
-- FIDO2
-- 認証
-- Authentication
+  - Passkey
+  - WebAuthn
+  - FIDO
+  - FIDO2
+  - 認証
+  - Authentication
 ---
 
 2023 年は文句なく「パスキー元年」になりました。非常にたくさんのサービスがパスキーに対応し、2024 年はいよいよパスキー普及の年になりそうです。

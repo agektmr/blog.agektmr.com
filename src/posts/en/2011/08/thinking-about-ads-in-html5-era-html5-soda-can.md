@@ -1,15 +1,15 @@
 ---
 layout: post
 lang: en
-title: 'Thought about Ads in HTML5 era: HTML5 Soda Can'
-description: ''
+title: "Thought about Ads in HTML5 era: HTML5 Soda Can"
+description:
 date: 2011-08-06
 tags:
-- HTML5
+  - HTML5
   - CSS3
   - Device Orientation API
 translationOf: /2011/08/thinking-about-ads-in-html5-era-html5-soda-can.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 Let me introduce the "HTML5 Soda Can" demo I made

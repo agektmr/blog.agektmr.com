@@ -5,8 +5,8 @@ title: '結局 PWA は来るの？来ないの？'
 description: '「PWAが来るって言っているエンジニアは今すぐ辞めろ」に対するアンサーソングです'
 date: 2018-03-23
 tags:
-- PWA
-- Progressive Web Apps
+  - PWA
+  - Progressive Web Apps
 ---
 
 昨日 Twitter でこんな記事を発見しました。

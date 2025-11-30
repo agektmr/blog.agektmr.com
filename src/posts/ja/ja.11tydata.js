@@ -1,6 +1,7 @@
 module.exports = {
   lang: 'ja',
   tags: 'posts',
+  site: require('../../_data/site.ja.json'),
   eleventyComputed: {
     permalink: (data) => {
       // Extract YYYY/MM/slug from the file path

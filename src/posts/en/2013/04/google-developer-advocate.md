@@ -1,28 +1,21 @@
 ---
-layout: undefined
-lang: en
-title: ''
-description: ''
-date: undefined
-translationOf: /2013/04/google-developer-advocate.html
-translated: 2025-11-29
-translatedManually: false
----
---- 
 layout: post
-lang: ja
-title: What is a Google Developer Advocate?
+lang: en
+title: What is the job of a Google Developer Advocate?
+description:
 date: 2013-04-11
 updated: 2013-11-01
-tags:
-- Developer Advocate
-- Developer Relations
-- Google
 image:
-feature: /2013-04-11-google-developer-advocate/gde.jpg
+  feature: /2013-04-11-google-developer-advocate/gde.jpg
+tags:
+  - Developer Advocate
+  - Developer Relations
+  - Google
+translationOf: /2013/04/google-developer-advocate.html
+translated: 2025-11-30
+translatedManually: false
 ---
-
-My job is a Chrome Developer Advocate at Google. 
+My job is a Chrome Developer Advocate at Google.
 Google Japan began recruiting for this [Chrome Developer Advocate](https://www.google.com/about/jobs/search/#!t=jo&jid=1175001&) last week (April 2013). We are also recruiting for similar positions for Google+, YouTube, Android, and other areas, but I've been asked about it often and received requests, so I'd like to take this opportunity to explain what a Developer Advocate does.
 
 <!-- excerpt -->
@@ -106,9 +99,9 @@ So far we haven't talked much about technology, but of course this job requires 
 
 ### Hacking
 
-There's no point in just learning the theory, so I also do actual development. While I don't often have the opportunity to create large projects, I do occasionally create demos that directly contribute to raising awareness of the technology, or tools for internal use. 
+There's no point in just learning the theory, so I also do actual development. While I don't often have the opportunity to create large projects, I do occasionally create demos that directly contribute to raising awareness of the technology, or tools for internal use.
 
-So far, I've created demos for [WebSocket](http://agektmr.node-ninja.com:3000/), [Forms](http://demo.agektmr.com/datalist/), and more recently FileSystem-related demos, all of which are based on the areas of responsibility of the Chrome engineering team in Tokyo. I've also created [Chrome Extension](https://github.com/agektmr/ProjectTabManager) and [Chrome App](https://github.com/agektmr/ChromeMusicPlayer) as a hobby and for practical purposes. I publish my code on [github](https://github.com/agektmr). 
+So far, I've created demos for [WebSocket](http://agektmr.node-ninja.com:3000/), [Forms](http://demo.agektmr.com/datalist/), and more recently FileSystem-related demos, all of which are based on the areas of responsibility of the Chrome engineering team in Tokyo. I've also created [Chrome Extension](https://github.com/agektmr/ProjectTabManager) and [Chrome App](https://github.com/agektmr/ChromeMusicPlayer) as a hobby and for practical purposes. I publish my code on [github](https://github.com/agektmr).
 I don't generally write production-level code myself, but some of my colleagues have sent in patches so frequently that they've become committers for WebKit (now Blink).
 
 ### Chrome Experiments
@@ -123,17 +116,17 @@ The Chrome engineering team at Google's Tokyo office is quite large. As mentione
 
 ## The joy of work
 
-My daily work is as described above. However, this is just my example and does not apply to all Developer Advocates. Chrome DevRel members are scattered across seven countries around the world, including Japan, with our headquarters in Mountain View as the core. Each of us has our own area of expertise and does different work. 
+My daily work is as described above. However, this is just my example and does not apply to all Developer Advocates. Chrome DevRel members are scattered across seven countries around the world, including Japan, with our headquarters in Mountain View as the core. Each of us has our own area of expertise and does different work.
 At Google, work isn't given to you; you create it yourself. Therefore, it's only natural that different people do completely different things. You can do whatever you think is good, and you'll still be properly evaluated.
 
-I'd like to mention two memorable projects I've done in the past. 
-One was [Developer Link](http://developer-link.appspot.com/) at GDD in 2011. In addition to two sessions and a keynote, I led the project, from planning to production and negotiations with partners, to complete the service by the day of the event. I also wrote some of the code. 
+I'd like to mention two memorable projects I've done in the past.
+One was [Developer Link](http://developer-link.appspot.com/) at GDD in 2011. In addition to two sessions and a keynote, I led the project, from planning to production and negotiations with partners, to complete the service by the day of the event. I also wrote some of the code.
 
 The other, which is still ongoing, is my work with [Web Music Developers Japan](https://groups.google.com/forum/?fromgroups#!forum/web-music-developers-jp) (although it's more of a hobby than a job). As someone who originally loved music and was very excited about the [Web Audio API](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html) that lets you create synthesizers in a browser, I think it's a great perk to be able to interact with not only developers but also big names in industries that I would have had no connection to in the past. With the arrival of the [Web MIDI API](http://webaudio.github.io/web-midi-api/), I'm excited to see what even more interesting things I'll be able to do in the future.
 
 ## Difficult points
 
-The people around me are all at a high level, and to be honest, I'm struggling to keep up. Both technically and in terms of the way they work. 
+The people around me are all at a high level, and to be honest, I'm struggling to keep up. Both technically and in terms of the way they work.
 In addition, it feels like the work mentioned above is always happening simultaneously, so it's difficult to manage my time and concentration.
 
 What makes this even more difficult is that we're in a regional location (away from the headquarters). I'm the only Chrome DevRel in charge of Japan, so I mainly communicate with my team members via email or Hangout. Hangout is convenient, but technology can't overcome time differences (currently, 9am in Japan is 5pm in the headquarters, and 5pm in Japan is 9am in London). Email only contains text, so you can't see the other person's facial expression or get a sense of the atmosphere.
@@ -144,20 +137,19 @@ So I'm going on a business trip, and now I'm struggling with face-to-face commun
 
 ## Environment
 
-I've worked for a number of companies, but this is by far the most comfortable company in terms of ease of working. People often talk about the free lunches (they actually offer breakfast and dinner as well), but both fathers and mothers can take maternity leave, and vacation is flexible, with many people taking a month off together. There are frequent activities to enhance communication within the team, and there are frequent tech talks and club activities within the company, creating a great atmosphere. I think you really can't really know this until you try it for yourself.
+I've worked for several companies, but this is by far the most comfortable company in terms of ease of working. People often talk about the free lunch (they actually provide breakfast and dinner as well), but both fathers and mothers can take maternity leave, and vacation is flexible, with many people taking a month off together. There are frequent activities to enhance communication within the team, and there are frequent tech talks and club activities within the company, creating a great atmosphere. I think you can't really understand this until you try it for yourself.
 
 ## What kind of people are we looking for?
 
-As I wrote the other day, the people we're looking for at Chrome DevRel are "people who are fluent in English and Japanese and confident in their negotiation skills, technical abilities, speaking skills, and event organization." If this article has helped you understand even a little of what I mean, then it was worth writing. 
+As I wrote the other day, the people we're looking for at Chrome DevRel are "people who are fluent in English and Japanese and confident in their negotiation skills, technical abilities, speaking skills, and event organization." If this article has helped you understand even a little of what I mean, then it was worth writing.
 
-Of course, what I'm talking about here is just my own experience, and I don't expect the new person in charge to do the same kind of work. Rather, I expect them to create their own way of doing things, and they should. 
+Of course, what I'm talking about here is just my own experience, and I don't expect the new person in charge to do the same kind of work. Rather, I expect them to create their own way of doing things, and they should.
 
-Someone who can create and complete their own work. I'd be happy to find someone with strong communication skills who can push forward with various things while having fun. 
+Someone who can create and complete their own work. I'd be happy to find someone with strong communication skills who can push forward with various things while having fun.
 
-So, we look forward to receiving your applications :) 
+So, we look forward to receiving your applications :)
 
 ## Related articles
 
 * [About Google Developer Relations](http://fumit.blogspot.jp/2011/01/google-developer-relations.html)
 * [I'm moving to the US](http://fumit.blogspot.jp/2013/02/blog-post_15.html)
-

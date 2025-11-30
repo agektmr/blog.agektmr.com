@@ -1,17 +1,17 @@
 ---
 layout: post
 lang: en
-title: 'Web Music Hackathon #2 was held'
-description: ''
+title: "Web Music Hackathon #2 was held"
+description:
 date: 2014-01-19
 updated: 2014-01-19
 tags:
-- Hackathon
+  - Hackathon
   - Web Audio API
   - Web MIDI API
   - WebRTC
 translationOf: /2014/01/web-music-2.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 On Saturday, January 18, 2014, [Web Music Developers

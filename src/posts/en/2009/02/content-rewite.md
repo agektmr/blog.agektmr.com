@@ -1,13 +1,15 @@
 ---
 layout: post
 lang: en
-title: 'Controlling caching of external files with the content-rewrite feature'
-description: ''
+title: Controlling caching of external files with the content-rewrite feature
+description:
 date: 2009-02-18
+categories:
+  - OpenSocial
 tags:
-- Cache
+  - Cache
 translationOf: /2009/02/content-rewite.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 <a href="http://devlog.agektmr.com/ja/archives/396" target="_blank">In my recent article about caching</a>, I wrote that the content-rewrite function cannot be used in the PHP version of Shindig, but it appears that it has already been implemented in the 1.0.x version.

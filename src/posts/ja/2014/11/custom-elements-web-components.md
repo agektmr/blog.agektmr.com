@@ -5,8 +5,8 @@ title: 'Custom Elements - Web Components を構成する技術'
 description: 'Web Components を構成する要素のひとつ、Custom Elements について解説します。'
 date: 2014-11-25
 tags:
-- Custom Elements
-- Web Components
+  - Custom Elements
+  - Web Components
 image:
   feature: /custom-elements-web-components/image.png
 ---
@@ -178,7 +178,7 @@ var XComponent = document.registerElement('x-component', {
 ## Template, Shadow DOM と組み合わせて使う
 Custom Element と Template、Shadow DOM を組み合わせることで、開発効率と再利用のしやすさが向上します。Template では宣言的に (つまり HTML をそのまま書くだけで) 要素の中身を定義することができるようになります。Shadow DOM では、スタイルや id、class などを要素内に閉じ込めることができるようになります。
 
-これを実現するには、Custom Element が作られた際に呼び出される `.createdCallback()` 内で Template、Shadow DOM と組み合わせます。  
+これを実現するには、Custom Element が作られた際に呼び出される `.createdCallback()` 内で Template、Shadow DOM と組み合わせます。
 なお、Template と Shadow DOM については、以前の記事 ([Template](http://blog.agektmr.com/2014/10/template-web-components.html)、[Shadow DOM](http://blog.agektmr.com/2014/11/shadow-dom-web-components.html)) を参考にして下さい。
 
 **HTML**

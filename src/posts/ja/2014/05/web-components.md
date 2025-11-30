@@ -5,11 +5,11 @@ title: なぜ Web Components はウェブ開発に革命を起こすのか
 date: 2014-05-19
 updated: 2014-07-12
 tags:
-- Template
-- Shadow DOM
-- Custom Elements
-- HTML Imports
-- Web Components
+  - Template
+  - Shadow DOM
+  - Custom Elements
+  - HTML Imports
+  - Web Components
 comments: false
 categories: Web Components
 ---
@@ -19,7 +19,7 @@ categories: Web Components
 <!-- excerpt -->
 
 ウェブアプリケーションのフロントエンドに関わる方なら、もう Web Components という
-言葉を全く聴いたことがない方は少ないのではないでしょか。  
+言葉を全く聴いたことがない方は少ないのではないでしょか。
 すでに関連記事も数多く出回っており、実際に触り始めている方も多いと思います。しか
 し、なぜこれが革命的技術なのか、周囲の人に簡潔に説明できる方はどれくらいいるで
 しょうか？この記事では、それを試みていきたいと思います。
@@ -60,7 +60,7 @@ npm, bower 等との組み合わせは、だいぶ浸透してきたのではな
 もちろん、その対抗馬となる UI ライブラリもたくさん登場しています。Kendo UI,
 ExtJS, Dojo, Bootstrap など、数え上げればキリがありません。しかしひとつ言えるの
 は、それぞれに独自の思想や作法があるということです。そのため、実際に使うには、
-API よりも、まずは思想と作法を学ぶところからスタートしなければなりません。  
+API よりも、まずは思想と作法を学ぶところからスタートしなければなりません。
 また、選択肢が多いということは、人それぞれに得意なライブラリや好みが別れてしまうため、プロジェクトでひとつを選択する必要に迫られた場合、誰かが妥協したり、新たな学習コストがかかってしまうことも、忘れてはいけません。
 
 ## Web Components
@@ -87,8 +87,8 @@ API よりも、まずは思想と作法を学ぶところからスタートし�
 画像をクリックすると[実際に動作するデ
 モ](http://agektmr.github.io/webaudio-controls/sample1.html)を見ることができま
 す。このデモの[ソースコードはこち
-ら](https://github.com/WebMusicDevelopersJP/webaudio-controls)。  
-この見た目にかっこいいノブ類ですが、Web Components (Polymer) で作られています。  
+ら](https://github.com/WebMusicDevelopersJP/webaudio-controls)。
+この見た目にかっこいいノブ類ですが、Web Components (Polymer) で作られています。
 ドラッグして上下に動かすことで、パラメータを増減。`Shift` キーを押しながらドラッ
 グすれば、1 ずつ動かすことができます。そして、変更したパラメータは `value` に設
 定されます。
@@ -160,9 +160,9 @@ Dodson](https://plus.google.com/+RobDodson/posts)が Google Map を使ったア�
 
 ### Custom Elements
 
-独自タグをブラウザに認識させます。  
+独自タグをブラウザに認識させます。
 このタグはプロパティやメソッド、イベントを持つことができるため、ネイティブな DOM
-要素と同様な使い勝手を実現することができます。  
+要素と同様な使い勝手を実現することができます。
 上記 `<webaudio-knob></webaudio-knob>` の例で言えば
 
 ```javascript
@@ -201,7 +201,7 @@ Polyfill](https://github.com/Polymer/CustomElements) も[使っているよう�
 
 ### Template
 
-標準のテンプレート機能を提供します。  
+標準のテンプレート機能を提供します。
 template のコンセプトは長らく検討されてきました。最近では Handlebar.js や
 Backbone.js (Underscore), AngularJS のテンプレートが人気ですが、それのウェブ標準
 版と思って下さい。既存のハックと比べると
@@ -215,14 +215,14 @@ Backbone.js (Underscore), AngularJS のテンプレートが人気ですが、�
 
 ### HTML Imports
 
-ひとつのタグで複数のリソースを読み込むことができます。  
+ひとつのタグで複数のリソースを読み込むことができます。
 jQuery UI にしろ Bootstrap にしろ、JavaScript、CSS などを、それぞれ別々に取り込
 む必要がありました。import タグを使えば、これひとつで UI コンポーネントと、それ
 に必要なリソースを取り込むことができるようになります。
 
 ### Shadow DOM
 
-カプセル化した HTML 要素を追加できます。  
+カプセル化した HTML 要素を追加できます。
 パッと見の効果は、見えないマークアップを追加できることですが、もっと大きな役割は
 カプセル化できることです。UI ライブラリでありがちな落とし穴は
 
@@ -243,7 +243,7 @@ jQuery UI にしろ Bootstrap にしろ、JavaScript、CSS などを、それぞ
 Google は Web Components で最も大きな役割を担っています。仕様作成者はいずれも
 Google エンジニアで、Google Chrome では既にほとんどの機能を実装しており、バー
 ジョン 36 では HTML Imports も取り込まれ、すべての機能が `about:flags` のフラグ
-無しで動く状態になる見込みです。  
+無しで動く状態になる見込みです。
 また、まだアルファ版ではありますが、Web Components をベースにした
  [Polymer](http://www.polymer-project.org/) というフレームワークを開発しており、
 完成すれば、その上で様々なコンポーネントを動かせるよう準備を進めています。同時
@@ -328,21 +328,21 @@ Web Components が広まれば、むしろ自分が必要なものを探す方�
 
 ## その他日本語資料
 
-* [Web 開発者に革命をもたらす！「Web Components」超入門  
+* [Web 開発者に革命をもたらす！「Web Components」超入門
   ](http://liginc.co.jp/web/html-css/html/58267)検索で一番にヒットする LIG の王
   さんの記事ですが、残念ながらこの時からだいぶ仕様が変わってしまっています。とは
   いえ大枠を把握するにはとてもよい資料だと思いますので、ぜひ目を通すとよいと思い
   ます。
-* [Web Components で行う HTML のコンポーネント化  
+* [Web Components で行う HTML のコンポーネント化
   ](http://ameblo.jp/ca-1pixel/entry-11815188808.html)サイバーエージェントの
   @1000ch の記事です。最近の記事ですので、仕様的にも新しいものに対応しており、安
   心して読めると思います。
-* [Web をまともにしたいので Shadow DOM と Web Components をつくってます  
+* [Web をまともにしたいので Shadow DOM と Web Components をつくってます
   ](http://www.youtube.com/watch?v=GCw4fJEEVe8)Google Japan のエンジニアかつ、
   Shadow DOM 仕様のエディタであり、Blink 上での Shadow DOM の実装をリードしてい
   る [Hayato Ito](https://plus.google.com/+HayatoIto/posts) が昨年の HTML5
   Conference で行った講演のビデオです。
-* [Polymer と Web Components  
+* [Polymer と Web Components
   ](http://steps.dodgson.org/b/2013/05/19/polymer-and-web-components/)Web
   Components 関連の Google エンジニアによる 2013 年の記事。Web Components はもち
   ろんですが、Polymer のコンセプトなどについても書かれています。

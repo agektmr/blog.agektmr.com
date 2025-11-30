@@ -1,25 +1,24 @@
 ---
 layout: post
 lang: en
-title: 'The basics of passkeys and clearing up misconceptions surrounding them'
-description: 'We will review the basics of passkeys and explain some common misconceptions about passkeys.'
+title: The basics of passkeys and clearing up misconceptions surrounding them
+description: We will review the basics of passkeys and explain some common misconceptions about passkeys.
 date: 2023-12-18
 updated: 2024-12-26
 image:
-feature: /2023/passkeys.jpg
+  feature: /2023/passkeys.jpg
 tags:
-- Passkey
-- WebAuthn
-- FIDO
-- FIDO2
-- 認証
-- Authentication
+  - Passkey
+  - WebAuthn
+  - FIDO
+  - FIDO2
+  - 認証
+  - Authentication
 translationOf: /2023/12/passkey-mythbusting.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-2023 has undoubtedly become the "first year of passkeys." A huge number of services will support passkeys, and 2024 is likely to be the year passkeys finally become widespread.
+2023 has undoubtedly become the "first year of passkeys." With so many services supporting passkeys, 2024 is likely to be the year when passkeys finally become widespread.
 
 In this article, we will review the basics of passkeys and explain some common misconceptions about passkeys.
 
@@ -32,7 +31,7 @@ In 2023, many websites now support passkeys. For example:
 -Apple
 - eBay
 - GitHub
--Google
+- Google
 - KDDI
 - Mercari
 - Mixi
@@ -131,7 +130,7 @@ This is not wrong, but it's worth understanding a few more details.
 
 It's a legitimate concern that if a password manager account that syncs passkeys is compromised, all of the stored passkeys could be stolen, making it dangerous.
 
-Your Google account can be compromised, and so can your iCloud account. I don't think "never" should be used to describe third-party password managers like 1Password or Dashlane.
+Google accounts can be compromised, and so can iCloud accounts. Third-party password managers like 1Password and Dashlane are also notoriously vulnerable.
 
 As mentioned above, Google Password Manager (and probably iCloud Keychain as well) encrypts and backs up your passkey using the device's PIN or pattern. Other password managers likely have their own similar mechanisms. Therefore, even if your account is stolen, it doesn't necessarily mean that your passkey will be leaked at the same time. It might be a good idea to check how the password manager you're using is designed just to be safe.
 
@@ -191,7 +190,7 @@ As you can see, Chrome's sync support is currently dependent on the OS it's runn
 
 #### Firefox
 
-Firefox, which uses Gecko, the other of the three major browser engines, doesn't officially support passkeys, so it's not yet clear how passkeys will be synced, but it looks like it could happen by early 2024.
+Firefox, which uses Gecko, another of the three major browser engines, doesn't officially support passkeys, so it's not yet clear how passkeys will be synced, but it looks like it could happen by early 2024.
 
 #### Third-Party Password Managers
 
@@ -249,7 +248,7 @@ It seems that more people than you might think think that a passkey requires a s
 
 Passkey is also supported on desktops and laptops. Many devices don't support biometric authentication, but in those cases, you can use local authentication with a PIN (Windows) or a system password (macOS) to authenticate using the passkey.
 
-I mentioned that if you only have a passkey on your smartphone, you can authenticate using a QR code, but if you then create a new passkey in your desktop environment, you will be able to log in using only your computer without having to scan the QR code every time.
+I mentioned that if you only have a passkey on your smartphone, you can authenticate using a QR code, but if you then create a new passkey in your desktop environment, you will be able to log in using only your computer from then on, without having to scan the QR code every time.
 
 ### Misconception 13: Creating a passkey prevents other authentication methods from working
 

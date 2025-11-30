@@ -1,13 +1,13 @@
 ---
 layout: post
 lang: en
-title: 'OpenSocial v0.8.1 released'
-description: ''
+title: OpenSocial v0.8.1 released
+description:
 date: 2008-09-28
 tags:
-- OpenSocial
+  - OpenSocial
 translationOf: /2008/09/opensocial-v081.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 The OpenSocial v0.8.1 specification has been published.
@@ -94,5 +94,4 @@ The return value for `opensocial.Environment.supportsField()` has been defined t
 * **OAuth support for the `<Preload>` element** The `<Preload>` element's `authz ` attribute now supports the `oauth`
 value. When ` authz` is `oauth`,
 the `oauth_service_name`, `oauth_token_name`, `oauth_request_token`,
-and `oauth_request_token_secret` attributes are retrieved. These attributes have the same meanings and default values as those corresponding to the
-`gadgets.io.makeRequest` parameter.
+and `oauth_request_token_secret` attributes are retrieved. These attributes have the same meanings and default values as their counterparts in the `gadgets.io.makeRequest` parameter.

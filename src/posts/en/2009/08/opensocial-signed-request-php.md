@@ -2,13 +2,13 @@
 layout: post
 lang: en
 title: OpenSocial Signed Request library (PHP) released in beta
-description: ''
+description:
 date: 2009-08-14
 tags:
-- OAuth
+  - OAuth
   - Signed Request
 translationOf: /2009/08/opensocial-signed-request-php.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 OpenSocial's Signed Request is a mechanism that attaches a signature to external communication requests from a gadget, making it possible to verify that the parameter contents have not been tampered with. Generally, the names 2-legged OAuth, Signed Request, and OAuth Consumer Request are all the same, and they represent this.

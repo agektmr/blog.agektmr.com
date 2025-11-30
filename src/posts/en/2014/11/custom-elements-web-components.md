@@ -1,16 +1,16 @@
 ---
 layout: post
 lang: en
-title: 'Custom Elements - Technology for composing Web Components'
-description: 'This article explains Custom Elements, one of the elements that make up Web Components.'
+title: Custom Elements - Technology for composing Web Components
+description: This article explains Custom Elements, one of the elements that make up Web Components.
 date: 2014-11-25
 image:
-feature: /custom-elements-web-components/image.png
+  feature: /custom-elements-web-components/image.png
 tags:
-- Custom Elements
-- Web Components
+  - Custom Elements
+  - Web Components
 translationOf: /2014/11/custom-elements-web-components.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 *This article is a cross-post of [webcomponents.org article](http://webcomponents.org/articles/introduction-to-custom-elements/).*
@@ -158,7 +158,7 @@ Called when the created element is attached to the document's DOM.
 Called when the created element is detached from the document's DOM.
 
 **.attributeChangedCallback()**
-Called when the attributes of an element change.
+Called when the attributes of an element you created change.
 
 In the `relative-time` example, the relative date and time is calculated at the timing of `.createdCallback()` and `.attributeChangedCallback()`, and `TextContent` is rewritten.
 
@@ -180,7 +180,7 @@ var XComponent = document.registerElement('x-component', {
 ## Using Custom Elements in Combination with Templates and Shadow DOM
 Combining Custom Elements with Templates and Shadow DOM improves development efficiency and ease of reuse. Templates allow you to define the content of an element declaratively (i.e., by simply writing HTML). Shadow DOM allows you to confine styles, ids, classes, and more within elements.
 
-To achieve this, we combine Template and Shadow DOM in `.createdCallback()`, which is called when the Custom Element is created. 
+To achieve this, we combine Template and Shadow DOM in `.createdCallback()`, which is called when the Custom Element is created.
 For more information on Template and Shadow DOM, please refer to our previous articles ([Template](http://blog.agektmr.com/2014/10/template-web-components.html), [Shadow DOM](http://blog.agektmr.com/2014/11/shadow-dom-web-components.html)).
 
 **HTML**

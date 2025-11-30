@@ -1,20 +1,20 @@
 ---
 layout: post
 lang: en
-title: 'Google Developer Networking Event'
-description: ''
+title: Google Developer Networking Event
+description:
 date: 2008-03-15
 tags:
-- Gadget
+  - Gadget
   - Google
   - OpenSocial
   - Shindig
   - Widget
 translationOf: /2008/03/google.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-I attended the Google Developer Networking Event held at Diamond Hall in Omotesando. The theme this time was OpenSocial, which was perfect. I was able to answer a lot of my questions.
+I attended the Google Developer Networking Event held at the Diamond Hall in Omotesando. The theme this time was OpenSocial, which was perfect. I was able to answer a lot of my questions.
 
 ## Can OpenSocial applications (gadgets) be carried between SNSs?
 
@@ -52,4 +52,4 @@ I installed Shindig the other day, but I assumed it only supported Java. But the
 * OpenSocial app coding environment CodeRunner (app on Orkut).
 * [OpenSocial Japan community](http://sandbox.orkut.com/Community.aspx?cmm=47213793) on Orkut.
 
-And so on and so forth... The kids are being noisy so I'll stop here for today.
+And so on...the kids are making a lot of noise so I'll stop here for today.

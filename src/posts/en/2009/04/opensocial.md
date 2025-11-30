@@ -1,13 +1,13 @@
 ---
 layout: post
 lang: en
-title: OpenSocial's permission model
-description: ''
+title: "OpenSocial's permission model"
+description:
 date: 2009-04-29
 tags:
-- パーミッションモデル
+  - パーミッションモデル
 translationOf: /2009/04/opensocial.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 Recently, there have been a few questions raised about OpenSocial permissions in the article "<a target="_blank" href="http://groups.google.com/group/opensocial-japan/browse_thread/thread/ffa5f8182c36252f#">Optional method for persisting data per Owner or per Owner* app in OpenSocial</a>", so I will summarize what data can be accessed in what circumstances, and also the permission model in FriendConnect.

@@ -1,16 +1,16 @@
 ---
 layout: post
 lang: en
-title: 'HTML Imports - The technology that makes up Web Components'
-description: 'This article explains HTML Imports, one of the elements that make up Web Components.'
+title: HTML Imports - The technology that makes up Web Components
+description: This article explains HTML Imports, one of the elements that make up Web Components.
 date: 2015-01-07
 image:
-feature: /custom-elements-web-components/image.png
+  feature: /custom-elements-web-components/image.png
 tags:
-- HTML Imports
-- Web Components
+  - HTML Imports
+  - Web Components
 translationOf: /2015/01/html-imports-web-components.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 *This article is a cross-post of [webcomponents.org article](http://webcomponents.org/articles/introduction-to-html-imports/).*

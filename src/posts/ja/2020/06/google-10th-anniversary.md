@@ -6,8 +6,8 @@ date: 2020-06-01
 image:
   feature: /2020/10th-anniversary.jpg
 tags:
-- Google
-- Developer Advocate
+  - Google
+  - Developer Advocate
 ---
 
 Developer Advocate という技術啓蒙の担当者として Google に入社して今日でちょうど 10 年が経った。技術以外のことについてはめったにブログを書くことはないのだけど、良い節目なのでこの機会に記録を残しておきたい。

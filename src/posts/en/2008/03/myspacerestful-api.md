@@ -1,18 +1,17 @@
 ---
 layout: post
 lang: en
-title: MySpace's RESTful API is proprietary
-description: ''
+title: "MySpace's RESTful API is proprietary"
+description:
 date: 2008-03-23
 tags:
-- OpenSocial
+  - OpenSocial
   - RESTful API
 translationOf: /2008/03/myspacerestful-api.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
-On March 13th, MySpace released the OpenSocial app to the public as a beta version. It was the first OpenSocial-compatible social networking site to be released to the public. Why? How? ...
+On March 13th, MySpace released the OpenSocial app to the public as a beta version. This is the first OpenSocial-compatible social networking service to be released to the public. However, the OpenSocial specifications have not yet been fully finalized, so why and how?
 
 [OpenSocial Container standard fragmentation &#8211; Implementing OpenSocial Containers | Google Group](https://groups.google.com/group/opensocial-container/browse_thread/thread/96761d3ebd53e32c/646c972cddae2d35)
 

@@ -1,22 +1,21 @@
 ---
 layout: post
 lang: en
-title: 'Open source Shindig compatible social networking site - Partuza!'
-description: ''
+title: "Open source Shindig compatible social networking site - Partuza!"
+description:
 date: 2008-06-03
 tags:
-- OpenSocial
+  - OpenSocial
   - Partuza!
   - Shindig
 translationOf: /2008/06/shindigsns-partuza.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
-
 Speaking of OpenSocial containers,
-[Shindig](http://devlog.agektmr.com/archives/tag/shindig) is a popular choice, but the PHP version is already compatible with
+[Shindig](http://devlog.agektmr.com/archives/tag/shindig) is a popular choice, but its PHP version is already compatible with
 OpenSocial v0.7.
-[Partuza!](http://code.google.com/p/partuza/) is an open-source Shindig-compatible SNS developed by Chris Chabot, the developer of the PHP version of Shindig.
+[Partuza!](http://code.google.com/p/partuza/) is an open-source Shindig-compatible social networking site developed by Chris Chabot, the developer of the PHP version of Shindig.
 
 You may be wondering, "If Shindig is a container, then what does Partuza! do?" This time, I will explain how to install it and its relationship with Shindig.
 
@@ -77,4 +76,4 @@ http://localhost:8080/gadgets/files/samplecontainer/samplecontainer.html
 
 However, as you can imagine from the PartuzaHandler specification, the database is shared. You can see it in action on [Chris Chabot's site](http://partuza.us.chabotc.com/).
 
-By using Partuza!, you can not only analyze how Shindig can be incorporated into a social networking site, but you can also develop a simple social networking site using it. Please give it a try.
+By using Partuza!, you can not only analyze how to incorporate Shindig into a social networking site, but also develop a simple social networking site using it. Please give it a try.

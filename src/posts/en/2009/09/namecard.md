@@ -1,14 +1,14 @@
 ---
 layout: post
 lang: en
-title: 'I made a personal business card'
-description: ''
+title: I made a personal business card
+description:
 date: 2010-04-13
 tags:
-- 勉強会
+  - 勉強会
   - 名刺
 translationOf: /2009/09/namecard.html
-translated: 2025-11-29
+translated: 2025-11-30
 translatedManually: false
 ---
 I originally wrote this on my private blog, but I wanted to share it here as well.
@@ -27,4 +27,4 @@ I was talking about blogger business cards, but recently I've been meeting peopl
 
 So, I'm happy with the finished product. I've only given it to my wife so far. I hope someone gets it soon!
 
-We're so grateful to [Maekawa Kikaku Printing](http://www.kobe-maekawa.co.jp/) for this finish at this price! Please give it a try!
+I'm so grateful to [Maekawa Planning Printing](http://www.kobe-maekawa.co.jp/) for this finish at this price! Please give it a try!
