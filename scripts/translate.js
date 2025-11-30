@@ -29,9 +29,11 @@ const HTML_TAG_REGEX = /<[^>]+>/g;
  * Parse frontmatter and content from markdown file
  */
 function parseFrontmatter(content) {
-  const match = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  // Trim the content first to handle any leading/trailing whitespace
+  const trimmedContent = content.trim();
+  const match = trimmedContent.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
   if (!match) {
-    return { frontmatter: '', content: content, raw: content };
+    return { frontmatter: '', content: trimmedContent, raw: content };
   }
   return {
     frontmatter: match[1],
@@ -356,9 +358,30 @@ async function main() {
   console.log(`Target: ${TARGET_DIR}`);
   console.log(`Language: ${SOURCE_LANG} → ${TARGET_LANG}\n`);
 
-  // Get all source files
-  const sourceFiles = getMarkdownFiles(SOURCE_DIR);
-  console.log(`Found ${sourceFiles.length} posts to process\n`);
+  // Check if a specific file was provided with --file argument
+  const fileArgIndex = process.argv.indexOf('--file');
+  let sourceFiles;
+
+  if (fileArgIndex !== -1 && process.argv[fileArgIndex + 1]) {
+    const specificFile = process.argv[fileArgIndex + 1];
+
+    // Convert relative path to absolute if needed
+    const absolutePath = path.isAbsolute(specificFile)
+      ? specificFile
+      : path.join(process.cwd(), specificFile);
+
+    if (!fs.existsSync(absolutePath)) {
+      console.error(`❌ File not found: ${specificFile}`);
+      process.exit(1);
+    }
+
+    sourceFiles = [absolutePath];
+    console.log(`Processing specific file: ${specificFile}\n`);
+  } else {
+    // Get all source files
+    sourceFiles = getMarkdownFiles(SOURCE_DIR);
+    console.log(`Found ${sourceFiles.length} posts to process\n`);
+  }
 
   let translated = 0;
   let skipped = 0;
