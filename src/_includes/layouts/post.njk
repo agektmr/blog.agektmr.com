@@ -16,7 +16,7 @@ templateClass: tmpl-post
 <div class="wrapper">
 
 <section class="post-meta">
-  <div class="post-date">Posted: {{ page.date | localeDateString(lang or 'en') }}{% if updated %} / Last updated: {{ updated | localeDateString(lang or 'en') }}{% endif %}</div>
+  <div class="post-date">Posted: {{ page.date | localeDateString(lang or 'en') }}{% if updated %} / Last updated: {{ updated | localeDateString(lang or 'en') }}{% endif %} / {% if lang == 'ja' %}オーガニック度{% else %}Organic level{% endif %}: {{ organic if organic else 100 }}%</div>
 </section>
 
 <article class="post-content">
@@ -32,7 +32,7 @@ templateClass: tmpl-post
   {% for social in site.social %}
     {% set full_url %}{{ site.baseurl }}{{ page.url }}{% endset %}
     {% if social.name == "Bluesky" and social.share == true %}
-      <a href="//bsky.app/intent/compose?text={{ title | urlencode}}+{{full_url | urlencode}}" 
+      <a href="//bsky.app/intent/compose?text={{ title | urlencode}}+{{full_url | urlencode}}"
         onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=550');return false;">
         <i class="fab fa-{{ social.icon }} fa-lg"></i>
       </a>
