@@ -4,10 +4,10 @@ on:
   push:
     branches:
       - i18n
+      - main
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-  SERVICE_NAME: blog-agektmr-com
   REGION: us-central1
   IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT_ID }}/blog-agektmr-com
 
@@ -22,6 +22,16 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Set environment variables
+        run: |
+          if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            echo "SERVICE_NAME=blog-agektmr-com" >> $GITHUB_ENV
+            echo "ENV_TAG=prod" >> $GITHUB_ENV
+          else
+            echo "SERVICE_NAME=blog-agektmr-com-staging" >> $GITHUB_ENV
+            echo "ENV_TAG=staging" >> $GITHUB_ENV
+          fi
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -49,6 +59,7 @@ jobs:
           docker buildx build --push \
             --platform linux/amd64 \
             -t ${{ env.IMAGE_NAME }}:${{ github.sha }} \
+            -t ${{ env.IMAGE_NAME }}:${{ env.ENV_TAG }} \
             -t ${{ env.IMAGE_NAME }}:latest .
 
       - name: Deploy to Cloud Run
