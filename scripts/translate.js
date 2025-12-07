@@ -2,7 +2,7 @@
 
 /**
  * Translation script for blog posts
- * Translates Japanese posts to English using Google Cloud Translation API
+ * Translates posts between languages using Google Cloud Translation API
  */
 
 const fs = require('fs');
@@ -12,10 +12,19 @@ const { v2 } = require('@google-cloud/translate');
 // Initialize Translation API client
 const translate = new v2.Translate();
 
-const SOURCE_DIR = path.join(__dirname, '../src/posts/ja');
-const TARGET_DIR = path.join(__dirname, '../src/posts/en');
-const SOURCE_LANG = 'ja';
-const TARGET_LANG = 'en';
+// Parse command line arguments
+const args = process.argv.slice(2);
+const getArg = (name) => {
+  const index = args.indexOf(name);
+  return index !== -1 ? args[index + 1] : null;
+};
+
+const SOURCE_LANG = getArg('--source') || 'ja';
+const TARGET_LANG = getArg('--target') || 'en';
+
+const BASE_POSTS_DIR = path.join(__dirname, '../src/posts');
+const SOURCE_DIR = path.join(BASE_POSTS_DIR, SOURCE_LANG);
+const TARGET_DIR = path.join(BASE_POSTS_DIR, TARGET_LANG);
 
 // Regex patterns for preserving content
 const CODE_BLOCK_REGEX = /```[\s\S]*?```/g;
@@ -282,13 +291,13 @@ async function translatePost(sourcePath, targetPath) {
   const sourceUrl = sourcePath
     .replace(SOURCE_DIR, '')
     .replace(/\.md$/, '.html')
-    .replace(/\/ja\//, '/');
+    .replace(new RegExp(`^/${SOURCE_LANG}/`), '/'); // Remove source lang prefix if present
 
   // Start with all source frontmatter properties
   const newFrontmatter = { ...sourceMeta };
 
   // Override/add translation-specific properties
-  newFrontmatter.lang = 'en';
+  newFrontmatter.lang = TARGET_LANG;
   newFrontmatter.title = escapeYamlString(translatedTitle);
   newFrontmatter.description = escapeYamlString(translatedDescription);
   newFrontmatter.translationOf = sourceUrl;
@@ -349,6 +358,11 @@ async function translatePost(sourcePath, targetPath) {
  * Get all markdown files recursively
  */
 function getMarkdownFiles(dir) {
+  if (!fs.existsSync(dir)) {
+    console.error(`❌ Source directory not found: ${dir}`);
+    return [];
+  }
+
   const files = [];
 
   function traverse(currentDir) {
@@ -377,11 +391,11 @@ async function main() {
   console.log(`Language: ${SOURCE_LANG} → ${TARGET_LANG}\n`);
 
   // Check if a specific file was provided with --file argument
-  const fileArgIndex = process.argv.indexOf('--file');
+  const fileArg = getArg('--file');
   let sourceFiles;
 
-  if (fileArgIndex !== -1 && process.argv[fileArgIndex + 1]) {
-    const specificFile = process.argv[fileArgIndex + 1];
+  if (fileArg) {
+    const specificFile = fileArg;
 
     // Convert relative path to absolute if needed
     const absolutePath = path.isAbsolute(specificFile)
