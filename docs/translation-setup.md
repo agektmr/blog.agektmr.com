@@ -86,27 +86,42 @@ You should see: `Translated: こんにちは`
 
 ## Usage
 
-### Translate All Posts
+ ### Translate All Posts
 
-```bash
-npm run translate
-```
+ ```bash
+ # Default: Translate Japanese to English
+ npm run translate
+ # OR
+ node scripts/translate.js
+ ```
 
-This will:
-- Scan all posts in `src/posts/ja/`
-- Check if translation exists in `src/posts/en/`
-- Skip already translated posts (unless source was updated)
-- Translate title, description, and content
-- Preserve code blocks, URLs, and technical content
-- Write translated files to `src/posts/en/`
+ ### Bidirectional Translation
 
-### Translate and Build
+ You can translate in either direction using command line arguments:
 
-```bash
-npm run translate:build
-```
+ ```bash
+ # Translate English to Japanese
+ node scripts/translate.js --source en --target ja
 
-This runs translation followed by the build process.
+ # Translate Japanese to English (explicit)
+ node scripts/translate.js --source ja --target en
+ ```
+
+ This will:
+ - Scan all posts in the source directory (`src/posts/[lang]/`)
+ - Check if translation exists in the target directory (`src/posts/[target_lang]/`)
+ - Skip already translated posts (unless source was updated)
+ - Translate title, description, and content
+ - Preserve code blocks, URLs, and technical content
+ - Write translated files to the target directory
+
+ ### Translate and Build
+
+ ```bash
+ npm run translate:build
+ ```
+
+ This runs the default translation (JA -> EN) followed by the build process.
 
 ### Manual Translation Override
 
@@ -225,8 +240,11 @@ If translations are poor quality:
 To test on a single post before running full translation:
 
 ```bash
-# Test on one post
+# Test on one post (JA -> EN)
 node scripts/translate.js --file src/posts/ja/2025/01/everything-about-passkeys.md
+
+# Test on one post (EN -> JA)
+node scripts/translate.js --source en --target ja --file src/posts/en/2025/12/passkey-keywords.md
 ```
 
 ## Next Steps
