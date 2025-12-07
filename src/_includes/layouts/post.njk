@@ -16,7 +16,15 @@ templateClass: tmpl-post
 <div class="wrapper">
 
 <section class="post-meta">
-  <div class="post-date">Posted: {{ page.date | localeDateString(lang or 'en') }}{% if updated %} / Last updated: {{ updated | localeDateString(lang or 'en') }}{% endif %} / {% if lang == 'ja' %}オーガニック度{% else %}Organic level{% endif %}: {{ organic if organic else 100 }}%</div>
+  <div class="post-date">Posted: {{ page.date | localeDateString(lang or 'en') }}{% if updated %} / Last updated: {{ updated | localeDateString(lang or 'en') }}{% endif %} / {% if lang == 'ja' %}オーガニック度{% else %}Organic level{% endif %}: {{ organic if organic else 100 }}%
+  {% set altLang = 'en' if lang == 'ja' else 'ja' %}
+  {% set readInAltLang = 'Read in English' if lang == 'ja' else '日本語で読む' %}
+  {% set altPostUrl = page.url | replace('/' + lang + '/', '/' + altLang + '/') %}
+
+  {% if altPostUrl %}
+   / <a href="{{ altPostUrl }}">{{ readInAltLang }}</a>
+  {% endif %}
+  </div>
 </section>
 
 <article class="post-content">
@@ -55,14 +63,10 @@ templateClass: tmpl-post
       <a href="//www.facebook.com/sharer.php?t={{ title | urlencode }} - {{ site.name | urlencode }}&u={{ full_url | urlencode}}"
         onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=550');return false;">
         <i class="fab fa-{{ social.icon }} fa-lg"></i>
-        onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=550');return false;">
-        <i class="fab fa-{{ social.icon }} fa-lg"></i>
       </a>
     {% endif %}
     {% if social.name == "LinkedIn" and social.share == true %}
       <a href="//www.linkedin.com/shareArticle?mini=true&url={{ full_url | urlencode}}"
-        onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=550');return false;">
-        <i class="fab fa-{{ social.icon }} fa-lg"></i>
         onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=550');return false;">
         <i class="fab fa-{{ social.icon }} fa-lg"></i>
       </a>

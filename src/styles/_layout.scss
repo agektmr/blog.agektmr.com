@@ -246,7 +246,6 @@ pre code.hljs {
 		// padding: 1em 0;
 		color: $medium-gray;
 		.post-date {
-			@include span-columns(6);
 			text-align: left;
 			font-size: 0.9em;
 		}
