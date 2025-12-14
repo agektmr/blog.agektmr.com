@@ -18,7 +18,7 @@ eleventyExcludeFromCollections: true
   <uri>{{ site.url }}/</uri>
   <email>{{ site.owner.email }}</email>
 </author>
-{%- for post in collections.posts_en | reverse %}
+{%- for post in collections.posts_en %}
 {% if loop.index < 10 %}
 {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(site.url) }}{% endset %}
 <entry>
