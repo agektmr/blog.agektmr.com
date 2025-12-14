@@ -1,7 +1,7 @@
 ---
 layout: post
 lang: ja
-title: パスキーの全体像を把握するための用語集
+title: 全体像を把握するためのパスキー用語集
 description:
 date: 2025-12-14
 organic: 70
