@@ -5,12 +5,12 @@
   "baseurl": "https://blog.agektmr.com",
   "imagepath": "/images",
   "cover": "/images/cover.jpg",
-  "subtitle": "A blog dreaming of the future of the web",
-  "description": "A blog dreaming of the future of the web",
+  "subtitle": "Dreaming about the future of the web",
+  "description": "Dreaming about the future of the web",
   "default_header_image": "cover.jpg",
   "disqus_shortname": "agektmr",
   "feed": {
-    "subtitle": "A blog dreaming of the future of the web",
+    "subtitle": "Dreaming about the future of the web",
     "filename": "feed.xml",
     "path": "/en/feed.xml",
     "url": "https://blog.agektmr.com/en/feed.xml",
@@ -27,7 +27,7 @@
     "name": "Bluesky",
     "icon": "bluesky",
     "username": "agektmr.com",
-    "url": "https://bsky.app/profile/@agektmr.com",
+    "url": "https://bsky.app/profile/agektmr.com",
     "desc": "Connect with me on Bluesky",
     "share": true
   }, {
