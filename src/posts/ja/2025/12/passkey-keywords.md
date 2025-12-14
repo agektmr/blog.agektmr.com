@@ -1,10 +1,10 @@
 ---
 layout: post
 lang: ja
-title: パスキーを理解するための重要な用語
-description: 
-date: 2025-12-08
-organic: 50
+title: パスキーの全体像を把握するための用語集
+description:
+date: 2025-12-14
+organic: 70
 image:
   feature:
 tags:
@@ -13,101 +13,115 @@ translationOf: /2025/12/passkey-keywords.html
 translated: 2025-12-07
 translatedManually: false
 ---
-[FIDO 東京セミナー](https://fidoalliance.org/event/fido-tokyo-seminar/)で、パスキーの進化の全体像を把握するのは難しいという話を聞きました。そこで、パスキーの世界を理解し、必要に応じて詳細を調べるために、重要な用語を紹介したいと思います。そこで、ここにその用語をご紹介します。
+[FIDO 東京セミナー](https://fidoalliance.org/event/fido-tokyo-seminar/)で、パスキーの最新情報を紹介したのですが、全体像を把握するのが難しいという話を聞きました。インクリメンタルに進化するウェブ技術全般に言えることですが、全体像が分かれば、あとは穴を埋めるだけという意味で役に立つものです。そこで、2025 年末時点でパスキーの全体像を把握するのに欠かせないキーワードをまとめたので紹介したいと思います。
 
 <!-- excerpt -->
 
-### 認証子 {: #authenticator }
+## 基本編
 
-認証デバイスとは、パスキーを保存・管理するデバイスです。ハードウェアセキュリティキー、パスワードマネージャー（パスキープロバイダー）、モバイルデバイスなどが挙げられます。この記事では、認証デバイスの中でも「パスワードマネージャー」が最もよく利用されるため、認証デバイスを総称して「パスワードマネージャー」と呼んでいます。
+### Authenticator {: #authenticator }
 
-### 依存パーティ (RP) {: #rp }
+「オーセンティケーター」と読み、パスキーを保存・管理するデバイス全般を指します。Authenticator にはハードウェアセキュリティキー、パスワードマネージャー（パスキープロバイダー）、モバイルデバイスなどが含まれます。Authenticator の中でも「パスワードマネージャー」が最もよく利用されるため、この記事では便宜上 Authenticator を総称して「パスワードマネージャー」と呼びます。
 
-証明書利用者とは、ユーザーにパスキーを要求するウェブサイトまたはアプリケーションのことです。証明書利用者は、ユーザーの本人確認とパスキーの保存を担当します。
+### Relying Party (RP) {: #rp }
+
+Relying Party は、「リライングパーティー」と読み、ユーザーにパスキーを要求するウェブサイトまたはアプリケーションを指します。RP は、ユーザーの認証と、公開鍵の保存を担当します。
 
 ### RP ID {: #rp-id }
 
-RP ID（Relying Party Identifier）は、パスキーを要求するウェブサイトのドメイン名です。これは認証情報のスコープを定義し、`example.com` 用に作成されたパスキーが `evil.com` では使用できないことを保証します。有効なドメイン文字列と、現在のオリジンのサフィックスでなければなりません。
+RP ID（Relying Party Identifier）は、パスキーをリクエストするウェブサイトのドメイン名です。これはクレデンシャルのスコープを定義し、`example.com` 用に作成されたパスキーが `evil.com` では使用できないことを保証します。有効なドメイン文字列と、現在のオリジンのサフィックスでなければなりません。
 
 - [PublicKeyCredentialCreationOptions - Web API | MDN](https://developer.mozilla.org/en-US/docs/Web/API/PublicKeyCredentialCreationOptions#id_2)
+
+### Discoverable Credential {: #discoverable-credentials }
+
+Discoverable Credential（「ディスカバラブル・クレデンシャル」旧称「Resident Keys」）は、ユーザーのアカウント情報（ユーザー名や表示名など）と共にパスワードマネージャーに保存されるパスキー（の一種）です。これにより、Usernameless（ユーザー名レス）フローが可能になります。ユーザーは「サインイン」をクリックし、パスワードマネージャーが提供するリストからアカウントを選択して [User Verification](#user-verification) するだけで認証することができます。
+
+- [Discoverable Credential deep dive | web.dev](https://web.dev/articles/webauthn-discoverable-credentials)
+
+### User Verification {: #user-verification }
+
+User Verification（「ユーザーベリフィケーション」）とは、認証する人がパスワードマネージャーの実際の所有者であることを確認するプロセスを指します。通常は生体認証（指紋、顔認証、TouchID、FaceID、Windows Helloなど）またはPINを用いて行われます。User Verificationはローカルで行われるため、生体認証データやPINなどの情報はサーバーに送信されません。
+
+- [userVerification deep dive | web.dev](https://web.dev/articles/webauthn-user-verification)
+
+### Attestation {: #attestation }
+
+Attestation（「アテステーション」）とは、クレデンシャルの作成時に Authenticator によって提供される暗号的証明です。これにより、RPは Authenticator のメーカーとモデルを検証できます（例：「これはYubiKey 5 NFCです」）。これは主に、企業や高度なセキュリティが求められる環境で、ポリシー（例：「ハードウェアキーのみを許可する」）を強制するために使用されます。一般的に、パスワードマネージャーのパスキーはアテステーションをサポートしていません。
+
+- [FIDO TechNotes: The Truth about Attestation | FIDO Alliance](https://fidoalliance.org/fido-technotes-the-truth-about-attestation/)
+
+### AAGUID {: #aaguid }
+
+AAGUID（「エーグイド」と読む人もいます。Authenticator Attestation Globally Unique Identifier）は、 Authenticator の種類（モデル）を示す128ビットの識別子です。これにより、RPは完全な構成証明がなくても、使用されている特定のデバイス（例：Google パスワードマネージャー、iCloud キーチェーン、Windows Hello、特定のセキュリティキーモデル）を識別することができます。[MDS](#mds) を参照することで、パスキーがどのパスワードマネージャーで作成されたかを検出し、プロバイダーのアイコン、名前、その他の情報を表示できますが、パスワードマネージャーのパスキーは Attestation をサポートしていないため、検証できないことに注意が必要です。
+
+- [Determine the passkey provider with AAGUID | web.dev](https://web.dev/articles/webauthn-aaguid)
+- [Passkey Provider AAGUIDs](https://github.com/passkeydeveloper/passkey-authenticator-aaguids)
+
+### MDS {: #mds }
+
+MDS（FIDO メタデータサービス）は、FIDO 認証子に関する情報を一元的に管理するリポジトリです。RP は AAGUID を使用して MDS にクエリを実行し、Authenticator の Certificate ステータス、アイコン、サポートされている機能などの詳細を取得できます。
+
+- [FIDO Metadata Service (MDS) Overview | FIDO Alliance](https://fidoalliance.org/metadata/)
+
+## 実装編
 
 ### excludeCredentials {: #exclude-credentials }
 
 `excludeCredentials` は、パスキー作成プロセス中にサーバーがブラウザに送信する認証情報IDのリストを示すパラメータです。このパラメータは、パスワードマネージャーに「これらの認証情報のいずれかを既に保持している場合は、新しい認証情報を作成しない」ように指示します。これにより、同じパスワードマネージャーで同じアカウントに複数のパスキーが作成されるのを防ぎます。
 
-- [パスキーが存在する場合は新しいパスキーを作成しないようにする  |  web.dev](https://web.dev/articles/webauthn-exclude-credentials)
+- [Prevent creating a new passkey if one exists | web.dev](https://web.dev/articles/webauthn-exclude-credentials)
 
-### 検出可能な資格情報 {: #discoverable-credentials }
+### Conditional Mediation {: #conditional-mediation }
 
-検出可能な認証情報（旧称「Resident Keys」）は、ユーザーのアカウント情報（ユーザー名や表示名など）と共にパスワードマネージャーに保存されるパスキーです。これにより、「ユーザー名レス」認証フローが可能になります。ユーザーは「サインイン」をクリックし、パスワードマネージャーが提供するリストからアカウントを選択するだけで済みます。
+「コンディショナル・メディエーション」と読みます。"Conditional UI" または "Conditional Get" とも呼ばれるこの機能は、ブラウザに表示されたユーザー名用の input 要素のオートフィル候補にパスキーを表示できるようにします。これにより、ユーザーは使い慣れたフォームからパスキーを使って直接サインインできるため、パスワードからパスキーへのシームレスな移行が可能になります。
 
-- [検出可能な資格情報の詳細 | web.dev](https://web.dev/articles/webauthn-discoverable-credentials)
+- [Sign in with a passkey through form autofill | web.dev](https://web.dev/articles/passkey-form-autofill)
 
-### ユーザー認証 {: #user-verification }
-
-ユーザー認証とは、認証する人がパスワードマネージャーの実際の所有者であることを確認するプロセスを指します。通常は生体認証（指紋、顔ID）またはPINを用いて行われます。ユーザー認証はローカルで行われるため、生体認証データやPINなどの情報はサーバーに送信されません。
-
-- [userVerification の詳細 | web.dev](https://web.dev/articles/webauthn-user-verification)
-
-### 証明 {: #証明 }
-
-アテステーションとは、認証情報の作成時に認証器によって提供される暗号的証明です。これにより、RPは認証器のメーカーとモデルを検証できます（例：「これはYubiKey 5 NFCです」）。これは主に、企業や高度なセキュリティが求められる環境で、ポリシー（例：「ハードウェアキーのみを許可する」）を強制するために使用されます。一般的に、パスワードマネージャーのパスキーはアテステーションをサポートしていません。
-
-- [FIDO テクニカルノート: 認証の真実 | FIDO アライアンス](https://fidoalliance.org/fido-technotes-the-truth-about-attestation/)
-
-### AAGUID {: #aaguid }
-
-AAGUID（認証器構成証明グローバル一意識別子）は、認証器の種類（モデル）を示す128ビットの識別子です。これにより、RPは完全な構成証明がなくても、使用されている特定のデバイス（例：Googleパスワードマネージャー、iCloudキーチェーン、Windows Hello、特定のセキュリティキーモデル）を識別できます。[MDS](#mds)を参照することで、パスキーがどのパスワードマネージャーで作成されたかを検出し、プロバイダーのアイコン、名前、その他の情報を表示できますが、パスワードマネージャーのパスキーは構成証明をサポートしていないため、検証はできません。
-
-- [AAGUIDでパスキープロバイダーを特定する | web.dev](https://web.dev/articles/webauthn-aaguid)
-- [パスキープロバイダーのAAGUID](https://github.com/passkeydeveloper/passkey-authenticator-aaguids)
-
-### MDS {: #mds }
-
-MDS（FIDOメタデータサービス）は、FIDO認証子に関する情報を一元的に管理するリポジトリです。RPはAAGUIDを使用してMDSにクエリを実行し、認証子の認証ステータス、アイコン、サポートされている機能などの詳細を取得できます。
-
-- [FIDOメタデータサービス（MDS）の概要 | FIDOアライアンス](https://fidoalliance.org/metadata/)
-
-### 条件付き調停 {: #conditional-mediation }
-
-「条件付きUI」または「条件付き取得」とも呼ばれるこの機能は、ブラウザの標準ユーザー名入力欄の自動入力候補にパスキーを表示できるようにします。これにより、ユーザーは使い慣れたフォームからパスキーを使って直接サインインできるため、パスワードからパスキーへのシームレスな移行が可能になります。
-
-- [フォームの自動入力でパスキーを使用してサインインする  |  web.dev](https://web.dev/articles/passkey-form-autofill)
-
-### シグナルAPI {: #signal-api }
+### Signal API {: #signal-api }
 
 Signal APIを使用すると、RPは認証情報の状態をパスワードマネージャーに返すことができます。例えば、ユーザーがサーバー上のアカウントまたは公開鍵を削除した場合、RPはこれを通知し、対応するパスワードマネージャーでもパスキーを削除または更新することができます。
 
 - [Signal API を使用して、パスキーとサーバーの認証情報の一貫性を保つ | ID | Chrome for Developers](https://developer.chrome.com/docs/identity/webauthn-signal-api)
 
-### 関連オリジンリクエスト {: #related-origin-request }
+### Related Origin Request {: #related-origin-request }
 
-関連オリジンリクエストを使用すると、ウェブサイトは、異なるが関連するオリジン用に作成されたパスキーを受け入れることができます。これは、マルチドメイン展開（例：`example.com` と `shop.example`）や国固有の展開（例：`example.com` と `example.co.jp`）に役立ちます。
+Related Origin Request を使用すると、同一の RP ID でも、異なる関連するオリジン用のパスキーを受け入れることができます。これは、マルチドメイン展開（例：`example.com` と `shop.example`）や国固有の展開（例：`example.com` と `example.co.jp`）に役立ちます。
 
-- [関連オリジンリクエストでサイト間でパスキーの再利用を許可する | web.dev](https://web.dev/articles/webauthn-related-origin-requests)
-- [関連オリジンリクエスト](https://passkeys.dev/docs/advanced/related-origins)
+- [Allow passkey reuse across your sites with Related Origin Requests | web.dev](https://web.dev/articles/webauthn-related-origin-requests)
+- [Related Origin Requests](https://passkeys.dev/docs/advanced/related-origins)
 
 ### getClientCapabilities {: #get-client-capabilities }
 
-`getClientCapabilities` を使用すると、RP はブラウザにクエリを送信し、現在のデバイスでサポートされている WebAuthn 機能を確認できます。これは、フォームを設定する前に `conditional` メディエーションがサポートされているかどうかを確認するなど、UX に関する決定を下すのに役立ちます。
+`getClientCapabilities` を使用すると、RP はブラウザがサポートしている WebAuthn 機能を確認することができます。これは、フォームを設定する前に [Conditional Mediation](#conditional-mediation) がサポートされているかどうかを確認するなど、UX に関する決定を下すのに役立ちます。
 
-- [よりシンプルな WebAuthn 機能の検出 | web.dev](https://web.dev/articles/webauthn-client-capabilities)
+- [Simpler WebAuthn feature detection | web.dev](https://web.dev/articles/webauthn-client-capabilities)
 
-### パスキーエンドポイント {: #passkey-endpoints }
+### Client Hints {: #client-hints }
 
-パスキーエンドポイントとは、RPがパスワードマネージャー（Google パスワードマネージャーなど）にパスキーをサポートしていることを通知できるメカニズム（多くの場合、`.well-known` ファイルを含む）を指します。これにより、パスワードマネージャーは既存のパスワードアカウントをパスキーにアップグレードすることをプロアクティブに提案できるようになります。
+Client Hints は、RP がブラウザに対して、ユーザーがどの種類の Authenticator を使用することが期待されているか（例：`security-key` や `client-device`）のヒントを提供できるようにします。これにより、ブラウザはユーザーにより適切な UI を表示できるようになり、特に特定の Authenticator が必須とされるエンタープライズ環境などでのユーザー体験が向上します。なお、これはあくまでヒントであり、セキュリティポリシーを強制するものではないことに注意してください。
 
-- [Google パスワード マネージャーでのパスキーのアップグレードを促進する | ウェブ ガイド | Google for Developers](https://developers.google.com/identity/passkeys/developer-guides/upgrades)
-- [パスキー エンドポイント](https://www.w3.org/TR/passkey-endpoints/)
+- [Client Hints | passkeys.dev](https://passkeys.dev/docs/advanced/client-hints/)
 
-### 条件付き作成 {: #conditional-creation }
+### Passkey endpoint {: #passkey-endpoints }
 
-「自動パスキーアップグレード」または「自動パスキー作成」とも呼ばれます。RPがパスワードによるサインインやその他のユーザーアクションにパスキー作成リクエストを付加できる新しい機能です。ユーザーがパスワードでサインインに成功すると、ブラウザは自動的に（または最小限の手間で）将来使用するためのパスキーを作成します。
+Passkey endpoint とは、RP がパスワードマネージャー（Google パスワードマネージャーなど）にパスキーをサポートしていることを通知できるメカニズム（多くの場合、`.well-known` ファイルを含む）を指します。これにより、パスワードマネージャーは既存のパスワードアカウントをパスキーにアップグレードすることを積極的に提案できるようになります。
 
-- [ユーザーがパスキーをよりシームレスに導入できるようにする | ID | Chrome for Developers](https://developer.chrome.com/docs/identity/webauthn-conditional-create)
+- [Promote passkey upgrades in Google Password Manager | Web guides | Google for Developers](https://developers.google.com/identity/passkeys/developer-guides/upgrades)
+- [Passkey Endpoints](https://www.w3.org/TR/passkey-endpoints/)
 
-### 即時調停 {: #immediate-mediation }
+### Conditional creation {: #conditional-creation }
 
-認証情報リクエストがキャンセルまたは失敗した場合に即座にエラーを返す機能の提案。これにより、RPはQRコードやその他の認証方法を表示せずにユーザーエクスペリエンスを向上させ、フォールバック認証方法を制御できるようになります。
+"Automatic Passkey Upgrade または Automatic Passkey Creation とも呼ばれます。RP がパスワードによるサインインやその他のユーザーアクションにパスキー作成リクエストを付加できる機能です。ユーザーがパスワードでサインインに成功すると、ブラウザは [User Verification](#user-verification) なしで（または最小限の手間で）パスキーを作成します。
 
-- [オリジン トライアル: スムーズなログインを実現する WebAuthn の即時仲介 | ブログ | Chrome for Developers](https://developer.chrome.com/blog/webauthn-immediate-mediation-ot)
+- [Help users adopt passkeys more seamlessly | Identity | Chrome for Developers](https://developer.chrome.com/docs/identity/webauthn-conditional-create)
+
+### Immediate Mediation {: #immediate-mediation }
+
+「イミディエイト・メディエーション」と読みます。クレデンシャルのリクエストがキャンセルまたは失敗した場合に、即座にエラーを返す機能です。まだ提案段階にあります。QR コードやその他の認証方法を表示せずにクレデンシャルのリクエストを失敗させるため、RP はフォールバックの認証方法を制御できるようになり、ユーザーエクスペリエンスを向上させることができます。
+
+- [Origin trial: WebAuthn immediate mediation for frictionless sign-in | Blog | Chrome for Developers](https://developer.chrome.com/blog/webauthn-immediate-mediation-ot)
+
+## 最後に
+
+何か重要なキーワードの見落としなどありましたら @agektmr までお知らせください。
