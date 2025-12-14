@@ -6,7 +6,7 @@ description:
 date: 2025-12-14
 organic: 50
 image:
-  feature:
+  feature: 2025/passkey-keywords.jpg
 tags:
   - Passkey
 ---
