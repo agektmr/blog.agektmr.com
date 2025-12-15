@@ -4,7 +4,8 @@ lang: ja
 title: 全体像を把握するためのパスキー用語集
 description:
 date: 2025-12-14
-organic: 70
+updated: 2025-12-15
+organic: 50
 image:
   feature: /2025/passkey-keywords.jpg
 tags:
@@ -16,6 +17,36 @@ translatedManually: false
 [FIDO 東京セミナー](https://fidoalliance.org/event/fido-tokyo-seminar/)で、パスキーの最新情報を紹介したのですが、全体像を把握するのが難しいという話を聞きました。インクリメンタルに進化するウェブ技術全般に言えることですが、全体像が分かれば、あとは穴を埋めるだけという意味で役に立つものです。そこで、2025 年末時点でパスキーの全体像を把握するのに欠かせないキーワードをまとめたので紹介したいと思います。
 
 <!-- excerpt -->
+
+## 標準規格編
+
+### FIDO {: #fido }
+
+FIDO（Fast IDentity Online）は、認証のためのオープン標準規格の総称です。[FIDO Alliance](https://fidoalliance.org/)は、世界的なパスワードへの依存を減らすためにこれらの規格を開発しています。
+
+### U2F {: #u2f }
+
+U2F（Universal 2nd Factor）は、二要素認証のための古い FIDO 規格です。ハードウェアセキュリティキーを第二要素として使用します。FIDO2 は U2F との下位互換性があります。
+
+- [Universal 2nd Factor (U2F) Overview | FIDO Alliance](https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.html)
+
+### UAF {: #uaf }
+
+UAF（Universal Authentication Framework）は、パスワードレス認証のための古い FIDO 規格です。モバイルデバイスや生体認証向けに設計されました。
+
+- [Universal Authentication Framework (UAF) Overview | FIDO Alliance](https://fidoalliance.org/specs/fido-uaf-v1.2-ps-20171128/fido-uaf-overview-v1.2-ps-20171128.html)
+
+### FIDO2 {: #fido2 }
+
+FIDO2 は、FIDO アライアンスによる最新の仕様セットです。ユーザーは一般的なデバイスを利用して、モバイル環境とデスクトップ環境の両方でオンラインサービスに簡単に認証できます。FIDO2 は、W3C の [Web Authentication (WebAuthn)](#webauthn) 仕様と、FIDO アライアンスの Client-to-Authenticator Protocol (CTAP) で構成されています。
+
+- [FIDO2: Web Authentication (WebAuthn) | FIDO Alliance](https://fidoalliance.org/fido2/)
+
+### WebAuthn {: #webauthn }
+
+WebAuthn（Web Authentication）は、W3C によって開発されたブラウザ API 標準です。ウェブアプリケーションが、ユーザーを強力に認証するために、証明可能で、スコープが限定された公開鍵ベースのクレデンシャルを作成・使用できるようにします。
+
+- [Web Authentication: An API for accessing Public Key Credentials](https://www.w3.org/TR/webauthn/)
 
 ## 基本編
 
