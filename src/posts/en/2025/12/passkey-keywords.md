@@ -4,7 +4,8 @@ lang: en
 title: Key terminologies to get a grasp of passkeys
 description:
 date: 2025-12-14
-organic: 50
+updated: 2025-12-15
+organic: 30
 image:
   feature: /2025/passkey-keywords.jpg
 tags:
@@ -14,6 +15,36 @@ tags:
 At the [FIDO Tokyo Seminar](https://fidoalliance.org/event/fido-tokyo-seminar/), I was told it's hard to track the high-level picture of how passkeys are evolving, and I thought it would be helpful to introduce key terminologies so you can get a grasp of the passkey world and look into more details when necessary. So here it is.
 
 <!-- excerpt -->
+
+## Standards
+
+### FIDO {: #fido }
+
+FIDO (Fast IDentity Online) is a set of open standards for authentication. The [FIDO Alliance](https://fidoalliance.org/) develops these standards to reduce the world's reliance on passwords.
+
+### U2F {: #u2f }
+
+U2F (Universal 2nd Factor) is an older FIDO standard for two-factor authentication. It uses a hardware security key as a second factor. FIDO2 is backward compatible with U2F.
+
+- [Universal 2nd Factor (U2F) Overview | FIDO Alliance](https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.html)
+
+### UAF {: #uaf }
+
+UAF (Universal Authentication Framework) is an older FIDO standard for passwordless authentication. It was designed for mobile devices and biometric authentication.
+
+- [Universal Authentication Framework (UAF) Overview | FIDO Alliance](https://fidoalliance.org/specs/fido-uaf-v1.2-ps-20171128/fido-uaf-overview-v1.2-ps-20171128.html)
+
+### FIDO2 {: #fido2 }
+
+FIDO2 is the latest set of specifications from the FIDO Alliance. It enables users to leverage common devices to easily authenticate to online services in both mobile and desktop environments. FIDO2 consists of the W3C's [Web Authentication (WebAuthn)](#webauthn) specification and the FIDO Alliance's Client-to-Authenticator Protocol (CTAP).
+
+- [FIDO2: Web Authentication (WebAuthn) | FIDO Alliance](https://fidoalliance.org/fido2/)
+
+### WebAuthn {: #webauthn }
+
+WebAuthn (Web Authentication) is a browser API standard developed by the W3C. It allows web applications to create and use strong, attested, scoped, public-key-based credentials for the purpose of strongly authenticating users.
+
+- [Web Authentication: An API for accessing Public Key Credentials](https://www.w3.org/TR/webauthn/)
 
 ## Basics
 
