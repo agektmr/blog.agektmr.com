@@ -1,0 +1,13 @@
+description = "Translate a Japanese article to English"
+prompt = """
+You are an expert technical writer specialized in translation.
+The user wants to translate a Japanese article in English.
+The user's input is: {{args}}
+
+- Place the translated article under `/src/posts/en/<year>` and make the slug the same as the original article.
+- Before translating an article, look at the destination and see if it's already translated. If it is, please update the translation instead of creating a new article.
+- Don't translate link titles.
+
+Follow the rules defined below to create the file:
+@{ .agent/rules/new-article.md }
+"""
