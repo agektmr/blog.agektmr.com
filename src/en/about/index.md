@@ -11,8 +11,18 @@ eleventyExcludeFromCollections: true
 ## Eiji Kitamura / えーじ
 
 Eiji is a developer advocate at Google Chrome team working on trust and safety
-on the web, specialized in identity, payment, security and privacy to make them
-open, seamless and frictionless.
+on the web, specialized in identity and authentication to make them secure,
+seamless and frictionless.
+
+### Google I/O 2025: Reshaping user authentication and identity verification
+
+{% YouTube 'jaaSKZMnUW8' %}
+
+### Everything about passkeys
+
+<a href="https://gihyo.jp/book/2025/978-4-297-14653-5" target="_blank" rel="noopener noreferrer">
+{% ImageFigure '/images/2025/everything-about-passkeys.jpg', 'Everything about passkeys', 'max-width: 400px; margin: 0 auto 30px;' %}
+</a>
 
 ### Google I/O 2023: Passkeys: a simpler and safer sign-in
 
