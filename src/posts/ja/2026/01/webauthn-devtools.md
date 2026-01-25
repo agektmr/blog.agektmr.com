@@ -7,7 +7,7 @@ date: 2026-01-25
 updated: 2026-01-25
 organic: 90
 image:
-  feature: /2026/webauthn-devtools.jpg
+  feature: /2026/webauthn-devtools-featured.jpg
 tags:
   - Chrome
   - DevTools
