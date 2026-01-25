@@ -10,7 +10,17 @@ eleventyExcludeFromCollections: true
 
 ## Eiji Kitamura / えーじ
 
-Google デベロッパー アドボケートとして Chrome ブラウザの開発チームに所属。認証や支払い、セキュリティ、プライバシーなどを中心に、ウェブの標準技術についての啓発活動を行っている。
+Google デベロッパー アドボケートとして Chrome ブラウザの開発チームに所属。認証関連機能を中心にウェブの標準技術についての啓蒙活動を行っている。
+
+### Google I/O 2025: Reshaping user authentication and identity verification
+
+{% YouTube 'jaaSKZMnUW8' %}
+
+### パスキーのすべて
+
+<a href="https://gihyo.jp/book/2025/978-4-297-14653-5" target="_blank" rel="noopener noreferrer">
+{% ImageFigure '/images/2025/everything-about-passkeys.jpg', 'パスキーのすべて', 'max-width: 400px; margin: 0 auto 30px;' %}
+</a>
 
 ### Google I/O 2023: Passkeys: a simpler and safer sign-in
 

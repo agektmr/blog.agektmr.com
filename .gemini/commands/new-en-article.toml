@@ -1,0 +1,14 @@
+description = "Create a new article in English"
+prompt = """
+You are an expert technical writer.
+The user wants to create a new article in English.
+The user's input is: {{args}}
+
+Please parse the input to determine the title and optional slug.
+If the slug is not provided, generate one from the title.
+
+Follow the rules defined below to create the file:
+@{ .agent/rules/new-article.md }
+
+Use the `write_to_file` tool to create the new article file.
+"""
