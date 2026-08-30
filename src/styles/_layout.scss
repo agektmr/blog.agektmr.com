@@ -1,3 +1,8 @@
+@use "helpers" as *;
+@use "base/variables" as *;
+@use "base/breakpoints" as *;
+@use "sass:color";
+
 // Primary site layout for Centrarium Theme
 
 /*
@@ -20,11 +25,11 @@ html, body {
 }
 
 ol.default {
-  @extend %default-ol;
+  @include default-list;
 }
 
 ul.default {
-	@extend %default-ul;
+	@include default-list;
 }
 
 code {
@@ -125,16 +130,13 @@ pre code.hljs {
 	box-shadow: 0 2px $highlight-color;
 	padding: 0 1em;
 	margin: 0;
-	// Remove this to make header scrollable again
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	background: $white;
 	z-index: 1;
-	/*
-	*	Navigation Menu - http://refills.bourbon.io/unstyled/ (see "Navigation")
-	*/
+
   // Mobile view
   .navigation-menu-button {
     display: block;
@@ -228,7 +230,6 @@ pre code.hljs {
 *	Body
 */
 .page-content {
-	// Remove this to make header scrollable again
 	margin-top: 66px;
 	.wrapper {
 		@include outer-container;
@@ -239,11 +240,10 @@ pre code.hljs {
 	*/
 	.post-list {
 		padding-top: 1em !important;
-		@extend %default-ul;
+		@include default-list;
 	}
 	.post-meta {
 		@include outer-container;
-		// padding: 1em 0;
 		color: $medium-gray;
 		.post-date {
 			text-align: left;
@@ -373,7 +373,7 @@ pre code.hljs {
 			text-align: center;
 		}
 		.posts-list {
-			@extend %default-ul;
+			@include default-list;
 			li {
 				padding: modular-scale(-4);
 				padding-left: 0;
@@ -406,7 +406,7 @@ pre code.hljs {
 	  &:active,
 	  &:focus,
 	  &:hover {
-	    color: darken($link-color, 10%);
+	    color: color.adjust($link-color, $lightness: -10%);
 	  }
 	  &:active,
 	  &:focus {
@@ -432,7 +432,7 @@ pre code.hljs {
 		}
 		font-size: 0.9em;
 		ul {
-			@extend %default-ul;
+			@include default-list;
 		}
 	}
 	/*
@@ -456,7 +456,7 @@ pre code.hljs {
 			text-align: center;
 		}
 		ul {
-			@extend %default-ul;
+			@include default-list;
 		}
 	}
 	/*
