@@ -13,6 +13,7 @@ tags:
   - DevTools
   - Chrome Extension
   - WebAuthn
+  - Passkey
   - Security
 ---
 
