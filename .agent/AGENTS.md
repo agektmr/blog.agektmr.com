@@ -4,9 +4,9 @@ This document provides instructions and guidelines for AI agents working in this
 
 ## Project Overview
 
-This is a bilingual personal blog (Japanese primary, English secondary) by Eiji Kitamura ([@agektmr](https://github.com/agektmr)), built with Eleventy 2.0 and deployed to Google Cloud Run. The blog covers web authentication (passkeys, WebAuthn, FIDO), web platform APIs, browser features, and developer tools.
+This is a bilingual personal blog (Japanese primary, English secondary) by Eiji Kitamura ([@agektmr](https://github.com/agektmr)), built with Eleventy 3 and deployed to Google Cloud Run. The blog covers web authentication (passkeys, WebAuthn, FIDO), web platform APIs, browser features, and developer tools.
 
-- **Static Site Generator**: Eleventy (11ty) 2.0.1
+- **Static Site Generator**: Eleventy (11ty) 3.x (ESM config: `eleventy.config.mjs`)
 - **Asset Bundler**: Rollup (JS) + Dart Sass (SCSS)
 - **Runtime / Server**: Node.js >= 22 with Express (for language negotiation and routing in production)
 - **Package Manager**: `pnpm` (enforced via `preinstall: only-allow pnpm`)

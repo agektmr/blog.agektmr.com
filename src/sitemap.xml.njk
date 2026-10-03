@@ -8,7 +8,7 @@ eleventyExcludeFromCollections: true
   {% set absoluteUrl %}{{ site.baseurl }}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
   <url>
     <loc>{{ absoluteUrl }}</loc>
-    <lastmod>{{ post.date | rssDate }}</lastmod>
+    <lastmod>{{ post.date | dateToRfc3339 }}</lastmod>
   </url>
 {%- endfor %}
 </urlset>

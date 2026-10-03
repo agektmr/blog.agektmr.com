@@ -1,15 +1,17 @@
-const { DateTime } = require("luxon");
-const fs = require("fs");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const pluginNavigation = require("@11ty/eleventy-navigation");
-const pluginExcerpt = require('eleventy-plugin-excerpt');
-const pluginI18n = require('eleventy-plugin-i18n');
-const markdownIt = require("markdown-it");
-const markdownItAttrs = require("markdown-it-attrs");
-const markdownItAnchor = require("markdown-it-anchor");
+import { DateTime } from "luxon";
+import fs from "node:fs";
+import pluginRss from "@11ty/eleventy-plugin-rss";
+import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import pluginNavigation from "@11ty/eleventy-navigation";
+import pluginExcerpt from "eleventy-plugin-excerpt";
+import pluginI18n from "eleventy-plugin-i18n";
+import markdownIt from "markdown-it";
+import markdownItAttrs from "markdown-it-attrs";
+import markdownItAnchor from "markdown-it-anchor";
 
-module.exports = function(eleventyConfig) {
+const readJson = (path) => JSON.parse(fs.readFileSync(new URL(path, import.meta.url), "utf8"));
+
+export default function(eleventyConfig) {
   // Add plugins
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
@@ -21,8 +23,8 @@ module.exports = function(eleventyConfig) {
   // Add i18n plugin
   eleventyConfig.addPlugin(pluginI18n, {
     translations: {
-      ja: require('./src/_includes/i18n/ja.json'),
-      en: require('./src/_includes/i18n/en.json')
+      ja: readJson('./src/_includes/i18n/ja.json'),
+      en: readJson('./src/_includes/i18n/en.json')
     },
     fallbackLocales: {
       ja: 'en'
@@ -150,23 +152,8 @@ module.exports = function(eleventyConfig) {
   });
   eleventyConfig.setLibrary("md", markdownLibrary);
 
-  // Override Browsersync defaults (used only with --serve)
-  eleventyConfig.setBrowserSyncConfig({
-    callbacks: {
-      ready: function(err, browserSync) {
-        const content_404 = fs.readFileSync('_site/404.html');
-
-        browserSync.addMiddleware("*", (req, res) => {
-          // Provides the 404 content without redirect.
-          res.writeHead(404, {"Content-Type": "text/html; charset=UTF-8"});
-          res.write(content_404);
-          res.end();
-        });
-      },
-    },
-    ui: false,
-    ghostMode: false
-  });
+  // Eleventy 3 uses Eleventy Dev Server (BrowserSync was removed).
+  // It serves _site/404.html automatically for missing pages with --serve.
 
   return {
     // Control which files Eleventy will process

@@ -6,7 +6,9 @@
         "space": "always",
         "lintStyledNode": true
       },
-      "ja-no-space-around-parentheses": false
+      "ja-no-space-around-parentheses": false,
+      "ja-space-around-code": false,
+      "ja-space-around-link": false
     }
   }
 }
