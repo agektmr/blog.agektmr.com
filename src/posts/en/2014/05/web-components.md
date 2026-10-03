@@ -1,8 +1,7 @@
 ---
 layout: post
 lang: en
-title: Why Web Components will revolutionize web development
-description:
+title: Why Web Components Will Revolutionize Web Development
 date: 2014-05-19
 updated: 2014-07-12
 tags:
@@ -11,57 +10,58 @@ tags:
   - Custom Elements
   - HTML Imports
   - Web Components
+comments: false
+categories: Web Components
 translationOf: /2014/05/web-components.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
 {% YouTube 'T5y_lmLngAk' %}
 
 <!-- excerpt -->
 
-If you're involved with the front-end of web applications, there are probably very few people who haven't heard of the term Web Components. There are already many related articles, and many people have started to use it. But how many of you can succinctly explain to those around you why this is such a revolutionary technology? In this article, I'd like to attempt to do just that.
+If you are involved in front-end web application development, chances are you have already heard of Web Components.
+Numerous articles have already been published, and many of you may have already started experimenting with it. However, how many people can concisely explain to those around them why this is a revolutionary technology? In this post, I would like to try to do just that.
 
-## Digital parts distribution revolution
+## The Distribution Revolution for Digital Components
 
-Major changes are currently occurring in the distribution of software components.
+A major shift is happening in how software components are distributed.
 
-Remember the open source environment of a few years ago? Repositories were centrally managed using Subversion, releases were done using zip files, and testing was done manually. Each project had its own bug management system for registering issues, which made it difficult to get started and sending patches a pain.
+Do you remember the open-source environment from just a few years ago? Repositories were centralized on Subversion, releases were distributed as zip files, and testing was manual. Issue tracking relied on different bug tracking systems for each project, making them cumbersome to get involved with, and submitting patches was a hassle.
 
-The open source environment has undergone remarkable development, beginning with the emergence of git and GitHub. With the establishment of network repository environments, automated testing and deployment through CI (Continuous Integration), and the development of package managers that allow for easy downloading of the latest source code when needed, everything has become easier and faster. The cycle from development to reuse of software components has been shortened to minutes, stimulating feedback and contributions (patch/pull requests) through the community, and systems for improving quality have become more efficient than ever before. It's no exaggeration to say that open source is finally gaining a true ecosystem.
+Starting with the emergence of Git and GitHub, the environment surrounding open source has evolved dramatically. Networked repositories are well-established, testing and deployment are automated through CI (Continuous Integration), and a wealth of package managers allow you to easily download the latest source code whenever you need it—everything has become easier and faster. By reducing the cycle from developing software components to reusing them down to minutes, community feedback and contributions (Patches / Pull Requests) have also become more vibrant, and the mechanisms for improving quality have become more efficient than ever. It is no exaggeration to say that open source is finally gaining a true ecosystem.
 
-This trend has also been extremely useful in front-end development. In particular, the combination with grunt,
-npm, bower, etc. has become quite widespread.
+This movement has also brought immense benefits to front-end development. Combinations with tools like Grunt, npm, and Bower, in particular, have become quite widespread, haven't they?
 
-## UI Component Ecosystem
+## The UI Component Ecosystem
 
-One of the most successful front-end software to date is [jQuery](http://jquery.com/). Many developers utilize plugins like [jQuery UI](http://jqueryui.com/), which not only allow for DOM manipulation but also allows for the easy creation of complex UIs. jQuery UI also significantly lowered the barrier to implementing user interfaces that are difficult to achieve with plain HTML, such as calendar UIs (datepickers), tabbed interfaces, and dialog boxes.
+Among the most successful front-end software to date is [jQuery](http://jquery.com/). Many developers likely use plugins like [jQuery UI](http://jqueryui.com/) to easily implement complex UIs in addition to DOM manipulation. jQuery UI significantly lowered the bar for implementing user interfaces that vanilla HTML struggled with, such as calendar UIs (Datepicker), tabbed interfaces, and dialogs.
 
 [![](https://3.bp.blogspot.com/-GoHPt1aa4Ko/U3oPR4DsaOI/AAAAAAAAsPA/xxC4YVCyb0s/s1600/jquery-ui-delta.png)](https://3.bp.blogspot.com/-GoHPt1aa4Ko/U3oPR4DsaOI/AAAAAAAAsPA/xxC4YVCyb0s/s1600/jquery-ui-delta.png)
 
-Of course, many competing UI libraries have also emerged, including Kendo UI,
-ExtJS, Dojo, Bootstrap, and the list goes on and on. However, one thing is certain:
-each has its own unique philosophy and approach. Therefore, to actually use one,
-you must start by learning the philosophy and approach, rather than the API.
-Also, with so many options, different people have different preferences and are better suited to different libraries. Therefore, if you're forced to choose one for a project, it's important to remember that someone will have to compromise or incur additional learning costs.
+Of course, many rival UI libraries have also emerged: Kendo UI, ExtJS, Dojo, Bootstrap, and countless others. But one thing is certain: each has its own philosophy and conventions. Therefore, to actually use them, you must start by learning the philosophy and conventions before you even get to the API.
+Moreover, having so many options means everyone has their own preferences and libraries they excel at. When a project forces you to choose just one, someone inevitably has to compromise, and we shouldn't forget the added learning costs involved.
 
-Web Components
+## Web Components
 
-So, what if UI libraries could be used with the same philosophy and practices? In other words, "what if the philosophy and practices of UI components were standardized?"
+What if UI libraries could be used with the same philosophy and conventions? Put another way, "What if the philosophy and conventions of UI components were standardized?"
 
-The answer is [Web Components](http://webcomponents.org/). Web Components have the following features:
+The answer to that is [Web Components](http://webcomponents.org/). Web Components features the following characteristics:
 
-* Planned to become a **web standard**
-* Can be used as an extension of existing HTML/CSS/JavaScript knowledge
-* **UI components can be created as HTML tags**
-* Components are **encapsulated, so they do not pollute the outside world**
+* Slated to become a **web standard**
+* Can be used as an extension of existing HTML / CSS / JavaScript knowledge
+* Allows you to create **UI components as HTML tags**
+* Components are **encapsulated, so they do not pollute the outside scope**
 * **Reusable**
-* Easy division of labor
+* Facilitates division of labor
 
-It's easier to understand by seeing it in action than by reading about it in theory. Here's a simple example.
+Rather than explaining the theory, it is much quicker to see something working in practice. Let me introduce a simple example.
 
 [![](https://3.bp.blogspot.com/-S7lGeyTaSj0/U3oPRGV-xJI/AAAAAAAAsO0/ZcSH2kFqkcI/s1600/Screen+Shot+2014-05-19+at+13.32.44.png)](https://agektmr.github.io/webaudio-controls/sample1.html)
 
-Click on the image to see a working demo (http://agektmr.github.io/webaudio-controls/sample1.html). The source code for this demo is available here (https://github.com/WebMusicDevelopersJP/webaudio-controls). These cool-looking knobs were created using Web Components (Polymer). Drag them up and down to increase or decrease the parameter. Hold down the `Shift` key while dragging to increase or decrease the parameter by one. The changed parameter will be set to `value`.
+Click the image to see a [live demo](http://agektmr.github.io/webaudio-controls/sample1.html). You can find the [source code for this demo here](https://github.com/WebMusicDevelopersJP/webaudio-controls).
+These cool-looking knobs are built with Web Components (Polymer).
+Dragging them up and down increases or decreases parameters. Holding the `Shift` key while dragging moves them in increments of 1. The modified parameter is then reflected in `value`.
 
 ```html
 <webaudio-knob
@@ -74,181 +74,168 @@ Click on the image to see a working demo (http://agektmr.github.io/webaudio-cont
 </webaudio-knob>
 ```
 
-Best of all, if you look at the source, you'll notice that these elements use the `<webaudio-knob>` tag. The knob's appearance and range can be customized using attributes, just like with native HTML elements.
+Above all, when you inspect the source code, you will notice that these elements use the `<webaudio-knob>` tag. The appearance of the knob and the range of values can be changed using attributes, following standard native HTML element conventions.
 
-What I want you to pay attention to is what is in the `head` tag
+Pay attention to this line inside the `head` tag:
 
 ```html
 <link href="webcomponents/webaudio-controls.html" rel="import"></link>
 ```
 
-This line enables the use of `<webaudio-knob>` (and actually loads the polyfill platform.js). Wouldn't it be great if you could achieve this with just HTML tags, without any JavaScript?
+This single line makes using `<webaudio-knob>` possible (in reality, it also loads the platform.js polyfill). Doesn't it seem remarkably straightforward if you can achieve this purely with HTML tags without any JavaScript?
 
-As Web Components become mainstream, users will be able to treat UI components just like native DOM elements, without worrying about ideology or conventions.
+Once Web Components becomes mainstream, users will be able to handle UI components just like native DOM elements, without worrying about conflicting philosophies or conventions.
 
-I'd like to see some more examples
+## Want to See a Few More Concrete Examples?
 
-As a simple example, how about [Twitter
-Button](https://github.com/zenorocha/twitter-button)?
-By providing the necessary information as attributes using `<twitter-button></twitter-button>`,
-you can display a Twitter button. If you've ever implemented a Twitter button, you'll know how easy this is.
+As an easy-to-understand example, how about the [Twitter Button](https://github.com/zenorocha/twitter-button)?
+By writing `<twitter-button></twitter-button>` and providing the required information via attributes, you can display a Twitter button. Anyone who has ever implemented a Twitter button will appreciate just how effortless this is.
 
 [![](https://4.bp.blogspot.com/-poErBXaS0QM/U3oPREvTnYI/AAAAAAAAsOw/g635hFv-EFE/s1600/687474703a2f2f7a6e6f2e696f2f517475532f747769747465722d656c656d656e742e706e67.png)](https://4.bp.blogspot.com/-poErBXaS0QM/U3oPREvTnYI/AAAAAAAAsOw/g635hFv-EFE/s1600/687474703a2f2f7a6e6f2e696f2f517475532f747769747465722d656c656d656e742e706e67.png)
 
-You can also find publicly available UI components made with Web Components on the site [customelements.io](http://customelements.io/).
+Furthermore, on a site called [customelements.io](http://customelements.io/), you can search for publicly available UI components built with Web Components, including this one.
 
-Here's a perfect video for you. At a recent Google event called [All About Polymer](http://www.meetup.com/sfhtml5/events/169452272/), [Rob Dodson](https://plus.google.com/+RobDodson/posts) demonstrated live coding of an app using Google Maps. It's impressive to see how a flashy app can be created by simply adding tags. It's in English, but with subtitles, so be sure to check it out and practice your English.
+There is also a perfect video for this. At an event held at Google called [All About Polymer](http://www.meetup.com/sfhtml5/events/169452272/), [Rob Dodson](https://plus.google.com/+RobDodson/posts) did a live coding session building an app using Google Maps. Watching a flashy app come together just by adding a few tags is truly impressive. It is in English with subtitles available, so please check it out.
 
 <div class="video-wrap">
   <iframe src="//www.youtube.com/embed/75EuHl6CSTo"></iframe>
 </div>
 
-## Building blocks of Web Components
+## Building Blocks of Web Components
 
-Here's a bit of technical explanation: Web Components is made up of four main technologies:
+Let's dive into a brief technical explanation. Web Components consists primarily of four technologies:
 
-*Custom Elements
-*HTML Imports
-*Template
+* Custom Elements
+* HTML Imports
+* Template
 * Shadow DOM
 
-Let's briefly explain each technology.
+Let's briefly look at each technology.
 
 ### Custom Elements
 
-This allows the browser to recognize your custom tag.
-This tag can have properties, methods, and events, making it similar to a native DOM element.
-In the example above, `<webaudio-knob></webaudio-knob>`:
+Makes the browser recognize custom tags.
+These tags can have properties, methods, and events, allowing them to provide the same usability as native DOM elements.
+In the `<webaudio-knob></webaudio-knob>` example above:
 
 ```javascript
 var knob = document.querySelectorAll('webaudio-knob')[0];
 knob.setValue(100);
 ```
 
-This will change `value` to imperative (the opposite of declarative) from JavaScript.
+By doing this, you can change `value` imperatively (as opposed to declaratively) from JavaScript.
 
 ```javascript
 knob.value = 100;
 ```
 
-You can also do this.
+You can also do it this way.
 
 In fact, Custom Elements are already being used on GitHub.
 
 [![](https://4.bp.blogspot.com/--2iDG5Utfx8/U3oPRLoIwrI/AAAAAAAAsOs/1RaBIcB4egA/s1600/Screen+Shot+2014-05-19+at+18.28.12.png)](https://4.bp.blogspot.com/--2iDG5Utfx8/U3oPRLoIwrI/AAAAAAAAsOs/1RaBIcB4egA/s1600/Screen+Shot+2014-05-19+at+18.28.12.png)
 
-Looking at it in DevTools
+Looking at DevTools:
 
 [![](https://1.bp.blogspot.com/-xJAxVXmp534/U3oPR13ZjrI/AAAAAAAAsO8/-b_sUpEVTF4/s1600/Screen+Shot+2014-05-19+at+18.39.14.png)](https://1.bp.blogspot.com/-xJAxVXmp534/U3oPR13ZjrI/AAAAAAAAsO8/-b_sUpEVTF4/s1600/Screen+Shot+2014-05-19+at+18.39.14.png)
 
-* The `time` tag is extended (`is="relative-time"`) to make the time displayed within the tag relative.
-* The `title-format` attribute is used to specify the format for the date and time displayed in the tooltip.
+* Extending the `time` tag (`is="relative-time"`) to make the time displayed inside the tag relative
+* Using the `title-format` attribute to specify the date/time format displayed in the tooltip
 
-That's how it seems to be used.
+It appears they are using it in ways like this.
 
-For unsupported browsers, it seems they also use Polymer Custom Elements
-Polyfills. I was amazed by how it works.
+For unsupported browsers, it seems they are also [using](https://twitter.com/joshpeek/status/464153518169792513) the [Polymer Custom Elements Polyfill](https://github.com/Polymer/CustomElements). Just looking at this makes you appreciate how elegant it is.
 
 ### Template
 
-It provides standard template functionality.
-The concept of templates has been under consideration for a long time. Recently, Handlebars.js,
-Backbone.js (Underscore), and AngularJS templates have become popular, but think of this as a web-standards version of those. Compared to existing hacks,
+Provides a standardized templating feature.
+The concept of templates has been under discussion for a long time. Recently, templates from Handlebar.js, Backbone.js (Underscore), and AngularJS have been popular; think of this as the web standard version. Compared to existing hacks, it provides features that were previously impossible or cumbersome, such as:
 
-* No matter where you place it, the template is not recognized as DOM, so it won't execute the script or retrieve images.
-* When you import it, it's recognized as DOM rather than a string, making it easy to handle.
+* No matter where it is placed, the contents inside the template are not recognized as part of the live DOM, so it won't execute scripts inside or fetch images on its own.
+* When imported, it can be handled as a DOM fragment rather than a string, making it much easier to work with.
 
-It provides functions that seem possible but are not. Please note that it does not provide placeholder or binding functions.
+Note that it does not provide placeholders or data-binding capabilities by itself.
 
 ### HTML Imports
 
-You can load multiple resources with a single tag.
-Whether it's jQuery UI or Bootstrap, you had to include JavaScript, CSS, etc. separately. By using the import tag, you can include UI components and their required resources with a single tag.
+Allows you to load multiple resources with a single tag.
+Whether using jQuery UI or Bootstrap, you had to load JavaScript, CSS, and other assets separately. With the import tag, you can pull in a UI component along with all of its required resources using just this one tag.
 
-Shadow DOM
+### Shadow DOM
 
-You can add encapsulated HTML elements.
-At first glance, the effect is that you can add invisible markup, but its bigger role is
-encapsulation. A common pitfall with UI libraries is
+Allows you to add encapsulated HTML elements.
+At a glance, the visible effect is that you can add hidden markup, but its far more significant role is encapsulation. Common pitfalls in UI libraries include:
 
-* Using the same class name can cause styles to be applied to unintended elements.
-* Styles applied to other elements can affect unintended areas.
+* Unintentionally styling other elements because of colliding class names
+* Styles applied to one element leaking out and affecting unintended parts of the page
 
-But Shadow DOM enables encapsulation by separating the outside world from the inside world.
+Shadow DOM enables encapsulation by separating the outside world from the inside world.
 
-## Browser vendors' stance
+## Browser Vendors' Stance
 
-Although we said we are aiming for standardization, standardization cannot be achieved unless browser vendors are on the same page. However, each browser vendor is focusing on Web Components, and is working on implementation and specification development in parallel.
+While I mentioned that the goal is standardization, it cannot become a standard unless browser vendors are aligned. However, all major browser vendors are paying close attention to Web Components, progressing implementation and specification drafting in parallel.
 
 ### Google
 
-Google plays the largest role in Web Components. All of the specifications were written by Google engineers. Google Chrome has already implemented most of the features, and version 36 will incorporate HTML Imports, meaning all features will work without the `about:flags` flag. Also, while still in alpha, they are developing a framework based on Web Components called [Polymer](http://www.polymer-project.org/). Once completed, they are working to enable various components to run on it. At the same time, they are also developing a polyfill (a library that emulates functionality in JavaScript) called [platform.js](https://github.com/Polymer/platform) to enable Web Components to work in browsers that do not support it.
+Google plays the most prominent role in Web Components. The specification authors are all Google engineers, and Google Chrome has already implemented most features. In version 36, HTML Imports is expected to land, making all features functional without needing flags in `about:flags`.
+Furthermore, while still in alpha, Google is developing a framework called [Polymer](http://www.polymer-project.org/) based on Web Components, preparing an environment where various components can run on top of it once complete. Alongside Polymer development, the [platform.js](https://github.com/Polymer/platform) polyfill (a library emulating features in JavaScript) is also being actively developed to ensure compatibility with browsers that do not yet support Web Components.
 
 ### Mozilla
 
-After Google, Mozilla is undoubtedly the most active developer of Web Components. They've developed a framework called [x-tag](http://www.x-tags.org/) and have also released a collection of UI components called [Brick](http://mozilla.github.io/brick/).
+Next to Google, Mozilla is undoubtedly the most proactive in working on Web Components. They are developing a framework called [x-tag](http://www.x-tags.org/) and have also released a UI component collection called [Brick](http://mozilla.github.io/brick/).
 
 ### Apple
 
-When Blink was forked from WebKit, Shadow DOM was removed, and at one point, support for Web Components was seen as negative. However, [it was recently announced that development would proceed on a separate branch](https://lists.webkit.org/pipermail/webkit-dev/2014-February/026251.html)
-and people are now interested, albeit cautiously.
+When Blink was forked from WebKit, Shadow DOM was initially removed, leading some to believe Apple was opposed to supporting Web Components. However, [they recently announced that development would proceed on a separate branch](https://lists.webkit.org/pipermail/webkit-dev/2014-February/026251.html), showing interest while monitoring the situation.
 
 ### Microsoft
 
-As far as Microsoft's support for Web Components is concerned, both features are currently under consideration, as seen on [status.modern.ie](http://status.modern.ie/), but they are showing interest, including [related to the HTML Templates specification](http://www.w3.org/TR/html-templates/).
+Regarding Microsoft's support for Web Components, according to [status.modern.ie](http://status.modern.ie/), all features are currently Under Consideration. However, they have shown interest, such as [participating in the HTML Templates specification](http://www.w3.org/TR/html-templates/).
 
 ## Use Cases
 
-In what situations can you use Web Components? Here are some examples:
+In what kinds of scenarios can you use Web Components? Here are a few examples:
 
-### Create product-specific UI components
+### Building Product-Specific UI Components
 
-When developing a service, we design it with the UI as a component.
-This allows the team creating the UI components to focus on their functionality, and the team using them can proceed with development with the assumption that the interface will work as expected.
-One of the benefits of Web Components is that it makes division of labor easier.
+When developing a service, you design with componentizing UI in mind. This allows the team building the UI components to focus entirely on their functionality, while the team consuming them can proceed with development assuming the interface works as expected. Making division of labor easier is another major advantage of Web Components.
 
-### Creating shared UI components across multiple services
+### Building Shared UI Components Across Multiple Services
 
-Companies that operate portal sites or sites that integrate multiple services often want to unify the theme and UI. This is where Web Components can really shine. Many sites already have infrastructure in place to deliver CSS and images from a common server, so this can be achieved by replacing it with Web Components.
+For companies operating portals or sites that integrate multiple services, there is often a strong desire to unify themes and UI. That is precisely where Web Components shines. Many organizations already have the infrastructure to serve CSS and images from a shared server, so replacing that with Web Components makes this easily achievable.
 
-### Use public UI components
+### Using Publicly Available UI Components
 
-If you want to create a simple service on your own, it can be quite a hassle for a developer to handle the design as well. While it's great to have ready-made UIs like Bootstrap, Web Components make it relatively easy to achieve more complex designs. By searching for and reusing publicly available Web Components libraries on sites like [customelements.io](http://customelements.io/), you can significantly reduce development time. While there aren't many of them yet, as Web Components become more widespread, it may actually become more difficult to find the ones you need.
+When you want to build a small personal project, it can be quite tough for developers to handle everything down to the design. Being able to easily assemble a UI with ready-made designs like Bootstrap is great, but Web Components makes even more complex implementations relatively easy. By finding and reusing publicly available Web Components libraries on places like [customelements.io](http://customelements.io/), you will be able to drastically reduce development time. While the selection is still limited, as Web Components spreads, finding what you need might become the bigger challenge.
 
-## Where to learn
+## Where to Learn More
 
-If you've read this far and are excited to try Web Components, where can you learn how to use them? It sounds like a lot of work to read the specs, right? A spec is just a spec, so it doesn't tell you how to use it. Fortunately, there are already many articles on HTML5Rocks. These articles are maintained, so you can rest assured that they follow the latest specifications (implementations).
+If you've read this far and are eager to use Web Components, where should you go to learn how? Telling you to read the specs... would be daunting. Specifications are specifications; they don't teach you how to use the technology. Fortunately, many articles have already been published on HTML5Rocks. Since these articles are actively maintained, you can trust them to reflect the latest specifications (and implementations).
 
-However, HTML5Rocks articles are written in English, so it can be difficult to read them... For those of you who find it difficult, I have translated them into Japanese.
+However, HTML5Rocks articles are in English, which might be tough to read for some... For those readers, I have provided Japanese translations:
 
-* [Custom Elements - Defining New Elements in HTML](http://www.html5rocks.com/ja/tutorials/webcomponents/customelements/)
-* [HTML Template Tags Now Available - Standardizing Client-Side Templates](http://www.html5rocks.com/ja/tutorials/webcomponents/template/)
-* [HTML Imports - #include for the Web](http://www.html5rocks.com/ja/tutorials/webcomponents/imports/)
-* [Shadow DOM
-101](http://www.html5rocks.com/ja/tutorials/webcomponents/shadowdom/)
-* [Shadow DOM 201 - CSS and Styling](http://www.html5rocks.com/ja/tutorials/webcomponents/shadowdom-201/)
-* [Shadow DOM 301 - Advanced Concepts and DOM API](http://www.html5rocks.com/ja/tutorials/webcomponents/shadowdom-301/)
+* [Custom Elements - HTML に新しい要素を定義する](http://www.html5rocks.com/ja/tutorials/webcomponents/customelements/)
+* [HTML で利用可能になった Template タグ - クライアントサイドのテンプレートの標準化](http://www.html5rocks.com/ja/tutorials/webcomponents/template/)
+* [HTML Imports - ウェブのための #include](http://www.html5rocks.com/ja/tutorials/webcomponents/imports/)
+* [Shadow DOM 101](http://www.html5rocks.com/ja/tutorials/webcomponents/shadowdom/)
+* [Shadow DOM 201 - CSS とスタイリング](http://www.html5rocks.com/ja/tutorials/webcomponents/shadowdom-201/)
+* [Shadow DOM 301 - 上級者向けコンセプトと DOM API](http://www.html5rocks.com/ja/tutorials/webcomponents/shadowdom-301/)
 
-## Other Japanese materials
+## Other Japanese Resources
 
-* [Revolutionizing Web Developers! A Super Introduction to "Web Components"
-](http://liginc.co.jp/web/html-css/html/58267) This article by LIG King
-is the first hit in a search, but unfortunately, the specifications have changed considerably since then. However, I think it's a very good resource for understanding the overall framework, so I highly recommend taking a look.
-* [Componentizing HTML with Web Components
-](http://ameblo.jp/ca-1pixel/entry-11815188808.html) This is an article from CyberAgent's
-@1000ch. Since it's a recent article, it's up to date with the latest specifications, so you can read it with confidence.
-* [I'm Creating Shadow DOM and Web Components Because I Want to Make the Web Right
-](http://www.youtube.com/watch?v=GCw4fJEEVe8) This is a video of a talk given at last year's HTML5 Conference by [Hayato Ito](https://plus.google.com/+HayatoIto/posts), an engineer at Google Japan, a Shadow DOM specification editor, and a leader in the implementation of Shadow DOM on Blink.
-* [Polymer and Web Components ](http://steps.dodgson.org/b/2013/05/19/polymer-and-web-components/) A 2013 article by a Google engineer about Web Components. It covers not only Web Components but also the concept of Polymer.
+* [Web 開発者に革命をもたらす！「Web Components」超入門 ](http://liginc.co.jp/web/html-css/html/58267) An article by Mr. Wang at LIG that comes up first in search results. Unfortunately, the specifications have changed considerably since it was written. Nonetheless, it serves as a great resource for grasping the big picture, so it is definitely worth a read.
+* [Web Components で行う HTML のコンポーネント化 ](http://ameblo.jp/ca-1pixel/entry-11815188808.html) An article by @1000ch from CyberAgent. Since it's a recent article, it reflects the newer specifications, so you can read it with confidence.
+* [Web をまともにしたいので Shadow DOM と Web Components をつくってます ](http://www.youtube.com/watch?v=GCw4fJEEVe8) A video of a talk at last year's HTML5 Conference by [Hayato Ito](https://plus.google.com/+HayatoIto/posts), an engineer at Google Japan, editor of the Shadow DOM specification, and lead on the Shadow DOM implementation in Blink.
+* [Polymer と Web Components ](http://steps.dodgson.org/b/2013/05/19/polymer-and-web-components/) A 2013 article by a Google engineer working on Web Components. In addition to Web Components itself, it covers concepts behind Polymer.
 
-## Where are the questions?
+## Where to Ask Questions?
 
-If you're asking in Japanese, I'm sure someone will answer you if you ask on the [html5j mailing list](https://groups.google.com/group/html5-developers-jp). If you're asking in English, I recommend [using the polymer tag on StackOverflow](http://stackoverflow.com/questions/tagged/polymer).
+If you prefer Japanese, asking on the [html5j mailing list](https://groups.google.com/group/html5-developers-jp) should get you an answer from someone. In English, using the [polymer tag on StackOverflow](http://stackoverflow.com/questions/tagged/polymer) is a great option.
 
-## summary
+## Summary
 
-If someone asks me, "What's so great about Web Components?" I'd answer:
+If someone were to ask me why Web Components is so amazing, I would answer:
 
-**Web Components is a technology that dramatically improves development efficiency by standardizing web UI components and incorporating them into an ecosystem.**
+**Because Web Components standardizes UI components on the web and integrates them into the ecosystem, dramatically boosting development efficiency.**
 
-We look forward to seeing all of your amazing UI components!
+I look forward to seeing the wonderful UI components everyone publishes!

@@ -1,8 +1,7 @@
 ---
+title: Yahoo Supports OpenSocial
 layout: post
 lang: en
-title: "Yahoo! USA now supports OpenSocial"
-description:
 date: 2008-10-29
 tags:
   - SocialWeb
@@ -10,47 +9,43 @@ tags:
   - Y!OS
   - Yahoo!
 translationOf: /2008/10/yahooopensocial.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-Today, Yahoo! released the Yahoo! Application Platform (YAP), Yahoo! Social Platform (YSP), and Yahoo! Query Language (YQL) to developers as part of Yahoo! Open Strategy 1.0.
+Today, Yahoo! US announced the [release](http://developer.yahoo.net/blog/archives/2008/10/yos_10_launch.html) of Yahoo! Open Strategy 1.0 for developers, featuring [Yahoo! Application Platform (YAP)](http://developer.yahoo.com/yap/), [Yahoo! Social Platform (YSP),](http://developer.yahoo.com/social/) and [Yahoo! Query Language (YQL)](http://developer.yahoo.com/yql/).
 
-##Yahoo! Social Platform
+## Yahoo! Social Platform
 
-It provides a REST-based API for social media such as profiles, address books, and update information. It uses OAuth for authentication, and PHP and Flash libraries are also provided, but this REST API is not OpenSocial compatible.
+This provides REST-based APIs for social features such as profiles, address books, and updates. It uses OAuth for authentication, and libraries are provided for PHP and Flash. However, these REST APIs are not OpenSocial-compatible.
 
-##Yahoo! Query Language
+## Yahoo! Query Language
 
-A web-based API that allows you to retrieve data like Yahoo! Pipes by sending SQL-like commands. It's similar to Facebook's FQL.
+A web-based API that lets you query data like Yahoo! Pipes by sending SQL-like commands. It seems similar to [Facebook's FQL](http://wiki.developers.facebook.com/index.php/FQL).
 
 ## Yahoo! Application Platform
 
-An embeddable application that runs on Yahoo!.
-The OpenSocial gadget platform is not currently supported, but the JavaScript API appears to be available.
-There are two main views:
+Embedded applications that run within Yahoo!. While OpenSocial's gadget platform is not supported at this time, the JavaScript API appears to be available. There are two main views:
 
 ![yos_appdef](/images/2008/10/yos_appdef-300x184.jpg)
 
 ### Small View
 
-Only HTML or [YML Lite](http://developer.yahoo.com/yap/yml/) is supported.
-JavaScript is not supported. YML is similar to [Facebook's equivalent of
-FBML](http://wiki.developers.facebook.com/index.php/FBML), and is intended to be displayed as a component on various pages, such as My!Yahoo!.
+Supports only HTML or [YML Lite](http://developer.yahoo.com/yap/yml/). JavaScript is not supported. YML is similar to [FBML in Facebook](http://wiki.developers.facebook.com/index.php/FBML), and it is designed to be displayed as widgets on various pages like My Yahoo!.
 
 ### **Canvas View**
 
-****This is an application that proxies and displays YML output from a URL specified by the developer. It's a Facebook-like system. Of course, by writing a program using Yahoo! Social Platform on the server side, you can authenticate with OAuth and retrieve the social graph and contact list via REST.
+Applications of this type proxy and display YML output by a URL specified by the developer. It's a Facebook-like mechanism. Naturally, by writing server-side programs that leverage the Yahoo! Social Platform, you can authenticate via OAuth and fetch social graphs or contact lists via REST.
 
-It also supports the OpenSocial JavaScript API (v0.8), so it seems possible to add updates from the client side. Because it uses Caja, it seems like it can be implemented without security concerns. (I wonder when it reached a practical level...)
+It also [supports the OpenSocial JavaScript API (v0.8)](http://developer.yahoo.com/yap/guide/yap-opensocial.html), so it seems possible to do things like posting updates from the client side. Since [Caja](http://devlog.agektmr.com/archives/49) is used, you can implement features without having to worry too much about security. (When did it reach such a practical stage...?)
 
-I'll try to create a sample application when I have time.
+I'd like to build a sample application when I have some time.
 
-## Impressions
+## Thoughts
 
-This Yahoo! release seems to combine the best of both the Facebook Platform and OpenSocial. However, since it's not fully OpenSocial compliant, it won't be possible to simply repurpose applications created elsewhere with a few minor changes.
+This release from Yahoo! feels like taking the best of both worlds from the Facebook Platform and OpenSocial. However, since it isn't fully compliant with OpenSocial, you probably won't be able to just tweak an existing application built for other platforms and reuse it directly.
 
-For example, you can't use JavaScript APIs that use makeRequest to retrieve data from external servers. Also, unlike OpenSocial, which only requires HTML output, you must output YML. (PS: The Gadgets Core API appears to be available, but features specified with features like Pref and View are not. Also, YML appears to allow for extended functionality using custom tags in addition to standard HTML. However, the inability to load external scripts due to Caja compatibility likely poses a barrier to importing gadgets implemented in other containers.)
+~~For example, JavaScript APIs for fetching external server data from the client, such as `makeRequest`, cannot be used. Also, while OpenSocial lets you output standard HTML, here you must output YML, among other differences...~~ (Update: It appears that the Gadgets Core API can indeed be used. However, features specified through feature tags, like Pref or View, cannot be used. Additionally, YML allows you to use extended capabilities via custom tags on top of regular HTML. Still, the inability to load external scripts due to Caja compliance may be a barrier when porting gadgets implemented on other containers.)
 
-However, the fact that the world's largest portal site is supporting OpenSocial is significant, and future developments will be worth keeping an eye on. From an overall perspective, OpenSocial support is merely a component, but it will have important implications for the future of the web. The presentation at the recent [Yahoo! Open Hack Day](http://www.kidsallright.com/blog/2008/09/18/yahoo-open-strategy-overview/) is definitely worth a watch.
+Nonetheless, the fact that the world's largest portal site is embracing OpenSocial is a significant milestone, and its future direction is definitely worth watching. Looking at the overall strategy, OpenSocial support is merely one piece of the puzzle, yet it holds crucial importance in defining the future of the web. The presentation from the recent [Yahoo! Open Hack Day](http://www.kidsallright.com/blog/2008/09/18/yahoo-open-strategy-overview/) is a must-see.
 
-I believe that the day is not far off when people in Japan will recognize the importance of the web, which is increasingly becoming a platform, and the social functions that it holds within it.
+I believe the day is not far off when the increasing platformization of the web, and the vital role social features play within it, will be recognized in Japan as well.

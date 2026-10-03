@@ -1,8 +1,7 @@
 ---
+title: The Future of the Social Web as Seen Through Facebook Connect
 layout: post
 lang: en
-title: "Facebook Connect: The Future of the Social Web"
-description:
 date: 2008-11-20
 tags:
   - DataPortability
@@ -11,81 +10,79 @@ tags:
   - SocialWeb
   - Facebook Connect
 translationOf: /2008/11/facebook-connect.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-It's been six months since the Data Availability, Facebook Connect, and FriendConnect technologies that enable DataPortability were announced, and services that actually use them are finally starting to appear.
+It has been six months since technologies enabling DataPortability—such as Data Availability, Facebook Connect, and FriendConnect—were announced, and services that actually utilize them are finally starting to appear.
 
-Until now, gadgets and embedded applications on Facebook and OpenSocial have only plugged into the core social network, with external services providing functionality. Data Availability and Facebook Connect, on the other hand, export the social network to external services using RESTful APIs. Today, I'd like to use Facebook Connect, implemented in a service called Citysearch, as an example to show the concrete shape of the social web of the future.
+Until now, gadgets and embedded applications on Facebook and OpenSocial were almost exclusively built as plugins where external services provided functionality to the central social network. In contrast, Data Availability and Facebook Connect use RESTful APIs and similar mechanisms to export the social network out to external services. Today, I'd like to introduce a concrete picture of what the future social web will look like, using Citysearch's implementation of Facebook Connect as an example.
 
-Citysearch now supports Facebook Connect in beta
+## Citysearch Adds Beta Support for Facebook Connect
 
-As far as I know, this is the first decent Facebook Connect/DataPortability compatible service.
+As far as I know, this is the first decent service supporting Facebook Connect / DataPortability.
 
-[Citysearch](http://beta.citysearch.com/) is a social network where people who have actually stayed at restaurants, hotels, etc. can write and share reviews.
+[Citysearch](http://beta.citysearch.com/) is a social network where people who have visited restaurants, hotels, and other venues write and share reviews.
 
 ![citysearch1](/images/2008/11/citysearch1.jpg)
 
-If you look closely, you will see the words "Sign In Using Facebook" in the top right corner of the screen.
+If you look closely, there is a "Sign In Using Facebook" button in the upper right corner of the screen.
 
 ![signinfacebook](/images/2008/11/signinfacebook.png)
 
-Click here to try logging in.
+Let's click it and try logging in.
 
-### certification
+### Authentication
 
 ![citysearch2](/images/2008/11/citysearch2.jpg)
 
-A Lightbox-like dialog box will pop up, asking you if you want to sign in with your Facebook account.
+A Lightbox-style dialog pops up, asking for confirmation to sign in using your Facebook account.
 
-The important thing here is
+The important points here are:
 
-* The Citysearch logo is included. This suggests that there was some prior interaction between Facebook and Citysearch, even if it was automated.
-* This dialog is an **iframe**. In my case, I was already logged in to Facebook, so only a confirmation message was displayed. However, if you're not logged in, a separate window will pop up requesting your Facebook ID and password (as a phishing prevention measure).
-* You must agree to the terms of use. While modest, legal hurdles in Japan are likely to become an issue in the future.
+* The Citysearch logo is displayed. This indicates that some prior communication occurred between Facebook and Citysearch, even if automated.
+* This dialog is an **iframe**. In my case, I was already logged into Facebook, so it only showed a confirmation prompt. However, if you are not logged in, it appears to pop up a separate window (as an anti-phishing measure) asking for your Facebook username and password.
+* You need to agree to the terms of service. Though subtle, legal hurdles in Japan will likely become an issue going forward.
 
-### Service registration
+### Service Registration
 
 ![citysearch3](/images/2008/11/citysearch3.jpg)
 
-When you connect, you will be asked for your member name because you are not registered. This appears to be for people who do not have an existing account. There are a few points to note here as well.
+Once connected, you are prompted for a member name because you aren't registered yet. This seems to be provided for users without an existing account. Here again, there are a few interesting points:
 
-* Facebook's authentication method is proprietary, but if it were open, it would likely be an [OAuth/OpenID combo](http://step2.googlecode.com/svn/spec/openid_oauth_extension/drafts/0/openid_oauth_extension.html). In other words, Facebook's proprietary method seems to perform authentication and authorization simultaneously.
-* As you'll see later, the created account at least imports your Facebook profile picture, name, and friend list. If it were open, you'd probably import your nickname and profile picture using sreg with OpenID, and your friend list using OAuth. OAuth alone might be sufficient.
-* There's a link that asks, "Merge your Facebook profile with an existing Citysearch account?" This is quite a clever touch, considering the lack of services that allow you to merge an existing account with OpenID.
-* This appears to require you to agree to Citysearch's own terms of use.
+* Facebook's authentication is proprietary, but if this were an open standard, it would likely be an [OAuth/OpenID combo](http://step2.googlecode.com/svn/spec/openid_oauth_extension/drafts/0/openid_oauth_extension.html). In other words, Facebook's proprietary approach seems to handle authentication and authorization simultaneously.
+* As we'll see later, the newly created account imports at least the Facebook profile photo, name, and friends list. With open standards, you would perhaps use OpenID with sreg to import the nickname and profile photo, and OAuth to import the friends list—or perhaps OAuth alone would suffice.
+* There is a link that says "Merge your Facebook profile with an existing Citysearch account?". Considering how few services allow merging existing accounts with OpenID, this is quite thoughtful.
+* Here, it seems users are asked to agree to Citysearch's own terms of service.
 
-### Connection complete
+### Connection Complete
 
 ![citysearch4](/images/2008/11/citysearch4.jpg)
 
-When you log in, you'll see your Facebook profile picture in the top right corner of the screen.
+Once logged in, your Facebook profile picture is displayed in the upper right corner of the screen.
 
 ![citysearch5](/images/2008/11/citysearch5.jpg)
 
-My Page only displays my name and profile picture. I haven't investigated whether any other information is exported.
+My profile page only shows my name and profile photo. I haven't investigated whether other information gets exported.
 
 ![citysearch6](/images/2008/11/citysearch6.jpg)
 
-The key point here is the friend list. Unfortunately, as it says "None of your Facebook friends are Citysearch members," it seems that only Facebook friends who are registered on both sites are displayed as friends. I think it would be nice to have a feature that displays unregistered friends and allows you to "invite them to Citysearch."
+Here is the key feature: the friends list. Unfortunately, as indicated by "None of your Facebook friends are Citysearch members", it seems only Facebook friends who are registered on both services are shown. It would be nice to have a feature here that also displays unregistered friends and allows you to "Invite them to Citysearch."
 
-Feedback Activities
+## Activities as Feedback
 
-So, everything we've seen so far has been on Citysearch. Facebook just gives away its data, and it doesn't seem like there's anything good to be gained from it. I can't even find a way to place ads. So why is it so generously sharing its social graph?
+Everything we have seen so far was on the Citysearch interface. Facebook is merely providing the data it holds, and if you think about it, there doesn't seem to be any benefit for them. There is no obvious way to display ads either. So why would they generously share their social graph?
 
-In fact, Facebook Connect has a mechanism for feeding activity back to Facebook, which allows Facebook to act as an aggregator of connected services. This is the "Post a post to a message board" section in the image below. In OpenSocial terms, this corresponds to the activity stream.
+The reason is that Facebook Connect has a mechanism to feed activities back into Facebook, allowing Facebook to become an aggregator for connected services. The part in the image below labeled "Publish stories to my Wall" corresponds to this. In OpenSocial terms, this is the equivalent of an activity stream.
 
 ![citysearch7](/images/2008/11/citysearch7.png)
 
-I would like to post the actual screenshots, but I don't have the courage to write a review on Citysearch, so I'll just link to [John McCrea's example](http://www.flickr.com/photos/56624456@N00/3044329360/).
+I wanted to post an actual screenshot of this in action, but since I don't feel quite brave enough to write a review on Citysearch, I'll link to [John McCrea's sample](http://www.flickr.com/photos/56624456@N00/3044329360/) instead.
 
 ![Citysearch_Facebook](https://farm4.static.flickr.com/3278/3044329360_6171dc1f04.jpg?v=0)
 
-Becoming an activity aggregator is a crucial strategy for attracting traffic. Simply by visiting Facebook, you can see your friends' activity across various services at a glance. Through your friends, you can discover new services you didn't know about before. Furthermore, the aggregated activity can be used in a variety of ways, opening up various potential monetization opportunities.
+Becoming an activity aggregator is an extremely important strategy for driving traffic. Simply by visiting Facebook, users can see at a glance what their friends are doing across various services. They can discover services they didn't know about through their friends. Furthermore, there are [ways to leverage](http://www.ideaxidea.com/archives/2007/11/facebooksocial_ads.html) these aggregated activities, holding a variety of monetization possibilities.
 
-### Reference sites
+### Reference Links
 
-* [CitySearch Goes Social with Great Facebook Connect Implementation – The Real
-  McCrea](http://therealmccrea.com/2008/11/19/citysearch-goes-social-with-great-facebook-connect-implementation/)
-* [Dare Obasanjo aka Carnage4Life – Some Thoughts on Facebook Connect and
-  CitySearch](http://www.25hoursaday.com/weblog/2008/11/19/SomeThoughtsOnFacebookConnectAndCitySearch.aspx)
+* [CitySearch Goes Social with Great Facebook Connect Implementation – The Real McCrea](http://therealmccrea.com/2008/11/19/citysearch-goes-social-with-great-facebook-connect-implementation/)
+* [Dare Obasanjo aka Carnage4Life – Some Thoughs on Facebook Connect and CitySearch](http://www.25hoursaday.com/weblog/2008/11/19/SomeThoughtsOnFacebookConnectAndCitySearch.aspx)

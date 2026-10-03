@@ -1,8 +1,8 @@
 ---
+title: I contributed an article about Google Buzz to Gihyo.
+author: Eiji
 layout: post
 lang: en
-title: I contributed an article about Google Buzz to gihyo
-description:
 date: 2010-02-13
 categories:
   - SocialWeb
@@ -10,19 +10,19 @@ tags:
   - Google Buzz
   - 掲載
 translationOf: /2010/02/gihyo-google-buzz.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-Recently, Google released a service called <a href="http://buzz.google.com/" target="_blank">Google Buzz</a>.
+The other day, Google released a new service called <a href="http://buzz.google.com/" target="_blank">Google Buzz</a>.
 
-It's a so-called feed aggregator, and its appearance is similar to GREE or goo Home in Japan, or FriendFeed, Cliqset, or Facebook overseas. It's a very stereotypical service that allows you to comment and favorite entries on your timeline, and doesn't seem to have much individuality at first glance.
+It is what you might call a feed aggregator—visually reminiscent of GREE or goo Home in Japan, or services like FriendFeed, Cliqset, and Facebook globally. With a structure that lets you comment on and like entries on a timeline, it looks at first glance like a very stereotypical, rather unremarkable service.
 
-The main features of the app were that it was deployed on Gmail, that it would also be displayed on Google Profile, and about five other things that were mentioned on stage. I was watching the live broadcast, and I got the impression that it might be difficult to make this popular.
+Its notable features include its integration into Gmail, its visibility on Google Profiles, and about five other points mentioned on stage. I was watching the live stream in real time, and my initial impression was that it might be difficult to make this catch on.
 
-However, when I looked at the API documentation page that was released at the same time, I realized that Buzz was not just aiming to be a feed aggregator service. I also realized how ambitious and grandiose this was, and that it was the concrete answer to the ideal service I had been dreaming of for over three years. I couldn't contain my excitement.
+However, once I looked at the API documentation released at the same time, I realized that Buzz isn't simply aiming to be a feed aggregator. I also realized just how ambitious and grand it is, and that it represents a concrete answer to the ideal service vision I have dreamed of for over three years. I couldn't contain my excitement.
 
-There's actually a deeper meaning behind the tweet I made: "<a href="http://twitter.com/agektmr/status/8866951003" target="_blank">Whether it's popular or not</a>." I wrote an article explaining this, which was posted on gihyo.jp.
+When I tweeted that "<a href="http://twitter.com/agektmr/status/8866951003" target="_blank">whether it catches on or not doesn't really matter that much</a>," there was actually a deeper meaning behind it. To explain that, I wrote an article that has now been published on gihyo.jp:
 
-<a href="http://gihyo.jp/dev/column/01/social/2010/021201" target="_blank">The true meaning of Google Buzz in social web technology</a>
+<a href="http://gihyo.jp/dev/column/01/social/2010/021201" target="_blank">ソーシャルウェブテクノロジーに見るGoogle Buzzの本当の意味</a>
 
-It contains some difficult topics, but if you've tried Google Buzz and thought it was boring and had no chance of becoming popular, I highly recommend you give it a read. I think it will change your perspective.
+It touches on some rather technical topics, but if you have tried Google Buzz and felt that it is boring or will never catch on, please give it a read. I think it will change your perspective.

@@ -1,100 +1,100 @@
 ---
+title: The Definitive Blueprint for Near-Future Services, as Seen in Foursquare
+author: Eiji
 layout: post
 lang: en
-title: "Foursquare: The royal road to services of the near future"
-description:
 date: 2010-01-20
 categories:
   - SocialWeb
 tags:
   - サービス
 translationOf: /2010/01/foursquare.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-What is Foursquare?
+## What is Foursquare?
 
-I've been seeing the name <a href="http://foursquare.com/" target="_blank">Foursquare</a> a lot lately, and it seems to have suddenly become a hot topic, sparked by this article <a href="http://www.ideaxidea.com/archives/2010/01/foursquare.html" target="_blank">, with over 20 friend requests arriving on my account since yesterday. I've only just started using it myself, but as you'd expect from a popular platform, I've noticed a number of surprising features.
+Recently, <a href="http://foursquare.com/" target="_blank">Foursquare</a> has been popping up everywhere. Sparked by <a href="http://www.ideaxidea.com/archives/2010/01/foursquare.html" target="_blank">this article</a>, it suddenly seems to have become a hot topic, and since yesterday, I've received more than 20 friend requests on my account. I've only just started using it myself, but living up to the hype, it incorporates several clever touches that feel surprisingly fresh.
 
 [<img class="alignnone size-full wp-image-697" title="foursquare" src="/images/2010/01/foursquare.png" alt="" width="351" height="144" />][1]
 
-At its core, it's a service that you might have seen before: it uses the GPS function on your mobile phone or smartphone to detect the places you've actually visited and lets you post them on the spot. However, it has some unique features:
+At its core, it might seem like services we've seen before—using the GPS on your mobile phone or smartphone to detect where you actually are and posting on the spot. What makes it unique, however, are features like:
 
-* Motivational measures using points, mayorship, and badges
-* Users can select nearby places to check in from their general location, eliminating the need to upload their exact location.
-* If a place doesn't exist yet, users can register a new one and earn points, which acts as an incentive.
-* Users can leave tips for places—for example, a ramen shop could share their favorite dishes.
-* Later visitors or those who find interesting tips on a friend's timeline can add them to their to-do list for future reference.
+*   Motivational incentives using points, mayorships, and badges.
+*   The ability to check in by selecting from nearby places based on your approximate location, so you don't have to broadcast your exact coordinates.
+*   If a place doesn't exist yet, you can add it yourself and earn points as an incentive.
+*   You can leave tips at places—for example, recommending the best dish at a ramen shop.
+*   People who visit later or come across interesting tips in their friends' feeds can add them to their To-Do list to remember them later.
 
-As you can see, the more users there are, the more fun it becomes to watch. There may be other attractive features, but I'd like to continue using it for a while longer.
+In this way, the more users join, the more enjoyable it becomes to browse. There are likely other appeals as well, so I plan to keep using it for a while.
 
-By the way, Foursquare is starting to become popular as a matter of course, but it actually captures several trends that will likely become commonplace in the future.
+By the way, while Foursquare is naturally gaining popularity, it actually hits on several trends that are bound to become standard in the future.
 
-## The royal road to services of the near future
+## The Hallmarks of Next-Generation Services
 
-### Be social
+### It's Social
 
-Don't say, "What? That's obvious!" Yes, it is. In the future, most services will be based on social media. I don't think I need to explain to anyone reading this blog that, unless it's a very special case, it's advantageous to develop a popular service on social media online in order to spread it by word of mouth.
+Please don't say, "Well, obviously." Yes, it is obvious. Going forward, almost every service will be built on the premise of being social. To spread a trending service through word of mouth, unless there are exceptional circumstances, rolling it out socially on the web offers a clear advantage—something that goes without saying for readers of this blog.
 
-Foursquare is also social, making it easy to find places your friends have checked in as well as tips for those places.
+On Foursquare, being social makes it easy not only to see where your friends have checked in, but also to discover tips about those places.
 
-### Facebook Connect / Twitter Compatible
+### Support for Facebook Connect / Twitter
 
-It seems to be becoming commonplace in the West for new services to support Facebook Connect and Twitter. Both are useful for many services to skip the tedious process of registering. Even when logging in with Facebook, Foursquare still requires you to enter a lot of information... The good thing about it is that you can register without entering much information at all.
+Supporting Facebook Connect or Twitter seems to already be common practice for new services in the West. Both are used across many services to skip the hassle of registration forms. With Foursquare, even after logging in with Facebook, you still had to enter quite a bit of information... The clever ones let you sign up with almost no data entry at all.
 
 [<img title="foursquare-login" src="/images/2010/01/foursquare-login.png" alt="" width="351" height="101" />][2]
 
-What's interesting about Foursquare is that you don't have to decide on your own profile URL; by linking your Twitter account, your Twitter screen name will become your URL. (This is proof that Twitter is becoming recognized as a profile page overseas, but we'll talk about that another time...)
+An interesting aspect of Foursquare is that even without choosing your own profile URL, linking your Twitter account makes your Twitter screen name your URL automatically. (This is proof that Twitter is increasingly recognized as a profile page abroad, but that's a topic for another time...)
 
-### Import your friends list
+### Importing Friend Lists
 
-One of the reasons I received so many friend requests this time was likely due to the feature to find friends from Twitter followers. It seems likely that various services will continue to offer this experience, where you can filter and display a list of already registered users from your follow list imported from Twitter, and then send a friend request with just one click. Of course, Foursquare also lets you do the same thing using your Facebook friend list.
+One reason I received so many friend requests this time is likely the feature that lets you find friends from your Twitter followers. The experience of importing a following list from Twitter, filtering and displaying already-registered users, and sending friend requests with a single click is something we'll see more and more services adopt. Of course, Foursquare allows you to do the exact same thing using your Facebook friends list.
 
 [<img class="alignnone size-medium wp-image-699" title="foursquare-friend-request" src="/images/2010/01/foursquare-friend-request-300x248.png" alt="" width="300" height="248" />][3]
 
-### Activity Feedback
+### Feeding Back Activity
 
-The best reason to connect with social services is the activity stream, which allows you to post feedback on your timeline (Twitter) or updates (Facebook), catching the attention of your connected users.
+The primary reason to integrate with social services is the activity stream. By posting feedback to a Twitter timeline or Facebook news feed, you can grab the attention of connected users.
 
-This feedback also makes it possible to share events in real time. For example, <a href="http://www.itmedia.co.jp/news/articles/0911/24/news072.html" target="_blank">the simultaneous barrage on Twitter</a> and <a href="http://tofubeats.blog107.fc2.com/blog-entry-235.html" target="_blank">last year's Christmas Eve DJ performance on Ustream</a> have become commonplace on the web recently, with real-time event sharing centered around Twitter.
+Furthermore, this feedback enables real-time event sharing. Examples like the <a href="http://www.itmedia.co.jp/news/articles/0911/24/news072.html" target="_blank">simultaneous "Balse" chant on Twitter</a> or <a href="http://tofubeats.blog107.fc2.com/blog-entry-235.html" target="_blank">the DJ set streamed on Ustream last Christmas Eve</a> show that real-time event sharing centered around Twitter is becoming commonplace on the web.
 
 [<img class="alignnone size-medium wp-image-698" title="foursquare-activity-feedback" src="/images/2010/01/foursquare-activity-feedback-300x112.png" alt="" width="300" height="112" />][4]
 
-Foursquare also allows you to provide feedback on your activity when you check in, so it will not be uncommon for people to find out via Twitter that they happen to be in the same place and meet up.
+Foursquare also lets you post activity updates whenever you check in, so discovering via Twitter that a friend happens to be in the same place and meeting up will soon become a common occurrence.
 
-### Compatible with iPhone and Android
+### Support for iPhone / Android
 
-An increasing number of services are releasing dedicated apps for iPhone and Android in conjunction with web services. This trend is likely to grow stronger if the service not only runs on a smartphone but also takes advantage of the unique features of that location.
+More and more web services are releasing dedicated apps for iPhone and Android alongside their sites. Rather than simply claiming "it runs on smartphones," any service that leverages "things you can only do in that specific location" will inevitably push in this direction.
 
 [<img class="alignnone size-full wp-image-701" title="foursquare-iphone" src="/images/2010/01/foursquare-iphone.png" alt="" width="138" height="259" />][5]
 
-Foursquare is, of course, a prime example, with applications available for iPhone, Android, and Palm Pre.
+Foursquare is, of course, a quintessential example, offering dedicated apps for iPhone, Android, and Palm Pre.
 
-## In Japan?
+## What About Japan?
 
-So what if we tried to do something similar in Japan? Let's examine each item.
+Looking at Japan, how feasible would it be to build something similar here? Let's examine each point:
 
-* **Social:**
-This is pretty obvious, right?
-* **Compatible with Facebook Connect / Twitter:**
-An increasing number of services are supporting Twitter, but due to the small number of Facebook users in Japan, it doesn't seem to be actively supporting it. This brings to mind the existence of mixi Connect and GREE Connect, but neither are yet publicly available, so we look forward to seeing them in the future.
-* **Feedback to activity streams:**
-This is also discussed in conjunction with Connect technology, but the development of the receiving activity stream is also important. The concept of timelines (or streams) has yet to take root in domestic services, with GREE's one-line feature only recently being released. As for mixi, the activity stream in its app is not being fully utilized, so as with Connect technology, we look forward to future developments.
-* **Compatible with iPhone / Android**
-Smartphone compatibility seems likely to be possible soon, even given the current domestic situation.
+*   **Being Social:**  
+    Well, this is a given.
+*   **Support for Facebook Connect / Twitter:**  
+    While services supporting Twitter are increasing, Facebook still has relatively few users in Japan, so adoption hasn't been very proactive. This brings to mind initiatives like mixi Connect or GREE Connect, but since neither has been released to the public yet, we'll have to see what the future holds.
+*   **Feeding Back into Activity Streams:**  
+    This goes hand-in-hand with Connect technologies, but building out the receiving activity streams is equally critical. In domestic Japanese services, the concept of a timeline (or stream) hasn't fully taken root yet—GREE's "Hitokoto" feature was only recently rolled out. As for mixi, the activity stream for mixi Apps isn't being utilized to its full potential either, so just like with Connect tech, there's hope for improvement going forward.
+*   **iPhone / Android Support:**  
+    Smartphone support is something that could easily be implemented right now, even in the domestic market.
 
-When you analyze it like this, you can see that while domestic services are sitting idly by, it wouldn't be surprising if a new social service that takes advantage of Twitter's virality were to appear. In fact, it's a good opportunity to do so!
+Analyzing it this way, it's clear that while domestic services hesitate, the stage is set for a new social service that harnesses Twitter's virality to emerge. Honestly, it's a prime opportunity!
 
-### summary
+### Summary
 
-This time, we used Foursquare as an example to introduce the image of the social web of the near future. If you don't understand what's so great about it, it might be interesting to think about it the other way around. It's not social, you can't import your friend list, and you can't get activity feedback... When you imagine it, you might think of similar services that failed in the past.
+Using Foursquare as an example, I've shared a glimpse of what the near-future social web looks like. If you're not sure what makes it so impressive, it's interesting to consider the reverse: imagine a service that isn't social, can't import friend lists, and can't push activity back to streams... If you picture that, you'll probably recall a few similar services from the past that failed.
 
-Other services with similar features to this one include the news site <a href="http://www.huffingtonpost.com/" target="_blank">Huffington Post</a> and the local information site <a href="http://www.citysearch.com/" target="_blank">CitySearch</a>.
+For other services featuring these characteristics, be sure to check out the news site <a href="http://www.huffingtonpost.com/" target="_blank">Huffington Post</a> and the local discovery guide <a href="http://www.citysearch.com/" target="_blank">CitySearch</a>.
 
-Also, although it was almost a year ago, I think the talk I gave at the beginning of the first Social Web study group, <a href="http://www.slideshare.net/agektmr/socialweb-vol1-presentation" target="_blank">Social Web Talk</a>, is still quite useful. Please take a look at it again.
+Also, it was nearly a year ago, but the <a href="http://www.slideshare.net/agektmr/socialweb-vol1-presentation" target="_blank">presentation on the Social Web</a> I gave at the opening of the first SocialWeb study group is still quite relevant. Please feel free to take another look at that as well.
 
-[1]: /images/2010/01/foursquare.png
-[2]: /images/2010/01/foursquare-login.png
-[3]: /images/2010/01/foursquare-friend-request.png
-[4]: /images/2010/01/foursquare-activity-feedback.png
-[5]: /images/2010/01/foursquare-iphone.png
+ [1]: /images/2010/01/foursquare.png
+ [2]: /images/2010/01/foursquare-login.png
+ [3]: /images/2010/01/foursquare-friend-request.png
+ [4]: /images/2010/01/foursquare-activity-feedback.png
+ [5]: /images/2010/01/foursquare-iphone.png

@@ -1,78 +1,71 @@
 ---
+title: Deciphering Shindig
 layout: post
 lang: en
-title: Deciphering the Shindig
-description:
 date: 2008-05-04
 tags:
   - OpenSocial
   - Shindig
 translationOf: /2008/05/shindig.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-We previously introduced how to install Shindig ([Java
-version](http://devlog.agektmr.com/archives/6) and [PHP
-version](http://devlog.agektmr.com/archives/11)). The PHP version has finally reached a usable level, so we decided to decipher the source code. Note that while the Java version is more advanced, this article focuses on the PHP version only.
+I previously covered how to install Shindig ([Java version](http://devlog.agektmr.com/archives/6), [PHP version](http://devlog.agektmr.com/archives/11)). The PHP version has finally reached a usable state, so I took a deep dive into the source code. Note that while the Java implementation is further along, this post focuses strictly on the PHP version.
 
-What is Shindig?
+## What is Shindig?
 
-First of all, let's start with the basics.
+Let's start from the basics.
 
-Simply put, Shindig is a "sample implementation of an OpenSocial container."
-By simply downloading and running it, you can test the operation of iGoogle gadgets and OpenSocial gadgets. In fact, the goal is to encourage the widespread adoption of OpenSocial, with many SNSs using Shindig as a reference or adapting it to support OpenSocial.
+In short, Shindig is a "**sample implementation of an OpenSocial container**." Simply downloading and running it allows you to test both iGoogle gadgets and OpenSocial gadgets. In practice, its goal is to drive widespread OpenSocial adoption by serving as a reference or a starting point for numerous social networking services to support OpenSocial.
 
-* [Shindig - an Apache incubator project for OpenSocial and gadgets](http://incubator.apache.org/shindig/)
+* [Shindig - an Apache incubator project for OpenSocial and
+  gadgets](http://incubator.apache.org/shindig/)
 * [Mailing list](http://mail-archives.apache.org/mod_mbox/incubator-shindig-dev/)
 * [Repository](http://svn.apache.org/repos/asf/incubator/shindig/trunk/)
 
-## Main directory structure
+## Main Directory Structure
 
 * config: Container configuration
-* features: Feature set (JavaScript code)
+* features: Various feature sets (JavaScript code)
 * java: Java source code
-* javascript: HTML, JavaScript code
+* javascript: HTML and JavaScript code
 * php: PHP source code
 
-## Directory explanation
+## Directory Breakdown
 
 ### config
 
-The file `container.js` is the default configuration for the container, and contains settings such as proxies and the OpenSocial API path. If you want to change the settings, simply add a file to this directory and add only the necessary parts in JSON format. The default settings will be inherited. The JSON format is likely because it is intended to be readable from other languages, not just PHP and Java. (Perl and Ruby versions of Shindig are also planned for development.)
+The file `container.js` serves as the container's default configuration, specifying settings like proxies and OpenSocial API paths. If you want to change the configuration, you can add a file to this directory and append only the necessary parts in JSON format, which will inherit the default settings. The reason JSON format is used is likely to allow it to be loaded not just by PHP and Java, but by other languages as well. (Perl and Ruby versions of Shindig are also reportedly planned for development.)
 
 ### features
 
-Features described in the gadget XML using the `<Require features=";">` format are loaded as a set. The features directory is further divided into directories for each feature set, and the features.xml file in each directory specifies the required JavaScript library set.
+This loads feature sets that are declared in gadget XML in the form of `<Require features=";">`. The `features` directory is further divided into subdirectories for each feature set, and the `features.xml` file in each directory specifies the required JavaScript library set.
 
 ### php
 
-The PHP source code is based on the Java version, so the implementation is not very PHP-like.
+Perhaps because the PHP source code is modeled after the Java version, it doesn't feel very idiomatic to PHP.
 
-First of all, it doesn't follow the MVC format. There are various ways to divide objects, but
-rather than being like a web application, it's more like a Java method(?) in that it's divided very finely by function and setting.
-It's also Java-like to have get and set methods for each member variable.
+First, it doesn't adopt an MVC pattern. While there are various ways to divide objects, rather than taking a typical web application approach, it is split up very finely by feature and configuration in what seems like a Java-esque style(?). Providing get/set methods for every single member variable also feels very Java-like.
 
-All requests to PHP are rewritten (as specified in the .htaccess file) and loaded into index.php, which handles the processing of the request among six different servlets depending on the request parameters.
+Requests to PHP are rewritten (specified in the `.htaccess` file) and all routed to `index.php`. Based on the request parameters, `index.php` delegates processing to six types of servlets:
 
 * Static files (/gadgets/files)
 * JavaScript (/gadgets/js)
-* Proxies (/gadgets/proxy)
+* Proxy (/gadgets/proxy)
 * Gadgets (/gadgets/ifr)
 * Metadata (/gadgets/metadata)
 * OpenSocial API (/social/data)
 
-Including classes is largely simplified because __autoload is used.
+Class includes are rarely written explicitly because `__autoload` is used.
 
-`config.php` contains settings such as paths to various files.
-(This is different from `config/container.js`)
+`config.php` contains settings such as paths to various files. (This is distinct from `config/container.js`.)
 
-Since Shindig does not use a database, the cache is managed in the /tmp directory,
-settings are managed using cookies, and the friend list is managed using static XML files.
+Additionally, since Shindig does not use a database, caching is handled in the `/tmp` directory, settings in cookies, and friend lists in static XML files.
 
-## summary
+## Summary
 
-The source code appears simple at first glance, but it's actually quite complex. In addition to a Java-like implementation, there seems to be considerable room for optimization, such as generalization to allow for sharing settings with Shindig versions in other languages. Incorporating the PHP version of Shindig into an existing framework isn't difficult, but it's probably best to use it only as a reference.
+At first glance, the source code looks simple, but it is quite complex. Between the Java-like implementation style and general abstractions intended to share configurations with other language versions of Shindig, there seems to be plenty of room for optimization. While integrating the PHP version of Shindig into an existing framework wouldn't be difficult, it is probably best treated purely as a reference.
 
-Currently, it supports OpenSocial version 0.7, but there are still bugs. The feature specifications for version 0.8 are now complete, but it will likely take some time for Shindig to support it.
+Also, while it currently supports OpenSocial version 0.7, there are still plenty of bugs. Specifications for version 0.8 are starting to take shape, but there will likely be a delay before Shindig catches up.
 
-The OpenSocial API has been implemented, but it still feels like Shindig is not yet fully functional. Other things to consider include OAuth and a RESTful API.
+Although the OpenSocial API is implemented, it still feels far from being able to say that OpenSocial features are fully ready to use in Shindig. Next up would be things like OAuth, RESTful APIs, and so on...

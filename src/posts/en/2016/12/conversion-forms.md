@@ -1,170 +1,169 @@
 ---
 layout: post
 lang: en
-title: Improving Mobile Web Conversions - Forms
-description:
+title: Improving Mobile Web Conversions - Forms Edition
 date: 2016-12-26
 tags:
   - Payments
   - Form
 translationOf: /2016/12/conversion-forms.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-The internet has been around for over 20 years, and we've seen a shift from desktop to mobile. Mobile not only caters to smaller screens, but also demands a faster experience, and e-commerce businesses are no exception.
+More than twenty years have passed since the dawn of the internet, and the era has shifted from desktop to mobile. On mobile, users don't just expect adaptations for smaller screens—they demand a much faster, smoother experience. E-commerce is no exception.
 
-Data shows that 66% of mobile payments are made on the web rather than through native apps. This is likely because it is too much of a hassle to install an app from a search result and then purchase a product, so many people choose to pay directly on the web.
+Data shows that 66% of mobile checkouts take place on the web rather than in native apps. Installing an app from search results just to purchase an item requires too much friction, which is likely why so many people prefer to complete their purchases directly on the web.
 
-However, there is also data that shows that mobile websites have a 66% lower conversion rate than desktop websites, which means that there is still room for improvement in mobile web conversion rates.
+Conversely, data also shows that mobile websites have a 66% lower conversion rate compared to desktop websites. Looked at another way, this means there is still tremendous room for growth in mobile web conversion rates.
 
-So today, I'd like to introduce two ways to improve your forms to increase your mobile web conversions.
+In this post, I'd like to introduce two ways to boost mobile web conversions by improving forms.
 
 <!-- excerpt -->
 
-## Why AutoFill Doesn't Work
+## Why Autofill Isn't Working
 
-When purchasing a product, users need to provide information such as their address and payment details. Forms are widely used for this purpose. Filling out forms can be tedious enough, but for users, typing in their address using a virtual keyboard on a small mobile device screen is a pain. I'm sure I'm not the only one who has either bought something on a computer or given up on it because buying on mobile was too much.
+When making a purchase, users need to provide information such as their address and payment details. Forms are the standard way to collect this data. Filling out forms is already tedious enough, but typing out an address using a virtual keyboard on a tiny mobile screen is nothing short of painful. I'm sure I'm not the only one who has abandoned a mobile purchase—or switched to a PC to finish it—simply because it was too frustrating.
 
-Fortunately, many modern browsers have a feature called "autofill" that automatically fills in the most appropriate information for a form, significantly reducing the need for users to type in the information themselves or repeatedly correct mistakes.
+Fortunately, most modern browsers come with a feature called "autofill" that automatically fills forms with the most appropriate information. With autofill, users spend far less time typing manually and correcting typos.
 
-But if it worked, conversion rates shouldn't be lower than on desktop. This means that on many websites, autofill may not be working as expected. What am I missing?
+However, if autofill were working effectively, conversion rates wouldn't be lagging so far behind desktop. In other words, on many websites, autofill might not be functioning as expected. What is missing?
 
-### How AutoFill Works
+### How Autofill Works
 
-Let's start by explaining how autofill works. For example, Chrome's autofill feature remembers the information a user has entered once, allowing them to fill it in without having to repeatedly type the characters from the second time onwards. Furthermore, recently, the information to be filled in, such as addresses and credit cards, has been structured so that it automatically determines what to fill in which field.
+First, let's look at how autofill works. In Chrome, for example, the browser remembers information the user has previously entered, allowing them to fill it in next time without repeatedly typing the same characters. Furthermore, modern browsers structure address and credit card information, automatically determining which data should go into which field.
 
 <figure>
 <img src="/images/2016/autofill-setting-chrome.png" style="min-width: 48%; max-width: 300px;">
 <img src="/images/2016/autofill-setting-safari.png" style="min-width: 48%; max-width: 300px;">
-<figcaption>Autofill settings for Chrome on the left and Safari on the right</figcaption>
+<figcaption>Autofill settings: Chrome on the left, Safari on the right</figcaption>
 </figure>
 
-Chrome reuses information saved by the user while browsing, while Safari retrieves addresses using the OS's address book functionality.
+While Chrome reuses information saved by the user during browsing, Safari retrieves address details from the OS contacts app.
 
-(Firefox and Edge do not currently structure form data, but this is expected to move in the future.)
+(Firefox and Edge do not seem to structure form data at this point, but they are expected to move in a similar direction in the future.)
 
 ### Structured Data
 
-The important thing here is that it is "structured." In other words, the information is treated as a single block in a certain format. To be more specific, in Chrome,
+The critical point here is that the data is "structured." In other words, the information is treated as a cohesive unit following a specific template. To be more specific, Chrome treats data like this:
 
 For addresses:
 
 * Name
-* Affiliation
+* Organization
 * Country
-* Postal Code
-* Prefecture
-* City/Ward
-* Subsequent Address
-* Phone Number
-* Email Address
+* Postal code
+* State / Prefecture
+* City
+* Street address
+* Phone number
+* Email address
 
 For credit cards:
 
-* Card Number
-* Cardholder Name
-* Expiration Month
-* Expiration Year
+* Card number
+* Cardholder name
+* Expiration month
+* Expiration year
 
-In this way, each is treated as a single block of information. As mentioned above, Safari also uses information from the Contacts app, so it's safe to think of them as being similar.
+Each set is handled as a single unit of information. As mentioned earlier, Safari uses information from the contacts app, so it operates on a very similar model.
 
-This information can be reused across domains, and when presented with an autofillable form, the browser will suggest address or credit card details, allowing the user to simply select them and the fields will be filled in without any typing (though they won't be filled in against the user's wishes).
+This information can be reused across domains. When an autofillable form is displayed, the browser suggests the address or credit card details. Users can populate the fields simply by selecting the suggestion, without typing on their keyboard (information is never filled in against the user's intent).
 
-Here's what it looks like when you focus on the `input` field and an address is suggested, and what it looks like when the `input` field is actually filled in.
+Here is how an `input` field looks when focused, suggesting an address, and how it looks after being filled:
 
 <figure>
 <img src="/images/2016/autofill-1-safari.png" style="min-width: 48%; max-width:300px;">
 <img src="/images/2016/autofill-2-safari.png" style="min-width: 48%; max-width:300px;">
-<figcaption>For Safari</figcaption>
+<figcaption>Safari</figcaption>
 </figure>
 
 <figure>
 <img src="/images/2016/autofill-1-chrome.png" style="min-width: 48%; max-width:300px;">
 <img src="/images/2016/autofill-2-chrome.png" style="min-width: 48%; max-width:300px;">
-<figcaption>For Chrome</figcaption>
+<figcaption>Chrome</figcaption>
 </figure>
 
-Chrome and Safari allow you to sync autofill information across devices, so you can, for example, enter information on your computer and use it on your mobile device.
+Both Chrome and Safari allow autofill information to sync across devices, making it possible to use details entered on a PC on your mobile device as well.
 
-## Optimize for the latest autofill
+## Optimizing for Modern Autofill
 
-In the screenshot above, most of the fields are filled in neatly. This is a website that incorporates the best practices we'll introduce today. So why don't most websites work this way? There are two possible reasons.
+In the screenshots above, almost all the fields are filled in cleanly. This was achieved by applying the best practices introduced in this article. So why doesn't this work well on typical websites? There are two main reasons.
 
-### Standardize your form structure
+### 1. Aligning Form Structure with Standards
 
-One of the main reasons is that websites have form structures that differ from what is expected by the standard.
+One major reason is that the form structure on many websites differs from what standard autofill expects.
 
-This is understandable. Until now, there has been no standard for this type of structure, and HTML forms are flexible in design, so it has naturally led to different structures being created for each site.
+This is understandable. Until recently, standard structures were never clearly defined, and because HTML forms can be designed with total flexibility, each site naturally ended up building its own custom layout.
 
-For example, in Japan, postal codes are seven digits long, such as "106-6144," but there is no standardization, with some websites dividing the field into three or four digits, and others using seven digits.
+Take postal codes as an example: in Japan, postal codes consist of seven digits, such as "106-6144." Some websites split this into two fields of 3 and 4 digits, while others use a single 7-digit field, resulting in a lack of consistency.
 
-Similarly, credit cards may have a single 16-digit field, or four 4-digit fields.
+Similarly, for credit cards, some sites use a single 16-digit field, while others use four separate 4-digit fields.
 
 ![](/images/2016/credit-card-multiple.png)
 
 ![](/images/2016/credit-card-single.png)
 
-Which one would be the correct one to match?
+Which approach is the right one?
 
-The correct answer is to create a format that is easy for the browser to save, that is, create a single field for both the postal code and credit card information, following the structure of the address and credit card information we introduced earlier. By doing so, the browser can perfectly fit its own structured autofill information into the form, allowing the user to provide the information without stress.
+The answer is to match the format that is easiest for browsers to store—using a single field for both postal codes and credit cards, in line with the structured address and credit card models mentioned earlier. By doing this, the browser can map its structured autofill data directly to your form fields, allowing users to provide their information effortlessly.
 
-### Add annotations to prompt autofill
+### 2. Adding Annotations to Prompt Autofill
 
-Another reason why websites may not autofill properly is due to annotations.
+Another reason websites fail to autofill properly comes down to annotations (how attributes are assigned).
 
-The browser's autofill function tries to guess (heuristically) what to fill in where based on information it can get from the form (attributes such as `name` and `id`). However, in a browser designed for English, while it can easily guess that a straightforward English entry like `name="address"` represents an address, it is difficult to determine, using heuristics alone, that an annotation like `name="kokyakuJushoBanchi"`, which represents Japanese in Roman letters, is the street address portion of an address.
+A browser's autofill feature attempts to guess what should go into each field based on the available form attributes, such as `name` and `id` (using heuristics). In browsers designed primarily for English, straightforward values like `name="address"` make it easy to infer that a field represents an address. However, with annotations like `name="kokyakuJushoBanchi"` (Japanese written in romanized letters), it becomes very difficult for heuristics alone to recognize it as a street address.
 
-So, one way developers can improve this is to use a different annotation to the `name` attribute, which specifies what they want to be filled into which field. This is the `autocomplete` attribute.
+As an improvement, developers can provide annotations independent of the `name` attribute to explicitly state what belongs in each field: the `autocomplete` attribute.
 
-The `autocomplete` attribute previously only had `on` and `off` defined, but now has [a variety of other values defined](https://html.spec.whatwg.org/multipage/forms.html#autofill).
+Previously, `autocomplete` only supported `on` and `off`, but [many other values are now defined in the specification](https://html.spec.whatwg.org/multipage/forms.html#autofill).
 
 ![](/images/2016/whatwg-autofill.png)
 
-The parameters defined here are not yet available in all browsers, but some are available in Chrome and Safari.
+While the parameters defined here are not yet supported by all browsers, a subset of them can already be used in Chrome and Safari.
 
-Those with a keen eye may have already noticed that the structured autofill information saved in the browser corresponds to the `autocomplete` parameter defined here.
+You might have already noticed: the structured autofill data browsers store corresponds directly to the `autocomplete` parameters defined here.
 
 For addresses:
 
 * Name (`name`)
-* Affiliation (`organization`)
+* Organization (`organization`)
 * Country (`country`)
-* Postal Code (`postal-code`)
-* Prefecture (`address-level1`)
+* Postal code (`postal-code`)
+* State / Prefecture (`address-level1`)
 * City (`address-level2`)
-* Subsequent Address (`street-address`)
-* Phone Number (`tel`)
-* Email Address (`email`)
+* Street address (`street-address`)
+* Phone number (`tel`)
+* Email address (`email`)
 
 For credit cards:
 
-* Card Number (`cc-number`)
-* Cardholder Name (`cc-name`)
-* Expiration Month (`cc-exp-month`)
-* Expiration Year (`cc-exp-year`)
+* Card number (`cc-number`)
+* Cardholder name (`cc-name`)
+* Expiration month (`cc-exp-month`)
+* Expiration year (`cc-exp-year`)
 
-In other words, in the case of the postal code example, the correct way to write it is like this.
+In the case of a postal code, this means you should write:
 
 ```html
 <input type="text" name="zip-code" autocomplete="postal-code">
 ```
 
-(In this case, the `name` attribute can be anything, but since browsers don't support `autocomplete`, it's safer to use English and hope that heuristics will work.)
+(The `name` attribute can be anything, but using standard English names is a good practice to ensure heuristics still work on browsers that do not yet support `autocomplete`.)
 
-## summary
+## Summary
 
-Here are some ways to improve your forms on mobile web to increase conversions:
+Here is a summary of the two methods to improve forms and boost mobile web conversions covered in this post:
 
-* Adapt the form structure to the standard
-* Add the `autocomplete` attribute for proper annotation.
+* Align form structure with standard browser expectations
+* Provide proper annotations using the `autocomplete` attribute
 
-Now you should be able to take full advantage of the browser's autofill feature and have users fill in the required fields with just a few taps.
+By following these practices, you can make full use of browser autofill features and allow users to complete required fields with just a few taps.
 
-Finally, here's a code example of a form that summarizes the techniques we've covered today. (There are many other best practices, but we won't cover them here. If you're interested, please refer to [this page](https://developers.google.com/web/fundamentals/design-and-ui/input/forms/).)
+Below is an example form incorporating these techniques. (There are many other best practices, but they are omitted here. If you are interested, check out [these resources](https://developers.google.com/web/fundamentals/design-and-ui/input/forms/).)
 
 [http://jsbin.com/qubixac/edit?html](http://jsbin.com/qubixac/edit?html)
 
-You can try it out here (we've provided a separate link because credit card information cannot be processed unless it's HTTPS):
+You can also test it live [here](https://output.jsbin.com/qubixac). (Credit card information requires HTTPS, which is why a separate link is provided):
 
 ```html
 <form action="#">
@@ -237,4 +236,4 @@ You can try it out here (we've provided a separate link because credit card info
 </form>
 ```
 
-In the next article, we will introduce the latest browser features for the Payment Request API that can further improve conversions.
+In the next article, covering the Payment Request API, I'll introduce modern browser capabilities that can take conversion improvements even further.

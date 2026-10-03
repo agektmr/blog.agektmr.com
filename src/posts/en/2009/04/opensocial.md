@@ -1,104 +1,105 @@
 ---
+title: OpenSocial Permission Model
+author: Eiji
 layout: post
 lang: en
-title: "OpenSocial's permission model"
-description:
 date: 2009-04-29
+categories:
+  - FriendConnect
+  - OpenSocial
 tags:
   - パーミッションモデル
 translationOf: /2009/04/opensocial.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-Recently, there have been a few questions raised about OpenSocial permissions in the article "<a target="_blank" href="http://groups.google.com/group/opensocial-japan/browse_thread/thread/ffa5f8182c36252f#">Optional method for persisting data per Owner or per Owner* app in OpenSocial</a>", so I will summarize what data can be accessed in what circumstances, and also the permission model in FriendConnect.
+Recently, several questions regarding OpenSocial permissions were raised around "<a target="_blank" href="http://groups.google.com/group/opensocial-japan/browse_thread/thread/ffa5f8182c36252f#">OpenSocialでOwnner毎 or Owner*アプリ毎の永続化方法 オプション</a>". So, I'd like to summarize when and which data can be accessed, and along the way, cover the permission model in FriendConnect as well.
 
-First, as a minimum level of knowledge, you should understand the concepts of viewer/owner and basic information/personal information.
+First, let's establish some foundational knowledge: the concept of VIEWER / OWNER, and basic information vs. personal information.
 
-## Viewers and Owners
+## VIEWER and OWNER
 
-Gadgets are called different views depending on where they are placed. OpenSocial provides the standard home view, profile view, and canvas view. Please refer to [here][1].
+Gadgets are referred to differently depending on where they are placed, and this is called a "view." In OpenSocial, the standard views provided are home view, profile view, and canvas view. Please refer to [here][1].
 
-As you can see, gadgets in the home view are intended to be placed on your personal page, while gadgets in the profile view are intended to be placed on the profile page that others see. So what does "you see" and "others see" mean?
+As you can see, the assumption is that gadgets in the home view are placed on the user's own page (My Page) viewed by themselves, while the profile view is meant for profile pages viewed by others. So, what do "viewed by oneself" and "viewed by others" actually mean?
 
-OpenSocial gadgets have the concept of an owner. An owner is the person who has attached a gadget to a page. Conversely, the person who views a gadget is called a viewer.
+OpenSocial gadgets have the concept of an OWNER. An owner refers to the person who owns the page where the gadget is placed. Conversely, the person viewing the gadget is called the VIEWER.
 
-In other words, in the home view, "I see" refers to the owner and the viewer. Conversely, in the profile view, "others see" refers to the viewer looking at the page and the owner of the page. Of course, if the owner is looking at the profile page, the owner and the viewer are the same person. The same applies to the canvas view.
+In other words, in the home view, "viewed by oneself" means the person is both OWNER and VIEWER. In contrast, in the profile view, "viewed by others" involves the VIEWER looking at the page, and the OWNER who owns that page. Of course, in cases where the owner views their own profile page, the OWNER and VIEWER are the same person. The same applies to the canvas view.
 
-## Basic and personal information
+## Basic Information and Personal Information
 
-In OpenSocial, profile information is broadly divided into two categories.
-On goo Social Platform, this is called basic information (id, profileUrl, thumbnailUrl, nickname) and personal information (other profile information). For more details, please see [here][2].
+In OpenSocial, profile information is broadly divided into two categories.  
+In the goo Social Platform, these are categorized as basic information (id, profileUrl, thumbnailUrl, nickname) and personal information (all other profile details). For more details, it's best to look [here][2].
 
-Basic information is the minimum information required, while personal information is more detailed and important.
+Think of basic information as the minimum necessary data, and personal information as more detailed and sensitive data.
 
-## Basic rules
+## Basic Rules
 
-With this in mind, the following basic rules are necessary when exchanging various types of information.
+Based on this, here are the basic rules required when exchanging various types of information:
 
-* To obtain personal information, the target user (object) must have the same gadget installed.
-* If the object is a friend, basic information can be obtained even if the gadget is not installed.
-* Updates and deletions are only possible when the viewer is manipulating their own data.
-
- 
-
-Miso is
-
-* You can't get personal information from friends who don't have the gadget installed.
-* You can get personal information from non-friends who have the gadget installed.
-
-Where.
+*   To retrieve personal information, the target user (object) must have the same gadget installed.
+*   If the object is a friend, only basic information can be retrieved even if they do not have the gadget installed.
+*   Updates and deletions are only possible when the viewer is manipulating their own data.
 
  
 
-Many people may be wondering, "Why is it so troublesome?" or "Why can't personal information be obtained unless the gadget is installed?", but the simple reason is "protecting privacy."
+The key takeaways are:
 
-* Personal information is collected from users by containers.
-* Under the Personal Information Protection Act, collected personal information must not be used for purposes other than those previously notified.
-* Personal information is collected by containers, and users must understand that if it is transferred or disclosed to a third party (for use by developers on gadgets), the user must understand this.
-* Users must be able to understand who has collected their personal information.
-* Developers are theoretically able to leak or sell the personal information they receive.
-* Even if information is publicly available online, the legal implications are different if it is provided passively (e.g., by scraping) or actively (via an API). (In that sense, it's treated the same whether it's a closed social networking site like mixi or an open social networking site like goo Home.)
-* If a developer intentionally or accidentally leaks personal information, the developer is of course responsible, but the container that provided the information must have a reliable means of contacting the developer.
+*   Even if someone is your friend, you cannot retrieve their personal information if they haven't installed the gadget.
+*   Even if someone is not your friend, you can retrieve their personal information as long as they have the gadget installed.
 
  
 
-It's a little complicated, but for these reasons, the policy is basically to not give out personal information to gadgets that the user does not intend to use. This is not just a goo Home issue, and although it has not been made clear yet, I think that similar implementations will be used in all OpenSocial containers that will be released in the future, including mixi.
+Many people might wonder, "Why does it have to be so troublesome?" or "Why can't I access personal information unless the gadget is installed?" The short answer is simply "privacy protection."
 
-The special rules for the basic rules are complicated, so we won't explain them here. If you're interested, please see [here][3].
-
-FriendConnect Permissions Model
-
-Now that we've explained OpenSocial in general, let's consider gadget permissions in FriendConnect.
-
-While OpenSocial, a typical social networking service, determines whether or not to provide personal information based on whether or not a user has a gadget installed, FriendConnect is a bit different in that it is based on the idea that the owner of a gadget is not a person, but a website.
-
-If you read [this article][4], you will understand.
-
-> The Owner is the site. By the way, when I installed the FriendConnect gadget, I didn't automatically become a member. It seems that the owner is a virtual personality called the attached site.
-
-The key point is that the site has a virtual personality. In other words, with FriendConnect, the user cannot be the owner. Therefore, the general OpenSocial permission model explained above cannot be applied as is.
+*   Personal information is data that the container has collected from users.
+*   Under the Act on the Protection of Personal Information, collected personal information must not be used for purposes other than those notified in advance.
+*   Since personal information is collected by the container, when transferring or disclosing it to a third party (i.e., a developer using it within a gadget), the user must understand and consent to it.
+*   Users must be able to track who has accessed their personal information.
+*   It is theoretically possible for developers to leak or sell the personal information they receive.
+*   Even for information that is public on the web, there is a legal difference between passive provision (scraping, etc.) and active provision (via an API). (In that sense, whether it's a closed SNS like mixi or an open SNS like goo Home, the handling does not change.)
+*   If a developer leaks personal information intentionally or accidentally, the developer is naturally responsible, but the container that provided the information must also have a reliable means of contacting that developer.
 
  
 
-So, in what circumstances can FriendConnect collect personal information?
+It's a bit complicated, but for these reasons, the policy leans heavily toward not providing personal information to gadgets that the user has not intentionally chosen to use. This isn't just about goo Home; although not yet explicitly stated, I believe similar implementations will be adopted across all upcoming OpenSocial containers, including mixi.
 
-In reality, as far as I know, it is not yet possible to obtain more than basic information (personal information) on FriendConnect, so this is not necessarily correct, but it seems that the condition for obtaining permission is whether or not you are a member of the site.
+Note that special rules extending beyond the basic rules get quite complex, so I won't cover them here. If you're interested, please see [here][3].
 
-In other words the basic rules of FriendConnect:
+## FriendConnect's Permission Model
 
-* To retrieve personal information, the target user (object) must be registered on the site where the gadget is running.
-* If the object is registered on the same site, personal information can be retrieved (though this is only a guess, as it cannot actually be retrieved).
-* Updating and deleting are only possible when the viewer manipulates their own data.
+Now that we've covered standard OpenSocial, let's take a look at gadget permissions in FriendConnect.
 
-If you compare it with the general OpenSocial basic rules, you will see the difference.
+In standard SNS-based OpenSocial, whether personal information is provided or not is determined by whether the user has installed the gadget, but things are slightly different in FriendConnect. That's because it's based on the idea that the owner of the gadget is not a person, but a site.
+
+As you can see from [this article][4]:
+
+> The Owner is the site. Come to think of it, simply placing the FriendConnect gadget didn't automatically make me a member. The Owner seems to be played by the virtual persona of the site where it's embedded.
+
+The key point here is the "virtual persona of the site." In other words, in FriendConnect, **it's impossible for a user to become the owner**. Therefore, the permission model of standard OpenSocial described earlier cannot be directly applied.
 
  
 
-## summary
+So, under what circumstances can personal information be retrieved in FriendConnect?
 
-This time, I'd like to explain the permission model, which was a topic of many questions at the recent Hackathon. While it's just a hassle for developers, it's very important for containers and users to protect their privacy.
+In reality, as far as I know, it is not yet possible to retrieve anything beyond basic information (personal information) on FriendConnect, so this may not be completely definitive. However, it seems that "whether the user has joined the site" is the condition for obtaining permissions.
 
-Once you have reached a certain level in OpenSocial gadget development, I think it is important to have a solid understanding of this area.
+In other words, the basic rules for FriendConnect:
+
+*   To retrieve personal information, the target user (object) must be registered with the site where the gadget is running.
+*   If the object is registered with the same site, their information (including personal information) can be retrieved (this is an assumption, since it cannot actually be retrieved yet).
+*   Updates and deletions are only possible when the viewer is manipulating their own data.
+
+If you compare these side-by-side with the standard OpenSocial basic rules, you should be able to see the difference.
+
+ 
+
+## Summary
+
+In this post, I explained the permission model, which was the subject of many questions at the recent Hackathon. While it may just seem troublesome to developers, it is critically important for containers and users in order to protect privacy.
+
+Once your OpenSocial gadget development reaches a certain level, having a firm grasp of these concepts becomes essential.
 
  [1]: http://developer.home.goo.ne.jp/document/サイト構成
  [2]: http://developer.home.goo.ne.jp/document/友達情報を取得する#goo_Social_Platform.E3.81.8C.E6.89.B1.E3.81.86.E5.80.8B.E4.BA.BA.E6.83.85.E5.A0.B1

@@ -1,29 +1,31 @@
 ---
+title: I competed in the Silly App Championship.
+author: Eiji
 layout: post
 lang: en
-title: I participated in the Stupid App Championship
-description:
 date: 2009-07-19
+categories:
+  - イベント
 tags:
   - puniTouch
   - おばかアプリ選手権
   - チャンネー
 translationOf: /2009/07/obaka.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-By chance, I was invited to the "<a href="http://www.atmarkit.co.jp/fwcr/design/meeting02.html" target="_blank">Silly App Championship</a>" even though it wasn't my own work, so I took the opportunity to enter. The event was held at TOKYO CULTURE CULTURE in Odaiba.
+Through an unexpected turn of events, even though it wasn't my own work, I was roped into participating in the "<a href="http://www.atmarkit.co.jp/fwcr/design/meeting02.html" target="_blank">Obaka App Championship</a>," so I decided to take the opportunity and compete. The venue was TOKYO CULTURE CULTURE in Odaiba.
 
-The gadget that was announced is the hot topic! It is "<a href="http://platform001.mixi.jp/view_appli.pl?id=1357" target="_blank">Channel</a>" by <a href="http://yamashita.dyndns.org/blog/obaka-application-championship/" target="_blank">weboo</a>.
+What I presented was the hot topic: <a href="http://yamashita.dyndns.org/blog/obaka-application-championship/" target="_blank">weboo</a>'s "<a href="http://platform001.mixi.jp/view_appli.pl?id=1357" target="_blank">Chan-nee</a>" gadget.
 
-Channee is a social app that uses OpenSocial. The idea is to find a hairstyle that suits you by choosing your favorite from two photos of Channee that are displayed one after another. You can also reserve a specific hairstyle. You can see your friends' favorite hairstyles, and your favorites are reflected in the activity stream, which gives it a social app feel.
+Chan-nee is a social app built using OpenSocial. The concept is that by continuously choosing between two photos of girls ("chan-nee") displayed on screen, you eventually find your favorite hairstyle. You can also save the hairstyles you like. Being able to see your friends' favorite hairstyles and having your favorites reflected in the activity stream really gives it that social app feel.
 
-Well, I didn't do anything at all in the development.
+Well, not that I actually contributed anything to its development, though.
 
-Due to some common issues that arise during a live demo, we ended up using the mixi app instead of the goo home sandbox we had planned to use for the demo, which meant we didn't get a chance to show off the various features that weboo had prepared, which was a bit disappointing.
+During the actual event, typical troubles arose: we were originally planning to demo it using the goo home sandbox, but ended up having to use mixi apps instead. As a result, many of the features weboo had meticulously prepared didn't get their moment in the spotlight, which was a bit of a shame.
 
-However, <a href="http://d.hatena.ne.jp/technohippy/20090704#1247062733" target="_blank">Boob Engineer</a>, who also competed on Team Sexy, made up for it with some excellent conversation with <a href="http://punitouch.appspot.com/" target="_blank">puniTouch</a>, so it all worked out in the end.
+However, the <a href="http://d.hatena.ne.jp/technohippy/20090704#1247062733" target="_blank">Oppai Engineer</a>, who competed on the same "Team Sexy," saved the day with <a href="http://punitouch.appspot.com/" target="_blank">puniTouch</a> and some brilliant talk, so all's well that ends well.
 
-It was a very unique and fun event. I hope to enter next time with my own work.
+It was a truly unique event and a lot of fun. I hope I can enter with a creation of my own next time.
 
-Please see the report here. There is also a video.
+Check out the event report <a href="http://www.atmarkit.co.jp/fwcr/design/ux/d89clip10/01.html" target="_blank">here</a>. There is also a video.

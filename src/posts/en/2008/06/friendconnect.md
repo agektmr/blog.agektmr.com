@@ -1,8 +1,7 @@
 ---
+title: A Glimpse into the Future of the Social Web Through FriendConnect
 layout: post
 lang: en
-title: FriendConnect gives a glimpse into the future of the social web
-description:
 date: 2008-06-20
 tags:
   - OAuth
@@ -13,59 +12,56 @@ tags:
   - FriendConnect
   - SocialWeb
 translationOf: /2008/06/friendconnect.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-It's a little late, but I recently attended Google I/O in San Francisco.
+A bit late now, but I recently attended Google I/O held in San Francisco.
 
-The session that left the biggest impression on me was "OpenSocial, OpenID, and OAuth: Oh My!" by Joseph Smarr of Plaxo. It was by far the most popular of the sessions I saw, and the room was packed with people, with standing room only available.
+Among all the sessions, the one that left the strongest impression on me was "OpenSocial, OpenID, and OAuth: Oh My!" by Joseph Smarr of Plaxo. Out of all the sessions I saw, it was by far the most popular—not only were all the chairs in the room taken, but it was so packed that people were overflowing into the standing room.
 
-The topic was the future of the social web. Currently, the world is becoming closed off to services that own social graphs called OpenSocial. However, in the not-too-distant future, the web will become more globally socialized through technologies such as OpenSocial, OpenID, OAuth, and PortableContacts.
+The topic was the future of the social web. Currently, the landscape is centered around closed worlds where services hold their own OpenSocial social graphs, but the web of the near future will achieve socialization in a more global sense through technologies like OpenSocial, OpenID, OAuth, and [PortableContacts](http://www.portablecontacts.net/).
 
-For more details, please see the video and slides uploaded to Google Code. It's a very fast-paced presentation, but the content is very interesting.
+For details, [the video and slides are uploaded to Google Code](http://sites.google.com/site/io/opensocial-openid-and-oauth-oh-my), so please check them out. He talks quite fast, but it's very interesting content.
 
-The Implications of OpenSocial and FriendConnect
+## What OpenSocial and FriendConnect Mean
 
-Up until v0.7, OpenSocial only had a JavaScript API. This meant that applications were added to the OpenSocial container as gadgets from external services, and were used in a closed manner within the social graph of the OpenSocial container. Application developers could use OpenSocial's JavaScript API to obtain the friend list of the container site where the gadget was located and run their application there. Of course, it was possible to host gadgets on their own service domain, but gadgets only ran within the container, and it was impossible to import friend lists as external services, which essentially led to closed-door services.
+Up until v0.7, OpenSocial only offered a JavaScript API. For an OpenSocial container, this meant having external services add applications as gadgets, which were then used within the closed boundaries of that OpenSocial container's social graph. Application developers could use OpenSocial's JavaScript API to retrieve the friend list of the container site where the gadget was placed and run their application there. Of course, it was also possible to host the gadget on their own service's domain, but the gadget only ran on the container, and importing a friend list as an external service was impossible, effectively resulting in nothing more than walled-garden services.
 
-Now, with OpenSocial v0.8 + FriendConnect, this world is about to expand.
-When using a FriendConnect-enabled site, users have the right to choose the SNS service they want to use using OAuth. At the same time, their activity on the site is returned to the SNS service they choose to integrate with.
+However, OpenSocial v0.8 + FriendConnect dramatically expands that world. When users visit a FriendConnect-enabled site, they are given the choice via OAuth to select the SNS service they want to use. At the same time, their activity on that site is fed back into the chosen SNS service.
 
-Remember the social service element here?
+Let's recall the elements of a social service:
 
 1. Identity
-2. Social Graph (Friends List)
-3. Controlling Entry Visibility (Privacy)
+2. Social graph (friends list)
+3. Access control of posts (privacy)
 4. Feed
 
-**FriendConnect aims to solve identity issues with OpenID, social graph issues with the OpenSocial v0.8 RESTful API, entry visibility control with OAuth, and feed issues with Activity Stream.**
+**FriendConnect aims to solve Identity with OpenID, the social graph with OpenSocial v0.8's RESTful API, access control of posts with OAuth, and the feed with Activity Streams.**
 
-If we look deeply into these implications, the future of the social web becomes clear.
+Looking deeply into what these mean naturally reveals the future of the social web.
 
-## Joseph Smarr (Plaxo) on the Future of the Social Web
+## Joseph Smarr's (Plaxo) Vision for the Future Social Web
 
-To get a better understanding of FriendConnect, here's a blog post by Joseph Smarr about Plaxo's FriendConnect support:
+To further clarify the picture of FriendConnect, here is a blog post Joseph Smarr wrote when Plaxo introduced support for FriendConnect:
 
-[Plaxo and FriendConnect are now Best
-Friends](http://blog.plaxo.com/archives/2008/06/plaxo_and_frien_1.html)
+[Plaxo and FriendConnect are now Best Friends](http://blog.plaxo.com/archives/2008/06/plaxo_and_frien_1.html)
 
-Plaxo is now fully integrated with FriendConnect, Google's widget-based tool that makes any site social. Now, you can securely connect any FriendConnect-enabled site to your Plaxo account, see your friends on that site, and invite them to join. Best of all, your activity on that site will now stream into Pulse, allowing your Plaxo friends to stay in touch with you across the web and learn about new sites you discover. This is a truly useful and exciting integration—it brings us closer to a seamless social web ecosystem, where users can carry their identity and relationships with them everywhere on the web, discover contacts on new sites, share their activity with existing friends, and create a virtuous cycle of social discovery and sharing. This is the way the social web should be going—you shouldn't have to start from scratch every time you try a new social site (as most services do today). Every new experience you have should be engaging for others.
+> Plaxo is now fully integrated with FriendConnect, Google’s new widget-based tool for making any website social. Now any FriendConnect-enabled site can securely connect with your Plaxo account so you can see if your friends are there, invite friends, and—best of all—publish activities from that site back to Pulse, so your Plaxo friends can keep in touch with you across the web and find out about the new sites you discover.
+> 
+> This is a really useful and exciting integration—it’s a big step towards a [seamless social web ecosystem](http://therealmccrea.com/2008/05/02/can-lifestreaming-and-aggregation-go-mainstream/) where users can take their identity and relationships with them across the web, finding people they know on new sites, sharing activities back to their existing friends, and creating a virtuous cycle of more social discovery and sharing. That’s how the social web should work—not having to start over every time you use a new social site (like most of them make you do now). Every new experience you have should enrich all the others.
+> 
+> This can only happen if services give their users control of their data and provide secure access using open standards, and that’s exactly what we did with FriendConnect: we use [OAuth](http://oauth.net/) to connect your Plaxo account, so you never have to give out your Plaxo password and you can revoke access at any time; we use the [OpenSocial 0.8 RESTful Activities API](http://devlog.agektmr.com/wiki/index.php?cmd=read&page=OpenSocial%2FRESTful%20API%20Specification) for publishing activities back to Pulse using FriendConnect; and the only integration that wasn't an open standard is the address book API, which [we’re actively working to standardize](http://portablecontacts.net/). We strongly believe in our role as an [identity provider, social graph provider, and content aggregator](http://blog.plaxo.com/archives/2008/05/plaxo_becomes_s.html)—which means letting you take your data and relationships wherever you want on the web and share back from anywhere—which is good for you, good for Plaxo, and good for the whole web. But this is just the beginning—look for future enhancements like being able to choose which groups of people (friends, family, work, etc.) you share your activities with when publishing from FriendConnect-enabled sites.
+> 
+> Below is a screenshot of the Plaxo / Google FriendConnect integration in action—you can also experience it on any of the [sites using FriendConnect](http://www.google.com/friendconnect/home/examples).
 
-> This can only happen if services give users control over their data and provide secure access using open standards. And that's exactly what Plaxo wants to do with FriendConnect. When you connect your Plaxo account, we use [OAuth](http://oauth.net/), so you don't need to pass your Plaxo password and can disconnect later. When you use FriendConnect to share your activities with Pulse, you use the [OpenSocial 0.8 RESTful Activities
-> API](http://devlog.agektmr.com/wiki/index.php?cmd=read&page=OpenSocial%2FRESTful%20API%20Specification). The only integration that isn't an open standard is the Address Book API, which we've begun working on. We strongly believe in fulfilling our roles as an identity provider, social graph provider, and content aggregator. This means we empower users to carry and share their data and relationships anywhere on the web—a win for users, for Plaxo, and for the web as a whole. But we're just getting started—look forward to further enhancements, such as more granular control over who you share your activities with from FriendConnect-enabled sites, including family, friends, and business associates.
+Please check the [actual page](http://blog.plaxo.com/archives/2008/06/plaxo_and_frien_1.html) for the images.
 
-The screenshot below shows Plaxo's integration with Google FriendConnect—and you can experience it on any FriendConnect-enabled site.
+## Summary
 
-Please see the actual page for images.
+To be honest, I was somewhat skeptical about OpenSocial as merely a gadget container, but imagining the future painted by FriendConnect makes me excited again. I will continue to keep an eye on developments in this space.
 
-## summary
+## Update
 
-To be honest, I was somewhat skeptical about OpenSocial as a gadget container, but
-I'm excited about the future that FriendConnect envisions.
-I'll continue to follow developments in this area.
+I found an article touching on a similar topic, so I'm adding it and sending a trackback. (Trackback failed, so gave up on that orz)
 
-## postscript
-
-I found an article that touched on a similar topic, so I'll add it here and track it down. (I gave up because it didn't work out. ○|￣|＿)
-
-[Google's View of Social Networking – Three Trends: Special Report – CNET Japan](http://japan.cnet.com/special/story/0,2000056049,20375542,00.htm)
+[グーグルが見たソーシャルネットワーキング–その 3 つの傾向:スペシャルレポート – CNET Japan](http://japan.cnet.com/special/story/0,2000056049,20375542,00.htm)

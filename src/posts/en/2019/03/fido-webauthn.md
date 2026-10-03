@@ -1,8 +1,8 @@
 ---
 layout: post
 lang: en
-title: How a password-free world is possible - Learn the basics of FIDO2 and WebAuthn
-description:
+title: How a Passwordless World Is Realized - Understanding the Basics of FIDO2 and WebAuthn
+description: 
 date: 2019-03-14
 updated: 2022-06-06
 tags:
@@ -12,122 +12,122 @@ tags:
   - 認証
   - Authentication
 translationOf: /2019/03/fido-webauthn.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-Password-related incidents, such as fraudulent money transfers and account hijacking, are a constant occurrence. While the ideal world would be one in which even people with low IT literacy, such as the elderly, could easily and securely manage their online accounts, the history of the Internet has proven that the first priority is to realize a world without passwords. Recently, FIDO (Fast IDentity Online) has been gaining attention as a technology that will enable password-free logins. WebAuthn (Web Authentication) makes FIDO accessible from a browser. Based on reports, some may believe that these technologies are designed to achieve fingerprint authentication, but in reality, that's not quite the case.
+Incidents caused by passwords, such as unauthorized money transfers and account takeovers, show no sign of stopping. While an ideal world would allow anyone—including the elderly and those with limited tech literacy—to manage their online accounts easily and securely, the history of the internet has arguably proven that creating a passwordless world is the foremost priority. And now, FIDO (Fast IDentity Online) is drawing attention as the technology to make passwordless login a reality. Bringing FIDO to the browser is WebAuthn (Web Authentication). Based on media reports and the like, some people might think these are simply about fingerprint authentication, but that is not quite the case.
 
-Numerous articles have already been published about WebAuthn, so I will leave the technical details of how to use it to those articles. In this article, I will explain the big picture and the big vision of how this technology will change identity in the future.
+There are already [numerous articles](https://github.com/herrjemand/awesome-webauthn/blob/master/README.md) on WebAuthn, so I will leave the technical how-tos to them and focus in this article on the bigger picture—the grand vision of how this technology will reshape the future of digital identity.
 
 <!-- excerpt -->
 
-## Authentication Basics
+## Authentication Fundamentals
 
-To understand the concept of FIDO, it is essential to understand the basics of authentication.
+To understand the concepts behind FIDO, we must first cover the fundamentals of authentication.
 
-### Three Factors of Authentication
+### The Three Factors of Authentication
 
-It is said that there are three main elements that must be verified to confirm a person's identity, whether online or offline.
+Whether online or offline, there are generally considered to be three main factors used to verify a person's identity:
 
-* **Knowledge**: Something only you know, such as a password or security question.
-* **Possession**: A specific device only you have, such as a security key.
-* **Biometric**: The user's own fingerprint, iris, veins, face, etc.
+* **Knowledge**: Something only the user knows, such as a password or security question.
+* **Possession**: Something only the user has, such as a security key or a specific device.
+* **Biometrics**: Something unique to the user, such as fingerprints, irises, veins, or facial features.
 
 <figure>
   <img src="/images/2019/fido-1.png">
 </figure>
 
-For example, bank ATMs verify your identity by having the card (possession) and knowing the PIN (knowledge). Similarly, with credit cards that have a security chip, you insert the card into the terminal instead of signing and enter the correct PIN, which is two-factor authentication that satisfies both possession and knowledge.
+For example, at a bank ATM, identity is verified using two factors: having the card itself (possession) and knowing the PIN (knowledge). Similarly, with a chip-enabled credit card, inserting the card into a terminal instead of signing and entering the correct PIN constitutes two-factor authentication satisfying both possession and knowledge.
 
-However, these are offline cases, and the situation has been different for online authentication over the Internet via PCs and smartphones. In an all-online system, it is difficult to prove that you have something, and there was no infrastructure in place to read biometrics. For this reason, only knowledge-based authentication, such as passwords, has been used for a long time.
+However, these are offline scenarios; online authentication across the internet on computers and smartphones has historically been a different story. In an entirely online system, proving that you possess something was difficult, and the infrastructure for reading biometrics wasn't in place. As a result, for a long time, knowledge-based authentication—typified by passwords—was used almost exclusively.
 
-However, because passwords are used online, they are always at risk, with countless automated login attempts being made using programs, traps being set to anonymously steal information, and passwords being guessed. It can be said that both users and service providers have had difficulty using passwords safely if they did not know how to handle them properly.
+But because passwords exist online, they have always been inherently vulnerable to risks—automated brute-force login attempts, anonymous data theft via traps and phishing, or simple guessing. It is fair to say that both users and service providers have struggled to handle passwords securely without fully understanding best practices.
 
-### OTP and its weaknesses
+### OTP and Its Weaknesses
 
-Recently, a popular authentication method is combining a password with an OTP (One-Time Password). After entering your password, you enter a number sent to you via SMS or a number displayed on an app or device. In either case, the same number is never displayed to anyone other than you, making it more secure.
+That is why combining passwords with OTPs (One-Time Passwords) has gained popularity in recent years. After entering a password, the user enters a code sent via SMS or displayed on an app or dedicated device. Because the same code is not displayed to anyone else, this increases security.
 
 <figure>
   <img src="/images/2019/fido-2.png">
 </figure>
 
-However, OTPs have a weakness in that if they are intercepted, they can be used by a third party. For example, if you enter your password and OTP on a phishing site (a fraudulent site that looks exactly like the real thing but has a different URL) believing it to be genuine, your account will be stolen without you even realizing it.
+However, OTPs have a weakness: if intercepted, a third party can use them. For example, if a user falls for a phishing site (a fraudulent site that looks identical to the real one but has a different URL) and enters their password and OTP, their account can be hijacked without them even realizing it.
 
-Recently, multi-factor authentication using security keys has become increasingly popular, especially among enterprises. This method achieves two-factor authentication by combining a user's security key with their password to authenticate their ownership.
+Consequently, multi-factor authentication using security keys has grown popular recently, especially in enterprise environments. This achieves two-factor authentication by combining the user's security key as possession authentication with a password.
 
-### Public Key Cryptography and Security Keys
+### Public-Key Cryptography and Security Keys
 
-Proof of ownership using security keys is achieved using public key cryptography, which engineers will be familiar with using ssh and other similar methods.
+Proving possession using a security key is accomplished via public-key cryptography, a concept familiar to engineers through tools like SSH.
 
-In the case of passwords, the same string is stored in some form both in the user's mind and on the server, so if either is leaked, there is a risk of it being hijacked. However, with public key cryptography, the user has a private key and the server has a public key.
+With passwords, the same string is stored in some form both in the user's head and on the server, meaning that if either is compromised, the account is at risk of being hijacked. With public-key cryptography, however, different keys are kept on each side: a private key on the user's side and a public key on the server's side.
 
 <figure>
   <img src="/images/2019/fido-3.png">
 </figure>
 
-An interesting feature of private keys is that they can be verified with their corresponding public key, and a "signature" can be issued that can only be generated with that private key. If the server sends a random string called a challenge, and the user signs it using their private key and returns it, the server, which has the corresponding public key, can verify the signature and confirm that the challenge was sent by the user.
+The fascinating property here is that the private key can issue a "signature" that can only be generated by that private key and verified by the paired public key. When the server sends a random string called a challenge, the user signs it using the private key and sends it back. The server, holding the paired public key, can verify that signature to confirm that the challenge was returned by the legitimate user.
 
-The general flow is as follows.
+Here is the general flow:
 
-1. **Register (only required the first time)**: The user creates a public key pair, stores the private key in a safe place, and places the public key on the server.
-2. **Login**: The user receives a challenge from the server, signs it with the private key, and sends it back. The server verifies the signature and challenge using the public key, and if the user's identity is confirmed, grants access.
+1. **Registration (one-time only)**: The user creates a public-key pair, securely stores the private key, and sends the public key to the server.
+2. **Login**: The user receives a challenge from the server, signs it using the private key, and sends it back. The server verifies the signature and challenge using the public key, and grants access once the user's identity is verified.
 
-When using public key cryptography, a public key pair is created exclusively for the combination of that service and user, so even if a third party intercepts the signature through phishing or other means, it cannot be misused. Also, even if the server is cracked and the public key is leaked, it cannot be used to impersonate the user's account. As long as the user protects their private key, they can prove possession (User Presence = UP) and be authenticated, with the possibility of their account being hijacked extremely low.
+Using public-key cryptography, the key pair is created specifically for that user and service pair, so even if an attacker intercepts a signature through phishing, it cannot be reused. Furthermore, even if the server is compromised and the public key leaks, it cannot be used to impersonate the user's account. As long as users protect their private key, the risk of takeover is extremely low, and they can authenticate by proving possession (User Presence = UP).
 
-However, it is not as simple as it sounds to ask users with low IT literacy to store their private keys in a way that ensures they are never leaked.
+That said, expecting users with limited technical literacy to securely store their private keys without ever leaking them is easier said than done.
 
-To make this entire process easier for anyone, a system using a dedicated device called a security key was invented. A more general term for this is "authenticator." An authenticator has specialized authentication functions: it creates a new public key pair during registration, securely stores the private key, and returns only the public key, as well as generating and returning a signature upon login.
+To make this entire process accessible to anyone, a mechanism was invented using dedicated devices called security keys. In a broader sense, they are referred to as "authenticators." An authenticator has specialized capabilities for authentication: during registration, it creates a new key pair, securely stores the private key, and returns only the public key; during login, it generates and returns a signature.
 
-## Standardization by FIDO
+## Standardization Through FIDO
 
-Authenticators are valuable, but if their mechanisms differ for each PC, smartphone, OS, and platform, they will not become widespread. This is where standardization by an organization called the [FIDO Alliance](https://fidoalliance.org/) comes in. The FIDO Alliance defined CTAP (Client To Authenticator Protocol), a protocol for communication between devices and authenticators, [UAF (Universal Authentication Framework)](https://fidoalliance.org/specs/fido-uaf-v1.1-ps-20170202/fido-uaf-overview-v1.1-ps-20170202.html), which enables identity verification using biometric information, and [U2F (Universal Second Factor)](https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.html), which enables two-factor authentication. These specifications have been implemented on multiple platforms and are in actual use.
+As great as authenticators are, widespread adoption cannot be expected if the mechanisms differ across PCs, smartphones, OSes, and platforms. This is where standardization by an organization called the [FIDO Alliance](https://fidoalliance.org/) comes in. The FIDO Alliance defined CTAP (Client to Authenticator Protocol) for communication between devices and authenticators, [UAF (Universal Authentication Framework)](https://fidoalliance.org/specs/fido-uaf-v1.1-ps-20170202/fido-uaf-overview-v1.1-ps-20170202.html) for biometric verification, and [U2F (Universal Second Factor)](https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-overview-v1.2-ps-20170411.html) for two-factor authentication. These specifications have been implemented and used across multiple platforms.
 
-For example, U2F has enabled biometric authentication on Docomo mobile phones. While not yet implemented as a browser feature, the desktop version of Google Chrome has an invisibly installed extension that allows users to use USB U2F security keys via a JavaScript API. Additionally, installing the Google Authenticator app allows users to use NFC-enabled U2F security keys on the Android version of Google Chrome. It also appears that Firefox can use U2F security keys by setting a flag. These U2F-based two-factor authentication features are available for services such as Google, Dropbox, and Facebook.
+For instance, UAF brought [biometric authentication to NTT DOCOMO mobile devices](https://www.nttdocomo.co.jp/info/news_release/2015/05/13_00.html). In desktop Google Chrome, while not originally implemented as a native browser feature, a built-in [extension](https://github.com/google/u2f-ref-code) enables USB U2F security keys via a [JavaScript API](https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-u2f-javascript-api-v1.2-ps-20170411.html). Furthermore, by installing the [Google Authenticator app](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2), Google Chrome on Android can similarly use NFC-enabled U2F security keys. Firefox also [supports U2F security keys behind a flag](https://wiki.mozilla.org/Security/CryptoEngineering#Using_U2F_.2F_WebAuthn). This U2F-based two-factor authentication is already available on services like Google, Dropbox, and Facebook.
 
-## And now to FIDO2
+## And On to FIDO2
 
-To further promote adoption and convenience, FIDO subsequently developed a new, expanded version: FIDO2. FIDO2 unified UAF and U2F, standardizing the CTAP2 protocol for communicating with authenticators and a W3C-based JavaScript API called WebAuthn (Web Authentication) for handling authenticators from a browser. It has already been implemented in Google Chrome, Mozilla Firefox, and Microsoft Edge, and Apple Safari appears to be well underway.
+To pursue wider adoption and usability, FIDO later developed an expanded new version: FIDO2. In FIDO2, UAF and U2F were unified, and alongside the [CTAP2](https://fidoalliance.org/specs/fido-v2.0-ps-20190130-pub/fido-client-to-authenticator-protocol-v2.0-ps-20190130.html) protocol for communicating with authenticators, a W3C-based JavaScript API called [WebAuthn (Web Authentication)](https://www.w3.org/TR/webauthn/) was standardized for interacting with authenticators from browsers. It is already implemented in [Google Chrome](https://developers.google.com/web/updates/2018/05/webauthn), [Mozilla Firefox](https://hacks.mozilla.org/2018/01/using-hardware-token-based-2fa-with-the-webauthn-api/), and [Microsoft Edge](https://blogs.windows.com/msedgedev/2018/07/30/introducing-web-authentication-microsoft-edge/), and [Apple Safari's implementation is well underway](https://bugs.webkit.org/show_bug.cgi?id=181943).
 
-Not only has the FIDO2 specification been refined, but it has also been implemented as a standard in browsers and platforms, making it easier for general developers to use, and it is expected to become more widely used in the future.
+Beyond having a refined specification, FIDO2 is expected to see widespread adoption because its standard implementation across browsers and platforms makes it easily accessible to general developers.
 
 ### FIDO2 and Authenticators
 
-One thing that is often overlooked when understanding FIDO2 is the characteristics of authenticators. Many people know that fingerprint authentication can be used with FIDO2 and WebAuthn, but are unable to explain how it relates to security keys.
+An often overlooked aspect when understanding FIDO2 is the characteristics of authenticators. While many people know that fingerprint authentication can be used with FIDO2 and WebAuthn, quite a few may not be able to explain how that relates to security keys.
 
-There are many different types of authenticators: those that support U2F, those that connect via USB-C, those that connect via BLE, those that are built into devices such as smartphones and PCs, those that can authenticate using fingerprints, etc. Although they may seem complicated at first glance, they can be classified based on three criteria.
+Authenticators come in various forms: those supporting U2F, connecting via USB-C, connecting via BLE, embedded in devices like smartphones or PCs, capable of fingerprint authentication, and so on. While it seems complex at first glance, they can be categorized along three criteria:
 
-* **Transport**: The connection method between the authenticator and the device. Available options are USB, BLE, NFC, and internal.
-* **Attachment**: Whether the authenticator is directly built into the device (such as a smartphone or PC) (platform) or not (cross-platform).
-* **User Verification (UV)**: Whether or not it has identity authentication functionality, including biometric authentication.
+* **Transport**: How the authenticator connects to the device: USB, BLE, NFC, or internal.
+* **Attachment**: Whether it is directly embedded in a device like a smartphone or PC (`platform`), or not (`cross-platform`).
+* **User Verification (UV)**: Whether it includes identity verification capabilities, including biometrics.
 
 <figure>
 <img src="/images/2019/fido-4.png" >
-<figcaption> Typical security key image</figcaption>
+<figcaption>A typical security key</figcaption>
 </figure>
 
-For example, the [YubiKey 5 Nano](https://www.yubico.com/product/yubikey-5-nano/#yubikey-5-nano) has a Transport of USB, and because it can be removed from the device (although it is intended to be left attached), the Attachment is cross-platform, and the UV is "none."
+For example, the [YubiKey 5 Nano](https://www.yubico.com/product/yubikey-5-nano/#yubikey-5-nano) can be classified as having USB transport, cross-platform attachment (since it can be removed from the device, even if intended to be left plugged in), and no UV.
 
-[Feitian BioPass FIDO](https://www.ftsafe.com/Products/FIDO2) is categorized as USB for Transport, cross-platform for Attachment since it can be removed from the device, and UV is categorized as "yes" since it supports fingerprint authentication.
+The [Feitian BioPass FIDO](https://www.ftsafe.com/Products/FIDO2) has USB transport, cross-platform attachment (removable), and UV support via fingerprint authentication.
 
-What's interesting is authenticators where Attachment is a platform. For example, the [Google Pixel 3](https://store.google.com/product/pixel_3) can treat the device itself as an authenticator. In this case, Transport is internal, Attachment is platform, and fingerprint authentication is available, so it can be classified as UV "enabled."
+The interesting ones are authenticators with `platform` attachment. For instance, a [Google Pixel 3](https://store.google.com/product/pixel_3) can treat the device itself as an authenticator. In this case, transport is internal, attachment is `platform`, and it supports UV since fingerprint authentication is available.
 
-Many security keys and authenticators currently on the market can be used with FIDO as U2F, but they are backward compatible and can also be used with FIDO2. The distinctive feature of FIDO2 is the User Verification section.
+Most security keys and authenticators currently on the market can be used with FIDO as U2F devices, and because of backward compatibility, they also work with FIDO2. What makes FIDO2 distinctive is the User Verification aspect.
 
-### What is User Verification?
+### What Is User Verification?
 
-User Verification refers to the identity verification function of an authenticator. Identity verification here includes biometric authentication such as fingerprint, face, and iris recognition, as well as non-biometric fallback methods such as a PIN. With a PIN, identity verification is performed by entering a pre-set short string of numbers or alphanumeric characters via a UI such as a browser. With UV-enabled authenticators, a signature will not be issued unless identity verification is successful. This is why people say FIDO2 will eliminate the need for passwords.
+User Verification refers to the authenticator's capability to verify the user's identity. Identity verification here includes biometric authentication like fingerprint, face, or iris recognition, as well as non-biometric fallbacks like a PIN. In the case of a PIN, verification is done by entering a pre-configured short number or alphanumeric string through a browser or system UI. Authenticators with UV will not issue a signature unless identity verification succeeds. This is the core mechanism behind the promise that FIDO2 eliminates the need for passwords.
 
-In other words, security keys with fingerprint authentication capabilities, such as the BioPass FIDO mentioned above, Android devices with biometric authentication capabilities, Windows devices that support Windows Hello, and in the future iOS/macOS that support TouchID or FaceID, can combine public key cryptography-based ownership authentication (User Presence = UP) with biometric authentication (User Verification = UV) to **achieve two-factor authentication on their own**, creating an environment where you can log in completely without a password.
+In other words, fingerprint-enabled security keys like the aforementioned BioPass FIDO, Android devices with biometric capabilities, Windows devices supporting Windows Hello, and eventually iOS/macOS supporting Touch ID and Face ID, combine possession authentication via public-key cryptography (User Presence = UP) with biometric authentication (User Verification = UV). This achieves **two-factor authentication within a single device**, paving the way for a completely passwordless login experience.
 
 <figure>
 <img src="/images/2019/fido-5.png" >
 </figure>
 
-Wouldn't it be great if it not only eliminated the risk of passwords, but also allowed you to log in just by touching and looking?
+Not only does it eliminate the risks of passwords, but being able to log in just by touching or looking at your device—isn't that amazing?
 
-The future of FIDO2
+## The Future Enabled by FIDO2
 
-If you have one of the authenticators listed above, you can try out the demo.
+If you have any of the authenticators mentioned above, you can try out a live demo:
 
 [https://try-webauthn.appspot.com](https://try-webauthn.appspot.com/)
 
@@ -136,75 +136,75 @@ If you have one of the authenticators listed above, you can try out the demo.
 <figcaption>webauthndemo.appspot.com</figcaption>
 </figure>
 
-If you want to try out the U2F security key, you can register it by clicking "Register New Credential" and try logging in by clicking "Authenticate" (this works on Chrome, Firefox, and Edge).
+To test a U2F security key, click "Register New Credential" to register, and "Authenticate" to log in (works on Chrome, Firefox, and Edge).
 
-If you want to try biometric authentication built into your device, such as Android fingerprint authentication or MacBook Pro TouchID, you can register it with "Register Platform Authenticator" and try logging in with "Authenticate" (as of March 2019, this only works with Chrome). If all goes well, a dialog will appear in your browser, allowing you to try fingerprint authentication. "ISUVPAA" stands for "Is User Verifying Platform Authenticator Available" and tells you whether you are using a device (Platform Authenticator) with an embedded authenticator, including biometric authentication (User Verification).
+To test built-in biometrics like fingerprint recognition on Android or Touch ID on a MacBook Pro, click "Register Platform Authenticator" to register, and "Authenticate" to log in (as of March 2019, this only works on Chrome). If successful, a dialog will appear in the browser allowing you to test fingerprint authentication or similar methods. "ISUVPAA" stands for "Is User Verifying Platform Authenticator Available," which tells you whether you are using a device with an embedded authenticator (Platform Authenticator) supporting identity verification (User Verification).
 
-If you open the menu on the left, you can adjust the parameters in more detail individually, but we will not explain that here.
+Opening the left menu allows you to tweak more detailed parameters individually, though I will skip explaining those here.
 
-### New User Experience - Re-authentication
+### A New User Experience: Re-authentication
 
-One of the new and unprecedented user experiences using FIDO2 is re-authentication. This allows users to log in to a device they have already logged in to again using just their fingerprint. This experience has already been realized at Yahoo! JAPAN, where users can log in again using just their fingerprint if they are using the browser on the same device. (Image taken from the press release)
+One novel user experience enabled by FIDO2 is re-authentication. The idea is that once you log in on a device, subsequent logins on that device can be done with just fingerprint authentication. This experience is already [implemented by Yahoo! JAPAN](https://id.yahoo.co.jp/security/manage_auth_device.html), where re-logging in on the same browser on that device requires only a fingerprint. (Image quoted from the [press release](https://about.yahoo.co.jp/pr/release/2018/10/231023/a/))
 
 <figure>
 <img src="/images/2019/fido-8.png" >
-<figcaption>Yahoo! JAPAN re-authentication flow</figcaption>
+<figcaption>Yahoo! JAPAN's re-authentication flow</figcaption>
 </figure>
 
-This is particularly useful in places like banks and shopping sites that require high security. There are many banks that require you to log in every time you return after a short session, and many shopping sites that require you to re-enter your password when paying. If you can authenticate with your fingerprint or face in such situations, you can expect users to use the site without compromising the user experience.
+This truly shines in contexts that require high security, such as banking and e-commerce websites. Many banks enforce short session timeouts and require you to log in every time you return, and many shopping sites ask you to re-enter your password at checkout. Being able to authenticate with a fingerprint or face in those moments preserves a seamless user experience without compromising security.
 
-### Authenticators are bound to devices
+### Authenticators Are Bound to Devices
 
-I said "once logged in on a device," but why is biometric authentication tied to the same device? You might think that even if you switch to a different device, it's fine if you can continue to log in using the same fingerprint of the same person.
+I mentioned "once you log in on a device," but why is biometric authentication tied to a specific device? You might wonder: if it's the same person with the same fingerprint, why shouldn't you be able to log in directly on a different device?
 
-This is because, for security reasons, the biometric data used for biometric authentication is stored only on the device and is protected so that it cannot be accessed from the network or unrelated software. The same is true for private keys, so ownership authentication cannot be used across devices. In other words, with FIDO2, every time you change devices, you need to log in to the same account in some way, create a new public key pair linked to it, and register your biometric information.
+For security reasons, the biometric data used for authentication is stored exclusively on that device and shielded from network or unauthorized software access. The same applies to the private key, meaning possession authentication cannot simply be used across devices either. In other words, with FIDO2, whenever you switch to a new device, you must somehow log in to the account, generate a new key pair bound to that device, and register your biometrics.
 
-Currently, the most common environments for biometric authentication are platform-specific authenticators such as Android devices and MacBook Pros, but there are also cross-platform authenticators such as BioPass FIDO. For example, by using this, you can log in to the same account anywhere using fingerprint authentication by simply inserting the authenticator into the device you want to log in to.
+Currently, the most common environments for biometric authentication that come to mind are `platform` authenticators like Android devices or MacBook Pros, but `cross-platform` authenticators like the BioPass FIDO also exist. With one of those, you can simply plug the authenticator into any device you want to log into and sign in with your fingerprint anywhere.
 
-However, since the majority of users will not purchase a cross-platform authenticator, if you want to implement FIDO2, you must come up with a practical solution for how those users will log in to a new device for the first time. If users create a password, that could potentially become an opportunity for account hijacking, so if security is a priority, a more practical solution may be to not require users to create a new password, but to have them log in by sending a temporary code via email or SMS.
+However, the vast majority of users will not buy a cross-platform authenticator. Therefore, if you plan to adopt FIDO2, you must consider practical solutions for how these users log in to a new device for the first time. Allowing them to create a password creates an opening for account takeover; thus, for security-minded services, sending a temporary code via email or SMS to let them log in—without creating a password—may become the realistic approach.
 
-### Turn your smartphone into an authenticator using caBLE {#cable}
+### Turning Smartphones into Authenticators with caBLE {#cable}
 
-Google has proposed an extension to FIDO2 called caBLE (cloud assisted BLE, or "cable"), which would enable smartphones to be used as cross-platform authenticators for BLE. If this is realized, it is expected that many people will be able to use the smartphones they already carry as authenticators, without having to go to the trouble of preparing a dedicated authenticator, enabling password-free login across devices.
+Google has [proposed a FIDO2 extension called caBLE (cloud assisted BLE)](https://github.com/w3c/webauthn/pull/909). This enables smartphones to serve as BLE cross-platform authenticators. If realized, instead of requiring a dedicated hardware authenticator, the smartphones that most people already carry could be used as authenticators, making passwordless login possible across devices.
 
-In any case, we will need to design systems that take into account account recovery, which restores an account from scratch, including cases where an authenticator has been lost.
+In any case, system design will need to account for account recovery from scratch—including scenarios where an authenticator is lost—for the foreseeable future.
 
-### Resident Key {#resident-key}
+### Resident Keys {#resident-key}
 
-The future proposed by FIDO2 also includes another exciting feature: Resident Keys. Authenticators have a data store where, whenever you register with a service and create a public key pair, information about the user is stored along with information about the service.
+Another exciting capability proposed in FIDO2 is the Resident Key. Authenticators have internal storage, and whenever a key pair is created during registration with a service, user information is stored alongside metadata about the service.
 
-When logging in without using Resident Key, the user must declare the account they want to use to log in. However, with Resident Key, you can create a user experience where a list of accounts pre-saved in the authenticator is displayed, and the user can select one and log in using biometric authentication.
+When logging in without a Resident Key, the user must declare which account they want to log into. With a Resident Key, however, the authenticator can present a list of previously stored accounts, allowing the user to select one, perform biometric verification, and log in.
 
 <figure>
 <img src="/images/2019/fido-7.png">
-<figcaption>Resident Key Mockup</figcaption>
+<figcaption>Mockup of Resident Keys</figcaption>
 </figure>
 
-This feature has not yet been implemented in Chrome, but it is already available in Edge (non-Chromium version) on Windows 10, and you can benefit from it by using a cross-platform authenticator that supports Resident Key. Because Windows is essentially a desktop OS, people who use Windows Hello as a platform authenticator may not see the benefits as readily. However, if cross-platform authenticators become possible with caBLE, which is implemented on mobile devices like Android and iPhone in the future, it will enable a world in which you can always carry your identity with you.
+While not yet implemented in Chrome, this feature is already available in Edge on Windows 10 (the non-Chromium version), and you can take advantage of it using a cross-platform authenticator that supports Resident Keys. Since Windows is primarily a desktop OS, users relying on Windows Hello as a platform authenticator might not feel the benefit immediately. However, if mobile devices like Android phones or iPhones can act as cross-platform authenticators via caBLE in the future, it will enable a world where you carry your identity with you everywhere.
 
-The day may come when our smartphones will become a representation of our identity, allowing us to navigate the internet without having to log in.
+The day may come when your smartphone embodies your identity, letting you navigate the internet without ever hitting the barrier of a login prompt.
 
-### What is Attestation {#attestation}
+### What Is Attestation? {#attestation}
 
-This has gotten quite long, but there's one more important thing to mention. Even though FIDO2 offers strong security, it would be pointless if a forged, malicious authenticator were already in possession of the user. This is why FIDO2 includes a mechanism called attestation.
+This is getting quite long, but there is one last important topic. Even if FIDO2 provides robust security, it all falls apart if a user is duped into using a counterfeit, malicious authenticator. This is why FIDO2 incorporates a mechanism called Attestation.
 
-Attestation is like a certificate, and a different certificate is pre-embedded for each authenticator model (not device-specific). By using a root certificate authority called MDS (Metadata Service), the server can verify whether this attestation is genuine. Of course, the FIDO Alliance also has a certification system that certifies authenticators, so we recommend using a certified authenticator (Android was recently certified). For more information on attestation, please see this article (in English).
+Attestation is essentially a certificate embedded in the authenticator, differing per authenticator model (typically not per individual device). Using something akin to a root certificate authority called the MDS (Metadata Service), the server can verify whether this Attestation comes from a legitimately manufactured device. Of course, the FIDO Alliance also offers a [certification program](https://fidoalliance.org/certification/) that validates authenticators, so using certified authenticators is recommended ([Android was recently certified](https://fidoalliance.org/android-now-fido2-certified-accelerating-global-migration-beyond-passwords/)). For more on Attestation, I highly recommend reading [this article](https://fidoalliance.org/fido-technotes-the-truth-about-attestation/), which provides an excellent overview.
 
-Unless required for compliance reasons (such as for banks, enterprises, or government agencies), there is usually no need to request attestation. (Note: If you are using it in a Google enterprise environment, please also see the [Security Keys page on the Chromium website](https://www.chromium.org/security-keys).) Ideally, each user would only need to have one authenticator. If you do use it, make sure to take advantage of MDS to avoid accepting only certain models.
+That said, unless required for compliance purposes (such as in banking, enterprise, or government), requesting Attestation is generally unnecessary. (If you are using them in Google's enterprise environment, please also check out the [Security Keys page on the Chromium website](https://www.chromium.org/security-keys).) Furthermore, in an ideal world, a user would only need to carry a single authenticator. If you do use Attestation, leverage the MDS properly to avoid restricting access to only specific device models.
 
-**Updated: 2019/03/18** We initially wrote that Attestation was "not recommended from a privacy perspective," but we have temporarily withdrawn this statement as we cannot rule out the possibility that this was a misunderstanding on our part. We will update this statement as soon as we have accurate information.
-**Updated: 2019/03/22** We have confirmed that there are virtually no privacy concerns, so we have revised the above statement.
+**Update: 2019/03/18** I initially noted that Attestation was "not recommended from a privacy perspective," but I have temporarily retracted that statement as it may have been based on a misunderstanding. I will update this once accurate information is confirmed.
+**Update: 2019/03/22** Having confirmed that privacy concerns are essentially non-existent, I have revised the wording above.
 
-## summary
+## Summary
 
-If you'd like to try implementing FIDO2 fingerprint authentication using WebAuthn development from a browser, we recommend starting with the codelab created by FIDO evangelist Yuriy Ackermann. His Medium post covers not only browser-side but also server-side signature verification and various attestation methods, so we recommend reading it thoroughly. It's also very helpful to have a collection of resources, including documentation, libraries, and demos in one place, including those in Japanese.
+If you want to experience implementing FIDO2 fingerprint authentication using WebAuthn from a browser, I recommend starting with the [codelab](https://slides.com/fidoalliance/jan-2018-fido-seminar-webauthn-tutorial) created by FIDO evangelist [Yuriy Ackermann](https://twitter.com/herrjemand). [His Medium](https://medium.com/@herrjemand/) covers not only the browser side but also signature verification and various Attestation verification methods on the server side, so it is well worth a thorough read. Additionally, curated resources compiling documentation, libraries, and demos—including Japanese resources—are extremely helpful:
 
 [WebAuthn Awesome](https://github.com/herrjemand/awesome-webauthn/blob/master/README.md)
 
-However, if you're thinking of immediately implementing FIDO2 and WebAuthn in production, please be a little cautious. While there is certainly a lot of information and compatible environments available, it must be said that the server-side discussion is still in its infancy. Unless your team is extremely confident in their encryption-related products, I don't think it's time to jump in and use them carelessly.
+However, if you are thinking about jumping right in and deploying FIDO2 and WebAuthn to production—please exercise some caution. While the documentation and platform support are coming together, the server-side ecosystem is still in an immature stage. Unless your team has exceptional confidence in building cryptographic products, it may not be time to tackle it indiscriminately just yet.
 
-Some people have already released open source libraries (the Japanese community is particularly active even on a global scale), and some companies, such as Yahoo! JAPAN, have already started using them in production environments. We will likely see IDaaS products and FIDO Certified libraries in the future. LINE has announced that it will release its own FIDO Certified library as open source within this year.
+Some developers have already released open-source libraries (the Japanese community's efforts are remarkably active on a global scale), and production use cases like Yahoo! JAPAN are emerging. IDaaS products and FIDO Certified libraries will likely arrive soon. LINE has also announced plans to open-source its own FIDO Certified library within the year.
 
-It's not too late to put FIDO2/WebAuthn into production once there are enough proven results, products, and open source solutions. I recommend starting by reading various documents and thinking about the future that FIDO2 and WebAuthn can realize.
+It won't be too late to roll out FIDO2/WebAuthn to production once more track records, products, and open-source solutions have matured. For now, I encourage you to start by reading the documentation and imagining what kind of future FIDO2 and WebAuthn can enable.
 
-Finally, I'd like to thank [@herrjemand](https://twitter.com/herrjemand), [@super_reader](https://twitter.com/super_reader), [@watahani](https://twitter.com/watahani), and [@sisidovski](https://twitter.com/sisidovski) for their reviews and help in writing this article.
+Finally, I would like to thank [@herrjemand](https://twitter.com/herrjemand), [@super_reader](https://twitter.com/super_reader), [@watahani](https://twitter.com/watahani), and [@sisidovski](https://twitter.com/sisidovski) for reviewing this article.

@@ -1,30 +1,29 @@
 ---
+title: I made personal business cards.
 layout: post
 lang: en
-title: I made a personal business card
-description:
 date: 2010-04-13
 tags:
   - 勉強会
   - 名刺
 translationOf: /2009/09/namecard.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-I originally wrote this on my private blog, but I wanted to share it here as well.
+I originally wrote this on my personal blog, but I really wanted to share it here as well.
 
-I've been attending study groups and other events a lot lately, and I've always wanted to get a personal business card. However, I don't like the small, everyday cards, and there are so many services that make business cards that I haven't gotten around to getting one... Then I came across this article.
+Since I started attending tech meetups and study groups frequently, I'd been wanting my own personal business cards for a long time. However, I didn't want the typical mini-sized cards, and with so many printing services out there, I had trouble deciding where to start... That's when I stumbled upon this article:
 
-[Blogger business cards, shipping included, only 1000 yen!](http://blog.goo.ne.jp/batacchi/e/f81808a384944befed668cab7a8c3993)
+[ブロガー名刺、送料込みで１０００円じゃすと！](http://blog.goo.ne.jp/batacchi/e/f81808a384944befed668cab7a8c3993)
 
-I wanted to be particular about the design, and the price was reasonable, so I thought, "This is it!" and applied right away.
+I wanted to be particular about the design, and the price was so reasonable that I thought, "This is it!" and placed an order right away.
 
-It was only 1,300 yen for 100 full-color sheets, and they were generous enough to let me redo the design as many times as I wanted. I took them up on their offer, and it took about a month to finish, but it's finally finished.
+It was only 1,300 yen for 100 full-color cards, plus they generously offer unlimited design revisions. Taking full advantage of that offer, it took about a month to finalize, but they're finally done!
 
 <img style="display: block; margin-left: auto; margin-right: auto; border: 0px initial initial;" title="個人名刺" src="https://farm4.static.flickr.com/3469/3896447881_6c80d0f4a7.jpg" alt="" width="500" height="333" />
 
-I was talking about blogger business cards, but recently I've been meeting people at study groups and Twitter is the most easily understood, so I made it the main one, with OpenSocial-related content as a bonus. I made the title SocialWeb Japan. Of course, I included the blog URL.
+Although it's billed as a "blogger business card," Twitter is the easiest way to connect with people I meet at study groups these days, so I made Twitter the main focus and added OpenSocial-related info as a bonus. For my title, I went with SocialWeb Japan. And of course, I included my blog URL.
 
-So, I'm happy with the finished product. I've only given it to my wife so far. I hope someone gets it soon!
+All in all, I'm very happy with how they turned out. So far, I've only given one to my wife. Someone take one off my hands, quick!
 
-I'm so grateful to [Maekawa Planning Printing](http://www.kobe-maekawa.co.jp/) for this finish at this price! Please give it a try!
+Getting this level of quality at this price—a huge thank you to [前川企画印刷さん](http://www.kobe-maekawa.co.jp/)! I highly recommend them to everyone!

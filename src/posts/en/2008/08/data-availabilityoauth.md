@@ -1,8 +1,7 @@
 ---
+title: Trying out OAuth with Data Availability
 layout: post
 lang: en
-title: Try OAuth with Data Availability
-description:
 date: 2008-08-06
 tags:
   - Data Availability
@@ -10,68 +9,61 @@ tags:
   - OAuth
   - OpenSocial
 translationOf: /2008/08/data-availabilityoauth.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-As promised in the previous entry, I'll actually write some server-side code and test OAuth using MySpace's Data Availability. [Data
-Availability](http://developer.myspace.com/community/myspace/dataavailability.aspx)
-The name may sound a bit pretentious, but it's actually the OpenSocial RESTful API. Incidentally, Data Availability currently only supports JSON format and doesn't support AtomPub (and it returns a 404 error, which was quite frustrating).
-This time, I'll explain how to use OAuth to obtain authentication and authorization and then call the Data Availability API.
+As promised in my [previous post](http://devlog.agektmr.com/archives/79), I will write some actual server-side code to test OAuth using MySpace's Data Availability. While the name [Data Availability](http://developer.myspace.com/community/myspace/dataavailability.aspx) might sound grandiose, it is actually an OpenSocial RESTful API. By the way, Data Availability currently only supports the JSON format and does not support AtomPub yet (plus it returns a 404, which tripped me up quite a bit orz). In this post, I will explain how to obtain authentication and authorization using OAuth and call the Data Availability API.
 
 ## Preparation
 
-First, create an app on MySpace in a sandbox environment. If you don't know the detailed steps, please refer to [here](http://itpro.nikkeibp.co.jp/article/COLUMN/20080708/310341/).
+First, create an app in the MySpace sandbox environment. If you are unsure of the specific steps, please refer to [this guide](http://itpro.nikkeibp.co.jp/article/COLUMN/20080708/310341/).
 
-It seems that MySpace treats gadget apps and external apps the same.
+In MySpace, gadget apps and external apps seem to be handled in the same way.
 
 ![MySpaceApps](/images/2008/08/e38394e382afe38381e383a3-11.jpg)
 
-Edit Details allows you to edit the application's detailed settings.
+Opening Edit Details lets you edit the application's detailed settings.
 
-Let's recall what you need to use OAuth:
-First, you need a consumer key (consumer_key) and a consumer secret (consumer_secret).
+Recall [what is required to use OAuth](http://devlog.agektmr.com/archives/79). First are the consumer key (consumer_key) and consumer secret (consumer_secret).
 
 ![MySpaceAppConsumer](/images/2008/08/e38394e382afe38381e383a3-31.jpg)
 
-In the case of MySpace, these two items are issued when you register your application.
-You can change the consumer key to anything you like, but here I've made it a URL that looks like the application's gadget XML. You'll need it later, so copy and paste it somewhere.
+With MySpace, these two are issued as soon as you register an application. You can change the consumer key to whatever you like, but here I made it look like the URL of an application gadget XML. You will need it later, so copy and paste it somewhere.
 
 ![MySpaceAppDomain](/images/2008/08/e38394e382afe38381e383a3-4.jpg)
 
-Next, at the bottom of the same page, there is an option called External Site Settings.
-This is the key to Data Availability.
+Next, towards the bottom of the same page, there is a section called External Site Settings. This is the core of Data Availability.
 
 * Check "Use External Domain"
-* Enter the URL you want to be redirected to from MySpace in "External URL"
-* Enter the domain name of the server where the external app will be located in "External Domain"
-* Read and agree to the terms of use
+* Enter the redirection target URL from MySpace in "External URL"
+* Enter the domain of the server where the external app is actually hosted in "External Domain"
+* Read and agree to the Terms of Service
 
-Now you're ready.
+Now the preparation is complete.
 
-## Implement OAuth
+## Implementing OAuth
 
 ![Inbound OAuth](/images/2008/08/e38394e382afe38381e383a3-3.jpg)
 
-This time, we'll be testing the external service shown in the diagram above, which corresponds to the consumer.
-The service provider is MySpace. While we could implement it from scratch, we have a convenient library available, so we'll try using the PHP version. We'll also use HMAC-SHA1 as the signature method.
+What we will test here is the external service in the diagram above—that is, the consumer. MySpace acts as the service provider. While you could implement it from scratch, there is a [convenient library](http://code.google.com/p/oauth/) available, so we will use its PHP version. We will also use HMAC-SHA1 as the signature method.
 
-The OAuth flow is as follows. We recommend that you read [around here](http://www.atmarkit.co.jp/fsecurity/special/106oauth/oauth01.html) to understand the specifications.
+The OAuth flow is as follows. I recommend reading [this article](http://www.atmarkit.co.jp/fsecurity/special/106oauth/oauth01.html) to understand the specification.
 
 1. Obtain a request token
-2. Authenticate the user
+2. User authentication
 3. Obtain an access token
-4. Access the resource
+4. Access resources
 
-### **Get a request token**
+### **Obtaining a Request Token**
 
-Include the required libraries.
+Include the necessary libraries.
 
 ```php
 require_once 'oauth/OAuth.php';
 require_once 'oauth/OAuth_TestServer.php';
 ```
 
-Let's set various variables. We'll use the **consumer_key** and **consumer_secret** we noted down earlier. The endpoint for obtaining a **request token** is listed in [MySpace documentation](http://developer.myspace.com/community/myspace/dataavailability.aspx).
+Let's set up the variables. We'll use the **consumer_key** and **consumer_secret** we noted earlier here. The endpoint for obtaining the **request token** is documented in [MySpace's documentation](http://developer.myspace.com/community/myspace/dataavailability.aspx).
 
 ```php
 $consumer['key'] = 'http://devlab.agektmr.com/MyOpenSpace/DataAvailabilityExample';
@@ -80,7 +72,7 @@ $endpoint = 'http://api.myspace.com/request_token';
 ```
 ```
 
-署名のロジックはめんどくさいのでライブラリにお任せ。
+Writing the signature logic is tedious, so we will leave it to the library.
 
 ```php
 $server = new TestOAuthServer(new MockOAuthDataStore());
@@ -98,17 +90,17 @@ curl_setopt($req, CURLOPT_RETURNTRANSFER, 1);
 $result = curl_exec($req);
 ```
 
-ここまでのコードで `$result` にリクエストトークンが返ってくることになります。URL の query 部と同じ形式で返ってきますので、必要に応じてパースしましょう。
+With this code, the request token will be returned in `$result`. It is returned in the same format as a URL query string, so parse it as needed.
 
 ```php
 parse_str($result, $tmp);
 ```
 
-これで、**oauth_token**と**oauth_token_secret** が取得できたはずです。
+Now you should have obtained the **oauth_token** and **oauth_token_secret**.
 
-### 認証
+### Authentication
 
-次にユーザーに認証を行ってもらいます。エンドポイントは `http://api.myspace.com/authorize` で行います。その際、先程取得した **oauth_token** と **oauth_callback** をパラメータとして付属します。oauth_callback は認証後に呼び出されるページの URL。
+Next, have the user authenticate. This is done at the endpoint `http://api.myspace.com/authorize`. At this time, attach the previously obtained **oauth_token** and **oauth_callback** as parameters. oauth_callback is the URL of the page called after authentication.
 
 ```php
 $callback_url = 'http://devlab.agektmr.com/MyOpenSpace/access.php';
@@ -118,15 +110,13 @@ $auth_url = 'http://api.myspace.com/authorize?oauth_token='.urlencode($tokens['o
 
 ![MySpaceAppAuth](/images/2008/08/e38394e382afe38381e383a3-5-300x288.jpg)
 
-### アクセストークンを取得
+### Obtaining an Access Token
 
-先程指定した oauth_callback の URL に **oauth_token** をパラメータとして付属して
-リダイレクトされてきます。これはこの oauth_token が認証済みであることを示してお
-り、**アクセストークン**への交換が可能となります。
+The user will be redirected to the oauth_callback URL specified earlier with **oauth_token** appended as a parameter. This indicates that this oauth_token has been authorized, allowing it to be exchanged for an **access token**.
 
 ```php
 $consumer = new OAuthConsumer($consumer['key'], $consumer['secret'], NULL);
-$tokener = new OAuthConsumer($tokens['oauth_token'], $tokens['oauth_token_secret']);
+$tokener  = new OAuthConsumer($tokens['oauth_token'], $tokens['oauth_token_secret']);
 $access = OAuthRequest::from_consumer_and_token($consumer, $tokener, "GET", $endpoint, null);
 $access->sign_request($sig_method, $consumer, $tokener);
 
@@ -135,30 +125,27 @@ curl_setopt($req, CURLOPT_RETURNTRANSFER, 1);
 $result = curl_exec($req);
 ```
 
-コードはリクエストトークン取得の際とあまり変わりありません。これでアクセストーク
-ンの **oauth_token** と **oauth_token_secret** が返っきたら準備オッケー。
+The code is not much different from when obtaining the request token. Once the access token's **oauth_token** and **oauth_token_secret** are returned, you are all set.
 
-### RESTful APIを叩く
+### Calling the RESTful API
 
-ここまでに取得した **consumer_key**、**consumer_secret**、**oauth_token**、
-**oauth_token_secret** を使って署名した OAuth リクエストを RESTful API に投げる
-ことにより、友達リストなどのデータ取得が可能になります。
+By sending an OAuth request signed with the **consumer_key**, **consumer_secret**, **oauth_token**, and **oauth_token_secret** obtained so far to the RESTful API, you can retrieve data such as friend lists.
 
 ```php
 $consumer = new OAuthConsumer($consumer['key'], $consumer['secret'], NULL);
-$tokener = new OAuthConsumer($tokens['oauth_token'], $tokens['oauth_token_secret']);
+$tokener  = new OAuthConsumer($tokens['oauth_token'], $tokens['oauth_token_secret']);
 $resource = OAuthRequest::from_consumer_and_token($consumer, $tokener, "GET", $endpoint, array('format'=>'JSON'));
 $resource->sign_request($sig_method, $consumer, $tokener);
 
 $req = curl_init($resource);
 curl_setopt($req, CURLOPT_RETURNTRANSFER, 1);
 $result = curl_exec($req);
-````
+```
 
-Now, just set the endpoint ($endpoint) to the URL of the resource you want to retrieve. The response body will return data in JSON format.
+Now you just set the endpoint (`$endpoint`) to the URL of the resource you want to retrieve. The data will be returned in JSON format in the response body.
 
-## Sample app
+## Sample Application
 
-We have prepared a sample that uses the above code to show you the entire process and confirm its operation. This should be helpful for understanding what kind of requests you can send.
+I have prepared a sample where you can check the behavior while seeing the entire flow using the code above. It should serve as a helpful reference for what kind of requests to send.
 
-[Click here for a working example](http://devlab.agektmr.com/DataAvailability/)
+[Check out the live sample here](http://devlab.agektmr.com/DataAvailability/)

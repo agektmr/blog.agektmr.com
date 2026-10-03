@@ -1,8 +1,7 @@
 ---
+title: "OpenSocial's AtomPub uses XRDS-Simple for discovery."
 layout: post
 lang: en
-title: "OpenSocial's AtomPub is discovered with XRDS-Simple"
-description:
 date: 2008-06-12
 tags:
   - AtomPub
@@ -10,26 +9,26 @@ tags:
   - Service Document
   - XRDS-Simple
 translationOf: /2008/06/opensocialatompubxrds-simple.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-The [OpenSocial v0.8 RESTful API Specification](http://code.google.com/apis/opensocial/docs/0.8/restfulspec.html) specifies the use of [XRDS-Simple](http://xrds-simple.net/core/1.0/) for autodiscovery.
+The [OpenSocial v0.8 RESTful API Specification](http://code.google.com/apis/opensocial/docs/0.8/restfulspec.html) specifies the use of [XRDS-Simple](http://xrds-simple.net/core/1.0/) for auto-discovery.
 
-On the other hand, the RESTful API used in OpenSocial v0.8 is in the [AtomPub](http://tools.ietf.org/html/rfc5023) format, and AtomPub specifies the use of a Service Document.
+On the other hand, the RESTful API used in OpenSocial v0.8 follows the [AtomPub](http://tools.ietf.org/html/rfc5023) format, and AtomPub specifies the use of a Service Document.
 
-This leaves open the question of which container site should use, and whether they should use both. I posed a question to the Google Groups OpenSocial specification group.
+This leaves container sites wondering which one to use, or if they should support both. I posted a [question](http://groups.google.com/group/opensocial-and-gadgets-spec/browse_thread/thread/a447a1f155f4f06b) regarding this to the [Google Group for discussing OpenSocial specifications](http://groups.google.com/group/opensocial-and-gadgets-spec).
 
-question
+Question:
 
-> Should a container site adopt AtomPub's Service Document or XRDS-Simple?
-> Should it support both?
+> Which should container sites adopt: AtomPub's Service Document or XRDS-Simple? Should they support both?
 
-Answer by David Primmer
+David Primmer's response:
 
-AtomPub's Service Document is not suitable for defining parts of a URL as a template and assigning variables. It seems to be designed to be specified on a relatively fixed URL. XRDS-Simple excels in that it allows you to discover URLs by filling in the blanks.
+> AtomPub's Service Document is not well-suited for defining parts of a URL as templates and filling in variables. It seems to be designed for specifying relatively fixed URLs.  
+> In that regard, XRDS-Simple is superior in that it allows discovering URLs by filling values into blanks.
 
-Regarding this point, [Takemaru], who implemented the AtomPub Perl library, also pointed it out, and we agree that using XRDS-Simple is more reasonable.
+On this point, [Takemaru-san also pointed this out](http://teahut.sakura.ne.jp/b/2008-04-09-1.html) when implementing an AtomPub Perl library, and there is general agreement that using XRDS-Simple makes more sense.
 
-However, it's certainly unsightly in terms of not conforming to the specification, and I'm wondering if this issue can be resolved somehow. I asked the AtomPub spec creators on the Google Groups I mentioned earlier whether they planned to propose changes to the specification, but I haven't received a response since.
+Still, it's undeniably uncomfortable in the sense that it doesn't strictly adhere to the specification, and I'm wondering if this can be resolved somewhere. In the Google Group mentioned earlier, I asked, "Are there any plans to propose a specification change to the AtomPub spec authors?", but there has been no response since.
 
-At present, Rod Yates has suggested that we could apply [this specification](http://tools.ietf.org/html/draft-snell-atompub-feature-12), so we will consult with AtomPub experts and make some kind of effort to address this.
+At the moment, someone named Rod Yates suggested that [this specification](http://tools.ietf.org/html/draft-snell-atompub-feature-12) might be applicable, so I'd like to consult with AtomPub experts and take some form of action.

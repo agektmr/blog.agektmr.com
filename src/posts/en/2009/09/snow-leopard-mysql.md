@@ -1,8 +1,8 @@
 ---
+title: Installing MySQL on Snow Leopard
+author: Eiji
 layout: post
 lang: en
-title: Installing MySQL on Snow Leopard
-description:
 date: 2009-09-11
 categories:
   - Mac
@@ -13,68 +13,66 @@ tags:
   - Shindig
   - Snow Leopard
 translationOf: /2009/09/snow-leopard-mysql.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-When I updated my Mac OS X to Snow Leopard, PHP was updated to 5.3, so I no longer needed to install entropy to use Partuza or Shindig, which was great.
+Upgrading Mac OS X to Snow Leopard bumped PHP to version 5.3, which means I no longer need to install entropy to use Partuza or Shindig—which is fantastic.
 
-However, I had to do a bit of fiddling to use MySQL in the same environment, so I'll leave a note here. (This information is current as of September 2009.)
+However, getting MySQL to work in this environment required a bit of tweaking, so I'm leaving a quick note here. (Information is as of September 2009)
 
 ## Download MySQL
 
-Download the MySQL binary from [here](http://dev.mysql.com/downloads/). Select Mac OS 10.5 (x86_64) from the Mac OS X (package format) section at the bottom of this page (although Snow Leopard is 10.6).
+Download the MySQL binary from [here](http://dev.mysql.com/downloads/). Under Mac OS X (package format) towards the bottom of the page, choose Mac OS 10.5 (x86_64) (even though Snow Leopard is 10.6).
 
 ## Install MySQL
 
-The installation can be done using the GUI. It will also install the environment settings and startup items. Make sure to clear the path.
+You can install it using the GUI. Go ahead and install the preference pane and startup items as well. Let's also set up the PATH.
 
-Create `~/.bash_profile` or add the following if it already exists.
+Create `~/.bash_profile` or add the following to it if it already exists:
 
 ```shell
 PATH=$PATH:/usr/local/mysql/bin
 export PATH
 ```
 
-moreover
+Then run:
 
 ```shell
 > source ~/.bash_profile
 ```
 
-If you do this, it will be reflected immediately.
+to apply the changes immediately.
 
-## Mumble
+## Doing the Tweaks
 
-This is the key point.
+Here comes the key part.
 
 ```shell
 >  cd /usr/local/mysql
 >  sudo ./script/mysql_install_db
 ```
 
-And then
+Next:
 
 ```shell
 > sudo cp /etc/php.ini.default /etc/php/ini
 >  sudo vim /etc/php.ini
 ```
 
-Or something like that,
+Find the line:
 
 ```shell
 mysqli.default_socket = /var/mysql/mysql.sock
 ```
 
-part
+and change it to:
 
 ```shell
 mysqli.default_socket = /tmp/mysql.sock
 ```
 
-Rewrite it as:
+Now, restart MySQL and you're good to go. Start MySQL from System Preferences, and you should be able to use MySQL with PHP.
 
-Now, just restart MySQL and you're good to go. If you start MySQL from the environment settings, you should now be able to use MySQL with PHP.
+### Update
 
-### postscript
-
-By the way, this setting was only used to check the operation of Partuza, so if you want to do other things, you may need to tweak it a bit more.
+Note that I've only verified this setup with Partuza, so you might need further tweaks if you're doing other things.

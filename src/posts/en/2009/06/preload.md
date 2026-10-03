@@ -1,96 +1,89 @@
 ---
+title: Preload to Improve Gadget Rendering Speed
 layout: post
 lang: en
-title: Preload to improve gadget rendering speed
-description:
 date: 2009-06-17
 categories:
   - OpenSocial
 translationOf: /2009/06/preload.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-This time, I will explain Preload, an OpenSocial feature about which there is not much information available online.
+In this post, I will explain Preload in OpenSocial—a feature about which there is relatively little information online.
 
-## Gadget rendering flow
+## The Gadget Rendering Flow
 
-Let's take a simple example of a gadget that displays RSS feeds. To display this gadget on a container SNS, follow the steps below.
+Let's use a gadget that simply displays an RSS feed as an example. When displaying this gadget within a container SNS, the following steps take place:
 
-1. Rendering the container SNS
-2. The gadget server renders the gadget
-3. The gadget's JavaScript is initialized in the browser
-4. An Ajax request is sent to the gadget server to retrieve the RSS feed from the external site
-5. The gadget server sends the request to the external server (skip if cached)
-6. The gadget server returns the response to the browser
-7. The gadget's JavaScript in the browser renders a list of articles based on the response.
+1.  The container SNS renders.
+2.  The gadget server renders the gadget.
+3.  The gadget's JavaScript initializes in the browser.
+4.  An Ajax request to fetch the external site's RSS feed is sent to the gadget server.
+5.  The gadget server sends a request to the external server (skipped if a cache exists).
+6.  The gadget server returns the response to the browser.
+7.  The gadget's JavaScript in the browser renders the list of articles based on the response content.
 
 ![rendering without
 preload](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=cGFydGljaXBhbnQgIlJlbW90ZSBTZXJ2ZXIiCgAPDUdhZGdldAAHFUJyb3dzZXIKCgoAGA0tPgASBzogcmVuZGVyaW5nIGcAQgUKbm90ZSBvdmVyADUIOiBKUyBpbml0KCkKAEkHLT4AZw06IHJlcXVlc3QgZXh0ZXJuYWwgY29udGVudAphY3RpdmF0ZSAAgRgNAH4QAIFRDQBECgA0EQCBeQ0KAIIHDS0AgQETc3BvbnNlAIEDCWRlADIXAIICGgA7BwCBRhEAQAsAgUsOAIIrEwCCWQk&s=napkin)
 
-It will look something like this.
+That is roughly how it works.
 
-This may be a little confusing for those who don't understand how the OpenSocial container works.
-Please refer to [this article](http://devlog.agektmr.com/archives/363).
+If you are unfamiliar with how an OpenSocial container operates, this might be a bit hard to follow. Please refer to [this article](http://devlog.agektmr.com/archives/363).
 
-Now, there is a way to speed up the overall perceived rendering speed by streamlining this series of actions.
-That is Preload, which I will introduce to you today.
+Now, there is a way to make the overall perceived rendering speed faster by streamlining this sequence of events. That is Preload, which I will introduce in this post.
 
-## Preload to speed up gadget rendering
+## Preload: Speeding Up Gadget Rendering
 
-Preload is a feature that literally loads things before rendering.
-Usage is simple: just enter the URL you want to call in /Module/ModulePrefs/Preload@href.
-This will change the rendering behavior shown above as follows:
+Preload does literally what its name suggests: it loads content in advance of rendering. It is easy to use—simply specify the URL you want to call in `/Module/ModulePrefs/Preload@href`. With this, the rendering behavior described above changes as follows:
 
-1. Rendering the container SNS
-2. The gadget server sends a request to the external server specified by Preload
-(Skip if cached)
-3. The gadget server renders the gadget
-4. The gadget initializes JavaScript in the browser
-5. The browser processes an Ajax request to retrieve RSS from the external site
-6. The gadget's JavaScript in the browser renders a list of articles based on the response
+1.  The container SNS renders.
+2.  The gadget server sends a request to the external server specified in Preload (skipped if a cache exists).
+3.  The gadget server renders the gadget.
+4.  The gadget initializes its JavaScript in the browser.
+5.  The Ajax request to fetch the external site's RSS is processed within the browser.
+6.  The gadget's JavaScript in the browser renders the list of articles based on the response content.
 
 ![rendering with
 preload](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=cGFydGljaXBhbnQgIlJlbW90ZSBTZXJ2ZXIiCgAPDUdhZGdldAAHFUJyb3dzZXIKCgAXDS0-AEINOiByZXF1ZXN0IGNvbnRlbnQKYWN0aXZhdGUgAGoNCgB4DS0tPgBsDTogcmVzcG9uc2UAPglkZQAyFwCAfw8AgR8HOiByZW5kZXJpbmcgZwCBTwUKbm90ZSBvdmVyAIFCCDogSlMgaW5pdCgpCgCBVgcANQtwcmVsb2FkZWQAJRQAVAkK&s=napkin)
 
-As you can see from the diagram, the overhead of the communication part has been reduced. This is very convenient.
+As you can clearly see from the diagram, this eliminates network communication overhead. Quite handy!
 
-The mechanism is simple: the gadget passes source code embedding prefetched external content to the browser, and if the prefetched content exists at the time of makeRequest, it returns a response without making an actual Ajax request.
+The mechanism is simple: the gadget passes source code containing the prefetched external content to the browser, and when `makeRequest` is called, if the prefetched content is available, it returns the response immediately without making an actual Ajax request.
 
-## Precautions when using Preload
+## Caveats When Using Preload
 
-Preload is very useful, but it can also be tricky to use. You need to understand the following points and use it carefully.
+While Preload is very convenient, it also has some tricky characteristics. You need to understand the following points and choose where to use it carefully.
 
-### No control over cache expiration
+### Inability to Control Cache Expiration
 
-This is a rather fatal flaw. If you cannot control the cache expiration time, the default cache expiration time (often 24 hours) will be applied. One way to avoid this is if the user performs a makeRequest action, and you can clear the cache expiration time at that time. Conversely, this is not suitable for gadgets that simply display RSS feeds, where the user cannot update them at will, but where the update frequency is around one hour.
+This is quite a critical issue. If you cannot control cache expiration, the default cache duration (often 24 hours) will be applied. A case where you can circumvent this is when the user triggers `makeRequest` via an explicit action, allowing you to clear the cache expiration at that moment. Conversely, it is not suitable for gadgets that only display RSS without allowing user-initiated refreshes, but have an update frequency of around once an hour.
 
-### ContentType cannot be specified
+### Inability to Specify ContentType
 
-Normally, when you make a request, you can choose the ContentType from DOM, FEED, JSON, and TEXT. FEED, in particular, wraps RSS/RDF/Atom and returns it in JSON, making it a convenient format for those familiar with it.
+Normally when using `makeRequest`, you can select a `ContentType` from `DOM`, `FEED`, `JSON`, or `TEXT`. In particular, `FEED` is convenient for those familiar with it because it normalizes RSS/RDF/Atom and returns it as JSON.
 
-However, this behavior is achieved by explicitly specifying FEED as the ContentType and performing special processing when the gadget server retrieves external content.
-This is not possible with Preload, which does not allow you to specify the ContentType. If you want to preload RSS or similar content, you have no choice but to select and parse the DOM.
+However, this behavior relies on explicitly specifying `FEED` as the `ContentType` so that the gadget server performs special processing when fetching the external content. Since you cannot specify a `ContentType` with Preload, this cannot be done. If you want to preload something like RSS, you have no choice but to select `DOM` and parse it yourself.
 
-### The contents of UserPrefs can be reflected
+### UserPrefs Can Be Reflected
 
-You can include the contents of UserPrefs in the /Module/ModulePrefs/Preload@href content using the `__UP_****__` format. Unfortunately, this technique doesn't work with mixi apps.
+You can include UserPrefs values in `/Module/ModulePrefs/Preload@href` using the format `__UP_****__`. Unfortunately, this trick cannot be used with mixi Apps.
 
 ```xml
 <Preload href="http://example.com/example.php?id=__UP_userpref__" >
 ```
 
-### Signed Request can be used
+### Signed Requests Can Be Used
 
-You can make a signed request by specifying "signed" in `/Module/ModulePrefs/Preload@authz`. The advantage of this is that you don't need to specify the viewer ID on the gadget side; the server will send it along with the signature, so you don't need to devise a URL like in the UserPrefs case above.
+By specifying "signed" in `/Module/ModulePrefs/Preload@authz`, you can make signed requests. The advantage here is that the gadget does not need to specify the viewer's ID, as the server sends it along with the signature—eliminating the need to manipulate URLs as in the UserPrefs case above.
 
-### No code changes required
+### No Need to Change Code
 
-Preload simply adds metadata to the gadget XML, so you generally don't need to modify the JavaScript code. Of course, you might want to modify it if you're concerned about caching.
+Preload only involves adding metadata to the gadget XML, so basically there is no need to touch your JavaScript code. Of course, if you want to manage caching, modifying the code might be a good idea.
 
-### You can specify any number of Preloads
+### You Can Specify Multiple Preloads
 
-In fact, you can specify any number of Preloads. If the conditions listed above are met, go ahead and use them.
+In fact, you can specify as many Preloads as you like. If your use case meets the criteria mentioned above, go ahead and give it a try.
 
-## summary
+## Summary
 
-This time, we introduced the Preload feature, which is a rather unassuming feature that doesn't get much attention, but can be very useful if used properly. Let's use it effectively and aim to become a top-notch OpenSocializer.
+In this post, I introduced the Preload feature—a low-profile capability that does not get much attention, but is extremely useful when utilized properly. Master it well and aim to become a top-tier OpenSocial developer!

@@ -1,84 +1,63 @@
 ---
+title: "Thoughts on Ads in the HTML5 Era: HTML5 Soda Can"
 layout: post
 lang: en
-title: "Thought about Ads in HTML5 era: HTML5 Soda Can"
-description:
 date: 2011-08-06
 tags:
   - HTML5
   - CSS3
   - Device Orientation API
 translationOf: /2011/08/thinking-about-ads-in-html5-era-html5-soda-can.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-Let me introduce the "HTML5 Soda Can" demo I made
-for [ThinkMobile2011](http://www.google.co.jp/events/thinkmobile2011/livestream.html) a
-while ago.
+Let me introduce the "HTML5 Soda Can" demo I made for [ThinkMobile2011](http://www.google.co.jp/events/thinkmobile2011/livestream.html) a while ago.
 
 [![](/images/2011/07/233b1844c6d899c679f560e35058d333-200x300.png "Soda Can 1")](http://demo.agektmr.com/sodacan/)
 
-The original request was to come up with some ideas of HTML5 ads for audience at
-the event. It isn't that hard just to create ads using HTML5, but since the
-purpose was to show off to the audience, I needed to inject "wow" feeling as
-well as to put clear sign that it's made of HTML5.
+The original request was to come up with some ideas for HTML5 ads for the audience at the event. It isn't that hard just to create ads using HTML5, but since the purpose was to show off to the audience, I needed to inject a "wow" factor as well as make it clearly evident that it's made with HTML5.
 
-Concept
+## Concept
 
-Though there's still a lot of things which native apps can do while web apps
-cannot do, it's an interesting challenge to make HTML5 apps work like native
-apps. On the contrary, it's advantage of web apps that you can see the app
-without installing.
+Although there are still many things that native apps can do which web apps cannot, it's an interesting challenge to make HTML5 apps behave like native apps. On the flip side, an advantage of web apps is that you can experience them without having to install anything.
 
-So, here's the demo I have come up with: "Wow" enough HTML5-ish, instantly
-experience-able and easily imagine-able of actual advertisement.
+So, here is the demo I came up with: featuring enough of a "wow" factor and HTML5 flavor, instantly experienceable, and easy to imagine as a real-world advertisement.
 
 ## Demo
 
-[Soda Can](http://demo.agektmr.com/sodacan/): Please access using iPhone or iPad
-(you can view on Chrome but don't break your MacBookPro!)
+[Soda Can](http://demo.agektmr.com/sodacan/): Please access it using an iPhone or iPad (you can view it in Chrome, but don't break your MacBook Pro!).
 
-1. When loaded, you'll see a can "Google Soda". (It was originally Coke but for
-   some reason, I asked [Jerome Senaillat](http://www.senaillat.com/) to make it
-   up as "Google Soda".)
-2. Try tilting your iPhone / iPad. You can find the can actually tilts inside
-   your browser.
-3. You know what soda is like? Try shake your device. Guess what???
+1. When loaded, you'll see a can of "Google Soda". (It was originally Coke, but for various reasons, I asked [Jerome Senaillat](http://www.senaillat.com/) to redesign it as "Google Soda".)
+2. Try tilting your iPhone or iPad. You'll see that the can actually tilts inside your browser.
+3. You know what soda is like, right? Try shaking your device. Guess what happens?
 
 [![](/images/2011/07/2bf6d446a21bf24a86472b536c525421-200x300.png "Soda Can 2")](http://demo.agektmr.com/sodacan/)
 
-When the background turns red enough, try touching tab of the can. (sorry if
-(browser crashes…)
+When the background turns sufficiently red, try touching the tab of the can. (Sorry if your browser crashes...)
 
-How was that? Doesn't this look interesting when you see it after clicking
-banner ad of some kind of soda drinks?
+How was that? Doesn't this look intriguing if you were to see it after clicking a banner ad for a soda drink?
 
-Technical Tricks
+## Technical Tricks
 
-Could you guess how I did it? I assume you wondered how I did:
+Could you guess how I built it? You might be wondering how I achieved:
 
-*3D
-*Detect device tilt
-*Detect device shake
-* That performance on smartphone
+* 3D
+* Detecting device tilt
+* Detecting device shake
+* That level of performance on a smartphone
 
-There's roughly 3 tricks:
+There are roughly three tricks:
 
-* Cylinder is made of long and narrow DOM elements
-* CSS3 3D Transform enables it three dimensional and fast enough (using GPU)
-*Device Orientation detects tilt and gravity
+* The cylinder is made of tall, narrow DOM elements
+* CSS3 3D Transforms make it three-dimensional and fast enough (by utilizing the GPU)
+* Device Orientation detects tilt and gravity
 
-The side of can is made of many (180) long and narrow divs with each background
-images slightly shifted. Adding top and bottom of the can completes the shape.
-GPU rendering doesn't make you moving feel like it's actually more than 180 DOM
-elements when Device Orientation API detects device tilt and style changes.
+The side of the can is made of many (180) narrow divs, each with its background image slightly shifted. Adding the top and bottom of the can completes the shape. Thanks to GPU rendering, you hardly feel like it's actually animating over 180 DOM elements when the Device Orientation API detects tilt and updates styles.
 
-I don't bother writing any more details since it's much easier reading the
-source code. This is roughly the tricks.
+I won't go into further detail since it's much easier to just read the source code. That's the gist of the tricks.
 
-Summary
+## Summary
 
-Asking users to install native app which is actually ad via ad sounds ridiculous
-but what if that app is made of HTML5? It may directly lead to conversion.
+Asking users to install a native app that is essentially just an ad via an ad sounds absurd, but what if that app is built with HTML5? It could directly lead to conversions.
 
-I'm hoping to see interesting ideas of ads using HTML5 soon.
+I hope to see more interesting HTML5 ad ideas in the near future.

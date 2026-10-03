@@ -1,8 +1,7 @@
 ---
 layout: post
 lang: en
-title: MarkdownPastr allows you to paste HTML as Markdown
-description:
+title: MarkdownPastr lets you paste HTML as Markdown
 date: 2014-02-21
 updated: 2014-02-21
 tags:
@@ -10,38 +9,36 @@ tags:
   - Markdown
   - MarkdownPastr
 translationOf: /2014/02/html-markdown-markdownpastr.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-While practicing writing tests, we've updated the version, so we'd like to introduce it to you. We've released a new version of the Chrome Extension: [MarkdownPastr](https://chrome.google.com/webstore/detail/markdown-pastr/pjeclabeidkcjhopjbgpiimlaccpdkgk), which allows you to paste rich text copied to the clipboard as Markdown.
+I released an updated version of my Chrome extension while practicing writing tests, so I'd like to introduce it. [MarkdownPastr](https://chrome.google.com/webstore/detail/markdown-pastr/pjeclabeidkcjhopjbgpiimlaccpdkgk) is a Chrome extension that lets you paste rich text copied to your clipboard directly as Markdown.
 
 <!-- excerpt -->
 
-As developers likely know, [Markdown](http://ja.wikipedia.org/wiki/Markdown) is a popular wiki-like syntax these days. Its adoption on [GitHub](https://github.com/) has made it explosively popular. One of the reasons for its popularity is likely that it's relatively easy to understand even when viewed as plain text. Recently, some people have started writing blogs in Markdown using [Jekyll](http://jekyllrb.com/) and other tools.
+As many developers probably know, [Markdown](http://ja.wikipedia.org/wiki/Markdown) is a popular wiki-like syntax. Its adoption by [GitHub](https://github.com/) caused its popularity to explode. Another reason for its widespread use is that it remains easily readable even as plain text. Recently, more people have also started writing blogs in Markdown using tools like [Jekyll](http://jekyllrb.com/).
 
-However, I often find myself needing to convert documents containing tables written in Google Docs into Markdown, which can be inconvenient. That's why I created MarkdownPastr. It's simple to use: just copy the HTML you want to convert to Markdown on a web page and paste it into `textarea`.
+While Markdown is great, I personally found myself often wanting to convert text written in Google Docs—including tables—into Markdown, which used to be quite a hassle. That's why I created MarkdownPastr. It's very simple to use: just copy HTML you want to convert from a web page, and paste it into a `textarea`.
 
-This is
+This:
 
 [![](https://2.bp.blogspot.com/-TDy5N6O4yqI/UwdpgWIeIJI/AAAAAAAAoTI/vKeRUpKXlWM/s1600/copy.png)](https://2.bp.blogspot.com/-TDy5N6O4yqI/UwdpgWIeIJI/AAAAAAAAoTI/vKeRUpKXlWM/s1600/copy.png)
 
-It looks like this.
+Becomes this:
 
 [![](https://4.bp.blogspot.com/-TeRARHGfTqY/UwdpgU21WII/AAAAAAAAoTU/QJQ2CZ3JKZk/s1600/paste.png)](https://4.bp.blogspot.com/-TeRARHGfTqY/UwdpgU21WII/AAAAAAAAoTU/QJQ2CZ3JKZk/s1600/paste.png)
 
-In Google Docs, anything written in Courier New font will be recognized as `code`. Also, if the entire line is in Courier New font, it will be recognized as a code block.
+With Google Docs, parts written in the Courier New font are recognized as `code`. Also, if an entire line is in Courier New, it is recognized as a code block.
 
-If you want to paste in simple text instead of Markdown, just hold down the `Shift` key while pasting. The process will stop unless you paste into `textarea` on the web page, so it doesn't consume unnecessary resources (this is the recommended behavior in the new Chrome Extension).
+If you want to paste as plain text instead of Markdown, just hold down the `Shift` key while pasting. Another great point is that the process remains idle unless you paste into a `textarea` on a web page, so it doesn't consume unnecessary resources (which is the recommended behavior for modern Chrome Extensions).
 
-By the way, my personal recommended Markdown writing environment is
+By the way, my personal recommendations for Markdown writing environments are:
 
-* [wri.pe](https://wri.pe/) (by [@masuidrive](https://twitter.com/masuidrive))
+* [wri.pe](https://wri.pe/) (by [@masuidrive](https://twitter.com/masuidrive))
 * [Gists](https://gist.github.com/)
 * [Online Markdown Editor](http://www.ctrlshift.net/project/markdowneditor/)
 * [Gitter](http://gitter.im/)
 
-It's around here.
+The code is [available on GitHub](https://github.com/agektmr/MarkdownPastr). For general feedback, please head [here](https://chrome.google.com/webstore/support/pjeclabeidkcjhopjbgpiimlaccpdkgk).
 
-The code is available on [GitHub](https://github.com/agektmr/MarkdownPastr). General feedback can be found [here](https://chrome.google.com/webstore/support/pjeclabeidkcjhopjbgpiimlaccpdkgk).
-
-Please try it.
+Give it a try!

@@ -1,8 +1,7 @@
 ---
+title: What is Caja?
 layout: post
 lang: en
-title: What is Caja?
-description:
 date: 2008-04-23
 tags:
   - Caja
@@ -10,53 +9,53 @@ tags:
   - OpenSocial
   - Shindig
 translationOf: /2008/04/caja.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-While researching OpenSocial, I came across the word Caja. I knew it was a way to implement secure JavaScript, but I decided to look into it in more detail.
+When researching things around OpenSocial, you often run into the term Caja. I only knew that it was something designed to achieve secure JavaScript, so I decided to look into the details.
 
-## Cross-site scripting and blog widgets
+## Cross-Site Scripting and Blog Widgets
 
-Those who have used blog services including hosting services such as goo, livedoor, and fc2 will know that some services allow you to post blog widgets, others do not, and some only allow some. Why is this?
+Those who have used hosted blogging services like goo, livedoor, or fc2 probably know that depending on the service, some allow embedding blog widgets (blog parts), some don't, and some only permit certain ones. Why is that?
 
-Cookies have the characteristic that they can only reference scripts executed from the same domain. Many services take advantage of this by using cookies to store session information and browsing history. The reason the blog services listed above do not allow blog widgets is to protect this information from malicious JavaScript. Conversely, if JavaScript can be executed on the same domain, it could be possible to steal session information and browsing history. This is called XSS (Cross-Site Scripting).
+Cookies have a property where they can only be accessed by scripts executed from the same domain. Leveraging this, many services use cookies as a storage location for session information and browsing history. The reason the aforementioned blog services disallow blog widgets is to protect this information from malicious JavaScript. Conversely, if JavaScript can be executed on the same domain, those session details and browsing histories can be stolen. This is called XSS (Cross-Site Scripting).
 
-XSS can occur when a posting form is used to embed and execute JavaScript on a page on that domain, but the ability to post blog widgets is also the same in the sense that JavaScript can be embedded, and on a properly designed site, this would be impossible.
+XSS can occur when someone uses a submission form to embed and execute JavaScript on a page within that domain. However, allowing arbitrary blog widgets is essentially the same in the sense that it allows embedding JavaScript; any properly built site would never normally permit this.
 
-However, there are blogs that do allow you to embed blog widgets, and there are several approaches to making this possible while avoiding security issues.
+That said, blogs where you can actually embed blog widgets do exist, and there are several approaches to achieving this while sidestepping security issues.
 
-## Approaches for pasting JavaScript
+## Approaches to Embedding JavaScript
 
-### Separate domains
+### Separating Domains
 
-The domain that displays the blog is one that does not store critical cookies such as session information. If there is nothing to steal, there is no harm in getting a thief in. Livedoor Blog is an example of a site that takes this approach.
+Host the blog on a domain that doesn't store critical cookies such as session information. If there's nothing to steal, having a burglar break in causes no harm. livedoor Blog is an example that takes this approach.
 
-### Only allow JavaScript that has been verified to be safe
+### Permitting Only Verified Safe JavaScript
 
-This approach involves the service provider creating a list of safe blog widgets, and blog administrators choosing from that list. This narrows the choice of blog widgets, which is not popular with users, but it is better than not being able to post any at all. Goo Blog and Hatena Diary have adopted this approach.
+In this approach, the service provider curates a list of safe blog widgets, and blog owners can choose from them. Users generally dislike this because it narrows their widget options, but it's certainly better than not being able to embed anything at all. goo Blog and Hatena Diary take this approach.
 
-### Display in iframe
+### Rendering in an iframe
 
-If you display it in a different domain within an iframe, you can handle it in the same way as "separating domains" above. iGoogle is an example of an approach that takes this approach. Although iGoogle is not a blog, if you think of blog parts as gadgets, you could say that it deals with the same problem.
+If you render it inside an iframe served from a different domain, it can be treated just like the "Separating Domains" approach mentioned above. iGoogle is an example that takes this approach. While iGoogle isn't a blog, if you equate blog widgets with gadgets, it addresses the same problem.
 
-### Neutralizing dangerous parts of JavaScript
+### Neutralizing Dangerous Parts of JavaScript
 
-Before the server outputs JavaScript, it rewrites and neutralizes the dangerous parts. I don't know if there are any blogs that take this approach, but I'm sure anyone can think of a way to do it. However, it requires a huge amount of effort and knowledge to achieve this. It would be wonderful if such an open source solution existed. And the tool that can achieve this is Caja, which I will introduce here.
+Before the server outputs the JavaScript, it rewrites and neutralizes the dangerous parts. I don't know if any blogs actually take this approach, but the idea itself is something anyone could think of. However, implementing it requires an immense amount of effort and knowledge. How wonderful would it be if something like this existed as open source? And what makes this possible is Caja, which I'm introducing today.
 
-## What you can achieve with Caja
+## What Caja Can Achieve
 
-Caja is pronounced "kaha." Caja is the name of a Google open source project that allows you to safely include external JavaScript in pages on the same domain.
+Caja is pronounced "KA-ha". Caja is the name of an open-source project by Google that allows you to safely embed third-party JavaScript on a page hosted under the same domain.
 
-[Caja Introduction (Japanese)](http://devlog.agektmr.com/wiki/index.php?JavaScript%2FCaja)
+[Introduction to Caja (Japanese Translation)](http://devlog.agektmr.com/wiki/index.php?JavaScript%2FCaja)
 
-[List of attacks that Caja was designed to prevent during development](http://code.google.com/p/google-caja/wiki/AttackVectors)
+[List of attack vectors intended to be prevented using Caja during development](http://code.google.com/p/google-caja/wiki/AttackVectors)
 
-## Where to use Caja
+## Where Caja is Used
 
-Caja appears to be designed for use on OpenSocial containers. The explanation in [Caja Introduction (Japanese)](http://devlog.agektmr.com/wiki/index.php?JavaScript%2FCaja) also assumes that applications will be used on Shindig, and states that displaying gadgets inline using Caja will improve performance.
+Caja seems to be built with usage within OpenSocial containers in mind. The explanation in [Introduction to Caja (Japanese Translation)](http://devlog.agektmr.com/wiki/index.php?JavaScript%2FCaja) also assumes running applications on Shindig, noting that rendering gadgets inline using Caja improves performance.
 
-## Caja Form
+## The Architecture of Caja
 
-Actually, this is an area I haven't fully investigated yet, but it appears to be composed of server-side rewrites in Java and a JavaScript library. I think I need to look into this a bit more.
+To be honest, this is an area I haven't fully researched yet, but it seems to consist of server-side rewriting in Java and a JavaScript library. I'll need to look into this a bit more.
 
-If anyone has any other information, please let me know.
+If anyone has more information on this, please let me know!

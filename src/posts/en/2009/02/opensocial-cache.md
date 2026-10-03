@@ -1,49 +1,49 @@
 ---
+title: Caching Features to Be Aware of in OpenSocial Gadget Development
+author: Eiji
 layout: post
 lang: en
-title: Cache functions to be aware of when developing OpenSocial gadgets
-description:
 date: 2009-02-03
 categories:
   - OpenSocial
 translationOf: /2009/02/opensocial-cache.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-In a recent article, we mentioned the powerful cache functionality of Shindig's OpenSocial architecture. Shindig has four main types of caches.
+In a recent article, I touched upon the powerful caching mechanisms in Shindig's OpenSocial architecture. Shindig has four main types of caches:
 
-* Caching gadget XML
-* Caching external APIs accessed with makeRequest
-* Caching feature-rich JavaScript
-* Caching resources linked from HTML, such as JavaScript, CSS, and images
+*   Gadget XML cache
+*   External API cache accessed via `makeRequest`
+*   Bundled feature JavaScript cache
+*   Cache for resources linked from HTML, such as JavaScript, CSS, and images
 
-## Gadget XML cache
+## Gadget XML Cache
 
-The first thing you may encounter when you start developing an OpenSocial gadget is the caching of the gadget XML. If you make changes to the gadget XML but the changes are not reflected in the actual gadget display, the first thing to suspect is that the gadget XML is being cached.
+When you start developing OpenSocial gadgets, this gadget XML cache is likely the first stumbling block you'll encounter. If you make changes to the gadget XML but don't see them reflected in the rendered gadget, the first thing to suspect is that the gadget XML is cached.
 
-If you want to develop your gadget in a sandbox environment while modifying the JavaScript code in the gadget XML, you can disable the cache by adding nocache=1 to the query part of the URL. This should make development much easier. (Please note that depending on the container, the URL may end with a hash (# and subsequent characters).)
+If you want to edit JavaScript code in the gadget XML and test it inside a sandbox environment, you can disable the cache by adding `nocache=1` to the query string of the URL. This should make development much easier. (Be aware that depending on the container, the end of the URL might turn into a hash (`#` onwards), so pay close attention to where you add it.)
 
-In addition, in the iGoogle sandbox, you can disable caching by using <a target="_blank" href="http://www.google.com/ig/directory?hl=en&#038;type=gadgets&#038;url=www.google.com/ig/modules/developer.xml">My Gadgets</a>, and in the hi5 sandbox, caching is disabled without you having to do anything special.
+Additionally, some containers have specific features: for example, you can disable caching via <a target="_blank" href="http://www.google.com/ig/directory?hl=en&#038;type=gadgets&#038;url=www.google.com/ig/modules/developer.xml">My Gadgets</a> in the iGoogle sandbox, and hi5 disables caching by default in its sandbox environment without requiring any extra setup.
 
-## Cache external APIs accessed with makeRequest
+## External API Cache Accessed via makeRequest
 
-If you use makeRequest to access an external resource with GET, this will also be cached. For example, if you are retrieving RSS feeds that are updated infrequently, this can reduce the load on the other server.
+When you make a GET request to access external resources using `makeRequest`, the response is also cached. For example, when fetching RSS feeds that update infrequently, this helps reduce the load on the destination server even by a small amount.
 
-If you want to avoid this, add the parameter gadgets.io.ProxyUrlRequestParamters.REFRESH_INTERVAL to opt_params of makeRequest and set it to 0. This will prevent caching.
+If you want to bypass this cache, add the `gadgets.io.ProxyUrlRequestParamters.REFRESH_INTERVAL` parameter to `makeRequest`'s `opt_params` and set it to `0`. This will prevent the response from being cached.
 
-## JavaScript cache with solidified features
+## Bundled Feature JavaScript Cache
 
-OpenSocial has a specification that allows various functions to be used by adding Require@feature to the gadget XML. This feature is realized by adding JavaScript to the HTML displayed in the gadget, and Shindig strives to make this lightweight and efficient as well. The JavaScript of the feature is obfuscated when it is rendered, and then all of it is concatenated and cached.
+OpenSocial specifies that various features can be utilized by adding `Require@feature` to the gadget XML. These features work by injecting JavaScript into the HTML rendered within the gadget, and Shindig optimizes this process for lightweight and efficient delivery as well. Feature JavaScript is obfuscated, concatenated into a single bundle, and cached at render time.
 
-There is almost no need for average users/gadget developers to be aware of this, but it's good to keep it in the back of your mind.
+End users and gadget developers rarely need to worry about this, but it's good to keep in the back of your mind.
 
-## Caching resources linked from HTML, such as JavaScript, CSS, and images
+## Cache for Resources Linked from HTML, such as JavaScript, CSS, and Images
 
-Some containers (such as Orkut, iGoogle, and hi5, which currently use the Java version of Shindig) cache external JavaScript, CSS, and images specified in the gadget XML when they are rendered. If you look at the HTML of the rendered gadget, you will see that the cached external resource has a concat at the end of its path in the URL.
+Depending on the container (services currently using the Java version of Shindig, such as orkut, iGoogle, and hi5), external JavaScript, CSS, and images specified within the gadget XML are cached at render time. If you inspect the rendered gadget's HTML, you can tell these resources are cached because the path of the cached external resource URLs ends with `concat`.
 
-This feature, called Content Rewrite, will be officially incorporated into OpenSocial version 0.9, but is currently exclusive to the Shindig Java edition. In version 0.9, you'll be able to specify in the gadget XML settings which file types to rewrite, whether to compress JavaScript, and the expiration period for caching.
+This feature is called Content Rewrite. While it will be officially incorporated starting from OpenSocial version 0.9, it is currently a feature exclusive to the Java version of Shindig. In 0.9, you will be able to configure in the gadget XML which file types to rewrite, whether to minify JavaScript, how long the cache expiration should be, and more.
 
-Now, the purpose of this cache is to reduce the load on the server where each file is located during production, but during development, code changes may not be reflected immediately, which can reduce efficiency. To avoid this, add the following to the XML:
+While the purpose of this cache is to reduce the load on servers hosting these files in production, it can hinder productivity during development since code changes aren't immediately reflected. To avoid this, add the following to your XML:
 
 <pre class="brush: xml; title: ; notranslate" title="">&lt;optional feature="content-rewrite&gt;
   &lt;param name="include-tabs" /&gt;
@@ -52,13 +52,13 @@ Now, the purpose of this cache is to reduce the load on the server where each fi
 
 Please note that some containers may not support this.
 
-By the way, the PHP version of Shindig does not have this feature. In other words, if a gadget points to a file prepared on your server, for example, a request will be generated each time the gadget is rendered. While this is convenient for development, it will put a strain on the server if there is a large amount of access in a production environment. To avoid this, one technique is to make good use of the cache function.
+By the way, the PHP version of Shindig does not have this feature. This means that if a gadget references files hosted on your own server, a request is made every time the gadget renders. While this is convenient during development, it can overload your server if high traffic hits in production. To prevent this, there is a technique to take advantage of the caching mechanism intentionally.
 
-http://opensocial-container/gadgets/proxy?url=http://devlog.agektmr.com/image.gifのように、ドメインに&#8221;/gadgets/proxy?url=&#8221;を付けて、意図的にShindigのプロキシを入れてしまいましょう。(concatと異なり、難読化や圧縮はされません。)
+By appending `/gadgets/proxy?url=` to the domain, such as `http://opensocial-container/gadgets/proxy?url=http://devlog.agektmr.com/image.gif`, you can intentionally route the request through Shindig's proxy. (Unlike `concat`, this does not obfuscate or minify the resource.)
 
-### Addendum (2009/2/3)
+### Update (2009/2/3)
 
-Regarding the above, mainya-san told me in the comments section how to do it using getProxyUrl.
+Regarding the above, mainya shared an approach using `getProxyUrl` in the comments:
 
 <pre class="brush: jscript; title: ; notranslate" title="">var params = {'REFRESH_INTERVAL' : 3600*24*7};
 var url = 'http://example.com/img/logo.jpg';
@@ -67,4 +67,4 @@ try{
 }catch(e){}
 </pre>
 
-If you get the URL in this way, you can make a reference that intentionally activates the cache in a container-independent way. (It doesn't work with MySpace, so it seems better to use try/catch.)
+By retrieving the URL this way, you can reference resources with intentional caching in a container-independent manner. (Since this doesn't work on MySpace, wrapping it in a `try/catch` block is recommended.)

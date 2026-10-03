@@ -1,8 +1,7 @@
 ---
 layout: post
 lang: en
-title: "We have released the Chrome Extension \"Project Tab Manager\" that allows you to manage tabs for each project."
-description:
+title: "I've released \"Project Tab Manager,\" a Chrome extension that lets you manage tabs by project."
 date: 2012-07-28
 updated: 2012-07-28
 tags:
@@ -10,53 +9,53 @@ tags:
   - Chrome Extension
   - Project Tab Manager
 translationOf: /2012/07/chrome-extension-project-tab-manager.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-I've been wanting to create a Chrome Extension for quite some time, and now I've finally managed to release it on the Chrome Web Store, so I'd like to introduce it to you.
+I've finally published a Chrome Extension on the Chrome Web Store that I've wanted for myself for quite a while, so let me introduce it here.
 
-## why?
+## Why?
 
-The concept behind Chrome's bookmarks is very simple. Once you star a bookmark, you can simply type a few characters in the Omnibox (the URL bar) and it will appear as a suggested bookmark. It's designed for extremely streamlined use. Therefore, for those who prefer to organize their bookmarks by category, it may not be to their liking. I personally feel the same way.
+Chrome's philosophy regarding bookmarks is very simple. Once you star (bookmark) a page, it's designed around the ultra-streamlined workflow where typing just a few characters into the Omnibox (the URL bar) will bring it up as a suggestion. Because of that, for people who want to organize their bookmarks into categorized folders, it might feel like it falls a bit short. I was one of those people myself.
 
-When it comes to organizing bookmarks, I used to mainly divide them by category, but that was a hassle, and I often ended up searching or memorizing and typing in the URL. So recently, I've started creating folders for each project rather than by category, and collecting the bookmarks I need. This way, I can open the pages I need all at once when I need them. Because of my job, I often work on multiple projects at the same time, so it helps me organize my thoughts and also reduces the number of open tabs.
+When it comes to organizing bookmarks, I used to mainly sort them by category. However, that made finding things tedious, and in the end, I often found myself just searching for the page or typing the URL directly from memory. So recently, I started creating folders per project rather than per category, gathering all the necessary bookmarks in one place. By doing this, I could open all the pages I needed at once, whenever I needed them. Given the nature of my work, I often juggle multiple projects in parallel, so this helped keep my head clear and also had the benefit of reducing the number of open tabs.
 
-However, this method has some inconveniences, such as making it difficult to add bookmarks to a project later, or preventing tabs that are part of a project from opening from the beginning. That's why we created [Project Tab Manager](https://chrome.google.com/webstore/detail/iapdnheekciiecjijobcglkcgeckpoia), a Chrome Extension perfectly optimized for the above usage.
+Still, with this approach, several inconveniences remained—such as difficulty adding bookmarks to an existing project later on, or not being able to exclude certain pages from opening automatically even though they belong to the project. That's why I created [Project Tab Manager](https://chrome.google.com/webstore/detail/iapdnheekciiecjijobcglkcgeckpoia). It's a Chrome Extension completely optimized for this exact workflow.
 
-## Basic usage
+## Basic Usage
 
-Once installed, you'll see the Extension button (a folder icon) on the right side of the Omnibox. Clicking on it will open the Project Tab Manager with no projects registered.
+Once installed, an extension button (a folder-shaped icon) will appear to the right of your Omnibox. Clicking it will open Project Tab Manager with no projects registered yet.
 
-To register a project, simply enter a name in "New Project" and save it. All the tabs in the currently open windows will be saved together in the project. By repeating this process, you can manage projects for each window.
+To register a project, simply enter a name under "New Project" and save it. All the tabs currently open in that window will be saved together into the project. By repeating this process, you can manage projects window by window.
 
-The next time you want to open a project, just click on the project name and a new window will open with all the necessary tabs. One of the key features is that only the currently active tab actually loads the window. Selecting another tab will only load the page there (lazy loading). This way, you can open many tabs and start using them faster. Of course, you can turn this feature off in the settings.
+Next time you want to open a project, just click the project name: a new window will open with all the required tabs loaded together. One key feature here is that only the active tab actually loads the page right away. Other tabs will only load once you select them (lazy loading). This significantly cuts down the time it takes until you can actually start working, even when opening dozens of tabs. Of course, this feature can be turned off in the settings.
 
-When you open a project from the Project Tab Manager, any currently open tab pages that you haven't bookmarked yet will be displayed in gray along with the project's bookmarks. You can add the URL of that tab to your project by clicking the + that appears on the right side when you hover your mouse over it.
+When you open a project from Project Tab Manager, along with the project's bookmarks, any currently open tabs that aren't yet bookmarked will also appear in gray. Clicking the + icon that appears on the right upon mouseover lets you add that tab's URL to the project.
 
-If you hover your mouse over an existing bookmark, a square and an X will appear. The square toggles between active and passive. If you set it to passive (light blue), it will remain part of the project, but will not be added as a tab when you open the project window. This means you can open it only when you need it. Clicking the X will delete the bookmark.
+When hovering over an existing bookmark, a square icon and an ✕ icon will appear. The square icon toggles between active and passive status. If you set it to passive (light blue), it remains part of the project but won't open as a tab when launching the project window. This allows you to keep links around to open only when needed. Clicking the ✕ icon will delete the bookmark.
 
-One of the features of Project Tab Manager is that these bookmarks are saved as native bookmarks. As you can see from the settings, by default it creates a folder called "Project Tab Manager" in "Other Bookmarks," and bookmarks for each project are created under it. This way, as long as you're using Chrome Sync, you can access your project bookmarks from Chrome for Android or Chrome for iOS. They're not saved on an external server.
+One of the key characteristics of Project Tab Manager is that these bookmarks are saved directly using native Chrome bookmarks. If you check the settings, you'll see that by default, it creates a folder named "Project Tab Manager" under "Other Bookmarks", and individual project bookmarks are created beneath it. This means that as long as you use Chrome Sync, your project bookmarks are accessible from Chrome for Android and Chrome for iOS as well. Nothing is stored on an external server.
 
-In addition, the editing functions of the Project Tab Manager itself are kept to a minimum, and changes to the display order or deletion can be done from the native bookmark manager.
+Additionally, editing functionality inside Project Tab Manager itself is kept to a minimum; reordering or deleting can be done directly through Chrome's native bookmark manager.
 
-Another feature of Project Tab Manager is that you can later look back at how much time you spent on each project. Click the clock icon in the upper right corner of the window to open the statistics screen, where you can see which project window you used at what time and what percentage of time you spent on each project.
+Another feature of Project Tab Manager is the ability to look back at how much time you spent on each project. Clicking the clock icon in the upper-right corner of the window opens a statistics view, allowing you to see which project windows you used at what times, and what percentage of your time was dedicated to each project.
 
-When you hover over each project name, a pin icon and a trash can icon will appear. The pin icon associates the window with the project. This tells the Project Tab Manager that this window is for this project (this is something we would like to automate if possible). This is needed for the statistics feature.
+When hovering over a project name, a pin icon and a trash can icon are displayed. The pin icon associates a window with that project. This tells Project Tab Manager, "this window is for this project" (something I'd ideally like to automate eventually), which is necessary for the statistics feature.
 
-The trash icon doesn't delete the project, it archives it. It just moves it to a folder called __Archives__ in your bookmarks, so you can restore it if you need to.
+The trash can icon archives the project rather than deleting it. It simply moves it to an `__Archives__` folder inside your bookmarks, so you can restore it whenever you need it.
 
-## Technical Parts
+## Technical Details
 
-This extension was originally written in plain JavaScript, but I changed it to be based on AngularJS for presentations at study groups on HTML5 and other topics. This allowed me to streamline the code significantly, and I think it will be interesting for anyone interested in AngularJS. The source code is available here: <a href="https://github.com/agektmr/ProjectTabManager" target="_blank"> and here: </a>.
+This extension was originally built in vanilla JavaScript, but I rewrote it using AngularJS for a presentation at an HTML5 study group. Thanks to that, the code became significantly cleaner, and I think it should be an interesting reference for anyone curious about AngularJS. The source code is available <a href="https://github.com/agektmr/ProjectTabManager" target="_blank">here</a>.
 
-[AngularJS](http://angularjs.org/) is a JavaScript framework that Google engineers are involved in, and it offers a slightly different approach than other frameworks. I'd like to write a blog post about it in more detail on another occasion, but if you're interested, I think the video of the talk I gave at the HTML5 Study Group mentioned earlier, which included live coding, will be helpful. It's about 15 minutes long, so I highly recommend you take a look.
+[AngularJS](http://angularjs.org/) is a JavaScript framework maintained with contributions from Google engineers, offering a rather different approach compared to other frameworks. I hope to write a dedicated blog post about it another time, but if you're interested, you might find the [video of my presentation (including live coding) at the aforementioned HTML5 study group](http://www.youtube.com/watch?v=j0alrOyt094) helpful. It's about 15 minutes long, so please take a look.
 
 {% YouTube 'j0alrOyt094' %}
 
-## Feedback wanted!
+## Feedback Welcome!
 
-There seem to be some bugs in the parts we worked on just before release, but we haven't sorted them out yet. If you find any bugs, please [file an issue on github](https://github.com/agektmr/ProjectTabManager/issues). We'd also appreciate any feedback on the functionality.
+A few bugs seem to have slipped into the parts I touched right before release, and I haven't quite sorted them all out yet. If you run into any issues, please [open an issue on GitHub](https://github.com/agektmr/ProjectTabManager/issues). Feedback regarding features is also very welcome.
 
-We hope that Project Tab Manager will help you become a little more productive.
+I hope Project Tab Manager helps boost your productivity, even if just a little.
 
-Special Thanks to [Shinsuke Okamoto](https://plus.google.com/111882208792561937432) for icon designs.
+Special Thanks to [Shinsuke Okamoto](https://plus.google.com/111882208792561937432) for the icon designs.

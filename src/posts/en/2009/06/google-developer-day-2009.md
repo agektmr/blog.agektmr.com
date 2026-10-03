@@ -1,35 +1,39 @@
 ---
+title: Google Developer Day 2009
+author: Eiji
 layout: post
 lang: en
-title: Google Developer Day 2009
-description:
 date: 2009-06-12
+categories:
+  - Google
+  - SocialWeb
+  - イベント
 tags:
   - gdd09
   - Google Developer Day
 translationOf: /2009/06/google-developer-day-2009.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-<a href="http://code.google.com/intl/ja/events/developerday/2009/home.html" target="_blank">Google Developer Day</a> was held at Pacifico Yokohama on June 9th.
-I was briefly present at the keynote speech and also took part in the OpenSocial Panel Discussion session.
+<a href="http://code.google.com/intl/ja/events/developerday/2009/home.html" target="_blank">Google Developer Day</a> was held at Pacifico Yokohama on June 9th.  
+I had the opportunity to take the stage briefly during the keynote and also speak in the OpenSocial Panel Discussion session.
 
 ## Keynote Demo
 
-During the keynote speech, we unveiled a unique demo of gooHome, showcasing the concept of a social web portal, in which the goo Maps gadget and Photo Viewer gadget work in conjunction with the Photomemo gadget, using OpenSocial from <a href="http://home.goo.ne.jp" target="_blank">gooHome</a>, which was recently released to the general public. I forgot to mention this in the keynote speech, but this idea was originally based on something shown by a team of developers at the recent Hackathon</a>.
+In the keynote, I demonstrated a feature unique to goo Home—highlighting its concept as a social web portal—using OpenSocial on <a href="http://home.goo.ne.jp" target="_blank">goo Home</a>, which was recently released to general users. In the demo, a goo Map gadget and a photo viewer gadget worked in tandem with a gadget from <a href="http://photomemo.jp" target="_blank">Photomemo</a>. I forgot to mention it during the keynote, but this idea was originally based on something one of the developer teams presented at <a href="http://blog.goo.ne.jp/goohome_developer/e/6e7bcb5387791ebc2ad8dfbc658161ea" target="_blank">the recent Hackathon</a>.
 
-The implementation uses a feature called pubsub, which is included in OpenSocial. pubsub is a fairly simple mechanism: when you publish an object to an arbitrarily created channel, a callback function is called on gadgets that are subscribed to the same channel, and the object is delivered. We will soon add documentation about pubsub to <a href="http://developer.home.goo.ne.jp/" target="_blank">goo Developer's Kitchen</a>.
+In terms of implementation, it uses the pubsub feature included in OpenSocial. Pubsub is a fairly simple mechanism: when you publish an object to an arbitrarily created channel, callback functions on gadgets subscribing to that same channel are invoked, and the object is delivered. I'll be adding documentation about pubsub to <a href="http://developer.home.goo.ne.jp/" target="_blank">goo Developer&#8217;s Kitchen</a> soon.
 
-We would also like to thank the Photomemo team for developing the Photomemo gadget and the Photo Viewer gadget for this demo.
+Also, to make this demo possible, the Photomemo team developed both the Photomemo gadget and the photo viewer gadget for us. Thank you very much for your cooperation.
 
 ## OpenSocial Panel Discussion
 
-Another event I participated in was a panel discussion. This time, I was joined by Kawasaki-san from Recruit, who I was also with at the recent DevSummit, as well as Kawagishi-san from mixi and Oikawa-san from Google.
+The other session I took part in was the Panel Discussion. Along with Mr. Kawasaki from Recruit (whom I also joined at Developers Summit recently), the discussion included Mr. Kawagishi from mixi and Mr. Oikawa from Google.
 
-The content of the talk was more about the SocialWeb than OpenSocial, and covered the currently available OpenSocial within that, as well as the expanding world of the SocialWeb. I only recently realized that the goals of the mixi app and the goo home gadget are completely different, so I tried to make that point clear.
+As for the content, rather than focusing strictly on OpenSocial, we looked at the Social Web from a broader perspective—discussing how OpenSocial fits in as a currently usable piece of the puzzle, and where the expanding world of the Social Web is headed. It was only relatively recently that I realized mixi apps and goo Home gadgets are aiming for completely different things, so I tried to present in a way that made those distinctions clear.
 
-## summary
+## Wrap-up
 
-As I said during the Panel Discussion, I feel there is still room for growth in Japan's view of the Social Web. I fully understand that we cannot simply import the worldview of the Social Web from overseas, as real names are not preferred compared to other countries and the largest SNSs are closed, but I believe that it will definitely become a technology that is in demand in the near future.
+As I mentioned during the panel discussion, I feel that the Social Web landscape in Japan still has plenty of room to grow. Compared to other countries, real names are less preferred, and the largest SNS is closed, so I fully understand that we cannot simply import overseas models as they are. Even so, I believe this technology will inevitably become something in high demand in the near future.
 
-If you agree with this, please join us at <a href="http://groups.google.com/group/socialweb-japan/" target="_blank">SocialWeb Japan</a>.
+If this resonates with you, please consider joining <a href="http://groups.google.com/group/socialweb-japan/" target="_blank">SocialWeb Japan</a>.
