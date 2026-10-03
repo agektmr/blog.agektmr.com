@@ -10,3 +10,4 @@ gcloud-key*.json
 
 # Translation API credentials
 .translation-credentials
+.worktrees
