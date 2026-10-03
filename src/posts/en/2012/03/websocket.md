@@ -1,8 +1,7 @@
 ---
 layout: post
 lang: en
-title: Experimenting with WebSocket binary messages offers a glimpse into the future of the web
-description:
+title: Trying WebSocket binary messages gave me a glimpse into the future of the web.
 date: 2012-03-14
 updated: 2012-03-14
 image:
@@ -14,57 +13,57 @@ tags:
   - Web Audio API
   - WebSocket
 translationOf: /2012/03/websocket.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-This is a long article, so I'll just give you the conclusion first. WebSocket's binary messaging feature will overturn the way the Internet has always been. Some of you may be thinking, "I already knew that." I thought I understood it theoretically, but after actually creating an app, I was able to experience it in concrete terms, so I'll try to explain what it means, even though it's a bit long.
+This is a long post, so I'll put the conclusion right up front: the binary messaging feature in WebSocket will fundamentally overturn the way the internet has worked until now. Some of you might be thinking, "Yeah, I already know that." I thought I understood it in theory too, but after actually building an application with it, I truly felt it firsthand. It's a bit of a long read, but let me explain what I mean.
 
 <!-- excerpt -->
 
 ## What is WebSocket?
-WebSocket is one of the most popular HTML5-related technologies. While standard HTTP communication requires a server to respond without a client request, WebSocket enables two-way communication between the client and server. This will likely enable the creation of a variety of highly real-time services in the future.
+WebSocket is one of the most closely watched technologies surrounding HTML5. With regular HTTP communication, the server cannot respond without a request from the client, but WebSocket enables bidirectional communication between client and server. By taking advantage of this, it will become possible to build a wide variety of highly real-time services moving forward.
 
-WebSocket has had a tumultuous journey so far. It has been available in various browsers for several years, but the specifications underwent a major revision due to security reasons and other reasons. At the end of last year, a finalized version was finally released, and the complex specifications have now been settled for the time being. Currently, all specifications are supported by Google Chrome, but it is said that they will soon be available in Firefox 11 and Internet Explorer 10 as well.
+That said, WebSocket has walked a tumultuous path. While it had been available in various browsers for a few years, it underwent major specification overhauls due to security concerns and other issues. Late last year, it finally reached a solid milestone, and the complex specification has mostly settled down. Currently, Google Chrome supports the full specification, and it is said that Firefox 11 and Internet Explorer 10 will soon support it as well.
 
-Of all the features of WebSocket, the one that has caught my eye the most is the binary transmission function. Until now, only text could be exchanged, but the latest specifications now allow binary messages to be sent as well. Previously, it was possible to send data as text by using encoding such as Base64, but sending binary data as is can save about 30% of overhead. Of course, the value of the binary transmission function goes beyond that, but you'll understand that a little more by reading this article to the end.
+Among all the features of WebSocket, what I'm paying the closest attention to is binary transmission. Previously, you could only exchange text, but the latest specification allows sending binary messages as well. While it was previously possible to send binary data as text using encodings like Base64, sending raw binary directly eliminates roughly 30% of that overhead. Of course, that's not the only value of binary messaging, as you'll see once you read through to the end of this article.
 
 ## Audio Stream Experiment
-Here, I'd like to introduce a demo I recently created that uses WebSocket's binary messaging capabilities. This demo allows users to stream audio files in real time. From here on, I'll be talking about building the app. If you're only interested in how WebSocket will change the web, you can skip ahead to "What WebSocket Binary Messaging Means."
+Here, let me introduce a [demo using WebSocket binary messaging](http://agektmr.node-ninja.com:3000/) that I built recently. With this demo, users can stream audio files from their local machine in real time. From here on, I'll be talking about how the app was built, so if you're only interested in how WebSocket will change the web, feel free to skip ahead to "What WebSocket Binary Messaging Really Means."
 
 [![](https://1.bp.blogspot.com/-YvvFxUQbyaA/T1XMwMfG_XI/AAAAAAAAEkQ/7sGuHBvw8ME/s960/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2012-03-05+16.56.01.png)](https://1.bp.blogspot.com/-YvvFxUQbyaA/T1XMwMfG_XI/AAAAAAAAEkQ/7sGuHBvw8ME/s960/%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2588+2012-03-05+16.56.01.png)
 
-If you're interested in the technology used in this app, please give it a try (Chrome required). The source code is also available on github.
+If you're interested in the technology behind this app, by all means, go ahead and give it a try (Chrome required). The source code is also [available on GitHub](https://github.com/agektmr/AudioStreamer).
 
-After entering an appropriate name and connecting, drag and drop an audio file (mp3, wav, m4a, etc.) from your desktop and press the play button to start streaming audio. If there are no other people in the Attendee list, you can open two windows and access the same site yourself to see how the audio is being streamed.
+Enter any name, click connect, drag and drop an audio file such as MP3, WAV, or M4A from your desktop, and click the play button to start streaming the audio. If there's no one else in the Attendee list, you can open two browser windows yourself and visit the site in both to test how the audio is streamed across them.
 
 ## Architecture
-The audio playback mechanism used here is called the [Web Audio API](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html). This specification, primarily developed by Google engineers, is currently only available in Chrome, but will eventually be available in other WebKit-based browsers such as Safari. Standardization discussions are ongoing, but as of March 2012, no plans have been heard for it to be implemented in browsers other than WebKit. Firefox also has a similar implementation called the Audio Data API, but there are no plans for standardization. A detailed explanation of the Web Audio API will not be provided here, but please refer to the materials previously used in [HTML5 study sessions](http://slides.agektmr.com/webaudio_basic/) if you are interested.
+The audio playback mechanism used here is the [Web Audio API](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html). It's a specification led primarily by engineers at Google; currently it's only available in Chrome, but eventually it should be usable in other WebKit-based browsers like Safari as well. Standardization discussions are ongoing, but as of March 2012, I haven't heard of implementations outside of WebKit. Firefox has a similar API called the Audio Data API, but there seem to be no plans to standardize that one. I'll skip a detailed explanation of the Web Audio API here, but I have [slides from a past HTML5 study group](http://slides.agektmr.com/webaudio_basic/) if you'd like to check them out.
 
-The server uses [node.js](http://nodejs.org/). Node.js, characterized by its non-blocking, asynchronous I/O, is currently the most popular server technology and can be written in JavaScript. As of March 2012, there are not many WebSocket libraries that can handle binary data in any language, but we chose a library for node.js called [ws](https://github.com/einaros/ws).
+The server uses [node.js](http://nodejs.org/). Characterized by non-blocking, asynchronous I/O, node.js is currently one of the most talked-about server technologies, and it can be written entirely in JavaScript. As of March 2012, there aren't many WebSocket libraries in any language that handle binary, but among the options for node.js, I chose a library called [ws](https://github.com/einaros/ws).
 
-For the node.js server, we used [node-ninja](http://node-ninja.com/) provided by First Server (using a virtual server called [SmartMachines](http://www.joyent.com/products/smartmachines/) developed by [Joyent](http://no.de/), which can be said to be the headquarters of node.js).
+For the node.js server, I used [node-ninja](http://node-ninja.com/), provided by Firstserver (which uses [SmartMachines](http://www.joyent.com/products/smartmachines/) virtual servers developed by [Joyent](http://no.de/), essentially the home base of node.js).
 
-In this demo, the audio data received from this Node.js server is broadcasted to provide the same audio streaming environment to all connected users.
+In this demo, the server built with node.js broadcasts the received audio data, providing a synchronized audio streaming environment to all connected users.
 
 [![](https://3.bp.blogspot.com/-fgG-s5KuFng/T1XEL98ut8I/AAAAAAAAEkA/1QHKqQnYnvE/s960/AudioStreamer.png)](https://3.bp.blogspot.com/-fgG-s5KuFng/T1XEL98ut8I/AAAAAAAAEkA/1QHKqQnYnvE/s960/AudioStreamer.png)
 
-Each client has two audio playback mechanisms, called Player and Listener. Audio files dragged and dropped from the desktop are played using Player and simultaneously transferred to the Node.js server using WebSocket. The server immediately broadcasts the received audio data to all clients. Each client streams the audio data received from the server to Listener and plays the audio.
+Each client has two audio playback mechanisms, called Player and Listener. An audio file dragged and dropped from the desktop is played back locally via the Player, while simultaneously being transmitted to the node.js server over WebSocket. The server immediately broadcasts the received audio data to all clients. Each client feeds the audio data received from the server into its Listener and plays back the sound.
 
-By the way, the demo not only supports audio streaming but also a simple chat function.
+By the way, in addition to audio streaming, the demo also includes a simple chat feature.
 
 ## WebSocket Basics
-Let's start with the basics of using WebSocket.
+First, let's look at basic WebSocket usage.
 
 ### Exchanging Text Messages
 The WebSocket API available in the browser is very simple.
 
-First, open the socket.
+First, open a socket:
 
 ```javascript
 var ws = new WebSocket('ws://localhost:3000');
 ```
 
-When the server accepts a connection, it returns an open event.
+When the server accepts the connection, an `open` event fires:
 
 ```javascript
 ws.onopen = function() {
@@ -72,14 +71,13 @@ ws.onopen = function() {
 }
 ```
 
-When sending a message
+To send a message:
 
 ```javascript
 ws.send(message);
 ```
 
-
-To receive a message, you will receive it through an event called message.
+To receive a message, listen for the `message` event:
 
 ```javascript
 ws.onmessage = function(msg) {
@@ -87,7 +85,7 @@ ws.onmessage = function(msg) {
 }
 ```
 
-When a connection is closed, a close event is also generated.
+Similarly, when the connection closes, a `close` event fires:
 
 ```javascript
 ws.onclose = function(event) {
@@ -95,51 +93,51 @@ ws.onclose = function(event) {
 }
 ```
 
-Did you know that the WebSocket API itself is very simple?
+As you can see, the WebSocket API itself is remarkably simple.
 
-The problem is that this simplicity makes the protocol on top of it important.
-The WebSocket API includes a specification called a Sub Protocol, but although this needs to be standardized and implemented on servers, as of March 2012, only SOAP has been registered with IANA, and no servers have implemented it, so it is not practically usable. In other words, if you want to send multiple types of commands using WebSocket, you will have to create some kind of rule yourself.
+The challenge that arises from this simplicity is the importance of the protocol that runs on top of it.
+The WebSocket API includes a specification for Subprotocols, but despite requiring standardization and server implementation, as of March 2012 [only SOAP is registered with IANA](http://www.iana.org/assignments/websocket/websocket.xml), and virtually no servers implement it, so it's not practically usable. In other words, if you want to send multiple types of commands over WebSocket, you have to define the rules yourself.
 
-For example, in this demo
+For example, in this demo, I handle the following message types:
 
-* A connect message to start a session
-* A connection message to notify other users of their participation status
-* A message message to send and receive text messages
-* A heartbeat message to maintain the connection
-* A start_music message to notify who has started playing music
+* A `connect` message to start a session
+* A `connection` message to notify of other users' presence
+* A `message` message to send and receive text messages
+* A `heartbeat` message to keep the connection alive
+* A `start_music` message to let others know who started playing music
 
-We handle all these different types of messages, and we need to add additional information such as "who sent it," "what kind of message it was," and "who is currently connected," so it goes without saying that it is essential to send structured messages such as JSON.
+With this many message types, you also need to attach accompanying metadata such as "who sent it," "what kind of message it is," and "who is currently connected." Needless to say, sending structured messages like JSON becomes essential.
 
 ### Exchanging Binary Messages
-Binary messages are used to send audio data. At first, I underestimated it, but sending and receiving binary messages is even more complicated than text. WebSocket requires message structuring not only for text but also for binary. In fact, WebSocket cannot send a mixture of text and binary messages. Binary messages must be sent separately, as binary and text, respectively. In other words, if you want to add additional information to a binary message, you'll need to use some kind of ingenuity.
+When transmitting audio data, binary messages are used. I initially underestimated it, but sending and receiving binary messages is far less straightforward than text. Message structuring in WebSocket is necessary not just for text, but for binary as well. In fact, WebSocket does not allow mixing text and binary in a single message. Binary must be sent as binary, and text as text, separately. In other words, if you want to attach metadata to a binary message, you have to get creative.
 
-When creating this demo, what I actually wanted to include in the binary message was
+When building this demo, the metadata I actually needed to attach to the binary message included:
 
-* ID of the user playing the audio
-* Number of audio channels
-* Audio buffer length
-* Actual audio buffer x number of channels
+* The user ID of who played the audio
+* The number of audio channels
+* The audio buffer length
+* The actual audio buffers × number of channels
 
-This much information needs to be sent to the other client.
-Due to the constraints of WebSocket's simple API, there are only three ways I can think of to achieve this:
+All of this information has to be delivered to other clients.
+Given the constraints of WebSocket's simple API, there are only three obvious approaches to achieve this:
 
 * Send a text message and a binary message as a pair
-* Establish a separate WebSocket connection for each client and send the text and binary data
-* Embed additional information in the binary data and send it
+* Open separate WebSocket connections per client for text and binary
+* Embed the metadata directly into the binary itself
 
-Let's start with the first point. This is a valid method if you're just sending messages from the client to the server. By design, the server knows who's connected, so after receiving the first text message, it can wait for the next binary message to arrive. However, if the server simply broadcasts these messages in the order they're received, will this work? While it's possible to have the client know who else is connected, it's not easy to match pairs of randomly arriving information on the client side without shuffling them. With some clever ingenuity, it's not impossible, but it would mean sacrificing Node.js's greatest feature: non-blocking.
+First, the paired message approach. If you're only sending from client to server, this is feasible. By specification, the server knows who is connected, so it can receive the first text message and wait for the subsequent binary message. However, what happens when the server broadcasts them in the order received? While clients can know who else is connected, matching up pairs of messages arriving in arbitrary order on the client side without disrupting sequence is non-trivial. It's not impossible with enough effort, but it would force you to sacrifice node.js's greatest advantage: non-blocking execution.
 
-Opening a separate WebSocket connection for each secondary client and sending text and binary data solves the above problem. The connection itself can be treated as ancillary information representing the user, and message combination is guaranteed. However, the more users connected, the more resources consumed. This may be solved if the [Multiplexing Extension](http://tools.ietf.org/html/draft-tamplin-hybi-google-mux-01) becomes available, but for now, it's not a very good option.
+The second approach—opening separate WebSocket connections per client for text and binary—solves the problem above. The connection itself acts as metadata identifying the user, and the message pairing can be guaranteed. However, as the number of connected users grows, resource consumption increases exponentially. Once the [Multiplexing Extension](http://tools.ietf.org/html/draft-tamplin-hybi-google-mux-01) becomes available, this might become a viable solution, but right now it's not a great option.
 
-The third method is to embed additional information by manipulating the binary itself. With this method, you can send a single message that combines the actual data and the necessary information, so although the binary manipulation is more tedious to implement, it makes the other parts much easier. This is the method we used in this demo.
+The third approach is to manipulate the binary itself and embed the metadata inside it. With this method, you can bundle the actual data and the required information into a single message. While implementing binary manipulation is tedious, it makes everything else much simpler. I went with this approach for the demo.
 
-## Binary Handling in JavaScript
-Manipulating binary data in JavaScript has always been possible. However, the techniques required are complex and often sacrifice execution speed. However, several recent specifications for handling binary data have made it much easier. There are two main types of binary data that can now be used in JavaScript: [Blob](https://developer.mozilla.org/en/DOM/Blob) and [ArrayBuffer](https://developer.mozilla.org/en/JavaScript_typed_arrays).
+## Handling Binary Data in JavaScript
+Manipulating binary in JavaScript was never completely impossible, but the techniques required were convoluted and took a toll on execution speed. However, with several recently introduced specifications for handling binary, it has become significantly easier. There are two main types of binary representations newly available in JavaScript: [Blob](https://developer.mozilla.org/en/DOM/Blob) and [ArrayBuffer](https://developer.mozilla.org/en/JavaScript_typed_arrays).
 
 ### Blob
-A Blob is a binary block, but its contents can be thought of as a file. The File object inherits from Blob, so files entered via input[type="file"] or dragged and dropped can be treated in the same way. You can also convert a Blob to an ArrayBuffer or Data URL using the FileReader API.
+A Blob is a chunk of binary data, and you can essentially think of its contents as a file. The `File` object inherits from `Blob`, so files selected via `input[type="file"]` or dragged and dropped can be handled the same way. By using the FileReader API, you can also convert them into an ArrayBuffer or a Data URL.
 
-In this demo, the Blob file is converted into an ArrayBuffer using the FileReader's readAsArrayBuffer function at the time of dragging and dropping.
+In this demo, when a file is dropped, the Blob file is converted into an ArrayBuffer using FileReader's `readAsArrayBuffer` method:
 
 ```javascript
     updatePlayer: function(file, callback, playEndCallback) {
@@ -164,19 +162,19 @@ In this demo, the Blob file is converted into an ArrayBuffer using the FileReade
 ```
 
 ### ArrayBuffer
-An ArrayBuffer is also a binary block, but its unique feature is that it can be treated as an array using a typed array (TypedArray). Typed arrays can be extracted from an ArrayBuffer using several "views," such as unsigned integers (Uint8Array) and floating-point numbers (Float32Array). In the Web Audio API, audio data is stored in a Float32Array for each channel, up to the buffer length, and this is what you'll be working with.
+An ArrayBuffer is also a chunk of binary data, but its key feature is that it can be manipulated as an array using TypedArrays. A TypedArray lets you slice out data from an ArrayBuffer using various "views," such as unsigned integers (`Uint8Array`) or floating-point numbers (`Float32Array`). In the Web Audio API, audio data is stored as `Float32Array`s of a given buffer length per channel, so this is what we work with.
 
-Unlike JavaScript's arrays, ArrayBuffers don't have the ability to add or remove arbitrary bytes as needed. This means you have to first allocate the memory you need and then fill it with the values you want. Also, applying different types of TypedArrays to ArrayBuffers can be a bit tricky.
+Unlike standard JavaScript arrays, an ArrayBuffer doesn't allow you to arbitrarily append or remove bytes on the fly. You must allocate the necessary memory upfront and fill in values at specific offsets. Also, packing different types of TypedArrays into a single ArrayBuffer requires a bit of know-how.
 
-## Extracting Audio Data from the Web Audio API
-In the previous Blob sample code, we used the decodeAudioData function to convert the data into a Web Audio API AudioBuffer object. AudioBuffer objects handle audio data as a binary Float32Array. However, sending this Float32Array as is is no different from simple uploading and downloading, not streaming. How can we send this data in chunks?
+## Extracting Audio Data from Web Audio API
+In the Blob sample code above, we used `decodeAudioData` to convert the data into a Web Audio API `AudioBuffer` object. An `AudioBuffer` object manages audio data as `Float32Array` binary. But sending this `Float32Array` all at once wouldn't be streaming—it would be no different from a regular file upload and download. How do we break this data into chunks and send it progressively?
 
-Fortunately, the Web Audio API has a handy feature called [JavaScriptAudioNode](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#JavaScriptAudioNode-section). By inserting this in the middle of the routing, you can trigger an onaudioprocess event for each buffer length you specify, and extract the data as it passes through. We'll use this here. (By the way, according to Chris Rogers, who created the Web Audio API, JavaScriptAudioNode is deprecated and he wants to discontinue it. I haven't confirmed how to meet similar needs yet.) (Update: 2012/3/14: I checked with Chris Rogers again, and he said there are no plans to discontinue JavaScriptAudioNode.)
+Fortunately, the Web Audio API provides a handy component called [JavaScriptAudioNode](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#JavaScriptAudioNode-section). By inserting this into the audio routing graph, an `onaudioprocess` event fires for each buffer length, allowing you to intercept and extract the passing audio data. We can use this here. (By the way, according to Chris Rogers, who is authoring the Web Audio API spec, `JavaScriptAudioNode` is deprecated and slated for removal. I haven't verified alternative approaches to meet this need yet.) (Update 2012/3/14: After confirming with Chris Rogers again, there are currently no plans to deprecate `JavaScriptAudioNode`.)
 
 ```javascript
     this.js.onaudioprocess = function(event) {
       var buffers = [];
-      for (var i = 0; i &lt; that.audioBuffer.length; i++) {
+      for (var i = 0; i < that.audioBuffer.length; i++) {
         buffers.push(that.audioBuffer[i].shift() || new Float32Array(BUFFER_LENGTH));
       }
       if (that.type == 'Player') {
@@ -191,16 +189,16 @@ Fortunately, the Web Audio API has a handy feature called [JavaScriptAudioNode](
           that.socket.send(msg.buffer);
         }
       }
-      for (var i = 0; i &lt; buffers.length; i++) {
+      for (var i = 0; i < buffers.length; i++) {
         event.outputBuffer.getChannelData(i).set(buffers[i]);
       }
     };
 ```
 
-The buffer length (BUFFER_LENGTH) is set to 2048. If you just want to play an existing audio file, it's common to use an AudioBufferSourceNode, but here we take the approach of inserting the buffer directly into a JavaScriptAudioNode, while also preparing to send it to the WebSocket.
+The buffer length (`BUFFER_LENGTH`) is set to 2048. When you simply want to play back an existing audio file, using an [AudioBufferSourceNode](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#AudioBufferSourceNode-section) is standard, but here I'm taking the approach of feeding buffers directly into the `JavaScriptAudioNode`. While doing so, it also prepares the data to be sent over WebSocket.
 
-## Manipulating binary
-The extracted 2048 Float32Array contains two channels, so we combine it with other information to solidify it into binary.
+## Manipulating Binary
+The extracted 2048-sample `Float32Array` spans two channels, so we combine this with metadata into a single binary payload:
 
 ```javascript
       createMessage: function(msg_obj) {
@@ -215,8 +213,8 @@ The extracted 2048 Float32Array contains two channels, so we combine it with oth
         offset += 1;
         view.setUint32(offset, bl);
         offset += 4;
-        for (var i = 0; i &lt; ch_num; i++) {
-          for (var j = 0; j &lt; bl; j++) {
+        for (var i = 0; i < ch_num; i++) {
+          for (var j = 0; j < bl; j++) {
             view.setFloat32(offset, msg_obj.buffer_array[i][j]);
             offset += 4;
           }
@@ -225,20 +223,20 @@ The extracted 2048 Float32Array contains two channels, so we combine it with oth
       },
 ```
 
-If you want to include multiple types in a binary, use [DataView](https://developer.mozilla.org/en/JavaScript_typed_arrays/DataView). This allows you to specify, based on a JSON object, the starting byte to fill with a certain value and type. Now that you have a binary with multiple data embedded, you can send it directly over WebSocket. Node.js simply broadcasts what it receives, so the receiving client simply parses it and plays a sound. Please read the source code for details.
+When you need to store multiple types within binary data, you use [DataView](https://developer.mozilla.org/en/JavaScript_typed_arrays/DataView). This allows you to take a JSON object and specify which type and value to write starting at a specific byte offset. Now that we have a binary payload packed with multiple pieces of data, we send it directly over WebSocket. Since node.js simply broadcasts what it receives, the receiving clients only need to parse it and play the sound. Check the source code for full details.
 
-## What WebSocket Binary Messages Mean
-If you've read this far and thought, "Wow, this is a pain!", you're probably right. But I'm sure libraries will solve these issues soon, and once protocols are established, users won't have to think about them at all. [JSON Schema](http://json-schema.org/) and [Protocol Buffer](http://code.google.com/apis/protocolbuffers/) (although they don't yet support TypedArrays) are the first things I thought of that would solve these problems.
+## What WebSocket Binary Messaging Really Means
+If you've read this far thinking, "Whoa, that sounds tedious!", you're entirely right. But before long, libraries will solve these challenges, and once protocols mature, developers won't have to worry about the underlying mechanics. Things like [JSON Schema](http://json-schema.org/) (though not yet supporting TypedArrays) or [Protocol Buffers](http://code.google.com/apis/protocolbuffers/) were the first things that came to mind to address these issues.
 
-For example, in Node.js, there is already a library called [Socket.IO](http://socket.io/). It does not yet support binary messages, but they have announced that it will be supported in v1.0, so it's only a matter of time. Using such a library, developers can exchange data without even being aware of the protocol they are using. And this is the future I glimpsed today.
+In the node.js ecosystem, for instance, a library called [Socket.IO](http://socket.io/) already exists. While it doesn't support binary messages yet, they've stated support is coming in v1.0, so it's only a matter of time. With libraries like that, developers will be able to exchange data without even being conscious of the underlying protocol. And that is precisely where the future I caught a glimpse of lies.
 
-WebSocket will likely become indispensable in the pursuit of speed on the Internet in the future. It will become a technology that will be used even if there is no need to create real-time services. There are two main reasons for this: WebSocket's reduced overhead and its ability to compress data.
+As we pursue greater speed across the internet, WebSocket will become indispensable. It will be used even when building services that don't strictly require real-time capabilities. There are two primary reasons: WebSocket's reduced overhead and data compression.
 
-For example, if you're using WebSocket for a service that requires frequent communication, is there any point in using Ajax separately? Previously, [Google API Expert](https://sites.google.com/site/devreljp/Home/api-expert) Komatsu published an interesting article comparing the communication speeds of WebSocket and Ajax. Just reading this article should make you think, "If a WebSocket connection is already available, there's no point in using Ajax separately." Ultimately, I think we'll see the emergence of an architecture in which the server renders a web page once, then establishes a WebSocket connection to control all communication, completely eliminating Ajax altogether.
+For example, if a service with frequent communication is already using WebSocket, what is the point of using Ajax separately? [Google API Expert](https://sites.google.com/site/devreljp/Home/api-expert) Mr. Komatsu previously published an [interesting article](http://blog.livedoor.jp/kotesaki/archives/1373945.html) comparing communication speeds between WebSocket and Ajax. Looking at that alone makes you realize: if you already have an open WebSocket connection, there's little reason to go out of your way to use Ajax. Taken to its logical conclusion, I think we'll soon see architectures where the server renders the web page once, and from then on, a WebSocket connection controls all communication without using Ajax at all.
 
-Then there's data compression. There's no doubt that converting data to binary format reduces the amount of data sent compared to sending text. With the upcoming WebSocket Deflate Extension, data will be compressed even further, making it even smaller.
+Then there's data compression. There's no question that converting to binary reduces data size compared to sending plain text. On top of that, once the upcoming [WebSocket Deflate Extension](http://tools.ietf.org/html/draft-tyoshino-hybi-websocket-perframe-deflate-05) arrives, data will be compressed even further.
 
-Additionally, as we've verified in this article, sending binary data requires additional information to be added to it. So what's the point of sending text data separately? It's only a matter of time before libraries emerge that emphasize speed by sending everything in binary from the start. I even think there's a chance that in the future, all data transmitted over the Internet using WebSockets will be binary.
+Furthermore, as demonstrated in this post, sending binary requires embedding metadata directly into that binary. In that case, what's the point of sending text data separately at all? It's only a matter of time before libraries emerge that boast superior speed by sending everything as binary from the start. I believe there's a real possibility that all data flowing over WebSocket on the internet could eventually become binary.
 
-## Summary
-To put it a little dramatically, this could be a paradigm shift for the Web. It's not impossible that the protocol used on the Web will be replaced from HTTP to some kind of protocol that runs on WebSocket.
+## Conclusion
+To put it slightly boldly, this has the potential to be a paradigm shift for the web. The possibility that the primary protocol of the web could transition from HTTP to some protocol running on top of WebSocket isn't something that can be entirely ruled out.

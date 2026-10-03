@@ -1,31 +1,30 @@
 ---
+title: Slightly geeky Mac OS X tips
 layout: post
 lang: en
-title: Mac OS X Geek Tips
-description:
 date: 2008-06-03
 tags:
   - Mac OS X
   - Tips
 translationOf: /2008/06/mac-os-x-tips.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-## Kotoeri transformation
+## Kotoeri Conversion
 
-During conversion
+During conversion:
 
-* `Ctrl + j`: Convert to Hiragana
-* `Ctrl + k`: Convert to Katakana
-* `Ctrl + l`: Convert to Full-width Alphanumeric
-* `Ctrl + ;`: Convert to Half-width Alphanumeric
+* `Ctrl + j` : Convert to Hiragana
+* `Ctrl + k` : Convert to Katakana
+* `Ctrl + l` : Convert to full-width alphanumeric
+* `Ctrl + ;` : Convert to half-width alphanumeric
 
-## Cursor movement etc.
+## Cursor Movement, etc.
 
-It's not as easy to use as Vim, but...
+It's not Vim, so it's not the easiest to get used to, but...
 
-* `Ctrl + p` : Top
-* `Ctrl + n` : Bottom
+* `Ctrl + p` : Up
+* `Ctrl + n` : Down
 * `Ctrl + b` : Left
 * `Ctrl + f` : Right
 * `Ctrl + k` : Delete line
@@ -33,42 +32,42 @@ It's not as easy to use as Vim, but...
 * `Ctrl + a` : Move to beginning of line
 * `Ctrl + e` : Move to end of line
 
-## Capture
+## Screen Capture
 
-It goes without saying that you can capture the entire screen with `Command + Shift + 3`,
+Taking a full-screen screenshot with `Command + Shift + 3` goes without saying, but...
 
-`Command + Shift + 4` captures a specified area. Drag the area you want to capture.
+With `Command + Shift + 4`, you can capture a selected area. While dragging the area you want to capture:
 
-* `Space`: Move the capture area as is.
-* `Shift`: Transform the area while fixing all directions except the cursor movement.
-* `Option`: Transform the shape around the center of the area.
-* `Ctrl`: Copy the capture area to the clipboard.
-* `Esc`: Cancel capture.
+* `Space` : Move the capture area without resizing
+* `Shift` : Lock all directions except the one the cursor is moving to resize the area
+* `Option` : Resize the area anchored from its center
+* `Ctrl` : Copy the captured area to the clipboard
+* `Esc` : Cancel capture
 
-## QuickLook
+## Quick Look
 
-Image QuickLook
+In Quick Look for images:
 
-* `Option + クリック` : Enlarge
-* `Option + Shift + クリック` : Reduce
-* `Option + ホイール` : Enlarge/Reduce
+* `Option + click` : Zoom in
+* `Option + Shift + click` : Zoom out
+* `Option + scroll wheel` : Zoom in/out
 
-PDFQuickLook
+In Quick Look for PDFs:
 
-* `Command + プラスキー(Command + Shift + ;)` : Enlarge
-* `Command + マイナスキー` : Reduce
+* `Command + Plus key (Command + Shift + ;)` : Zoom in
+* `Command + Minus key` : Zoom out
 
-Dashboard
+## Dashboard
 
-Press `Option` and hover your mouse over it to see the x symbol for deleting the widget (so you don't have to click `+` in the bottom left corner of the screen every time).
+Hovering over a widget while holding `Option` reveals the close button (×) to remove it (no need to click the `+` at the bottom-left of the screen every time).
 
-## others
+## Others
 
 * `Ctrl + Shift + Eject` : Turn off the display
 * `Command + Option + Esc` : Force quit
 * `Command + Option + Ctrl + Eject` : Shut down the OS
-* `Ctrlを押しながらマウスホイールをグリグリ` : Zoom in/out the screen (pretty impressive)
-* `SafariのタイトルバーをCommand + クリック` : Move URLs from the same site to a higher level
-* (Probably for all apps) `Command + F1` : Cycle through windows of the same app
+* `Scroll the mouse wheel while holding Ctrl` : Zoom the screen in/out (pretty impressive)
+* `Command + click the Safari title bar` : Navigate to a higher-level directory of the current site's URL
+* (Probably in all apps) `Command + F1` : Cycle through windows of the same app
 
-Other reference sites for the collected tips can be found here.
+You can find various other reference sites for collected tips [here](http://bookmark.goo.ne.jp/user/agektmr/search/?k=mac%20os%20x%2BTips).

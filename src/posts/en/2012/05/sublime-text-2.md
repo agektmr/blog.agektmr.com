@@ -1,92 +1,95 @@
 ---
 layout: post
 lang: en
-title: Recommendation for Sublime Text 2
-description:
+title: Why You Should Use Sublime Text 2
 date: 2012-05-07
 updated: 2012-05-07
-tags:
+tags: 
   - Sublime Text 2
 translationOf: /2012/05/sublime-text-2.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-What editor do you use when coding? I've always been a big fan of vim in Terminal, but some people prefer Emacs, and Mac apps like Coda and TextMate are popular. I've heard that WebStorm and Komodo Edit are also popular these days. Once you find an editor you're comfortable with, it's hard to feel like switching. Recently, I've started using an editor called [Sublime Text 2](http://www.sublimetext.com/), which has recently become popular among front-end engineers overseas. Today, I'd like to introduce Sublime Text 2 (hereafter referred to as ST2).
+Which editor do you use when coding? I used to be a die-hard vim user exclusively in the Terminal, but others might prefer Emacs, or Mac apps like Coda and TextMate might be popular choices. Lately, I hear WebStorm and Komodo Edit are also gaining traction. Once you're comfortable with an editor, it's pretty hard to convince yourself to switch, isn't it? In the midst of all this, I've recently started using [Sublime Text 2](http://www.sublimetext.com/) in earnest, an editor that has been growing in popularity among front-end engineers overseas. Today, I'd like to introduce this Sublime Text 2 (hereafter ST2).
 
-The appeal of Sublime Text 2
+## The Appeal of Sublime Text 2
 
-In my case, I was already completely accustomed to using vim, so I didn't feel a strong need to switch. However, when working on a project-by-project basis, it's convenient to have a list of project files displayed on the left side. (I tried <a href="http://www.vim.org/scripts/script.php?script_id=1658" target="_blank">NERD tree</a>, but I couldn't quite figure out how to use it, so I gave up.) It also needed to be able to open multiple files in tabs and to have sufficient support for Japanese. Above all, it was extremely important to me that it could be used in the same way as vim. After trying out a few options, I started using ST2 when a colleague happened to be buying it in bulk.
+In my case, vim was so second nature to me that I didn't feel a strong need to switch. However, when working on a project basis, having a project file tree displayed on the left side is definitely convenient (I tried <a href="http://www.vim.org/scripts/script.php?script_id=1658" target="_blank">NERD tree</a>, but I just couldn't remember how to use it and ended up giving up). It also needs to support keeping multiple files open in tabs, handle Japanese properly, and above all, being able to use it with the same keybindings as vim was extremely important to me. While trying out a few options under those conditions, I started using ST2 simply because a colleague happened to be buying licenses in bulk.
 
-Here's what the ST2 website has to say about it:
+Here are the selling points listed on the ST2 site:
 
-* Simple and fast interface
-* Minimap for a complete overview
-* Multi-select text
-* Automate operations with macros
+* A slick, fast interface
+* A minimap to get an overview of the whole file
+* Multiple selections for editing text in several places at once
+* Automating actions with macros
 
-However, to be honest, none of them appealed to me. Not only did I not understand their appeal, but I couldn't change the settings using a GUI, and to be honest, I didn't immediately understand the secret to their popularity. I just thought it was okay because I could use it in vim mode. However, after installing [Sublime Package Control](http://wbond.net/sublime_packages/package_control), I've gradually become addicted to it.
+To be completely honest, none of these really resonated with me at first. Not only did I not appreciate these selling points, but settings couldn't even be changed via a GUI, and I honestly couldn't figure out the secret behind its popularity right away. I just used it with the mindset of "well, at least it has vim mode, so it's good enough." However, ever since installing [Sublime Package Control](http://wbond.net/sublime_packages/package_control), I've gradually started getting hooked.
 
-What you can do with Package Control is, for example:
+Things I can now do after installing Package Control include:
 
-* Compiling LESS (?) can now be done with a single keyboard shortcut (which is why I finally started using LESS)
-* Git commands can now be typed from within the editor
-* HTML tag completion has been added
-* CDN URLs can now be easily entered
+* Compiling (?) LESS with a single shortcut key (which finally got me to start using LESS)
+* Running git commands directly from inside the editor
+* Autocompleting HTML tags
+* Easily inserting CDN URLs
 
-This alone may be appealing to some people. Package Control is a plugin that allows you to easily install plugins from repositories within the editor, is TextMate compatible, and can be written in Python.
+...and more. This alone might sound appealing to some of you. Package Control is a plugin that lets you easily install plugins from repositories inside the editor; it's TextMate-compatible and written in Python.
 
-If you are interested in ST2, try installing it now. You can try it for free (with a time limit?), or purchase it for $59.
+If you find ST2 appealing, go ahead and <a href="http://www.sublimetext.com/" target="_blank">install</a> it. You can evaluate it for free (with a time limit?), and purchasing a license costs $59.
 
-## Useful ways to use Sublime Text 2
+## Useful Ways to Use Sublime Text 2
 
-There is already a [great summary article](http://net.tutsplus.com/tutorials/tools-and-tips/sublime-text-2-tips-and-tricks/) in English, so I'll borrow from there and add a little flavor to it to introduce some of the tips that really stood out to me.
+There is already a [great roundup article](http://net.tutsplus.com/tutorials/tools-and-tips/sublime-text-2-tips-and-tricks/) in English, so borrowing from that and adding my own spin, let me share a few tips that really clicked for me.
 
-### Using the Command Pallet
+### Use the Command Palette
 
-Like TextMate, ST2 allows you to open the command palette with `Command + Shift + p`. As you type in the command palette, it will filter the options so you can select and run the command you need.
+Just like in TextMate, you can open the Command Palette in ST2 with `Command + Shift + p`. As you type in the Command Palette, it filters the options, allowing you to select and run the command you need.
 
 ### Install Package Control
 
-First of all, this is it. Installing it will give ST2 an incomparable power boost. To install it, press ``Control + ` ``、日本語キーボードの場合 `Control +
-Shift + @` を押すと、画面下にコンソールが開きますので、下記のコマンドをコピペし
-て入力します。
+First and foremost, this. Installing this powers up ST2 beyond comparison. To install it, press ``Control + ` `` (or `Control + Shift + @` on a Japanese keyboard) to open the console at the bottom of the screen, then copy and paste the following command:
 
-__CODE_BLOCK_0__
+```python
+import urllib2,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();os.makedirs(ipp) if not os.path.exists(ipp) else None;open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())
+```
 
-実行後再起動すれば、Package Control が使えるようになります。コマンドパレットを開き、`install` と入力すると、レポジトリからパッケージのリストが読みこまれ、好きなものをインストールできるようになります。
+Once executed, restart the editor and Package Control will be ready to use. Open the Command Palette and type `install`, and it will fetch the list of packages from the repository so you can install whatever you like.
 
-### Vim モードを有効にする
+### Enable Vim Mode
 
-メニューの Preferences から Settings - Default を選択すると Preferences.sublime-settings というファイルが開きますので、一番下の `"ignored_packages": [“Vintage”]` の部分を `"ignored_packages": []` に変更して保存します。これで Vim 互換モードが利用できるようになります (あくまで互換なので、完璧ではないです。徐々に改善している模様) 。
+From the menu, select Preferences > Settings - Default, which opens the file `Preferences.sublime-settings`. Change `"ignored_packages": [“Vintage”]` at the very bottom to `"ignored_packages": []` and save. This enables Vim compatibility mode (keep in mind it's compatibility mode, so it's not perfect, but it seems to be improving steadily).
 
-### スニペットを活用する
+### Take Advantage of Snippets
 
-まだ自分でどうやって作るかなどまで掘り下げられてないですが、必要に応じて各種 Snippet のパッケージをインストールすることで、手軽に定型の文字列を入力することができるようになります。例えば `li` と入力してタブキーを押せば、
+I haven't dug into how to create them myself yet, but by installing various Snippet packages as needed, you can easily insert boilerplate text. For example, if you type `li` and hit the Tab key:
 
-__CODE_BLOCK_1__
+```html
+<li><a href="" title=""></a></li>
 
-と表示されて、タブを押すごとに必要な属性値を補完していくことができます。利用できるスニペットはコマンドパレットで `snippet` と入力することで確認できます。
+li
+```
 
-### おすすめパッケージ
+It expands like this, and each time you press Tab, you can fill in the required attributes. You can check the available snippets by typing `snippet` into the Command Palette.
 
-僕が気に入って使ってるパッケージは以下の通り
+### Recommended Packages
 
-* LESS-build (要 node.js ですが、`Command + b` だけで`.less`のファイルを`.css` (it will compile to this).
+Here are the packages I personally like and use:
+
+* LESS-build (requires node.js, but compiles `.less` files to `.css` with just `Command + b`)
 * HTML5
 * Git
 * cdnjs
 * SFTP
 * Tag
 * SublimeCodeIntel
-* Nuttuts+Fetch (You can quickly incorporate your own project template set and start coding)
-* Terminal (Opens Terminal in the current directory)
+* Nuttuts+Fetch (lets you quickly pull in your own project template set and start coding immediately)
+* Terminal (opens a Terminal in the current directory)
 
-There are many other packages available, so be sure to check them out.
+There are [many other packages](http://wbond.net/sublime_packages/) available, so be sure to check them out.
 
-Community
+## Community
 
-Finally, regarding ST2, it seems that there are still few users in Japan, and there isn't much information available in Japanese. Chrome Google API Expert [@yoshikawa_t](http://twitter.com/yoshikawa_t) has created a [Google Group](https://groups.google.com/forum/?fromgroups#!forum/sublime-text-japan-users-group), so if you're interested, please share information there. Here are some other useful links:
+Lastly, regarding ST2, there still seem to be relatively few users in Japan, and Japanese information is somewhat scarce. [@yoshikawa_t](http://twitter.com/yoshikawa_t), a Google API Expert for Chrome, has set up a [Google Group](https://groups.google.com/forum/?fromgroups#!forum/sublime-text-japan-users-group), so if you're interested, please join in to exchange information. Here are a few other useful links:
 
 * [One Weekend with Sublime Text 2](https://gist.github.com/3f430d09855b54ae32ee)
-* [Customizing Sublime Text 2](http://ready-study-go.blogspot.jp/2011/09/sublime-text-2.html)
-* [Try using the programming editor Sublime Text 2!](http://d.hatena.ne.jp/mizchi/20111021/1319167480)
+* [Sublime Text 2 のカスタマイズ](http://ready-study-go.blogspot.jp/2011/09/sublime-text-2.html)
+* [プログラミングエディタ Sublime Text2 を使ってみよう！](http://d.hatena.ne.jp/mizchi/20111021/1319167480)

@@ -1,39 +1,41 @@
 ---
+title: mixi App Launched / Hatebu Checker Released
+author: Eiji
 layout: post
 lang: en
-title: Mixi app released / Hatebu checker released
-description:
 date: 2009-04-10
+categories:
+  - OpenSocial
 tags:
   - mixi
   - mixiアプリ
 translationOf: /2009/04/mixi.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-Finally, mixi's implementation of OpenSocial and mixi apps have been released to general developers.
+At long last, mixi's OpenSocial implementation, mixi Apps, has finally been released to general developers.
 
-<a target="_blank" href="http://mixi.co.jp/press_09/0408_1.html">Even individuals can now develop social applications. "mixi App" open beta version released! </a>
+<a target="_blank" href="http://mixi.co.jp/press_09/0408_1.html">個人の皆さまでもソーシャルアプリケーションの開発が可能に。「mixiアプリ」オープンβ版公開！</a>
 
-What's appealing about Mixi is that anyone can contribute gadgets to the platform, which has over 15 million users, and have them used by the general public. As a supporter of OpenSocial, I feel like the time has finally come. At the same time, seeing the excitement building up everywhere makes me envious.
+Above all, being able to provide gadgets on a platform like mixi with over 15 million users for general users to enjoy is undeniably appealing. As a supporter of OpenSocial, it feels like the time has finally arrived. At the same time, seeing all the excitement brewing everywhere makes me quite envious.
 
-So, this article is serialized on gihyo.jp together with <a target="_blank" href="http://www.eisbahn.jp/yoichiro/"> Yoichiro </a>.
+So, for the serial article series on gihyo.jp that I co-author with <a target="_blank" href="http://www.eisbahn.jp/yoichiro/">Yoichiro</a>:
 
-<a target="_blank" href="http://gihyo.jp/dev/serial/01/opensocial/">http://gihyo.jp/dev/serial/01/opensocial/__HTML_TAG_5__
+<a target="_blank" href="http://gihyo.jp/dev/serial/01/opensocial/">http://gihyo.jp/dev/serial/01/opensocial/</a>
 
-We have already released the Hatena Bookmark Checker gadget that we are using as a sample.
+I went ahead and published the Hatebu Checker gadget we use as a sample there right away.
 
-<a target="_blank" href="http://platform001.mixi.jp/view_appli.pl?id=682">http://platform001.mixi.jp/view_appli.pl?id=682__HTML_TAG_7__
-
- 
+<a target="_blank" href="http://platform001.mixi.jp/view_appli.pl?id=682">http://platform001.mixi.jp/view_appli.pl?id=682</a>
 
  
 
-This is a gadget I created using <a target="_blank" href="http://sandbox.home.goo.ne.jp/">goo Home</a>, but I noticed a few things when making it compatible with the mixi app...
+ 
 
-* Are there adequate measures in place to cover legal issues arising from gadgets using only the current terms of use and developer registration method?
-* It is theoretically possible to leak personal information to external parties via gadgets, but do ordinary users allow this under the current terms of use?
-* There are many, if not all, API glitches.
-* OpenSocial extension specifications ignore the OpenSocial style (opensocial.PersonField, etc.).
+It's a gadget originally built for <a target="_blank" href="http://sandbox.home.goo.ne.jp/">goo Home</a>, but while adapting it for mixi Apps, I noticed a few points...
 
-As for the specifications, since Yoichiro has moved to mixi, I hope they will continue to improve them in the future...
+* Has enough thought really been put into whether the current terms of service and developer registration process alone can cover legal issues caused by gadgets?
+* While it is theoretically possible to leak personal information externally via a gadget, have general users actually consented to that under the current terms of service?
+* API bugs are scattered about—or rather, quite prevalent.
+* The OpenSocial extension specifications ignore OpenSocial conventions (such as `opensocial.PersonField`).
+
+As for the specs, now that Yoichiro has transferred to mixi, hopefully we can look forward to him improving them going forward...

@@ -1,21 +1,21 @@
 ---
 layout: post
 lang: en
-title: Shadow DOM - The technology that makes up Web Components
-description: We will explain Shadow DOM, one of the elements that make up Web Components.
+title: Shadow DOM - A Technology That Makes Up Web Components
+description: I will explain Shadow DOM, one of the building blocks of Web Components.
 date: 2014-11-01
-image:
-  feature: /shadow-dom-web-components/architecture.png
 tags:
   - Shadow DOM
   - Web Components
+image:
+  feature: /shadow-dom-web-components/architecture.png
 translationOf: /2014/11/shadow-dom-web-components.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-This article is a cross-post of the [webcomponents.org article](http://webcomponents.org/articles/introduction-to-shadow-dom/).
+*This article is a crosspost from [an article on webcomponents.org](http://webcomponents.org/articles/introduction-to-shadow-dom/).*
 
-Shadow DOM allows you to add a DOM tree to a DOM element, containing styles and markup that are local to that node, separate from the rest of the webpage. This article and video explain Shadow DOM.
+Shadow DOM allows you to attach a DOM tree to a DOM element with scoped styles and markup that are isolated from the rest of the web page. In this article and video, we'll take a look at Shadow DOM.
 
 <!-- excerpt -->
 
@@ -25,34 +25,33 @@ Shadow DOM allows you to add a DOM tree to a DOM element, containing styles and 
 
 [![](https://2.bp.blogspot.com/-sSnMdi7jRHk/VD9ECL455-I/AAAAAAAAudQ/cXHMUu6S58M/s1600/posterImage-4215.png)](https://2.bp.blogspot.com/-sSnMdi7jRHk/VD9ECL455-I/AAAAAAAAudQ/cXHMUu6S58M/s1600/posterImage-4215.png)
 
-This is a video displayed using the HTML5 video tag. As you can see,
-the code is simple, consisting only of a video tag, but it is able to display not only the video itself but also the control UI.
+Here is a video displayed using an HTML5 video tag. As you can see, even though the code is as simple as just a video tag, it displays not only the video itself but also controls UI.
 
 ```html
 <video src="http://craftymind.com/factory/html5video/BigBuckBunny_640x360.mp4" controls></video>
 ```
 
-In fact, if you open DevTools in Chrome and turn on the `'Show user agent shadow DOM'` option, you can see how this control UI is structured.
+In fact, if you open DevTools in Chrome and turn on the `'Show user agent shadow DOM'` option, you can see how this controls UI is constructed.
 
 [![](https://4.bp.blogspot.com/-W-04-3shNPE/VD9EX1GZ6KI/AAAAAAAAudo/mtraUQ_D89w/s1600/Screen%2BShot%2B2014-06-03%2Bat%2B4.05.54.png)](https://4.bp.blogspot.com/-W-04-3shNPE/VD9EX1GZ6KI/AAAAAAAAudo/mtraUQ_D89w/s1600/Screen%2BShot%2B2014-06-03%2Bat%2B4.05.54.png)
 
-Did you know that this control UI is actually made of HTML? This is an example of Shadow DOM.
+Can you see that this controls UI is actually made of HTML? This is an example of Shadow DOM.
 
 [![](https://3.bp.blogspot.com/-oZMSpyMBoz4/VD9EDhH4vNI/AAAAAAAAudc/QZTAncpkIdM/s1600/Screen%2BShot%2B2014-10-16%2Bat%2B11.26.37.png)](https://3.bp.blogspot.com/-oZMSpyMBoz4/VD9EDhH4vNI/AAAAAAAAudc/QZTAncpkIdM/s1600/Screen%2BShot%2B2014-10-16%2Bat%2B11.26.37.png)
 
-The great thing about Shadow DOM is that it's actually available to web developers.
+What's great about Shadow DOM is that this capability is also available to web developers.
 
-Shadow DOM structure
+## The Structure of Shadow DOM
 
-An element with a shadow root is called a shadow host. A shadow root can be treated like a normal DOM element, so you can add any node to it.
+An element that has a Shadow Root is called a Shadow Host. Since a Shadow Root can be treated just like a regular DOM element, you can append arbitrary nodes to it.
 
 [![](https://2.bp.blogspot.com/-Ja7g-lE5tLI/VD9EDMWH_dI/AAAAAAAAudY/IpVUB8uEE60/s1600/Screen%2BShot%2B2014-10-16%2Bat%2B11.28.07.png)](https://2.bp.blogspot.com/-Ja7g-lE5tLI/VD9EDMWH_dI/AAAAAAAAudY/IpVUB8uEE60/s1600/Screen%2BShot%2B2014-10-16%2Bat%2B11.28.07.png)
 
-In Shadow DOM, all markup and CSS is scoped to the element. In other words, CSS defined within a shadow root cannot affect the parent document, and CSS from the parent document cannot accidentally affect the shadow root.
+In Shadow DOM, all markup and CSS are scoped to the element. In other words, CSS defined inside the Shadow Root does not affect the parent document, and CSS from the parent document will not accidentally bleed into the Shadow Root.
 
-## How to create Shadow DOM
+## How to Create a Shadow DOM
 
-To create a Shadow DOM, call `.createShadowRoot()` on any DOM element to create a Shadow Root. You can then build the Shadow DOM by adding elements to this Shadow Root object.
+To create a Shadow DOM, call `.createShadowRoot()` on any DOM element to create a Shadow Root. By appending elements to this Shadow Root object, you can build out the Shadow DOM.
 
 ```html
 <div id="host"></div>
@@ -60,19 +59,17 @@ To create a Shadow DOM, call `.createShadowRoot()` on any DOM element to create 
 
 ```javascript
 var host = document.querySelector('#host');
-var root = host.createShadowRoot(); // Shadow Root を作る
+var root = host.createShadowRoot(); // Create a Shadow Root
 var div = document.createElement('div');
 div.textContent = 'This is Shadow DOM';
-root.appendChild(div); // Shadow Root に要素を追加
+root.appendChild(div); // Append element to Shadow Root
 ```
 
-Elements added to the shadow root cannot be queried either. In this case, `document.querySelector('#host div')` becomes `null`.
+Elements added to a Shadow Root cannot be queried from outside. In this case, `document.querySelector('#host div')` returns `null`.
 
-## Displaying Shadow Host content in Shadow DOM
+## Displaying Shadow Host Content Inside Shadow DOM
 
-There may be times when you want to display child elements of a Shadow Host within Shadow DOM.
-For example, consider an element like a name tag that is styled by Shadow DOM.
-It would be convenient to be able to change just the text using external input.
+There may be times when you want to display child elements of the Shadow Host inside the Shadow DOM. For example, consider an element like a nametag styled with Shadow DOM. It would be convenient to be able to change just the text from external input.
 
 [![](https://2.bp.blogspot.com/-8NLBoVflV6A/VD9FVei9BVI/AAAAAAAAudw/6FEbhEJuOSs/s1600/posterImage-4222.png)](https://2.bp.blogspot.com/-8NLBoVflV6A/VD9FVei9BVI/AAAAAAAAudw/6FEbhEJuOSs/s1600/posterImage-4222.png)
 
@@ -96,9 +93,9 @@ root.appendChild(content);
 <div>
 ```
 
-By giving the `<content>` element an `select` attribute with a CSS selector pointing to the node you want to remove from the Shadow Host, that element will be inserted at the `<content>` position.
+By providing a CSS selector for the node you want to project from the Shadow Host in the `select` attribute of the `<content>` element, that element will be inserted at the position of `<content>`.
 
-Note that the `<content>` element can only specify CSS selectors that represent elements that are direct descendants of the Shadow Host. This means that you cannot specify a descendant of a descendant, as in the following:
+Note that the `<content>` element only accepts CSS selectors that target direct children of the Shadow Host. That means you cannot target descendants of descendants like this:
 
 ```html
 <div id="host">
@@ -107,23 +104,23 @@ Note that the `<content>` element can only specify CSS selectors that represent 
   </div>
 </div>
 
-<content select=".child h1"></content> // これはダメ
+<content select=".child h1"></content> // This won't work
 ```
 
-## Combine with Template
+## Combining with Template
 
-Shadow DOM is great, but writing JavaScript that imperatively builds a DOM tree is not easy, and it leaves no room for a designer.
+Shadow DOM is great, but writing imperative JavaScript every time to build DOM trees is cumbersome, leaving little room for designers to collaborate.
 
-This is where the Template element comes in. By utilizing the Template element, you can construct the Shadow DOM declaratively. For more information about the Template element, please refer to the previous post.
+That is where the Template element comes in. Let's build Shadow DOM declaratively by utilizing the Template element. For more on the Template element, please refer to the [previous post](http://blog.agektmr.com/2014/10/template-web-components.html).
 
 ```html
-<template id="template"> // <template> の中身が Shadow DOM になる
+<template id="template"> // <template> content becomes the Shadow DOM
   <style>
     ...
   </style>
   <div id="container">
     <img src="http://webcomponents.org/img/logo.svg">
-    <content select="h1"></content> // h1 をここに挿入
+    <content select="h1"></content> // Insert h1 here
   </div>
 </template>
 
@@ -134,28 +131,28 @@ This is where the Template element comes in. By utilizing the Template element, 
 
 ```javascript
 var host = document.querySelector('#host');
-// Shadow Root を作る
+// Create a Shadow Root
 var root = host.createShadowRoot();
 var template = document.querySelector('#template');
-// <template> をコピー
+// Clone the <template>
 var clone = document.importNode(template.content, true);
-// Shadow Root に追加
+// Append to Shadow Root
 root.appendChild(clone);
 ```
 
-You can see the actual code here.
+You can view the actual code [here](http://jsbin.com/bahera/4/edit).
 
-## Browser support status
+## Browser Support
 
-As of October 2014, Shadow DOM is supported in Chrome, Opera, and, if flagged, Firefox. Check the latest support status at chromestatus.com or caniuse.com. A polyfill is also available: [platform.js](https://github.com/polymer/platform) (scheduled to be renamed to webcomponents.js in November 2014).
+As of October 2014, Shadow DOM is supported in Chrome, Opera, and behind a flag in Firefox. Please check chromestatus.com or caniuse.com for the latest support status. You can also use [platform.js](https://github.com/polymer/platform) as a polyfill ([scheduled to be renamed](https://blog.polymer-project.org/announcements/2014/10/16/platform-becomes-webcomponents/) to webcomponents.js in November 2014).
 
-## summary
+## Summary
 
-What did you think? In addition to what I covered in this article, Shadow DOM has many other very complex specifications, such as external styling, how to handle events, and how to handle multiple shadow roots.
+What did you think? Beyond what was covered in this article, Shadow DOM has a wealth of sophisticated specifications, including external styling, event handling, working with multiple Shadow Roots, and more.
 
-If you want to learn more about Shadow DOM, please refer to the following documentation:
+If you'd like to learn more about Shadow DOM, please check out the following resources:
 
 * [Shadow DOM 101](http://goo.gl/1cxTS7)
-* [Shadow DOM 201 - CSS and Styling](http://www.html5rocks.com/ja/tutorials/webcomponents/shadowdom-201/)
-* [Shadow DOM 301 - Advanced Concepts and DOM API](http://www.html5rocks.com/ja/tutorials/webcomponents/shadowdom-301/)
-* [Shadow DOM Specification](http://www.w3.org/TR/shadow-dom/)
+* [Shadow DOM 201 - CSS とスタイリング](http://www.html5rocks.com/ja/tutorials/webcomponents/shadowdom-201/)
+* [Shadow DOM 301 - 上級者向けコンセプトと DOM API](http://www.html5rocks.com/ja/tutorials/webcomponents/shadowdom-301/)
+* [Shadow DOM 仕様](http://www.w3.org/TR/shadow-dom/)

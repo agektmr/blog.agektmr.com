@@ -1,8 +1,8 @@
 ---
 layout: post
 lang: en
-title: The Spectre threat and the headers websites should set
-description: The emergence of Spectre has increased the security requirements for websites. We have summarized the types of attacks that Spectre can cause and the specific countermeasures that are required.
+title: About the Spectre Threat and Headers Websites Should Set
+description: The emergence of Spectre has increased the security requirements for websites. Here is a summary of the potential attacks Spectre enables and the specific countermeasures required.
 date: 2021-11-01
 updated: 2021-11-04
 image:
@@ -11,111 +11,111 @@ tags:
   - Security
   - Spectre
 translationOf: /2021/11/browser-security.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
 This is a long article, so I'll start with the conclusion.
 
-The emergence of Spectre has increased the security requirements for websites. Specific measures required are as follows:
+With the arrival of Spectre, the security requirements for websites have increased. Specifically, the following measures are needed:
 
-* All resources should use the `Cross-Origin-Resource-Policy` header to control loading into cross-origin documents.
-* HTML documents should include the `X-Frame-Options` header or the `Content-Security-Policy` (CSP) header with the `frame-ancestors` directive to control embedding in an iframe in a cross-origin page.
-* HTML documents should include the `Cross-Origin-Opener-Policy` header to control communication with cross-origin pages when opened as a popup window.
-* All resources should include appropriate `Content-Type` and `X-Content-Type-Options: nosniff` headers to prevent malicious cross-origin loading.
+* Use the `Cross-Origin-Resource-Policy` header on all resources to control their loading into cross-origin documents.
+* Add the `X-Frame-Options` header or the `Content-Security-Policy` (CSP) header's `frame-ancestors` directive to HTML documents to control iframe embedding into cross-origin pages.
+* Add the `Cross-Origin-Opener-Policy` header to HTML documents to control communication with cross-origin pages when opened as popup windows.
+* Add appropriate `Content-Type` headers and `X-Content-Type-Options: nosniff` headers to all resources to prevent malicious loading from cross-origin contexts.
 
 <!-- excerpt -->
 
-To understand why such a header is necessary and to understand the details, we first need to look at how modern browsers display web pages.
+To understand why these headers are necessary and how they work, let's first look back at how modern browsers display web pages.
 
-## A look back at how browsers work
+## How browsers work: a recap
 
-Each tab in a browser has a URL that tells the user which page they are currently viewing. The URL displayed in a tab usually points to an HTML document, which represents the entire web page by loading various resources such as images, videos, stylesheets, scripts, and fonts. In this case, the domain of each resource does not necessarily match the domain of the currently viewed page.
+In a browser, each tab has a single URL that tells the user which page they are currently viewing. The URL displayed in the tab typically points to an HTML document, which then loads various resources such as images, videos, stylesheets, scripts, and fonts to render the entire web page. The domains of these individual resources do not necessarily match the domain of the page currently being viewed.
 
-In this case, the domain displayed in the URL bar is called the "first party," and any domain other than the first party of the loaded resource is called the "third party." (So, a "third-party cookie" is a cookie associated with a third-party resource.)
+The domain displayed in the address bar is called the "first party," while any other domain among the loaded resources is called a "third party." (In other words, "third-party cookies" are cookies associated with third-party resources.)
 
-Regarding the relationship between two domains, if only the eTLD+1 (effective Top Level Domain and the one above = e.g. `example.com`) is the same, it is called same-site; if the scheme, hostname, and port number all match (e.g. `https://www.example.com:8080`), it is called same-origin; otherwise it is called cross-site or cross-origin.
+When describing the relationship between two domains, if only the eTLD+1 (the effective Top-Level Domain plus one label = for example, `example.com`) matches, they are called same-site. If the scheme, hostname, and port number all match (for example, `https://www.example.com:8080`), they are called same-origin. Anything else is referred to as cross-site or cross-origin.
 
-In the rest of this article, we will explicitly use same-site/cross-site and same-origin/cross-origin, so if you are unsure about the difference between them, please start here.
+Throughout the rest of this article, I will explicitly distinguish between same-site/cross-site and same-origin/cross-origin. If you are unsure about the differences, please start here:
 
 {% Aside %}
 
-Reference: [Understanding same-site/cross-site, same-origin/cross-origin](https://zenn.dev/agektmr/articles/f8dcd345a88c97)
+Reference: [same-site/cross-site, same-origin/cross-origin をちゃんと理解する](https://zenn.dev/agektmr/articles/f8dcd345a88c97)
 
 {% endAside %}
 
-The Web's greatest appeal is its composability, which allows you to combine various resources from different domains (services) like a puzzle to create rich expressions. Especially since Web 2.0, the concept of APIs has been added to this and further developed. For example:
+One of the web's greatest strengths is composability—the ability to piece together various resources from different domains (services) like a puzzle to create rich experiences. Especially since Web 2.0, this has evolved further with the introduction of APIs. For example:
 
-* Implement analytics simply by loading a script and analyze or track the behavior of users who visit your site.
-* Use iframes to embed information from external sites as widgets, and embed ads, social media buttons, personalizable maps, and videos.
-* Communicate with external sites via popup windows to enable integration such as login and payment.
+* Loading a script to integrate analytics, analyze visitor behavior, or track users.
+* Using iframes to embed external information as widgets, such as ads, social media buttons, customizable maps, or videos.
+* Integrating features like logins and payments through communication with external sites via popup windows.
 
-Cross-origin collaboration is what makes the web the web.
+Cross-origin integration is arguably the defining characteristic of the web.
 
 ![](/images/2021/spectre1.png)
 
-### Same-Origin Policy
+### The Same-Origin Policy
 
-By the way, one of the scary things about the online world is that information that you thought you had entrusted to the right place could end up in a place or be used by someone you didn't intend. This is especially serious if that information is credit card numbers or bank account information. In a web browser, the "right place" is represented in the form of a domain, and its reliability is guaranteed by using HTTPS.
+One of the scariest things online is when information you entrusted to the right place ends up somewhere unintended or is misused. It's an even bigger deal if that information includes credit card numbers or bank account details. In a web browser, the "right place" is represented as a domain, and its authenticity is ensured through HTTPS.
 
-Attackers can steal information from three main points: browsers, networks, and servers. Browser attacks can also be said to involve crossing domain barriers. The **Same-Origin Policy** allows different domains to communicate with each other on a browser while still maintaining a certain level of security for each site. This policy is based on a delicate balance between maintaining mutual inviolability at the origin boundary, while allowing some degree of communication.
+Attack surfaces for stealing information generally fall into three categories: the browser, the network, and the server. An attack within the browser essentially boils down to crossing the domain boundary. What enables different domains to interact in the browser while maintaining a degree of safety for each site is the **Same-Origin Policy**. It operates on a delicate balance: treating the origin as a boundary to keep sites mutually inviolable, while still allowing a degree of collaboration.
 
-Let's take an embedded video as an example. This cross-origin video is embedded in an iframe, allowing for personalization using third-party cookies. If the user is logged in to the hosting domain, they can access the account and perform actions like "watch later," which is convenient. However, unless a specific API is provided, the embedding site cannot access this account information. This is because navigating the DOM tree of the `window` object obtained from the iframe only provides limited information. It is impossible to see what HTML is being displayed, let alone the contents of cookies.
+Consider an embedded video as an example. Because this cross-origin video is embedded within an iframe, it can be personalized using third-party cookies. If the user is logged into the provider's domain, they can conveniently perform actions on that account, such as "Watch later." However, unless an explicit API is provided, the embedding site cannot access this account information. Even if it traverses the DOM tree of the `window` object obtained from the iframe, the accessible information is limited. It's impossible to see what HTML is being displayed, let alone inspect the contents of the cookies.
 
-The same applies to windows opened as popup windows. For example, if a typical payment service is linked to a window opened using `window.open()` and the DOM tree is accessible, the store could eavesdrop on the user's credit card information. For this reason, browsers limit the information that can be accessed from the return value of `window.open()` and from `window.opener` of the opened window.
+The same applies to windows opened as popups. For instance, in a typical payment service integrated via a window opened with `window.open()`, if the DOM tree could be traversed, the merchant site could snoop on the user's credit card details. Therefore, the browser restricts the information that can be accessed both from the return value of `window.open()` and from the opened window's `window.opener`.
 
 In this way, the browser's Same-Origin Policy prevents cross-origin scripts from accessing arbitrary information.
 
 ### Cross-Origin Resource Sharing (CORS)
 
-By the way, when you research [Cross-Origin Resource Sharing](https://web.dev/cross-origin-resource-sharing/) (CORS), most articles describe it as "a mechanism for requesting resources hosted on cross-origin sites using `fetch()`." While that's true, not all of them are. In fact, CORS also plays a role in access control on the browser.
+When you look up [Cross-Origin Resource Sharing](https://web.dev/cross-origin-resource-sharing/) (CORS), most articles describe it as "a mechanism for requesting cross-origin-hosted resources via `fetch()`." While that's not wrong, it's not the whole story. CORS also plays a role in access control within the browser.
 
-For example, when loading a cross-origin image into your page, you can simply use the `<img>` tag and not worry about CORS. There's no problem if the image is displayed on the page at the specified size and the user can view it. However, in this case, the browser uses the Same-Origin Policy to protect the image's contents (binary) from being viewed by cross-origin scripts. This is called an **Opaque Response**.
+For example, when loading a cross-origin image on your page, you can simply use an `<img>` tag without worrying about CORS at all. As long as the image is displayed at the specified size and the user can see it, there's no problem. However, the browser uses the Same-Origin Policy to prevent cross-origin scripts from inspecting the image's raw contents (binary data). This is called an **Opaque Response**.
 
-For example, if you try to get the binary of an image loaded from a cross-origin browser, and then try to retrieve it as `canvas`, [`drawImage()`](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawImage) and then [`getImageData()`](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getImageData), Chrome will display the error `DOMException: Failed to execute 'getImageData' on 'CanvasRenderingContext2D': The canvas has been tainted by cross-origin data.` and fail. This is because the browser is protected by the Same-Origin Policy.
+If you try to retrieve the binary data of a cross-origin image by drawing it to a `canvas` using [`drawImage()`](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/drawImage) and then calling [`getImageData()`](https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D/getImageData), Chrome, for instance, will fail with the error: `DOMException: Failed to execute 'getImageData' on 'CanvasRenderingContext2D': The canvas has been tainted by cross-origin data.` This is the Same-Origin Policy at work.
 
-To enable this, you must explicitly allow it by specifying the `<img>` attribute with the `crossorigin` attribute and by supporting CORS on the server side.
+To make this possible, you must explicitly grant permission by adding the `crossorigin` attribute to the `<img>` tag and having the server support CORS.
 
-I've created a simple demo, so give it a try.
+I built a [simple demo](https://opaque-response-example.glitch.me/) so you can try it out yourself.
 
-In this way, the Same-Origin Policy ensures the security of the web to some extent by allowing browsers to control access between origins.
+In short, the Same-Origin Policy is what maintains a baseline of web security by having the browser control access between origins.
 
-What is the Spectre threat?
+## The threat of Spectre
 
-Spectre is a vulnerability in the architecture of CPUs that was announced in 2018. Simply put, it allows values in memory space controlled by the same process to be inferred. Spectre makes it possible for cross-origin scripts to spy on resources that transcend the Same-Origin Policy, which poses a major threat given the nature of the web.
+[Spectre](https://spectreattack.com/), disclosed in 2018, is a vulnerability rooted in the architecture of modern CPUs. Simply put, it allows an attacker to infer values within the memory space controlled by the same process. Because Spectre allows cross-origin scripts to bypass the Same-Origin Policy and peek at resources, it poses a massive threat given the nature of the web.
 
-Once malicious JavaScript was loaded, an attacker could bypass the Same-Origin Policy and read any DOM element running in the same process. With the architecture of most browsers at the time, simply loading resources via an attacker's page could result in information theft. If the resources included authentication information or other information requiring authentication, even that information could be compromised.
+By loading malicious JavaScript, an attacker could bypass the Same-Origin Policy and read arbitrary DOM elements running in the same process. Under the browser architectures of the time, simply loading a resource through an attacker's page could lead to stolen information. If that resource contained credentials or data requiring authentication, that too was put at risk.
 
 ![](/images/2021/spectre2.png)
 
-### Measures taken by each browser
+### How browsers responded
 
-Spectre's ability to efficiently steal information by leveraging high-resolution timers has led browser vendors to disable functions related to high-resolution timers. A prime example of a function that became unavailable as a result of this was `SharedArrayBuffer`. Other measures taken included reducing the accuracy of `performance.now()`. However, these measures only reduced efficiency, and Google research has shown that completely eliminating the threat of Spectre would require fundamental changes to the browser's architecture.
+Spectre exploits high-resolution timers to extract information efficiently, so browser vendors decided to disable features related to high-resolution timing. The most notable casualty was `SharedArrayBuffer`. Other measures included reducing the precision of `performance.now()`. However, these were merely mitigations to reduce efficiency; Google's research showed that completely mitigating the Spectre threat required [fundamental changes to browser architecture](https://v8.dev/blog/spectre).
 
 ### Site Isolation
 
-That's where Site Isolation comes in. [Site Isolation](https://developers.google.com/web/updates/2018/07/site-isolation) was a project the Chrome team had been working on since before Spectre became known, to mitigate the risk of exploiting memory bugs to bypass the Same-Origin Policy. The discovery of Spectre accelerated the completion of this architecture, and it was released experimentally in May 2018.
+That brings us to Site Isolation. [Site Isolation](https://developers.google.com/web/updates/2018/07/site-isolation) was a project already underway within the Chrome team before Spectre became known, originally designed to mitigate the risk of memory-related bugs bypassing the Same-Origin Policy. The discovery of Spectre accelerated this architecture's development, and it was rolled out experimentally in May 2018.
 
-Chrome originally created processes roughly on a tab-by-tab basis, but Site Isolation, as the name suggests, separates processes on a site-by-site basis to isolate cross-site resources and protect against Spectre threats. Specifically, it uses techniques such as [Cross-Origin Read Blocking (CORB)](https://www.chromium.org/Home/chromium-security/corb-for-developers) and [Out-of-process iframe (OOPIF)](https://www.chromium.org/developers/design-documents/oop-iframes). For more information, see the [Site Isolation page](https://www.chromium.org/developers/design-documents/site-isolation).
+Chrome had traditionally created processes roughly on a per-tab basis. Site Isolation, as the name implies, separates processes on a per-site basis, isolating resources across sites to protect against Spectre. Specifically, it employs techniques like [Cross-Origin Read Blocking (CORB)](https://www.chromium.org/Home/chromium-security/corb-for-developers) and [Out-of-process iframes (OOPIFs)](https://www.chromium.org/developers/design-documents/oop-iframes). For more details, see the [Site Isolation page](https://www.chromium.org/developers/design-documents/site-isolation).
 
 {% Aside %}
 
-Actually, it would be more correct to say "separate the Browsing Context Group" rather than "separate the process," but for convenience we use the word "process" here.
+Strictly speaking, it is more accurate to say "separating Browsing Context Groups" rather than "separating processes," but I use the term "process" here for simplicity.
 
 {% endAside %}
 
-Dividing processes into smaller ones incurs overhead, increasing memory consumption by about 10%, making it unsuitable for resource-scarce mobile devices. For this reason, Site Isolation is generally only enabled in desktop environments and for some mobile sites. This is why `SharedArrayBuffer` was available only in the desktop version of Chrome for a while.
+Splitting processes more granularly incurs overhead, increasing memory consumption by about 10%, which makes it poorly suited for resource-constrained mobile devices. Consequently, Site Isolation was initially enabled only in desktop environments and on select mobile sites. That's why, for a period, `SharedArrayBuffer` was available only in desktop Chrome.
 
-The problem is that Site Isolation is a Chrome-specific architecture. Firefox is currently working on a project called Fission to introduce a Site Isolation architecture, but the web is built on standard technologies, so security cannot be guaranteed by assuming a specific architecture.
+The problem, however, is that Site Isolation was Chrome's own proprietary architecture. While Firefox is currently working on [a project to introduce a Site Isolation architecture called Fission](https://blog.mozilla.org/security/2021/05/18/introducing-site-isolation-in-firefox/), the web—built on standard technologies—cannot rely on a specific browser architecture to guarantee security.
 
-This is where the main topic comes in: HTTP response headers that require the browser to handle cross-origin resources appropriately, regardless of the browser architecture, such as by routing them to a separate process.
+This brings us to the main topic: HTTP response headers that instruct browsers to handle cross-origin resources properly—such as assigning them to separate processes—regardless of the browser's underlying architecture.
 
-## Preventing Spectre attacks before they happen
+## Preventing Spectre attacks proactively
 
-To prevent Spectre attacks, you need to stop resources from your origin before they are pulled into the same process as a malicious origin. By looking at the HTTP response headers, the browser's network process can block the resource before it is passed to the malicious origin's renderer process, or pass it to a different renderer process.
+To prevent Spectre attacks, you must stop resources from your origin from being loaded into the same process as a malicious origin. By inspecting HTTP response headers, the browser's network process can block the resource or route it to a different renderer process before passing it to the malicious origin's renderer process.
 
-If you open Chrome's Task Manager, you can see how processes are grouped by Process ID.
+Opening Chrome's Task Manager lets you see how processes are divided by looking at the Process ID groupings.
 
-The four HTTP response headers that should be added are:
+There are four sets of HTTP response headers you should add:
 
 * `Cross-Origin-Resource-Policy`
 * `X-Frame-Options` or CSP `frame-ancestors`
@@ -124,19 +124,19 @@ The four HTTP response headers that should be added are:
 
 ### Controlling resource embedding with `Cross-Origin-Resource-Policy` (CORP)
 
-You can allow resources to be loaded from `same-origin`, `same-site`, or from anywhere with `cross-origin`, such as images, videos, audio, scripts, and JSON via API. For example, adding the respective headers to an image hosted in `https://images.example.com` will result in the following:
+You can restrict the loading of resources—such as images, videos, audio, scripts, and JSON via APIs—to `same-origin` or `same-site`, or allow it from anywhere with `cross-origin`. For example, here is how an image hosted at `https://images.example.com` behaves with each header:
 
 ```http
 Cross-Origin-Resource-Policy: same-origin
 ```
 
-This image can only be loaded from an HTML document served from the same-origin `https://images.example.com`.
+This image can only be loaded by HTML documents served from the same-origin `https://images.example.com`.
 
 ```http
 Cross-Origin-Resource-Policy: same-site
 ```
 
-This image can be loaded from domains containing the same-site `example.com`, e.g. `https://www.example.com`, but not from other eTLD+1s, e.g. `https://site.example`.
+This image can also be loaded from domains that are same-site with `example.com`, such as `https://www.example.com`, but cannot be loaded from other eTLD+1s, such as `https://site.example`.
 
 ```http
 Cross-Origin-Resource-Policy: cross-origin
@@ -144,121 +144,121 @@ Cross-Origin-Resource-Policy: cross-origin
 
 {% Aside %}
 
-**Added 2021/11/04:** It was originally written as `cross-site`, but it was a mistake and should have been `cross-origin`.
+**Update (2021/11/04):** I originally wrote `cross-site`, but this was a typo for `cross-origin`.
 
 {% endAside %}
 
-Images with the default `cross-origin` can be loaded from any origin, not just `https://images.example.com` or `example.com`.
+An image with `cross-origin` (the default) specified can be loaded from any origin, not just `https://images.example.com` or `example.com`.
 
-You can try these headers out in this demo. Open DevTools and see the impact of the `Cross-Origin-Resource-Policy` header.
+You can test these headers in this [demo](https://first-party-test.glitch.me/corp). Open DevTools to see the impact of the `Cross-Origin-Resource-Policy` header.
 
 [CORP](https://caniuse.com/mdn-http_headers_cross-origin-resource-policy) is already supported in Chrome, Firefox, and Safari.
 
 {% Aside %}
 
-Please note that CORP does not prevent a resource from being served. It is not like an ACL (Access Control List) on the server, and does not determine whether a resource will be served in response to a request from a browser that does not support CORP, or from another server, or from an HTTP client that is not a browser.
+Please note that CORP does not stop resources from being served by the server. It is not a server-side Access Control List (ACL). It does not decide whether to serve a resource in response to requests from browsers that don't support CORP, other servers, or non-browser HTTP clients.
 
-CORS is similar to CORP, but differs in that it allows for more granular determination of conditions and can choose not to serve requests depending on the origin ([Preflight Request](https://developer.mozilla.org/docs/Glossary/Preflight_request)).
+Also, while CORS is similar to CORP, it differs in that it can evaluate conditions more granularly and can refuse to serve responses depending on the requesting origin ([Preflight Request](https://developer.mozilla.org/docs/Glossary/Preflight_request)).
 
 {% endAside %}
 
-Note that it's not a problem if publicly available resources are stolen. What's problematic is information served when authenticated, which often requires a third-party cookie. If you set the appropriate `SameSite` attribute, even if you fall victim to Spectre, no authenticated requests will be sent.
+Publicly available resources generally don't cause harm if stolen. The real concern is information served to authenticated users—which, in most cases, means resources requiring third-party cookies. In that case, [setting appropriate `SameSite` attributes](https://web.dev/i18n/ja/samesite-cookies-explained/) ensures that even if a Spectre trap is sprung, authenticated requests will not be sent.
 
-Fortunately, the default `SameSite` attribute for cookies in Chrome and Edge is `Lax`. If you are a service provider who has inadvertently set `SameSite` to `None`, we recommend that you review your settings in conjunction with the introduction of the CORP header.
+Fortunately, cookies in Chrome and Edge default to `SameSite=Lax`. If you manage a service where `SameSite` was set to `None` without careful consideration, I recommend reviewing those settings alongside adopting CORP headers.
 
-### Control document iframe embedding with `X-Frame-Options` or CSP `frame-ancestors`
+### Controlling iframe embedding with `X-Frame-Options` or CSP `frame-ancestors`
 
-As of October 2021, all browsers allow embedding HTML documents in iframes by default, and resource providers must take appropriate action to prevent this.
+As of October 2021, all browsers permit HTML documents to be embedded in iframes by default. To prevent this, the resource provider must configure the appropriate settings.
 
-To prevent cross-origin sites from loading in an iframe, you can either block them entirely using the `X-Frame-Options` header, or explicitly specify which origins are allowed to be embedded using the `frame-ancestors` CSP (Content Security Policy) header directive.
+To prevent cross-origin sites from loading your page in an iframe, either block it completely using the `X-Frame-Options` header, or explicitly declare which origins are permitted to embed it using the CSP (Content Security Policy) header's `frame-ancestors` directive.
 
 ```http
 X-Frame-Options: DENY
 ```
 
-HTML documents with `DENY` will not be loaded in an iframe regardless of the parent page's origin. You can also set this to `SAMEORIGIN` to load in an iframe only if the parent page is the same-origin.
+An HTML document with `DENY` specified will not load in an iframe regardless of the parent page's origin. Setting this to `SAMEORIGIN` allows it to load in an iframe only when the parent page is same-origin.
 
 ```http
 Content-Security-Policy: frame-ancestors 'self' https://www.example.com;
 ```
 
-An HTML document with the above CSP specified will not be loaded in an iframe unless the parent page has the same origin as the original or is `https://www.example.com`.
+An HTML document with the above CSP will not load in an iframe unless the parent page's origin is either the same as itself or `https://www.example.com`.
 
-It is recommended that all documents that are not intended to be loaded in an iframe use `X-Frame-Options: DENY`.
+For any document not intended to be loaded in an iframe, adding `X-Frame-Options: DENY` is strongly recommended.
 
-Both [`X-Frame-Options`](https://caniuse.com/x-frame-options) and [CSP `frame-ancestors`](https://caniuse.com/mdn-http_headers_csp_content-security-policy_frame-ancestors) are already supported by Chrome, Firefox, and Safari.
+Both [`X-Frame-Options`](https://caniuse.com/x-frame-options) and [CSP `frame-ancestors`](https://caniuse.com/mdn-http_headers_csp_content-security-policy_frame-ancestors) are already supported in Chrome, Firefox, and Safari.
 
-### Controlling communication between windows with `Cross-Origin-Opener-Policy` (COOP)
+### Controlling cross-window communication with `Cross-Origin-Opener-Policy` (COOP)
 
-Windows opened using `window.open()` can communicate with each other using `postMessage()`. In this case, even if the browser is cross-origin, it is deployed in the same process, making it vulnerable to Spectre attacks.
+Windows opened via `window.open()` have a way to communicate with each other using `postMessage()`. In this scenario, the browser places them in the same process even if they are cross-origin, making them targets for Spectre attacks.
 
-By using the `Cross-Origin-Opener-Policy` (COOP) header, you can ensure safety by separating processes when opening cross-origin windows. However, please note that in this case, communication using `postMessage()` will no longer be possible.
+The `Cross-Origin-Opener-Policy` (COOP) header lets you isolate cross-origin windows into separate processes when opened, ensuring safety. However, please note that communication via `postMessage()` will no longer be possible in that case.
 
 ```http
 Cross-Origin-Opener-Policy: same-origin
 ```
 
-If you specify `same-origin`, even if you open a cross-origin popup window yourself or if a document from your origin is opened from a cross-origin window, they will be in separate processes and communication will be impossible.
+Specifying `same-origin` isolates the process and prevents communication both when you open a cross-origin popup window yourself and when a cross-origin window opens a document from your origin.
 
 ```http
 Cross-Origin-Opener-Policy: same-origin-allow-popups
 ```
 
-`same-origin-allow-popups` separates processes when opened from a cross-origin window, but not when you open the cross-origin window yourself (however, the cross-origin window must not specify COOP or must specify `unsafe-none`).
+`same-origin-allow-popups` separates processes when opened by a cross-origin window, but does not separate them when you open a cross-origin window yourself. (However, the cross-origin window must not have COOP specified, or must specify `unsafe-none`.)
 
 ```http
 Cross-Origin-Opener-Policy: unsafe-none
 ```
 
-`unsafe-none` is the default, and can be used to specify that a separate process is not required when opening a cross-origin window or when opening a cross-origin window (provided that the cross-origin window does not specify COOP or specifies `unsafe-none`).
+`unsafe-none` is the default, explicitly indicating that processes do not need to be separated whether you open a cross-origin window or are opened by one. (Again, provided the cross-origin window either doesn't specify COOP or specifies `unsafe-none`.)
 
-You can try out these headers in this demo:
+You can test these headers in this [demo](https://first-party-test.glitch.me/coop).
 
 {% Aside %}
 
-Similar to `Cross-Origin-Opener-Policy: same-origin` is `a[rel="noopener"]`. This also serves to avoid the risk of Spectre, which occurs because new windows opened with the `<a target="_blank">` tag are opened in the same process by default. Fortunately, `rel="noopener"` has now been changed to the default in [Chrome](https://www.chromestatus.com/feature/6140064063029248), [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1503681), and [Safari](https://bugs.webkit.org/show_bug.cgi?id=190481), so you no longer need to worry about it. Conversely, to achieve the same result as `Cross-Origin-Opener-Policy: unsafe-none`, specify `rel="opener"`.
+Similar to `Cross-Origin-Opener-Policy: same-origin` is `a[rel="noopener"]`. This also helps avoid Spectre risks that arise because new windows opened with `<a target="_blank">` tags were historically opened in the same process by default. Fortunately, [Chrome](https://www.chromestatus.com/feature/6140064063029248), [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1503681), and [Safari](https://bugs.webkit.org/show_bug.cgi?id=190481) have all changed the default to `rel="noopener"`, so you no longer need to worry about it. Conversely, to achieve the same behavior as `Cross-Origin-Opener-Policy: unsafe-none`, specify `rel="opener"`.
 
-Reference: [Preventing Tabnabbing by Adding rel=noopener to Links | blog.jxck.io](https://blog.jxck.io/entries/2016-06-12/noopener.html)
+Reference: [リンクのへの rel=noopener 付与による Tabnabbing 対策 | blog.jxck.io](https://blog.jxck.io/entries/2016-06-12/noopener.html)
 
 {% endAside %}
 
-While COOP can protect your site from Spectre attacks from cross-origin windows, you still need to be careful with pages that use features that require cross-origin windows to be opened, such as OAuth or payment functions. We recommend adding `Cross-Origin-Opener-Policy: same-origin-allow-popups` to all HTML documents. (For debugging instructions, see [Making your website "cross-origin isolated" using COOP and COEP // Debug issues using Chrome DevTools](https://web.dev/coop-coep/#debug-issues-using-chrome-devtools).)
+While COOP protects your site from Spectre attacks launched from cross-origin windows, care is required on pages designed to open cross-origin windows, such as those relying on OAuth or payment flows. I recommend adding `Cross-Origin-Opener-Policy: same-origin-allow-popups` to all HTML documents. (For debugging tips, see [Making your website "cross-origin isolated" using COOP and COEP // Debug issues using Chrome DevTools](https://web.dev/coop-coep/#debug-issues-using-chrome-devtools).)
 
-[COOP](https://caniuse.com/mdn-http_headers_cross-origin-opener-policy) is already supported in Chrome and Firefox, and [it appears that support for Safari will be coming soon (as of October 2021)](https://webkit.org/blog/11962/release-notes-for-safari-technology-preview-131/).
+[COOP](https://caniuse.com/mdn-http_headers_cross-origin-opener-policy) is already supported in Chrome and Firefox, and [is expected to be supported in Safari soon (as of October 2021)](https://webkit.org/blog/11962/release-notes-for-safari-technology-preview-131/).
 
-### Protect resources from malicious cross-origin loading with `X-Content-Type-Options: nosniff`
+### Protecting resources from malicious cross-origin loading with `X-Content-Type-Options: nosniff`
 
-Some browsers may automatically change the MIME-Type from the resource content and load it into the page, even if `Content-Type` is set, which is a known vulnerability. This can be used as a means to load resources into the same page process, making it applicable to Spectre attacks. Specifying `X-Content-Type-Options: nosniff` will prevent the browser from doing this. Be sure to specify the appropriate `Content-Type` header and `X-Content-Type-Options: nosniff`.
+Historically, some browsers would automatically override the MIME type based on resource content even when a `Content-Type` was set, loading it into the page regardless—a known vulnerability. Because this behavior can be exploited to pull a resource into the same page process, it can be leveraged in Spectre attacks. Specifying `X-Content-Type-Options: nosniff` prevents this browser behavior. Be sure never to omit an appropriate `Content-Type` header alongside `X-Content-Type-Options: nosniff`.
 
 ```http
 X-Content-Type-Options: nosniff
 ```
 
-`X-Content-Type-Options` is available in all browsers, including IE.
+`X-Content-Type-Options` is supported across all browsers, including IE.
 
-## A story of the future
+## Looking ahead
 
-I've tried to simplify this complex topic as much as possible, but I don't think it's realistic for every web developer to understand and implement these headers. It would be great if browsers could do it automatically. But that would mean completely reversing the current default behavior, which is:
+I've tried to summarize these complex topics as clearly as possible, but expecting every web developer to understand and implement all these headers doesn't seem entirely realistic. It would be great if browsers could handle this automatically. However, doing so would mean completely inverting today's default behaviors:
 
-* Disable embedding of cross-origin HTML documents by default = `X-Frame-Options: DENY` default.
-* Disable communication with cross-origin popup windows by default = `Cross-Origin-Opener-Policy: same-origin-allow-popups` default.
+* Disallowing cross-origin HTML documents from being embedded by default = making `X-Frame-Options: DENY` the default.
+* Disallowing communication with cross-origin popup windows by default = making `Cross-Origin-Opener-Policy: same-origin-allow-popups` the default.
 
-The Chrome team is working to make this a reality, but reversing the default is a disruptive change. We understand that this is an unavoidable step in making the web a safer place, and we hope that as many developers as possible will understand this and begin preparing little by little.
+The Chrome team is preparing to make this a reality, but flipping defaults to the complete opposite is a breaking change. As you can see, this is an unavoidable path toward making the web a safer place, and I hope as many developers as possible understand this and start preparing step by step.
 
-Additionally, the content explained in this article will be made available as a session video at Google I/O 2021. It will also have Japanese subtitles, so please take a look.
+The topics covered in this article were also presented as a session video at Google I/O 2021. Japanese subtitles are available, so please check it out:
 
 {% YouTube 'J6BZ9IQELNA' %}
 
 {% Aside %}
 
-This article touched on some of the HTTP headers related to Spectre, but there are a few other important ones. Please refer to this page for a summary.
+While this article focused on several HTTP headers related to Spectre, there are a few other important ones. They are summarized on this page:
 
-* [Security headers quick reference](https://web.dev/security-headers/):
+* [Security headers quick reference](https://web.dev/security-headers/)
 
-Also, [Mike West](https://twitter.com/mikewest)'s Post-Spectre Web Development is a more practical take on the topics discussed in this article, broken down by use case.
+Additionally, Mike West's ([@mikewest](https://twitter.com/mikewest)) Post-Spectre Web Development covers the topics discussed here from a more practical, use-case-oriented perspective. I highly recommend reading it:
 
-* [Post-Specter Web Development](https://www.w3.org/TR/post-spectre-webdev/)
+* [Post-Spectre Web Development](https://www.w3.org/TR/post-spectre-webdev/)
 
 {% endAside %}
 
-*The illustrations for this article were created by [@kosamari](https://twitter.com/kosamari).
+* Illustrations in this article were created by [@kosamari](https://twitter.com/kosamari).

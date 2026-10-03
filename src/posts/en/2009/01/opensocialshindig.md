@@ -1,81 +1,81 @@
 ---
+title: OpenSocial (Shindig) Server Architecture
+author: Eiji
 layout: post
 lang: en
-title: OpenSocial (Shindig) server architecture
-description:
 date: 2009-01-12
+categories:
+  - OpenSocial
 tags:
   - Shindig
 translationOf: /2009/01/opensocialshindig.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-How to get involved with OpenSocial
+When it comes to getting involved with OpenSocial, there are a few options:
 
-* Become a container
-* Develop a gadget
-* Create a client service using REST
+*   Becoming a container
+*   Developing gadgets
+*   Building client services using REST
 
-Regardless of which option you choose, it is very important to know about architecture. Especially when developing gadgets, knowing the architecture often makes development easier.
+Whichever path you choose, understanding the underlying architecture is extremely important. In particular, when developing gadgets, there are many situations where having a grasp of the architecture makes development significantly smoother.
 
-So, in this article, I would like to explain the architecture of <a href="http://incubator.apache.org/shindig/" target="_blank">Shindig</a>, the open source reference implementation used by most containers that support OpenSocial.
+In this article, I would like to explain the architecture of <a href="http://incubator.apache.org/shindig/" target="_blank">Shindig</a>, an open-source reference implementation used by almost all OpenSocial-compliant containers.
 
-## The relationship between gadgets and social media
+## The Relationship Between Gadgets and SNS
 
-Did you know how iGoogle (which already uses Shindig) displays gadgets made by third parties? In fact, it displays gadgets rendered on a different domain (gmodules.com in the case of iGoogle) in an iframe.
+Did you know how iGoogle (which already uses Shindig) displays gadgets created by third parties? In fact, gadgets rendered on a separate domain (gmodules.com in the case of iGoogle) are displayed inside an iframe.
 
-The reason is that placing JavaScript written by a third party on the same domain is a security risk. For more information, please see our previous article [Explaining Caja][1].
+The reason for this is that placing JavaScript written by third parties on the same domain poses a serious security risk. For more details, please check out my previous [article explaining Caja][1].
 
 ![OpenSocial Gadget Rendering][2]
 
-Where is the API?
+## Where the APIs Reside
 
-OpenSocial provides four social APIs: People, Group, Activity, and Persistent, each of which is provided in RESTful JSON, XML, and AtomPub formats, as well as RPC JSON format. Shindig's JavaScript API uses the RPC JSON format.
+OpenSocial provides four social APIs: People, Group, Activity, and Persistent. Each of these supports RESTful formats (JSON, XML, and AtomPub) as well as an RPC-based JSON format. Shindig's JavaScript API uses the RPC-based JSON format among these.
 
-I explained about two domains earlier, but since it's a JavaScript API, it's Ajax, so naturally it's the same domain, and the endpoint exists on Shindig's domain.
+As I explained earlier regarding the two domains, since this is a JavaScript API—meaning Ajax—the endpoints must naturally reside on the same domain, which is Shindig's domain.
 
 ![OpenSocial Server Architecture][3]
 
-## Gadget display flow
+## The Flow of Rendering a Gadget
 
-Now that we understand the basic structure, let's take a look at the process of actually displaying a gadget.
+Now that we understand the basic structure, let's take a look at the actual flow up to the point where a gadget is displayed.
 
-### Which gadgets to display
+### Deciding Which Gadget to Display
 
-In order to display a gadget, the user must first have the intention to display the gadget. In the case of iGoogle, this is done by the service side, where the user selects the gadget of their choice from the gadget directory and displays their page. Once the service knows which gadget they want to display, it also needs to display an iframe to display the gadget, so it collects information about the gadget. This is done using Shindig's metadata API.
+To display a gadget, the user must first indicate their intent to display it. In iGoogle, for example, this is done on the service side by having the user pick a gadget they like from the gadget directory and loading their personal page. Once the service knows which gadget to display, it needs to gather information about the gadget in order to render the iframe for it. This is done using Shindig's metadata API.
 
-### Getting metadata
+### Fetching Metadata
 
-When Shindig receives a metadata API request, it refers to its cache. If the gadget information is not stored in the cache, it retrieves the gadget XML based on the request from the service and parses it.
+Upon receiving a request to the metadata API, Shindig checks its cache. If the gadget's information is not cached, Shindig fetches the gadget XML based on the request from the service and parses it.
 
-### Rendering an iframe
+### Rendering the iframe
 
-After obtaining the information about the gadget, the service renders an iframe to display the gadget, which causes the browser to send a request to Shindig to display the gadget in the iframe.
+Having obtained the necessary information about the gadget, the service renders an iframe to display it. This triggers a request from the browser to Shindig to render the gadget inside the iframe.
 
-Basically, the contents of the Contents described in the gadget XML will be displayed as is, but:
+Basically, the contents specified in the gadget XML are displayed as-is, but it's worth keeping the following points in mind:
 
-* JavaScript for the specified gadget's feature (the gadget's function set, such as tab or minimessage) is added to the HTML.
-* Depending on the settings, all external content such as JavaScript, CSS, and images may be cached on Shindig and called.
+*   JavaScript for the specified gadget features (sets of functionalities provided to gadgets, such as tabs or minimessages) is appended to the HTML.
+*   Depending on the configuration, all external content such as JavaScript, CSS, and images may be cached on Shindig and served from there.
 
-It wouldn't hurt to keep this in mind.
+With that, the gadget display process is complete. If you inspect the APIs using tools like Firebug, you will see that requests are being sent to Shindig.
 
-This completes the display of the gadget. If you try the API using Firebug or similar, you will see that a request is being sent to Shindig.
+## APIs That Interact with External Servers
 
-## API using external server
+When interacting with external servers, the `gadgets.io.makeRequest` JavaScript API is used. If you select FEED as the content type, it returns RSS, RDF, or Atom data in a unified format; if you choose JSON, the response is immediately ready to be handled as a JSON object as soon as the data arrives.
 
-When using an external server, gadgets.io.makeRequest is used as the JavaScript API. Selecting FEED as the content type will return RSS, RDF, or Atom in a common format, while selecting JSON will allow you to handle the returned data as a JSON object immediately.
+Several options are also available in terms of security:
 
-There are also several security options available.
+*   Standard requests
+*   Signed Requests
+*   OAuth
 
-* Standard Request
-* Signed Request
-* OAuth
+A standard request is used for APIs that do not require any particular authentication. A Signed Request refers to an <a target="_blank" href="http://oauth.googlecode.com/svn/spec/ext/consumer_request/1.0/drafts/1/spec.htm">OAuth Consumer Request</a>, which allows an external server to ensure that requests originate only from the gadget. OAuth refers to <a target="_blank" href="http://oauth.net/core/1.0/">OAuth Core</a>, which allows the external server to not only verify that a request comes from the gadget, but also authenticate who made the request using secure credentials.
 
-Normal requests are made to APIs that do not require any special authentication. Signed Request refers to <a target="_blank" href="http://oauth.googlecode.com/svn/spec/ext/consumer_request/1.0/drafts/1/spec.htm">OAuth Consumer Request</a>, and by using this, the external server can handle requests only from the gadget. OAuth refers to <a target="_blank" href="http://oauth.net/core/1.0/">OAuth Core</a>, and the external server can handle requests not only by verifying that they are from a gadget, but also by authenticating who made the request with secure credentials.
+For more details on OAuth, please refer to [this article][4] or [this one][5].
 
-For more information about OAuth, please refer to [here][4] or [here][5].
-
-One thing to note here is that everything is done via Shindig's proxy. As I mentioned earlier, a powerful cache function is used for GET requests here as well, so you may need to be a little careful. I'll write a comprehensive article on caches from next time onwards.
+One important thing to note is that all of this goes through Shindig's proxy. As mentioned earlier, strong caching is applied to GET requests here as well, so you may need to exercise some caution. I plan to cover caching in detail in a future article.
 
  [1]: /2008/04/caja.html
  [2]: /images/2009/01/e38394e382afe38381e383a3-6.png

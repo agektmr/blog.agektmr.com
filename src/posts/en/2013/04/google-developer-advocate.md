@@ -1,155 +1,154 @@
 ---
 layout: post
 lang: en
-title: What is the job of a Google Developer Advocate?
-description:
+title: What does a Developer Advocate at Google do?
 date: 2013-04-11
 updated: 2013-11-01
-image:
-  feature: /2013-04-11-google-developer-advocate/gde.jpg
 tags:
   - Developer Advocate
   - Developer Relations
   - Google
+image:
+  feature: /2013-04-11-google-developer-advocate/gde.jpg
 translationOf: /2013/04/google-developer-advocate.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-My job is a Chrome Developer Advocate at Google.
-Google Japan began recruiting for this [Chrome Developer Advocate](https://www.google.com/about/jobs/search/#!t=jo&jid=1175001&) last week (April 2013). We are also recruiting for similar positions for Google+, YouTube, Android, and other areas, but I've been asked about it often and received requests, so I'd like to take this opportunity to explain what a Developer Advocate does.
+My job is as a Chrome Developer Advocate at Google.
+Starting last week (April 2013), Google Japan [began hiring for this Chrome Developer Advocate position](https://www.google.com/about/jobs/search/#!t=jo&jid=1175001&). We are also hiring for similar roles across Google+, YouTube, Android, and other products, but since people often ask me about it—and I've had several requests—I'd like to take this opportunity to explain what a Developer Advocate actually does.
 
 <!-- excerpt -->
 
-What is Developer Relations?
+## What Is Developer Relations?
 
-All of the above work belongs to Google's Developer Relations team (hereafter referred to as DevRel). This is probably the team that developers have the most contact with at Google. DevRel is further divided into product-specific teams, such as Chrome and Android.
+All of the roles mentioned above belong to the Developer Relations team (DevRel) within Google. It is likely the team at Google that developers have the most opportunities to interact with. DevRel is further divided into product-specific teams such as Chrome and Android.
 
-As you can imagine from the name, my job primarily involves building relationships between Google and external developers. Job titles include Program Manager, Developer Programs Engineer, Developer Advocate, and Technical Writer, but I'm a Developer Advocate.
+As the name suggests, the core of our work revolves around building relationships between Google and external developers. The roles include Program Manager, Developer Programs Engineer, Developer Advocate, and Technical Writer, and my role is Developer Advocate.
+Very few people immediately understand what the job entails just from the word "Advocate"—which is entirely natural, as it isn't a word taught in school. The closest equivalent at other companies would be an Evangelist. For those who still don't quite get it, I often explain it as: "A job focused on outreach to help external developers make use of Google's technologies."
 
-I'm sure most people wouldn't understand what the word "Advocate" does, but that's understandable, since it's not a term taught in school. I think the closest equivalent would be what other companies call an "Evangelist." For those who still don't understand, I often explain it as "a job that educates external developers so they can use Google's technology."
+The origin of the title "Developer Advocate" goes something like this:
 
-The origin of the term "Developer Advocate" is as follows:
+> The word "Evangelist" originally comes from religious preachers. When a role similar to an Evangelist was created at Google, however, they chose the word "Advocate" to convey that it isn't just about one-way communication to developers, but also about Google itself learning and growing through dialogue and feedback.
 
-The word "evangelist" was originally used to describe religious missionaries. However, when a similar role was created at Google, the word "advocate" was chosen to convey the idea that the role would not just involve communicating with developers unilaterally, but also involve Google itself learning and growing through dialogue and feedback.
+Below, I'll dive into the specifics of the job. Please keep in mind that this article describes what I do around Chrome, and may not necessarily apply to other products. I'll share some of what I'm currently working on, within the bounds of what won't get me in trouble.
 
-Below, I'll touch on the specifics of my work, but please note that this article focuses on the Chrome area, which I'm in charge of, and may not necessarily apply to other products. I'll write about some of the work I'm currently doing, to the extent that I think I'll get away with it.
+## Advocacy and Outreach
 
-## Awareness-raising activities
+The primary focus of DevRel is "to help people who want to build apps on top of Google's products as a platform." When it comes to Chrome, that mission is "to help people who build apps on the Chrome platform—in other words, websites and web apps"—or put another way, "to energize the entire web, including HTML5, and especially the frontend ecosystem, not just Chrome." That's a very rough summary and no one has ever explicitly told me that, but that's how I envision my job.
 
-The main job of a DevRel is to help people who want to use apps that use Google products as a platform. In the case of Chrome, the mission is to help people who create apps that use Chrome as a platform, i.e., websites and web apps. In other words, to promote not only Chrome but the entire web, including HTML5, especially the front-end. It's a very rough definition, and I've never been told exactly what it is, but that's the image I have of myself working with.
+### Public Speaking
 
-### Lecture
-
-This is probably the most visible part of my job, but I give talks at external events. The content is usually about introducing Chrome technology or HTML5 features (incidentally, recently I've been using the term Open Web Platform, or OWP, more often than HTML5). Naturally, I create the materials myself, so a lot of input is required beforehand, and I also need to prepare for a certain number of questions, which takes up a fair amount of time. If I'm giving a talk in a rural area, I also have to travel.
+This is probably the most visible part of the job: giving talks at external events. The topics are usually introducing Chrome technologies or HTML5 features (by the way, these days I find myself using the term Open Web Platform, or OWP, more often than HTML5). Naturally, I create my own presentation materials, which requires a substantial amount of research beforehand. Preparing while anticipating potential questions also takes up quite a bit of time. If the talk is outside of Tokyo, it also involves business travel.
 
 ### Social Media
 
-We use social media such as [Blog](http://blog.agektmr.com/), [Google+](http://profiles.google.com/agektmr), and [Twitter](https://twitter.com/agektmr) to share the latest information. We believe many people are reading these.
+I share the latest updates through social media like my [blog](http://blog.agektmr.com/), [Google+](http://profiles.google.com/agektmr), and [Twitter](https://twitter.com/agektmr). Many of you probably follow these already.
 
 ### HTML5Rocks
 
-I write articles for [HTML5Rocks](http://www.html5rocks.com/) and maintain the site. [HTML5Rocks itself is open source](https://github.com/html5rocks/www.html5rocks.com/), so I accept pull requests, review articles, and also review Japanese translations when they are received.
+I write articles for [HTML5Rocks](http://www.html5rocks.com/) and help maintain the site. Since [HTML5Rocks itself is open source](https://github.com/html5rocks/www.html5rocks.com/), we accept Pull Requests, review articles, and review Japanese translations when they are submitted.
 
 ### Google Developers Live
 
-[Google Developers Live (GDL)](https://developers.google.com/live/) is a web program that is broadcast live every month using YouTube Live. If you've seen it, you'll know that it involves inviting guests to give technical sessions. We have staff who help with things like setting up the studio, but I do everything else myself, arranging the guests, selecting the content, and hosting the program. In GDL in the US and UK, the Advocate conducts the sessions directly, rather than the guest, but in Japan, for now, we're asking the guest to do it.
+[Google Developers Live (GDL)](https://developers.google.com/live/) is a monthly live web broadcast on YouTube Live. As those who have tuned in probably know, it features guest speakers presenting technical sessions. While there are staff members who help with studio setup, everything else—booking guests, choosing topics, hosting the show, and moderating—is handled by myself. On GDL in the US and UK, the Advocates themselves deliver the sessions directly instead of bringing in guests, but in Japan, we currently invite guest speakers.
 
 
 [![](https://2.bp.blogspot.com/-D6D-bZI3Zjg/UWZuFOyxTnI/AAAAAAAAb4A/vM_F0wBWZww/s640/gdl.png)](https://2.bp.blogspot.com/-D6D-bZI3Zjg/UWZuFOyxTnI/AAAAAAAAb4A/vM_F0wBWZww/s1600/gdl.png)
 
-One of the Advocate's jobs is to think about how to promote the content we've worked so hard to create. I once wrote a blog post like this one. It was a great idea, and I think it was a welcome success for both our readers and us who create the content.
+
+Thinking about how to amplify the content we've created is also an Advocate's job. I previously wrote [a blog post like this](http://googledevjp.blogspot.jp/2012/10/blog-post.html). I think it was a win-win idea, beneficial both for our viewers and for us creating the content.
 
 ### StackOverflow
 
-One of our responsibilities is providing support in forum-like settings. In Japanese, we use Google Groups to answer questions, but globally, our official support forum is [StackOverflow](http://stackoverflow.com/). We also put open source code on [github](https://github.com/GoogleChrome/) instead of Google Code, and we're not tied to Google's (or rather, DevRel's?) proprietary systems. Don't you think that's a good, rational approach?
+Providing support on forum-style platforms is another part of the role. For Japanese, I answer questions on Google Groups, but globally, [StackOverflow](http://stackoverflow.com/) serves as our official support platform. Just like hosting open-source code on [github](https://github.com/GoogleChrome/) rather than Google Code, I really appreciate Google's (or perhaps DevRel's?) pragmatic approach of not insisting on building everything on our own internal systems.
 
-Community
+## Community
 
-There are only about 200 DevRel members worldwide (currently four in Japan), so scalability is a priority. As such, there are many opportunities to become part of external communities and promote technology.
+DevRel only has around 200 people worldwide (currently just 4 in Japan), so scalability is essential. Because of this, there are many situations where we become part of external communities to help energize the technology scene together.
 
 ### Google Developers Expert
 
-As many of you may know, there is a system called [Google Developers Expert](https://developers.google.com/experts/) that certifies excellent external developers, similar to Microsoft's MVP. Exchanging information with GDE members is also an important part of my job.
+As many of you probably know, there is a program called [Google Developers Expert](https://developers.google.com/experts/) that recognizes outstanding external developers, similar to Microsoft's MVP program. Exchanging information with GDEs is a crucial part of my job.
 
-This was previously called [Google API Expert](https://sites.google.com/site/devreljp/Home/api-expert) and was originally a Japanese program that became a global program last year (thanks to [Naoki Ishihara](https://plus.google.com/109887342976070041001/posts) and [Fumi Yamazaki](https://plus.google.com/+FumiYamazaki/posts)!). Incidentally, I was also an OpenSocial API Expert before joining the company.
+This program was previously known as [Google API Expert](https://sites.google.com/site/devreljp/Home/api-expert). It originated in Japan and went global last year (thanks to [Naoki Ishihara](https://plus.google.com/109887342976070041001/posts) and [Fumi Yamazaki](https://plus.google.com/+FumiYamazaki/posts)!). Incidentally, I was an OpenSocial API Expert myself before joining Google.
 
 [![](https://2.bp.blogspot.com/-6qdoDuaSYLI/UWZuOkNCFAI/AAAAAAAAb4Q/mBpOOclobKY/s640/gde.JPG)](https://2.bp.blogspot.com/-6qdoDuaSYLI/UWZuOkNCFAI/AAAAAAAAb4Q/mBpOOclobKY/s1600/gde.JPG)
 
-### Engaging with the community
+### Working with Communities
 
-I'm the only person in Japan's DevRel team in charge of Chrome, so naturally there's a limit to what I can do. So, it's important for me to collaborate with like-minded developer communities, including the GDE mentioned above, and sometimes even become a part of them and help out. It's a lot of fun thinking about what I can do to help boost the community.
+Since I'm the only person covering Chrome in DevRel Japan, what I can accomplish alone is naturally limited. Therefore, collaborating with like-minded developer communities—including the GDEs mentioned above—and sometimes becoming an active participant to help them out is an important part of the job. Brainstorming ways to help communities thrive is genuinely fun.
 
-### Event Management
+### Event Operations
 
-As part of our support for the community, we also provide Google venues, equipment, and personnel. This includes hosting events such as study sessions and inviting engineers involved in our products to give talks. In 2011, we collaborated with [html5j](https://groups.google.com/forum/?fromgroups#!forum/html5-developers-jp) to host the [Chrome+HTML5 Conference](http://events.html5j.org/conference/2011/08/). We have already held five Chrome Tech Talk Nights. We are also planning to hold an event called [Test The Web Forward](http://testthewebforward.org/) in June.
+As part of supporting communities, providing Google's event spaces and facilities, and helping out on the ground as event staff is another key duty. This includes hosting study sessions and other events, having engineers involved with our products give talks, and more. In 2011, we collaborated with [html5j](https://groups.google.com/forum/?fromgroups#!forum/html5-developers-jp) to host the [Chrome+HTML5 Conference](http://events.html5j.org/conference/2011/08/). Chrome Tech Talk Night has already reached its 5th edition. We are also planning to host an event called [Test The Web Forward](http://testthewebforward.org/) in June.
 
 [![](https://4.bp.blogspot.com/-oef_h9CDOpI/UWZuOtWOXaI/AAAAAAAAb4U/2cCIn1BOhOI/s640/ch5.jpg)](https://4.bp.blogspot.com/-oef_h9CDOpI/UWZuOtWOXaI/AAAAAAAAb4U/2cCIn1BOhOI/s1600/ch5.jpg)
 
-## Partners, input, hacking, etc.
+## Partners, Input, Hacking, and More
 
-In reality, there are many more miscellaneous tasks, but the main tasks that do not fall into the above categories are as follows:
+In reality, the work involves many more miscellaneous tasks, but the main duties not covered above include:
 
-### Relationships with partners
+### Working with Partners
 
-While a large proportion of our work is open to general developers, we also work with partners behind the scenes. We may negotiate with them to create a product, or we may address technical issues that involve confidential information and work to improve Chrome's functionality. Acting as a technical intermediary between our partners is also an important role of a Developer Advocate.
+While working publicly with the broader developer community makes up a significant portion of the role, there is also behind-the-scenes work with partners. This can involve negotiations to get a product built, or taking confidential technical issues back to the team to improve Chrome features. Serving as a technical liaison between partners and the team is another important role for a Developer Advocate.
 
-### Input
+### Continuous Learning (Input)
 
-So far we haven't talked much about technology, but of course this job requires cutting-edge technical skills. There is no output without input, so you are required to always keep up with the latest information.
+I haven't talked much about technical depth so far, but this job naturally demands cutting-edge technical skills. You can't produce output without input, so constantly staying on top of the latest developments is an absolute requirement.
 
 ### Hacking
 
-There's no point in just learning the theory, so I also do actual development. While I don't often have the opportunity to create large projects, I do occasionally create demos that directly contribute to raising awareness of the technology, or tools for internal use.
+There's no point in just taking in theoretical knowledge, so I also write actual code. While I don't build large-scale applications very often, I frequently build demos that directly contribute to technology advocacy, as well as internal tools.
 
-So far, I've created demos for [WebSocket](http://agektmr.node-ninja.com:3000/), [Forms](http://demo.agektmr.com/datalist/), and more recently FileSystem-related demos, all of which are based on the areas of responsibility of the Chrome engineering team in Tokyo. I've also created [Chrome Extension](https://github.com/agektmr/ProjectTabManager) and [Chrome App](https://github.com/agektmr/ChromeMusicPlayer) as a hobby and for practical purposes. I publish my code on [github](https://github.com/agektmr).
-I don't generally write production-level code myself, but some of my colleagues have sent in patches so frequently that they've become committers for WebKit (now Blink).
+Some of the things I've built so far focus on areas covered by the Tokyo Chrome engineering team, including demos for [WebSocket](http://agektmr.node-ninja.com:3000/), [Forms](http://demo.agektmr.com/datalist/), and recently, FileSystem-related APIs. I also build things that combine hobby and utility, like a [Chrome Extension](https://github.com/agektmr/ProjectTabManager) and a [Chrome App](https://github.com/agektmr/ChromeMusicPlayer). My code is published on [github](https://github.com/agektmr).
+I generally don't write production-level code myself, but some of my colleagues kept submitting patches and eventually became WebKit (now Blink) committers.
 
 ### Chrome Experiments
 
-Also, did you know that some of the popular Chrome Experiments from the past originated in Japan? For example, the recently announced World Wide Maze is one such example. Developer Advocates are also responsible for providing technical support for projects like these.
+Did you know that some of the widely discussed [Chrome Experiments](http://www.chromeexperiments.com/) actually originated in Japan? For example, [World Wide Maze](http://chrome.com/maze/), which was announced recently, is one of them. Providing technical support for projects like that is also something Developer Advocates handle.
 
 [![](https://3.bp.blogspot.com/-PDasNKa2NXs/UWZuPPDQ2MI/AAAAAAAAb4k/aJ9dVd1aVfU/s640/wwm.png)](https://3.bp.blogspot.com/-PDasNKa2NXs/UWZuPPDQ2MI/AAAAAAAAb4k/aJ9dVd1aVfU/s1600/wwm.png)
 
-### Interacting with Engineers
+### Collaborating with Engineers
 
-The Chrome engineering team at Google's Tokyo office is quite large. As mentioned above, we mainly implement OWP features, such as WebSocket, FileSystem, Forms, and WebComponents. Many of us hand-write the standard specifications that appear on the W3C and IETF websites. My job is to act as a bridge between these engineers and external developers. Sometimes the engineers educate us through GDL or talks, and sometimes we provide feedback from external developers.
+The Chrome engineering team at the Google Tokyo office is fairly sizable. As mentioned earlier, they mainly implement OWP features such as WebSocket, FileSystem, Forms, and WebComponents. Quite a few of them author the standard specifications published on W3C and IETF websites with their own hands. Bridging these engineers with external developers is also my job. That can mean having the engineers themselves present at GDL or conferences, or relaying feedback from external developers back to them.
 
-## The joy of work
+## What Makes the Job Fun
 
-My daily work is as described above. However, this is just my example and does not apply to all Developer Advocates. Chrome DevRel members are scattered across seven countries around the world, including Japan, with our headquarters in Mountain View as the core. Each of us has our own area of expertise and does different work.
-At Google, work isn't given to you; you create it yourself. Therefore, it's only natural that different people do completely different things. You can do whatever you think is good, and you'll still be properly evaluated.
+That's what my day-to-day work looks like. However, this is strictly my own example and doesn't apply to every Developer Advocate. My fellow Chrome DevRel team members are scattered across seven countries around the world, centered around headquarters in Mountain View, and each brings their own strengths and does different work.
+At Google, work is not something that is handed to you; it's something you create yourself. Therefore, it's completely natural for different people to do entirely different things. You can pursue anything you think is worthwhile, and you'll still be properly recognized for it.
 
-I'd like to mention two memorable projects I've done in the past.
-One was [Developer Link](http://developer-link.appspot.com/) at GDD in 2011. In addition to two sessions and a keynote, I led the project, from planning to production and negotiations with partners, to complete the service by the day of the event. I also wrote some of the code.
+Here are two memorable projects I've worked on in the past.
+One was [Developer Link](http://developer-link.appspot.com/) at GDD 2011. Along with handling two sessions and a keynote, I led the project from planning through production and partner negotiations to deliver the service in time for the event day. I also wrote some of the code.
 
-The other, which is still ongoing, is my work with [Web Music Developers Japan](https://groups.google.com/forum/?fromgroups#!forum/web-music-developers-jp) (although it's more of a hobby than a job). As someone who originally loved music and was very excited about the [Web Audio API](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html) that lets you create synthesizers in a browser, I think it's a great perk to be able to interact with not only developers but also big names in industries that I would have had no connection to in the past. With the arrival of the [Web MIDI API](http://webaudio.github.io/web-midi-api/), I'm excited to see what even more interesting things I'll be able to do in the future.
+The other is an ongoing initiative: my involvement with [Web Music Developers Japan](https://groups.google.com/forum/?fromgroups#!forum/web-music-developers-jp) (though it feels more like a hobby than work). As someone who has always loved music, I was thrilled by the [Web Audio API](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html), which lets you build synthesizers in the browser. Getting to connect not only with developers through it, but also with well-known figures from industries I previously had no ties to, feels like an incredible perk of the job. Once the [Web MIDI API](http://webaudio.github.io/web-midi-api/) arrives, I'm excited about the even more interesting things we'll be able to pull off.
 
-## Difficult points
+## The Challenges
 
-The people around me are all at a high level, and to be honest, I'm struggling to keep up. Both technically and in terms of the way they work.
-In addition, it feels like the work mentioned above is always happening simultaneously, so it's difficult to manage my time and concentration.
+The people around me operate at such a high level that, honestly, I'm constantly scrambling to keep up—both technically and in how I work.
+On top of that, all the types of work mentioned above run concurrently, making time management and staying focused quite difficult.
 
-What makes this even more difficult is that we're in a regional location (away from the headquarters). I'm the only Chrome DevRel in charge of Japan, so I mainly communicate with my team members via email or Hangout. Hangout is convenient, but technology can't overcome time differences (currently, 9am in Japan is 5pm in the headquarters, and 5pm in Japan is 9am in London). Email only contains text, so you can't see the other person's facial expression or get a sense of the atmosphere.
+What compounds this is being Regional (remote from headquarters). Since I am the only person covering Chrome DevRel in Japan, communication with team members is mostly via email or Hangouts. Hangouts are convenient, but technology can't overcome time zones (right now, 9 AM in Japan is 5 PM at headquarters, and 5 PM in Japan is 9 AM in London). Email is text-only, so you can't see the other person's expressions, and the nuance doesn't always come across.
 
-So I'm going on a business trip, and now I'm struggling with face-to-face communication. My English ability was almost perfect on the TOEIC three years ago, but it's still not good enough. It may have more to do with my personality and culture than the language itself, but this is getting long, so I'll save that for another time.
+That leads to business trips, but then face-to-face communication brings its own challenges. My English level was near-perfect on the TOEIC three years ago, but that's still not quite enough. It might be less about the language itself and more about personality or cultural differences, but that's a longer story for another time.
 
 [![](https://1.bp.blogspot.com/-uhgjkFFsrHQ/UWZuOQa7FkI/AAAAAAAAb4g/FwbNen7Xeio/s640/gddsyd.JPG)](https://1.bp.blogspot.com/-uhgjkFFsrHQ/UWZuOQa7FkI/AAAAAAAAb4g/FwbNen7Xeio/s1600/gddsyd.JPG)
 
-## Environment
+## The Work Environment
 
-I've worked for several companies, but this is by far the most comfortable company in terms of ease of working. People often talk about the free lunch (they actually provide breakfast and dinner as well), but both fathers and mothers can take maternity leave, and vacation is flexible, with many people taking a month off together. There are frequent activities to enhance communication within the team, and there are frequent tech talks and club activities within the company, creating a great atmosphere. I think you can't really understand this until you try it for yourself.
+I've worked at several companies throughout my career, but in terms of work comfort, Google is by far the most accommodating. Free lunch (and actually breakfast and dinner, too) gets talked about a lot, but parental leave is available for both fathers (Paternity Leave) and mothers (Maternity Leave), vacation time is flexible, and it's not uncommon for people to take a full month off at once. There are frequent activities to strengthen team communication, and Tech Talks and interest clubs are constantly happening internally, creating a wonderful atmosphere. It really is something you have to experience from the inside to fully appreciate.
 
-## What kind of people are we looking for?
+## Who We're Looking For
 
-As I wrote the other day, the people we're looking for at Chrome DevRel are "people who are fluent in English and Japanese and confident in their negotiation skills, technical abilities, speaking skills, and event organization." If this article has helped you understand even a little of what I mean, then it was worth writing.
+As [I mentioned the other day](https://plus.google.com/107085977904914121234/posts/dL1pe3MnLXH), Chrome DevRel is looking for someone who is "fluent in English and Japanese, confident in their negotiation skills, technical prowess, public speaking, and event organizing." If this article helped you understand what those words really mean, it was worth writing.
 
-Of course, what I'm talking about here is just my own experience, and I don't expect the new person in charge to do the same kind of work. Rather, I expect them to create their own way of doing things, and they should.
+Of course, what I've shared here is just "my case." I don't expect the new hire to do the exact same things I do; rather, I want—and expect—them to create their own approach.
 
-Someone who can create and complete their own work. I'd be happy to find someone with strong communication skills who can push forward with various things while having fun.
+Someone who can define their own work and execute on it. Someone with strong communication skills who can proactively push things forward while having fun doing it—that's who I'd love to see join us.
 
-So, we look forward to receiving your applications :)
+So with that, we look forward to your applications! :)
 
-## Related articles
+## Related Articles
 
-* [About Google Developer Relations](http://fumit.blogspot.jp/2011/01/google-developer-relations.html)
-* [I'm moving to the US](http://fumit.blogspot.jp/2013/02/blog-post_15.html)
+* [About Developer Relations at Google](http://fumit.blogspot.jp/2011/01/google-developer-relations.html)
+* [I'm Moving to the US](http://fumit.blogspot.jp/2013/02/blog-post_15.html)

@@ -1,8 +1,8 @@
 ---
 layout: post
 lang: en
-title: Renewed the blog system
-description: "This blog is now multilingual (English and Japanese) and served from Cloud Run."
+title: "I've revamped my blog."
+description: "I've redesigned my blog. In this post, I'll share the details of the update, including multilingual support and design changes."
 date: 2025-11-30
 organic: 50
 image:
@@ -12,44 +12,44 @@ tags:
   - 11ty
   - Cloud Run
 translationOf: /2025/11/blog-renewal.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-I have revamped this blog. The appearance is almost the same, but I have introduced an English version with multilingual support (i18n) and changed the infrastructure.
+I have revamped my blog. While the visual design remains largely the same, I added an English version through multilingual support (i18n) and updated the underlying infrastructure.
 
 <!-- excerpt -->
 
-## Background of the renewal
+## Background of the Revamp
 
-Until today, this blog has been serving technical information primarily in Japanese, but I was wanting to provide it in English too, for some time. There were some ideas in my mind on how to do it, but just couldn't find the time. With the recent rise of AI coding agents, I decided to jump on the bandwagon. Also, I haven't had much opportunity to write code for work lately, but I feel urged to understand, even just a little, what it feels like to be an every-day coder, so I decided to give it a try. I often use Gemini at work, so I decided to use Claude Code at this time, which many people around me use.
+Until now, this blog has mainly shared technical information in Japanese, but I have long wanted to publish in English as well. While I had some ideas on how to implement it, I never quite found the time. With the recent rise of AI coding agents, I decided to jump on the trend. These days, I don't get many opportunities to write code for work, so I also wanted to try them out to better understand the mindset of people who code every day. Since I mostly use Gemini at work, I decided to go with Claude Code, which many people around me have been using.
 
-## Main changes
+## Key Changes
 
-### 1. Multilingual support (i18n) and URL structure changes
+### 1. Multilingual Support (i18n) and URL Structure Changes
 
-The biggest change in this renewal is multilingual support. Until now, articles were mainly in Japanese, but English versions will also be available.
+The biggest change in this revamp is multilingual support. Previously, the blog primarily featured Japanese articles, but going forward, I can publish English articles alongside them.
 
-Japanese articles have been placed directly under the root directory, but they are now separated into directories for each language as shown below.
+Japanese articles were previously placed directly under the root, but they are now separated into directories by language:
 
 * Japanese: `/ja/`
 * English: `/en/`
 
-This makes it easier to switch between languages. We've also added a new language switch, so you can switch languages if an article exists.
+This makes switching between languages much smoother. I have also added a language switcher, allowing you to easily toggle languages whenever an article is available in both.
 
-### 2. Automatic translation using Google Cloud Translation API
+### 2. Automated Translation with Google Cloud Translation API
 
-For translation, I've (asked to) add an automatic translation system using the Google Cloud Translation API, so I can translate using a script and I can make manual corrections as needed (past articles were translated mechanically in bulk, so I plan to correct any strange parts as they are found). This allows me to create a workflow that allows me to write articles in Japanese and then publish them in English with relatively little effort.
+For translations, I introduced an automated translation workflow powered by the Google Cloud Translation API. To allow for manual adjustments when needed, the translation can be run via scripts (past articles were batch-translated mechanically, so I plan to fix any awkward phrasing over time). With this setup, writing an article in Japanese now makes publishing an English version relatively effortless.
 
-### 3. Infrastructure Changes: Migrating to Cloud Run
+### 3. Infrastructure Changes: Migration to Cloud Run
 
-To support multiple languages, I switched my blog hosting from Jamstack Netlify to dynamic delivery by Google Cloud Run. Since the only server logic I needed was language detection, Firebase Hosting + Cloud Functions would have been fine, but I just wanted to try Cloud Run. I also wanted to get reacquainted with Docker, something I hate to learn and then forget (although I haven't actually reacquainted with it yet, since Claude Code did most of the heavy lifting for me).
+To support the multilingual setup, I migrated the blog's hosting from a Jamstack architecture on Netlify to dynamic serving via Google Cloud Run. Since the server logic is essentially just language detection, Firebase Hosting + Cloud Functions might have been sufficient, but I just felt like trying Cloud Run. Plus, I wanted to revisit Docker, that formidable tool I keep learning and forgetting (though Claude Code ended up doing most of the heavy lifting, so I didn't actually relearn much).
 
-### 4. Introducing organicity
+### 4. Introducing the "Organic Score"
 
-As an added bonus, I've introduced "organicity" as an indicator of how much of a blog post is written manually. For example, "organicity: 50%" means that 50% is written manually, meaning the remaining half relies on AI. I think this will become the norm in the future. However, this number is subjective and self-reported, so please take it as a grain of salt.
+As a small bonus, I introduced an "Organic Score" metric to show how much of a blog post was written manually. For example, "Organic: 50%" means that 50% was written by hand, while the remaining half relied on AI. I figured this kind of transparency might become commonplace in the future. That said, this number is purely subjective and self-reported, so take it with a grain of salt.
 
-## Future outlook
+## Looking Ahead
 
-With this renewal, I have established the foundation for disseminating information in multiple languages. From now on, I would like to actively disseminate technical information not only in Japanese but also in English. If you find anything strange, please let me know.
+With this revamp, the foundation for sharing technical content across multiple languages is now in place. Moving forward, I hope to actively share technical information in both Japanese and English. If you spot anything that looks off, please feel free to let me know.
 
-I hope you continue to enjoy my new blog.
+I hope you enjoy the newly updated blog!

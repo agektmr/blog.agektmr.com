@@ -1,108 +1,107 @@
 ---
+title: "I attended a \"So, how about OpenSocial?\" sort of study session (!?)."
 layout: post
 lang: en
-title: "I participated in a study group (!?) about OpenSocial"
-description:
 date: 2008-04-08
 tags:
   - MySpace
   - OpenSocial
 translationOf: /2008/04/opensocial.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-I went to a study group called "What about [OpenSocial](http://www.ideaxidea.com/archives/2008/04/opensocial.html)?", which was advertised on a blog called IDEAxIDEA, run by someone from Hyakushiki. The event was held at the [MySpace Japan](http://jp.myspace.com/) office in Shiodome. Apparently, an engineer from the company was visiting Japan, so I came prepared with a list of questions I wanted to ask.
+I attended the "What do you think of [OpenSocial](http://www.ideaxidea.com/archives/2008/04/opensocial.html)? Study Session" announced on the IDEAxIDEA blog (run by the person behind 100SHIKI). The venue was the [MySpace Japan](http://jp.myspace.com/) office in Shiodome. Since engineers from the US headquarters were visiting Japan, I joined with a list of questions ready.
 
-## Relationship between MDP and OpenSocial
+## The Relationship Between MDP and OpenSocial
 
-MDP stands for MySpace Development Platform. MDP is a broader API than OpenSocial. In other words, OpenSocial is built on MDP.
+MDP stands for [MySpace](http://developer.myspace.com/community/) Development Platform. MDP is a broader set of APIs than OpenSocial. In other words, OpenSocial is built on top of MDP.
 
 ![opensocial_components](/images/2008/04/opensocial_components-300x270.png)
 
-In OpenSocial, JavaScript specifications are being finalized first, but container providers cannot return responses to requests unless they create a REST API that accepts Ajax. So MySpace developed the MySpace REST API. (Naturally, Orkut and hi5 also have similar APIs, but their specifications are not publicly available. [I wonder if hi5 has one?](http://api.hi5.com/))
+In OpenSocial, JavaScript specifications have been finalized ahead of other parts, but container providers cannot respond to requests without building a REST API that handles Ajax. The specification developed by MySpace for this purpose was the MySpace REST API. (Naturally, Orkut and hi5 have something similar, but their specifications are not public. [Or did hi5 have one?](http://api.hi5.com/))
 
-MySpace has an extension called MyOpenSpace that is separate from OpenSocial, and is distinguished as opensocialreference.js and MyOpenSpace.js. It would be more accurate to say that MyOpenSpace comes first, and OpenSocial exists as a wrapping for it. OpenSocial was designed to have the greatest common denominator of APIs from various SNSs, so all you need to do is wrap your own API. Indeed, this means that even if you bring an app from another SNS, compatibility can be maintained as long as it uses JavaScript that supports OpenSocial.
+Apart from OpenSocial, MySpace has an extension called MyOpenSpace, distinguished as `opensocialreference.js` and `MyOpenSpace.js`. It is more accurate to say that MyOpenSpace came first, and OpenSocial exists as a wrapper around it. Since OpenSocial was designed to take the greatest common denominator of APIs across various social networks, wrapping proprietary APIs is all it takes. That certainly ensures compatibility: even if you bring over an app from another social network, it will work as long as it uses OpenSocial-compliant JavaScript.
 
-I also asked what they plan to do about the RESTful API when the OpenSocial version is released, and they answered, "We'll just increase the number of APIs." I see. That makes sense. It seems they'll keep the API for the older version for people who have developed apps with the current version.
+I also asked what they plan to do regarding RESTful APIs once the OpenSocial version is released, to which they answered, "We'll just add more APIs." I see. That makes total sense. They apparently plan to keep the older APIs around for developers who built apps on the current version.
 
-This answers a question that has been bothering me for a while: How did MySpace implement the OpenSocial RESTful API, the specifications of which are not yet finalized? (http://devlog.agektmr.com/archives/20)
+This resolved the question I had been wondering about for a while: [How did MySpace implement the OpenSocial RESTful API when the spec isn't even finalized yet?](http://devlog.agektmr.com/archives/20)
 
-## What is an extension of OpenSocial?
+## What Are the Extensions to OpenSocial?
 
-* Photo album
-* Hero
-* Favorite movie
+* Photo albums
+* Heroes
+* Favorite movies
 
-There are already many unique extensions available, but the most popular is the photo album. While the photo album may or may not be available depending on the SNS, it is a feature that is likely to be used.
+These are some of the existing proprietary extensions, with photo albums being the most widely used. Indeed, while photo albums may or may not exist depending on the social network, they seem like a feature people would definitely use.
 
-I also asked about a feature that allows individual messages to be sent, and was told that it is currently under development. (I just looked and it seems that [OpenSocial already has one...](https://groups.google.com/group/opensocial-and-gadgets-spec/browse_thread/thread/ee24d711e51a4084)) They also said that they would like to create APIs for various other fields, such as music and comedy.
+When I asked about a direct messaging feature for individual users, they said it was currently in development. (Looking at it now, [it seems OpenSocial might already have one...](https://groups.google.com/group/opensocial-and-gadgets-spec/browse_thread/thread/ee24d711e51a4084)) They also mentioned wanting to build APIs across various fields, such as music and comedy.
 
-## About application registration
+## Registering Applications
 
-App developers can start development immediately after obtaining a Sandbox account, but before they can actually publish their app, they must go through a review process that involves a code review and legal check (for copyright infringement, etc.). The app is usually released within 24 to 48 hours, but it may take longer if there are any questionable rights issues.
+App developers can start building right away once they obtain a Sandbox account, but they must pass a review before actually publishing an app. The review involves code reviews and legal checks (such as copyright infringement) and usually takes about 24 to 48 hours for publication, though it can take longer if rights-related issues are ambiguous.
 
-I forgot to mention that even if you put your app on a remote server in XML, once the app passes the review, it seems that any subsequent changes to the XML on the server will not be reflected, as is the case with Google Gadget.
+I forgot to ask about this, but even if you host your app XML on a remote server, once the app passes review, subsequent changes to the XML on the server probably won't be reflected, just like with Google Gadgets.
 
 ### Notes
 
-* The Install Callback URL and Uninstall Callback URL allow you to specify the URL of the page to which the user will be redirected immediately after installing or uninstalling the app. The default is the app's canvas page.
-* A key and secret will be issued for OAuth authorization.
+* Install Callback URL and Uninstall Callback URL allow you to specify the URLs where users are redirected immediately after installing or uninstalling an app, respectively. The default is the app's canvas page.
+* A key and secret are issued for OAuth authorization.
 
-Monetization
+## Monetization
 
-Naturally, advertising revenue will likely be the main source of income, but it is also possible to make money through a type of recommendation advertising, like Facebook. Another possibility is to charge app developers for preferential display positions.
+Naturally, advertising will be the primary revenue stream, but earning revenue through recommendation-style ads like Facebook is also an option. Another possibility is charging app developers for preferred placement.
 
-For now, app developers are often offering apps with the goal of acquiring members for their own services, but since you can use the entire screen in [Canvas View](http://developer.myspace.com/community/myspace/anatomyOfAnApp.aspx#app_canvas), you can place ads there as you like and generate revenue. In the future, they are also considering offering a way to sell products and charge for them through the app, which is a dream come true.
+Currently, most app developers seem to provide apps with the goal of acquiring users for their own services. However, since the [canvas view](http://developer.myspace.com/community/myspace/anatomyOfAnApp.aspx#app_canvas) allows full-screen usage, they mentioned developers are free to place ads however they like to generate revenue. They are also considering providing ways to handle e-commerce and billing within apps in the future, which opens up a lot of possibilities.
 
-Application Compatibility
+## Application Compatibility
 
-I've always wondered about the compatibility of OpenSocial applications between SNSs. I actually already have the answer in my head, but I wanted to ask anyway.
+Regarding cross-SNS compatibility of OpenSocial applications, which I had been wondering about for a while: I actually already had my own answer in mind, but asked just to be sure.
 
-First of all, if you don't use MySpace's own extensions, you can obviously use it on other SNSs. Well, that makes sense. But you'll need to change the views and CSS for each site. For example, Orkut only has two views: canvas and profile, while MySpace has four: home, canvas, profile.left, and profile.right, and hi5 has three: homepage, canvas, and profile. At this point, you might be wondering, "Hmm..."
+First of all, as long as you do not use MySpace-specific extensions, you can naturally run the app on other social networks. That's obvious. However, views and CSS likely need to be switched per site. For example, Orkut only has two views—`canvas` and `profile`—whereas MySpace has four (`home`, `canvas`, `profile.left`, and `profile.right`), and hi5 has three (`homepage`, `canvas`, and `profile`). At this point, well, it gets tricky.
 
-However, I was told that there is an API in the container method that can get the name of the container in which the app is running, so there is also a way to switch the behavior depending on that.
+However, they told me that container methods provide an API to retrieve the name of the container where the app is running, so you can branch your behavior based on that. Makes sense.
 
-## Can I deploy the app on a remote server?
+## Can You Host an App on a Remote Server?
 
-Of course, if you use a RESTful API, you can use the app on external sites, but here we are wondering whether it is possible to change [GoogleGadget's Content type='html' to type='url'](http://code.google.com/intl/ja/apis/gadgets/docs/fundamentals.html#Content_Type).
+Using the RESTful API naturally lets you use an app on external sites, but the question here is whether you can change [Google Gadgets' Content type='html' to type='url'](http://code.google.com/intl/ja/apis/gadgets/docs/fundamentals.html#Content_Type).
 
 The answer is yes.
 
-Naturally, you would need to create a proxy under the same domain and create a system to access the MySpace API using OAuth, but it seems that a server library is also available (or in preparation?).
+Of course, you have to set up a proxy under the same domain and implement a mechanism to call the MySpace API via OAuth, but [server libraries are apparently being provided (or in the works?) as well](http://developer.myspace.com/community/myspace/faq.aspx#jslib).
 
-Growth after the release of the application directory
+## Growth After the Launch of the Application Directory
 
-Facebook saw a sudden surge in growth after the release of its application features, but what about MySpace? When I asked, I was told that there hasn't been any noticeable surge in growth so far. Since there aren't many links on the site, it seems they haven't reached that stage yet. They'll probably do more once their API is more robust. They're also hoping for word-of-mouth through messaging features and the like.
+Facebook saw explosive growth after launching its application platform, but what about MySpace? When I asked, they said they haven't seen a noticeable, rapid surge so far. Considering there isn't much promotion on the site yet, it seems they don't consider it ready for that stage. They will probably do more once the APIs become more mature. They also mentioned they have high hopes for word-of-mouth growth through features like messaging.
 
-## About escapeString and unescapeString
+## Regarding escapeString and unescapeString
 
-When using the persistent API, only string information can be saved, so data is exchanged in JSON format. The string needs to be escaped before sending and unescaped when receiving it. While `gadgets.util.escapeString()` and `gadgets.util.unescapeString()` work with Orkut and hi5, they don't work with MySpace, so I asked this question.
+When using the Persistence API, data can only be stored as strings, so communication happens in JSON format. That requires escaping strings before sending them and unescaping them upon receipt, but `gadgets.util.escapeString()` and `gadgets.util.unescapeString()`, which worked on Orkut and hi5, didn't work on MySpace, so I asked about it.
 
-The answer is that `escapeString` and `unescapeString` are no longer in use, and `encodeURIComponent` is now recommended. I just looked at the OpenSocial spec, and it seems that `gadgets.util.scapeString()` and `gadgets.util.unescapeString()` are still valid, though...
+The answer was that `escapeString` and `unescapeString` are deprecated and `encodeURIComponent` is now recommended. Looking at the OpenSocial spec right now, `gadgets.util.scapeString()` and `gadgets.util.unescapeString()` still seem to be valid, though...
 
-## Sample app for MySpace
+## Sample App for MySpace
 
-I'm releasing a MySpace version of a friend introduction app I created previously.
+Here is the MySpace version of the friend introduction app I previously built:
 
 ```
 http://devlab.agektmr.com/OpenSocial/MySpace/FriendIntroducer.xml
 ```
 
-I don't know if anyone else has been able to get this app into their Sandbox account, but I hope this helps. I haven't yet gotten around to creating two MySpace accounts to try it out, so if you're interested, please send me a friend request on [my MySpace account](http://profile.myspace.com/index.cfm?fuseaction=user.viewprofile&friendid=79982011).
+I'm not sure if other people can add this app to their Sandbox accounts, but I hope it serves as a useful reference. I haven't gone so far as creating two MySpace accounts to test it, so if you're curious, feel free to send a friend request to [my MySpace account](http://profile.myspace.com/index.cfm?fuseaction=user.viewprofile&friendid=79982011).
 
-## thoughts
+## Thoughts
 
-* It seems that many MySpace engineers use Aptana. I don't like Java apps because they're slow, so I don't generally use them, but maybe I'll give it another try...
-* What surprised me was that out of the 10 participants, only 4 brought out their laptops. And all of them were **MacBook Air users**!
-Everyone's so rich.  
-* I got my photo taken with Ozzie!
+* Many MySpace engineers seem to use Aptana. I generally avoid Java apps because they feel sluggish, but maybe I'll give it another try...
+* What surprised me most was that out of 10 attendees, 4 had their laptops out—and every single one of them was a **MacBook Air user**!  
+  Everyone is so well-off. 
+* Got a photo taken with Ozzie!
 
-Thank you to all participants for your hard work.
+Thank you to everyone who participated!
 
-## ※Addition (4/12)
+## Update (4/12)
 
-I emailed Terrence, who had told me about this on the day, to confirm that "`escapeString ` and u`nescapeString ` are no longer in use" was a mistake.
+Regarding whether "`escapeString ` and u`nescapeString ` are no longer used" was a misunderstanding: I followed up via email with Terrence, who told me about this during the session.
 
-Apparently, he mistook "`escape」`" for the common JavaScript `escape`, and when he said "`escape` is no longer in use," he was referring to that. Indeed, it is now recommended to use `encodeURIComponent` rather than `escape`.
+Apparently, when I said "`escape」`", he mistook it for standard JavaScript's `escape`, and when he said "`escape` is no longer used," he was referring to that. Indeed, `encodeURIComponent` is recommended over `escape` these days.
 
-As for the main issue of `gadgets.util.escpeString` and `gadgets.util.unescapeString`, it seems that they are not implemented in MySpace. I guess I'll have to solve it myself.
+As for the main topic of `gadgets.util.escpeString` and `gadgets.util.unescapeString`, it turns out they are indeed not implemented in MySpace. Looks like we have to solve this on our own.

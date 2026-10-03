@@ -1,35 +1,29 @@
 ---
+title: "MySpace's RESTful API is proprietary."
 layout: post
 lang: en
-title: "MySpace's RESTful API is proprietary"
-description:
 date: 2008-03-23
 tags:
   - OpenSocial
   - RESTful API
 translationOf: /2008/03/myspacerestful-api.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-On March 13th, MySpace released the OpenSocial app to the public as a beta version. This is the first OpenSocial-compatible social networking service to be released to the public. However, the OpenSocial specifications have not yet been fully finalized, so why and how?
+On March 13, OpenSocial apps were released to the public in beta on MySpace. This marks the first public launch among OpenSocial-compatible social networks. Why and how did this happen, even though the OpenSocial specification hasn't been fully finalized yet?
 
-[OpenSocial Container standard fragmentation &#8211; Implementing OpenSocial Containers | Google Group](https://groups.google.com/group/opensocial-container/browse_thread/thread/96761d3ebd53e32c/646c972cddae2d35)
+[OpenSocial Container standard fragmentation &#8211; Implementing OpenSocial Containers | Google グループ](https://groups.google.com/group/opensocial-container/browse_thread/thread/96761d3ebd53e32c/646c972cddae2d35)
 
-To summarize the contents:
+To summarize the thread:
 
-> MySpace's OpenSocial API appears to have proprietary specifications for both its JavaScript extensions and its RESTful API.
-> If things continue as they are, won't we be forced to conform to the specifications created by the world's largest social networking site rather than the standard specifications?
+> MySpace's OpenSocial API appears to use proprietary specifications for both its JavaScript extensions and RESTful APIs. At this rate, won't we be forced to conform to the specifications created by the world's largest SNS rather than the standard specification?
 
-In response to this question, there has been some discussion about whether this is an issue with the Office XML standard specifications or the browser standard specifications, but as of the 21st, a hi5 developer has replied as follows:
+In response to this question, a debate ensued comparing the situation to issues with Office XML standards or browser standards. However, as of the 21st, a developer from hi5 replied as follows:
 
-We're aware of this issue and would like to resolve it. A discussion will be held next week.
-> This discussion was suggested by MySpace, so they should be aware of this issue. We have proposals for a template system, presence, etc.
+> We are aware of this issue and want to resolve it. A meeting has been scheduled for next week, and since this meeting was proposed by MySpace, they must be aware of the issue too. We also have proposals prepared for template systems, presence, etc.
 
-That's what they say.
+It appears that the OpenSocial specification isn't just being driven by Google; developers from major US social networks other than Facebook—such as hi5, MySpace, and Ning—are gathering, bringing proposals to the table, and deciding on the specs together.
 
-It appears that the main body finalizing the OpenSocial specifications is not just Google, but also developers from major US social networking sites other than Facebook, such as hi5, MySpace, and Ning, who come together to submit proposals and make decisions.
+> I was under the impression that things had settled down to some extent with version 0.7 (at least for the JavaScript API), but it seems there are still many changes ahead.
 
-> I thought that version 0.7 (at least the JavaScript API) had settled down somewhat.
-> But it seems there's still more to come.
-
-It might be a good idea for Japanese developers (including myself) to make suggestions as well.
+Perhaps it would be a good idea for Japanese developers (myself included) to start actively submitting proposals as well.

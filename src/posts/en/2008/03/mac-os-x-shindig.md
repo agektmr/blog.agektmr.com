@@ -1,8 +1,7 @@
 ---
+title: Installing Shindig on Mac OS X
 layout: post
 lang: en
-title: Installing Shindig on Mac OS X
-description:
 date: 2008-03-12
 tags:
   - Java
@@ -11,54 +10,54 @@ tags:
   - Shindig
   - OpenSocial
 translationOf: /2008/03/mac-os-x-shindig.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-References: [Shindig - an Apache incubator project for OpenSocial and gadgets](http://incubator.apache.org/shindig/)
+Reference: [Shindig - an Apache incubator project for OpenSocial and gadgets](http://incubator.apache.org/shindig/)
 
-## Maven must be installed first
+## Maven Needs to Be Installed First
 
-Download it from [Maven - Download Maven 2.0.8](http://maven.apache.org/download.html). No special installation is required, just place it somewhere convenient and change the path.
+Download it from [Maven - Download Maven 2.0.8](http://maven.apache.org/download.html). There's no specific installation process required; just put it somewhere appropriate and set up your path. For now:
 
 ```shell
 > ~/Development/apache-maven-2.0.8
 ```
 
-Let's put it in . We'll also set the environment variables.
+Let's put it here. Also, set up the environment variables:
 
 ```shell
 > export JAVA_HOME='/System/Library/Frameworks/JavaVM.framework/Versions/A' > export PATH=$PATH:/Users/ekita/Development/apache-maven-2.0.8/bin
 ```
 
-...or so I thought, but Maven is included! What is this OS X!!
+...or so I thought, but Maven was already installed! What the heck, OS X!!
 
-## Install Shindig
+## Setting Up Shindig
 
 ```shell
 > mkdir Shindig
 ```
 
-Check out the Shindig source from the repository
+Check out the Shindig source code from the repository:
 
 ```shell
 > svn co http://svn.apache.org/repos/asf/incubator/shindig/trunk .
 ```
 
-Build
+Build it:
 
 ```shell
 > cd ~/Development/Shindig/java/gadgets&gt; mvn package
 ```
 
-It seems to download various things automatically and do whatever you want with them.
+It looks like it automatically downloads various dependencies and takes care of things for you.
 
-## Try starting Shindig
+## Trying to Run Shindig
 
 ```shell
 > mvn jetty:run-war
 ```
 
-It seems to work with...
+Apparently it's supposed to run with this, but...
 
 ```shell
 [INFO] Scanning for projects...
@@ -79,24 +78,24 @@ It seems to work with...
 [INFO] ------------------------------------------------------------------------
 ```
 
-It doesn't work properly... It seems that something called [Jetty](http://jetty.mortbay.org/maven-plugin/index.html) is required.
+It doesn't work... Apparently, something called [Jetty](http://jetty.mortbay.org/maven-plugin/index.html) is required.
 
-## Run Jetty
+## Running Jetty
 
-I don't know much about Java servers so I don't really understand, but for now I'll download jetty-6.1.8 and move it under `~/Development`.
+I know next to nothing about Java servers, but for now I downloaded jetty-6.1.8 and moved it under `~/Development`.
 
 ```shell
 > cd ~/Development/jetty-6.1.8
 > java -jar start.jar
 ```
 
-Apparently, this will run a web server called jetty (probably Apache needs to be running as well). So, I symbolically linked the Shindig war file I just built,
+I gave that a shot. Apparently, this gets the Jetty web server running (Apache probably needs to be running too). Next, I created a symlink to the Shindig war file built earlier:
 
 ```shell
 > ln -s ~/Development/Shindig/java/gadgets/target/gadgets.war ~/Development/jetty-6.1.8/webapps/gadgets.war
 ```
 
-When I try to access it...
+And when accessing it...
 
 ```shell
 http://localhost:8080/gadgets/files/samplecontainer/samplecontainer.html

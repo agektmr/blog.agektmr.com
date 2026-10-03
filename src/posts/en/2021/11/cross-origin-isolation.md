@@ -1,8 +1,8 @@
 ---
 layout: post
 lang: en
-title: SharedArrayBuffer and the transitional story of cross-origin isolation
-description: "This article explains cross-origin isolation, which uses standard technologies to enable `SharedArrayBuffer` and high-resolution timers in browsers on the Spectre-prevented web, as well as the challenges and current solutions."
+title: A Talk on SharedArrayBuffer and Transitional Cross-Origin Isolation
+description: "This article explains cross-origin isolation, which uses standard technologies to enable `SharedArrayBuffer` and high-resolution timers in browsers in the post-Spectre web, along with its challenges and current solutions."
 date: 2021-11-04
 updated: 2021-12-26
 image:
@@ -13,79 +13,79 @@ tags:
   - SharedArrayBuffer
   - Spectre
 translationOf: /2021/11/cross-origin-isolation.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
 {% Aside %}
 
-**2021/12/26:** [Safari also now supports `SharedArrayBuffer` using COOP/COEP from version 15.2](https://developer.apple.com/documentation/safari-release-notes/safari-15_2-release-notes), so we have changed the notation in the relevant section.
+**2021/12/26:** [Safari also supports `SharedArrayBuffer` using COOP/COEP starting from 15.2](https://developer.apple.com/documentation/safari-release-notes/safari-15_2-release-notes), so the relevant descriptions have been updated.
 
 {% endAside %}
 
-This is a long article, so I'll start with the conclusion.
+This is a long article, so let's start with the conclusion.
 
-Chrome, Firefox, and Safari now support `SharedArrayBuffer` and high-resolution timers. To do so, enable cross-origin isolation, which sends the following two headers to the parent HTML document:
+`SharedArrayBuffer` and high-resolution timers are now available in Chrome, Firefox, and Safari. To use them, you need to enable a state called cross-origin isolation by sending the following two headers with the parent HTML document:
 
 ```http
 Cross-Origin-Embedder-Policy: require-corp
 Cross-Origin-Opener-Policy: same-origin
 ```
 
-However, there are various conditions and restrictions to enable this, and many sites will struggle at this stage. If you just want to continue using Chrome as usual for the time being, it may be a safe option to sign up for the [Deprecation Trial](https://developer.chrome.com/origintrials/#/view_trial/303992974847508481) and see how it goes for a while.
+However, enabling this comes with various conditions and constraints, and most sites will struggle with it at this stage. If your goal for now is simply to keep things running in Chrome as they have been, registering for a [Deprecation Trial](https://developer.chrome.com/origintrials/#/view_trial/303992974847508481) and taking a wait-and-see approach might be the safest bet.
 
 <!-- excerpt -->
 
-Spectre threats, browser countermeasures, and site isolation
+## The Threat of Spectre, Browser Mitigations, and Site Isolation
 
-In our previous article, we discussed the Spectre threat, which exposes cross-origin resources by inferring the memory space used by the same process. We noted that browsers have mitigated the risk by disabling `SharedArrayBuffer` or reducing the precision of high-resolution timers. We also noted that some browsers have implemented a more fundamental solution by introducing an architecture called Site Isolation. We also noted that standardized features can isolate resources from cross-origin page attacks and ensure their safety. Specifically, various HTTP headers, such as CORP, `X-Content-Type-Options`, `X-Frame-Options`, CSP `frame-ancestors`, and COOP, are used to protect resources before they reach the renderer process.
+In the [previous article](/2021/11/browser-security.html), I explained that the threat of Spectre puts cross-origin loaded resources at risk by allowing the inference of memory space handled by the same process. Browsers mitigated this risk by disabling `SharedArrayBuffer` and reducing the precision of high-resolution timers, while some browsers introduced an architectural approach called Site Isolation for a more fundamental fix. I also discussed how standardized web platform features can isolate resources from attacks by cross-origin pages to ensure security. Specifically, by using HTTP headers such as CORP, `X-Content-Type-Options`, `X-Frame-Options`, CSP `frame-ancestors`, and COOP, resources are protected before they ever reach the renderer process.
 
-Browsers that adopt Site Isolation can now use `SharedArrayBuffer` and high-resolution timers again, but even if all browsers support Site Isolation, is it healthy for the web if these features are only available or unavailable depending on the architecture?
+Browsers that adopted Site Isolation re-enabled `SharedArrayBuffer` and high-resolution timers. However, even if all browsers supported Site Isolation, would it be healthy for the web if the availability of these features depended on underlying browser architecture?
 
-That's where cross-origin isolation comes in. It's a combination of HTTP headers that allows the browser to determine that it is in a safe environment (cross-origin isolated) from other origins, enabling things like `SharedArrayBuffer` and high-resolution timers.
+This is where **cross-origin isolation** comes in. By combining several HTTP headers, the browser determines that it is in an environment completely severed from other origins (cross-origin isolated), which enables `SharedArrayBuffer`, high-resolution timers, and other powerful capabilities.
 
-This article explains how to enable cross-origin isolation, the challenges it poses, and next steps.
+In this article, I will explain how to enable cross-origin isolation, the challenges it presents, and what the next steps look like.
 
-## What is possible in a cross-origin isolated environment?
+## What Becomes Possible in a Cross-Origin Isolated Environment
 
-Enabling cross-origin isolation allows you to:
+Enabling cross-origin isolation unlocks the following capabilities:
 
-* [`SharedArrayBuffer` now works (Wasm Threads can be used)](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/Planned_changes)
-* [`performance.measureUserAgentSpecificMemory()` now works](https://web.dev/monitor-total-page-memory-usage/)
-* [`performance.now()` and `performance.timeOrigin` now work more accurately](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/)
+* [`SharedArrayBuffer` becomes available (enabling Wasm Threads)](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/Planned_changes)
+* [`performance.measureUserAgentSpecificMemory()` becomes available](https://web.dev/monitor-total-page-memory-usage/)
+* [The resolution of `performance.now()` and `performance.timeOrigin` is increased](https://developer.chrome.com/blog/cross-origin-isolated-hr-timers/)
 
-For a while, Chrome introduced Site Isolation to enable the use of `SharedArrayBuffer` and high-resolution timers, but [starting with Chrome 92, this requirement was removed (changing the conditions to be the same as other browsers) and the condition was changed to require cross-origin isolated mode](https://developer.chrome.com/blog/enabling-shared-array-buffer/) (we're sorry for the inconvenience this caused](https://developers.google.com/search/blog/2021/03/sharedarraybuffer-notes?hl=ja)).
+Chrome had temporarily allowed `SharedArrayBuffer` and high-resolution timers based on Site Isolation, but [starting in Chrome 92, this prerequisite was removed (aligning conditions with other browsers), requiring cross-origin isolated status instead](https://developer.chrome.com/blog/enabling-shared-array-buffer/) (and [sorry for the commotion back then](https://developers.google.com/search/blog/2021/03/sharedarraybuffer-notes?hl=ja)).
 
-## Enabling cross-origin isolation using standardized techniques
+## Enabling Cross-Origin Isolation Using Standardized Technologies
 
-There are currently two conditions for enabling cross-origin isolation, a secure environment where web pages are completely isolated from other origins:
+To enable cross-origin isolation—confirming that a web page is in a secure environment completely isolated from other origins—there are currently two requirements.
 
-### Condition 1. The HTML document sends the `Cross-Origin-Opener-Policy: same-origin` header
+### Condition 1: The HTML document sends a `Cross-Origin-Opener-Policy: same-origin` header
 
-When a browser opens a new window with `window.open()`, it maintains communication using `postMessage()` etc., so it uses the same process even cross-origin. In our previous article, we discussed how using COOP headers to separate processes and prevent Spectre We have introduced a method to avoid this threat. If you set `COOP: same-origin`, the opened window will be opened in a separate process unless it is of the same origin, ensuring safety.
+When a browser opens a new window with `window.open()`, it uses the same process even across origins to maintain communication channels such as `postMessage()`. In the [previous article](/2021/11/browser-security.html#cross-origin-opener-policy-(coop)-%E3%81%A7%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6%E9%96%93%E3%81%AE%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E5%88%B6%E5%BE%A1%E3%81%99%E3%82%8B), I introduced how using the COOP header can split processes to avoid the threat of Spectre. By setting `COOP: same-origin`, the opened window will be placed in a separate process unless it is same-origin, thereby guaranteeing safety.
 
 ```http
 Cross-Origin-Opener-Policy: same-origin
 ```
 
-However, it should be noted that this means that communication using `postMessage()` will no longer be possible.
+However, keep in mind that this disables bidirectional communication via `postMessage()`.
 
-This is condition 1 for enabling cross-origin isolation.
+This is Condition 1 for enabling cross-origin isolation.
 
-Condition 2. The HTML document sends the `Cross-Origin-Embedder-Policy: require-corp` header
+### Condition 2: The HTML document sends a `Cross-Origin-Embedder-Policy: require-corp` header
 
-The header `Cross-Origin-Embedder-Policy` (COEP), which was not mentioned in the previous article, is not intended for security purposes in itself. **COEP eliminates all embedded resources that are not permitted, thereby eliminating exposed resources and achieving cross-origin isolation.** Specifying `COEP: require-corp` will block all resources that are not explicitly permitted by CORS or CORP from being loaded on this page.
+The `Cross-Origin-Embedder-Policy` (COEP) header, which did not appear in the previous article, is not in itself designed to provide security directly. **COEP is intended to eliminate vulnerable resources by blocking all unauthorized resource embeddings, thereby achieving cross-origin isolation.** Specifying `COEP: require-corp` will block any resource that has not explicitly granted permission to be loaded into this page via CORS or CORP.
 
 ```http
 Cross-Origin-Embedder-Policy: require-corp
 ```
 
-This is condition 2 for enabling cross-origin isolation.
+This is Condition 2 for enabling cross-origin isolation.
 
 ![COEP: require-corp](/images/2021/require-corp.png)
 
-### Check for cross-origin isolated
+### Checking If You Are Cross-Origin Isolated
 
-You can check whether a web page that sends the above two headers is cross-origin isolated by checking `self.crossOriginIsolated`. If it returns `true`, it is cross-origin isolated, and if it returns `false`, it is not.
+You can check whether a web page sending the two headers above is in a cross-origin isolated state by using `self.crossOriginIsolated`. It returns `true` if cross-origin isolated, and `false` otherwise.
 
 ```js
 if (self.crossOriginIsolated) {
@@ -95,164 +95,162 @@ if (self.crossOriginIsolated) {
 }
 ```
 
-You can try out cross-origin isolation in this demo.
+You can try out cross-origin isolation in [this demo](https://first-party-test.glitch.me/).
 
-## Resources are blocked!?
+## Wait, Resources Are Being Blocked?!
 
-It would be very easy if it ended here, but the difficult part begins from here. If you have actually tried cross-origin isolation, you will notice that this alone completely breaks normal websites. This is because all cross-origin resources that do not have special treatment are blocked. To load cross-origin or same-site cross-origin resources, you need to explicitly configure CORS or CORP to indicate that it is okay for them to be loaded from cross-origin.
-
-{% Aside %}
-
-Reference: [Understanding same-site/cross-site, same-origin/cross-origin](https://zenn.dev/agektmr/articles/f8dcd345a88c97)
-
-{% endAside %}
-
-### Add CORS or `Cross-Origin-Resource-Policy` headers to resources
+If it ended here, things would be very simple—but this is where the real challenge begins. As those who have tried cross-origin isolation may have noticed, doing only this will completely break an ordinary website. That is because any cross-origin resource without special handling will be blocked. To load cross-origin or same-site cross-origin resources, you must explicitly configure CORS or CORP to signal that loading them from cross-origin contexts is safe.
 
 {% Aside %}
 
-"Resources" here refers to anything that can be loaded from an HTML document, such as documents, images, videos, fonts, scripts, styles, etc.
+Reference: [same-site/cross-site, same-origin/cross-origin をちゃんと理解する](https://zenn.dev/agektmr/articles/f8dcd345a88c97)
 
 {% endAside %}
 
-As mentioned in our previous post, CORP indicates that resources can only be loaded from the same origin (`same-origin`), same-site (`same-site`), or any origin (`cross-origin`).
+### Adding CORS or `Cross-Origin-Resource-Policy` Headers to Resources
 
-For example, if `https://www.example.com` sends `COEP: require-corp`, the condition for loading an image is CORS-enabled, or:
+{% Aside %}
 
-* If it is served from the same origin, it will be loaded unconditionally (`CORP: same-origin` may be specified).
-* If it is served from the same site (e.g. `https://images.example.com/image.png`), it will be loaded if it has `CORP: same-site` or `CORP: cross-origin`. Otherwise it will be blocked.
-* If it is served from a completely different site, it will be loaded if it has `CORP: cross-origin`. Otherwise it will be blocked.
+Here, "resources" refers to everything that can be loaded from an HTML document, including documents, images, videos, fonts, scripts, and stylesheets.
+
+{% endAside %}
+
+[As introduced in the previous article](/2021/11/browser-security.html#cross-origin-resource-policy-(corp)-%E3%81%A7%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%AE%E5%9F%8B%E3%82%81%E8%BE%BC%E3%81%BF%E3%82%92%E5%88%B6%E5%BE%A1%E3%81%99%E3%82%8B), CORP indicates whether a resource can be loaded: only from same-origin if set to `same-origin`, only from same-site if set to `same-site`, or from any origin if set to `cross-origin`.
+
+For example, when `https://www.example.com` sends `COEP: require-corp`, an image can be loaded if it supports CORS, or under the following conditions:
+
+* If served from the same origin, it is loaded unconditionally (having `CORP: same-origin` is also fine).
+* If served from the same site (e.g., `https://images.example.com/image.png`), it is loaded if it has `CORP: same-site` or `CORP: cross-origin`. Otherwise, it is blocked.
+* If served from a completely different site, it is loaded only if it has `CORP: cross-origin`. Otherwise, it is blocked.
 
 ```http
 Cross-Origin-Resource-Policy: cross-origin
 ```
 
-If you want to use CORS, you need to require it when loading a resource, for example by adding the `crossorigin` attribute to the `<img>` tag to send a CORS request.
+When using CORS, the resource request must explicitly ask for it. Specifically, adding the `crossorigin` attribute to an `<img>` tag, for instance, sends a CORS request.
 
 ```html
 <img src="***/image.png" crossorigin>
 ```
 
-[`crossorigin` attribute can be added to `<audio>`, `<img>`, `<link>`, `<script>`, `<video>` tags](https://developer.mozilla.org/docs/Web/HTML/Attributes/crossorigin)
+[The `crossorigin` attribute can be added to `<audio>`, `<img>`, `<link>`, `<script>`, and `<video>` tags.](https://developer.mozilla.org/docs/Web/HTML/Attributes/crossorigin)
 
-You can try out the combined functionality of COEP and CORS/CORP in this demo.
+You can test how COEP and CORS/CORP interact in this [demo](https://first-party-test.glitch.me/coep).
 
-### Add COEP to the HTML document loaded in the iframe
+### Adding COEP to HTML Documents Loaded in iframes
 
-As I mentioned in my previous article, HTML documents loaded in an iframe are also vulnerable to the Spectre threat if they are cross-origin. But what happens if that cross-origin HTML document also loads other cross-origin resources or documents?
+[As mentioned in the previous article](/2021/11/browser-security.html#x-frame-options-%E3%81%BE%E3%81%9F%E3%81%AF-csp-frame-ancestors-%E3%81%A7%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88%E3%81%AE-iframe-%E5%9F%8B%E3%82%81%E8%BE%BC%E3%81%BF%E3%82%92%E5%88%B6%E5%BE%A1%E3%81%99%E3%82%8B), HTML documents loaded inside an iframe are also exposed to the threat of Spectre if they are cross-origin. But what happens if that cross-origin HTML document further loads cross-origin resources or documents?
 
-In fact, if you don't meet the requirements recursively, everything will be blocked. Embedding an iframe requires that it itself has `COEP: require-corp` .
+In fact, unless the requirements are met recursively, everything will be blocked. To embed an iframe, the embedded document itself also requires `COEP: require-corp`.
 
-In summary, if you embed a cross-origin HTML document in an iframe on a cross-origin isolated page, the HTML document loaded in that iframe must also:
+To summarize, when embedding a cross-origin HTML document via an iframe into a cross-origin isolated page, the HTML document loaded into that iframe must also have:
 
-* Must be `COEP: require-corp`
-* Must be `CORP: cross-origin` (`CORP: same-site` is also acceptable for same-site/cross-origin)
-
-It will be.
+* `COEP: require-corp`
+* `CORP: cross-origin` (or `CORP: same-site` if it is same-site / cross-origin)
 
 {% Aside %}
 
-* In this case, `self.crossOriginIsolated` within the iframe will become `false`, but by specifying `allow="cross-origin-isolated"` in the iframe tag, it will become `true`, allowing you to use `SharedArrayBuffer` etc.
-* There may be cases where you want to enable cross-origin isolation only within an iframe, but unfortunately there is no way to do this. All frames on the same page must be part of the cross-origin isolation of the parent frame.
+* In this case, `self.crossOriginIsolated` inside the iframe will be `false`, but setting `allow="cross-origin-isolated"` on the iframe tag makes it `true`, allowing the use of `SharedArrayBuffer` and other features.
+* You might want to enable cross-origin isolation only inside an iframe, but unfortunately, there is no way to do that. All frames on the same page must be part of the top-level frame's cross-origin isolation.
 
 {% endAside %}
 
-You can also try out the iframe demo here:
+You can also test iframes using this [demo](https://first-party-test.glitch.me/coep).
 
 {% Aside %}
 
-The above is already supported by all major browsers: Chrome, Edge, Firefox, and Safari.
+Everything covered up to this point is already supported across all major browsers: Chrome, Edge, Firefox, and Safari.
 
 {% endAside %}
 
-## Challenges of cross-origin isolation and solutions
+## Challenges of Cross-Origin Isolation and Countermeasures
 
-If you follow the above steps completely, you will have `SharedArrayBuffer` etc available in your browser.
+If you fully execute everything described above, `SharedArrayBuffer` and other features will become available in the browser.
 
-However, there are still challenges remaining.
+However, challenges still remain:
 
-* **Issue 1. `COOP: same-origin` breaks integrations that use popup windows, such as OAuth and payments. **
-Due to the nature of `COOP: same-origin`, integrations that often involve opening cross-origin windows for communication, such as OAuth and payments, become impossible.
-* **Issue 2. Even if you try to specify CORS or `CORP: cross-origin`, you can't do so because they are resources from other companies. **
-This is also a typical problem with cross-origin isolation.
+* **Challenge 1: `COOP: same-origin` breaks popup window integrations like OAuth and payments.**
+Due to the nature of `COOP: same-origin`, common integrations that open cross-origin windows to communicate—such as OAuth or payment flows—will cease to work.
+* **Challenge 2: You cannot specify CORS or `CORP: cross-origin` on resources provided by third parties.**
+This is another classic problem with cross-origin isolation.
 
-For example, while many resources delivered by Google already support `CORP: cross-origin`, some services do not support cross-origin isolation due to the challenges mentioned above. For example, Google Ads delivers ads using iframes, but in some cases the content of the iframes is delivered by the advertiser. Since it is not realistic to require all of them to implement CORS or CORP, they have [indicated their intention not to support it](https://developers.google.com/publisher-tag/guides/cross-origin-embedder-policy).
+For example, while many resources served by Google already support `CORP: cross-origin`, some services do not support cross-origin isolation due to the challenges mentioned above. Google Ads, for instance, delivers advertisements using iframes, and in some cases the content inside the iframe is served by advertisers. Because demanding CORS or CORP adoption across all of them is unrealistic, [they have indicated they will not support it](https://developers.google.com/publisher-tag/guides/cross-origin-embedder-policy).
 
-In light of these developments, discussions are underway to re-enable `SharedArrayBuffer` in Chrome without cross-origin isolation, and to relax the conditions for enabling cross-origin isolation from the standard specification side.
+Given this situation, Chrome provides a way to re-enable `SharedArrayBuffer` without cross-origin isolation, while discussions are underway on the web standards side to relax the conditions for enabling cross-origin isolation.
 
-### Enabling `SharedArrayBuffer` without cross-origin isolation in Chrome
+### Enabling `SharedArrayBuffer` in Chrome Without Cross-Origin Isolation
 
-I explained that Chrome originally supported an architecture called Site Isolation, and that the transition to cross-origin isolation was made to align with other browsers. However, due to the issues mentioned above, there is also an option to continue using `SharedArrayBuffer` without supporting cross-origin isolation. By applying a mechanism called [Deprecation Trial](https://developer.chrome.com/ja/blog/origin-trials/#deprecation-trials), you can continue to use `SharedArrayBuffer` as before, at least until the improvements described below are ready.
+As explained earlier, Chrome originally supported the Site Isolation architecture, and the transition to cross-origin isolation was made to stay in sync with other browsers. However, due to the issues outlined above, an option is provided to continue using `SharedArrayBuffer` without supporting cross-origin isolation. By applying a mechanism called a [Deprecation Trial](https://developer.chrome.com/ja/blog/origin-trials/#deprecation-trials), you can continue to use `SharedArrayBuffer` as before, at least until the solutions described below are ready.
 
 {% Aside %}
 
 Reference: [SharedArrayBuffer updates in Android Chrome 88 and Desktop Chrome 92](https://developer.chrome.com/blog/enabling-shared-array-buffer/)
 
-As of November 2021, the deprecation trial can be used to avoid the issue up to Chrome 103, but if the following improvements are not implemented in time, it may be extended. If you signed up for the Origin Trial, you will be notified by email whether the trial will be extended, but we will update the blog post above (even if this blog post is not updated).
+As of November 2021, the post states this can be worked around via the deprecation trial until Chrome 103, but it may be extended if the solutions below are not ready in time. You will likely be notified by email if an extension occurs if you have signed up for the Origin Trial, and the blog post above will be updated (even if this blog post is not).
 
 {% endAside %}
 
-To sign up for a deprecation trial, [apply here and specify your origin](https://developer.chrome.com/origintrials/#/view_trial/303992974847508481) and distribute the issued token in the `Origin-Trial` header or `<meta>` tag on your site. For more information, see [Introduction to Chrome Origin Trials](https://developer.chrome.com/ja/blog/origin-trials/), which has just been translated into Japanese.
+To register for the deprecation trial, [apply here by specifying your origin](https://developer.chrome.com/origintrials/#/view_trial/303992974847508481), and deliver the issued token via an `Origin-Trial` header or a `<meta>` tag on your site. For details, see [Getting started with Chrome's origin trials](https://developer.chrome.com/ja/blog/origin-trials/).
 
-### Relaxing cross-origin isolation requirements
+### Relaxing the Requirements for Cross-Origin Isolation
 
-Efforts are also underway to make cross-origin isolation more flexible from a standardization perspective. We will introduce the proposed specifications for this purpose.
+Efforts are also underway from a standards perspective to make cross-origin isolation more flexible. Here are the proposed specifications being worked on.
 
 #### `COEP: credentialless`
 
-The challenge is that it is difficult to require resources provided by other services to comply with CORS or CORP, but is that even necessary? Many resources are images, styles, fonts, and other resources that are publicly available on the Internet. Anyone can download them if they know the URL, so authentication should be required to protect them.
+While requiring CORS or CORP support from resources provided by other services is difficult, is it really necessary in the first place? Most resources are public assets like images, styles, and fonts available on the internet. Anyone can download them as long as they know the URL; if they need protection, authentication should be applied.
 
-So, instead of requiring CORS or CORP as a COEP mode, it would be better to create a mode that assumes requests are made without authentication, and that's how `COEP: credentialless` was devised.
+If so, rather than making CORS or CORP mandatory, why not create a mode based on making requests without credentials? That is how `COEP: credentialless` was conceived.
 
 ```http
 Cross-Origin-Embedder-Policy: credentialless
 ```
 
-`COEP: credentialless` omits authentication methods such as cookies, client certificates, and Authorization headers from requests to the server, allowing you to enable cross-origin isolation without exposing third-party resources to risk.
+With `COEP: credentialless`, credentials such as cookies, client certificates, and Authorization headers are stripped from requests to the server. This enables cross-origin isolation without putting third-party resources at risk.
 
 {% Aside %}
 
-Even in the case of `COEP: credentialless`, you can explicitly send authentication information by adding the `crossorigin` attribute to the request.
+Even with `COEP: credentialless`, you can still explicitly send credentials by making requests with the `crossorigin` attribute attached.
 
 Reference: [Load cross-origin resources without CORP headers using `COEP: credentialless`](https://developer.chrome.com/blog/coep-credentialless-origin-trial/)
 
 {% endAside %}
 
-Only available in Chrome from version 96.
+Currently, this is only available in Chrome, starting with version 96.
 
 ![COEP: credentialless](/images/2021/credentialless.png)
 
 #### anonymous iframe
 
-Following a similar approach, we are considering an anonymous iframe method that does not send authentication information to iframes, thereby not putting third-party resources at risk. However, due to the complexity of iframe architecture, the specifications are currently under development.
+Based on the same concept, [anonymous iframes are being explored](https://github.com/camillelamy/explainers/blob/master/anonymous_iframes.md) to avoid putting third-party resources at risk by not sending credentials for iframes either. However, because iframes are architecturally complex within browsers, this is currently under active development, including the specification itself.
 
 #### `COOP: same-origin-allow-popups-plus-coep`
 
-A mitigation is also being considered for the issue where using `COOP: same-origin` breaks popup window integrations such as OAuth and payments. The idea is that using `COOP: same-origin-allow-popups` allows communication with windows opened from your own origin, so it might be a good idea to make this a condition for cross-origin isolation.
+Mitigations are also being considered for the issue where `COOP: same-origin` breaks popup-based integrations like OAuth and payments. The idea is that since `COOP: same-origin-allow-popups` allows communication with windows opened from your own origin, perhaps this could serve as a condition for cross-origin isolation instead.
 
-A dedicated mode for this purpose, [`COOP: same-origin-allow-popups-plus-coep`](https://github.com/camillelamy/explainers/blob/master/coi-with-popups.md), is being considered, but is still in the early stages of development.
+A dedicated mode, [`COOP: same-origin-allow-popups-plus-coep`, is being explored](https://github.com/camillelamy/explainers/blob/master/coi-with-popups.md) for this purpose, though it is still in the early stages of discussion.
 
-## summary
+## Summary
 
-This article has explained how to enable cross-origin isolation in browsers and use `SharedArrayBuffer` and high-resolution timers, but it's quite complicated and requires a lot of thought.
+This article has covered how to enable cross-origin isolation in browsers to use `SharedArrayBuffer` and high-resolution timers, but there are many things to consider and it is quite complex.
 
-If you want it to work on Firefox or Safari right away, you could consider giving up on cross-origin resource integration to some extent and enabling cross-origin isolation. However, if you just want it to work on Chrome as usual for the time being, the best option for now is to sign up for a [deprecation trial](https://developer.chrome.com/origintrials/#/view_trial/303992974847508481) and see how it goes for a while.
+If you need your site to work in Firefox and Safari right away, one option is to accept giving up certain cross-origin integrations and enable cross-origin isolation. However, if your immediate goal is simply to keep things running in Chrome as before, registering for the [Deprecation Trial](https://developer.chrome.com/origintrials/#/view_trial/303992974847508481) and waiting to see how things develop is likely the best course of action right now.
 
-The content explained in this article was released as a session video at the Chrome Dev Summit in 2020.
+The content explained in this article was also presented as a session video at Chrome Dev Summit 2020:
 
 {% YouTube 'XLNJYhjA-0c' %}
 
-Finally, on November 17th, as part of the Chrome Dev Summit, we will be hosting a one-hour workshop that will explain the journey from Spectre to Site Isolation and cross-origin isolation.
+Finally, on November 17, I will be hosting an approximately one-hour workshop as part of [Chrome Dev Summit](https://goo.gle/cds2021), covering the full journey from Spectre to Site Isolation and cross-origin isolation:
 
 * [Gain security and powerful features with cross-origin isolation](https://developer.chrome.com/devsummit/events/week-2/workshops/gain-security-powerful-features-cross-origin-isolation/)
 
-If you have any questions, please feel free to join us (sessions will mainly be in English).
+If you have questions or want to discuss anything, please join! (The session will primarily be in English.)
 
-### Reference articles
+### References
 
 * [Making your website "cross-origin isolated" using COOP and COEP](https://web.dev/coop-coep/)
 * [Why you need "cross-origin isolated" for powerful features](https://web.dev/why-coop-coep/)
-* [Guide to enabling cross-origin isolation](https://web.dev/i18n/ja/cross-origin-isolation-guide/)
+* [クロスオリジンアイソレーションを有効にするためのガイド](https://web.dev/i18n/ja/cross-origin-isolation-guide/)
 * [SharedArrayBuffer updates in Android Chrome 88 and Desktop Chrome 92](https://developer.chrome.com/blog/enabling-shared-array-buffer/)
-* [Explanation of the message regarding SharedArrayBuffer objects](https://developers.google.com/search/blog/2021/03/sharedarraybuffer-notes?hl=ja)
-* [ZOZOTOWN's research and solution for the SharedArrayBuffer warning in Chrome 92 and later](https://techblog.zozo.com/entry/zozotown-shared-array-buffer)
+* [SharedArrayBuffer オブジェクトに関するメッセージについての説明](https://developers.google.com/search/blog/2021/03/sharedarraybuffer-notes?hl=ja)
+* [Chrome 92以降のSharedArrayBuffer警告に対するZOZOTOWNが実施した調査と解決策](https://techblog.zozo.com/entry/zozotown-shared-array-buffer)

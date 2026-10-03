@@ -1,8 +1,7 @@
 ---
+title: Trying out the PHP version of Shindig
 layout: post
 lang: en
-title: Try the PHP version of Shindig
-description:
 date: 2008-03-17
 tags:
   - Gadget
@@ -11,24 +10,24 @@ tags:
   - Shindig
   - Widget
 translationOf: /2008/03/shindig-php.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-I recently learned at a Google Developer Networking Event that a PHP version of Shindig had been released, so I decided to give it a try.
+At the recent Google Developer meetup, I learned that a PHP version of Shindig has been released, so I decided to give it a try.
 
-## Check out Shindig
+## Checking out Shindig
 
 ```
 > svn co http://svn.apache.org/repos/asf/incubator/shindig/trunk .
 ```
 
-The Shindig source is checked out. (The revision used here is 637739.)
+This checks out the Shindig source code. (The revision I tested this time was 637739)
 
 ```
 > ln -s ~/Development/Shindig/php/gadgets /Library/WebServer/Documents/gadgets
 ```
 
-You should now be able to view it on your localhost. Enter the following URL in your browser:
+With this, it should be viewable on localhost. Enter the following URL into your browser:
 
 ```
 http://localhost/gadgets/ifr?url=http://www.labpixies.com/campaigns/todo/todo.xml
@@ -36,36 +35,40 @@ http://localhost/gadgets/ifr?url=http://www.labpixies.com/campaigns/todo/todo.xm
 
 [![NotFound](/images/2008/03/notfound.jpg)](/images/2008/03/notfound.jpg)
 
-I can't see it...
+It doesn't work...
 
-## Modify httpd.conf
+## Modifying httpd.conf
 
-It seems that the default settings in Mac OS X (Leopard)'s httpd.conf are interfering.
+Apparently, the default settings in Mac OS X (Leopard)'s httpd.conf seem to be getting in the way.
+
+Edit:
 
 ```
 /etc/apache2/httpd.conf
 ```
 
-Note that this is not /etc/httpd/httpd.conf (Tiger's was this).
+Note that it's not `/etc/httpd/httpd.conf` (which was the case in Tiger).
 
-```
-<Directory "/Library/WebServer/Documents">
-```
-
-Within
+Change:
 
 ```
 AllowOverride None
 ```
 
-of
+inside:
+
+```
+<Directory "/Library/WebServer/Documents"> 
+```
+
+to:
 
 ```
 AllowOverride All
 ```
 
-Change it to this. This should work...
+This should do the trick...
 
 [![ToDoGadget](/images/2008/03/todogadget.jpg)](/images/2008/03/todogadget.jpg)
 
-Done! Now you can tinker around with it...
+It worked! Now I can start playing around with it...

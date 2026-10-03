@@ -1,19 +1,17 @@
 ---
 layout: post
 lang: en
-title: How to convert an image drawn on a canvas to a Blob in a format such as png
-description:
+title: How to convert an image drawn on a canvas into a Blob in formats such as PNG
 date: 2013-09-02
 updated: 2013-09-02
 tags:
   - HTML5
   - Canvas
 translationOf: /2013/09/canvas-png-blob.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-The simplest answer is to use [`toBlob()`](https://developer.mozilla.org/ja-JP/docs/Web/API/HTMLCanvasElement)
-from the DOM element (not the context) in `canvas`. However, while this is implemented in Firefox, unfortunately it's not yet implemented in Chrome. So, you can use the following method to create `Blob` in any image format, such as png or jpeg.
+The simplest answer is to use [`toBlob()`](https://developer.mozilla.org/ja-JP/docs/Web/API/HTMLCanvasElement) from the `canvas` DOM element (not the context). However, while this is implemented in Firefox, [unfortunately it is not yet implemented in Chrome](https://code.google.com/p/chromium/issues/detail?id=83103). Therefore, you can use the method below to create a `Blob` in any image format, such as PNG or JPEG.
 
 <!-- excerpt -->
 
@@ -36,16 +34,16 @@ for (var i = 0; i < bin.length; i++) {
 var blob = new Blob([buffer.buffer], {type: type});
 ```
 
-This completes the jpeg format `Blob`. Of course, you can also get an image in a different format by changing `type` to `'image/png'`, etc. Using this `Blob`, for example,
+Now you have a `Blob` in JPEG format. By changing the `type` to something like `'image/png'`, you can of course get images in other formats as well. Using this `Blob`, for example:
 
 ```javascript
 var url = window.URL.createObjectURL(blob);
 ```
 
-You can get a URL that references the image by using the `window.URL.revokeObjectURL(url)` tag. Don't forget to `a` before discarding it. To download it, pass the URL to the `[blob url]` tag (before discarding it).
+allows you to obtain a URL referencing that image. Don't forget to call `window.URL.revokeObjectURL(url)` before discarding it. To download this, pass that URL to an `a` tag (before revoking it).
 
 ```html
 <a href="[blob url]" download="image.png">Download</a>
 ```
 
-The __INLINE_CODE_12__ part is the URL of the `Blob` you just created, and the `image.png` part is the file name of the downloaded file. If you don't need `Blob`, you can also pass `canvas.toDataURL('image/png')` directly to the `href` attribute.
+The `[blob url]` part is the URL of the `Blob` you just created, and `image.png` will be the file name of the downloaded file. If you don't need a `Blob`, directly passing `canvas.toDataURL('image/png')` to the `href` attribute is also an option.

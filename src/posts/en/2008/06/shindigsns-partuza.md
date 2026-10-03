@@ -1,58 +1,51 @@
 ---
+title: "Open-source Shindig-compatible social network - Partuza!"
 layout: post
 lang: en
-title: "Open source Shindig compatible social networking site - Partuza!"
-description:
 date: 2008-06-03
 tags:
   - OpenSocial
   - Partuza!
   - Shindig
 translationOf: /2008/06/shindigsns-partuza.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-Speaking of OpenSocial containers,
-[Shindig](http://devlog.agektmr.com/archives/tag/shindig) is a popular choice, but its PHP version is already compatible with
-OpenSocial v0.7.
-[Partuza!](http://code.google.com/p/partuza/) is an open-source Shindig-compatible social networking site developed by Chris Chabot, the developer of the PHP version of Shindig.
+When it comes to OpenSocial containers, [Shindig](http://devlog.agektmr.com/archives/tag/shindig) is the go-to reference, and its PHP version already supports OpenSocial v0.7. [Partuza!](http://code.google.com/p/partuza/) is an open-source, Shindig-compatible SNS developed by Chris Chabot, the developer of the PHP version of Shindig.
 
-You may be wondering, "If Shindig is a container, then what does Partuza! do?" This time, I will explain how to install it and its relationship with Shindig.
+You might wonder: if Shindig is the container, then what exactly does Partuza! do? In this post, I'll explain how to install it and how it relates to Shindig.
 
-## Install Partuza!
+## Installing Partuza!
 
-We've previously explained how to install Shindig, so we won't go into detail here. Let's assume that Shindig is installed under `~/shindig` and can be accessed via `http://localhost:8080/gadgets/…`.
+Since [I’ve previously covered how to install Shindig](http://devlog.agektmr.com/archives/11), I'll skip that part here. Let's assume that Shindig is installed under `~/shindig` and can be accessed at `http://localhost:8080/gadgets/…`.
 
-First, you will need an environment that includes Apache, PHP5 (requires mcrypt), and MySQL5.
+First, the environment requires Apache, PHP5 (mcrypt required), and MySQL5.
 
-### Checkout from repository
+### Check Out from the Repository
 
-Check out the SVN repository on Google Code.
+Check out the code from the Google Code repository using SVN.
 
 ```shell
 > svn checkout http://partuza.googlecode.com/svn/trunk/ ~/partuza
 ```
 
-### Prepare the database
+### Prepare the Database
 
-Create an empty database with an appropriate database name, username, and password.
-For now, we'll use partuza, root, and no password. Now, let's dump `~/partuza/partuza.sql`.
+Create an empty database with an appropriate database name, username, and password. For now, let's assume they are `partuza`, `root`, and no password, respectively. In this state, dump `~/partuza/partuza.sql`.
 
 ```shell
 > mysql -u root partuza > partuza.sql
 ```
 
-### Set DocumentRoot
+### Configure DocumentRoot
 
-In the Apache configuration (`httpd.conf`), set `DocumentRoot` to `~/partuza/html`, and then make it accessible via `http://localhost/`. Of course, you'll need to prepare a domain separate from Shindig, so use a virtual host, etc.
+Set `DocumentRoot` to `~/partuza/html` in your Apache configuration (`httpd.conf`) so that it can be accessed at `http://localhost/`. Of course, you'll need a separate domain from Shindig, so consider using virtual hosts or a similar setup.
 
-### Modify the configuration file
+### Edit the Configuration File
 
-Edit `~/partuza/html/config.php`. Here, set the database-related information you created earlier
-and the gadget server root URL (`gadget_server`). The gadget
-server URL will be the Shindig URL, so it will be `http://localhost:8080/`.
+Edit `~/partuza/html/config.php`. Here, configure the database information you created earlier and the gadget server's root URL (`gadget_server`). In this case, the gadget server URL will be the Shindig URL, so set it to `http://localhost:8080/`.
 
-### Copy Database Handler
+### Copy the Database Handlers
 
 Copy `~/partuza/Shindig/PartuzaDbFetcher.php` and `~/partuza/Shindig/PartuzaHandler.php` to `~/shindig/php/src/social`.
 
@@ -60,20 +53,18 @@ Copy `~/partuza/Shindig/PartuzaDbFetcher.php` and `~/partuza/Shindig/PartuzaHand
 > cp ~/partuza/Shindig/Partuza* ~/shindig/php/src/social
 ```
 
-### Fix Shindig database settings
+### Update Shindig's Database Settings
 
-`~/shindig/php/src/social/PartuzaDbFetcher.php` also contains database-related information, so modify it accordingly. Also, modify `~/shindig/php/config.php` so that Shindig uses the database handler. Here, set "handlers => PartuzaHandler".
+`~/shindig/php/src/social/PartuzaDbFetcher.php` also contains database-related settings, so update those as well. In addition, edit `~/shindig/php/config.php` so that Shindig uses the database handlers. Set it to `"handlers => PartuzaHandler"`.
 
-This completes the setup. If you access `http://localhost/` and the welcome screen appears, you've succeeded. You can register and use it as a regular Orkut-like social networking site.
+That completes the general setup. If you access `http://localhost/` and see the welcome screen, you're good to go. You can register right away and use it as a standard, Orkut-like SNS.
 
-## The relationship between Partuza! and Shindig
+## The Relationship Between Partuza! and Shindig
 
-We've previously explained that OpenSocial gadgets are displayed via an iframe.
-To put it simply, Partuza is in front of the iframe, and Shindig is behind it.
-Shindig has previously allowed you to create OpenSocial-like displays using simple HTML by accessing the URL below, but using Partuza transforms it into a full-fledged social networking site.
+As I explained previously, OpenSocial gadgets are displayed via iframes; simply put, the front side of the iframe is Partuza, and the back side is Shindig. Shindig has long allowed you to display an OpenSocial-like view from a simple HTML page by accessing the following URL, but by using Partuza, it becomes a complete SNS.
 
 http://localhost:8080/gadgets/files/samplecontainer/samplecontainer.html
 
-However, as you can imagine from the PartuzaHandler specification, the database is shared. You can see it in action on [Chris Chabot's site](http://partuza.us.chabotc.com/).
+That said, as you might guess from specifying `PartuzaHandler`, the database is shared. You can see a live instance running on [Chris Chabot's site](http://partuza.us.chabotc.com/).
 
-By using Partuza!, you can not only analyze how to incorporate Shindig into a social networking site, but also develop a simple social networking site using it. Please give it a try.
+Using Partuza! not only lets you analyze how to integrate Shindig into an SNS, but it also allows you to build a small social network right out of the box. Give it a try!

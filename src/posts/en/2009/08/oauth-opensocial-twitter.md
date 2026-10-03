@@ -1,84 +1,87 @@
 ---
+title: "(Probably) The world's first! Released \"GadgeTwi!\", an OpenSocial Twitter client using OAuth"
+author: Eiji
 layout: post
 lang: en
-title: "We have released \"Gadget Tweet!\", the (probably) world's first Twitter client for OpenSocial that uses OAuth."
-description:
 date: 2009-08-18
+categories:
+  - OAuth
+  - OpenSocial
 tags:
   - Gadget
   - ガジェツイ！
 translationOf: /2009/08/oauth-opensocial-twitter.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
 <a href="http://home.goo.ne.jp/gadget/qYpTF5ucNCt2/detail" target="_blank"><img class="size-full wp-image-643" title="GadgeTweetr_Logo" src="/images/2009/08/GadgeTweetr_Logo.png" alt="GadgeTweetr_Logo" width="616" height="119" /></a>
 
-To coincide with the release of the OAuth feature of <a href="http://home.goo.ne.jp/" target="_blank">goo Home</a>, we have released a gadget called "<a href="http://home.goo.ne.jp/gadget/qYpTF5ucNCt2/detail" target="_blank">GadgeTweetr" (English name: </a>), which uses OAuth from <a href="http://twitter.com/" target="_blank">Twitter</a>. While it's just a gadget, we think it's simpler, more powerful, and easier to use than your average Twitter client, so we'd like to introduce it to you.
+To coincide with the release of the <a href="http://developer.home.goo.ne.jp/document/OAuthリクエスト" target="_blank">OAuth feature</a> on <a href="http://home.goo.ne.jp/" target="_blank">goo Home</a>, I have released a gadget that uses Twitter's OAuth called "<a href="http://home.goo.ne.jp/gadget/qYpTF5ucNCt2/detail" target="_blank">GadgeTweetr</a>" (Japanese name: ガジェツイ！). Despite being a gadget, I believe it turned out to be simpler, more feature-rich, and easier to use than many run-of-the-mill Twitter clients out there, so let me introduce it to you.
 
-*The font used for the Gadget Tweet! logo is "<a href="http://d.hatena.ne.jp/y05k/20070519/p1" target="_blank">Tsukitteru</a>".
+*Note: The GadgeTweetr logo uses the "<a href="http://d.hatena.ne.jp/y05k/20070519/p1" target="_blank">Twittler (ついってる)</a>" font.*
 
-## Main features
+## Key Features
 
-* OAuth login function
-* Tab function
-* Reply source display function
-* Search function
-* Multi-account support
+*   OAuth login
+*   Tab interface
+*   In-reply-to viewer
+*   Search functionality
+*   Multi-account support
 
-## OAuth login function
+## OAuth Login
 
-It supports <a href="http://oauth.net/core/1.0" target="_blank">OAuth</a>, so you don't have to enter your ID and password directly into the goo home page. By clicking the "Login" button, a screen on the twitter.com domain will open, allowing users to log in with peace of mind.
+With support for <a href="http://oauth.net/core/1.0" target="_blank">OAuth</a>, there is no need to enter your ID and password directly into goo Home. Clicking the "Login" button opens a screen on the twitter.com domain, so users can log in with peace of mind.
 
 <img style="border: 0px initial initial;" title="login_using_oauth" src="/images/2009/08/decd90d6f3baa9553fd625ecb11d3b8b-300x203.png" alt="login_using_oauth" width="300" height="203" />
 
-## Tab function
+## Tab Interface
 
-This Twitter client displays various types of statuses side by side in tabs. It supports a full range of displays, including Timeline, Mentions, Direct Messages, and Favorites.
+This Twitter client displays various types of statuses side by side using tabs. It supports a full range of views including Timeline, Mentions, Direct Messages, and Favorites.
 
 <img class="alignnone" style="border: 0px initial initial;" title="tabs" src="/images/2009/08/tabs.png" alt="tabs" width="288" height="143" />
 
-## Reply source display function
+## In-Reply-To Viewer
 
-If the status is "Reply," you can follow the conversation by clicking "Reply from."
+If a status is a reply, you can follow the conversation by clicking "In reply to."
 
 <img class="size-medium wp-image-633 alignnone" title="replies" src="/images/2009/08/replies-300x157.png" alt="replies" width="300" height="157" />
 
-## Search function
+## Search Functionality
 
-Free word searches are also supported.
+Free-word search is also supported.
 
 <img class="size-medium wp-image-634 alignnone" title="search" src="/images/2009/08/search-300x203.png" alt="search" width="300" height="203" />
 
-## Supports multiple accounts
+## Multi-Account Support
 
-You can add as many gadgets as you like and each can have a different account.
+You can add as many gadgets as you like and assign a different account to each one.
 
 <img class="size-thumbnail wp-image-631 alignnone" title="multi-account" src="/images/2009/08/multi-account-150x150.png" alt="multi-account" width="150" height="150" />
 
-## Other features
+## Other Features
 
-### Three views
+### Three Views
 
-It corresponds to the home, profile, and canvas views. Home opens Timeline and Mentions by default, profile opens the user's status by default, and canvas opens Timeline, Mentions, Direct Message, and Favorites by default.
+It supports the home, profile, and canvas views. By default, the home view opens with Timeline and Mentions; the profile view opens with that user's statuses; and the canvas view opens with Timeline, Mentions, Direct Messages, and Favorites.
 
-### Automatic linking function
+### Auto-Linking
 
-It detects and turns into links not only external URLs, but also IDs specified with @ and hashtags specified with #. URLs open a new window, but @ and # create a new tab and display a status list.
+It automatically detects and creates links not only for external URLs, but also for @mentions and #hashtags. Clicking a URL opens a new window, while clicking an @ or # opens a new tab displaying the corresponding list of statuses.
 
-### ReTweet function
+### ReTweet
 
-You can "ReTweet" tweets you like by clicking this icon. Of course, you can add comments.
+Clicking this icon on any tweet you like lets you "ReTweet" it. You can, of course, add your own comments as well.
 
-### Profile display function
+### Profile Display
 
-Click on the icon to view profile information such as the number of followers and posts.
+Clicking an avatar displays profile information such as follower counts and post counts.
 
-### Follow and unfollow function
+### Follow / Unfollow
 
-You can follow someone directly from their profile, or unfollow them if you're already following them.
+You can follow a user directly from their profile view, or unfollow them if you are already following them.
 
-## summary
+## Summary
 
-Since this is a Twitter client built on OpenSocial, we had prepared some unique social features, but unfortunately we were unable to make it in time for this announcement (we will release them as soon as they are implemented).
+Since this is a Twitter client built on OpenSocial, I had planned some unique social features, but unfortunately they didn't make it in time for this release (I will publish them as soon as they're implemented).
 
-However, even though we started out making it just to let people experience goo Home's OAuth, it ended up being simple yet highly functional. Please give Gadget Tweet a try.
+Even so, despite starting out simply as a way to let people experience goo Home's OAuth, it turned out to be both simple and feature-packed. Please give GadgeTweetr a try!
