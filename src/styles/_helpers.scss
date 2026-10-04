@@ -64,7 +64,7 @@ $all-text-inputs: 'input[type="color"], input[type="date"], input[type="datetime
 }
 
 // Neat layout mixins
-@mixin outer-container($local-max-width: 68em) {
+@mixin outer-container($local-max-width: 48em) {
   max-width: $local-max-width;
   margin-left: auto;
   margin-right: auto;

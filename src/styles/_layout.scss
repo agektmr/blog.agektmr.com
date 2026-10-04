@@ -18,6 +18,14 @@ $desktop: $b1;
 /*
 *	Globals
 */
+html {
+	box-sizing: border-box;
+}
+
+*, *::after, *::before {
+	box-sizing: inherit;
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
