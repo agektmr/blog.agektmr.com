@@ -16,7 +16,9 @@ templateClass: tmpl-post
 <div class="wrapper">
 
 <section class="post-meta">
-  <div class="post-date">Posted: {{ page.date | localeDateString(lang or 'en') }}{% if updated %} / Last updated: {{ updated | localeDateString(lang or 'en') }}{% endif %} / {% if lang == 'ja' %}オーガニック度{% else %}Organic level{% endif %}: {{ organic if organic else 100 }}%
+  <div class="post-date">{% if lang == 'ja' %}投稿日{% else %}Posted{% endif %}: {{ page.date | localeDateString(lang or 'en') }}
+  {% if updated %} / {% if lang == 'ja' %}最終更新日{% else %}Last updated{% endif %}: {{ updated | localeDateString(lang or 'en') }}{% endif %} /
+  {% if lang == 'ja' %}<span title="AIを使わずに書いた度合い">オーガニック度{% else %}<span title="Ratio written without AI">Organic level{% endif %}: {{ organic if organic else 100 }}%</span>
   {% set altLang = 'en' if lang == 'ja' else 'ja' %}
   {% set readInAltLang = 'Read in English' if lang == 'ja' else '日本語で読む' %}
   {% set altPostUrl = page.url | replace('/' + lang + '/', '/' + altLang + '/') %}

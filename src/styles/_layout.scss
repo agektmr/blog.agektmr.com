@@ -40,11 +40,15 @@ ul.default {
 	@include default-list;
 }
 
-code {
-	background-color: #eee;
-	display: inline-block;
-	border-radius: 3px;
-	padding: 0 3px;
+:not(pre) > code {
+	font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	font-size: 0.875em;
+	padding: 0.2em 0.4em;
+	margin: 0 0.15em;
+	background-color: rgba(0, 0, 0, 0.06);
+	color: #24292f;
+	border-radius: 4px;
+	word-break: break-word;
 }
 
 blockquote {

@@ -16,20 +16,38 @@ h2,h3,h4,h5,h6 {
 }
 
 .aside {
-  margin: 20px 0;
-  padding: 20px;
-  color: white;
-  font-size: 0.9em;
-  border-radius: 12px;
-  background: rgb(118 118 118);
+  margin: 1.75rem 0;
+  padding: 1.25rem 1.5rem;
+  font-size: 0.95em;
+  line-height: 1.7;
+  color: #374151;
+  background-color: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #2980b9;
+  border-radius: 6px;
+
   a {
-    color: white;
+    color: #2980b9;
+    text-decoration: underline;
+
+    &:hover {
+      color: #1a5276;
+    }
   }
+
   code {
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 0.15em 0.35em;
+    border-radius: 4px;
+    font-size: 0.9em;
   }
+
   p {
-    margin-bottom: 0;
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 0.75rem;
+    }
   }
 }
 
