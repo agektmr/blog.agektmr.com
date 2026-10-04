@@ -1,72 +1,64 @@
 ---
+title: OpenSocial OAuth Summary
 layout: post
 lang: en
-title: OpenSocial OAuth Summary
-description:
 date: 2008-08-02
 tags:
   - OAuth
   - OpenSocial
 translationOf: /2008/08/opensocialoauth.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-OpenSocial uses OAuth for authorization when a container communicates with an external server, or when an external server communicates with a container. This article summarizes the current state of OAuth in OpenSocial.
+In OpenSocial, when a container communicates with an external server, or when an external server communicates with a container, OAuth is used for authorization. In this post, I will summarize the current state of OAuth in OpenSocial.
 
-* Update (2008/10/20): Please also read the article [here](http://devlog.agektmr.com/archives/174) written on 2008/10/4.
+*Note (2008/10/20): Please also make sure to read [this post](http://devlog.agektmr.com/archives/174) written on 2008/10/4.*
 
-## What is OAuth again?
+## What Was OAuth Again?
 
-OAuth allows data exchange between three parties—a user, a consumer, and a service provider—to allow the consumer to access a service provider's resources without the user having to provide the consumer with credentials (ID and password). For example, imagine a user using Google's address book (resource) on MySpace (consumer). Without OAuth, the user would have to provide their Google ID and password to MySpace. However, with OAuth, the user authenticates directly with Google and can pass their address book data to MySpace without having to provide their Google ID and password to MySpace.
+OAuth is a mechanism that allows a **Consumer** to access a **User's** **Resources** hosted on a **Service Provider** without the user having to hand over their credentials (username and password) to the consumer. For example, imagine a scenario where a **User** wants to use their **Google (Service Provider)** **address book (Resource)** on **MySpace (Consumer)**. Without OAuth, you would have to entrust your Google ID and password to MySpace. With OAuth, the user directly interacts with Google for authentication, allowing address book data to be passed to MySpace without ever revealing their Google ID/password to MySpace.
 
-## Two types of OAuth
+## Two Flavors of OAuth
 
-Now, there are two types of OAuth that are used in OpenSocial.
+As useful as OAuth is, there are two variants used in OpenSocial.
 
 ### OAuth Core
 
-As explained earlier, [OAuth Core](http://oauth.net/core/1.0/) involves communication between three parties: a **user**,
-
-a **consumer**, and a **service provider**. This is a basic approach, so for more details, please refer to [here](http://www.atmarkit.co.jp/fsecurity/special/106oauth/oauth01.html).
+In [OAuth Core](http://oauth.net/core/1.0/), as explained earlier, the interaction takes place between three parties: the **User**, the **Consumer**, and the **Service Provider**. Since this is the foundational flow, please refer to [resources like this](http://www.atmarkit.co.jp/fsecurity/special/106oauth/oauth01.html) for more details.
 
 ### OAuth Consumer Request
 
-On the other hand, [OAuth Consumer Request](http://oauth.googlecode.com/svn/spec/ext/consumer_request/1.0/drafts/1/spec.html)
-is a specification that removes the user authentication portion of the OAuth specification and focuses on the interaction between consumers and service providers. It is commonly referred to as "**two-legged OAuth**."
-This specification establishes only a trust relationship between the consumer and service provider, without requiring user authentication. Therefore, it is intended for use when a consumer wants to obtain public information from a service provider. (This is a rather embarrassing mistake. To be precise, it is a specification in which the consumer adds a signature, allowing the service provider to verify the authenticity of the request source and request content. / Added October 2009.) Incidentally, OpenSocial v0.7 does not include the use of OAuth Core, and instead uses two-legged OAuth. OAuth Core is available only in OpenSocial v0.8 and later (of course, two-legged OAuth is also available).
+On the other hand, [OAuth Consumer Request](http://oauth.googlecode.com/svn/spec/ext/consumer_request/1.0/drafts/1/spec.html) strips out the user authentication part of the OAuth specification and focuses purely on communication between the Consumer and the Service Provider; it is commonly referred to as "**two-legged OAuth**." Because this specification relies entirely on the trust relationship between the consumer and the service provider without involving user authentication, it was presumed to be used when a consumer wants to retrieve public information from a service provider. (This was an embarrassing mistake on my part. To be accurate, **it is a specification where the consumer adds a signature so the service provider can verify the identity of the requester and the integrity of the request content.** / Added in October 2009) By the way, in OpenSocial v0.7, OAuth Core is not included in the spec, and this two-legged OAuth is used instead. OAuth Core support is introduced in OpenSocial v0.8 and later (naturally, two-legged OAuth remains available as well).
 
-## OAuth usage patterns in OpenSocial
+## OAuth Usage Patterns in OpenSocial
 
-There are two other ways to use OAuth with OpenSocial:
+There are two primary patterns for using OAuth in OpenSocial.
 
-### Outbound OAuth, where a gadget communicates with an external server
+### Outbound OAuth: Gadgets Communicating with External Servers
 
-![Outbound OAuth](/images/2008/08/e38394e382afe38381e383a3-1-300x95.jpg)
-Here, we'll call this **Outbound OAuth**. This is the case where a gadget created in `type="html"` acts as a consumer, using the SNS
-container as a proxy, and communicates with an external server acting as a service provider via `makeRequest`.
+![Outbound OAuth](/images/2008/08/e38394e382afe38381e383a3-1-300x95.jpg) For our purposes, let's call this **Outbound OAuth**. This is the case where a gadget built with `type="html"` acts as the consumer—proxied through the SNS container—and communicates with an external server acting as the service provider via `makeRequest`.
 
-### Inbound OAuth, where an external server interacts with the container
+### Inbound OAuth: External Servers Communicating with the Container
 
-![Inbound OAuth](/images/2008/08/e38394e382afe38381e383a3-3-300x88.jpg)
-Here, we'll call this **Inbound OAuth**. This refers to the case where an external server (consumer) calls the RESTful API of an SNS container (service provider). This also applies to the case where the `type="url"` gadget calls the SNS container's RESTful API through an external server.
+![Inbound OAuth](/images/2008/08/e38394e382afe38381e383a3-3-300x88.jpg) Let's call this **Inbound OAuth**. In this case, an external server acting as the consumer hits the RESTful API of the SNS container, which acts as the service provider. A `type="url"` gadget calling the SNS container's RESTful API via an external server also falls under this category.
 
-## What you need to use OAuth
+## Prerequisites for Using OAuth
 
-There are several prerequisites for using OAuth. While you will need to look up the detailed specifications separately, the prerequisites you need to meet are listed below.
+There are several prerequisites for using OAuth. Setting aside the finer details of the spec, here is what is required upfront:
 
-* The consumer must know the following information issued by the service provider in advance:
-* Consumer key (consumer_key)
-* Consumer secret (consumer_secret)
-* The consumer must know the following three URLs used for OAuth communication with the service provider:
-* Service provider's request token URL
-* Service provider's access token URL
-* Service provider's authentication URL
+* The Consumer must know the following, issued in advance by the Service Provider:
+    * Consumer Key (`consumer_key`)
+    * Consumer Secret (`consumer_secret`)
+* The Consumer must know the following three URLs used for the OAuth exchange with the Service Provider:
+    * The Service Provider's Request Token URL
+    * The Service Provider's Access Token URL
+    * The Service Provider's Authorization URL
 
-*Addendum (October 20, 2008): The consumer secret is not required if the signature method is RSA-SHA1. For details, see [here](http://devlog.agektmr.com/archives/174). We will examine how to meet this requirement for each OAuth usage pattern.
+*Note (2008/10/20): When the signature method is RSA-SHA1, the consumer secret is not required. See [here](http://devlog.agektmr.com/archives/174) for details.* Let's examine how these prerequisites are met for each OAuth usage pattern.
 
-### Outbound OAuth Case
+### The Case for Outbound OAuth
 
-Since the gadget will be communicating with an external server, the gadget developer first registers the consumer key and consumer secret in the SNS container. However, as far as I know, there are no SNSs that implement Outbound OAuth yet. Therefore, we will assume that the consumer key and consumer secret have been passed to the container by some means (such as posting using a form on an SSL page). (Methods for achieving this will likely emerge in the future.) Next, various URLs for the service provider must be passed. In v0.8, this is specified to be passed in the gadget XML. Create OAuth in ModulePrefs.
+Since this is the case where a gadget communicates with an external server, the gadget developer first registers the consumer key and consumer secret with the SNS container. However, as far as I know, **no SNS has implemented Outbound OAuth yet**. Therefore, let's assume for now that the consumer key and consumer secret have been passed to the container through some means (such as submitting via a form on an SSL page). (Methods to achieve this are expected to appear over time.) Next, the various Service Provider URLs need to be provided; v0.8 specifies doing this within the gadget XML. Create an `oauth` element inside `ModulePrefs`:
 
 ```xml
 <oauth>
@@ -78,21 +70,18 @@ Since the gadget will be communicating with an external server, the gadget devel
 </oauth>
 ```
 
-OAuth does not necessarily communicate with a single server, so adding a Service
-allows support for multiple servers. You can distinguish between them using Service@name, so if necessary, add the following parameters to makeRequest's opt_params to specify the service:
+Since OAuth isn't necessarily limited to communicating with a single server, you can support multiple servers by adding multiple `Service` entries. You can differentiate them using `Service@name`, so add the following parameter to `opt_params` in `makeRequest` as needed to specify the service:
 
 ```
 gadgets.io.RequestParameters.OAUTH_SERVICE_NAME
 ```
 
-There is also a way to resolve the URL used for OAuth communication with the service provider using XRDS-Simple, but we will cover this topic in more detail on another occasion.
+As for discovering the URLs for the OAuth exchange with the service provider, XRDS-Simple is another possible approach, but I will cover that in detail on another occasion.
 
-### Inbound OAuth Case
+### The Case for Inbound OAuth
 
-This is when an external application accesses the SNS container's RESTful API.
-This is similar to Facebook's Facebook Connect, MySpace's Data Availability, and Google's FriendConnect, and is still in an experimental stage.
-The consumer key and consumer secret are issued when you register your application on the SNS container. Developers note or copy and paste them into the consumer server code. You can find the URL by simply viewing the help page or by using autodiscovery with XRDS-Simple.
+This is when an external application accesses the SNS container's RESTful API. This corresponds directly to initiatives like Facebook's Facebook Connect, MySpace's Data Availability, and Google's FriendConnect, which can still be considered experimental. As for the consumer key and consumer secret, they are issued when you register your application on the SNS container. The developer simply copies/pastes them into the consumer server's code. For discovering the URLs, you can either refer directly to the documentation/help pages or use auto-discovery via XRDS-Simple.
 
-## summary
+## Summary
 
-This time I have written a rough outline, but next time I would like to actually try using MySpace Data Availability to perform OAuth authentication and retrieve data.
+This post covered the broad concepts, but next time I plan to walk through an actual implementation: performing OAuth authentication using MySpace Data Availability and fetching data.

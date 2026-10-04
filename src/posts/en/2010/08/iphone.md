@@ -1,8 +1,8 @@
 ---
+title: Mobile web apps on iPhone
+author: Eiji
 layout: post
 lang: en
-title: Mobile web apps on iPhone
-description:
 date: 2010-08-11
 categories:
   - HTML5
@@ -11,49 +11,49 @@ tags:
   - iPhone
   - OpenAppMkt
 translationOf: /2010/08/iphone.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-It's been a while. I'm Eiji, and I spend every day working on web apps. Today, I'd like to share with you some interesting ideas I've come across for mobile web apps.
+It's been a while. This is Eiji, living a life completely immersed in web apps. Today, I'd like to share an exciting mobile web app discovery I came across.
 
 ## OpenAppMkt
 
-<a href="http://openappmkt.com/" target="_blank">http://openappmkt.com/__HTML_TAG_1__
+<a href="http://openappmkt.com/" target="_blank">http://openappmkt.com/</a>
 
-This is a service for iPhones. You can use it without registering, so if you have an iPhone, give it a try.
+This is a service designed for iPhone. You can use it without signing up, so if you have an iPhone, go ahead and give it a try.
 
 [<img class="alignnone size-full wp-image-711" title="openappmkt_bookmark" src="/images/2010/08/10-23-57-28.jpg" alt="" width="320" height="480" />][1]
 
-When I access it on my iPhone, it immediately asks me to "bookmark it to the home screen," so I try it. And sure enough, an icon appears on the home screen. Here's the problem.
+When you visit the site on an iPhone, it immediately prompts you to "Add to Home Screen", so let's do that. Naturally, an icon appears on the home screen. Here's where it gets interesting.
 
 [<img class="alignnone size-full wp-image-710" title="openappmkt_top" src="/images/2010/08/10-23-57-15.jpg" alt="" width="320" height="480" />][2]
 
-When I clicked on the icon to launch it, it didn't launch a browser, but what looked like a native app! This is an app for installing apps, so I tried installing Facebook and launching it. This installation procedure also requires bookmarking it on the home screen.
+Tapping the icon launches what looks like a native app, not a browser (!). Since this is an app for installing other apps, I tried installing Facebook and launching it. The installation process here is the same: bookmark it to the home screen.
 
 [<img title="openappmkt_facebook" src="/images/2010/08/11-0-10-35.jpg" alt="" width="320" height="480" />][3]
 
-When I launch the Facebook app, something that looks like a native app launches, but it's clearly the smartphone version of Facebook.
+When you launch the Facebook app, it once again strangely opens what looks just like a native app. Yet the content is unmistakably the mobile web version of Facebook...
 
-Actually, this is a web app. It's just that the navigation and menu aren't displayed, but Safari is running. I didn't know you could do this on an iPhone.
+In fact, this is a web app. It appears Safari is running under the hood, just without displaying the navigation bar or menus. Who knew you could do something like this on an iPhone?
 
 ## Mobile Web Applications
 
-When you actually try it, you'll notice that this alone makes a big difference to the user experience (mainly your mood). It's strange why most iPhone web apps haven't adopted this approach until now. Even if it looks like a website in Safari, when you can see the screen like this without navigation, you won't hesitate to treat it as a normal app.
+Once you actually use it, you'll realize that this subtle change makes a world of difference in user experience (mostly in how it feels). It's almost puzzling why most iPhone web apps haven't adopted this approach until now. What looks like an ordinary website inside Safari feels completely natural to treat as a regular app when the browser chrome is stripped away.
 
-It also has a solid response, so if the app is lightweight, you can use it without even thinking about it being a web app, and above all, it's great news for web developers that you can create iPhone apps with the same feeling you have when creating a web app. It's a simple technique that shouldn't be overlooked, as it also means you can make use of your existing assets.
+The responsiveness is solid too, so with lightweight apps, you can use them without even realizing they're web apps. Best of all, being able to build iPhone apps with the exact same workflow as building for the web is a massive win for web developers. It's a simple technique, but one you definitely shouldn't overlook, especially since it lets you leverage existing web assets.
 
-At this point, the next issue is distribution. How do you distribute the web app you've created? That's what OpenAppMkt does. In short, it's the "web app version of the iTunes Store." Oh, and let's not forget about <a href="http://www.apple.com/webapps/" target="_blank"> and </a>. I haven't looked into the details, but it seems you can charge for it.
+At this point, the remaining challenge is distribution: how to distribute the web apps you've built. That's precisely the role OpenAppMkt takes on. In short, it's a "web app version of the iTunes Store." (Though we shouldn't forget <a href="http://www.apple.com/webapps/" target="_blank">this</a>, either.) I haven't looked into the details yet, but it seems to support monetization as well.
 
-Combine with HTML5 to create the ultimate web app
+## Combining with HTML5 for the Ultimate Web App
 
-As mentioned above, it seems that removing the Safari menu and status bar is very easy, just by adding the meta tag apple-mobile-web-app-capable to your HTML. For details, see <a href="http://developer.apple.com/safari/library/documentation/appleapplications/reference/safarihtmlref/articles/metatags.html" target="_blank">here</a>.
+As shown above, hiding Safari's menus and status bar is remarkably easy—you just need to include an `apple-mobile-web-app-capable` meta tag in your HTML. For details, take a look <a href="http://developer.apple.com/safari/library/documentation/appleapplications/reference/safarihtmlref/articles/metatags.html" target="_blank">here</a>.
 
-Apparently, this feature has been around since OS 2.1, and I remember hearing about it, but this was the first time I'd actually seen a web app running. In a sense, it could be said that the iPhone was waiting for the arrival of HTML5 for this feature to see the light of day.
+Apparently, this feature has actually been available since OS 2.1. I vaguely remember hearing about it back then, but this was the first time I'd seen it in action in a real-world web app. In a sense, the iPhone may have been waiting for the arrival of HTML5 for this feature to truly shine.
 
-For example, imagine combining this with ApplicationCache and Web SQL Database. All basic resources are cached locally with AppCache. Dynamic data is stored in Web SQL Database when offline, and is synchronized to the cloud when it detects that the application is online, creating a web app that can run completely offline.
+Imagine pairing this with ApplicationCache and Web SQL Database. You could cache all basic resources locally using AppCache. For dynamic data, you'd store it in Web SQL Database while offline, detect when the device comes back online, and sync it to the cloud. With that architecture, you'd have a web app that works entirely offline.
 
-I have so many dreams that it's a bit of a problem...
+It really gets your imagination running wild...
 
-[1]: /images/2010/08/10-23-57-28.jpg
-[2]: /images/2010/08/10-23-57-15.jpg
-[3]: /images/2010/08/11-0-10-35.jpg
+ [1]: /images/2010/08/10-23-57-28.jpg
+ [2]: /images/2010/08/10-23-57-15.jpg
+ [3]: /images/2010/08/11-0-10-35.jpg

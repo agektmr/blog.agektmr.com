@@ -1,8 +1,8 @@
 ---
 layout: post
 lang: en
-title: "I wrote a book called \"All About Passkeys.\""
-description: "I have written a book called \"All About Passkeys.\" I would like to briefly introduce the contents of this book, which will be released on January 28, 2025."
+title: "I wrote a book titled \"All About Passkeys.\""
+description: "I wrote a book titled \"All About Passkeys.\" Here is a brief introduction to the contents of the book, which will be released on January 28, 2025."
 date: 2025-01-13
 image:
   feature: /2025/everything-about-passkeys.jpg
@@ -15,47 +15,47 @@ tags:
   - Authentication
   - Publication
 translationOf: /2025/01/everything-about-passkeys.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-I have written a book called "All About Passkeys" (https://gihyo.jp/book/2025/978-4-297-14653-5). I would like to give you a brief introduction to the contents of this book, which will be released on January 28th.
+I wrote a book titled [「パスキーのすべて」](https://gihyo.jp/book/2025/978-4-297-14653-5) (*Everything About Passkeys*). Here is a brief introduction to what's inside the book, which will be released on January 28th.
 
 <!-- excerpt -->
 
 {% ImageFigure '/images/2025/everything-about-passkeys.jpg', 'パスキーのすべて', 'max-width: 400px; margin: 0 auto 30px;' %}
 
-I wrote "All About Passkeys" together with Mr. Koiwai, a director of the OpenID Foundation in the United States and leader of the OpenID Foundation Japan's KYC Working Group, and [Kura](https://x.com/kura_lab), a director and evangelist at OpenID Foundation Japan. Mr. Koiwai also helped me with last year's [Passkey Hackathon](https://web.dev/blog/passkeys-hackathon-tokyo), and we've often spoken at the same events. He's been helping me out with various things recently, not just FIDO-related. Mr. Kura and I have been good friends in the ID community for over 10 years. We are both friendly and enjoyable colleagues. While we roughly divided the work, we all took responsibility for the overall writing. Toward the end, we all retreated to the Gijutsu Hyoronsha conference room several times to write and review the book, which made the process itself a lot of fun. I'd like to thank Mr. Kikuchi, the editor, for his help, even on his day off.
+*Everything About Passkeys* was co-authored with Koiwai-san, Director at the US OpenID Foundation and KYC WG Leader at OpenID Foundation Japan, and [Kura](https://x.com/kura_lab), Director and Evangelist at OpenID Foundation Japan. Koiwai-san collaborated with us on the [Passkeys Hackathon](https://web.dev/blog/passkeys-hackathon-tokyo) held last year, and we often speak at the same events; I've been indebted to him recently for many things beyond just FIDO. Kura and I have been good friends in the identity community for over a decade. Both are wonderful, trusted companions. While we had a rough division of roles, we wrote the book under a structure where everyone shared responsibility for the entire content. Toward the end, we gathered in a Gijutsu-Hyouron-sha conference room multiple times to write and review together, thoroughly enjoying the process itself. Huge thanks to our editor, Kikuchi-san, who provided tremendous support even through weekends and holidays.
 
-As the title suggests, this book covers not only the technical aspects of Passkey, but also its origins, ecosystem, surrounding circumstances, and more, incorporating all of our knowledge. For a rough overview, it's best to take a look at the [Table of Contents](https://gihyo.jp/book/2025/978-4-297-14653-5#toc), but I'd like to share some of my personal highlights.
+True to its title, the book leaves nothing on the table, packing in all our collective knowledge—not just the technical aspects of passkeys, but also their origins, ecosystem, and the surrounding landscape. The best way to get an overview of the content is to check the [table of contents](https://gihyo.jp/book/2025/978-4-297-14653-5#toc), but here are a few personal highlights:
 
-* Contains basic information that PMs and designers need to know.
-* Contains the essentials that engineers need to know to implement passkeys.
-* Includes a wealth of information for advanced users.
+* Covers fundamental information that PMs and designers should know
+* Packed with the essential knowledge engineers need to implement passkeys
+* Rich in advanced topics for experienced practitioners
 
-## A collection of basic information that PMs and designers need to know
+## Fundamental information that PMs and designers should know
 
 {% ImageFigure '/images/2025/introduction.jpg', 'はじめに' %}
 
-This book is intended to be read by a wide range of members of teams working on passkeys, and contains a lot of information that will be useful for PMs and designers as well, such as what passkeys are, the benefits of using them, user experiences with passkeys, case studies, common misconceptions and their solutions, and pitfalls. In particular, the information on passkey support on each platform across operating systems, browsers, and password managers will be extremely useful when designing services.
+Designed to be read by a wide range of team members working on passkeys, the book contains plenty of information useful for PMs and designers—such as what passkeys are, the benefits of using them, passkey user experiences, case studies, common misconceptions versus reality, and potential pitfalls. In particular, the breakdown of passkey support across platforms—spanning OSs, browsers, and password managers—should prove extremely valuable when designing services.
 
 {% ImageFigure '/images/2025/environment.jpg', 'サポート環境' %}
 
-It also introduces the features and usage of widely used authentication methods such as passwords, two-factor authentication, and ID linking, and touches on what authentication methods other than passkeys are available, how they should be handled, and what to do if your passkey becomes unusable. Passkeys are not the only thing you need to consider when designing authentication functions.
+We also introduce the characteristics and usage of widely adopted authentication methods such as passwords, two-factor authentication, and federated identity (social login), discussing what alternative options exist, how to handle them, and what to do when passkeys are unavailable. When designing authentication, passkeys aren't the only thing to consider.
 
-## Contains the essentials that engineers need to know to implement passkeys
+## Packed with the essential knowledge engineers need to implement passkeys
 
-This book provides various sample code, covering not only browser-side implementations and WebAuthn API references that align with the basic user experience, but also server-side implementation methods. It also introduces implementations for native Android and iOS apps, and provides sample code for iOS apps, for which there is little information available in Japanese.
+By providing a variety of code samples, the book covers not only browser-side implementation aligned with standard user experiences and the WebAuthn API reference, but also server-side implementation. We also introduce implementations for native Android and iOS apps, providing sample code especially for iOS apps where Japanese-language resources are scarce.
 
 {% ImageFigure '/images/2025/code-samples.jpg', 'パスキーのUXを実装する' %}
 
-## Packed with information for advanced users
+## Rich in advanced topics for experienced practitioners
 
-To encourage wider adoption of passkeys, various measures are required. To meet these needs, the book also contains a wealth of information for advanced users. It covers topics such as how to find out where passkeys are stored, how to use the same passkey for multiple domains, what attestation is, how to implement passkeys using security keys in the enterprise, details of credential payloads, and various extensions.
+Encouraging broader adoption of passkeys requires various creative approaches. To address these needs, the book is packed with advanced topics as well. We cover how to determine where a passkey is stored, how to make the same passkey usable across multiple domains, what attestation is, how to implement passkeys using enterprise security keys, details on credential payloads, various extensions, and more.
 
-Although the technology industry has a short shelf life, this book covers the latest specifications for WebAuthn Level 3, which is expected to become available in the near future, making it a book you can refer to with confidence for the next two years.
+While technology moves fast and reference material often has a short shelf life, this book also covers the latest WebAuthn Level 3 specifications expected to become available, making it a reliable reference for at least the next two years.
 
-## lastly
+## In closing
 
-While passwords are easy to use, they have many pitfalls and require far too many precautions for anyone to use them safely, resulting in a constant stream of account hijacking. Passkeys, when implemented correctly, are easy for anyone to use and are an authentication feature that ensures security not possible with previous technology. While there is still room for growth, the time is ripe. Now is the time to start considering implementing passkeys.
+While passwords are easy to start with, they are riddled with pitfalls. There are simply too many caveats for everyone to use them safely, and as a consequence, account takeovers remain an endless problem. When implemented correctly, passkeys offer an authentication mechanism that is easy for anyone to use while delivering a level of security that previous technologies could never achieve. While there is still room for growth, the time is already ripe. Now is the time to start considering passkey implementation.
 
-I usually share information about passkeys through events and social media as part of my job, and occasionally through this blog and magazines as a hobby. The reason I decided to try the book format this time was because I once again realized the comfort of having a medium that allows me to have comprehensive information at my fingertips. If you are learning about passkeys, I would encourage you to have this book at hand.
+I have regularly shared information about passkeys through events and social media as part of my job, and occasionally through this blog and magazine articles as a hobby. The reason I decided to take on the challenge of a book this time was that I was reminded of the reassurance and value that comes from having a comprehensive body of knowledge compiled in one place right at hand. If you are looking to learn about passkeys, I hope you will keep a copy of this book by your side as you embark on the journey.

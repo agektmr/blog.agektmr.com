@@ -358,7 +358,7 @@ docker run -p 8080:8080 blog-test
 
 ## Configuration Files
 
-### Eleventy Configuration (.eleventy.js)
+### Eleventy Configuration (eleventy.config.mjs)
 
 Key additions for i18n:
 - `eleventy-plugin-i18n` with translations

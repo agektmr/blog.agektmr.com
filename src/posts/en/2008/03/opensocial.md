@@ -1,8 +1,7 @@
 ---
+title: One of my questions about OpenSocial has been resolved.
 layout: post
 lang: en
-title: One question about OpenSocial has been answered
-description:
 date: 2008-03-15
 tags:
   - Gadget
@@ -10,13 +9,13 @@ tags:
   - Orkut
   - Widget
 translationOf: /2008/03/opensocial.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-**Premise: When specifying the url type in Google Gadget, the contents of the remote server are displayed as is in the iframe. Therefore, if you try to obtain friend information using Ajax, it is necessary to cross domains, and communication between servers will occur via a proxy, making it useless without a RESTful API.**
+**Premise: When specifying the url type in a Google Gadget, the remote server's content is displayed directly inside the iframe. As a result, attempting to retrieve friend information or similar data via Ajax requires cross-domain requests, turning it into server-to-server communication via a proxy—which is useless without a RESTful API.**
 
-Apparently Orkut doesn't allow `Content Type="url"`.
+Apparently, Orkut does not allow `Content Type="url"`.
 
-[MYSQL database connection using PHP for my gadget? &#8211; Orkut Developer Forum | Google Groups](https://groups.google.com/group/opensocial-orkut/browse_thread/thread/f6de89397dc56576/70f57151180b87cb?lnk=gst&q=content+type+url#70f57151180b87cb)
+[MYSQL database connection using PHP for my gadget ? &#8211; Orkut Developer Forum | Google グループ](https://groups.google.com/group/opensocial-orkut/browse_thread/thread/f6de89397dc56576/70f57151180b87cb?lnk=gst&q=content+type+url#70f57151180b87cb)
 
-It seems that specifying `Content Type="url"` returns a 404. The fact that a 404 is returned is a bug, but once `Content Type="url"` starts working, it can be confirmed that accessing the RESTful API via a proxy is required to use OpenSocial across domains. It is unclear whether this is a temporary measure until the RESTful API is officially released, but the premise appears to be correct.
+Specifying `Content Type="url"` seems to return a 404. While returning a 404 itself is reportedly a bug, I was able to confirm that even if `Content Type="url"` were working, accessing OpenSocial across domains still requires RESTful API access via a proxy. I have not confirmed whether this is just an interim measure until the RESTful API is officially introduced, but it seems my initial premise was not mistaken.

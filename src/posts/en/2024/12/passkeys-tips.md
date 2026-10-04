@@ -1,8 +1,8 @@
 ---
 layout: post
 lang: en
-title: Tips for using your passkey
-description: We will review the basics of passkeys and explain some common misconceptions about passkeys.
+title: Tips for Living with Passkeys
+description: After reviewing the basics of passkeys, I will explain some common misconceptions people often have about them.
 date: 2024-12-26
 image:
   feature: /2024/passkeys-tips.jpg
@@ -14,173 +14,173 @@ tags:
   - 認証
   - Authentication
 translationOf: /2024/12/passkeys-tips.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-Recently, I've seen a lot of people complaining about passkeys being difficult to use. I've also seen several posts from people who have trouble logging in to services they want to use because they can't find the passkeys they thought they had created.
+Lately, I have been seeing complaints that passkeys are hard to use. I have also observed several posts from people who were in trouble because they couldn't sign in to a service they wanted to use, simply because the passkey they were sure they had created could not be found.
 
-So in this blog post, I would like to consider why this happens, how to avoid such situations, what measures users can take, and what service providers can do to reduce the number of users who feel this way.
+So in this blog post, I'd like to explore why this happens, how to avoid such situations, what actions users can take, and what service providers can do to reduce the number of users who feel this way.
 
 <!-- excerpt -->
 
-Of course, a basic premise is that features that require users to think hard to use are undesirable, as they will cause inconvenience rather than promote widespread adoption. However, while Passkey is maturing as a product from each company, it is still in the early stages of development as a total ecosystem, and it cannot be denied that there are some aspects that are difficult to use. Therefore, I am writing this article in the hope that by sharing some ingenuity, I can help ease the burden on everyone until the world becomes more user-friendly.
+Of course, as a fundamental premise, any feature that forces users to rack their brains is undesirable—far from driving adoption, it just causes trouble. However, while passkeys are maturing as individual products from various vendors, the overall ecosystem is still evolving, and it is undeniable that some aspects remain difficult to use. That is why I am writing this article: to share some tips and workarounds that might lighten your burden a bit until we reach a world where passkeys are truly seamless.
 
 ## Passkey Basics
 
-First, I wrote about what Passkey is and what kind of world it aims to create in [What is Passkey and its Challenges?](https://blog.agektmr.com/2022/12/passkey). It's been two years since I wrote that article, but the fundamentals haven't changed much. However, during that time, operating systems, passkey providers (password managers), browsers, and services (Relying Parties or RPs) have all gradually evolved.
+As for what passkeys are and the world they aim for, I covered that in [パスキーとは何か、そしてその課題](https://blog.agektmr.com/2022/12/passkey). Two years have already passed since I wrote that post, but the fundamentals have barely changed. In the meantime, however, operating systems, passkey providers (password managers), browsers, and services (Relying Parties, or RPs) have each gradually evolved.
 
-## What makes passkeys difficult to use?
+## What Makes Passkeys Hard to Use?
 
-From what I've observed, the main reasons people find passkeys difficult to use are as follows:
-- I created a passkey, but I can't find it.
+As far as I can tell within my observation range, the main reasons people find passkeys frustrating are:
+- I'm sure I created a passkey, but I can't find it.
 - I don't know what to do when my passkey doesn't work.
 
-There are probably many other minor issues, but if these are resolved, the remaining problems will likely be minor.
+There are probably many other minor points, but if these two are resolved, the remaining issues are likely trivial.
 
-## Passkey not found
+## Passkey Cannot Be Found
 
-"The service asked me to create a passkey, so I did, but it disappeared when I moved to another environment. I was told that the passkey would be synchronized, but I can't find it now."
+"The service told me to create a passkey, so I did. But when I switched to another environment, it disappeared. I heard passkeys sync, but I can't find it."
 
-This situation may occur for the following reasons:
-1. The passkey provider where you saved your passkey cannot be accessed from the new environment.
-2. The passkey provider is available, but you cannot access the account where you saved your passkey.
-3. The passkey from the passkey provider is not synchronized in the first place.
-4. The biometric authentication feature you thought was a passkey is not actually a passkey.
-5. You cannot log in because the service does not offer any authentication methods other than passkeys.
+When this situation occurs, several reasons are possible:
+1. You cannot access the passkey provider where the passkey was saved from your new environment.
+2. The passkey provider is accessible, but you are not accessing the account where the passkey was saved.
+3. The passkey provider does not sync passkeys in the first place.
+4. The biometric feature you thought was a passkey is actually not a passkey.
+5. You cannot sign in because the service does not offer an authentication method other than passkeys.
 
-### 1. The passkey provider that saved the passkey cannot be accessed from the new environment.
+### 1. You cannot access the passkey provider where the passkey was saved from your new environment
 
-A passkey provider is a place where you can save and synchronize the passkeys you create, and in most cases, a "password manager" also serves this role. The default passkey provider where your passkeys are saved is determined by your environment. In most cases, the passkeys you create will be saved in the system's default passkey provider.
+A passkey provider is the place where created passkeys are stored and synced, and in most cases, a "password manager" serves this role. The default passkey provider where a passkey is stored depends on your environment. In many cases, the passkeys you create are saved to the system's default passkey provider.
 
-If you can't find your passkey, it may be due to an incompatibility between your devices. For example, a passkey created in Edge for Windows cannot be accessed from Edge for Android. This is because the passkey created in Edge for Windows is stored in Windows Hello, while Edge for Android only works with Google Password Manager.
+If your passkey cannot be found, there may be a compatibility issue between your environments. For example, a passkey created in Edge on Windows cannot be accessed from Edge on Android. This is because a passkey created in Edge on Windows is saved to Windows Hello, whereas Edge on Android only integrates with Google Password Manager.
 
-The passkey provider support status for each environment is described below.
+I will cover passkey provider support across different environments further below.
 
-### 2. The passkey provider is available, but you can't access the account where the passkey is stored
+### 2. The passkey provider is accessible, but you are not accessing the account where the passkey was saved
 
-Another possibility is that even if you use the same passkey provider, you can't find your passkey because you saved it in a different account. For example, if you create a passkey in Chrome, by default it's saved in the Google Password Manager linked to the [Google Account you're logged in to Chrome with](https://support.google.com/chrome/answer/185277?hl=ja). If you want to access the same passkey in a different environment, you'll need to access it in Chrome logged in with the same Google Account. If you use multiple Google accounts, you might want to check whether the account you're using to access the passkey is the same one you saved previously.
+Another possibility is that even within the same passkey provider, you cannot find the passkey because it was saved to a different account. For example, if you create a passkey in Chrome, by default it is saved to the Google Password Manager associated with the [Google Account signed in to Chrome](https://support.google.com/chrome/answer/185277?hl=ja). If you want to access that same passkey in a different environment, you naturally must access it from Chrome signed in with the same Google Account. If you [use multiple Google Accounts](https://support.google.com/chrome/answer/2364824?hl=ja), it might be worth checking whether the account currently being referenced is the same one you previously saved the passkey to.
 
-Android also has a feature called [Work Profile](https://support.google.com/work/android/answer/6191949?hl=ja) that completely separates apps and data for personal and work accounts within the same OS. I've personally experienced panicked situations where I couldn't find my passkey because of this feature. If you can't access your passkey, please check the following.
+Also, Android has a feature called [work profiles](https://support.google.com/work/android/answer/6191949?hl=ja), which completely separates personal and work apps and data within the same OS. I myself have panicked when a passkey couldn't be found because of this. If you cannot access your passkey, check this as well.
 
-### 3. The passkey provider's passkey is not synchronized in the first place
+### 3. The passkey provider does not sync passkeys in the first place
 
-In fact, there are cases where passkeys are not synchronized. As of the end of 2024, passkeys will not be synchronized in the following three cases:
+There are cases where passkeys were never synced to begin with. As of late 2024, passkeys are not synced in the following three scenarios:
 
-#### Created a passkey for Windows Hello
+#### You created a passkey in Windows Hello
 
-One issue many people are likely to encounter is creating a passkey in Windows Hello. Previously, passkeys created in any browser were not synced, and even now, [with the exception of Chrome on TPM-enabled Windows devices](https://developer.chrome.com/blog/passkeys-gpm-desktop?hl=ja), passkeys created in any browser are not synced once they are saved in Windows Hello.
+A case many people are likely to encounter is creating a passkey in Windows Hello. Previously, passkeys created in any browser were not synced, and even now, [with the exception of Chrome on Windows devices with TPM available](https://developer.chrome.com/blog/passkeys-gpm-desktop?hl=ja), any passkey created in any browser and saved to Windows Hello will not be synced.
 
-#### You created a passkey in iCloud Keychain on macOS, iOS, or iPadOS and tried to access the passkey from a non-Apple device
+#### You created a passkey in iCloud Keychain on macOS, iOS, or iPadOS, and tried to access it from a non-Apple device
 
-When you create a passkey on macOS, iOS, or iPadOS, it's often stored in iCloud Keychain or the Passwords app. Passkeys stored in iCloud Keychain won't sync with Windows or Android as of the end of 2024, so they won't be available. There are Windows apps and browser extensions, so hopefully they'll support passkeys.
+When you create a passkey on macOS, iOS, or iPadOS, it is often saved in iCloud Keychain or the "Passwords" app. As of late 2024, passkeys saved in iCloud Keychain do not sync to environments such as Windows or Android, making them unavailable there. Since a [Windows app](https://www.microsoft.com/store/apps/9PKTQ5699M62) and a [browser extension](https://support.apple.com/ja-jp/guide/icloud-windows/icw76039ec0f/icloud) exist, we can hopefully look forward to passkey support there in the future.
 
-#### I created a passkey for a service that I don't want to sync
+#### You created a passkey on a service that opts out of syncing
 
-Android still has a FIDO2 feature that predates passkeys, which allows you to create passkeys that are not synchronized. Since passkeys should be synchronized, it may be more appropriate to simply call them "FIDO2 credentials." Of course, this feature is no longer recommended, but it is still used intentionally by some services because it offers the strongest security.
+Android retains legacy pre-passkey FIDO2 functionality, which allows creating non-syncing passkeys. Since passkeys are fundamentally meant to sync, it might be more accurate to call these simply "FIDO2 credentials." Of course, this feature is no longer recommended, but because it also represents the highest level of security, some services still seem to use it deliberately.
 
-### 4. The biometric authentication feature you thought was a passkey is actually not a passkey
+### 4. The biometric feature you thought was a passkey is actually not a passkey
 
-When you encounter biometric authentication on your smartphone, you might immediately assume it's a passkey, but not all of them are passkeys. Android apps have a feature called [BiometricManager](https://developer.android.com/reference/android/hardware/biometrics/BiometricManager), and iOS apps have a feature called [Local Authentication Framework](https://developer.apple.com/documentation/localauthentication), so this may be a misunderstanding. These features can usually only be set up after logging in to a banking app or similar app using a different method.
+When encountering biometric authentication on a smartphone, some people might immediately assume it is a passkey, but not everything is a passkey. Features such as [BiometricManager](https://developer.android.com/reference/android/hardware/biometrics/BiometricManager) on Android apps or [Local Authentication Framework](https://developer.apple.com/documentation/localauthentication) on iOS apps exist, and users might be confusing them. Typically, these features are used in banking apps and the like, and cannot be configured until you have already signed in using another method.
 
-### 5. I can't log in because the service doesn't offer any authentication method other than a passkey
+### 5. You cannot sign in because the service does not offer an authentication method other than passkeys
 
-Whether you use a passkey or not, as long as you can log in, that should be fine for the user. However, there are some services that, once you create a passkey, you cannot use any other authentication method. You might think that's outrageous, but let's stop and think about it for a moment.
+Whether it's a passkey or not, as a user, being able to sign in is all that matters. However, some services disable all authentication methods other than passkeys once a passkey is created. While it is understandable to feel frustrated by this, let's pause and consider why.
 
-There are two points to consider when considering whether authentication methods other than passkeys should remain:
+When deciding whether to retain authentication methods other than passkeys, there are two perspectives to consider:
 
-1. If you leave authentication features weaker than a passkey, they will be targeted by attackers.
-2. Removing all authentication features weaker than a passkey will make your device safe, but removing the passkey will put you in trouble.
+1. Keeping authentication methods that are weaker than passkeys leaves them vulnerable to attackers.
+2. Eliminating all authentication methods weaker than passkeys makes things secure, but leaves users stranded if they lose their passkey.
 
-Approach 1: Preserve authentication mechanisms weaker than a passkey
+#### Approach 1: Keep authentication methods weaker than passkeys
 
-Adding a passkey as a new authentication option to your existing authentication methods doesn't fundamentally improve the security of the system as a whole, but the passkey experience has the advantage of being quicker and easier to log in with fewer steps than other secure authentication methods (such as two-factor authentication).
+Add passkeys to existing authentication methods as a new option. While this does not fundamentally raise the security baseline of the system as a whole, passkeys offer a faster and simpler sign-in experience with fewer steps compared to other secure authentication methods (such as two-factor authentication).
 
-Ideally, weak authentication functions should be strengthened or eventually eliminated while waiting for the passkey ecosystem to become more robust in the future. If authentication can be easily achieved with a passkey, even if other authentication methods require a little more effort, it is far better than being stuck with the loss of the passkey. With a passkey, existing authentication methods are positioned as merely useful in emergencies, and even if the experience is slightly worse, such as by increasing the number of authentication steps, it should be acceptable. It would be wise for many services to adopt this approach.
+The ideal path is to strengthen or eventually eliminate weaker authentication methods while waiting for the passkey ecosystem to mature further. If users can authenticate effortlessly with a passkey, having fallback authentication methods take a bit more effort is far better than being completely locked out when a passkey is lost. With passkeys in place, existing authentication methods only need to serve as fallbacks for emergencies, so a slightly worse user experience—such as additional authentication steps—should be acceptable. For most services, this approach is the sensible choice.
 
-Approach 2: Eliminate authentication mechanisms weaker than a passkey
+#### Approach 2: Eliminate authentication methods weaker than passkeys
 
-But what if your company's users were currently being subjected to brutal phishing scams, causing daily losses? It wouldn't be surprising if there were services that would completely switch to Passkey, which would reduce phishing scams, even if it meant users had some access issues and could recover by verifying their identity through support. [In our previous article, we listed services that support Passkey](https://blog.agektmr.com/2023/12/passkey-mythbusting), but aren't you surprised that so many of them are major companies? Usually, it's small, ambitious companies that jump on new technologies; larger companies tend to be slow to act. Despite this, I imagine the major companies all supported Passkey because they wanted to quickly implement a countermeasure against phishing scams.
+However, what if your users are actively suffering severe phishing attacks, causing ongoing damages every day? Even if some users encounter access difficulties, it is entirely understandable for a service to fully migrate to phishing-resistant passkeys, relying on identity verification via customer support for account recovery. [I included a list of services supporting passkeys in my previous article](https://blog.agektmr.com/2023/12/passkey-mythbusting)—aren't you surprised by how many major services are on it? Usually, it is agile small companies that jump on new technologies, while larger corporations move more slowly. Despite this, major players rushed to support passkeys, and I suspect that is because they wanted to deploy countermeasures against phishing attacks as quickly as possible.
 
-## Tips for users to master passkeys
+## Tips for Users to Master Passkeys
 
-As we have seen, there are still pitfalls in Passkey as an ecosystem. Here are some suggestions on how general users can use Passkey in a positive way.
+As discussed so far, the passkey ecosystem still has its pitfalls. Here are several suggestions on how general users can get along better with passkeys:
 
-- Display a QR code and attempt to log in with a passkey from another device (cross-device authentication)
-- Be aware of which passkey provider you have saved your passkeys to
-- Create passkeys for multiple passkey providers
+- Display a QR code and try signing in with a passkey on another device (cross-device authentication)
+- Be conscious of which passkey provider you are saving your passkeys to
+- Create passkeys in multiple passkey providers
 
-Tip 1: Display the QR code and try logging in with the passkey on another device (cross-device authentication)
+### Tip 1: Display a QR code and try signing in with a passkey on another device (cross-device authentication)
 
-If you can't find your passkey, you may be able to log in using a passkey saved on another device. If the passkey dialog doesn't show "More options," tap it to display a QR code, then scan it with the device that has your passkey to see if you can log in.
+When a passkey cannot be found, you may be able to sign in using a passkey saved on another device. If you see "Other options" or similar in the passkey dialog, tap it to display a QR code, scan it with the device that holds your passkey, and try signing in that way.
 
-### Tip 2: Be aware of which passkey provider you store your passkeys with
+### Tip 2: Be conscious of which passkey provider you are saving your passkeys to
 
-When creating a passkey, it's easier to understand the situation if you consider which passkey provider you're saving it in. Below is a summary of which passkey providers can be used in which environments.
+Being mindful of which passkey provider you save your passkey to when creating it makes it much easier to understand your situation. Below is a summary of which passkey providers are available in which environments.
 
-There are three main passkey providers:
+There are three major passkey providers:
 - Microsoft's Windows Hello
-- Apple's iCloud Keychain (or "Passwords" app)
+- Apple's iCloud Keychain (or the "Passwords" app)
 - Google's Google Password Manager
 
-Browsers run on the operating systems of these platforms, but the passkey providers that can actually be used vary depending on the combination. Below we've summarized which passkey provider your passkey is stored in for each operating system and major browser. We recommend that you find the combination that best suits the apps and browsers you access most frequently.
+Browsers run on these platform OSes, but the passkey providers actually available depend on the combination. I have summarized below where passkeys are saved for each OS and major browser. Finding the optimal combination for the apps and browsers you frequently use should be helpful.
 
-For example: If you only use Apple devices, storing your passkey in iCloud Keychain may be sufficient, while Windows and iPhone users may want to use iCloud Keychain in conjunction with Google Password Manager.
+**Example:** For someone who only uses Apple devices, saving passkeys in iCloud Keychain is sufficient. For a user with both Windows and an iPhone, using both iCloud Keychain and Google Password Manager in combination might be a good approach.
 
 {% Aside %}
 
-*I haven't checked all Chromium-based browsers, but I think most of them are probably the same as Edge. For the latest information, please refer to [passkeys.dev](https://passkeys.dev/device-support/).
+* Note: I haven't investigated all Chromium-based browsers, but most are likely the same as Edge. For the latest information, please refer to [passkeys.dev](https://passkeys.dev/device-support/).
 
 {% endAside %}
 
 #### Windows
 
-| | **Chrome** | **Edge** | **Firefox** |
+|                        | **Chrome** | **Edge** | **Firefox** |
 | ---------------------- | ---------- | -------- | ----------- |
-| **Google Password Manager** | ✅️ (Requires TPM) | ❌️ | ❌️ |
-| **Windows Hello** | ✅️ | ✅️ | ✅️ |
-| **iCloud Keychain** | - | - | - |
+| **Google Password Manager** | ✅️ (TPM required)  | ❌️        | ❌️           |
+| **Windows Hello**      | ✅️          | ✅️        | ✅️           |
+| **iCloud Keychain**      | -          | -        | -           |
 #### macOS
 
-| | **Chrome** | **Edge** | **Firefox** | **Safari** |
+|                        | **Chrome** | **Edge** | **Firefox** | **Safari** |
 | ---------------------- | ---------- | -------- | ----------- | ---------- |
-| **Google Password Manager** | ✅️ | ❌️ | ❌️ | ❌️ |
-| **Windows Hello** | - | - | - | - |
-| **iCloud Keychain** | ✅️ | ✅️ | ✅️ | ✅️ |
+| **Google Password Manager** | ✅️          | ❌️        | ❌️           | ❌️          |
+| **Windows Hello**      | -          | -        | -           | -          |
+| **iCloud Keychain**      | ✅️          | ✅️        | ✅️           | ✅️          |
 #### iOS/iPadOS
 
-| | **Chrome** | **Edge** | **Firefox** | **Safari** |
+|                        | **Chrome**    | **Edge** | **Firefox** | **Safari** |
 | ---------------------- | ------------- | -------- | ----------- | ---------- |
-| **Google Password Manager** | △<sup>1</sup> | ❌️ | ❌️ | ❌️ |
-| **Windows Hello** | - | - | - | - |
-| **iCloud Keychain** | ✅️ | ✅️ | ✅️ | ✅️ |
+| **Google Password Manager** | △<sup>1</sup> | ❌️        | ❌️           | ❌️          |
+| **Windows Hello**      | -             | -        | -           | -          |
+| **iCloud Keychain**      | ✅️             | ✅️        | ✅️           | ✅️          |
 
 <sup>1</sup> Coming soon
 
 #### Android
 
-| | **Chrome** | **Edge** | **Firefox** |
+|                        | **Chrome** | **Edge** | **Firefox** |
 | ---------------------- | ---------- | -------- | ----------- |
-| **Google Password Manager** | ✅️ | ✅️ | ✅️ |
-| **Windows Hello** | - | - | - |
-| **iCloud Keychain** | - | - | - |
+| **Google Password Manager** | ✅️          | ✅️        | ✅️           |
+| **Windows Hello**      | -          | -        | -           |
+| **iCloud Keychain**      | -          | -        | -           |
 #### Linux
 
-| | **Chrome** | **Edge** | **Firefox** |
+|                        | **Chrome** | **Edge** | **Firefox** |
 | ---------------------- | ---------- | -------- | ----------- |
-| **Google Password Manager** | ✅️ | ❌️ | ❌️ |
-| **Windows Hello** | - | - | - |
-| **iCloud Keychain** | - | - | - |
+| **Google Password Manager** | ✅️          | ❌️        | ❌️           |
+| **Windows Hello**      | -          | -        | -           |
+| **iCloud Keychain**      | -          | -        | -           |
 #### ChromeOS
 
-| | **Chrome** |
+|                        | **Chrome** |
 | ---------------------- | ---------- |
-| **Google Password Manager** | ✅️ |
-| **Windows Hello** | - |
-| **iCloud Keychain** | - |
+| **Google Password Manager** | ✅️          |
+| **Windows Hello**      | -          |
+| **iCloud Keychain**      | -          |
 
 #### Third-Party Passkey Providers
 
-Other third-party passkey providers (non-default password managers) that support passkey include:
+In addition to the above, third-party passkey providers (non-default password managers) that support passkeys include:
 - 1Password
 - Dashlane
 - BitWarden
@@ -188,72 +188,72 @@ Other third-party passkey providers (non-default password managers) that support
 - RoboForm
 - Keeper
 
-The advantage of many third-party passkey providers is that they are platform-agnostic and can be used anywhere.
+The advantage of many third-party passkey providers is that they are not tied to a single platform and can be used anywhere.
 
-### Tip 3: Create passkeys for multiple passkey providers
+### Tip 3: Create passkeys in multiple passkey providers
 
-Depending on the service, passkeys are designed to allow multiple passkeys to be created for each account. Creating multiple passkeys across multiple passkey providers, such as Google Password Manager and iCloud Keychain, can significantly reduce the trouble of losing your passkey. Even if you accidentally delete your passkey, you can recover it using another passkey.
+Depending on the service, passkeys are inherently designed to allow creating multiple passkeys per account. By creating multiple passkeys across different passkey providers—such as Google Password Manager and iCloud Keychain—you can significantly reduce issues when a passkey cannot be found. Even if you accidentally delete a passkey, you can recover using another one.
 
-Additionally, if you're using Android 14 or later, or iOS/iPadOS 16 or later, you can specify multiple third-party passkey providers at the OS level.
+Furthermore, if you are using Android 14 or later, or iOS/iPadOS 16 or later, you can specify multiple third-party passkey providers at the OS level.
 
-* **Android:** System Settings > Passwords & Accounts
-* **iOS/iPadOS:** Settings > General > Autofill & Passwords
+* **Android:** System Settings > Passwords & accounts
+* **iOS/iPadOS:** Settings > General > AutoFill & Passwords
 
-Even on desktop, most third-party passkey providers offer browser extensions that you can use, so this is a good opportunity to start using a third-party passkey provider.
+On desktop as well, most third-party passkey providers offer browser extensions, making them readily usable. This might be a great opportunity to start using a third-party passkey provider.
 
-Tip 4: Wait until a passkey becomes more convenient
+### Tip 4: Wait until passkeys become even more convenient to use
 
-Since things have been going in a rather negative direction, let me offer some positive news. Here are some upcoming changes (probably sometime in 2025) that will improve the usability of passkeys:
+Since the discussion has leaned quite negative, let me offer some brighter news. Several developments that will improve passkey usability are planned (likely during 2025):
 
-- Passkeys created in Chrome are currently stored in the Google Password Manager and can be synced across Android, Windows, macOS, Linux, and ChromeOS, and will soon be synced to iOS/iPadOS as well. This means that as long as you use Chrome, you'll be able to use the same passkey across all environments via Google Password Manager.
-- [In October 2024, Microsoft announced that it plans to soon sync passkeys across Windows devices](https://blogs.windows.com/windowsdeveloper/2024/10/08/passkeys-on-windows-authenticate-seamlessly-with-passkey-providers/). It's likely that some movement will occur sometime in 2025.
-- In October, the FIDO Alliance announced specifications called [CXP (Credential Exchange Protocol) and CXF (Credential Exchange Format)](https://fidoalliance.org/specifications-credential-exchange-specifications/) to enable the secure import and export of passkeys and passwords. This will enable passkeys to be copied and moved between passkey providers in the future.
+- Passkeys created in Chrome are currently saved to Google Password Manager and can sync across Android, Windows, macOS, Linux, and ChromeOS, with iOS/iPadOS sync coming soon. Once this is realized, as long as you use Chrome, you will be able to access the same passkeys across all environments via Google Password Manager.
+- [In October 2024, Microsoft announced plans to soon sync passkeys across Windows devices](https://blogs.windows.com/windowsdeveloper/2024/10/08/passkeys-on-windows-authenticate-seamlessly-with-passkey-providers/). We can likely expect some movement on this during 2025.
+- In October, the FIDO Alliance [announced](https://fidoalliance.org/fido-alliance-publishes-new-specifications-to-promote-user-choice-and-enhanced-ux-for-passkeys/) [CXP (Credential Exchange Protocol) and CXF (Credential Exchange Format)](https://fidoalliance.org/specifications-credential-exchange-specifications/), specifications designed to enable secure importing and exporting of passkeys and passwords. In the future, this will allow copying or moving passkeys between passkey providers.
 
-Hopefully, passkeys will be even more convenient to use in 2025!
+Hopefully, passkeys will become even more convenient to use in 2025!
 
-## Services that can make passkeys more convenient to use
+## What Services Can Do to Make Passkeys More Useful
 
-Finally, we will consider what points service providers should pay attention to when implementing passkeys so that users can use them with confidence.
+Finally, let's consider what service providers should keep in mind when implementing passkeys so that users can use them with peace of mind.
 
-### Let users know which passkeys cannot be synced and which passkey providers they use
+### Make non-syncing passkeys and passkey providers clear to users
 
-[The Passkey Design Guidelines recommend creating a Passkey Management screen](https://www.passkeycentral.org/ja/design-guidelines/optional-patterns/passkey-management-ui-best-practices-for-combining-all-passkey-types). You can help users understand by clearly indicating which Passkey provider stores the passkey and whether or not it is synchronized.
+[Passkey design guidelines recommend creating a passkey management screen](https://www.passkeycentral.org/ja/design-guidelines/optional-patterns/passkey-management-ui-best-practices-for-combining-all-passkey-types). By clearly indicating which passkey provider a passkey is saved to, and whether it syncs or not, you can help users understand what to expect.
 
-### Adjust passkey promotion frequency
+### Adjust the frequency of passkey promotions
 
-It seems that some users don't like the pressure to use a passkey. I think passkeys are a good thing, but pushing them too much may have the opposite effect.
+Some users feel uncomfortable with aggressive "Use passkeys!" pressure. While passkeys are great, pushing them too persistently may backfire.
 
-### Guide to authentication methods other than passkey
+### Provide authentication methods other than passkeys
 
-Unless there are extraordinary circumstances, provide a backup authentication method in case a passkey cannot be used. ID linking, two-step authentication, and in some cases passwordless methods such as magic links are also acceptable. Of course, you should take all possible security measures for each method. However, since password-only logins are vulnerable to attacks, you should move to ID linking, passwordless authentication, two-factor authentication, etc. as soon as possible.
+Unless there are exceptional circumstances, provide a backup authentication method for when a passkey is unavailable. Identity federation, two-step verification, or in some cases passwordless options like magic links are all viable. Naturally, ensure robust security measures are in place for each. However, password-only sign-ins are easily targeted, so services should migrate toward identity federation, passwordless authentication, or two-factor authentication as soon as possible.
 
-### Change behavior for each environment
+### Adjust behavior based on the environment
 
-For example, even for Windows, passkeys created in browsers other than Chrome will not be synchronized as of the end of 2024. By identifying the user agent string and explicitly stating that passkeys created in such browsers will not be synchronized, it may be possible to control user expectations to some extent.
+For example, even within Windows, passkeys created in browsers other than Chrome do not sync as of late 2024. By inspecting the user agent string and clearly communicating that passkeys created in such browsers will not sync, you may be able to manage user expectations to some extent.
 
 ### Follow the guidelines
 
-The FIDO Alliance recently launched a website called [Passkey Central](https://www.passkeycentral.org/ja/home). It's not aimed at developers, but it contains many resources that product managers and designers can refer to. I highly recommend checking it out.
+The FIDO Alliance recently launched a website called [Passkey Central](https://www.passkeycentral.org/ja/home). It features plenty of resources intended not just for developers, but especially for product managers and designers. Be sure to check it out.
 
-## summary
+## Summary
 
-We've put together a comprehensive guide to using passkeys. Some of you may feel like you can't master something so complicated! But as a user, that's not a bad feeling. The goal of passkeys is to provide a secure authentication system that anyone can use without having to think about these things at all. It may take a little more time until that happens.
+I've covered a comprehensive overview of how to deal with passkeys. Some of you might feel that something this complex is impossible to master. As a user, that reaction is entirely reasonable. The ultimate goal of passkeys is authentication that anyone can use securely without ever having to think about any of this. It may just take a little more time to get there.
 
-Finally, here are some tips that we've covered in this article:
+To wrap up, here is a summary of the tips covered in this article:
 
-Tips for users to use passkeys effectively:
+Tips for users to handle passkeys effectively:
 
-- Utilize cross-device authentication
-- Be aware of which passkey providers you store your passkeys in
-- Create passkeys for multiple passkey providers
-- Wait until passkeys become more convenient
+- Leverage cross-device authentication
+- Be conscious of which passkey provider you are saving your passkeys to
+- Create passkeys in multiple passkey providers
+- Wait until passkeys become even more convenient to use
 
-Tips for service providers to successfully implement passkeys:
+Tips for service providers to implement passkeys effectively:
 
-- Adjust the frequency of passkey promotion
-- Indicate the passkey provider and synchronization status of registered passkeys
-- Keep authentication methods other than passkeys available if possible
-- Change passkey creation behavior for each environment
-- Follow guidelines
+- Adjust the frequency of passkey promotions
+- Clearly indicate the passkey provider and sync status of registered passkeys
+- Retain authentication methods other than passkeys whenever possible
+- Adjust passkey creation behavior based on the environment
+- Follow the guidelines
 
-Have a great new year.
+Happy New Year!

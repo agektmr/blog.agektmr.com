@@ -1,0 +1,83 @@
+@use "sass:math";
+@use "sass:color";
+
+// Typography scale
+$em-base: 16px !default;
+$minor-third: 1.2 !default;
+
+@function modular-scale($step, $value: $em-base, $ratio: $minor-third) {
+  @if $step > 0 {
+    @for $i from 1 through $step {
+      $value: $value * $ratio;
+    }
+  } @else if $step < 0 {
+    @for $i from 1 through -$step {
+      $value: math.div($value, $ratio);
+    }
+  }
+  @return $value;
+}
+
+@function rem($val) {
+  @if math.is-unitless($val) {
+    @return $val * 1rem;
+  }
+  @return math.div($val, 16px) * 1rem;
+}
+
+@function tint($color, $percent) {
+  @return color.mix(#fff, $color, $percent);
+}
+
+@function shade($color, $percent) {
+  @return color.mix(#000, $color, $percent);
+}
+
+// Selector helpers
+$all-button-inputs: 'input[type="button"], input[type="reset"], input[type="submit"]';
+$all-text-inputs: 'input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"]';
+
+// Mixins
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+@mixin default-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin appearance($value) {
+  -webkit-appearance: $value;
+  -moz-appearance: $value;
+  appearance: $value;
+}
+
+@mixin font-feature-settings($features...) {
+  -webkit-font-feature-settings: $features;
+  font-feature-settings: $features;
+}
+
+// Neat layout mixins
+@mixin outer-container($local-max-width: 68em) {
+  max-width: $local-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  @include clearfix;
+}
+
+@mixin span-columns($span, $total-columns: 12) {
+  float: left;
+  width: math.percentage(math.div($span, $total-columns));
+}
+
+@mixin media($query) {
+  @media screen and (min-width: $query) {
+    @content;
+  }
+}

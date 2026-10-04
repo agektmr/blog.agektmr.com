@@ -1,13 +1,9 @@
 @charset "utf-8";
 
-@import
-  "./prism-base16-monokai.dark",
-  "./bourbon/_bourbon.scss",
-  "./base/_base.scss",
-  "./base/_breakpoints.scss",
-  "./neat/_neat.scss",
-  "./_layout.scss"
-;
+@use "prism-base16-monokai.dark";
+@use "base/base";
+@use "base/breakpoints";
+@use "layout";
 
 h2,h3,h4,h5,h6 {
   margin-top: 3rem;

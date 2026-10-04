@@ -1,8 +1,7 @@
 ---
+title: Opening up social media
 layout: post
 lang: en
-title: Opening up of social networking sites
-description:
 date: 2008-05-14
 tags:
   - Data Availability
@@ -10,37 +9,36 @@ tags:
   - Facebook Connect
   - FriendConnect
 translationOf: /2008/05/sns.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-## The movement to open up social media
+## The Movement Toward Opening Up Social Networks
 
-The openness of social networking sites, which began with Facebook's release of its developer platform, is accelerating. OpenSocial, led by Google, emerged as a counter to Facebook. While Facebook was moving to base its own services on proprietary platforms, Google, with the help of a large coalition of others, created a standard for the platform.
+The movement toward opening up social networks, which began with Facebook releasing its platform for developers, is accelerating even further. Enter OpenSocial, led by Google, seemingly as a counter to Facebook. While Facebook's move was aimed at turning its own service into a proprietary platform, Google allied with many other players to create what could be called a standardized foundation.
 
-These two approaches have in common the idea of incorporating external services as if they were part of the SNS.
+Both approaches share the same goal: integrating external services as if they were part of the social network itself.
 
-## SNS Aggregation Service
+## Social Network Aggregation Services
 
-In Japan, when we think of SNS, we tend to think of diary-sharing sites like Mixi, but SNS can also be used to refer to sites that allow one-way "following" like Twitter, or specialized genres like Flickr and Lastfm.
+In Japan, "SNS" often brings to mind diary-sharing sites like mixi, but platforms with one-way "Following" like Twitter, or niche-specific services like Flickr and Last.fm, can also be considered social networks.
 
-Recently, services like FriendFeed have emerged that specialize in aggregating these various social networking sites. By providing the service with your social networking IDs, the feeds are aggregated, allowing users to access linked services only when they need them, as long as they follow the site.
+Recently, services focused on aggregating these diverse social networks, such as FriendFeed, have started to appear. By providing your IDs for various social networks to the service, it aggregates your feeds, allowing you to just follow that single site and only visit the connected services when necessary.
 
-Since the advent of social networking sites, the direction the web is heading has shifted to the idea that even if an ID is spread across the web, there is only one user and the same friends, so it's fine to just combine them all.
+In this way, since the emergence of social networks, the direction the web is heading toward has been shifting to: **"Even if your IDs are scattered all over the web, the person using them is one and the same, and your friends are the same too—so why not bring them all together?"**
 
-DataPortability
+## DataPortability
 
-DataPortability is a movement to free up data that is being tucked away in each social networking service and make it mutually accessible.
+DataPortability is an initiative aimed at liberating data that is currently locked into these individual social networks and making it interoperable.
 
-
+  
 [DataPortability &#8211; Connect, Control, Share,
 Remix](http://www.vimeo.com/610179?pg=embed&sec=610179) from [Smashcut
 Media](http://devlog.agektmr.com/archives/6) on
 [Vimeo](http://devlog.agektmr.com/archives/6).
-
+  
 [DataPortability &#8211; Join The
 Conversation](http://devlog.agektmr.com/archives/6) from [Smashcut
 Media](http://www.vimeo.com/smashcutmedia?pg=embed&sec=990474) on
 [Vimeo](http://www.vimeo.com/smashcutmedia?pg=embed&sec=990474).
 
-Although I don't fully grasp the details, the key players are now in place: MySpace's Data Availability,
-Facebook's Facebook Connect, and Google's Friend Connect. I'll introduce the features of each in due course.
+While I haven't grasped all the details myself yet, all the key players have now gathered: MySpace with Data Availability, Facebook with Facebook Connect, and Google with Friend Connect. I'll introduce the characteristics of each in upcoming posts.

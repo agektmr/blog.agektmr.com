@@ -1,78 +1,74 @@
 ---
+title: "Google's Shift to Social as Seen in the Evolution of iGoogle"
 layout: post
 lang: en
-title: The evolution of iGoogle and the socialization of Google
-description:
 date: 2008-11-18
 tags:
   - Google
   - SocialWeb
   - iGoogle
 translationOf: /2008/11/igooglegoogle.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-Until now, iGoogle has displayed multiple gadgets on a single page, but recently added a "canvas view" that allows you to display a single gadget full-screen. This canvas view, especially for Gmail and Google Reader gadgets, allows many of the features of individual services to be used directly on the gadget, greatly improving convenience.
+iGoogle has traditionally been styled around displaying multiple gadgets on a single page, but you might recall that "canvas view" was recently added, allowing you to expand and use a single gadget across the entire screen. With canvas view—especially for Gmail and Google Reader gadgets—a significant portion of the standalone service's functionality can now be used directly within the gadget, dramatically improving convenience.
 
 ![igoogle1](/images/2008/11/igoogle1.png)
 
 ![igoogle2](/images/2008/11/igoogle2.png)
 
-This change in iGoogle, which has already been stated, foreshadows iGoogle's OpenSocial support and suggests that Google as a whole will become a social network in the future. In fact, Google's move toward becoming a social network itself is already evident in many places.
+While it has already been stated openly, this shift in iGoogle foreshadows OpenSocial support and hints that Google as a whole may eventually evolve into a social network. In fact, signs pointing toward Google turning itself into a social network can already be seen in various places.
 
-## Going social with Google
+## The Socialization of Google
 
 ### Gmail Contacts (Contact List)
 
-Google has brought the social graph, the most important element in forming a social network, into Gmail/Google Talk. Naturally, this is a given. These contacts (contact lists) are also imported onto Android phones and used as phone books, creating a realistic social graph.
+When it comes to the social graph—the most crucial element in forming a social network—Google placed it right in Gmail/Google Talk. Naturally enough. These contacts are also imported into Android phones and used as an address book, which makes it distinctive in that it inevitably forms a real-world social graph.
 
-### Google Maps Profile
+### Google Maps Profiles
 
-Google Maps, which has been the subject of recent privacy concerns, actually has a profile feature.
-By clicking the "Profile" link at the top of the screen, you can create/view your own profile.
-This is linked to your Google Profile, which will be discussed later.
+Google Maps, which has recently been in the spotlight over privacy concerns, actually includes a profile feature. Clicking the "Profile" link at the top of the screen lets you create and view your profile. This is linked to Google Profiles, which I'll mention next.
 
-### Google Reader sharing feature
+### Google Reader Sharing Features
 
-Google Reader is an RSS reader, but it also has a feature that lets you share interesting articles with friends with the touch of a button. This feature utilizes the social graph of your Gmail contacts, which is also utilized here.
+Google Reader is an RSS reader, but it includes a feature that lets you share articles of interest with friends with a single click. The underlying social graph used here is drawn from Gmail contacts, serving as another example of its integration.
 
-### Google Profile
+### Google Profiles
 
-[Google Profile](http://www.google.com/s2/profiles/me?hl=ja) seems to have been quietly created without anyone noticing. **It will be interesting to see how it develops in the future.**
+[Google Profiles](http://www.google.com/s2/profiles/me?hl=ja) seems to have been rolled out quietly out of nowhere. **How this feature develops moving forward is definitely worth watching.**
 
 ![googleprofile](/images/2008/11/googleprofile.png)
 
-The user's photo, nickname, and address are displayed in the upper left of the screen, and detailed profile information is displayed below. Currently, the information includes their address, places they've lived in the past, schools they've attended, companies they've worked for, and a brief resume. In addition, there are also some unusual items, such as things you can't find on Google and psychic powers (?), which can be edited from this screen.
+The top-left corner of the screen displays the user's photo, nickname, and location, while detailed profile information appears below it. Currently, it includes fields for current address, places you've lived, schools attended, companies worked for, a short bio, and even quirky entries like things you can't find using Google, superpowers (?), and more, all editable from this screen.
 
 ![googleprofilelink](/images/2008/11/googleprofilelink.png)
 
-And then there's "Links." For now, it's just a link, but you can register external services you use. What's interesting is that if you register FriendFeed, for example, a whole host of other services will automatically appear as registration suggestions. It seems like they're using the Google Social Graph API here. FriendFeed does indeed embed a microformat called rel=&#8221;me&#8221;.
+Then there are "Links." For now, they really are just links, but you can register external services you use. What's interesting is that when you add FriendFeed, for example, suggested candidate services automatically pop up one after another. Clearly, this is where the Google Social Graph API comes into play. Indeed, FriendFeed embeds microformats such as rel=&#8221;me&#8221;.
 
-### Message function
+### Messaging Feature
 
-[A messaging feature has recently been added to Google Profiles](http://japan.cnet.com/news/media/story/0,2000056023,20383508,00.htm). While I can only confirm its existence in the English version, it appears you can send messages from your profile page. This is likely also in line with OpenSocial compatibility.
+[A messaging feature was recently added to Google Profiles](http://japan.cnet.com/news/media/story/0,2000056023,20383508,00.htm). While its presence can currently only be confirmed in the English version, it allows users to send messages directly from the profile page. This too is likely designed with OpenSocial support in mind.
 
-How will Google change in the future?
+## How Will Google Evolve from Here?
 
-As Google becomes more social, we've made some predictions about what changes we might see in the future.
+Here are a few predictions on how different parts of Google might change as it continues its social evolution.
 
-### Gadgets on your Google profile
+### Gadgets in Google Profiles
 
-You'll almost certainly be able to add gadgets to your Google profile as well.
+Almost certainly, we will be able to add gadgets to Google Profiles.
 
-OpenSocial has four predefined views: home view, canvas view, profile view, and preview view. Aside from the preview view, which is used to confirm gadget addition, iGoogle already provides a home view (my page) similar to that of a typical social networking site, and a canvas view that displays only gadgets. Therefore, it seems natural that the remaining view would be a profile page.
+OpenSocial defines four views: home view, canvas view, profile view, and preview view. Putting aside the preview view used for confirming gadget additions, iGoogle already provides the equivalent of a general SNS my-page (home view) and a gadget-only view (canvas view). Extending this to the profile page (profile view) is the most natural next step.
 
-### iGoogle integration for your Google profile
+### Integrating Google Profiles with iGoogle
 
-Integrating your Google profile with iGoogle is not impossible. While you can currently view the contents of your Google profile in the iGoogle Sandbox environment, perhaps integrating it with other apps would bring you closer to others and make iGoogle more social.
+Integrating Google Profiles with iGoogle is by no means far-fetched. Even now, you can view your Google Profile information within the iGoogle Sandbox environment. For instance, making transitions between the two seamless could bring users closer together and make iGoogle feel far more inherently social.
 
-### Activity Stream
+### Activity Streams
 
-We can already see glimpses of it in the iGoogle Sandbox, but we're about to see a clearer picture of OpenSocial's Activity Stream feature. The Activity Stream is like a user's activity history, similar to friends' diaries and community updates on Mixi.
+While glimpses are already visible in the iGoogle Sandbox, the OpenSocial activity stream feature should begin to emerge much more clearly. An activity stream is essentially a log of user activities—comparable to friends' diary entries or recent community updates on mixi.
 
-OpenSocial defines a feature for registering activities from gadgets, but I expect iGoogle will also add a FriendFeed-like feature that automatically incorporates feeds from linked services. [Microsoft's Windows Live Home feature](http://jp.techcrunch.com/archives/20081112sweeping-changes-at-livecom-its-a-social-network/)
-also has a similar feature.
+OpenSocial specifies functionality for gadgets to publish activities, but iGoogle might take this further by automatically mixing in feeds from linked services, creating a FriendFeed-like experience. [A similar feature was also recently added by Microsoft to Windows Live Home](http://jp.techcrunch.com/archives/20081112sweeping-changes-at-livecom-its-a-social-network/).
 
-## summary
+## Conclusion
 
-I started writing this article about Google Profiles, but somehow the topic has expanded and become quite large. However, I honestly can't imagine how influential Google, which is steadily expanding its social graph with Gmail at its core, will be if it were to take on the form of a full-fledged social network. I wonder if they had this in mind when they created Gmail? It will be interesting to see how things develop.
+I originally set out to write an article about Google Profiles, but the scope broadened into a much bigger conversation. That said, as Google steadily and implicitly expands its social graph centered around Gmail, it's hard to fathom just how influential it will become once it takes the full shape of a social network. Did they really foresee all this back when they first created Gmail? It will be fascinating to watch what happens next.

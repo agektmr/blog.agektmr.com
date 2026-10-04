@@ -1,8 +1,7 @@
 ---
+title: "Clickpass: A service that integrates accounts using OpenID"
 layout: post
 lang: en
-title: Clickpass, a service that uses OpenID to integrate accounts
-description:
 date: 2008-03-12
 tags:
   - Service
@@ -10,19 +9,19 @@ tags:
   - OpenID
   - 認証
 translationOf: /2008/03/openid-clickpass.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-[TechCrunch Japanese Archive » Clickpass aims to expand the general use of OpenID](http://jp.techcrunch.com/archives/clickpass-could-change-the-way-you-surf-the-web/)OpenID is a technology that can be thought of as a passport on the web, enabling single sign-on across domains. In Japan, Yahoo, Livedoor, Hatena, and Mixi are supporting OpenID issuance and have announced that they will support it in the future. While OpenID is convenient, it also has some problems:
+[TechCrunch Japanese アーカイブ » OpenID の一般利用拡大を図る「Clickpass」](http://jp.techcrunch.com/archives/clickpass-could-change-the-way-you-surf-the-web/) OpenID is a technology often described as a digital passport for the web, enabling single sign-on across domains. In Japan, services like Yahoo, livedoor, Hatena, and mixi have either supported or announced plans to support issuing OpenIDs. While OpenID is convenient, it also comes with several challenges:
 
-* While the number of sites issuing OpenIDs is increasing, there are still few that accept them.
-* There's a risk of phishing.
-* It's difficult to integrate with existing accounts/it's inconvenient to use.
+* While the number of sites issuing OpenIDs is growing, the number of sites accepting OpenID is still quite small
+* Phishing risks exist
+* Inability or friction when trying to integrate with existing accounts
 
-Clickpass is a service that aims to solve all these problems at once.
+Clickpass is a service designed to solve all of these problems at once.
 
-When you use OpenID for the first time, Clickpass will ask you if you already have an account with the service you're trying to log in to. If you do, provide that information. Clickpass will then pass that information to the authentication site and link your accounts together. As you add sites to your ClickPass OpenID, you can view them in a list on the ClickPass site. You'll also receive a site-specific OpenID URL, which you can use to manage multiple IDs, all of which are linked together on ClickPass. Also, if you want to fill out your profile information in ClickPass, your personal information will be automatically entered each time you sign up for a new site. Clickpass also offers thorough privacy controls, allowing you to choose the information you want to share with sites.
+> When using OpenID for the first time, Clickpass asks if you already have an account on the service you are trying to log into. If you do, providing that information allows Clickpass to pass it to the authenticating site to link the accounts together. As you add sites to your Clickpass OpenID, you can view them all in a list on the Clickpass website. You are also provided with site-specific OpenID URLs from Clickpass, which can be used to manage multiple IDs, with all IDs linked together on Clickpass. Additionally, if you fill in your profile details on Clickpass, your personal information is automatically populated whenever you join a new site. Clickpass also enforces thorough privacy controls, letting you choose what information you want to share with each site.
 
-When registering for a new account, you can easily use your Clickpass OpenID account to provide your personal information via AX or Sreg. If you have an existing account, you don't need to enter your password every time. It also seems to be possible to use an image of a Yahoo login sticker, which also helps prevent phishing. In other words, it's a web-based keychain service.
+When signing up for a new site, you can register effortlessly because Clickpass passes along your personal details using AX or Sreg via your Clickpass OpenID account. For existing accounts, you no longer need to enter your password every time. It also mitigates phishing risks using an image-based feature similar to Yahoo's Sign-In Seal. In other words, you could think of it as a keychain service for the web.
 
-If users are aware from the start that the service's purpose is to aggregate and distribute personal information, then the exchange of personal information will not be a legal issue, and it may be a good idea. As long as more partner sites are added and users are comfortable entrusting their authentication information to Clickpass, it should work well.
+As long as users understand upfront that the service is intended for aggregating and distributing personal information, exchanging such data shouldn't run into legal hurdles, making it quite a good idea. Beyond that, as long as more partner sites join in and users don't hesitate to entrust their credentials to Clickpass, it could work out really well.

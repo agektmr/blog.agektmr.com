@@ -1,21 +1,20 @@
 ---
+title: "Safari 3.1's Offline Features"
 layout: post
 lang: en
-title: Safari 3.1 offline functionality
-description:
 date: 2008-03-27
 tags:
   - HTML5
   - Mac OS X
   - Safari
 translationOf: /2008/03/safari31の.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-I wrote about the offline feature introduced in Safari 3.1 the other day, and amachang has provided a detailed explanation of how to use it.
+The other day I wrote about the [offline features introduced in Safari 3.1](/archives/16), and amachang has posted a detailed explanation of how to use them.
 
-What is the "Client-side database storage (SQL API)" implemented in Safari 3.1? - IT War Chronicles
+[Safari 3.1 に実装された「Client-side database storage (SQL API)」とは何か？ - IT 戦記](http://d.hatena.ne.jp/amachang/20080327/1206607704)
 
-I haven't read it in detail, but it seems to be a specification from HTML5, and is already included in the beta version of Firefox 3.
+I haven't read it in depth yet, but it's apparently a specification from HTML5, and it's reportedly already included in the Firefox 3 beta as well.
 
-With this, you can do this and that...
+This looks like it could enable all kinds of possibilities...

@@ -1,8 +1,8 @@
 ---
+title: "Google Chrome Extension \"Social Graph Analyzer\" Released"
+author: Eiji
 layout: post
 lang: en
-title: "Google Chrome Extension &#8220;Social Graph Analyzer&#8221; released"
-description:
 date: 2010-01-14
 categories:
   - Product
@@ -11,25 +11,25 @@ tags:
   - Google Chrome
   - Social Graph
 translationOf: /2010/01/google-chrome-extension-social-graph-analyzer.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-I recently started using Google Chrome because extensions are now available on the Dev channel for Mac. It offers the extensibility that Safari lacks, and the lightness and speed that surpasses Firefox, making it a promising browser. It's incredibly easy to use, and is already becoming my main browser. That's what you'd expect from Google.
+Since <a href="http://www.google.com/chrome/intl/en/eula_dev.html?dl=mac" target="_blank">Extensions became available on the Dev channel for Mac</a>, I've recently started using Google Chrome. I think it's a very promising browser that combines extensibility not found in Safari with lightness and speed that surpasses Firefox. It's so pleasant to use that it's already becoming my primary browser. Google has done it again.
 
-Well, developing an extension for Google Chrome seemed easy, so I decided to give it a try. The extension is called <a href="https://chrome.google.com/extensions/detail/homfjkcmjicjclikljgmjfmfmcbkihco" target="_blank">Social Graph Analyzer</a>.
+Now, speaking of Google Chrome, developing extensions seemed straightforward, so I gave it a shot and built one. That is the <a href="https://chrome.google.com/extensions/detail/homfjkcmjicjclikljgmjfmfmcbkihco" target="_blank">Social Graph Analyzer</a>.
 
-## How to use
+## How to Use
 
-Once installed, a person icon will appear in the top right corner of the screen. To use it, simply click on the profile page of the person you're interested in. It doesn't matter which service the profile page is from. When you click, a bubble will pop up, showing you other services that person uses. Of course, the URL of the service is a link, so clicking it will open the page.
+Once installed, a person icon will appear in the top-right corner of the screen. To use it, simply click it whenever you are on a profile page of someone you're interested in. It doesn't matter which service's profile page it is. When clicked, a speech bubble pop-up appears, displaying other services that the person uses. Of course, the service URLs are links, so clicking them will open those pages.
 
 <img title="homfjkcmjicjclikljgmjfmfmcbkihco" src="/images/2010/01/homfjkcmjicjclikljgmjfmfmcbkihco.png" alt="" width="391" height="295" />
 
-Those who know will understand, so I won't go into the details of how it works, but if the information is published using microformat or FOAF and is connected, it may be displayed.
+Those who know will already understand, so I won't go into how it works under the hood, but if the information is published and connected via microformats or FOAF, there's a good chance it will show up.
 
-## from now on
+## Looking Ahead
 
-In the future, I hope to be able to display the number of services you use with a badge and track your friends just by looking at the page.
+In the future, I think it would be nice to display a badge with the count of linked services just by viewing the page, or allow navigating through friends.
 
-It's especially useful for Twitter pages. Please give it a try.
+It's particularly handy when used on Twitter pages. Please give it a try!
 
 Download here: <a href="https://chrome.google.com/extensions/detail/homfjkcmjicjclikljgmjfmfmcbkihco" target="_blank">Social Graph Analyzer</a>

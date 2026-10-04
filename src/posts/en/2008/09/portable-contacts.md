@@ -1,8 +1,7 @@
 ---
+title: Portable Contacts, an Open Contact List Specification
 layout: post
 lang: en
-title: Portable Contacts, an open contact list specification
-description:
 date: 2008-09-18
 tags:
   - PortableContacts
@@ -10,62 +9,54 @@ tags:
   - OpenSocial
   - SocialWeb
 translationOf: /2008/09/portable-contacts.html
-translated: 2025-11-30
+translated: 2026-10-03
 translatedManually: false
 ---
-Joseph Smarr of Plaxo uses the term "Open Building Blocks for the Social Web," which describes the building blocks needed to make the web more social and deepen the connections between services.
+[Joseph Smarr](http://www.josephsmarr.com/) of Plaxo often uses the phrase "Open Building Blocks for the Social Web." This refers to the essential "building blocks" needed to make the web more social and deepen interoperability across services.
 
-These "elements" include [OpenID](http://openid.net/), [OAuth](http://oauth.net/),
-[microformats](http://microformats.org/),
-[OpenSocial](http://www.opensocial.org/), all of which are important standards that will shape the future of the social web and have been discussed in this blog. One of these important elements is [Portable Contacts](http://portablecontacts.net/).
+These "building blocks" include [OpenID](http://openid.net/), [OAuth](http://oauth.net/), [microformats](http://microformats.org/), and [OpenSocial](http://www.opensocial.org/)—all of which have been covered on this blog as crucial standards shaping the future of the social web. Now, another important piece has been added to the mix: [Portable Contacts](http://portablecontacts.net/).
 
-Joseph Smarr's company, Plaxo, has already published a usable API.
+[Plaxo](http://www.plaxo.com), where Joseph Smarr works, has already [released a working API](http://www.plaxo.com/api/portablecontacts).
 
-What is Portable Contacts?
+## What is Portable Contacts?
 
-> Portable Contacts, is an easy-to-implement "people data" API that provides
-> secure access to both traditional address book data and to modern social
-> application data (profiles and friends lists).
+> Portable Contacts, is an easy-to-implement "people data" API that provides secure access to both traditional address book data and to modern social application data (profiles and friends lists).
 
-PortableContacts is an easy-to-implement "people data" API that provides secure access to both traditional address book data and modern social application data (profiles and friend lists).
+Looking at the [current draft specification](http://portablecontacts.net/draft-spec.html), it covers:
 
-If we take a look at the current spec:
-
-* Discovery method (XRDS-Simple)
-* Authentication/authorization method (OAuth, Basic Auth)
-* Query parameters (sort, filter, etc.)
-* Response format (JSON, XML)
+* Discovery mechanisms (XRDS-Simple)
+* Authentication / authorization methods (OAuth, Basic authentication)
+* Query parameters (sorting, filtering, etc.)
+* Response formats (JSON, XML)
 * Error codes
-* Contact schema
+* Contact schemas
 
-It was designed with the intention of not straying too far from existing specifications such as vCard and OpenSocial.
+It is designed with careful consideration not to deviate significantly from existing specifications such as vCard and OpenSocial.
 
-## When to use Portable Contacts
+## Use Cases for Portable Contacts
 
-Portable Contacts represents an address book or a friend list, so it is expected to be applicable in a variety of fields.
+Since Portable Contacts represents address books and friend lists, it can be applied across a variety of areas.
 
-### Exchange friend lists between social network services
+### Exchanging Friend Lists Between Social Network Services
 
-A service example is already available in [MySpace DataAvailability](http://jp.techcrunch.com/archives/20080508myspace-embraces-data-portability-partners-with-yahoo-ebay-and-twitter/), but it will also make it possible to import your MySpace friend list into Twitter.
+As already [demonstrated by MySpace's DataAvailability](http://jp.techcrunch.com/archives/20080508myspace-embraces-data-portability-partners-with-yahoo-ebay-and-twitter/), it will be possible to do things like importing your MySpace friend list into Twitter.
 
-### Exchange address book with desktop app
+### Exchanging Address Books with Desktop Applications
 
-For example, you can now synchronize your Mac OS X Address Book app with your Microsoft Outlook address book via a web service, all with a more unified standard than ever before.
+For example, syncing the Mac OS X Address Book with Microsoft Outlook's contacts via a web service can now be done over a more unified standard than ever before.
 
-### Sync your mobile phone and social networking address book
+### Syncing Address Books Between Mobile Phones and SNS
 
-You can now have your social networking friend list on your phone, and vice versa. Things get even more interesting when a service like [Ripplex](http://www.ripplex.com/) comes into play.
+You will be able to load your SNS friend list directly onto your mobile phone, or vice versa. If services like [Ripplex](http://www.ripplex.com/) sit in between, even more interesting possibilities could emerge.
 
-Relationship with OpenSocial
+## Relationship with OpenSocial
 
-Some of you may be wondering, "Wait, aren't OpenSocial and Portable Contacts the same thing?"
-Yes, OpenSocial's People API and Portable Contacts basically have the same role. I personally wondered about this because I don't think it's a good idea to have multiple similar specifications.
+Wait, aren't OpenSocial and Portable Contacts the same thing? Some of you might be wondering. Yes, fundamentally, OpenSocial's People API and Portable Contacts serve the same purpose. Having multiple similar specifications is generally undesirable, which made me wonder about this as well.
 
-In fact, thanks to Joseph Smarr's efforts, Portable Contacts was integrated into the OpenSocial v0.8.1 specification. In other words, the OpenSocial People API specification and the Portable Contacts specification are the same.
+In fact, thanks to efforts led by Joseph Smarr, Portable Contacts was **merged into the OpenSocial v0.8.1 specification**. In other words, the OpenSocial People API specification and the Portable Contacts specification are **the same**.
 
-The OpenSocial v0.8.1 specification will be released soon, and we can confirm that its content is in line with Portable
-Contacts.
+The OpenSocial v0.8.1 specification should be published soon, and you will be able to see that its content aligns directly with Portable Contacts.
 
-## summary
+## Summary
 
-The movement to build a social web ecosystem is accelerating with the coming together of pieces like Portable Contacts. We'll be keeping a close eye on the developments of the social web's main players.
+The movement to build a social web ecosystem is accelerating as pieces like Portable Contacts fall into place. We should definitely keep a close eye on the moves made by the major players in the social web space going forward.
