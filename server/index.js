@@ -5,6 +5,7 @@
 
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 const cookieParser = require('cookie-parser');
 
 const app = express();
@@ -76,18 +77,18 @@ function detectLanguage(req) {
  * Language detection and redirect middleware
  */
 app.use((req, res, next) => {
-  const path = req.path;
+  const requestPath = req.path;
 
   // Skip for static assets
-  if (path.match(/\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$/)) {
+  if (requestPath.match(/\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$/)) {
     return next();
   }
 
-  const onEnglishPath = path.startsWith('/en/') || path === '/en';
-  const onJapanesePath = path.startsWith('/ja/') || path === '/ja';
+  const onEnglishPath = requestPath.startsWith('/en/') || requestPath === '/en';
+  const onJapanesePath = requestPath.startsWith('/ja/') || requestPath === '/ja';
 
   // 1. Redirect root homepage to language-specific version
-  if (path === '/' || path === '/index.html') {
+  if (requestPath === '/' || requestPath === '/index.html') {
     const preferredLang = detectLanguage(req);
     res.cookie('language_preference', preferredLang, {
       maxAge: 365 * 24 * 60 * 60 * 1000,
@@ -98,23 +99,31 @@ app.use((req, res, next) => {
   }
 
   // 2. Redirect root feed to language-specific feed
-  if (path === '/feed.xml') {
+  if (requestPath === '/feed.xml') {
     const preferredLang = detectLanguage(req);
     return res.redirect(302, `/${preferredLang}/feed.xml`);
   }
 
-  // 3. Redirect old Japanese posts (root level) to /ja/ prefix
-  // Pattern: /YYYY/MM/slug.html
-  const oldJapanesePostPattern = /^\/(\d{4})\/(\d{2})\/(.+\.html)$/;
-  if (oldJapanesePostPattern.test(path)) {
-    return res.redirect(301, `/ja${path}`);
+  // 3. Redirect root-level posts (/YYYY/MM/slug or /YYYY/MM/slug.html) based on preferred language
+  const rootPostPattern = /^\/(\d{4})\/(\d{2})\/([^\/]+?)(?:\.html)?$/;
+  const postMatch = requestPath.match(rootPostPattern);
+  if (postMatch) {
+    const postHtmlPath = `/${postMatch[1]}/${postMatch[2]}/${postMatch[3]}.html`;
+    const preferredLang = detectLanguage(req);
+    const preferredFilePath = path.join(SITE_DIR, preferredLang, postHtmlPath);
+    const targetLang = fs.existsSync(preferredFilePath) ? preferredLang : 'ja';
+
+    res.set('Vary', 'Accept-Language, Cookie');
+    return res.redirect(302, `/${targetLang}${postHtmlPath}`);
   }
 
-  // 4. Redirect old paginated index pages to /ja/
+  // 4. Redirect old paginated index pages based on preferred language
   // Pattern: /page/N/index.html
   const oldPaginationPattern = /^\/page\/(\d+)\/index\.html$/;
-  if (oldPaginationPattern.test(path)) {
-    return res.redirect(301, `/ja${path}`);
+  if (oldPaginationPattern.test(requestPath)) {
+    const preferredLang = detectLanguage(req);
+    res.set('Vary', 'Accept-Language, Cookie');
+    return res.redirect(302, `/${preferredLang}${requestPath}`);
   }
 
   // 5. Handle explicit language switching via query param
