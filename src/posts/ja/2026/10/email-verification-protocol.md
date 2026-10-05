@@ -1,7 +1,7 @@
 ---
 layout: post
 lang: ja
-title: Email Verification Protocol は何が革命的なのか
+title: パスキー時代に残された課題を埋める EVP とは何か
 description: パスキーのフォールバックやアカウントリカバリの課題を解決する Email Verification Protocol（EVP）。なぜフィッシング耐性と優れたユーザー体験を両立できるのか、その革新性を解説します。
 date: 2026-10-05
 updated: 2026-10-05
