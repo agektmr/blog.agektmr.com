@@ -12,7 +12,7 @@ eleventyExcludeFromCollections: true
     <img src="/images/avatar.jpg" class="about-avatar" alt="Eiji Kitamura / 北村 英志（えーじ）">
     <div class="about-hero-info">
       <h1 class="about-name">Eiji Kitamura <span class="about-name-sub">/ 北村 英志（えーじ）</span></h1>
-      <p class="about-role">Identity Tech Lead &amp; Developer Advocate @ Google Chrome</p>
+      <p class="about-role">DevRel's Identity Tech Lead &amp; Developer Advocate @ Google Chrome</p>
       <div class="about-pills">
         <a href="https://github.com/agektmr" target="_blank" rel="noopener noreferrer" class="pill-btn"><i class="fab fa-github"></i> GitHub</a>
         <a href="https://x.com/agektmr" target="_blank" rel="noopener noreferrer" class="pill-btn"><i class="fab fa-x-twitter"></i> X</a>
@@ -26,7 +26,7 @@ eleventyExcludeFromCollections: true
 
   <section class="about-bio">
 
-Google の Chrome Developer Relations チームにて、Identity Tech Lead/Developer Advocate を務める。Web ブラウザにおける認証技術（Authentication）およびアイデンティティ（Identity）領域のスペシャリスト。
+Google の Chrome Developer Relations チームにて、DevRel's Identity Tech Lead/Developer Advocate を務める。Web ブラウザにおける認証技術（Authentication）およびアイデンティティ（Identity）領域のスペシャリスト。
 
 Google への入社前は、NTT レゾナント株式会社（現 NTT ドコモ）にてポータルサイト「goo」のサービス開発に従事。「インターネット全体をオープンなソーシャルネットワークの基盤にしたい」という志を掲げ、日本初となる PC 向け OpenSocial コンテナの開発や、OAuth、OpenID などの技術普及活動を牽引。「SocialWeb Japan」の運営やコミュニティ活動を通じ、Google API Expert（現 [Google Developer Expert](https://developers.google.com/experts)）に認定される。
 

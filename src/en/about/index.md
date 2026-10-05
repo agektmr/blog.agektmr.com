@@ -12,7 +12,7 @@ eleventyExcludeFromCollections: true
     <img src="/images/avatar.jpg" class="about-avatar" alt="Eiji Kitamura / えーじ">
     <div class="about-hero-info">
       <h1 class="about-name">Eiji Kitamura <span class="about-name-sub">/ えーじ</span></h1>
-      <p class="about-role">Identity Tech Lead &amp; Developer Advocate @ Google Chrome</p>
+      <p class="about-role">DevRel's Identity Tech Lead &amp; Developer Advocate @ Google Chrome</p>
       <div class="about-pills">
         <a href="https://github.com/agektmr" target="_blank" rel="noopener noreferrer" class="pill-btn"><i class="fab fa-github"></i> GitHub</a>
         <a href="https://x.com/agektmr" target="_blank" rel="noopener noreferrer" class="pill-btn"><i class="fab fa-x-twitter"></i> X</a>
@@ -26,7 +26,7 @@ eleventyExcludeFromCollections: true
 
   <section class="about-bio">
 
-Eiji Kitamura is an Identity Tech Lead and Developer Advocate on the Google Chrome team, specializing in identity, authentication, and security on the web platform.
+Eiji Kitamura is DevRel's Identity Tech Lead and Developer Advocate on the Google Chrome team, specializing in identity, authentication, and security on the web platform.
 
 Prior to joining Google, Eiji was an engineer at NTT Resonant, developing consumer web services for the portal site "goo". Driven by a passion to build an open social network layer across the web, he led the development of Japan's first PC-based OpenSocial container and championed technologies like OAuth and OpenID, which led to his recognition as a Google API Expert (now [Google Developer Expert](https://developers.google.com/experts)).
 
