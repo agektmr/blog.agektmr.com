@@ -117,7 +117,7 @@ In short, phishing resistance is embedded directly into the ubiquitous act of co
 
 Of course, this vision assumes an ecosystem where EVP is widely deployed and supported. Currently, EVP is implemented only in Chrome and has not yet graduated to a stable, cross-browser standard. While Gmail already supports EVP, broader email provider participation will be necessary. Users on other browsers or utilizing alternative email providers must continue to remain vigilant against phishing threats.
 
-Furthermore, EVP is not the only avenue being explored for phishing-resistant identity verification. For instance, [Firebase Phone Number Verification](https://firebase.google.com/docs/phone-number-verification) queries mobile carriers directly to confirm phone number possession in a phishing-resistant manner. Several other approaches to phishing-resistant identity verification are also actively under evaluation across the industry.
+Furthermore, EVP is not the only avenue being explored for phishing-resistant identity verification. For instance, [Firebase Phone Number Verification](https://firebase.google.com/docs/phone-number-verification) interacts directly with mobile carriers to securely retrieve a verified phone number tied to the device in a tamper-proof manner. Several other approaches to phishing-resistant identity verification are also actively under evaluation across the industry.
 
 ## Summary
 
