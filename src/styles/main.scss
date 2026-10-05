@@ -108,3 +108,11 @@ h2:hover, h3:hover, h4:hover {
     background-color: #ddd;
   }
 }
+
+/* Font Awesome rendering stability on scroll / GPU compositing */
+i[class*="fa-"], .fa, .fas, .far, .fab, svg.svg-inline--fa {
+  display: inline-block;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
