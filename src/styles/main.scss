@@ -4,6 +4,7 @@
 @use "base/base";
 @use "base/breakpoints";
 @use "layout";
+@use "about";
 
 h2,h3,h4,h5,h6 {
   margin-top: 3rem;
@@ -16,20 +17,42 @@ h2,h3,h4,h5,h6 {
 }
 
 .aside {
-  margin: 20px 0;
-  padding: 20px;
-  color: white;
-  font-size: 0.9em;
-  border-radius: 12px;
-  background: rgb(118 118 118);
+  margin: 1.75rem 0;
+  padding: 1rem 1.25rem;
+  font-size: 0.95em;
+  line-height: 1.7;
+  color: #374151;
+  background-color: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #2980b9;
+  border-radius: 6px;
+
   a {
-    color: white;
+    color: #2980b9;
+    text-decoration: underline;
+
+    &:hover {
+      color: #1a5276;
+    }
   }
+
   code {
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 0.15em 0.35em;
+    border-radius: 4px;
+    font-size: 0.9em;
   }
+
   p {
-    margin-bottom: 0;
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 0.75rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
   }
 }
 
@@ -84,4 +107,12 @@ h2:hover, h3:hover, h4:hover {
   &:active {
     background-color: #ddd;
   }
+}
+
+/* Font Awesome rendering stability on scroll / GPU compositing */
+i[class*="fa-"], .fa, .fas, .far, .fab, svg.svg-inline--fa {
+  display: inline-block;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }

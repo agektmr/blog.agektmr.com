@@ -7,12 +7,12 @@ eleventyExcludeFromCollections: true
 ---
 
 <ul class="posts-list">
-{% for post in collections.posts_en | reverse %}
+{% for post in collections.posts_en %}
   <li>
     <strong>
       <a href="{{ post.url }}">{{ post.data.title }}</a>
     </strong>
-    <span class="post-date">- {{ post.date | localeDateString(post.data.lang or 'en') }}</span>
+    <span class="post-date">{{ post.date | localeDateString(post.data.lang or 'en') }}</span>
   </li>
 {% endfor %}
 </ul>
