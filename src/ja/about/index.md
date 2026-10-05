@@ -26,7 +26,7 @@ eleventyExcludeFromCollections: true
 
   <section class="about-bio">
 
-Google の Chrome Developer Relations チームにて、DevRel's Identity Tech Lead/Developer Advocate を務める。Web ブラウザにおける認証技術（Authentication）およびアイデンティティ（Identity）領域のスペシャリスト。
+Google の Chrome Developer Relations チームにて、Identity Tech Lead/Developer Advocate を務める。Web ブラウザにおける認証技術（Authentication）およびアイデンティティ（Identity）領域のスペシャリスト。
 
 Google への入社前は、NTT レゾナント株式会社（現 NTT ドコモ）にてポータルサイト「goo」のサービス開発に従事。「インターネット全体をオープンなソーシャルネットワークの基盤にしたい」という志を掲げ、日本初となる PC 向け OpenSocial コンテナの開発や、OAuth、OpenID などの技術普及活動を牽引。「SocialWeb Japan」の運営やコミュニティ活動を通じ、Google API Expert（現 [Google Developer Expert](https://developers.google.com/experts)）に認定される。
 

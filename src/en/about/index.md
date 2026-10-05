@@ -26,7 +26,7 @@ eleventyExcludeFromCollections: true
 
   <section class="about-bio">
 
-Eiji Kitamura is DevRel's Identity Tech Lead and Developer Advocate on the Google Chrome team, specializing in identity, authentication, and security on the web platform.
+Eiji Kitamura is an Identity Tech Lead and Developer Advocate on the Chrome Developer Relations team at Google, specializing in identity, authentication, and security on the web platform.
 
 Prior to joining Google, Eiji was an engineer at NTT Resonant, developing consumer web services for the portal site "goo". Driven by a passion to build an open social network layer across the web, he led the development of Japan's first PC-based OpenSocial container and championed technologies like OAuth and OpenID, which led to his recognition as a Google API Expert (now [Google Developer Expert](https://developers.google.com/experts)).
 
