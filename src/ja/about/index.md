@@ -28,7 +28,7 @@ eleventyExcludeFromCollections: true
 
 Google の Chrome Developer Relations チームにて、Identity Tech Lead/Developer Advocate を務める。Web ブラウザにおける認証技術（Authentication）およびアイデンティティ（Identity）領域のスペシャリスト。
 
-大学卒業後、NTT レゾナント株式会社（現 NTT ドコモ）にてポータルサイト「goo」のサービス開発に従事。「インターネット全体をオープンなソーシャルネットワークの基盤にしたい」という志を掲げ、日本初となる PC 向け OpenSocial コンテナの開発や、OAuth、OpenID などの技術普及活動を牽引。「SocialWeb Japan」の運営やコミュニティ活動を通じ、Google API Expert（現 Google Developer Expert）に認定される。
+Google への入社前は、NTT レゾナント株式会社（現 NTT ドコモ）にてポータルサイト「goo」のサービス開発に従事。「インターネット全体をオープンなソーシャルネットワークの基盤にしたい」という志を掲げ、日本初となる PC 向け OpenSocial コンテナの開発や、OAuth、OpenID などの技術普及活動を牽引。「SocialWeb Japan」の運営やコミュニティ活動を通じ、Google API Expert（現 Google Developer Expert）に認定される。
 
 2010 年 6 月、Developer Advocate として Google に入社。以来 16 年以上にわたり、Chrome チームおよび Web プラットフォームのグローバルな技術啓蒙活動に従事。HTML5 や Web Components、Web Audio、Payment Request API などの普及期を経て、現在はパスキー（Passkeys/WebAuthn）、Federated Credential Management（FedCM）、Digital Credentials API、Email Verification Protocol（EVP）など、次世代の安全でフリクションレスな Web 認証エコシステムの標準化と実装支援をリードしている。
 
