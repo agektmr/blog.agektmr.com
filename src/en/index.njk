@@ -25,61 +25,36 @@ permalink: "/en/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber 
 <div class="wrapper">
 <ul class="post-list">
   {% for post in posts %}
-  <li>
-    <h2>
+  <li class="post-card">
+    <div class="card-meta">
+      <span class="post-date"><i class="far fa-calendar-alt"></i> {{ post.date | localeDateString('en') }}</span>
+      {% if post.data.organic %}
+      <span class="organic-badge" title="Ratio written without AI"><i class="fas fa-seedling"></i> {{ post.data.organic }}% Organic</span>
+      {% endif %}
+    </div>
+    <h2 class="card-title">
       <a class="post-link" href="{{ post.url }}">{{ post.data.title }}</a>
     </h2>
     <section class="post-excerpt" itemprop="description">
-      <p>{% excerpt post %}</p>
-      <a href="{{ post.url }}" class="readmore">Read more...</a>
-    </section>
-    <section class="post-meta">
-      <div class="post-date">Posted: {{ post.date | localeDateString('en') }}</div>
+      {% excerpt post %}
+      <a href="{{ post.url }}" class="readmore">Read article <i class="fas fa-arrow-right"></i></a>
     </section>
   </li>
-  {% if loop.last == false %}<hr>{% endif %}
   {% endfor %}
 </ul>
 
 <nav class="pagination" role="navigation">
-	<p>
-    {% if pagination.page.previous %}
-		{% if pagination.pageNumber == 2 %}
-		<a class="newer-posts" href="/en/index.html">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-square fa-stack-2x"></i>
-          <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
-        </span>
-      </a>
-		{% else %}
-		<a class="newer-posts" href="{{ pagination.href.previous }}">
-			<span class="fa-stack fa-lg">
-				<i class="fa fa-square fa-stack-2x"></i>
-				<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
-			</span>
-		</a>
-		{% endif %}
-	{% else %}
-	<span class="fa-stack fa-lg">
-      <i class="fa fa-square fa-stack-2x"></i>
-      <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
-    </span>
-	{% endif %}
-	<span class="page-number">Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}</span>
-	{% if pagination.page.next %}
-	<a class="newer-posts" href="{{ pagination.href.next }}">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-square fa-stack-2x"></i>
-        <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-	{% else %}
-	<span class="fa-stack fa-lg">
-      <i class="fa fa-square fa-stack-2x"></i>
-      <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
-    </span>
-	{% endif %}
-	</p>
+  {% if pagination.page.previous %}
+    {% if pagination.pageNumber == 2 %}
+      <a class="newer-posts" href="/en/index.html"><i class="fas fa-arrow-left"></i> Newer</a>
+    {% else %}
+      <a class="newer-posts" href="{{ pagination.href.previous }}"><i class="fas fa-arrow-left"></i> Newer</a>
+    {% endif %}
+  {% endif %}
+  <span class="page-number">Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}</span>
+  {% if pagination.page.next %}
+    <a class="older-posts" href="{{ pagination.href.next }}">Older <i class="fas fa-arrow-right"></i></a>
+  {% endif %}
 </nav>
 
 </div>

@@ -16,16 +16,20 @@ templateClass: tmpl-post
 <div class="wrapper">
 
 <section class="post-meta">
-  <div class="post-date">{% if lang == 'ja' %}投稿日{% else %}Posted{% endif %}: {{ page.date | localeDateString(lang or 'en') }}
-  {% if updated %} / {% if lang == 'ja' %}最終更新日{% else %}Last updated{% endif %}: {{ updated | localeDateString(lang or 'en') }}{% endif %} /
-  {% if lang == 'ja' %}<span title="AIを使わずに書いた度合い">オーガニック度{% else %}<span title="Ratio written without AI">Organic level{% endif %}: {{ organic if organic else 100 }}%</span>
-  {% set altLang = 'en' if lang == 'ja' else 'ja' %}
-  {% set readInAltLang = 'Read in English' if lang == 'ja' else '日本語で読む' %}
-  {% set altPostUrl = page.url | replace('/' + lang + '/', '/' + altLang + '/') %}
-
-  {% if altPostUrl %}
-   / <a href="{{ altPostUrl }}">{{ readInAltLang }}</a>
-  {% endif %}
+  <div class="meta-badges">
+    <span class="meta-pill date-pill"><i class="far fa-calendar-alt"></i> {{ page.date | localeDateString(lang or 'en') }}</span>
+    {% if updated %}
+    <span class="meta-pill update-pill"><i class="fas fa-redo"></i> {% if lang == 'ja' %}更新{% else %}Updated{% endif %}: {{ updated | localeDateString(lang or 'en') }}</span>
+    {% endif %}
+    <span class="meta-pill organic-pill" title="{% if lang == 'ja' %}AIを使わずに書いた度合い{% else %}Ratio written without AI{% endif %}">
+      <i class="fas fa-seedling"></i> {{ organic if organic else 100 }}% Organic
+    </span>
+    {% set altLang = 'en' if lang == 'ja' else 'ja' %}
+    {% set readInAltLang = 'Read in English' if lang == 'ja' else '日本語で読む' %}
+    {% set altPostUrl = page.url | replace('/' + lang + '/', '/' + altLang + '/') %}
+    {% if altPostUrl %}
+    <a href="{{ altPostUrl }}" class="meta-pill lang-pill"><i class="fas fa-globe"></i> {{ readInAltLang }}</a>
+    {% endif %}
   </div>
 </section>
 
@@ -33,47 +37,34 @@ templateClass: tmpl-post
   {{ content | safe }}
 </article>
 
-<section class="rss">
-  <p class="rss-subscribe text"><strong>Subscribe <a href="{{ site.baseurl }}/feed.xml">via RSS</a></strong></p>
-</section>
-
 <section class="share">
-  <span>Share: </span>
+  <span class="share-label">Share:</span>
+  <div class="share-buttons">
   {% set full_url %}{{ site.baseurl }}{{ page.url }}{% endset %}
   {% for social in site.social %}
     {% if social.name == "X" and social.share == true %}
       <a href="//x.com/share?text={{ title | urlencode }} - {{ site.name | urlencode }}&url={{ full_url | urlencode}}&via={{social.username}}"
+        class="share-btn share-x" title="Share on X"
         onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=550');return false;">
-        <i class="fab fa-{{ social.icon }} fa-lg"></i>
+        <i class="fab fa-{{ social.icon }}"></i>
       </a>
     {% endif %}
-    {% set full_url %}{{ site.baseurl }}{{ page.url }}{% endset %}
     {% if social.name == "Bluesky" and social.share == true %}
       <a href="//bsky.app/intent/compose?text={{ title | urlencode}}+{{full_url | urlencode}}"
+        class="share-btn share-bsky" title="Share on Bluesky"
         onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=550');return false;">
-        <i class="fab fa-{{ social.icon }} fa-lg"></i>
-      </a>
-    {% endif %}
-    {% set full_url %}{{ site.baseurl }}{{ page.url }}{% endset %}
-    {% if social.name == "Twitter" and social.share == true %}
-      <a href="//x.com/share?text={{ title | urlencode }} - {{ site.name | urlencode }}&url={{ full_url | urlencode}}&via={{social.username}}"
-        onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=550');return false;">
-        <i class="fab fa-{{ social.icon }} fa-lg"></i>
-      </a>
-    {% endif %}
-    {% if social.name == "Facebook" and social.share == true %}
-      <a href="//www.facebook.com/sharer.php?t={{ title | urlencode }} - {{ site.name | urlencode }}&u={{ full_url | urlencode}}"
-        onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=550');return false;">
-        <i class="fab fa-{{ social.icon }} fa-lg"></i>
+        <i class="fab fa-{{ social.icon }}"></i>
       </a>
     {% endif %}
     {% if social.name == "LinkedIn" and social.share == true %}
       <a href="//www.linkedin.com/shareArticle?mini=true&url={{ full_url | urlencode}}"
+        class="share-btn share-linkedin" title="Share on LinkedIn"
         onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=550');return false;">
-        <i class="fab fa-{{ social.icon }} fa-lg"></i>
+        <i class="fab fa-{{ social.icon }}"></i>
       </a>
     {% endif %}
   {% endfor %}
+  </div>
 </section>
 </div>
 </div>
