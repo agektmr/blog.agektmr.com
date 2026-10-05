@@ -21,8 +21,9 @@ templateClass: tmpl-post
     {% if updated %}
     <span class="meta-pill update-pill"><i class="fas fa-redo"></i> {% if lang == 'ja' %}更新{% else %}Updated{% endif %}: {{ updated | localeDateString(lang or 'en') }}</span>
     {% endif %}
+    {% set organicVal = organic if organic is defined else 100 %}
     <span class="meta-pill organic-pill" title="{% if lang == 'ja' %}AIを使わずに書いた度合い{% else %}Ratio written without AI{% endif %}">
-      <i class="fas fa-seedling"></i> {{ organic if organic else 100 }}% Organic
+      <i class="fas fa-seedling"></i> {{ organicVal }}% Organic
     </span>
     {% set altLang = 'en' if lang == 'ja' else 'ja' %}
     {% set readInAltLang = 'Read in English' if lang == 'ja' else '日本語で読む' %}

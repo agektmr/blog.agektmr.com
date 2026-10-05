@@ -28,9 +28,8 @@ permalink: "/en/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber 
   <li class="post-card">
     <div class="card-meta">
       <span class="post-date"><i class="far fa-calendar-alt"></i> {{ post.date | localeDateString('en') }}</span>
-      {% if post.data.organic %}
-      <span class="organic-badge" title="Ratio written without AI"><i class="fas fa-seedling"></i> {{ post.data.organic }}% Organic</span>
-      {% endif %}
+      {% set organicVal = post.data.organic if post.data.organic is defined else 100 %}
+      <span class="organic-badge" title="Ratio written without AI"><i class="fas fa-seedling"></i> {{ organicVal }}% Organic</span>
     </div>
     <h2 class="card-title">
       <a class="post-link" href="{{ post.url }}">{{ post.data.title }}</a>
