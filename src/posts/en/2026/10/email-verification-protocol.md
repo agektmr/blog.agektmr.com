@@ -32,7 +32,7 @@ Today, there are two primary approaches for verifying email address ownership, e
 
 1. **One-Time Passwords (OTP)**: A temporary code sent via email for the user to type into a form.
     - Pros: Can be entered on any screen, allowing the user to stay in the same browser.
-    - Cons: Vulnerable to [phishing attacks using adversary-in-the-middle (AiTM)](https://www.trendmicro.com/ja_jp/jp-security/25/j/securitytrend-20251003-01.html) techniques.
+    - Cons: Vulnerable to [phishing attacks using adversary-in-the-middle (AiTM)](https://www.microsoft.com/en-us/security/blog/2026/01/21/multistage-aitm-phishing-bec-campaign-abusing-sharepoint/) techniques.
 2. **Magic Links**: A temporary verification link sent via email for the user to click.
     - Pros: Less susceptible to phishing since the link points directly to the legitimate domain.
     - Cons: Clicking the link from an email client may open an in-app browser or switch away from the user's active session.
