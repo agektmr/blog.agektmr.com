@@ -657,19 +657,18 @@ pre code.hljs {
 		.share {
 			display: flex;
 			align-items: center;
+			justify-content: center;
 			gap: 0.85rem;
-			margin: 1.5em 0;
-			padding: 0.5em 0;
-			@include span-columns(12);
-			@include media ($tablet) {
-				@include span-columns(6);
-				justify-content: flex-end;
-			}
+			width: 100%;
+			margin: 3rem 0 2rem 0;
+			padding: 1.25rem 0;
+			border-top: 1px solid #f1f5f9;
+			border-bottom: 1px solid #f1f5f9;
 
 			.share-label {
 				font-weight: 600;
 				font-size: 0.95rem;
-				color: #334155;
+				color: #475569;
 			}
 
 			.share-buttons {
