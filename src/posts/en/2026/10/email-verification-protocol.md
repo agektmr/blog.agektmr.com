@@ -20,7 +20,7 @@ tags:
   - Authentication
 ---
 
-The Email Verification Protocol (EVP) allows websites to verify ownership of an email address without users ever having to leave their browser, substantially reducing user friction. Beyond this immediate UX benefit, however, adopting EVP serves an even more critical purpose: completing the account lifecycle by seamlessly complementing passkeys.
+The Email Verification Protocol (EVP) allows websites to confirm possession of an email address without users ever having to leave their browser, substantially reducing user friction. Beyond this immediate UX benefit, however, adopting EVP serves an even more critical purpose: completing the account lifecycle by seamlessly complementing passkeys.
 
 <!-- excerpt -->
 
@@ -28,7 +28,7 @@ The Email Verification Protocol (EVP) allows websites to verify ownership of an 
 
 Most online services that manage user accounts require users to register an email address. A registered email address is used to deliver important service notifications and marketing communications, but above all, it is essential for account recovery.
 
-Today, there are two primary approaches for verifying email address ownership, each with its own trade-offs:
+Today, there are two primary approaches for confirming possession of an email address, each with its own trade-offs:
 
 1. **One-Time Passwords (OTP)**: A temporary code sent via email for the user to type into a form.
     - Pros: Can be entered on any screen, allowing the user to stay in the same browser.
@@ -49,7 +49,7 @@ Rather than clicking a link or opening an email client, the user completes email
 
 EVP eliminates many long-standing pain points of conventional email verification, without placing unreasonable demands on either users or developers.
 
-From a user experience standpoint, its standout beauty lies in **preserving existing mental models completely**. Users simply enter their email address into the form as they normally do. There is no need to switch to an email app, memorize and copy a code, or worry about getting trapped inside an in-app browser. With no new concepts to learn, users experience a verification process that finishes almost imperceptibly in the background. Because manual OTP entry is eliminated, attackers have no opportunity to trick users with spoofed entry forms.
+From a user experience standpoint, its standout beauty lies in **preserving existing mental models completely**. Users can confirm possession of their email address simply by entering it into the form as they normally do. There is no need to switch to an email app, memorize and copy a code, or worry about getting trapped inside an in-app browser. With no new concepts to learn, users experience a verification process that finishes almost imperceptibly in the background. Because manual OTP entry is eliminated, attackers have no opportunity to trick users with spoofed entry forms.
 
 For developers and service operators, implementation friction is intentionally minimal. EVP operates via **progressive enhancement**: supported browsers and providers perform instant background verification, while unsupported environments gracefully fall back to the traditional verification email flow. You can incrementally enhance the experience for supported users without breaking existing signup flows.
 
@@ -57,19 +57,19 @@ Furthermore, services are liberated from high drop-off rates caused by users who
 
 {% Aside %}
 
-While EVP verifies ownership of an email address, it does not confirm deliverability. If you intend to use the email address for transactional communications, you should perform a separate deliverability check.
+While EVP confirms possession of an email address, it does not confirm deliverability. If you intend to use the email address for transactional communications, you should perform a separate deliverability check.
 
 {% endAside %}
 
 ## How the Email Verification Protocol works
 
-How does EVP verify email ownership securely in the background without opening an email client? The core concept is direct collaboration between the browser and the email provider.
+How does EVP securely confirm email possession in the background without opening an email client? The core concept is direct collaboration between the browser and the email provider.
 
-When a user enters or autofills their email address into a form, the browser checks with the email provider hosting that address to determine whether the user has an active session. For example, if a Gmail address is entered, the browser checks whether the user is currently signed in to their Google account. If an active session exists in that browser, the provider issues a cryptographic token—an Email Verification Token (EVT)—proving that the user is the legitimate owner of that email address.
+When a user enters or autofills their email address into a form, the browser checks with the email provider hosting that address to determine whether the user has an active session. For example, if a Gmail address is entered, the browser checks whether the user is currently signed in to their Google account. If an active session exists in that browser, the provider issues a cryptographic token—an Email Verification Token (EVT)—proving that the user has legitimate possession of that email address.
 
 Importantly, the email provider never learns which website requested verification. The browser acts as an intermediary, binding the requesting origin and a `nonce` to the token received from the provider before passing it to the website.
 
-The relying party (the website) simply verifies the token's digital signature on its server to confirm legitimate ownership. There is no waiting for an email to arrive, no searching through the inbox, and no copying of codes.
+The relying party (the website) simply verifies the token's digital signature on its server to confirm legitimate possession of the address. There is no waiting for an email to arrive, no searching through the inbox, and no copying of codes.
 
 For detailed protocol specifications and implementation guidance, refer to the [Chrome for Developers documentation](https://developer.chrome.com/docs/identity/email-verification-protocol) and the [WICG Explainer](https://github.com/WICG/email-verification-protocol).
 
@@ -97,13 +97,13 @@ Security is dictated by its weakest link. Hardening the front door with passkeys
 
 This is where EVP enters the picture.
 
-When encountering EVP demos, many focus on the registration flow: "How convenient that typing an email address verifies ownership without extra steps." While that is a welcome improvement, EVP's true significance extends much further.
+When encountering EVP demos, many focus on the registration flow: "How convenient that typing an email address confirms possession without extra steps." While that is a welcome improvement, EVP's true significance extends much further.
 
 What makes EVP truly transformative is that **it brings phishing resistance to account recovery using the one identifier almost everyone already has: an email address**.
 
-Today, email addresses (and in some regions, phone numbers) serve as the backbone of identity verification for consumer web services. Yet traditional verification codes and links sent via email or SMS remain susceptible to adversary-in-the-middle attacks, lacking phishing resistance.
+Today, email addresses (and in some regions, phone numbers) serve as the backbone of identity verification for consumer web services. Yet traditional possession confirmation methods—such as one-time passwords and verification links sent via email or SMS—remain susceptible to adversary-in-the-middle attacks, lacking phishing resistance.
 
-At the same time, practical options for phishing-resistant identity verification have been virtually non-existent. Federated identity (Social Login) is rarely designed as an account recovery mechanism, and government-issued digital credentials (such as national ID cards) impose excessive friction for everyday consumer services outside regulated finance.
+At the same time, practical options for phishing-resistant identity verification have been virtually non-existent. Federated identity (Social Login) is rarely designed as an account recovery mechanism, and identity proofing via government-issued digital credentials (such as national ID cards) imposes excessive friction for everyday consumer services outside regulated finance.
 
 Account recovery has been trapped in a dilemma: either convenient but vulnerable to phishing, or secure but far too burdensome for everyday use.
 
@@ -117,7 +117,7 @@ In short, phishing resistance is embedded directly into the ubiquitous act of co
 
 Of course, this vision assumes an ecosystem where EVP is widely deployed and supported. Currently, EVP is implemented only in Chrome and has not yet graduated to a stable, cross-browser standard. While Gmail already supports EVP, broader email provider participation will be necessary. Users on other browsers or utilizing alternative email providers must continue to remain vigilant against phishing threats.
 
-Furthermore, EVP is not the only avenue being explored for phishing-resistant verification. For instance, [Firebase Phone Number Verification](https://firebase.google.com/docs/phone-number-verification) queries mobile carriers directly to confirm phone number ownership in a phishing-resistant manner. Several other approaches to robust identity verification are also actively under evaluation across the industry.
+Furthermore, EVP is not the only avenue being explored for phishing-resistant identity verification. For instance, [Firebase Phone Number Verification](https://firebase.google.com/docs/phone-number-verification) queries mobile carriers directly to confirm phone number possession in a phishing-resistant manner. Several other approaches to phishing-resistant identity verification are also actively under evaluation across the industry.
 
 ## Summary
 
