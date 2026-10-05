@@ -18,7 +18,7 @@ h2,h3,h4,h5,h6 {
 
 .aside {
   margin: 1.75rem 0;
-  padding: 1.25rem 1.5rem;
+  padding: 1rem 1.25rem;
   font-size: 0.95em;
   line-height: 1.7;
   color: #374151;
@@ -48,6 +48,10 @@ h2,h3,h4,h5,h6 {
 
     &:not(:last-child) {
       margin-bottom: 0.75rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0 !important;
     }
   }
 }
