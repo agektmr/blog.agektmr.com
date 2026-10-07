@@ -39,7 +39,7 @@ Today, there are two primary approaches for confirming possession of an email ad
 
 What both approaches have in common is that users are forced to navigate away from the application and open their email client. While there have been [efforts to ease input without leaving the browser](https://www.apple.com/newsroom/2023/09/macos-sonoma-is-available-today/#:~:text=the%20one%2Dtime,leaving%20the%20browser), these features are not supported everywhere. In reality, most users have simply learned to tolerate this inconvenient experience.
 
-The [Email Verification Protocol](https://developer.chrome.com/docs/identity/email-verification-protocol) (EVP) fundamentally transforms this experience. Take a look at this video:
+The [Email Verification Protocol](https://developer.chrome.com/docs/identity/email-verification) (EVP) fundamentally transforms this experience. Take a look at this video:
 
 {% YouTube "qZelpf_OJE8" %}
 
@@ -71,7 +71,7 @@ Importantly, the email provider never learns which website requested verificatio
 
 The relying party (the website) simply verifies the token's digital signature on its server to confirm legitimate possession of the address. There is no waiting for an email to arrive, no searching through the inbox, and no copying of codes.
 
-For detailed protocol specifications and implementation guidance, refer to the [Chrome for Developers documentation](https://developer.chrome.com/docs/identity/email-verification-protocol) and the [WICG Explainer](https://github.com/WICG/email-verification-protocol).
+For detailed protocol specifications and implementation guidance, refer to the [Chrome for Developers documentation](https://developer.chrome.com/docs/identity/email-verification) and the [WICG Explainer](https://github.com/WICG/email-verification-protocol).
 
 EVP, however, does more than streamline sign-ups: it is poised to fill a critical gap in the modern account lifecycle by complementing passkeys. To appreciate why, let's revisit what passkeys revolutionized in the first place.
 

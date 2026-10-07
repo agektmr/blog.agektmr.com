@@ -36,7 +36,7 @@ Email Verification Protocol (EVP) を使うと、ブラウザから離れるこ�
 
 どちらにも共通して言えるのは、ユーザーは一度アプリから離れてメールクライアントを開かなければならない、という点です。[ブラウザから離れなくても入力しやすくする工夫](https://www.apple.com/newsroom/2023/09/macos-sonoma-is-available-today/#:~:text=the%20one%2Dtime,leaving%20the%20browser)は行われていますが、全ての環境でこのような機能が使えるわけでもないので、多くの方はこの体験の不便さに気付きつつも慣れてしまっている、というのが本当のところではないでしょうか。
 
-[Email Verification Protocol](https://developer.chrome.com/docs/identity/email-verification-protocol) (EVP) はこの体験を大きく変えます。こちらの動画をご覧ください。
+[Email Verification Protocol](https://developer.chrome.com/docs/identity/email-verification) (EVP) はこの体験を大きく変えます。こちらの動画をご覧ください。
 
 {% YouTube "qZelpf_OJE8" %}
 
@@ -68,7 +68,7 @@ EVP はどうやってメールクライアントを開くこともなく、バ�
 
 サービス側は受け取ったトークンの署名をサーバーで検証するだけで、ユーザーがそのメールアドレスの正当な持ち主であることを確認できます。メールの送信を待つ時間も、受信トレイを開いてリンクを探す手間も、OTP のコピペも一切発生しません。
 
-詳しいプロトコル仕様や実装手順については、[Chrome for Developers のドキュメント](https://developer.chrome.com/docs/identity/email-verification-protocol)や[WICG の Explainer](https://github.com/WICG/email-verification-protocol)を参照してください。
+詳しいプロトコル仕様や実装手順については、[Chrome for Developers のドキュメント](https://developer.chrome.com/docs/identity/email-verification)や[WICG の Explainer](https://github.com/WICG/email-verification-protocol)を参照してください。
 
 そんな EVP ですが、実はパスキーによって大きく改善した認証機能を保管することで、アカウントライフサイクルの重要なピースを埋めるものと期待されています。それが何かを説明する前にはまず、パスキーが何を変えたのかを振り返ってみましょう。
 
