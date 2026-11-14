@@ -1,6 +1,7 @@
 import { DateTime } from "luxon";
 import fs from "node:fs";
 import path from "node:path";
+import Image from "@11ty/eleventy-img";
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
@@ -9,6 +10,7 @@ import pluginI18n from "eleventy-plugin-i18n";
 import markdownIt from "markdown-it";
 import markdownItAttrs from "markdown-it-attrs";
 import markdownItAnchor from "markdown-it-anchor";
+import { replaceFaIcons } from "./scripts/fa-icons.mjs";
 
 const readJson = (filePath) => JSON.parse(fs.readFileSync(new URL(filePath, import.meta.url), "utf8"));
 
@@ -175,19 +177,89 @@ export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/manifest.json");
 
+  eleventyConfig.addAsyncShortcode('CoverImage', async (src) => {
+    if (!src || !src.startsWith('/')) return '';
+    const localPath = path.join(process.cwd(), 'src', src.replace(/^\/+/, ''));
+    if (!fs.existsSync(localPath)) return '';
+
+    const metadata = await Image(localPath, {
+      widths: [800, 1600],
+      formats: ['avif', 'webp', 'jpeg'],
+      outputDir: './_site/images/opt/',
+      urlPath: '/images/opt/',
+      sharpJpegOptions: { quality: 82, progressive: true },
+      sharpWebpOptions: { quality: 80 },
+      sharpAvifOptions: { quality: 65 }
+    });
+
+    const fallback = metadata.jpeg[metadata.jpeg.length - 1];
+    const sources = Object.entries(metadata)
+      .filter(([fmt]) => fmt !== 'jpeg')
+      .map(([fmt, files]) => {
+        const srcset = files.map((f) => `${f.url} ${f.width}w`).join(', ');
+        return `<source type="image/${fmt}" srcset="${srcset}" sizes="100vw">`;
+      })
+      .join('\n      ');
+
+    const jpegSrcset = metadata.jpeg.map((f) => `${f.url} ${f.width}w`).join(', ');
+    return `<picture class="cover-picture">
+      ${sources}
+      <img src="${fallback.url}" srcset="${jpegSrcset}" sizes="100vw" alt="" width="${fallback.width}" height="${fallback.height}" fetchpriority="high" decoding="sync" aria-hidden="true" class="cover-img">
+    </picture>`;
+  });
+
   eleventyConfig.addShortcode('YouTube', (ytVideoId) => {
     return `<div class="video-wrap">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/${ytVideoId}" title="YouTube video player" loading="lazy" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>`;
   });
 
-  eleventyConfig.addShortcode('ImageFigure', (src, caption, style) => {
+  eleventyConfig.addAsyncShortcode('ImageFigure', async (src, caption, style) => {
+    const localPath = src && src.startsWith('/') ? path.join(process.cwd(), 'src', src.replace(/^\/+/, '')) : null;
+    const isAnimatableGif = src && src.toLowerCase().endsWith('.gif');
+
+    if (localPath && fs.existsSync(localPath) && !isAnimatableGif) {
+      try {
+        const metadata = await Image(localPath, {
+          widths: [600, 1200],
+          formats: ['avif', 'webp', 'auto'],
+          outputDir: './_site/images/opt/',
+          urlPath: '/images/opt/',
+          sharpJpegOptions: { quality: 82, progressive: true },
+          sharpWebpOptions: { quality: 82 },
+          sharpAvifOptions: { quality: 65 }
+        });
+
+        const html = Image.generateHTML(metadata, {
+          alt: caption || '',
+          sizes: '(max-width: 768px) 92vw, 720px',
+          loading: 'lazy',
+          decoding: 'async',
+          style: 'width: 100%; height: auto;'
+        });
+        return `<figure style="${style || ''}">
+      ${html}
+      <figcaption>${caption || ''}</figcaption>
+    </figure>`;
+      } catch {
+        // Fallback to raw image below if sharp cannot process a specific file
+      }
+    }
+
     const dims = getImageDimensions(src);
     const dimAttrs = dims ? ` width="${dims.width}" height="${dims.height}"` : '';
     return `<figure style="${style || ''}">
       <img src="${src}" alt="${caption || ''}"${dimAttrs} loading="lazy" decoding="async" style="width: 100%; height: auto;">
       <figcaption>${caption || ''}</figcaption>
     </figure>`;
+  });
+
+  // Replace Font Awesome <i> icons with zero-dependency inline SVGs
+  eleventyConfig.addTransform("inline-fa-icons", (content, outputPath) => {
+    if (outputPath && outputPath.endsWith(".html")) {
+      return replaceFaIcons(content);
+    }
+    return content;
   });
 
   eleventyConfig.addShortcode('VideoFigure', (src, caption) => {
