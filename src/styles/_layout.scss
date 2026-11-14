@@ -109,8 +109,20 @@ pre code.hljs {
 }
 
 .site-header-container, .post-header-container {
+	position: relative;
+	overflow: hidden;
 	width: 100%;
 	text-align: center;
+	.cover-picture, .cover-img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: 0;
+		margin: 0;
+		max-width: none;
+	}
 	&.has-cover {
 		color: $white;
 		text-shadow: 0 1px 3px rgba(0,0,0,0.5) !important;
@@ -128,6 +140,8 @@ pre code.hljs {
 		}
 	}
 	.scrim {
+		position: relative;
+		z-index: 1;
 		padding: 3.5em 1em;
 		&.has-cover {
 			background: linear-gradient(180deg, rgba(15, 23, 42, 0.45) 0%, rgba(15, 23, 42, 0.75) 100%);
@@ -381,7 +395,7 @@ pre code.hljs {
 					text-decoration: none;
 					transition: all 0.2s ease;
 
-					i {
+					i, .fa-svg {
 						font-size: 0.85rem;
 						transition: transform 0.2s ease;
 					}
@@ -390,7 +404,7 @@ pre code.hljs {
 						color: #1a5276;
 						text-decoration: none;
 
-						i {
+						i, .fa-svg {
 							transform: translateX(4px);
 						}
 					}
@@ -504,6 +518,7 @@ pre code.hljs {
 		display: block;
 		margin: auto;
 		width: 90%;
+		height: auto;
 		&.profile-image {
 			width: 250px;
 			margin-bottom: 30px;
@@ -555,7 +570,7 @@ pre code.hljs {
 				padding: 0.3rem 0.8rem;
 				text-decoration: none;
 
-				i {
+				i, .fa-svg {
 					font-size: 0.85rem;
 				}
 
@@ -564,7 +579,7 @@ pre code.hljs {
 					border-color: #bbf7d0;
 					color: #15803d;
 
-					i {
+					i, .fa-svg {
 						color: #16a34a;
 					}
 				}
@@ -690,7 +705,7 @@ pre code.hljs {
 				text-decoration: none !important;
 				transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 
-				i {
+				i, .fa-svg {
 					font-size: 1rem;
 				}
 
@@ -868,7 +883,7 @@ pre code.hljs {
 			margin-top: 0;
 		}
 		font-size: 0.9em;
-		i {
+		i, .fa-svg {
 			width: 1.25em;
 			text-align: center;
 		}

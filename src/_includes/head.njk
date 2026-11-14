@@ -1,6 +1,5 @@
 <head>
   <meta charset="utf-8">
-  <title>{{ title or site.title }}</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -45,7 +44,11 @@
   <meta property="os:src" content="{{ protocols.os_src }}" />
   {% endif %}
 
-  <script src="https://kit.fontawesome.com/d6e695e25f.js" crossorigin="anonymous"></script>
+  <!-- Preconnect & non-blocking Web Fonts (display=optional prevents CLS) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Roboto+Slab:wght@400;700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Roboto+Slab:wght@400;700&display=optional"></noscript>
 
   <!-- Site styles -->
   <link rel="stylesheet" href="/styles/style.css">

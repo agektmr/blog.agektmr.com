@@ -2,15 +2,15 @@
   <div class="navigation-wrapper">
     <a href="/" class="logo">
       {% if site.logo %}
-      <img src="{{ site.logo }}" alt="{{ site.title }}">
+      <img src="{{ site.logo }}" alt="{{ site.title }}" width="32" height="32">
       {% endif %}
       <span>{{ site.title }}</span>
     </a>
-    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu" aria-label="Menu">
       <i class="fa fa-bars"></i>
     </a>
     <nav role="navigation">
-      <ul id="js-navigation-menu" class="navigation-menu show">
+      <ul id="js-navigation-menu" class="navigation-menu">
 				{% include 'nav_links.njk' %}
         <li class="nav-link">{% include 'language-switcher.njk' %}</li>
       </ul>
