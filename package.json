@@ -5,7 +5,7 @@
   "description": "",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "build": "eleventy && sass src/styles/main.scss _site/styles/style.css --no-source-map && rollup -c rollup.config.mjs",
+    "build": "eleventy && sass src/styles/main.scss _site/styles/style.css --no-source-map --style=compressed && rollup -c rollup.config.mjs",
     "watch": "eleventy --watch",
     "start": "eleventy --serve",
     "start:server": "node server/index.js",
