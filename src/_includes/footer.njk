@@ -42,16 +42,13 @@ const $ = document.querySelector.bind(document);
 window.addEventListener('DOMContentLoaded', () => {
   // Header
   const navmenu = $('#js-navigation-menu');
-  navmenu.classList.remove('show');
   const menuToggle = $('#js-mobile-menu');
-  menuToggle.addEventListener('click', e => {
-    e.preventDefault();
-    if (navmenu.classList.contains('show')) {
-      navmenu.classList.remove('show');
-    } else {
-      navmenu.classList.add('show');
-    }
-  });
+  if (navmenu && menuToggle) {
+    menuToggle.addEventListener('click', e => {
+      e.preventDefault();
+      navmenu.classList.toggle('show');
+    });
+  }
 });
 </script>
 

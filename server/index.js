@@ -9,6 +9,7 @@ const fs = require('fs');
 const cookieParser = require('cookie-parser');
 
 const app = express();
+app.disable('x-powered-by');
 const PORT = process.env.PORT || 8080;
 const SITE_DIR = path.join(__dirname, '../_site');
 
@@ -139,30 +140,20 @@ app.use((req, res, next) => {
     }
   }
 
-  // 6. Set language cookie if on a language path but no cookie exists
-  if (!req.cookies.language_preference) {
-    if (onEnglishPath) {
-      res.cookie('language_preference', 'en', {
-        maxAge: 365 * 24 * 60 * 60 * 1000,
-        httpOnly: true,
-        sameSite: 'lax'
-      });
-    } else if (onJapanesePath) {
-      res.cookie('language_preference', 'ja', {
-        maxAge: 365 * 24 * 60 * 60 * 1000,
-        httpOnly: true,
-        sameSite: 'lax'
-      });
-    }
-  }
-
   next();
 });
 
-// Serve static files
+// Serve static files with explicit Cache-Control headers for CDN and browser caching
 app.use(express.static(SITE_DIR, {
   extensions: ['html'],
-  index: 'index.html'
+  index: 'index.html',
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith('.html')) {
+      res.setHeader('Cache-Control', 'public, max-age=300, stale-while-revalidate=3600');
+    } else if (/\.(css|js|png|jpe?g|gif|webp|avif|svg|ico|woff2?|ttf|eot)$/i.test(filePath)) {
+      res.setHeader('Cache-Control', 'public, max-age=604800, stale-while-revalidate=86400');
+    }
+  }
 }));
 
 // Handle 404
