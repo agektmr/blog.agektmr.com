@@ -139,3 +139,8 @@ Use these custom shortcodes in markdown files instead of raw HTML:
 - **Update Existing**: Before creating a translated article, check if the file already exists at the destination. If it exists, update the translation rather than creating a duplicate.
 - **Link Titles**: Do not translate external link titles or official English resource titles.
 - **Metadata**: Set `translationOf: /<YYYY>/<MM>/<slug>.html`, `translated: <YYYY-MM-DD>`, and `translatedManually: true` in the frontmatter.
+
+## Git & Pull Request Workflow
+
+- **PR Target Branch (`draft`)**: Always open pull requests against the `draft` branch, which deploys to the staging server.
+- **Production Deployment (`main`)**: Only merge/promote changes to `main` (production) after verifying them on the `draft` staging server.

@@ -80,4 +80,53 @@
     gtag('config', '{{ site.google_analytics }}');
   </script>
 {% endif %}
+
+  <!-- Structured Data (JSON-LD) -->
+  {% if page.url == '/en/' or page.url == '/ja/' or page.url == '/en/index.html' or page.url == '/ja/index.html' %}
+  {% set sameAsList = [] %}
+  {% for s in site.social %}
+    {% set sameAsList = (sameAsList.push(s.url), sameAsList) %}
+  {% endfor %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": {{ site.title | jsonify | safe }},
+        "url": {{ (site.url + "/" + (lang or "en") + "/") | jsonify | safe }},
+        "description": {{ site.description | jsonify | safe }},
+        "inLanguage": {{ (lang or "en") | jsonify | safe }}
+      },
+      {
+        "@type": "Person",
+        "name": {{ site.owner.name | jsonify | safe }},
+        "jobTitle": {{ site.owner.bio | jsonify | safe }},
+        "description": {{ site.description | jsonify | safe }},
+        "url": {{ (site.url + "/" + (lang or "en") + "/about/") | jsonify | safe }},
+        "sameAs": {{ sameAsList | jsonify | safe }}
+      }
+    ]
+  }
+  </script>
+  {% elif layout == 'post' or layout == 'layouts/post' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ title | jsonify | safe }},
+    "description": {{ (description or site.description) | jsonify | safe }},
+    "datePublished": {{ page.date | isoDate | jsonify | safe }},
+    "dateModified": {{ (updated or page.date) | isoDate | jsonify | safe }},
+    "inLanguage": {{ (lang or "en") | jsonify | safe }},
+    "url": {{ (site.url + page.url) | jsonify | safe }},
+    "image": {{ (site.url + ((site.imagepath + image.feature) if image and image.feature else site.cover)) | jsonify | safe }},
+    "author": {
+      "@type": "Person",
+      "name": {{ (author or site.owner.name) | jsonify | safe }},
+      "url": {{ (site.url + "/" + (lang or "en") + "/about/") | jsonify | safe }}
+    }
+  }
+  </script>
+  {% endif %}
 </head>

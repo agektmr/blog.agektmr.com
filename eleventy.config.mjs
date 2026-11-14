@@ -8,6 +8,7 @@ import pluginI18n from "eleventy-plugin-i18n";
 import markdownIt from "markdown-it";
 import markdownItAttrs from "markdown-it-attrs";
 import markdownItAnchor from "markdown-it-anchor";
+import { exportMarkdownSite } from "./scripts/markdown-export.mjs";
 
 const readJson = (path) => JSON.parse(fs.readFileSync(new URL(path, import.meta.url), "utf8"));
 
@@ -69,6 +70,16 @@ export default function(eleventyConfig) {
     return Math.min.apply(null, numbers);
   });
 
+  eleventyConfig.addFilter("jsonify", (value) => {
+    return JSON.stringify(value);
+  });
+
+  eleventyConfig.addFilter("isoDate", (dateObj) => {
+    if (!dateObj) return "";
+    const d = dateObj instanceof Date ? dateObj : new Date(dateObj);
+    return Number.isNaN(d.getTime()) ? "" : d.toISOString();
+  });
+
   // function filterTagList(tags) {
   //   return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
   // }
@@ -82,16 +93,29 @@ export default function(eleventyConfig) {
     return inputPath.replace(/.*?\/(?:ja|en)?\/?\/?([0-9]{4})\/([0-9]{2})\/(.*)\.(md|html)$/g, "$1/$2/$3.html");
   });
 
+  let cachedPostsEn = [];
+  let cachedPostsJa = [];
+
   // Language-specific collections
   eleventyConfig.addCollection("posts_ja", function(collection) {
-    return collection.getFilteredByGlob("src/posts/ja/**/*.md").sort((a, b) => {
+    cachedPostsJa = collection.getFilteredByGlob("src/posts/ja/**/*.md").sort((a, b) => {
       return b.date - a.date;
     });
+    return cachedPostsJa;
   });
 
   eleventyConfig.addCollection("posts_en", function(collection) {
-    return collection.getFilteredByGlob("src/posts/en/**/*.md").sort((a, b) => {
+    cachedPostsEn = collection.getFilteredByGlob("src/posts/en/**/*.md").sort((a, b) => {
       return b.date - a.date;
+    });
+    return cachedPostsEn;
+  });
+
+  eleventyConfig.on("eleventy.after", ({ dir }) => {
+    exportMarkdownSite({
+      outputDir: dir.output,
+      postsEn: cachedPostsEn,
+      postsJa: cachedPostsJa,
     });
   });
 
@@ -109,6 +133,7 @@ export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/manifest.json");
+  eleventyConfig.addPassthroughCopy("src/robots.txt");
 
   eleventyConfig.addShortcode('YouTube', (ytVideoId) => {
     return `<div class="video-wrap">
