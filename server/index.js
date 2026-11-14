@@ -75,13 +75,101 @@ function detectLanguage(req) {
 }
 
 /**
- * Language detection and redirect middleware
+ * Check if the client explicitly requests Markdown via Accept header
+ * @param {Request} req - Express request object
+ * @returns {boolean}
+ */
+function wantsMarkdown(req) {
+  const accept = req.headers.accept || '';
+  return accept
+    .split(',')
+    .some((part) => part.trim().split(';')[0].trim().toLowerCase() === 'text/markdown');
+}
+
+/**
+ * Resolve a request path to a pre-built English Markdown file relative to SITE_DIR
+ * (with ja fallback for untranslated posts)
+ * @param {string} requestPath
+ * @returns {string|null}
+ */
+function resolveMarkdownPath(requestPath) {
+  const normalized = requestPath.replace(/\/+$/, '') || '/';
+
+  if (normalized === '/' || normalized === '/index.html' || normalized === '/en' || normalized === '/en/index.html' || normalized === '/ja' || normalized === '/ja/index.html') {
+    const rel = 'en/index.md';
+    return fs.existsSync(path.join(SITE_DIR, rel)) ? rel : null;
+  }
+
+  if (normalized === '/en/posts' || normalized === '/en/posts/index.html' || normalized === '/ja/posts' || normalized === '/ja/posts/index.html') {
+    const rel = 'en/posts/index.md';
+    return fs.existsSync(path.join(SITE_DIR, rel)) ? rel : null;
+  }
+
+  if (normalized === '/en/about' || normalized === '/en/about/index.html' || normalized === '/ja/about' || normalized === '/ja/about/index.html') {
+    const rel = 'en/about/index.md';
+    return fs.existsSync(path.join(SITE_DIR, rel)) ? rel : null;
+  }
+
+  const postMatch = normalized.match(/^\/(?:en|ja)?\/?(\d{4})\/(\d{2})\/([^\/]+?)(?:\.html)?$/);
+  if (postMatch) {
+    const relMdPath = `${postMatch[1]}/${postMatch[2]}/${postMatch[3]}.md`;
+    const enRel = path.posix.join('en', relMdPath);
+    if (fs.existsSync(path.join(SITE_DIR, enRel))) return enRel;
+    const jaRel = path.posix.join('ja', relMdPath);
+    if (fs.existsSync(path.join(SITE_DIR, jaRel))) return jaRel;
+  }
+
+  return null;
+}
+
+/**
+ * Build Link header for agent discovery (sitemap, Markdown alternate, RSS feed)
+ * @param {string} requestPath
+ * @returns {string}
+ */
+function buildLinkHeader(requestPath) {
+  const normalized = requestPath.replace(/\/+$/, '') || '/';
+  let mdAlt = '/en/index.md';
+
+  if (normalized.includes('/posts')) {
+    mdAlt = '/en/posts/index.md';
+  } else if (normalized.includes('/about')) {
+    mdAlt = '/en/about/index.md';
+  } else {
+    const postMatch = normalized.match(/^\/(?:en|ja)?\/?(\d{4})\/(\d{2})\/([^\/]+?)(?:\.html)?$/);
+    if (postMatch) {
+      mdAlt = `/en/${postMatch[1]}/${postMatch[2]}/${postMatch[3]}.md`;
+    }
+  }
+
+  return [
+    '</sitemap.xml>; rel="sitemap"; type="application/xml"',
+    `<${mdAlt}>; rel="alternate"; type="text/markdown"`,
+    '</en/feed.xml>; rel="alternate"; type="application/rss+xml"'
+  ].join(', ');
+}
+
+/**
+ * Language detection, Markdown content negotiation, and redirect middleware
  */
 app.use((req, res, next) => {
   const requestPath = req.path;
 
   // Skip for static assets
-  if (requestPath.match(/\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$/)) {
+  if (requestPath.match(/\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|xml|txt|json|md)$/)) {
+    return next();
+  }
+
+  res.vary('Accept');
+  const linkHeader = buildLinkHeader(requestPath);
+  res.set('Link', linkHeader);
+
+  if (wantsMarkdown(req)) {
+    const mdRelPath = resolveMarkdownPath(requestPath);
+    if (mdRelPath) {
+      res.set('Content-Type', 'text/markdown; charset=utf-8');
+      return res.sendFile(mdRelPath, { root: SITE_DIR });
+    }
     return next();
   }
 
@@ -158,7 +246,22 @@ app.use(express.static(SITE_DIR, {
 
 // Handle 404
 app.use((req, res) => {
-  res.status(404).sendFile(path.join(SITE_DIR, '404.html'));
+  res.vary('Accept');
+  if (wantsMarkdown(req)) {
+    return res
+      .status(404)
+      .set('Content-Type', 'text/markdown; charset=utf-8')
+      .send(
+        '# 404 Not Found\n\n' +
+        'The requested page could not be found on **Tender Surrender**.\n\n' +
+        '## Useful Links\n\n' +
+        '- [Home](/en/)\n' +
+        '- [All Posts](/en/posts/)\n' +
+        '- [About](/en/about/)\n' +
+        '- [Sitemap](/sitemap.xml)\n'
+      );
+  }
+  res.status(404).sendFile('404.html', { root: SITE_DIR });
 });
 
 // Start server

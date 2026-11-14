@@ -5,7 +5,7 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 {%- for post in collections.all %}
-  {% set absoluteUrl %}{{ site.baseurl }}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+  {% set absoluteUrl %}https://blog.agektmr.com{{ post.url | url }}{% endset %}
   <url>
     <loc>{{ absoluteUrl }}</loc>
     <lastmod>{{ post.date | dateToRfc3339 }}</lastmod>
