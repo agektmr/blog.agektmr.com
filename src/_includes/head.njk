@@ -50,8 +50,8 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Roboto+Slab:wght@400;700&display=optional" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Roboto+Slab:wght@400;700&display=optional"></noscript>
 
-  <!-- Site styles -->
-  <link rel="stylesheet" href="/styles/style.css">
+  <!-- Site styles (inlined at build time from src/styles/main.scss) -->
+  <style>{% InlineCss %}</style>
   <link rel="canonical" href="{{ site.url }}{{ page.url | replace('index.html','') }}">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml" />
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.feed.path | url }}">

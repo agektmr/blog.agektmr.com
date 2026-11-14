@@ -2,6 +2,7 @@ import { DateTime } from "luxon";
 import fs from "node:fs";
 import path from "node:path";
 import Image from "@11ty/eleventy-img";
+import * as sass from "sass";
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
@@ -277,6 +278,47 @@ export default function(eleventyConfig) {
       <img src="${src}" alt="${caption || ''}"${dimAttrs} loading="lazy" decoding="async" style="width: 100%; height: auto;">
       <figcaption>${caption || ''}</figcaption>
     </figure>`;
+  });
+
+  // Compile Sass once per build for inline <style> in <head>
+  let compiledCss = "";
+  eleventyConfig.addWatchTarget("./src/styles/");
+  eleventyConfig.on("eleventy.before", () => {
+    const result = sass.compile("./src/styles/main.scss", {
+      style: "compressed",
+      sourceMap: false
+    });
+    compiledCss = result.css;
+  });
+  eleventyConfig.addShortcode("InlineCss", () => compiledCss);
+
+  // Optimized header logo via @11ty/eleventy-img (32px / 64px AVIF/WebP/PNG)
+  eleventyConfig.addNunjucksAsyncShortcode("LogoImage", async (src, alt = "") => {
+    if (!src || !src.startsWith("/")) return "";
+    const localPath = path.join(process.cwd(), "src", src.replace(/^\/+/, ""));
+    if (!fs.existsSync(localPath)) {
+      return `<img src="${src}" alt="${alt}" width="32" height="32">`;
+    }
+    try {
+      const metadata = await Image(localPath, {
+        widths: [32, 64],
+        formats: ["avif", "webp", "png"],
+        outputDir: "./_site/images/opt/",
+        urlPath: "/images/opt/",
+        sharpPngOptions: { compressionLevel: 9, palette: true },
+        sharpWebpOptions: { quality: 85 },
+        sharpAvifOptions: { quality: 70 }
+      });
+      return Image.generateHTML(metadata, {
+        alt,
+        sizes: "32px",
+        width: 32,
+        height: 32,
+        decoding: "async"
+      });
+    } catch {
+      return `<img src="${src}" alt="${alt}" width="32" height="32">`;
+    }
   });
 
   // Replace Font Awesome <i> icons with zero-dependency inline SVGs
